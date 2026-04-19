@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>밤사이 흐름이 조금 달라졌다 — Tesla 실적 앞둔 금요일 반등, DeepSeek 첫 외부 투자, 그리고 전자현미경에 올라탄 파운데이션 모델 — SONSLAB</title>
+    <title>Tesla 8주 하락 끊고 금요일 반등, DeepSeek $10B 첫 외부 펀딩, EMSeek·Agentic EM 논문 — Tesla 어닝 D-4 토요일 새벽 — SONSLAB</title>
     <link rel="icon" href="../assets/logo.jpg">
     <link rel="alternate" type="application/atom+xml" title="SONSLAB Feed" href="../feed.xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,13 +16,13 @@
     <link rel="canonical" href="https://shonsubong.github.io/sonslab-blog/posts/2026-04-18-am06-ai-tech-news.html">
     <meta property="og:site_name" content="SONSLAB">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="밤사이 흐름이 조금 달라졌다 — Tesla 실적 앞둔 금요일 반등, DeepSeek 첫 외부 투자, 그리고 전자현미경에 올라탄 파운데이션 모델">
+    <meta property="og:title" content="Tesla 8주 하락 끊고 금요일 반등, DeepSeek $10B 첫 외부 펀딩, EMSeek·Agentic EM 논문 — Tesla 어닝 D-4 토요일 새벽">
     <meta property="og:description" content="토요일 새벽에 일찍 눈이 떠져서 커피 한 잔 내려놓고 뉴스 피드를 훑어봤다. 어제(금요일) 미국장은 생각보다 차분하게 마감했고, 오히려 TSLA가 오랜 하락을 끊고 반등하는 그림이 나왔다. 반도체 업계에서 일하는 입장에서 한 주를 돌아보면 결국 TSMC Q1 어닝, Opus 4.7 출시, Stanford AI Index 2026 같은 굵직한 이벤트가 연달아 터진 한 주였고, 오늘 새벽 사이에...">
     <meta property="og:url" content="https://shonsubong.github.io/sonslab-blog/posts/2026-04-18-am06-ai-tech-news.html">
     <meta property="og:image" content="https://shonsubong.github.io/sonslab-blog/assets/og/2026-04-18-am06-ai-tech-news.png">
     <meta property="og:locale" content="ko_KR">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="밤사이 흐름이 조금 달라졌다 — Tesla 실적 앞둔 금요일 반등, DeepSeek 첫 외부 투자, 그리고 전자현미경에 올라탄 파운데이션 모델">
+    <meta name="twitter:title" content="Tesla 8주 하락 끊고 금요일 반등, DeepSeek $10B 첫 외부 펀딩, EMSeek·Agentic EM 논문 — Tesla 어닝 D-4 토요일 새벽">
     <meta name="twitter:description" content="토요일 새벽에 일찍 눈이 떠져서 커피 한 잔 내려놓고 뉴스 피드를 훑어봤다. 어제(금요일) 미국장은 생각보다 차분하게 마감했고, 오히려 TSLA가 오랜 하락을 끊고 반등하는 그림이 나왔다. 반도체 업계에서 일하는 입장에서 한 주를 돌아보면 결국 TSMC Q1 어닝, Opus 4.7 출시, Stanford AI Index 2026 같은 굵직한 이벤트가 연달아 터진 한 주였고, 오늘 새벽 사이에...">
     <meta name="twitter:image" content="https://shonsubong.github.io/sonslab-blog/assets/og/2026-04-18-am06-ai-tech-news.png">
     <meta property="article:published_time" content="2026-04-18T06:23:00+09:00">
@@ -36,15 +36,28 @@
         var theme = saved || (prefersDark ? 'dark' : 'light');
         if (theme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
 
-        var design = localStorage.getItem('sonslab-design') || 'current';
+        // 디자인 pref: 'random' | 'current' | 'refined' | 'editorial' | 'broadsheet'
+        // 저장값이 없거나 'random'이면 매 페이지 로드마다 4개 중 하나를 무작위로 추출.
+        var pref = localStorage.getItem('sonslab-design') || 'random';
         var allowed = ['current', 'refined', 'editorial', 'broadsheet'];
-        if (allowed.indexOf(design) === -1) design = 'current';
-        if (design !== 'current') document.documentElement.setAttribute('data-design', design);
+        var resolved;
+        if (pref === 'random') {
+            resolved = allowed[Math.floor(Math.random() * allowed.length)];
+        } else if (allowed.indexOf(pref) === -1) {
+            pref = 'current';
+            resolved = 'current';
+        } else {
+            resolved = pref;
+        }
+        if (resolved !== 'current') document.documentElement.setAttribute('data-design', resolved);
+        // body script가 재추출 없이 라벨만 맞추도록 결과를 공유.
+        window.__sonslabDesignPref = pref;
+        window.__sonslabDesignResolved = resolved;
     } catch (e) {}
 })();
 </script>
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "밤사이 흐름이 조금 달라졌다 — Tesla 실적 앞둔 금요일 반등, DeepSeek 첫 외부 투자, 그리고 전자현미경에 올라탄 파운데이션 모델", "description": "토요일 새벽에 일찍 눈이 떠져서 커피 한 잔 내려놓고 뉴스 피드를 훑어봤다. 어제(금요일) 미국장은 생각보다 차분하게 마감했고, 오히려 TSLA가 오랜 하락을 끊고 반등하는 그림이 나왔다. 반도체 업계에서 일하는 입장에서 한 주를 돌아보면 결국 TSMC Q1 어닝, Opus 4.7 출시, Stanford AI Index 2026 같은 굵직한 이벤트가 연달아 터진 한 주였고, 오늘 새벽 사이에...", "url": "https://shonsubong.github.io/sonslab-blog/posts/2026-04-18-am06-ai-tech-news.html", "mainEntityOfPage": "https://shonsubong.github.io/sonslab-blog/posts/2026-04-18-am06-ai-tech-news.html", "inLanguage": "ko", "image": "https://shonsubong.github.io/sonslab-blog/assets/og/2026-04-18-am06-ai-tech-news.png", "author": {"@type": "Person", "name": "SONSLAB"}, "publisher": {"@type": "Organization", "name": "SONSLAB", "logo": {"@type": "ImageObject", "url": "https://shonsubong.github.io/sonslab-blog/assets/logo.jpg"}}, "datePublished": "2026-04-18T06:23:00+09:00", "dateModified": "2026-04-18T06:23:00+09:00"}</script>
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "SONSLAB", "item": "https://shonsubong.github.io/sonslab-blog/"}, {"@type": "ListItem", "position": 2, "name": "글", "item": "https://shonsubong.github.io/sonslab-blog/#posts"}, {"@type": "ListItem", "position": 3, "name": "밤사이 흐름이 조금 달라졌다 — Tesla 실적 앞둔 금요일 반등, DeepSeek 첫 외부 투자, 그리고 전자현미경에 올라탄 파운데이션 모델", "item": "https://shonsubong.github.io/sonslab-blog/posts/2026-04-18-am06-ai-tech-news.html"}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Tesla 8주 하락 끊고 금요일 반등, DeepSeek $10B 첫 외부 펀딩, EMSeek·Agentic EM 논문 — Tesla 어닝 D-4 토요일 새벽", "description": "토요일 새벽에 일찍 눈이 떠져서 커피 한 잔 내려놓고 뉴스 피드를 훑어봤다. 어제(금요일) 미국장은 생각보다 차분하게 마감했고, 오히려 TSLA가 오랜 하락을 끊고 반등하는 그림이 나왔다. 반도체 업계에서 일하는 입장에서 한 주를 돌아보면 결국 TSMC Q1 어닝, Opus 4.7 출시, Stanford AI Index 2026 같은 굵직한 이벤트가 연달아 터진 한 주였고, 오늘 새벽 사이에...", "url": "https://shonsubong.github.io/sonslab-blog/posts/2026-04-18-am06-ai-tech-news.html", "mainEntityOfPage": "https://shonsubong.github.io/sonslab-blog/posts/2026-04-18-am06-ai-tech-news.html", "inLanguage": "ko", "image": "https://shonsubong.github.io/sonslab-blog/assets/og/2026-04-18-am06-ai-tech-news.png", "author": {"@type": "Person", "name": "SONSLAB"}, "publisher": {"@type": "Organization", "name": "SONSLAB", "logo": {"@type": "ImageObject", "url": "https://shonsubong.github.io/sonslab-blog/assets/logo.jpg"}}, "datePublished": "2026-04-18T06:23:00+09:00", "dateModified": "2026-04-18T06:23:00+09:00"}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "SONSLAB", "item": "https://shonsubong.github.io/sonslab-blog/"}, {"@type": "ListItem", "position": 2, "name": "글", "item": "https://shonsubong.github.io/sonslab-blog/#posts"}, {"@type": "ListItem", "position": 3, "name": "Tesla 8주 하락 끊고 금요일 반등, DeepSeek $10B 첫 외부 펀딩, EMSeek·Agentic EM 논문 — Tesla 어닝 D-4 토요일 새벽", "item": "https://shonsubong.github.io/sonslab-blog/posts/2026-04-18-am06-ai-tech-news.html"}]}</script>
 </head>
 <body class="post-page">
     <div class="reading-progress" id="reading-progress" role="progressbar" aria-label="읽기 진행률"></div>
@@ -68,6 +81,7 @@
                     <span class="design-picker-caret" aria-hidden="true">▾</span>
                 </button>
                 <ul class="design-picker-menu" id="design-picker-menu" role="listbox" aria-label="디자인 옵션">
+                    <li role="option" data-design="random"><strong>랜덤</strong><span>접속할 때마다 무작위 디자인</span></li>
                     <li role="option" data-design="current"><strong>기본</strong><span>네이비+크림, 라운드 카드</span></li>
                     <li role="option" data-design="refined"><strong>정제판 (A)</strong><span>신문·저널 톤, 헤어라인 구분선</span></li>
                     <li role="option" data-design="editorial"><strong>에디토리얼 (B)</strong><span>이중선 마스트헤드, 세리프 강조</span></li>
@@ -87,7 +101,7 @@
 <article class="post-article">
     <div class="post-header">
         <a href="../index.html" class="back-link">← 전체 글 목록</a>
-        <h1>밤사이 흐름이 조금 달라졌다 — Tesla 실적 앞둔 금요일 반등, DeepSeek 첫 외부 투자, 그리고 전자현미경에 올라탄 파운데이션 모델</h1>
+        <h1>Tesla 8주 하락 끊고 금요일 반등, DeepSeek $10B 첫 외부 펀딩, EMSeek·Agentic EM 논문 — Tesla 어닝 D-4 토요일 새벽</h1>
         <div class="post-meta">
             <span class="time-label">새벽 리포트</span>
             <span>2026년 04월 18일 (토) · 06:23</span>
@@ -103,7 +117,7 @@
     <details class="post-toc" open><summary>목차</summary><div class="toc">
 <div class="toc">
 <ul>
-<li><a href="#tesla-deepseek">밤사이 흐름이 조금 달라졌다 — Tesla 실적 앞둔 금요일 반등, DeepSeek 첫 외부 투자, 그리고 전자현미경에 올라탄 파운데이션 모델</a><ul>
+<li><a href="#tesla-8-deepseek-10b-emseekagentic-em-tesla-d-4">Tesla 8주 하락 끊고 금요일 반등, DeepSeek $10B 첫 외부 펀딩, EMSeek·Agentic EM 논문 — Tesla 어닝 D-4 토요일 새벽</a><ul>
 <li><a href="#tesla-8-22">Tesla, 8주 하락을 멈춘 금요일 — 22일 어닝이 진짜 분수령이다</a></li>
 <li><a href="#netflix-reed-hastings">Netflix 어닝 충격과 Reed Hastings 이사회 이탈 — 스트리밍의 끝자락 분위기</a></li>
 <li><a href="#deepseek-q1-2026-vc-ai">DeepSeek의 첫 외부 자금 조달 — Q1 2026 VC 시장은 이미 AI 단독 레이스</a></li>
@@ -118,7 +132,7 @@
 </div>
 </details>
     <div class="post-content">
-<h1 id="tesla-deepseek">밤사이 흐름이 조금 달라졌다 — Tesla 실적 앞둔 금요일 반등, DeepSeek 첫 외부 투자, 그리고 전자현미경에 올라탄 파운데이션 모델</h1>
+<h1 id="tesla-8-deepseek-10b-emseekagentic-em-tesla-d-4">Tesla 8주 하락 끊고 금요일 반등, DeepSeek $10B 첫 외부 펀딩, EMSeek·Agentic EM 논문 — Tesla 어닝 D-4 토요일 새벽</h1>
 <p>토요일 새벽에 일찍 눈이 떠져서 커피 한 잔 내려놓고 뉴스 피드를 훑어봤다. 어제(금요일) 미국장은 생각보다 차분하게 마감했고, 오히려 TSLA가 오랜 하락을 끊고 반등하는 그림이 나왔다. 반도체 업계에서 일하는 입장에서 한 주를 돌아보면 결국 TSMC Q1 어닝, Opus 4.7 출시, Stanford AI Index 2026 같은 굵직한 이벤트가 연달아 터진 한 주였고, 오늘 새벽 사이에 그 여진들이 조금씩 정리되는 분위기다. 커피가 식기 전에, 밤사이 넘어온 소식들을 정리해본다.</p>
 <hr />
 <h2 id="tesla-8-22">Tesla, 8주 하락을 멈춘 금요일 — 22일 어닝이 진짜 분수령이다</h2>
@@ -152,7 +166,7 @@
     
 <div class="post-share">
     <span class="share-label">공유하기</span>
-    <a href="https://twitter.com/intent/tweet?text=밤사이 흐름이 조금 달라졌다 — Tesla 실적 앞둔 금요일 반등, DeepSeek 첫 외부 투자, 그리고 전자현미경에 올라탄 파운데이션 모델&url=https://shonsubong.github.io/sonslab-blog/posts/2026-04-18-am06-ai-tech-news.html"
+    <a href="https://twitter.com/intent/tweet?text=Tesla 8주 하락 끊고 금요일 반등, DeepSeek $10B 첫 외부 펀딩, EMSeek·Agentic EM 논문 — Tesla 어닝 D-4 토요일 새벽&url=https://shonsubong.github.io/sonslab-blog/posts/2026-04-18-am06-ai-tech-news.html"
        class="share-btn" target="_blank" rel="noopener" aria-label="X(Twitter)에 공유">
         <span>X</span>
     </a>
@@ -176,13 +190,13 @@
     </a>
     <a href="2026-04-18-pm12-ai-tech-news.html" class="post-nav-link next">
         <span class="post-nav-label">다음 글 →</span>
-        <span class="post-nav-title">호르무즈 열리고 테슬라가 숨 돌린 주말 — Cursor 500억 달러, Opus 4.7 논쟁, 그리고 Nvidia Ising</span>
+        <span class="post-nav-title">Cursor $50B 펀드레이즈, Opus 4.7 MRCR 78→32 논쟁, Nvidia Ising 공개 — 호르무즈 재개된 토요일 점심</span>
     </a>
 </nav>
     
 <section class="related-posts" aria-label="최근 다른 리포트">
     <div class="related-posts-label">최근 다른 리포트</div>
-    <ul class="related-list"><li><a href="2026-04-19-pm17-ai-tech-news.html"><span class="related-title">일요일 늦은 오후 — 56%와 10%, 그 사이에 앉아서</span><span class="related-date">2026-04-19 · 오후 브리핑 · 17:08</span></a></li><li><a href="2026-04-19-pm12-ai-tech-news.html"><span class="related-title">일요일 점심 — Tesla Robotaxi가 댈러스·휴스턴까지, 그리고 TSMC가 말해주는 2026년</span><span class="related-date">2026-04-19 · 오전 브리핑 · 12:18</span></a></li><li><a href="2026-04-19-am06-ai-tech-news.html"><span class="related-title">일요일 아침, Snap 1,000명과 &#x27;AI가 못 이기는 영역&#x27; — 두 기사를 나란히 놓고 읽다</span><span class="related-date">2026-04-19 · 새벽 리포트 · 06:14</span></a></li><li><a href="2026-04-17-pm22-ai-tech-news.html"><span class="related-title">OpenAI-Cerebras $20B 계약, Mozilla Thunderbolt 공개 — 테슬라 어닝 D-5 밤</span><span class="related-date">2026-04-17 · 저녁 마감 · 22:37</span></a></li><li><a href="2026-04-17-pm17-ai-tech-news.html"><span class="related-title">삼성 8nm MRAM 양산 수율, Claude Code Routines 직접 돌려본 오후</span><span class="related-date">2026-04-17 · 오후 브리핑 · 17:33</span></a></li></ul>
+    <ul class="related-list"><li><a href="2026-04-19-pm17-ai-tech-news.html"><span class="related-title">Stanford AI Index 2026, 전문가 56% vs 대중 10% — 46포인트 갭 앞에 앉은 일요일 저녁</span><span class="related-date">2026-04-19 · 오후 브리핑 · 17:08</span></a></li><li><a href="2026-04-19-pm12-ai-tech-news.html"><span class="related-title">Tesla Robotaxi 댈러스·휴스턴 확장, FSD v14.3 MLIR 전환, TSMC Q1 CoWoS +80% — 일요일 점심 정리</span><span class="related-date">2026-04-19 · 오전 브리핑 · 12:18</span></a></li><li><a href="2026-04-19-am06-ai-tech-news.html"><span class="related-title">Snap 1,000명 감원·&#x27;AI 코드 65%&#x27; vs Nature &#x27;AI가 PhD 절반&#x27; — 같은 주 두 기사 나란히 읽기</span><span class="related-date">2026-04-19 · 새벽 리포트 · 06:14</span></a></li><li><a href="2026-04-17-pm22-ai-tech-news.html"><span class="related-title">OpenAI-Cerebras $20B 계약, Mozilla Thunderbolt 공개 — 테슬라 어닝 D-5 밤</span><span class="related-date">2026-04-17 · 저녁 마감 · 22:37</span></a></li><li><a href="2026-04-17-pm17-ai-tech-news.html"><span class="related-title">삼성 8nm MRAM 양산 수율, Claude Code Routines 직접 돌려본 오후</span><span class="related-date">2026-04-17 · 오후 브리핑 · 17:33</span></a></li></ul>
 </section>
 </article>
 
@@ -406,21 +420,48 @@
     var dpBtn = document.getElementById('design-picker-btn');
     var dpMenu = document.getElementById('design-picker-menu');
     var dpCurrent = document.getElementById('design-picker-current');
-    var dpLabels = { current: '기본', refined: '정제판', editorial: '에디토리얼', broadsheet: '브로드시트' };
-    function applyDesign(name) {
-        if (!dpLabels[name]) name = 'current';
-        if (name === 'current') document.documentElement.removeAttribute('data-design');
-        else document.documentElement.setAttribute('data-design', name);
-        try { localStorage.setItem('sonslab-design', name); } catch(e){}
-        if (dpCurrent) dpCurrent.textContent = dpLabels[name];
+    var dpLabels = { current: '기본', refined: '정제판', editorial: '에디토리얼', broadsheet: '브로드시트', random: '랜덤' };
+    var DP_ALLOWED = ['current', 'refined', 'editorial', 'broadsheet'];
+    function dpResolve(pref, avoid) {
+        if (pref === 'random') {
+            var pool = DP_ALLOWED;
+            if (avoid && DP_ALLOWED.indexOf(avoid) !== -1 && DP_ALLOWED.length > 1) {
+                pool = DP_ALLOWED.filter(function(x) { return x !== avoid; });
+            }
+            return pool[Math.floor(Math.random() * pool.length)];
+        }
+        if (DP_ALLOWED.indexOf(pref) === -1) return 'current';
+        return pref;
+    }
+    function dpSyncLabel(pref, resolved) {
+        if (dpCurrent) {
+            dpCurrent.textContent = (pref === 'random')
+                ? dpLabels.random + ' (' + dpLabels[resolved] + ')'
+                : dpLabels[pref];
+        }
         if (dpMenu) dpMenu.querySelectorAll('li').forEach(function(li){
-            li.classList.toggle('active', li.getAttribute('data-design') === name);
+            li.classList.toggle('active', li.getAttribute('data-design') === pref);
         });
     }
+    function applyDesign(pref) {
+        if (!dpLabels[pref]) pref = 'random';
+        // 랜덤 클릭 시 현재 디자인을 피해서 체감되는 변화를 보장.
+        var current = document.documentElement.getAttribute('data-design') || 'current';
+        var resolved = dpResolve(pref, current);
+        if (resolved === 'current') document.documentElement.removeAttribute('data-design');
+        else document.documentElement.setAttribute('data-design', resolved);
+        try { localStorage.setItem('sonslab-design', pref); } catch(e){}
+        dpSyncLabel(pref, resolved);
+    }
     if (dpBtn && dpMenu) {
-        // 초기 라벨·활성 표시 동기화
-        var initialDesign = document.documentElement.getAttribute('data-design') || 'current';
-        applyDesign(initialDesign);
+        // 초기 동기화는 head 스크립트가 이미 resolved를 적용했으니 재추출 없이 라벨만 맞춤.
+        var initPref = (typeof window.__sonslabDesignPref !== 'undefined')
+            ? window.__sonslabDesignPref
+            : (localStorage.getItem('sonslab-design') || 'random');
+        var initResolved = (typeof window.__sonslabDesignResolved !== 'undefined')
+            ? window.__sonslabDesignResolved
+            : (document.documentElement.getAttribute('data-design') || 'current');
+        dpSyncLabel(initPref, initResolved);
         dpBtn.addEventListener('click', function(e) {
             e.stopPropagation();
             var expanded = dpBtn.getAttribute('aria-expanded') === 'true';

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>일요일 늦은 오후 — 56%와 10%, 그 사이에 앉아서 — SONSLAB</title>
+    <title>Stanford AI Index 2026, 전문가 56% vs 대중 10% — 46포인트 갭 앞에 앉은 일요일 저녁 — SONSLAB</title>
     <link rel="icon" href="../assets/logo.jpg">
     <link rel="alternate" type="application/atom+xml" title="SONSLAB Feed" href="../feed.xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,13 +16,13 @@
     <link rel="canonical" href="https://shonsubong.github.io/sonslab-blog/posts/2026-04-19-pm17-ai-tech-news.html">
     <meta property="og:site_name" content="SONSLAB">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="일요일 늦은 오후 — 56%와 10%, 그 사이에 앉아서">
+    <meta property="og:title" content="Stanford AI Index 2026, 전문가 56% vs 대중 10% — 46포인트 갭 앞에 앉은 일요일 저녁">
     <meta property="og:description" content="오후에 잡고 있던 RAG 라우팅 미들웨어 건은 reranker 타임아웃 처리만 가까스로 붙여두고 일단 닫았다. 창 밖이 노랗게 물들기 시작했고, 월요일 오기 전까지 한 박자 쉬는 톤으로 넘어가려 한다. 거창한 뉴스 하나 붙잡기보다, 지난주 한 숫자가 계속 마음에 걸려서 그 얘기만 짧게 적어두기로 했다.">
     <meta property="og:url" content="https://shonsubong.github.io/sonslab-blog/posts/2026-04-19-pm17-ai-tech-news.html">
     <meta property="og:image" content="https://shonsubong.github.io/sonslab-blog/assets/og/2026-04-19-pm17-ai-tech-news.png">
     <meta property="og:locale" content="ko_KR">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="일요일 늦은 오후 — 56%와 10%, 그 사이에 앉아서">
+    <meta name="twitter:title" content="Stanford AI Index 2026, 전문가 56% vs 대중 10% — 46포인트 갭 앞에 앉은 일요일 저녁">
     <meta name="twitter:description" content="오후에 잡고 있던 RAG 라우팅 미들웨어 건은 reranker 타임아웃 처리만 가까스로 붙여두고 일단 닫았다. 창 밖이 노랗게 물들기 시작했고, 월요일 오기 전까지 한 박자 쉬는 톤으로 넘어가려 한다. 거창한 뉴스 하나 붙잡기보다, 지난주 한 숫자가 계속 마음에 걸려서 그 얘기만 짧게 적어두기로 했다.">
     <meta name="twitter:image" content="https://shonsubong.github.io/sonslab-blog/assets/og/2026-04-19-pm17-ai-tech-news.png">
     <meta property="article:published_time" content="2026-04-19T17:08:00+09:00">
@@ -36,15 +36,28 @@
         var theme = saved || (prefersDark ? 'dark' : 'light');
         if (theme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
 
-        var design = localStorage.getItem('sonslab-design') || 'current';
+        // 디자인 pref: 'random' | 'current' | 'refined' | 'editorial' | 'broadsheet'
+        // 저장값이 없거나 'random'이면 매 페이지 로드마다 4개 중 하나를 무작위로 추출.
+        var pref = localStorage.getItem('sonslab-design') || 'random';
         var allowed = ['current', 'refined', 'editorial', 'broadsheet'];
-        if (allowed.indexOf(design) === -1) design = 'current';
-        if (design !== 'current') document.documentElement.setAttribute('data-design', design);
+        var resolved;
+        if (pref === 'random') {
+            resolved = allowed[Math.floor(Math.random() * allowed.length)];
+        } else if (allowed.indexOf(pref) === -1) {
+            pref = 'current';
+            resolved = 'current';
+        } else {
+            resolved = pref;
+        }
+        if (resolved !== 'current') document.documentElement.setAttribute('data-design', resolved);
+        // body script가 재추출 없이 라벨만 맞추도록 결과를 공유.
+        window.__sonslabDesignPref = pref;
+        window.__sonslabDesignResolved = resolved;
     } catch (e) {}
 })();
 </script>
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "일요일 늦은 오후 — 56%와 10%, 그 사이에 앉아서", "description": "오후에 잡고 있던 RAG 라우팅 미들웨어 건은 reranker 타임아웃 처리만 가까스로 붙여두고 일단 닫았다. 창 밖이 노랗게 물들기 시작했고, 월요일 오기 전까지 한 박자 쉬는 톤으로 넘어가려 한다. 거창한 뉴스 하나 붙잡기보다, 지난주 한 숫자가 계속 마음에 걸려서 그 얘기만 짧게 적어두기로 했다.", "url": "https://shonsubong.github.io/sonslab-blog/posts/2026-04-19-pm17-ai-tech-news.html", "mainEntityOfPage": "https://shonsubong.github.io/sonslab-blog/posts/2026-04-19-pm17-ai-tech-news.html", "inLanguage": "ko", "image": "https://shonsubong.github.io/sonslab-blog/assets/og/2026-04-19-pm17-ai-tech-news.png", "author": {"@type": "Person", "name": "SONSLAB"}, "publisher": {"@type": "Organization", "name": "SONSLAB", "logo": {"@type": "ImageObject", "url": "https://shonsubong.github.io/sonslab-blog/assets/logo.jpg"}}, "datePublished": "2026-04-19T17:08:00+09:00", "dateModified": "2026-04-19T17:08:00+09:00"}</script>
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "SONSLAB", "item": "https://shonsubong.github.io/sonslab-blog/"}, {"@type": "ListItem", "position": 2, "name": "글", "item": "https://shonsubong.github.io/sonslab-blog/#posts"}, {"@type": "ListItem", "position": 3, "name": "일요일 늦은 오후 — 56%와 10%, 그 사이에 앉아서", "item": "https://shonsubong.github.io/sonslab-blog/posts/2026-04-19-pm17-ai-tech-news.html"}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Stanford AI Index 2026, 전문가 56% vs 대중 10% — 46포인트 갭 앞에 앉은 일요일 저녁", "description": "오후에 잡고 있던 RAG 라우팅 미들웨어 건은 reranker 타임아웃 처리만 가까스로 붙여두고 일단 닫았다. 창 밖이 노랗게 물들기 시작했고, 월요일 오기 전까지 한 박자 쉬는 톤으로 넘어가려 한다. 거창한 뉴스 하나 붙잡기보다, 지난주 한 숫자가 계속 마음에 걸려서 그 얘기만 짧게 적어두기로 했다.", "url": "https://shonsubong.github.io/sonslab-blog/posts/2026-04-19-pm17-ai-tech-news.html", "mainEntityOfPage": "https://shonsubong.github.io/sonslab-blog/posts/2026-04-19-pm17-ai-tech-news.html", "inLanguage": "ko", "image": "https://shonsubong.github.io/sonslab-blog/assets/og/2026-04-19-pm17-ai-tech-news.png", "author": {"@type": "Person", "name": "SONSLAB"}, "publisher": {"@type": "Organization", "name": "SONSLAB", "logo": {"@type": "ImageObject", "url": "https://shonsubong.github.io/sonslab-blog/assets/logo.jpg"}}, "datePublished": "2026-04-19T17:08:00+09:00", "dateModified": "2026-04-19T17:08:00+09:00"}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "SONSLAB", "item": "https://shonsubong.github.io/sonslab-blog/"}, {"@type": "ListItem", "position": 2, "name": "글", "item": "https://shonsubong.github.io/sonslab-blog/#posts"}, {"@type": "ListItem", "position": 3, "name": "Stanford AI Index 2026, 전문가 56% vs 대중 10% — 46포인트 갭 앞에 앉은 일요일 저녁", "item": "https://shonsubong.github.io/sonslab-blog/posts/2026-04-19-pm17-ai-tech-news.html"}]}</script>
 </head>
 <body class="post-page">
     <div class="reading-progress" id="reading-progress" role="progressbar" aria-label="읽기 진행률"></div>
@@ -68,6 +81,7 @@
                     <span class="design-picker-caret" aria-hidden="true">▾</span>
                 </button>
                 <ul class="design-picker-menu" id="design-picker-menu" role="listbox" aria-label="디자인 옵션">
+                    <li role="option" data-design="random"><strong>랜덤</strong><span>접속할 때마다 무작위 디자인</span></li>
                     <li role="option" data-design="current"><strong>기본</strong><span>네이비+크림, 라운드 카드</span></li>
                     <li role="option" data-design="refined"><strong>정제판 (A)</strong><span>신문·저널 톤, 헤어라인 구분선</span></li>
                     <li role="option" data-design="editorial"><strong>에디토리얼 (B)</strong><span>이중선 마스트헤드, 세리프 강조</span></li>
@@ -87,7 +101,7 @@
 <article class="post-article">
     <div class="post-header">
         <a href="../index.html" class="back-link">← 전체 글 목록</a>
-        <h1>일요일 늦은 오후 — 56%와 10%, 그 사이에 앉아서</h1>
+        <h1>Stanford AI Index 2026, 전문가 56% vs 대중 10% — 46포인트 갭 앞에 앉은 일요일 저녁</h1>
         <div class="post-meta">
             <span class="time-label">오후 브리핑</span>
             <span>2026년 04월 19일 (일) · 17:08</span>
@@ -103,14 +117,14 @@
     <details class="post-toc" open><summary>목차</summary><div class="toc">
 <div class="toc">
 <ul>
-<li><a href="#56-10">일요일 늦은 오후 — 56%와 10%, 그 사이에 앉아서</a></li>
+<li><a href="#stanford-ai-index-2026-56-vs-10-46">Stanford AI Index 2026, 전문가 56% vs 대중 10% — 46포인트 갭 앞에 앉은 일요일 저녁</a></li>
 </ul>
 </div>
 
 </div>
 </details>
     <div class="post-content">
-<h1 id="56-10">일요일 늦은 오후 — 56%와 10%, 그 사이에 앉아서</h1>
+<h1 id="stanford-ai-index-2026-56-vs-10-46">Stanford AI Index 2026, 전문가 56% vs 대중 10% — 46포인트 갭 앞에 앉은 일요일 저녁</h1>
 <p>오후에 잡고 있던 RAG 라우팅 미들웨어 건은 reranker 타임아웃 처리만 가까스로 붙여두고 일단 닫았다. 창 밖이 노랗게 물들기 시작했고, 월요일 오기 전까지 한 박자 쉬는 톤으로 넘어가려 한다. 거창한 뉴스 하나 붙잡기보다, 지난주 한 숫자가 계속 마음에 걸려서 그 얘기만 짧게 적어두기로 했다.</p>
 <p>Stanford가 4월 중순에 <a href="https://aiindex.stanford.edu/report/">2026 AI Index</a>를 냈다. 올해 문서에서 가장 강력한 한 장은 전체 트렌드 차트가 아니라 여론 파트다. <strong>"AI가 미국에 긍정적 영향을 줄 것"이라 답한 비율이 AI 전문가 집단에서는 56%, 일반 대중에서는 10%다.</strong> 일곱 번째 에디션까지 오는 동안 이 갭이 좁혀진 해는 한 번도 없었다. 올해가 특히 벌어진 해라는 뉘앙스로 여러 매체가 받아썼다.</p>
 <p>이 숫자를 퇴근길에 봤을 때의 기분이 지금도 그대로 남아 있다. 나는 저 두 집단 중 앞쪽에 가까운 사람이다. 반도체에서 검사 이미지를 다루면서 딥러닝으로 과거에 할 수 없던 결함 분류를 매일 현실로 바꿔놓고, 퇴근해서는 Claude Code로 개인 프로젝트를 돌린다. 나한테 AI는 "생산성 올려주는 도구, 가끔은 공동 사고자"에 가깝다. 그런데 내 일상에 AI를 매일 얹지 않는 주변 사람들에게는 같은 단어가 다르게 들린다. "내 일을 대체할 기계", "출처 모를 콘텐츠의 홍수", "학생 때 쌓은 훈련의 가치를 통째로 절하시키는 힘." 어느 쪽도 틀린 감각이 아니다.</p>
@@ -122,7 +136,7 @@
     
 <div class="post-share">
     <span class="share-label">공유하기</span>
-    <a href="https://twitter.com/intent/tweet?text=일요일 늦은 오후 — 56%와 10%, 그 사이에 앉아서&url=https://shonsubong.github.io/sonslab-blog/posts/2026-04-19-pm17-ai-tech-news.html"
+    <a href="https://twitter.com/intent/tweet?text=Stanford AI Index 2026, 전문가 56% vs 대중 10% — 46포인트 갭 앞에 앉은 일요일 저녁&url=https://shonsubong.github.io/sonslab-blog/posts/2026-04-19-pm17-ai-tech-news.html"
        class="share-btn" target="_blank" rel="noopener" aria-label="X(Twitter)에 공유">
         <span>X</span>
     </a>
@@ -142,14 +156,14 @@
 <nav class="post-nav-bottom" aria-label="이전/다음 글">
     <a href="2026-04-19-pm12-ai-tech-news.html" class="post-nav-link prev">
         <span class="post-nav-label">← 이전 글</span>
-        <span class="post-nav-title">일요일 점심 — Tesla Robotaxi가 댈러스·휴스턴까지, 그리고 TSMC가 말해주는 2026년</span>
+        <span class="post-nav-title">Tesla Robotaxi 댈러스·휴스턴 확장, FSD v14.3 MLIR 전환, TSMC Q1 CoWoS +80% — 일요일 점심 정리</span>
     </a>
     
 </nav>
     
 <section class="related-posts" aria-label="최근 다른 리포트">
     <div class="related-posts-label">최근 다른 리포트</div>
-    <ul class="related-list"><li><a href="2026-04-18-pm22-ai-tech-news.html"><span class="related-title">밤에 Ising 리포 훑어보다가 — Samsung HBM4 로직 다이가 조용히 40% 올랐다</span><span class="related-date">2026-04-18 · 저녁 마감 · 22:17</span></a></li><li><a href="2026-04-18-pm17-ai-tech-news.html"><span class="related-title">토요일 오후 산책 다녀와서 — Opus 4.7 MRCR 낙폭, 개인 프로젝트로 직접 재봤다</span><span class="related-date">2026-04-18 · 오후 브리핑 · 17:14</span></a></li><li><a href="2026-04-18-pm12-ai-tech-news.html"><span class="related-title">호르무즈 열리고 테슬라가 숨 돌린 주말 — Cursor 500억 달러, Opus 4.7 논쟁, 그리고 Nvidia Ising</span><span class="related-date">2026-04-18 · 오전 브리핑 · 12:34</span></a></li><li><a href="2026-04-18-am06-ai-tech-news.html"><span class="related-title">밤사이 흐름이 조금 달라졌다 — Tesla 실적 앞둔 금요일 반등, DeepSeek 첫 외부 투자, 그리고 전자현미경에 올라탄 파운데이션 모델</span><span class="related-date">2026-04-18 · 새벽 리포트 · 06:23</span></a></li><li><a href="2026-04-17-pm22-ai-tech-news.html"><span class="related-title">OpenAI-Cerebras $20B 계약, Mozilla Thunderbolt 공개 — 테슬라 어닝 D-5 밤</span><span class="related-date">2026-04-17 · 저녁 마감 · 22:37</span></a></li></ul>
+    <ul class="related-list"><li><a href="2026-04-18-pm22-ai-tech-news.html"><span class="related-title">Samsung HBM4 로직 다이 40~50% 인상, Nvidia Ising 3D CNN 디코더 첫 리딩 — 토요일 밤 정리</span><span class="related-date">2026-04-18 · 저녁 마감 · 22:17</span></a></li><li><a href="2026-04-18-pm17-ai-tech-news.html"><span class="related-title">Opus 4.7 MRCR 78→32 낙폭, 개인 RAG 리포로 4.6 vs 4.7 직접 재현 — 토요일 오후 실험 메모</span><span class="related-date">2026-04-18 · 오후 브리핑 · 17:14</span></a></li><li><a href="2026-04-18-pm12-ai-tech-news.html"><span class="related-title">Cursor $50B 펀드레이즈, Opus 4.7 MRCR 78→32 논쟁, Nvidia Ising 공개 — 호르무즈 재개된 토요일 점심</span><span class="related-date">2026-04-18 · 오전 브리핑 · 12:34</span></a></li><li><a href="2026-04-18-am06-ai-tech-news.html"><span class="related-title">Tesla 8주 하락 끊고 금요일 반등, DeepSeek $10B 첫 외부 펀딩, EMSeek·Agentic EM 논문 — Tesla 어닝 D-4 토요일 새벽</span><span class="related-date">2026-04-18 · 새벽 리포트 · 06:23</span></a></li><li><a href="2026-04-17-pm22-ai-tech-news.html"><span class="related-title">OpenAI-Cerebras $20B 계약, Mozilla Thunderbolt 공개 — 테슬라 어닝 D-5 밤</span><span class="related-date">2026-04-17 · 저녁 마감 · 22:37</span></a></li></ul>
 </section>
 </article>
 
@@ -373,21 +387,48 @@
     var dpBtn = document.getElementById('design-picker-btn');
     var dpMenu = document.getElementById('design-picker-menu');
     var dpCurrent = document.getElementById('design-picker-current');
-    var dpLabels = { current: '기본', refined: '정제판', editorial: '에디토리얼', broadsheet: '브로드시트' };
-    function applyDesign(name) {
-        if (!dpLabels[name]) name = 'current';
-        if (name === 'current') document.documentElement.removeAttribute('data-design');
-        else document.documentElement.setAttribute('data-design', name);
-        try { localStorage.setItem('sonslab-design', name); } catch(e){}
-        if (dpCurrent) dpCurrent.textContent = dpLabels[name];
+    var dpLabels = { current: '기본', refined: '정제판', editorial: '에디토리얼', broadsheet: '브로드시트', random: '랜덤' };
+    var DP_ALLOWED = ['current', 'refined', 'editorial', 'broadsheet'];
+    function dpResolve(pref, avoid) {
+        if (pref === 'random') {
+            var pool = DP_ALLOWED;
+            if (avoid && DP_ALLOWED.indexOf(avoid) !== -1 && DP_ALLOWED.length > 1) {
+                pool = DP_ALLOWED.filter(function(x) { return x !== avoid; });
+            }
+            return pool[Math.floor(Math.random() * pool.length)];
+        }
+        if (DP_ALLOWED.indexOf(pref) === -1) return 'current';
+        return pref;
+    }
+    function dpSyncLabel(pref, resolved) {
+        if (dpCurrent) {
+            dpCurrent.textContent = (pref === 'random')
+                ? dpLabels.random + ' (' + dpLabels[resolved] + ')'
+                : dpLabels[pref];
+        }
         if (dpMenu) dpMenu.querySelectorAll('li').forEach(function(li){
-            li.classList.toggle('active', li.getAttribute('data-design') === name);
+            li.classList.toggle('active', li.getAttribute('data-design') === pref);
         });
     }
+    function applyDesign(pref) {
+        if (!dpLabels[pref]) pref = 'random';
+        // 랜덤 클릭 시 현재 디자인을 피해서 체감되는 변화를 보장.
+        var current = document.documentElement.getAttribute('data-design') || 'current';
+        var resolved = dpResolve(pref, current);
+        if (resolved === 'current') document.documentElement.removeAttribute('data-design');
+        else document.documentElement.setAttribute('data-design', resolved);
+        try { localStorage.setItem('sonslab-design', pref); } catch(e){}
+        dpSyncLabel(pref, resolved);
+    }
     if (dpBtn && dpMenu) {
-        // 초기 라벨·활성 표시 동기화
-        var initialDesign = document.documentElement.getAttribute('data-design') || 'current';
-        applyDesign(initialDesign);
+        // 초기 동기화는 head 스크립트가 이미 resolved를 적용했으니 재추출 없이 라벨만 맞춤.
+        var initPref = (typeof window.__sonslabDesignPref !== 'undefined')
+            ? window.__sonslabDesignPref
+            : (localStorage.getItem('sonslab-design') || 'random');
+        var initResolved = (typeof window.__sonslabDesignResolved !== 'undefined')
+            ? window.__sonslabDesignResolved
+            : (document.documentElement.getAttribute('data-design') || 'current');
+        dpSyncLabel(initPref, initResolved);
         dpBtn.addEventListener('click', function(e) {
             e.stopPropagation();
             var expanded = dpBtn.getAttribute('aria-expanded') === 'true';

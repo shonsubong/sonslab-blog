@@ -34,12 +34,12 @@ body {
 .brand { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; color: var(--text); }
 .brand img { width: 32px; height: 32px; border-radius: 6px; }
 .brand .name { font-family: var(--serif); font-weight: 700; font-size: 1.05rem; letter-spacing: 0.5px; }
-.top-nav nav { display: flex; gap: 1.4rem; }
-.top-nav nav a { color: var(--text-soft); text-decoration: none; font-size: 0.9rem; transition: color .15s; }
+.top-nav nav { display: flex; gap: 1.4rem; align-items: center; flex-wrap: wrap; row-gap: 0.4rem; }
+.top-nav nav a { color: var(--text-soft); text-decoration: none; font-size: 0.9rem; transition: color .15s; display: inline-flex; align-items: center; line-height: 1; }
 .top-nav nav a:hover { color: var(--accent); }
 .top-nav nav a.nav-cta { background: var(--accent); color: #fff; padding: 0.4rem 0.9rem; border-radius: 6px; font-weight: 500; transition: background .15s; }
 .top-nav nav a.nav-cta:hover { background: var(--accent-hover); color: #fff; }
-.top-nav .nav-visits { display: inline-flex; align-items: center; text-decoration: none; }
+.top-nav .nav-visits { display: inline-flex; align-items: center; text-decoration: none; min-height: 18px; }
 .top-nav .nav-visits img { height: 18px; display: block; border-radius: 3px; }
 
 /* 히어로 */
@@ -285,7 +285,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, [tabindex]:focus-vis
     .top-nav nav { gap: 0.5rem; }
     .top-nav nav a { font-size: 0.82rem; }
     .top-nav nav a.nav-cta { padding: 0.35rem 0.6rem; font-size: 0.78rem; }
+    /* 좁은 폭에서는 헤더 한 줄 유지를 위해 보조 링크 숨김 — 로고(홈) + 하단 footer로 접근 가능 */
     .top-nav .nav-visits { display: none; }
+    .top-nav nav > a:not(.nav-cta) { display: none; }
     .hero { padding: 2rem 1rem 1.8rem; }
     .hero-cta { flex-direction: column; align-items: stretch; }
     .hero-cta .btn { justify-content: center; }
@@ -628,6 +630,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, [tabindex]:focus-vis
    ═══════════════════════════════════════════════════════════════ */
 .hero-today-box,
 .hero-lede,
+.hero-lede-col,
 .hero-sidebar,
 .hero-front-c,
 .nameplate,
@@ -673,7 +676,11 @@ a:focus-visible, button:focus-visible, input:focus-visible, [tabindex]:focus-vis
 /* hero: 기본 블록은 숨기고 lede + sidebar 2-col */
 [data-design="editorial"] .hero { display: grid; grid-template-columns: 1fr 340px; gap: 3rem; align-items: start; max-width: 1240px; }
 [data-design="editorial"] .hero-default { display: none; }
-[data-design="editorial"] .hero-lede { display: block; padding-right: 1.5rem; border-right: 1px solid var(--border); }
+[data-design="editorial"] .hero-lede-col { display: flex; flex-direction: column; padding-right: 1.5rem; border-right: 1px solid var(--border); }
+[data-design="editorial"] .hero-lede-col .hero-lede + .hero-lede { margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border); }
+[data-design="editorial"] .hero-lede { display: block; }
+[data-design="editorial"] .hero-lede.is-sub .lede-title { font-size: clamp(1.3rem, 1.6vw + 0.7rem, 2.1rem); letter-spacing: -0.6px; }
+[data-design="editorial"] .hero-lede.is-sub .lede-dek { font-size: 1.1rem; margin-bottom: 0.9rem; }
 [data-design="editorial"] .hero-lede .lede-kind { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 2px; color: var(--text); font-weight: 700; text-transform: uppercase; margin-bottom: 1.1rem; }
 [data-design="editorial"] .hero-lede .lede-title { font-family: var(--serif); font-size: clamp(1.8rem, 3vw + 1rem, 3.2rem); font-weight: 700; line-height: 1.1; letter-spacing: -1px; margin-bottom: 0.6rem; }
 [data-design="editorial"] .hero-lede .lede-title a { color: var(--text); text-decoration: none; }
@@ -784,6 +791,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, [tabindex]:focus-vis
 @media (max-width: 1024px) {
     [data-design="refined"] .hero,
     [data-design="editorial"] .hero { grid-template-columns: 1fr; gap: 2rem; }
+    [data-design="editorial"] .hero-lede-col { padding-right: 0; border-right: none; }
     [data-design="editorial"] .date-group { flex-direction: column; gap: 0.8rem; }
     [data-design="editorial"] .date-group-title { position: static; flex: 0 0 auto; }
     [data-design="broadsheet"] .hero-front-c .three-col { grid-template-columns: 1fr; gap: 2rem; }

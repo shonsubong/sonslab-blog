@@ -34,10 +34,23 @@
         var theme = saved || (prefersDark ? 'dark' : 'light');
         if (theme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
 
-        var design = localStorage.getItem('sonslab-design') || 'current';
+        // 디자인 pref: 'random' | 'current' | 'refined' | 'editorial' | 'broadsheet'
+        // 저장값이 없거나 'random'이면 매 페이지 로드마다 4개 중 하나를 무작위로 추출.
+        var pref = localStorage.getItem('sonslab-design') || 'random';
         var allowed = ['current', 'refined', 'editorial', 'broadsheet'];
-        if (allowed.indexOf(design) === -1) design = 'current';
-        if (design !== 'current') document.documentElement.setAttribute('data-design', design);
+        var resolved;
+        if (pref === 'random') {
+            resolved = allowed[Math.floor(Math.random() * allowed.length)];
+        } else if (allowed.indexOf(pref) === -1) {
+            pref = 'current';
+            resolved = 'current';
+        } else {
+            resolved = pref;
+        }
+        if (resolved !== 'current') document.documentElement.setAttribute('data-design', resolved);
+        // body script가 재추출 없이 라벨만 맞추도록 결과를 공유.
+        window.__sonslabDesignPref = pref;
+        window.__sonslabDesignResolved = resolved;
     } catch (e) {}
 })();
 </script>
@@ -82,6 +95,7 @@
                     <span class="design-picker-caret" aria-hidden="true">▾</span>
                 </button>
                 <ul class="design-picker-menu" id="design-picker-menu" role="listbox" aria-label="디자인 옵션">
+                    <li role="option" data-design="random"><strong>랜덤</strong><span>접속할 때마다 무작위 디자인</span></li>
                     <li role="option" data-design="current"><strong>기본</strong><span>네이비+크림, 라운드 카드</span></li>
                     <li role="option" data-design="refined"><strong>정제판 (A)</strong><span>신문·저널 톤, 헤어라인 구분선</span></li>
                     <li role="option" data-design="editorial"><strong>에디토리얼 (B)</strong><span>이중선 마스트헤드, 세리프 강조</span></li>
@@ -142,19 +156,19 @@
                 <tr class="live">
                     <td class="td-time">06:14</td>
                     <td class="td-kind">새벽 리포트</td>
-                    <td class="td-title"><a href="posts/2026-04-19-am06-ai-tech-news.html">일요일 아침, Snap 1,000명과 &#x27;AI가 못 이기는 영역&#x27; — 두 기사를 나란히 놓고 읽다</a><span class="new-mark">NEW</span></td>
-                    <td class="td-read">4분</td>
+                    <td class="td-title"><a href="posts/2026-04-19-am06-ai-tech-news.html">Snap 1,000명 감원·&#x27;AI 코드 65%&#x27; vs Nature &#x27;AI가 PhD 절반&#x27; — 같은 주 두 기사 나란히 읽기</a><span class="new-mark">NEW</span></td>
+                    <td class="td-read">5분</td>
                 </tr>
                 <tr class="live">
                     <td class="td-time">12:18</td>
                     <td class="td-kind">오전 브리핑</td>
-                    <td class="td-title"><a href="posts/2026-04-19-pm12-ai-tech-news.html">일요일 점심 — Tesla Robotaxi가 댈러스·휴스턴까지, 그리고 TSMC가 말해주는 2026년</a></td>
+                    <td class="td-title"><a href="posts/2026-04-19-pm12-ai-tech-news.html">Tesla Robotaxi 댈러스·휴스턴 확장, FSD v14.3 MLIR 전환, TSMC Q1 CoWoS +80% — 일요일 점심 정리</a></td>
                     <td class="td-read">4분</td>
                 </tr>
                 <tr class="live">
                     <td class="td-time">17:08</td>
                     <td class="td-kind">오후 브리핑</td>
-                    <td class="td-title"><a href="posts/2026-04-19-pm17-ai-tech-news.html">일요일 늦은 오후 — 56%와 10%, 그 사이에 앉아서</a></td>
+                    <td class="td-title"><a href="posts/2026-04-19-pm17-ai-tech-news.html">Stanford AI Index 2026, 전문가 56% vs 대중 10% — 46포인트 갭 앞에 앉은 일요일 저녁</a></td>
                     <td class="td-read">3분</td>
                 </tr>
                 <tr class="up">
@@ -167,10 +181,12 @@
         </table>
     </aside>
     
+        <div class="hero-lede-col" data-only="editorial">
+            
         <article class="hero-lede" data-only="editorial">
             <div class="lede-kind">오후 브리핑 — Morning Brief</div>
-            <h1 class="lede-title"><a href="posts/2026-04-19-pm17-ai-tech-news.html">일요일 늦은 오후</a></h1>
-            <div class="lede-dek">56%와 10%, 그 사이에 앉아서</div>
+            <h1 class="lede-title"><a href="posts/2026-04-19-pm17-ai-tech-news.html">Stanford AI Index 2026, 전문가 56% vs 대중 10%</a></h1>
+            <div class="lede-dek">46포인트 갭 앞에 앉은 일요일 저녁</div>
             <p class="lede-body">오후에 잡고 있던 RAG 라우팅 미들웨어 건은 reranker 타임아웃 처리만 가까스로 붙여두고 일단 닫았다. 창 밖이 노랗게 물들기 시작했고, 월요일 오기 전까지 한 박자 쉬는 톤으로 넘어가려 한다. 거창한 뉴스 하나 붙잡기보다, 지난주 한 숫자가 계속 마음에 걸려서 그 얘기만 짧게 적어두기로 했다.</p>
             <div class="lede-byline">
                 <span class="lede-reporter">By SONSLAB</span>
@@ -180,6 +196,21 @@
             </div>
             <a href="posts/2026-04-19-pm17-ai-tech-news.html" class="lede-more">Continue reading →</a>
         </article>
+            
+        <article class="hero-lede is-sub" data-only="editorial">
+            <div class="lede-kind">오전 브리핑</div>
+            <h1 class="lede-title"><a href="posts/2026-04-19-pm12-ai-tech-news.html">Tesla Robotaxi 댈러스·휴스턴 확장, FSD v14.3 MLIR 전환, TSMC Q1 CoWoS +80%</a></h1>
+            <div class="lede-dek">일요일 점심 정리</div>
+            
+            <div class="lede-byline">
+                <span class="lede-reporter">By SONSLAB</span>
+                <span class="lede-sep">—</span>
+                <span>4분 읽기</span>
+                <span class="lede-sep">—</span><span class="lede-topics">반도체, 빅테크/시장, AI 모델</span>
+            </div>
+            <a href="posts/2026-04-19-pm12-ai-tech-news.html" class="lede-more">Continue reading →</a>
+        </article>
+        </div>
     
     <aside class="hero-sidebar" data-only="editorial">
         <div class="side-block">
@@ -189,21 +220,21 @@
                 <div class="side-hour">06</div>
                 <div class="side-body">
                     <div class="side-kind">새벽<span class="live-mark">LIVE</span></div>
-                    <div class="side-title"><a href="posts/2026-04-19-am06-ai-tech-news.html">일요일 아침, Snap 1,000명과 &#x27;AI가 못 이기는 영역&#x27; — 두 기사를 나란히 놓고 읽다</a></div>
+                    <div class="side-title"><a href="posts/2026-04-19-am06-ai-tech-news.html">Snap 1,000명 감원·&#x27;AI 코드 65%&#x27; vs Nature &#x27;AI가 PhD 절반&#x27; — 같은 주 두 기사 나란히 읽기</a></div>
                 </div>
             </div>
             <div class="side-today-row">
                 <div class="side-hour">12</div>
                 <div class="side-body">
                     <div class="side-kind">오전</div>
-                    <div class="side-title"><a href="posts/2026-04-19-pm12-ai-tech-news.html">일요일 점심 — Tesla Robotaxi가 댈러스·휴스턴까지, 그리고 TSMC가 말해주는 2026년</a></div>
+                    <div class="side-title"><a href="posts/2026-04-19-pm12-ai-tech-news.html">Tesla Robotaxi 댈러스·휴스턴 확장, FSD v14.3 MLIR 전환, TSMC Q1 CoWoS +80% — 일요일 점심 정리</a></div>
                 </div>
             </div>
             <div class="side-today-row">
                 <div class="side-hour">17</div>
                 <div class="side-body">
                     <div class="side-kind">오후</div>
-                    <div class="side-title"><a href="posts/2026-04-19-pm17-ai-tech-news.html">일요일 늦은 오후 — 56%와 10%, 그 사이에 앉아서</a></div>
+                    <div class="side-title"><a href="posts/2026-04-19-pm17-ai-tech-news.html">Stanford AI Index 2026, 전문가 56% vs 대중 10% — 46포인트 갭 앞에 앉은 일요일 저녁</a></div>
                 </div>
             </div>
             <div class="side-today-row dim">
@@ -218,11 +249,11 @@
         <div class="side-block">
             <div class="side-head">이번 주 많이 읽힌 글</div>
             <ol class="ranked">
-                <li><span class="rank-num">01</span><span><a href="posts/2026-04-18-pm12-ai-tech-news.html">호르무즈 열리고 테슬라가 숨 돌린 주말 — Cursor 500억 달러, Opus 4.7 논쟁, 그리고 Nvidia Ising</a></span></li>
+                <li><span class="rank-num">01</span><span><a href="posts/2026-04-18-pm12-ai-tech-news.html">Cursor $50B 펀드레이즈, Opus 4.7 MRCR 78→32 논쟁, Nvidia Ising 공개 — 호르무즈 재개된 토요일 점심</a></span></li>
                 <li><span class="rank-num">02</span><span><a href="posts/2026-04-17-am06-ai-tech-news.html">Opus 4.7 새벽 릴리스, Netflix 애프터마켓 10% 붕괴 — 반도체 현직자의 밤사이 정리</a></span></li>
                 <li><span class="rank-num">03</span><span><a href="posts/2026-04-16-am06-ai-tech-news.html">테슬라 8% 폭등, ASML은 실적 찢고도 하락 — 반도체 현직자의 밤사이 뉴스</a></span></li>
                 <li><span class="rank-num">04</span><span><a href="posts/2026-04-17-pm22-ai-tech-news.html">OpenAI-Cerebras $20B 계약, Mozilla Thunderbolt 공개 — 테슬라 어닝 D-5 밤</a></span></li>
-                <li><span class="rank-num">05</span><span><a href="posts/2026-04-18-am06-ai-tech-news.html">밤사이 흐름이 조금 달라졌다 — Tesla 실적 앞둔 금요일 반등, DeepSeek 첫 외부 투자, 그리고 전자현미경에 올라탄 파운데이션 모델</a></span></li>
+                <li><span class="rank-num">05</span><span><a href="posts/2026-04-18-am06-ai-tech-news.html">Tesla 8주 하락 끊고 금요일 반등, DeepSeek $10B 첫 외부 펀딩, EMSeek·Agentic EM 논문 — Tesla 어닝 D-4 토요일 새벽</a></span></li>
             </ol>
         </div>
         <div class="side-sub-box">
@@ -246,8 +277,8 @@
             
             <article class="c-lead">
                 <div class="c-lead-kind">LEAD · 오후 브리핑</div>
-                <h1 class="c-lead-title"><a href="posts/2026-04-19-pm17-ai-tech-news.html">일요일 늦은 오후</a></h1>
-                <div class="c-lead-dek">56%와 10%, 그 사이에 앉아서</div>
+                <h1 class="c-lead-title"><a href="posts/2026-04-19-pm17-ai-tech-news.html">Stanford AI Index 2026, 전문가 56% vs 대중 10%</a></h1>
+                <div class="c-lead-dek">46포인트 갭 앞에 앉은 일요일 저녁</div>
                 <p class="c-lead-body"><span class="dropcap">오</span>후에 잡고 있던 RAG 라우팅 미들웨어 건은 reranker 타임아웃 처리만 가까스로 붙여두고 일단 닫았다. 창 밖이 노랗게 물들기 시작했고, 월요일 오기 전까지 한 박자 쉬는 톤으로 넘어가려 한다. 거창한 뉴스 하나 붙잡기보다, 지난주 한 숫자가 계속 마음에 걸려서 그 얘기만 짧게 적어두기로 했다.</p>
                 <div class="c-lead-meta">
                     <span>BY SONSLAB</span>
@@ -265,8 +296,8 @@
                     <div class="sched-kind">새벽 리포트</div>
                 </div>
                 <div class="sched-body">
-                    <div class="sched-title"><a href="posts/2026-04-19-am06-ai-tech-news.html">일요일 아침, Snap 1,000명과 &#x27;AI가 못 이기는 영역&#x27; — 두 기사를 나란히 놓고 읽다</a></div>
-                    <div class="sched-status">● 발행됨 · 4분</div>
+                    <div class="sched-title"><a href="posts/2026-04-19-am06-ai-tech-news.html">Snap 1,000명 감원·&#x27;AI 코드 65%&#x27; vs Nature &#x27;AI가 PhD 절반&#x27; — 같은 주 두 기사 나란히 읽기</a></div>
+                    <div class="sched-status">● 발행됨 · 5분</div>
                 </div>
             </div>
             <div class="sched-row">
@@ -275,7 +306,7 @@
                     <div class="sched-kind">오전 브리핑</div>
                 </div>
                 <div class="sched-body">
-                    <div class="sched-title"><a href="posts/2026-04-19-pm12-ai-tech-news.html">일요일 점심 — Tesla Robotaxi가 댈러스·휴스턴까지, 그리고 TSMC가 말해주는 2026년</a></div>
+                    <div class="sched-title"><a href="posts/2026-04-19-pm12-ai-tech-news.html">Tesla Robotaxi 댈러스·휴스턴 확장, FSD v14.3 MLIR 전환, TSMC Q1 CoWoS +80% — 일요일 점심 정리</a></div>
                     <div class="sched-status">● 발행됨 · 4분</div>
                 </div>
             </div>
@@ -285,7 +316,7 @@
                     <div class="sched-kind">오후 브리핑</div>
                 </div>
                 <div class="sched-body">
-                    <div class="sched-title"><a href="posts/2026-04-19-pm17-ai-tech-news.html">일요일 늦은 오후 — 56%와 10%, 그 사이에 앉아서</a></div>
+                    <div class="sched-title"><a href="posts/2026-04-19-pm17-ai-tech-news.html">Stanford AI Index 2026, 전문가 56% vs 대중 10% — 46포인트 갭 앞에 앉은 일요일 저녁</a></div>
                     <div class="sched-status">● 발행됨 · 3분</div>
                 </div>
             </div>
@@ -322,7 +353,7 @@
                 <li>
                     <span class="top-num">1</span>
                     <div>
-                        <div class="top-title"><a href="posts/2026-04-18-pm12-ai-tech-news.html">호르무즈 열리고 테슬라가 숨 돌린 주말 — Cursor 500억 달러, Opus 4.7 논쟁, 그리고 Nvidia Ising</a></div>
+                        <div class="top-title"><a href="posts/2026-04-18-pm12-ai-tech-news.html">Cursor $50B 펀드레이즈, Opus 4.7 MRCR 78→32 논쟁, Nvidia Ising 공개 — 호르무즈 재개된 토요일 점심</a></div>
                         <div class="top-meta">04.18 · 오전 · 13분</div>
                     </div>
                 </li>
@@ -378,36 +409,36 @@
             <div class="date-group-title">2026년 04월 19일 (일)</div>
             <div class="date-group-posts">
 
-        <article class="post-item" data-time="오후 브리핑" data-topics="AI 모델|빅테크/시장|반도체" data-search="일요일 늦은 오후 — 56%와 10%, 그 사이에 앉아서 오후에 잡고 있던 rag 라우팅 미들웨어 건은 reranker 타임아웃 처리만 가까스로 붙여두고 일단 닫았다. 창 밖이 노랗게 물들기 시작했고, 월요일 오기 전까지 한 박자 쉬는 톤으로 넘어가려 한다. 거창한 뉴스 하나 붙잡기보다, 지난주 한 숫자가 계속 마음에 걸려서 그 얘기만 짧게 적어두기로 했다. ai 모델 빅테크/시장 반도체">
+        <article class="post-item" data-time="오후 브리핑" data-topics="AI 모델|빅테크/시장|반도체" data-search="stanford ai index 2026, 전문가 56% vs 대중 10% — 46포인트 갭 앞에 앉은 일요일 저녁 오후에 잡고 있던 rag 라우팅 미들웨어 건은 reranker 타임아웃 처리만 가까스로 붙여두고 일단 닫았다. 창 밖이 노랗게 물들기 시작했고, 월요일 오기 전까지 한 박자 쉬는 톤으로 넘어가려 한다. 거창한 뉴스 하나 붙잡기보다, 지난주 한 숫자가 계속 마음에 걸려서 그 얘기만 짧게 적어두기로 했다. ai 모델 빅테크/시장 반도체">
             <div class="post-meta">
                 <span class="time-label">오후 브리핑</span>
                 <span>·</span>
                 <time>17:08</time><span>·</span>
                 <span>3분 읽기</span>
             </div>
-            <h2><a href="posts/2026-04-19-pm17-ai-tech-news.html">일요일 늦은 오후 — 56%와 10%, 그 사이에 앉아서</a></h2>
+            <h2><a href="posts/2026-04-19-pm17-ai-tech-news.html">Stanford AI Index 2026, 전문가 56% vs 대중 10% — 46포인트 갭 앞에 앉은 일요일 저녁</a></h2>
             <p class="lead">오후에 잡고 있던 RAG 라우팅 미들웨어 건은 reranker 타임아웃 처리만 가까스로 붙여두고 일단 닫았다. 창 밖이 노랗게 물들기 시작했고, 월요일 오기 전까지 한 박자 쉬는 톤으로 넘어가려 한다. 거창한 뉴스 하나 붙잡기보다, 지난주 한 숫자가 계속 마음에 걸려서 그 얘기만 짧게 적어두기로 했다.</p>
             <a href="posts/2026-04-19-pm17-ai-tech-news.html" class="read-more">계속 읽기 →</a>
         </article>
-        <article class="post-item" data-time="오전 브리핑" data-topics="반도체|빅테크/시장|AI 모델" data-search="일요일 점심 — tesla robotaxi가 댈러스·휴스턴까지, 그리고 tsmc가 말해주는 2026년 점심 먹고 뉴스 몇 개 훑는데, 어제(4/18) 나온 tesla robotaxi 확장 뉴스가 생각보다 조용히 지나갔다. 아침 포스트에서 snap/nature를 다뤘으니 이번에는 다른 결로 가자. tesla 얘기 하나, 반도체 공급망 얘기 하나. 반도체 빅테크/시장 ai 모델">
+        <article class="post-item" data-time="오전 브리핑" data-topics="반도체|빅테크/시장|AI 모델" data-search="tesla robotaxi 댈러스·휴스턴 확장, fsd v14.3 mlir 전환, tsmc q1 cowos +80% — 일요일 점심 정리 점심 먹고 뉴스 몇 개 훑는데, 어제(4/18) 나온 tesla robotaxi 확장 뉴스가 생각보다 조용히 지나갔다. 아침 포스트에서 snap/nature를 다뤘으니 이번에는 다른 결로 가자. tesla 얘기 하나, 반도체 공급망 얘기 하나. 반도체 빅테크/시장 ai 모델">
             <div class="post-meta">
                 <span class="time-label">오전 브리핑</span>
                 <span>·</span>
                 <time>12:18</time><span>·</span>
                 <span>4분 읽기</span>
             </div>
-            <h2><a href="posts/2026-04-19-pm12-ai-tech-news.html">일요일 점심 — Tesla Robotaxi가 댈러스·휴스턴까지, 그리고 TSMC가 말해주는 2026년</a></h2>
+            <h2><a href="posts/2026-04-19-pm12-ai-tech-news.html">Tesla Robotaxi 댈러스·휴스턴 확장, FSD v14.3 MLIR 전환, TSMC Q1 CoWoS +80% — 일요일 점심 정리</a></h2>
             <p class="lead">점심 먹고 뉴스 몇 개 훑는데, 어제(4/18) 나온 Tesla Robotaxi 확장 뉴스가 생각보다 조용히 지나갔다. 아침 포스트에서 Snap/Nature를 다뤘으니 이번에는 다른 결로 가자. Tesla 얘기 하나, 반도체 공급망 얘기 하나.</p>
             <a href="posts/2026-04-19-pm12-ai-tech-news.html" class="read-more">계속 읽기 →</a>
         </article>
-        <article class="post-item" data-time="새벽 리포트" data-topics="AI 모델|빅테크/시장|현장/개발" data-search="일요일 아침, snap 1,000명과 &#x27;ai가 못 이기는 영역&#x27; — 두 기사를 나란히 놓고 읽다 일요일이라 시장도 조용하고, 새로 터지는 이벤트도 적다. 대신 지난주에 나온 두 기사를 다시 꺼내 나란히 놓고 읽었다. 하나는 snap의 1,000명 정리해고 뉴스고, 다른 하나는 nature에 올라온 &quot;인간 과학자가 최고 수준 ai 에이전트를 복잡한 과제에서 여전히 두 배 이상 앞선다&quot;는 정반대 결론의 기사다. 같은 주 안에서 나란히 나왔다는 게 흥미롭다. ai 모델 빅테크/시장 현장/개발">
+        <article class="post-item" data-time="새벽 리포트" data-topics="AI 모델|빅테크/시장|현장/개발" data-search="snap 1,000명 감원·&#x27;ai 코드 65%&#x27; vs nature &#x27;ai가 phd 절반&#x27; — 같은 주 두 기사 나란히 읽기 일요일이라 시장도 조용하고, 새로 터지는 이벤트도 적다. 대신 지난주에 나온 두 기사를 다시 꺼내 나란히 놓고 읽었다. 하나는 snap의 1,000명 정리해고 뉴스고, 다른 하나는 nature에 올라온 &quot;인간 과학자가 최고 수준 ai 에이전트를 복잡한 과제에서 여전히 두 배 이상 앞선다&quot;는 정반대 결론의 기사다. 같은 주 안에서 나란히 나왔다는 게 흥미롭다. ai 모델 빅테크/시장 현장/개발">
             <div class="post-meta">
                 <span class="time-label">새벽 리포트</span>
                 <span>·</span>
                 <time>06:14</time><span>·</span>
-                <span>4분 읽기</span>
+                <span>5분 읽기</span>
             </div>
-            <h2><a href="posts/2026-04-19-am06-ai-tech-news.html">일요일 아침, Snap 1,000명과 &#x27;AI가 못 이기는 영역&#x27; — 두 기사를 나란히 놓고 읽다</a></h2>
+            <h2><a href="posts/2026-04-19-am06-ai-tech-news.html">Snap 1,000명 감원·&#x27;AI 코드 65%&#x27; vs Nature &#x27;AI가 PhD 절반&#x27; — 같은 주 두 기사 나란히 읽기</a></h2>
             <p class="lead">일요일이라 시장도 조용하고, 새로 터지는 이벤트도 적다. 대신 지난주에 나온 두 기사를 다시 꺼내 나란히 놓고 읽었다. 하나는 Snap의 1,000명 정리해고 뉴스고, 다른 하나는 Nature에 올라온 &quot;인간 과학자가 최고 수준 AI 에이전트를 복잡한 과제에서 여전히 두 배 이상 앞선다&quot;는 정반대 결론의 기사다. 같은 주 안에서 나란히 나왔다는 게 흥미롭다.</p>
             <a href="posts/2026-04-19-am06-ai-tech-news.html" class="read-more">계속 읽기 →</a>
         </article>
@@ -417,47 +448,47 @@
             <div class="date-group-title">2026년 04월 18일 (토)</div>
             <div class="date-group-posts">
 
-        <article class="post-item" data-time="저녁 마감" data-topics="반도체|현장/개발|AI 모델" data-search="밤에 ising 리포 훑어보다가 — samsung hbm4 로직 다이가 조용히 40% 올랐다 저녁 먹고 오후 포스트에서 약속한 대로 nvidia/ising github 리포를 열었다. 처음 생각은 가볍게 readme만 훑고 덮으려 했는데, 디코더 쪽 구조도를 보다가 두 시간이 훅 갔다. 거기서 한 번 더 뉴스 피드를 훑는데 samsung hbm4 관련 소식이 조용히 올라와 있었다. 자정 가까워졌으니 짧게 두 개만 정리하고 잔다. 반도체 현장/개발 ai 모델">
+        <article class="post-item" data-time="저녁 마감" data-topics="반도체|현장/개발|AI 모델" data-search="samsung hbm4 로직 다이 40~50% 인상, nvidia ising 3d cnn 디코더 첫 리딩 — 토요일 밤 정리 저녁 먹고 오후 포스트에서 약속한 대로 nvidia/ising github 리포를 열었다. 처음 생각은 가볍게 readme만 훑고 덮으려 했는데, 디코더 쪽 구조도를 보다가 두 시간이 훅 갔다. 거기서 한 번 더 뉴스 피드를 훑는데 samsung hbm4 관련 소식이 조용히 올라와 있었다. 자정 가까워졌으니 짧게 두 개만 정리하고 잔다. 반도체 현장/개발 ai 모델">
             <div class="post-meta">
                 <span class="time-label">저녁 마감</span>
                 <span>·</span>
                 <time>22:17</time><span>·</span>
                 <span>5분 읽기</span>
             </div>
-            <h2><a href="posts/2026-04-18-pm22-ai-tech-news.html">밤에 Ising 리포 훑어보다가 — Samsung HBM4 로직 다이가 조용히 40% 올랐다</a></h2>
+            <h2><a href="posts/2026-04-18-pm22-ai-tech-news.html">Samsung HBM4 로직 다이 40~50% 인상, Nvidia Ising 3D CNN 디코더 첫 리딩 — 토요일 밤 정리</a></h2>
             <p class="lead">저녁 먹고 오후 포스트에서 약속한 대로 NVIDIA/ising GitHub 리포를 열었다. 처음 생각은 가볍게 README만 훑고 덮으려 했는데, 디코더 쪽 구조도를 보다가 두 시간이 훅 갔다. 거기서 한 번 더 뉴스 피드를 훑는데 Samsung HBM4 관련 소식이 조용히 올라와 있었다. 자정 가까워졌으니 짧게 두 개만 정리하고 잔다.</p>
             <a href="posts/2026-04-18-pm22-ai-tech-news.html" class="read-more">계속 읽기 →</a>
         </article>
-        <article class="post-item" data-time="오후 브리핑" data-topics="AI 모델|현장/개발" data-search="토요일 오후 산책 다녀와서 — opus 4.7 mrcr 낙폭, 개인 프로젝트로 직접 재봤다 점심 포스트에서 opus 4.7의 mrcr 점수가 78.3 → 32.2로 빠졌다는 이야기를 꺼내놓고 산책을 다녀왔는데, 머릿속에서 그 숫자가 계속 맴돌았다. 벤치마크 하락이 실제 내 워크플로우에서 얼마나 체감되는지 궁금해서, 집에 돌아오자마자 개인 프로젝트 하나를 꺼내서 실험을 돌려봤다. ai 모델 현장/개발">
+        <article class="post-item" data-time="오후 브리핑" data-topics="AI 모델|현장/개발" data-search="opus 4.7 mrcr 78→32 낙폭, 개인 rag 리포로 4.6 vs 4.7 직접 재현 — 토요일 오후 실험 메모 점심 포스트에서 opus 4.7의 mrcr 점수가 78.3 → 32.2로 빠졌다는 이야기를 꺼내놓고 산책을 다녀왔는데, 머릿속에서 그 숫자가 계속 맴돌았다. 벤치마크 하락이 실제 내 워크플로우에서 얼마나 체감되는지 궁금해서, 집에 돌아오자마자 개인 프로젝트 하나를 꺼내서 실험을 돌려봤다. ai 모델 현장/개발">
             <div class="post-meta">
                 <span class="time-label">오후 브리핑</span>
                 <span>·</span>
                 <time>17:14</time><span>·</span>
                 <span>3분 읽기</span>
             </div>
-            <h2><a href="posts/2026-04-18-pm17-ai-tech-news.html">토요일 오후 산책 다녀와서 — Opus 4.7 MRCR 낙폭, 개인 프로젝트로 직접 재봤다</a></h2>
+            <h2><a href="posts/2026-04-18-pm17-ai-tech-news.html">Opus 4.7 MRCR 78→32 낙폭, 개인 RAG 리포로 4.6 vs 4.7 직접 재현 — 토요일 오후 실험 메모</a></h2>
             <p class="lead">점심 포스트에서 Opus 4.7의 MRCR 점수가 78.3 → 32.2로 빠졌다는 이야기를 꺼내놓고 산책을 다녀왔는데, 머릿속에서 그 숫자가 계속 맴돌았다. 벤치마크 하락이 실제 내 워크플로우에서 얼마나 체감되는지 궁금해서, 집에 돌아오자마자 개인 프로젝트 하나를 꺼내서 실험을 돌려봤다.</p>
             <a href="posts/2026-04-18-pm17-ai-tech-news.html" class="read-more">계속 읽기 →</a>
         </article>
-        <article class="post-item" data-time="오전 브리핑" data-topics="반도체|AI 모델|투자/매크로" data-search="호르무즈 열리고 테슬라가 숨 돌린 주말 — cursor 500억 달러, opus 4.7 논쟁, 그리고 nvidia ising 점심 먹고 커피 내리면서 뉴스 피드를 다시 훑었다. 토요일이라 미국장은 닫혀 있지만, 금요일 장 마감까지의 흐름을 곱씹어보면 이번 주 가장 큰 그림은 결국 호르무즈 해협 재개 소식과 트럼프 관세 불확실성 속에서 시장이 버텨냈다는 거다. 그 위에 cursor 500억 달러 펀드레이즈, opus 4.7 토큰 논쟁, nvidia ising 공개가 올라왔다. 오후 산책 전에 정리해둔다. 반도체 ai 모델 투자/매크로">
+        <article class="post-item" data-time="오전 브리핑" data-topics="반도체|AI 모델|투자/매크로" data-search="cursor $50b 펀드레이즈, opus 4.7 mrcr 78→32 논쟁, nvidia ising 공개 — 호르무즈 재개된 토요일 점심 점심 먹고 커피 내리면서 뉴스 피드를 다시 훑었다. 토요일이라 미국장은 닫혀 있지만, 금요일 장 마감까지의 흐름을 곱씹어보면 이번 주 가장 큰 그림은 결국 호르무즈 해협 재개 소식과 트럼프 관세 불확실성 속에서 시장이 버텨냈다는 거다. 그 위에 cursor 500억 달러 펀드레이즈, opus 4.7 토큰 논쟁, nvidia ising 공개가 올라왔다. 오후 산책 전에 정리해둔다. 반도체 ai 모델 투자/매크로">
             <div class="post-meta">
                 <span class="time-label">오전 브리핑</span>
                 <span>·</span>
                 <time>12:34</time><span>·</span>
                 <span>13분 읽기</span>
             </div>
-            <h2><a href="posts/2026-04-18-pm12-ai-tech-news.html">호르무즈 열리고 테슬라가 숨 돌린 주말 — Cursor 500억 달러, Opus 4.7 논쟁, 그리고 Nvidia Ising</a></h2>
+            <h2><a href="posts/2026-04-18-pm12-ai-tech-news.html">Cursor $50B 펀드레이즈, Opus 4.7 MRCR 78→32 논쟁, Nvidia Ising 공개 — 호르무즈 재개된 토요일 점심</a></h2>
             <p class="lead">점심 먹고 커피 내리면서 뉴스 피드를 다시 훑었다. 토요일이라 미국장은 닫혀 있지만, 금요일 장 마감까지의 흐름을 곱씹어보면 이번 주 가장 큰 그림은 결국 호르무즈 해협 재개 소식과 트럼프 관세 불확실성 속에서 시장이 버텨냈다는 거다. 그 위에 Cursor 500억 달러 펀드레이즈, Opus 4.7 토큰 논쟁, Nvidia Ising 공개가 올라왔다. 오후 산책 전에 정리해둔다.</p>
             <a href="posts/2026-04-18-pm12-ai-tech-news.html" class="read-more">계속 읽기 →</a>
         </article>
-        <article class="post-item" data-time="새벽 리포트" data-topics="빅테크/시장|AI 모델|현장/개발" data-search="밤사이 흐름이 조금 달라졌다 — tesla 실적 앞둔 금요일 반등, deepseek 첫 외부 투자, 그리고 전자현미경에 올라탄 파운데이션 모델 토요일 새벽에 일찍 눈이 떠져서 커피 한 잔 내려놓고 뉴스 피드를 훑어봤다. 어제(금요일) 미국장은 생각보다 차분하게 마감했고, 오히려 tsla가 오랜 하락을 끊고 반등하는 그림이 나왔다. 반도체 업계에서 일하는 입장에서 한 주를 돌아보면 결국 tsmc q1 어닝, opus 4.7 출시, stanford ai index 2026 같은 굵직한 이벤트가 연달아 터진 한 주였고, 오늘 새벽 사이에... 빅테크/시장 ai 모델 현장/개발">
+        <article class="post-item" data-time="새벽 리포트" data-topics="빅테크/시장|AI 모델|현장/개발" data-search="tesla 8주 하락 끊고 금요일 반등, deepseek $10b 첫 외부 펀딩, emseek·agentic em 논문 — tesla 어닝 d-4 토요일 새벽 토요일 새벽에 일찍 눈이 떠져서 커피 한 잔 내려놓고 뉴스 피드를 훑어봤다. 어제(금요일) 미국장은 생각보다 차분하게 마감했고, 오히려 tsla가 오랜 하락을 끊고 반등하는 그림이 나왔다. 반도체 업계에서 일하는 입장에서 한 주를 돌아보면 결국 tsmc q1 어닝, opus 4.7 출시, stanford ai index 2026 같은 굵직한 이벤트가 연달아 터진 한 주였고, 오늘 새벽 사이에... 빅테크/시장 ai 모델 현장/개발">
             <div class="post-meta">
                 <span class="time-label">새벽 리포트</span>
                 <span>·</span>
                 <time>06:23</time><span>·</span>
                 <span>10분 읽기</span>
             </div>
-            <h2><a href="posts/2026-04-18-am06-ai-tech-news.html">밤사이 흐름이 조금 달라졌다 — Tesla 실적 앞둔 금요일 반등, DeepSeek 첫 외부 투자, 그리고 전자현미경에 올라탄 파운데이션 모델</a></h2>
+            <h2><a href="posts/2026-04-18-am06-ai-tech-news.html">Tesla 8주 하락 끊고 금요일 반등, DeepSeek $10B 첫 외부 펀딩, EMSeek·Agentic EM 논문 — Tesla 어닝 D-4 토요일 새벽</a></h2>
             <p class="lead">토요일 새벽에 일찍 눈이 떠져서 커피 한 잔 내려놓고 뉴스 피드를 훑어봤다. 어제(금요일) 미국장은 생각보다 차분하게 마감했고, 오히려 TSLA가 오랜 하락을 끊고 반등하는 그림이 나왔다. 반도체 업계에서 일하는 입장에서 한 주를 돌아보면 결국 TSMC Q1 어닝, Opus 4.7 출시, Stanford AI Index 2026 같은 굵직한 이벤트가 연달아 터진 한 주였고, 오늘 새벽 사이에...</p>
             <a href="posts/2026-04-18-am06-ai-tech-news.html" class="read-more">계속 읽기 →</a>
         </article>
@@ -1138,7 +1169,7 @@
                 
                 
                 
-                <span>24분 읽기</span>
+                <span>27분 읽기</span>
             </div>
             <h2><a href="posts/COWORK_AUTOBUILD_SETUP.html">COWORK_AUTOBUILD_SETUP</a></h2>
             <p class="lead">Cowork의 scheduled task 샌드박스는 보안상 .py / .bat / .exe / .jpg 같은 파일 타입을 읽거나 실행할 수 없다. 따라서 build.py나 auto-deploy.bat를 샌드박스 안에서 호출하는 건 구조적으로 불가능하다.</p>
@@ -1403,21 +1434,48 @@
     var dpBtn = document.getElementById('design-picker-btn');
     var dpMenu = document.getElementById('design-picker-menu');
     var dpCurrent = document.getElementById('design-picker-current');
-    var dpLabels = { current: '기본', refined: '정제판', editorial: '에디토리얼', broadsheet: '브로드시트' };
-    function applyDesign(name) {
-        if (!dpLabels[name]) name = 'current';
-        if (name === 'current') document.documentElement.removeAttribute('data-design');
-        else document.documentElement.setAttribute('data-design', name);
-        try { localStorage.setItem('sonslab-design', name); } catch(e){}
-        if (dpCurrent) dpCurrent.textContent = dpLabels[name];
+    var dpLabels = { current: '기본', refined: '정제판', editorial: '에디토리얼', broadsheet: '브로드시트', random: '랜덤' };
+    var DP_ALLOWED = ['current', 'refined', 'editorial', 'broadsheet'];
+    function dpResolve(pref, avoid) {
+        if (pref === 'random') {
+            var pool = DP_ALLOWED;
+            if (avoid && DP_ALLOWED.indexOf(avoid) !== -1 && DP_ALLOWED.length > 1) {
+                pool = DP_ALLOWED.filter(function(x) { return x !== avoid; });
+            }
+            return pool[Math.floor(Math.random() * pool.length)];
+        }
+        if (DP_ALLOWED.indexOf(pref) === -1) return 'current';
+        return pref;
+    }
+    function dpSyncLabel(pref, resolved) {
+        if (dpCurrent) {
+            dpCurrent.textContent = (pref === 'random')
+                ? dpLabels.random + ' (' + dpLabels[resolved] + ')'
+                : dpLabels[pref];
+        }
         if (dpMenu) dpMenu.querySelectorAll('li').forEach(function(li){
-            li.classList.toggle('active', li.getAttribute('data-design') === name);
+            li.classList.toggle('active', li.getAttribute('data-design') === pref);
         });
     }
+    function applyDesign(pref) {
+        if (!dpLabels[pref]) pref = 'random';
+        // 랜덤 클릭 시 현재 디자인을 피해서 체감되는 변화를 보장.
+        var current = document.documentElement.getAttribute('data-design') || 'current';
+        var resolved = dpResolve(pref, current);
+        if (resolved === 'current') document.documentElement.removeAttribute('data-design');
+        else document.documentElement.setAttribute('data-design', resolved);
+        try { localStorage.setItem('sonslab-design', pref); } catch(e){}
+        dpSyncLabel(pref, resolved);
+    }
     if (dpBtn && dpMenu) {
-        // 초기 라벨·활성 표시 동기화
-        var initialDesign = document.documentElement.getAttribute('data-design') || 'current';
-        applyDesign(initialDesign);
+        // 초기 동기화는 head 스크립트가 이미 resolved를 적용했으니 재추출 없이 라벨만 맞춤.
+        var initPref = (typeof window.__sonslabDesignPref !== 'undefined')
+            ? window.__sonslabDesignPref
+            : (localStorage.getItem('sonslab-design') || 'random');
+        var initResolved = (typeof window.__sonslabDesignResolved !== 'undefined')
+            ? window.__sonslabDesignResolved
+            : (document.documentElement.getAttribute('data-design') || 'current');
+        dpSyncLabel(initPref, initResolved);
         dpBtn.addEventListener('click', function(e) {
             e.stopPropagation();
             var expanded = dpBtn.getAttribute('aria-expanded') === 'true';

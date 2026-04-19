@@ -34,10 +34,23 @@
         var theme = saved || (prefersDark ? 'dark' : 'light');
         if (theme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
 
-        var design = localStorage.getItem('sonslab-design') || 'current';
+        // 디자인 pref: 'random' | 'current' | 'refined' | 'editorial' | 'broadsheet'
+        // 저장값이 없거나 'random'이면 매 페이지 로드마다 4개 중 하나를 무작위로 추출.
+        var pref = localStorage.getItem('sonslab-design') || 'random';
         var allowed = ['current', 'refined', 'editorial', 'broadsheet'];
-        if (allowed.indexOf(design) === -1) design = 'current';
-        if (design !== 'current') document.documentElement.setAttribute('data-design', design);
+        var resolved;
+        if (pref === 'random') {
+            resolved = allowed[Math.floor(Math.random() * allowed.length)];
+        } else if (allowed.indexOf(pref) === -1) {
+            pref = 'current';
+            resolved = 'current';
+        } else {
+            resolved = pref;
+        }
+        if (resolved !== 'current') document.documentElement.setAttribute('data-design', resolved);
+        // body script가 재추출 없이 라벨만 맞추도록 결과를 공유.
+        window.__sonslabDesignPref = pref;
+        window.__sonslabDesignResolved = resolved;
     } catch (e) {}
 })();
 </script>
@@ -66,6 +79,7 @@
                     <span class="design-picker-caret" aria-hidden="true">▾</span>
                 </button>
                 <ul class="design-picker-menu" id="design-picker-menu" role="listbox" aria-label="디자인 옵션">
+                    <li role="option" data-design="random"><strong>랜덤</strong><span>접속할 때마다 무작위 디자인</span></li>
                     <li role="option" data-design="current"><strong>기본</strong><span>네이비+크림, 라운드 카드</span></li>
                     <li role="option" data-design="refined"><strong>정제판 (A)</strong><span>신문·저널 톤, 헤어라인 구분선</span></li>
                     <li role="option" data-design="editorial"><strong>에디토리얼 (B)</strong><span>이중선 마스트헤드, 세리프 강조</span></li>
@@ -179,7 +193,7 @@
     
 <section class="related-posts" aria-label="최근 다른 리포트">
     <div class="related-posts-label">최근 다른 리포트</div>
-    <ul class="related-list"><li><a href="2026-04-19-pm17-ai-tech-news.html"><span class="related-title">일요일 늦은 오후 — 56%와 10%, 그 사이에 앉아서</span><span class="related-date">2026-04-19 · 오후 브리핑 · 17:08</span></a></li><li><a href="2026-04-19-pm12-ai-tech-news.html"><span class="related-title">일요일 점심 — Tesla Robotaxi가 댈러스·휴스턴까지, 그리고 TSMC가 말해주는 2026년</span><span class="related-date">2026-04-19 · 오전 브리핑 · 12:18</span></a></li><li><a href="2026-04-19-am06-ai-tech-news.html"><span class="related-title">일요일 아침, Snap 1,000명과 &#x27;AI가 못 이기는 영역&#x27; — 두 기사를 나란히 놓고 읽다</span><span class="related-date">2026-04-19 · 새벽 리포트 · 06:14</span></a></li><li><a href="2026-04-18-pm22-ai-tech-news.html"><span class="related-title">밤에 Ising 리포 훑어보다가 — Samsung HBM4 로직 다이가 조용히 40% 올랐다</span><span class="related-date">2026-04-18 · 저녁 마감 · 22:17</span></a></li><li><a href="2026-04-18-pm17-ai-tech-news.html"><span class="related-title">토요일 오후 산책 다녀와서 — Opus 4.7 MRCR 낙폭, 개인 프로젝트로 직접 재봤다</span><span class="related-date">2026-04-18 · 오후 브리핑 · 17:14</span></a></li></ul>
+    <ul class="related-list"><li><a href="2026-04-19-pm17-ai-tech-news.html"><span class="related-title">Stanford AI Index 2026, 전문가 56% vs 대중 10% — 46포인트 갭 앞에 앉은 일요일 저녁</span><span class="related-date">2026-04-19 · 오후 브리핑 · 17:08</span></a></li><li><a href="2026-04-19-pm12-ai-tech-news.html"><span class="related-title">Tesla Robotaxi 댈러스·휴스턴 확장, FSD v14.3 MLIR 전환, TSMC Q1 CoWoS +80% — 일요일 점심 정리</span><span class="related-date">2026-04-19 · 오전 브리핑 · 12:18</span></a></li><li><a href="2026-04-19-am06-ai-tech-news.html"><span class="related-title">Snap 1,000명 감원·&#x27;AI 코드 65%&#x27; vs Nature &#x27;AI가 PhD 절반&#x27; — 같은 주 두 기사 나란히 읽기</span><span class="related-date">2026-04-19 · 새벽 리포트 · 06:14</span></a></li><li><a href="2026-04-18-pm22-ai-tech-news.html"><span class="related-title">Samsung HBM4 로직 다이 40~50% 인상, Nvidia Ising 3D CNN 디코더 첫 리딩 — 토요일 밤 정리</span><span class="related-date">2026-04-18 · 저녁 마감 · 22:17</span></a></li><li><a href="2026-04-18-pm17-ai-tech-news.html"><span class="related-title">Opus 4.7 MRCR 78→32 낙폭, 개인 RAG 리포로 4.6 vs 4.7 직접 재현 — 토요일 오후 실험 메모</span><span class="related-date">2026-04-18 · 오후 브리핑 · 17:14</span></a></li></ul>
 </section>
 </article>
 
@@ -403,21 +417,48 @@
     var dpBtn = document.getElementById('design-picker-btn');
     var dpMenu = document.getElementById('design-picker-menu');
     var dpCurrent = document.getElementById('design-picker-current');
-    var dpLabels = { current: '기본', refined: '정제판', editorial: '에디토리얼', broadsheet: '브로드시트' };
-    function applyDesign(name) {
-        if (!dpLabels[name]) name = 'current';
-        if (name === 'current') document.documentElement.removeAttribute('data-design');
-        else document.documentElement.setAttribute('data-design', name);
-        try { localStorage.setItem('sonslab-design', name); } catch(e){}
-        if (dpCurrent) dpCurrent.textContent = dpLabels[name];
+    var dpLabels = { current: '기본', refined: '정제판', editorial: '에디토리얼', broadsheet: '브로드시트', random: '랜덤' };
+    var DP_ALLOWED = ['current', 'refined', 'editorial', 'broadsheet'];
+    function dpResolve(pref, avoid) {
+        if (pref === 'random') {
+            var pool = DP_ALLOWED;
+            if (avoid && DP_ALLOWED.indexOf(avoid) !== -1 && DP_ALLOWED.length > 1) {
+                pool = DP_ALLOWED.filter(function(x) { return x !== avoid; });
+            }
+            return pool[Math.floor(Math.random() * pool.length)];
+        }
+        if (DP_ALLOWED.indexOf(pref) === -1) return 'current';
+        return pref;
+    }
+    function dpSyncLabel(pref, resolved) {
+        if (dpCurrent) {
+            dpCurrent.textContent = (pref === 'random')
+                ? dpLabels.random + ' (' + dpLabels[resolved] + ')'
+                : dpLabels[pref];
+        }
         if (dpMenu) dpMenu.querySelectorAll('li').forEach(function(li){
-            li.classList.toggle('active', li.getAttribute('data-design') === name);
+            li.classList.toggle('active', li.getAttribute('data-design') === pref);
         });
     }
+    function applyDesign(pref) {
+        if (!dpLabels[pref]) pref = 'random';
+        // 랜덤 클릭 시 현재 디자인을 피해서 체감되는 변화를 보장.
+        var current = document.documentElement.getAttribute('data-design') || 'current';
+        var resolved = dpResolve(pref, current);
+        if (resolved === 'current') document.documentElement.removeAttribute('data-design');
+        else document.documentElement.setAttribute('data-design', resolved);
+        try { localStorage.setItem('sonslab-design', pref); } catch(e){}
+        dpSyncLabel(pref, resolved);
+    }
     if (dpBtn && dpMenu) {
-        // 초기 라벨·활성 표시 동기화
-        var initialDesign = document.documentElement.getAttribute('data-design') || 'current';
-        applyDesign(initialDesign);
+        // 초기 동기화는 head 스크립트가 이미 resolved를 적용했으니 재추출 없이 라벨만 맞춤.
+        var initPref = (typeof window.__sonslabDesignPref !== 'undefined')
+            ? window.__sonslabDesignPref
+            : (localStorage.getItem('sonslab-design') || 'random');
+        var initResolved = (typeof window.__sonslabDesignResolved !== 'undefined')
+            ? window.__sonslabDesignResolved
+            : (document.documentElement.getAttribute('data-design') || 'current');
+        dpSyncLabel(initPref, initResolved);
         dpBtn.addEventListener('click', function(e) {
             e.stopPropagation();
             var expanded = dpBtn.getAttribute('aria-expanded') === 'true';
