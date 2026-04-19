@@ -19,12 +19,12 @@
     <meta property="og:title" content="COWORK_AUTOBUILD_SETUP">
     <meta property="og:description" content="Cowork의 scheduled task 샌드박스는 보안상 .py / .bat / .exe / .jpg 같은 파일 타입을 읽거나 실행할 수 없다. 따라서 build.py나 auto-deploy.bat를 샌드박스 안에서 호출하는 건 구조적으로 불가능하다.">
     <meta property="og:url" content="https://shonsubong.github.io/sonslab-blog/posts/COWORK_AUTOBUILD_SETUP.html">
-    <meta property="og:image" content="https://shonsubong.github.io/sonslab-blog/assets/og/COWORK_AUTOBUILD_SETUP.png">
+    <meta property="og:image" content="https://shonsubong.github.io/sonslab-blog/assets/logo.jpg">
     <meta property="og:locale" content="ko_KR">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="COWORK_AUTOBUILD_SETUP">
     <meta name="twitter:description" content="Cowork의 scheduled task 샌드박스는 보안상 .py / .bat / .exe / .jpg 같은 파일 타입을 읽거나 실행할 수 없다. 따라서 build.py나 auto-deploy.bat를 샌드박스 안에서 호출하는 건 구조적으로 불가능하다.">
-    <meta name="twitter:image" content="https://shonsubong.github.io/sonslab-blog/assets/og/COWORK_AUTOBUILD_SETUP.png">
+    <meta name="twitter:image" content="https://shonsubong.github.io/sonslab-blog/assets/logo.jpg">
     
 <script>
 (function() {
@@ -41,7 +41,7 @@
     } catch (e) {}
 })();
 </script>
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "COWORK_AUTOBUILD_SETUP", "description": "Cowork의 scheduled task 샌드박스는 보안상 .py / .bat / .exe / .jpg 같은 파일 타입을 읽거나 실행할 수 없다. 따라서 build.py나 auto-deploy.bat를 샌드박스 안에서 호출하는 건 구조적으로 불가능하다.", "url": "https://shonsubong.github.io/sonslab-blog/posts/COWORK_AUTOBUILD_SETUP.html", "mainEntityOfPage": "https://shonsubong.github.io/sonslab-blog/posts/COWORK_AUTOBUILD_SETUP.html", "inLanguage": "ko", "image": "https://shonsubong.github.io/sonslab-blog/assets/og/COWORK_AUTOBUILD_SETUP.png", "author": {"@type": "Person", "name": "SONSLAB"}, "publisher": {"@type": "Organization", "name": "SONSLAB", "logo": {"@type": "ImageObject", "url": "https://shonsubong.github.io/sonslab-blog/assets/logo.jpg"}}, "datePublished": "", "dateModified": ""}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "COWORK_AUTOBUILD_SETUP", "description": "Cowork의 scheduled task 샌드박스는 보안상 .py / .bat / .exe / .jpg 같은 파일 타입을 읽거나 실행할 수 없다. 따라서 build.py나 auto-deploy.bat를 샌드박스 안에서 호출하는 건 구조적으로 불가능하다.", "url": "https://shonsubong.github.io/sonslab-blog/posts/COWORK_AUTOBUILD_SETUP.html", "mainEntityOfPage": "https://shonsubong.github.io/sonslab-blog/posts/COWORK_AUTOBUILD_SETUP.html", "inLanguage": "ko", "image": "https://shonsubong.github.io/sonslab-blog/assets/logo.jpg", "author": {"@type": "Person", "name": "SONSLAB"}, "publisher": {"@type": "Organization", "name": "SONSLAB", "logo": {"@type": "ImageObject", "url": "https://shonsubong.github.io/sonslab-blog/assets/logo.jpg"}}, "datePublished": "", "dateModified": ""}</script>
     <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "SONSLAB", "item": "https://shonsubong.github.io/sonslab-blog/"}, {"@type": "ListItem", "position": 2, "name": "글", "item": "https://shonsubong.github.io/sonslab-blog/#posts"}, {"@type": "ListItem", "position": 3, "name": "COWORK_AUTOBUILD_SETUP", "item": "https://shonsubong.github.io/sonslab-blog/posts/COWORK_AUTOBUILD_SETUP.html"}]}</script>
 </head>
 <body class="post-page">
@@ -122,66 +122,66 @@
 <hr />
 <h2 id="1-powershell">1단계 — PowerShell 워처 스크립트 저장</h2>
 <p>아래 내용을 <code>X:\Work_Agent\sonslab-blog\watch_and_build.ps1</code> 파일로 저장:</p>
-<pre class="codehilite"><code class="language-powershell"># watch_and_build.ps1
-# posts/ 폴더의 새 .md 파일 생성을 감지해서 auto-deploy.bat를 실행
+<div class="codehilite"><pre><span></span><code><span class="c"># watch_and_build.ps1</span>
+<span class="c"># posts/ 폴더의 새 .md 파일 생성을 감지해서 auto-deploy.bat를 실행</span>
 
-$BlogRoot   = &quot;X:\Work_Agent\sonslab-blog&quot;
-$WatchPath  = Join-Path $BlogRoot &quot;posts&quot;
-$DeployBat  = Join-Path $BlogRoot &quot;auto-deploy.bat&quot;
-$LogFile    = Join-Path $BlogRoot &quot;watcher.log&quot;
-$DebounceMs = 5000   # 5초 내 여러 파일이 들어오면 한 번만 빌드
+<span class="nv">$BlogRoot</span>   <span class="p">=</span> <span class="s2">&quot;X:\Work_Agent\sonslab-blog&quot;</span>
+<span class="nv">$WatchPath</span>  <span class="p">=</span> <span class="nb">Join-Path</span> <span class="nv">$BlogRoot</span> <span class="s2">&quot;posts&quot;</span>
+<span class="nv">$DeployBat</span>  <span class="p">=</span> <span class="nb">Join-Path</span> <span class="nv">$BlogRoot</span> <span class="s2">&quot;auto-deploy.bat&quot;</span>
+<span class="nv">$LogFile</span>    <span class="p">=</span> <span class="nb">Join-Path</span> <span class="nv">$BlogRoot</span> <span class="s2">&quot;watcher.log&quot;</span>
+<span class="nv">$DebounceMs</span> <span class="p">=</span> <span class="n">5000</span>   <span class="c"># 5초 내 여러 파일이 들어오면 한 번만 빌드</span>
 
-# 로그 함수
-function Write-Log($msg) {
-    $stamp = Get-Date -Format &quot;yyyy-MM-dd HH:mm:ss&quot;
-    Add-Content -Path $LogFile -Value &quot;[$stamp] $msg&quot;
-}
+<span class="c"># 로그 함수</span>
+<span class="k">function</span> <span class="nb">Write-Log</span><span class="p">(</span><span class="nv">$msg</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$stamp</span> <span class="p">=</span> <span class="nb">Get-Date</span> <span class="n">-Format</span> <span class="s2">&quot;yyyy-MM-dd HH:mm:ss&quot;</span>
+    <span class="nb">Add-Content</span> <span class="n">-Path</span> <span class="nv">$LogFile</span> <span class="n">-Value</span> <span class="s2">&quot;[$stamp] $msg&quot;</span>
+<span class="p">}</span>
 
-Write-Log &quot;Watcher started. Monitoring $WatchPath&quot;
+<span class="nb">Write-Log</span> <span class="s2">&quot;Watcher started. Monitoring $WatchPath&quot;</span>
 
-# FileSystemWatcher 구성
-$watcher = New-Object System.IO.FileSystemWatcher
-$watcher.Path = $WatchPath
-$watcher.Filter = &quot;*.md&quot;
-$watcher.IncludeSubdirectories = $true
-$watcher.EnableRaisingEvents = $true
+<span class="c"># FileSystemWatcher 구성</span>
+<span class="nv">$watcher</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">System</span><span class="p">.</span><span class="n">IO</span><span class="p">.</span><span class="n">FileSystemWatcher</span>
+<span class="nv">$watcher</span><span class="p">.</span><span class="n">Path</span> <span class="p">=</span> <span class="nv">$WatchPath</span>
+<span class="nv">$watcher</span><span class="p">.</span><span class="k">Filter</span> <span class="p">=</span> <span class="s2">&quot;*.md&quot;</span>
+<span class="nv">$watcher</span><span class="p">.</span><span class="n">IncludeSubdirectories</span> <span class="p">=</span> <span class="nv">$true</span>
+<span class="nv">$watcher</span><span class="p">.</span><span class="n">EnableRaisingEvents</span> <span class="p">=</span> <span class="nv">$true</span>
 
-# 디바운스용 타이머
-$script:pending = $false
-$script:lastEvent = Get-Date
+<span class="c"># 디바운스용 타이머</span>
+<span class="nv">$script:pending</span> <span class="p">=</span> <span class="nv">$false</span>
+<span class="nv">$script:lastEvent</span> <span class="p">=</span> <span class="nb">Get-Date</span>
 
-$action = {
-    $script:pending = $true
-    $script:lastEvent = Get-Date
-    $path = $Event.SourceEventArgs.FullPath
-    Write-Log &quot;Detected change: $path&quot;
-}
+<span class="nv">$action</span> <span class="p">=</span> <span class="p">{</span>
+    <span class="nv">$script:pending</span> <span class="p">=</span> <span class="nv">$true</span>
+    <span class="nv">$script:lastEvent</span> <span class="p">=</span> <span class="nb">Get-Date</span>
+    <span class="nv">$path</span> <span class="p">=</span> <span class="nv">$Event</span><span class="p">.</span><span class="n">SourceEventArgs</span><span class="p">.</span><span class="n">FullPath</span>
+    <span class="nb">Write-Log</span> <span class="s2">&quot;Detected change: $path&quot;</span>
+<span class="p">}</span>
 
-Register-ObjectEvent $watcher Created -Action $action | Out-Null
-Register-ObjectEvent $watcher Changed -Action $action | Out-Null
+<span class="nb">Register-ObjectEvent</span> <span class="nv">$watcher</span> <span class="n">Created</span> <span class="n">-Action</span> <span class="nv">$action</span> <span class="p">|</span> <span class="nb">Out-Null</span>
+<span class="nb">Register-ObjectEvent</span> <span class="nv">$watcher</span> <span class="n">Changed</span> <span class="n">-Action</span> <span class="nv">$action</span> <span class="p">|</span> <span class="nb">Out-Null</span>
 
-# 디바운스 루프
-while ($true) {
-    Start-Sleep -Milliseconds 1000
-    if ($script:pending) {
-        $elapsed = (New-TimeSpan -Start $script:lastEvent -End (Get-Date)).TotalMilliseconds
-        if ($elapsed -ge $DebounceMs) {
-            $script:pending = $false
-            Write-Log &quot;Debounce elapsed. Running auto-deploy.bat...&quot;
-            try {
-                Push-Location $BlogRoot
-                $output = cmd /c $DeployBat 2&gt;&amp;1
-                $output | ForEach-Object { Write-Log &quot;OUT: $_&quot; }
-                Write-Log &quot;auto-deploy.bat finished (exit=$LASTEXITCODE)&quot;
-            } catch {
-                Write-Log &quot;ERROR: $_&quot;
-            } finally {
-                Pop-Location
-            }
-        }
-    }
-}
-</code></pre>
+<span class="c"># 디바운스 루프</span>
+<span class="k">while</span> <span class="p">(</span><span class="nv">$true</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nb">Start-Sleep</span> <span class="n">-Milliseconds</span> <span class="n">1000</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$script:pending</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$elapsed</span> <span class="p">=</span> <span class="p">(</span><span class="nb">New-TimeSpan</span> <span class="n">-Start</span> <span class="nv">$script:lastEvent</span> <span class="n">-End</span> <span class="p">(</span><span class="nb">Get-Date</span><span class="p">)).</span><span class="n">TotalMilliseconds</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$elapsed</span> <span class="o">-ge</span> <span class="nv">$DebounceMs</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nv">$script:pending</span> <span class="p">=</span> <span class="nv">$false</span>
+            <span class="nb">Write-Log</span> <span class="s2">&quot;Debounce elapsed. Running auto-deploy.bat...&quot;</span>
+            <span class="k">try</span> <span class="p">{</span>
+                <span class="nb">Push-Location</span> <span class="nv">$BlogRoot</span>
+                <span class="nv">$output</span> <span class="p">=</span> <span class="n">cmd</span> <span class="p">/</span><span class="n">c</span> <span class="nv">$DeployBat</span> <span class="n">2</span><span class="p">&gt;&amp;</span><span class="n">1</span>
+                <span class="nv">$output</span> <span class="p">|</span> <span class="k">ForEach</span><span class="n">-Object</span> <span class="p">{</span> <span class="nb">Write-Log</span> <span class="s2">&quot;OUT: $_&quot;</span> <span class="p">}</span>
+                <span class="nb">Write-Log</span> <span class="s2">&quot;auto-deploy.bat finished (exit=$LASTEXITCODE)&quot;</span>
+            <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
+                <span class="nb">Write-Log</span> <span class="s2">&quot;ERROR: $_&quot;</span>
+            <span class="p">}</span> <span class="k">finally</span> <span class="p">{</span>
+                <span class="nb">Pop-Location</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <p><strong>핵심 동작</strong>:
 - <code>posts/</code> 하위 어디든 <code>.md</code> 파일이 생기면 감지
@@ -191,59 +191,59 @@ while ($true) {
 <hr />
 <h2 id="2-task-scheduler-windows">2단계 — Task Scheduler에 등록 (Windows 부팅 시 자동 시작)</h2>
 <p>관리자 권한 PowerShell에서 한 번만 실행:</p>
-<pre class="codehilite"><code class="language-powershell">$Action = New-ScheduledTaskAction `
-    -Execute &quot;powershell.exe&quot; `
-    -Argument &quot;-NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File `&quot;X:\Work_Agent\sonslab-blog\watch_and_build.ps1`&quot;&quot;
+<div class="codehilite"><pre><span></span><code><span class="nv">$Action</span> <span class="p">=</span> <span class="nb">New-ScheduledTaskAction</span> <span class="p">`</span>
+    <span class="n">-Execute</span> <span class="s2">&quot;powershell.exe&quot;</span> <span class="p">`</span>
+    <span class="n">-Argument</span> <span class="s2">&quot;-NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File </span><span class="se">`&quot;</span><span class="s2">X:\Work_Agent\sonslab-blog\watch_and_build.ps1</span><span class="se">`&quot;</span><span class="s2">&quot;</span>
 
-$Trigger = New-ScheduledTaskTrigger -AtStartup
+<span class="nv">$Trigger</span> <span class="p">=</span> <span class="nb">New-ScheduledTaskTrigger</span> <span class="n">-AtStartup</span>
 
-$Principal = New-ScheduledTaskPrincipal `
-    -UserId &quot;$env:USERDOMAIN\$env:USERNAME&quot; `
-    -LogonType Interactive `
-    -RunLevel Highest
+<span class="nv">$Principal</span> <span class="p">=</span> <span class="nb">New-ScheduledTaskPrincipal</span> <span class="p">`</span>
+    <span class="n">-UserId</span> <span class="s2">&quot;$env:USERDOMAIN\$env:USERNAME&quot;</span> <span class="p">`</span>
+    <span class="n">-LogonType</span> <span class="n">Interactive</span> <span class="p">`</span>
+    <span class="n">-RunLevel</span> <span class="n">Highest</span>
 
-$Settings = New-ScheduledTaskSettingsSet `
-    -AllowStartIfOnBatteries `
-    -DontStopIfGoingOnBatteries `
-    -RestartCount 3 `
-    -RestartInterval (New-TimeSpan -Minutes 1)
+<span class="nv">$Settings</span> <span class="p">=</span> <span class="nb">New-ScheduledTaskSettingsSet</span> <span class="p">`</span>
+    <span class="n">-AllowStartIfOnBatteries</span> <span class="p">`</span>
+    <span class="n">-DontStopIfGoingOnBatteries</span> <span class="p">`</span>
+    <span class="n">-RestartCount</span> <span class="n">3</span> <span class="p">`</span>
+    <span class="n">-RestartInterval</span> <span class="p">(</span><span class="nb">New-TimeSpan</span> <span class="n">-Minutes</span> <span class="n">1</span><span class="p">)</span>
 
-Register-ScheduledTask `
-    -TaskName &quot;SONSLAB_Blog_AutoBuild_Watcher&quot; `
-    -Action $Action `
-    -Trigger $Trigger `
-    -Principal $Principal `
-    -Settings $Settings `
-    -Description &quot;Cowork가 새 .md를 저장하면 auto-deploy.bat 자동 실행&quot;
-</code></pre>
+<span class="nb">Register-ScheduledTask</span> <span class="p">`</span>
+    <span class="n">-TaskName</span> <span class="s2">&quot;SONSLAB_Blog_AutoBuild_Watcher&quot;</span> <span class="p">`</span>
+    <span class="n">-Action</span> <span class="nv">$Action</span> <span class="p">`</span>
+    <span class="n">-Trigger</span> <span class="nv">$Trigger</span> <span class="p">`</span>
+    <span class="n">-Principal</span> <span class="nv">$Principal</span> <span class="p">`</span>
+    <span class="n">-Settings</span> <span class="nv">$Settings</span> <span class="p">`</span>
+    <span class="n">-Description</span> <span class="s2">&quot;Cowork가 새 .md를 저장하면 auto-deploy.bat 자동 실행&quot;</span>
+</code></pre></div>
 
 <p>등록 확인:</p>
-<pre class="codehilite"><code class="language-powershell">Get-ScheduledTask -TaskName &quot;SONSLAB_Blog_AutoBuild_Watcher&quot;
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="nb">Get-ScheduledTask</span> <span class="n">-TaskName</span> <span class="s2">&quot;SONSLAB_Blog_AutoBuild_Watcher&quot;</span>
+</code></pre></div>
 
 <hr />
 <h2 id="3">3단계 — 즉시 시작 (재부팅 안 하고)</h2>
-<pre class="codehilite"><code class="language-powershell">Start-ScheduledTask -TaskName &quot;SONSLAB_Blog_AutoBuild_Watcher&quot;
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="nb">Start-ScheduledTask</span> <span class="n">-TaskName</span> <span class="s2">&quot;SONSLAB_Blog_AutoBuild_Watcher&quot;</span>
+</code></pre></div>
 
 <p>몇 초 뒤 <code>watcher.log</code>에 <code>"Watcher started."</code> 라인이 찍히면 정상 동작.</p>
 <hr />
 <h2 id="4">4단계 — 테스트</h2>
 <p>샌드박스에서 새 <code>.md</code>가 posts/에 저장되는 것을 시뮬레이션하려면:</p>
-<pre class="codehilite"><code class="language-powershell">&quot;test&quot; | Out-File &quot;X:\Work_Agent\sonslab-blog\posts\2026-04\_test.md&quot;
-Remove-Item &quot;X:\Work_Agent\sonslab-blog\posts\2026-04\_test.md&quot;
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="s2">&quot;test&quot;</span> <span class="p">|</span> <span class="nb">Out-File</span> <span class="s2">&quot;X:\Work_Agent\sonslab-blog\posts\2026-04\_test.md&quot;</span>
+<span class="nb">Remove-Item</span> <span class="s2">&quot;X:\Work_Agent\sonslab-blog\posts\2026-04\_test.md&quot;</span>
+</code></pre></div>
 
 <p>5초 뒤 <code>watcher.log</code>에서 <code>auto-deploy.bat finished (exit=0)</code> 확인.</p>
 <hr />
 <h2 id="_2">디버깅 팁</h2>
 <p><strong>watcher.log를 실시간으로 모니터링</strong>:</p>
-<pre class="codehilite"><code class="language-powershell">Get-Content X:\Work_Agent\sonslab-blog\watcher.log -Tail 20 -Wait
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="nb">Get-Content</span> <span class="n">X</span><span class="p">:\</span><span class="n">Work_Agent</span><span class="p">\</span><span class="n">sonslab-blog</span><span class="p">\</span><span class="n">watcher</span><span class="p">.</span><span class="n">log</span> <span class="n">-Tail</span> <span class="n">20</span> <span class="n">-Wait</span>
+</code></pre></div>
 
 <p><strong>워처 수동 중단</strong>:</p>
-<pre class="codehilite"><code class="language-powershell">Stop-ScheduledTask -TaskName &quot;SONSLAB_Blog_AutoBuild_Watcher&quot;
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="nb">Stop-ScheduledTask</span> <span class="n">-TaskName</span> <span class="s2">&quot;SONSLAB_Blog_AutoBuild_Watcher&quot;</span>
+</code></pre></div>
 
 <p><strong>auto-deploy.bat 자체가 실패하면</strong> 먼저 워처 없이 수동 실행으로 원인을 잡아야 한다. watcher.log의 <code>OUT:</code> 라인에 bat 출력이 그대로 찍히니 거기서 에러 확인 가능.</p>
 <hr />
@@ -259,14 +259,14 @@ Remove-Item &quot;X:\Work_Agent\sonslab-blog\posts\2026-04\_test.md&quot;
 <hr />
 <h2 id="_4">요약</h2>
 <p>셋업 완료 후 흐름:</p>
-<pre class="codehilite"><code>Cowork 스케줄 (06/12/17/22시)
+<div class="codehilite"><pre><span></span><code>Cowork 스케줄 (06/12/17/22시)
   └─ 내가 .md 파일 작성 → posts/2026-04/ 에 저장
        │
        └─ Windows FileSystemWatcher 감지 (5초 후)
             └─ auto-deploy.bat 실행
                  └─ build.py 호출 → site/ 갱신
                       └─ (auto-deploy.bat에 git push 있다면) 배포까지 자동
-</code></pre>
+</code></pre></div>
 
 <p>한 번 셋업하면 Cowork 쪽에서는 아무것도 안 고쳐도 되고, <code>build.py</code>나 <code>auto-deploy.bat</code> 내용도 그대로 써도 된다.</p>
     </div>
