@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anthropic Skills 오픈 표준화, OpenAI도 채택 — 표준화의 해석 — SONSLAB</title>
+    <title>일요일 늦은 오후 — Claude Mythos가 남긴 숙제, 그리고 이번 주 어닝 캘린더 — SONSLAB</title>
     <link rel="icon" href="../assets/logo.jpg">
     <link rel="alternate" type="application/atom+xml" title="SONSLAB Feed" href="../feed.xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,20 +11,22 @@
     <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/style.css">
-    <meta name="description" content="일요일 밤. 이번 주는 모델 한 방의 주가 아니라, 에이전트 레이어의 공통 어휘가 생기기 시작한 주였다고 기록해두고 싶다.">
+    <meta name="description" content="낮에 붙잡고 있던 RAG 라우팅 미들웨어를 대충 동작하는 수준까지 마무리했다. 막히던 부분이 reranker 쪽 타임아웃 처리였는데, 역시나 쓰다 보면 &quot;모델이 느려진다&quot;가 문제가 아니라 &quot;느려진 걸 누가 판단하느냐&quot;가 더 어렵다. 그 얘기는 다음 기회에.">
     <meta name="author" content="SONSLAB">
-    <link rel="canonical" href="https://shonsubong.github.io/sonslab-blog/posts/2025-12-21-pm22-ai-tech-news.html">
+    <link rel="canonical" href="https://shonsubong.github.io/sonslab-blog/posts/2026-04-19-pm17-ai-tech-news.html">
     <meta property="og:site_name" content="SONSLAB">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Anthropic Skills 오픈 표준화, OpenAI도 채택 — 표준화의 해석">
-    <meta property="og:description" content="일요일 밤. 이번 주는 모델 한 방의 주가 아니라, 에이전트 레이어의 공통 어휘가 생기기 시작한 주였다고 기록해두고 싶다.">
-    <meta property="og:url" content="https://shonsubong.github.io/sonslab-blog/posts/2025-12-21-pm22-ai-tech-news.html">
-    <meta property="og:image" content="https://shonsubong.github.io/sonslab-blog/assets/og/2025-12-21-pm22-ai-tech-news.png">
+    <meta property="og:title" content="일요일 늦은 오후 — Claude Mythos가 남긴 숙제, 그리고 이번 주 어닝 캘린더">
+    <meta property="og:description" content="낮에 붙잡고 있던 RAG 라우팅 미들웨어를 대충 동작하는 수준까지 마무리했다. 막히던 부분이 reranker 쪽 타임아웃 처리였는데, 역시나 쓰다 보면 &quot;모델이 느려진다&quot;가 문제가 아니라 &quot;느려진 걸 누가 판단하느냐&quot;가 더 어렵다. 그 얘기는 다음 기회에.">
+    <meta property="og:url" content="https://shonsubong.github.io/sonslab-blog/posts/2026-04-19-pm17-ai-tech-news.html">
+    <meta property="og:image" content="https://shonsubong.github.io/sonslab-blog/assets/og/2026-04-19-pm17-ai-tech-news.png">
     <meta property="og:locale" content="ko_KR">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Anthropic Skills 오픈 표준화, OpenAI도 채택 — 표준화의 해석">
-    <meta name="twitter:description" content="일요일 밤. 이번 주는 모델 한 방의 주가 아니라, 에이전트 레이어의 공통 어휘가 생기기 시작한 주였다고 기록해두고 싶다.">
-    <meta name="twitter:image" content="https://shonsubong.github.io/sonslab-blog/assets/og/2025-12-21-pm22-ai-tech-news.png">
+    <meta name="twitter:title" content="일요일 늦은 오후 — Claude Mythos가 남긴 숙제, 그리고 이번 주 어닝 캘린더">
+    <meta name="twitter:description" content="낮에 붙잡고 있던 RAG 라우팅 미들웨어를 대충 동작하는 수준까지 마무리했다. 막히던 부분이 reranker 쪽 타임아웃 처리였는데, 역시나 쓰다 보면 &quot;모델이 느려진다&quot;가 문제가 아니라 &quot;느려진 걸 누가 판단하느냐&quot;가 더 어렵다. 그 얘기는 다음 기회에.">
+    <meta name="twitter:image" content="https://shonsubong.github.io/sonslab-blog/assets/og/2026-04-19-pm17-ai-tech-news.png">
+    <meta property="article:published_time" content="2026-04-19T16:52:00+09:00">
+    <meta property="article:modified_time" content="2026-04-19T16:52:00+09:00">
     
 <script>
 (function() {
@@ -41,8 +43,8 @@
     } catch (e) {}
 })();
 </script>
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Anthropic Skills 오픈 표준화, OpenAI도 채택 — 표준화의 해석", "description": "일요일 밤. 이번 주는 모델 한 방의 주가 아니라, 에이전트 레이어의 공통 어휘가 생기기 시작한 주였다고 기록해두고 싶다.", "url": "https://shonsubong.github.io/sonslab-blog/posts/2025-12-21-pm22-ai-tech-news.html", "mainEntityOfPage": "https://shonsubong.github.io/sonslab-blog/posts/2025-12-21-pm22-ai-tech-news.html", "inLanguage": "ko", "image": "https://shonsubong.github.io/sonslab-blog/assets/og/2025-12-21-pm22-ai-tech-news.png", "author": {"@type": "Person", "name": "SONSLAB"}, "publisher": {"@type": "Organization", "name": "SONSLAB", "logo": {"@type": "ImageObject", "url": "https://shonsubong.github.io/sonslab-blog/assets/logo.jpg"}}, "datePublished": "", "dateModified": ""}</script>
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "SONSLAB", "item": "https://shonsubong.github.io/sonslab-blog/"}, {"@type": "ListItem", "position": 2, "name": "글", "item": "https://shonsubong.github.io/sonslab-blog/#posts"}, {"@type": "ListItem", "position": 3, "name": "Anthropic Skills 오픈 표준화, OpenAI도 채택 — 표준화의 해석", "item": "https://shonsubong.github.io/sonslab-blog/posts/2025-12-21-pm22-ai-tech-news.html"}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "일요일 늦은 오후 — Claude Mythos가 남긴 숙제, 그리고 이번 주 어닝 캘린더", "description": "낮에 붙잡고 있던 RAG 라우팅 미들웨어를 대충 동작하는 수준까지 마무리했다. 막히던 부분이 reranker 쪽 타임아웃 처리였는데, 역시나 쓰다 보면 \"모델이 느려진다\"가 문제가 아니라 \"느려진 걸 누가 판단하느냐\"가 더 어렵다. 그 얘기는 다음 기회에.", "url": "https://shonsubong.github.io/sonslab-blog/posts/2026-04-19-pm17-ai-tech-news.html", "mainEntityOfPage": "https://shonsubong.github.io/sonslab-blog/posts/2026-04-19-pm17-ai-tech-news.html", "inLanguage": "ko", "image": "https://shonsubong.github.io/sonslab-blog/assets/og/2026-04-19-pm17-ai-tech-news.png", "author": {"@type": "Person", "name": "SONSLAB"}, "publisher": {"@type": "Organization", "name": "SONSLAB", "logo": {"@type": "ImageObject", "url": "https://shonsubong.github.io/sonslab-blog/assets/logo.jpg"}}, "datePublished": "2026-04-19T16:52:00+09:00", "dateModified": "2026-04-19T16:52:00+09:00"}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "SONSLAB", "item": "https://shonsubong.github.io/sonslab-blog/"}, {"@type": "ListItem", "position": 2, "name": "글", "item": "https://shonsubong.github.io/sonslab-blog/#posts"}, {"@type": "ListItem", "position": 3, "name": "일요일 늦은 오후 — Claude Mythos가 남긴 숙제, 그리고 이번 주 어닝 캘린더", "item": "https://shonsubong.github.io/sonslab-blog/posts/2026-04-19-pm17-ai-tech-news.html"}]}</script>
 </head>
 <body class="post-page">
     <div class="reading-progress" id="reading-progress" role="progressbar" aria-label="읽기 진행률"></div>
@@ -85,25 +87,25 @@
 <article class="post-article">
     <div class="post-header">
         <a href="../index.html" class="back-link">← 전체 글 목록</a>
-        <h1>Anthropic Skills 오픈 표준화, OpenAI도 채택 — 표준화의 해석</h1>
+        <h1>일요일 늦은 오후 — Claude Mythos가 남긴 숙제, 그리고 이번 주 어닝 캘린더</h1>
         <div class="post-meta">
-            <span class="time-label">저녁 마감</span>
-            <span>2025-12-21 22:51</span>
+            <span class="time-label">오후 브리핑</span>
+            <span>2026년 04월 19일 (일) · 16:52</span>
             <span>·</span>
-            <span>3분 읽기</span>
+            <span>6분 읽기</span>
         </div>
     </div>
     
+<div class="day-series-wrap" aria-label="같은 날의 다른 브리핑">
+    <div class="day-series-label"><span class="dot"></span><span>2026년 04월 19일 (일)의 브리핑</span></div>
+    <div class="day-series"><a href="2026-04-19-am06-ai-tech-news.html" class="day-series-item"><span class="series-time">06:14</span><span class="series-label">새벽 리포트</span></a><a href="2026-04-19-pm12-ai-tech-news.html" class="day-series-item"><span class="series-time">12:18</span><span class="series-label">오전 브리핑</span></a><a href="#" class="day-series-item active" aria-current="page"><span class="series-time">16:52</span><span class="series-label">오후 브리핑</span></a></div>
+</div>
     <details class="post-toc" open><summary>목차</summary><div class="toc">
 <div class="toc">
 <ul>
-<li><a href="#skills">Skills가 풀렸다 — 일요일 밤의 구조 변화 메모</a><ul>
-<li><a href="#anthropic-agent-skills">Anthropic Agent Skills — 오픈 사양으로</a></li>
-<li><a href="#_1">표준화가 주는 진짜 의미</a></li>
-<li><a href="#gpt-52-codex">GPT-5.2-Codex</a></li>
-<li><a href="#gemini-3-flash">Gemini 3 Flash 기본 모델화</a></li>
-<li><a href="#_2">반도체 현직자 각도</a></li>
-<li><a href="#_3">다음 주</a></li>
+<li><a href="#claude-mythos">일요일 늦은 오후 — Claude Mythos가 남긴 숙제, 그리고 이번 주 어닝 캘린더</a><ul>
+<li><a href="#claude-mythos_1">Claude Mythos — "공개하지 않는 모델"이라는 선택</a></li>
+<li><a href="#_1">이번 주 어닝 캘린더 — 짧게</a></li>
 </ul>
 </li>
 </ul>
@@ -112,81 +114,61 @@
 </div>
 </details>
     <div class="post-content">
-<h1 id="skills">Skills가 풀렸다 — 일요일 밤의 구조 변화 메모</h1>
-<p>일요일 밤. 이번 주는 모델 한 방의 주가 아니라, <strong>에이전트 레이어의 공통 어휘</strong>가 생기기 시작한 주였다고 기록해두고 싶다.</p>
-<h2 id="anthropic-agent-skills">Anthropic Agent Skills — 오픈 사양으로</h2>
-<p>Anthropic이 자사 <strong>Agent Skills</strong>를 오픈 사양으로 공개. 핵심은 둘.</p>
-<ol>
-<li>Skills 제작자는 <strong>Anthropic 에코시스템 밖으로 이식 가능</strong></li>
-<li><strong>OpenAI도 ChatGPT / Codex에서 구조적으로 동일한 아키텍처</strong>를 이미 채택 (보도 기준)</li>
-</ol>
-<p>빅랩끼리 <strong>표준을 맞춘다는 신호</strong>가 공식적으로 나온 건 이번이 사실상 처음이다. 한 달 전 MCP가 Linux Foundation <strong>Agentic AI Foundation</strong>으로 이관된 것까지 엮어 보면, 분기 단위로 <strong>에이전트 인터페이스 레이어의 표준화</strong>가 밀린다.</p>
-<h2 id="_1">표준화가 주는 진짜 의미</h2>
-<p>표준화는 언제나 양날이다.</p>
+<h1 id="claude-mythos">일요일 늦은 오후 — Claude Mythos가 남긴 숙제, 그리고 이번 주 어닝 캘린더</h1>
+<p>낮에 붙잡고 있던 RAG 라우팅 미들웨어를 대충 동작하는 수준까지 마무리했다. 막히던 부분이 reranker 쪽 타임아웃 처리였는데, 역시나 쓰다 보면 "모델이 느려진다"가 문제가 아니라 "느려진 걸 누가 판단하느냐"가 더 어렵다. 그 얘기는 다음 기회에.</p>
+<p>오늘 남은 시간에 정리해두고 싶었던 건 지난주 있었던 <strong>Anthropic의 Claude Mythos</strong> 건이다. 4/7 발표였는데 업계 반응이 너무 커서 아직 여진이 이어지고 있다. 일요일 마감 톤으로 한 번 짚고, 이번 주 어닝 캘린더만 간단히 메모해둔다.</p>
+<hr />
+<h2 id="claude-mythos_1">Claude Mythos — "공개하지 않는 모델"이라는 선택</h2>
+<p>요약부터. Anthropic이 4월 7일에 Claude Mythos Preview를 공개했는데, 이건 <strong>일반 공개 제품이 아니다</strong>. <a href="https://red.anthropic.com/2026/mythos-preview/">red.anthropic.com 발표</a>와 <a href="https://www.aisi.gov.uk/blog/our-evaluation-of-claude-mythos-previews-cyber-capabilities">AISI 평가 블로그</a>를 같이 읽으면 그림이 또렷해진다. UK AISI 평가에서 Mythos Preview는 "The Last Ones(TLO)"라 불리는 32단계 기업 네트워크 공격 시뮬레이션을 처음부터 끝까지 완주한 최초의 모델이 됐다. 10번 중 3번 완주, 평균 22/32 스텝. 디펜더나 방어 툴링이 없는 컨트롤드 환경이라는 단서는 달렸지만, <strong>"자동화된 멀티 스테이지 공격을 LLM 단독이 수행"</strong>이라는 문턱은 넘은 거다.</p>
+<p>같이 공개된 성과가 더 놀랍다. <a href="https://www.helpnetsecurity.com/2026/04/14/claude-mythos-test-attack-capabilities-limits/">Help Net Security 기사</a>에 따르면 Mythos가 이미 메이저 OS와 브라우저에서 수천 개의 고위험 제로데이를 발견했고, OpenBSD의 27년 묵은 버그, FFmpeg의 16년 된 결함, 메모리 안전 VM 모니터의 메모리 손상 취약점까지 훑어냈다고 한다. 이 규모가 사실이라면 "AI 레드팀" 개념 자체가 질적으로 바뀐다.</p>
+<p>그래서 Anthropic이 한 선택은 <strong>공개하지 않는 것</strong>. 대신 <a href="https://red.anthropic.com/2026/mythos-preview/">Project Glasswing</a>이라는 프로그램으로 Linux Foundation과 40개 주요 인프라 기관에 선별적 액세스만 주고, 크리티컬 소프트웨어 선제 방어 작업에 투입한다. 공개 프런티어 모델 쪽인 Opus 4.7은 별도로 사이버 능력을 일부러 낮춰서 릴리스했다는 얘기가 <a href="https://www.itpro.com/security/anthropic-claude-opus-claude-mythos-cyber-capabilities">ITPro 보도</a>에 같이 나왔다. 회사 입장에서는 보기 드문 결정이다 — 팔 수 있는 물건을 안 판다.</p>
+<p>AI S/W 플랫폼 만드는 입장에서 여기서 읽히는 신호가 몇 가지 있다.</p>
+<p>첫째, <strong>"공개가 기본값"이었던 프런티어 모델 릴리스 관행에 처음으로 크고 뚜렷한 균열</strong>이 갔다. 지금까지는 안전성 문제를 피드백 루프로 잡아가며 릴리스하는 게 사실상 표준이었다. Mythos는 그 공식을 깬 첫 사례다. 다음 단계 모델들(누가 내건 간에)에서 "일부 능력을 봉인하거나, 접근권을 선별한다"는 패턴이 반복될 가능성이 높다.</p>
+<p>둘째, <strong>방어자 레버리지가 먼저 뛴다</strong>. <a href="https://the-decoder.com/the-myth-of-claude-mythos-crumbles-as-small-open-models-hunt-the-same-cybersecurity-bugs-anthropic-showcased/">Decoder 기사</a>는 "작은 오픈모델도 비슷한 버그를 찾아낸다"며 Mythos의 신화를 깎아내렸는데, 이 반박 자체가 오히려 본론을 뒷받침한다. 공격용 AI 역량은 프런티어 독점이 아니라 공정 확산되는 쪽으로 간다는 뜻이고, 그렇다면 방어 쪽 자동화를 먼저 손에 쥐는 조직이 유리해진다. <a href="https://www.cfr.org/articles/six-reasons-claude-mythos-is-an-inflection-point-for-ai-and-global-security">CFR 분석</a>이 "AI-글로벌 안보의 변곡점"이라고 쓴 배경이 이거다.</p>
+<p>셋째, <strong>Claude Code 같은 "에이전트형 코드 도구"의 라이선스·감사 조건이 향후 까다로워질 가능성</strong>. 개인 구독자 입장에서는 당장은 쓰던 대로 쓰지만, 기업 컴플라이언스 쪽에서는 이번 주말에도 "우리는 어떤 에이전트 도구를 승인하고 있고, 어떤 활동을 로깅하나"라는 질문이 한 단 더 올라갔을 거다. 회사에서 Claude Code를 못 쓰게 막아둔 내 조직의 보안 정책도, 반쯤은 이런 방향을 미리 본 셈이다 — 이번 건을 보면 그 결정이 과했다고 말하기 어려워졌다.</p>
+<hr />
+<h2 id="_1">이번 주 어닝 캘린더 — 짧게</h2>
+<p>낮에 "월요일 아시아장 전에 정리하겠다"고 했는데 그냥 여기에 붙여둔다.</p>
 <ul>
-<li><strong>플러스</strong> — 사용자/개발자 락인 해제, 제작된 툴의 수명 연장</li>
-<li><strong>마이너스</strong> — 모델·플랫폼 간 차별화 포인트 감소, 상품화 가속</li>
+<li><strong>4/22 (수)</strong>: <strong>TSLA Q1</strong>. 생산 408K, 인도 358K로 Wall Street 예상($368,903)을 하회한 채로 들어간다(<a href="https://finance.yahoo.com/markets/stocks/articles/teslas-q1-2026-earnings-expect-100958587.html">Yahoo Finance</a>). EPS 컨센서스 $0.24 ($0.15 YoY +60%). 숫자보다 컨콜에서 Robotaxi 운영 지표(개입률, 마일리지)와 Cybercab 양산 타임라인이 어디까지 나오는지가 포인트.</li>
+<li><strong>4/29 (화)</strong>: <strong>MSFT FY Q3, META Q1, GOOGL Q1</strong>. AI 인프라 자본지출 가이던스가 최대 관심사. META는 EPS $6.65 / 매출 약 $55B, YoY +32% 성장률이 컨센서스(<a href="https://www.ig.com/ae/news-and-trade-ideas/tesla-q1-2026-earnings-preview-car-company-or-ai-infrastructure-play-260416">IG 프리뷰</a>).</li>
+<li><strong>같은 주 예정</strong>: INTC도 이번 주 중 어닝. <a href="https://techcrunch.com/2026/04/07/intel-signs-on-to-elon-musks-terafab-chips-project/">Intel이 4/7 발표한 Terafab 파운드리 계약</a> 이후 첫 결산이라 가이던스 언급 수위를 볼 만하다. 18A 램프업 구체 숫자가 얼마나 공개될지.</li>
 </ul>
-<p>이 구조 변화에서 경쟁은 <strong>위 레이어</strong>로 올라간다.</p>
-<ul>
-<li>에이전트 <strong>오케스트레이션</strong> (멀티 에이전트 협업·플래너)</li>
-<li><strong>UX / 워크플로 통합</strong> (어디에 박혀 있는가)</li>
-<li><strong>인프라 비용 곡선</strong> (토큰당 원가, 응답 지연)</li>
-</ul>
-<p>나는 2026년의 진짜 승부처가 <strong>"어느 모델이 가장 똑똑한가"에서 "어느 플랫폼이 제일 비싸지 않게 깔려 있나"로 이동한다</strong>고 본다. 그 관점에서 Claude Opus 4.5의 67% 가격 인하 (11/24)도 같은 맥락으로 읽힌다.</p>
-<h2 id="gpt-52-codex">GPT-5.2-Codex</h2>
-<p>12월 11일 GPT-5.2 본판에 이어 <strong>GPT-5.2-Codex</strong>가 별도 릴리스. 보고된 강화 포인트.</p>
-<ul>
-<li><strong>장기 작업 컨텍스트 컴팩션</strong> — 긴 호흡 작업에서 컨텍스트 압축 품질 향상</li>
-<li><strong>대규모 변경(리팩터·마이그레이션) 성능 향상</strong></li>
-<li><strong>Windows 환경 안정성</strong></li>
-<li><strong>사이버 보안 관련 성능 강화</strong></li>
-</ul>
-<p>특히 마지막이 눈에 띈다. <em>"코딩 에이전트의 보안 작업"</em> — 취약점 탐지·패치·시큐어 코드 생성 — 은 2026년 초반 엔터프라이즈 POC에서 이슈로 부상할 카테고리.</p>
-<h2 id="gemini-3-flash">Gemini 3 Flash 기본 모델화</h2>
-<p>Google은 <strong>Gemini 3 Flash</strong>를 Gemini 앱과 AI Mode(검색)의 <strong>기본 모델</strong>로 올렸다. Gemini 3 풀버전 = 정확도, Flash = 단가·지연. 페어를 확실히 가른 모양새.</p>
-<h2 id="_2">반도체 현직자 각도</h2>
-<p>표준화가 진행되면 <strong>추론 워크로드 포트abilityRC</strong>가 올라간다. 모델이 이식 가능해진다는 건 <strong>"어느 벤더의 가속기에서 돌려도 된다"</strong>는 의미고, 이건 <strong>Nvidia 독점을 점진 희석하는 축</strong>이다.</p>
-<p>물론 단기적으론 Blackwell / Blackwell Ultra 수요가 여전히 타이트다. 하지만 2026년 후반으로 가면 <strong>AMD MI350 / Trainium3 / TPU v6</strong> 점유율이 의외로 올라올 여지가 생긴다. 이 축은 조용히 계속 지켜보고 있다.</p>
-<h2 id="_3">다음 주</h2>
-<p>연말 휴가 구간. 발표는 줄지만 <strong>연말 회고 / 2026 전망 보고서</strong>가 쏟아질 시기. 개인적으로는 IDC·Gartner·ARK 리서치를 한 번에 묶어 읽어보려고 한다.</p>
-<p>12월 키워드를 하나만 꼽으라면 <strong>"앰비언트(ambient)"</strong>. 모델 발표가 이슈에서 브라우저·스프레드시트·메일에 그냥 깔리는 단계로. 그 변곡점이 이번 달에 통과된 것 같다.</p>
-<p>일요일 밤, 여기까지.</p>
+<p>Tesla 투자자 관점에서 이번 Q1은 숫자보다 언어로 읽는 어닝이 될 가능성이 높다. 숫자는 이미 프리릴리스 생산·인도 데이터로 시장에 깔렸다. 컨콜에서 Robotaxi 3개 도시 운영 지표 디스클로저가 어디까지 나오느냐, FSD v14.x 로드맵이 어떻게 구체화되느냐가 실질적 이벤트다.</p>
+<hr />
+<p>저녁에는 오랜만에 쉬는 시간으로 돌려야겠다. 이번 주는 Mythos 관련 follow-up 아티클이 더 쏟아질 가능성이 높으니 월요일 새벽 포스트 때 또 정리할 일이 생길 듯.</p>
     </div>
     
 <div class="post-share">
     <span class="share-label">공유하기</span>
-    <a href="https://twitter.com/intent/tweet?text=Anthropic Skills 오픈 표준화, OpenAI도 채택 — 표준화의 해석&url=https://shonsubong.github.io/sonslab-blog/posts/2025-12-21-pm22-ai-tech-news.html"
+    <a href="https://twitter.com/intent/tweet?text=일요일 늦은 오후 — Claude Mythos가 남긴 숙제, 그리고 이번 주 어닝 캘린더&url=https://shonsubong.github.io/sonslab-blog/posts/2026-04-19-pm17-ai-tech-news.html"
        class="share-btn" target="_blank" rel="noopener" aria-label="X(Twitter)에 공유">
         <span>X</span>
     </a>
-    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://shonsubong.github.io/sonslab-blog/posts/2025-12-21-pm22-ai-tech-news.html"
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://shonsubong.github.io/sonslab-blog/posts/2026-04-19-pm17-ai-tech-news.html"
        class="share-btn" target="_blank" rel="noopener" aria-label="LinkedIn에 공유">
         <span>in</span>
     </a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://shonsubong.github.io/sonslab-blog/posts/2025-12-21-pm22-ai-tech-news.html"
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://shonsubong.github.io/sonslab-blog/posts/2026-04-19-pm17-ai-tech-news.html"
        class="share-btn" target="_blank" rel="noopener" aria-label="Facebook에 공유">
         <span>f</span>
     </a>
-    <button type="button" class="share-btn share-copy" id="share-copy-btn" data-url="https://shonsubong.github.io/sonslab-blog/posts/2025-12-21-pm22-ai-tech-news.html" aria-label="링크 복사">
+    <button type="button" class="share-btn share-copy" id="share-copy-btn" data-url="https://shonsubong.github.io/sonslab-blog/posts/2026-04-19-pm17-ai-tech-news.html" aria-label="링크 복사">
         <span>🔗 링크 복사</span>
     </button>
 </div>
     
 <nav class="post-nav-bottom" aria-label="이전/다음 글">
-    <a href="2025-12-16-pm22-ai-tech-news.html" class="post-nav-link prev">
+    <a href="2026-04-19-pm12-ai-tech-news.html" class="post-nav-link prev">
         <span class="post-nav-label">← 이전 글</span>
-        <span class="post-nav-title">백악관 AI Tech Force, 1,000명 2년 파견 — 공공 AI의 문이 열렸다</span>
+        <span class="post-nav-title">일요일 점심 — Tesla Robotaxi가 댈러스·휴스턴까지, 그리고 TSMC가 말해주는 2026년</span>
     </a>
-    <a href="2025-12-23-pm21-ai-tech-news.html" class="post-nav-link next">
-        <span class="post-nav-label">다음 글 →</span>
-        <span class="post-nav-title">Mac Studio × Thunderbolt 5 RDMA — 애플이 조용히 꺼낸 로컬 AI 클러스터</span>
-    </a>
+    
 </nav>
     
 <section class="related-posts" aria-label="최근 다른 리포트">
     <div class="related-posts-label">최근 다른 리포트</div>
-    <ul class="related-list"><li><a href="2026-04-19-pm17-ai-tech-news.html"><span class="related-title">일요일 늦은 오후 — Claude Mythos가 남긴 숙제, 그리고 이번 주 어닝 캘린더</span><span class="related-date">2026-04-19 · 오후 브리핑 · 16:52</span></a></li><li><a href="2026-04-19-pm12-ai-tech-news.html"><span class="related-title">일요일 점심 — Tesla Robotaxi가 댈러스·휴스턴까지, 그리고 TSMC가 말해주는 2026년</span><span class="related-date">2026-04-19 · 오전 브리핑 · 12:18</span></a></li><li><a href="2026-04-19-am06-ai-tech-news.html"><span class="related-title">일요일 아침, Snap 1,000명과 &#x27;AI가 못 이기는 영역&#x27; — 두 기사를 나란히 놓고 읽다</span><span class="related-date">2026-04-19 · 새벽 리포트 · 06:14</span></a></li><li><a href="2026-04-18-pm22-ai-tech-news.html"><span class="related-title">밤에 Ising 리포 훑어보다가 — Samsung HBM4 로직 다이가 조용히 40% 올랐다</span><span class="related-date">2026-04-18 · 저녁 마감 · 22:17</span></a></li><li><a href="2026-04-18-pm17-ai-tech-news.html"><span class="related-title">토요일 오후 산책 다녀와서 — Opus 4.7 MRCR 낙폭, 개인 프로젝트로 직접 재봤다</span><span class="related-date">2026-04-18 · 오후 브리핑 · 17:14</span></a></li></ul>
+    <ul class="related-list"><li><a href="2026-04-18-pm22-ai-tech-news.html"><span class="related-title">밤에 Ising 리포 훑어보다가 — Samsung HBM4 로직 다이가 조용히 40% 올랐다</span><span class="related-date">2026-04-18 · 저녁 마감 · 22:17</span></a></li><li><a href="2026-04-18-pm17-ai-tech-news.html"><span class="related-title">토요일 오후 산책 다녀와서 — Opus 4.7 MRCR 낙폭, 개인 프로젝트로 직접 재봤다</span><span class="related-date">2026-04-18 · 오후 브리핑 · 17:14</span></a></li><li><a href="2026-04-18-pm12-ai-tech-news.html"><span class="related-title">호르무즈 열리고 테슬라가 숨 돌린 주말 — Cursor 500억 달러, Opus 4.7 논쟁, 그리고 Nvidia Ising</span><span class="related-date">2026-04-18 · 오전 브리핑 · 12:34</span></a></li><li><a href="2026-04-18-am06-ai-tech-news.html"><span class="related-title">밤사이 흐름이 조금 달라졌다 — Tesla 실적 앞둔 금요일 반등, DeepSeek 첫 외부 투자, 그리고 전자현미경에 올라탄 파운데이션 모델</span><span class="related-date">2026-04-18 · 새벽 리포트 · 06:23</span></a></li><li><a href="2026-04-17-pm22-ai-tech-news.html"><span class="related-title">OpenAI-Cerebras $20B 계약, Mozilla Thunderbolt 공개 — 테슬라 어닝 D-5 밤</span><span class="related-date">2026-04-17 · 저녁 마감 · 22:37</span></a></li></ul>
 </section>
 </article>
 
