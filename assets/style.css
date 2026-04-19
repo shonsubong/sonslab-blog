@@ -489,7 +489,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, [tabindex]:focus-vis
 [data-design="refined"] .filter-bar .chip:hover { border-bottom-color: var(--accent); background: transparent; color: var(--accent); }
 [data-design="refined"] .filter-bar .chip.active { background: transparent; border-color: transparent; border-bottom-color: var(--text); color: var(--text); font-weight: 700; }
 [data-design="refined"] .month-group { border: none; border-top: 1px solid var(--border-soft); background: transparent; border-radius: 0; }
-[data-design="refined"] .month-group summary { font-family: var(--serif); }
+/* 카드 배경을 없앤 디자인에서는 좌우 패딩을 제거해 date-group이 hero와 동일한 세로선에 정렬되도록 함 */
+[data-design="refined"] .month-group summary { font-family: var(--serif); padding-left: 0; padding-right: 0; }
+[data-design="refined"] .month-group .month-body { padding-left: 0; padding-right: 0; }
 
 /* ─── B · 에디토리얼 (Editorial) — 이중선 마스트헤드, 세리프 이탤릭 강조 ─── */
 [data-design="editorial"] {
@@ -513,7 +515,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, [tabindex]:focus-vis
 [data-design="editorial"] .post-item { border-bottom: 1px solid var(--border-soft); padding: 1.6rem 0; }
 [data-design="editorial"] .post-item h2 { font-weight: 700; letter-spacing: -0.3px; }
 [data-design="editorial"] .time-label { font-family: var(--mono); font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text); font-size: 0.72rem; }
-[data-design="editorial"] .filter-bar { border-top: 1px solid var(--text); border-bottom: 1px solid var(--text); background: var(--bg-subtle); margin: 0 0 2rem; padding: 0; }
+[data-design="editorial"] .filter-bar { max-width: 1240px; margin: 0 auto 2rem; border-top: 1px solid var(--text); border-bottom: 1px solid var(--text); background: var(--bg-subtle); padding: 0; }
 [data-design="editorial"] .filter-bar-inner { max-width: 1240px; margin: 0 auto; padding: 0.7rem 1.5rem; display: flex; flex-direction: row; align-items: center; gap: 1.2rem; flex-wrap: wrap; }
 [data-design="editorial"] .filter-bar-inner::before { content: "ARCHIVE"; font-family: var(--mono); font-size: 0.72rem; font-weight: 700; letter-spacing: 2px; color: var(--text); flex: 0 0 auto; white-space: nowrap; order: 1; }
 [data-design="editorial"] .filter-bar .tag-chips { order: 2; flex: 1 1 auto; gap: 0.6rem 1rem; }
@@ -531,7 +533,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, [tabindex]:focus-vis
     [data-design="editorial"] .filter-bar .search-box { order: 4; flex: 1 0 100%; margin-left: 0; }
 }
 [data-design="editorial"] .month-group { border: none; border-bottom: 1px solid var(--border-soft); background: transparent; border-radius: 0; }
-[data-design="editorial"] .month-group summary { font-family: var(--serif); font-weight: 600; }
+/* 카드 배경을 없앤 디자인에서는 좌우 패딩을 제거해 date-group이 hero와 동일한 세로선에 정렬되도록 함 */
+[data-design="editorial"] .month-group summary { font-family: var(--serif); font-weight: 600; padding-left: 0; padding-right: 0; }
+[data-design="editorial"] .month-group .month-body { padding-left: 0; padding-right: 0; }
 
 /* ─── C · 브로드시트 (Broadsheet) — 웜 크림, 잉크 블랙, 큰 세리프 ─── */
 [data-design="broadsheet"] {
@@ -566,7 +570,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, [tabindex]:focus-vis
 [data-design="broadsheet"] .post-item { border-bottom: 1px dotted var(--border); padding: 1.5rem 0; }
 [data-design="broadsheet"] .post-item h2 { font-family: var(--serif); font-weight: 700; letter-spacing: -0.4px; }
 [data-design="broadsheet"] .time-label { font-family: var(--mono); letter-spacing: 1.5px; text-transform: uppercase; font-size: 0.72rem; }
-[data-design="broadsheet"] .filter-bar { border-top: 1px solid var(--text); border-bottom: 1px solid var(--text); background: var(--bg-subtle); margin: 0 0 2rem; padding: 0; }
+[data-design="broadsheet"] .filter-bar { max-width: 1280px; margin: 0 auto 2rem; border-top: 1px solid var(--text); border-bottom: 1px solid var(--text); background: var(--bg-subtle); padding: 0; }
 [data-design="broadsheet"] .filter-bar-inner { max-width: 1280px; margin: 0 auto; padding: 0.55rem 1.5rem; display: flex; flex-direction: row; align-items: center; gap: 1.2rem; flex-wrap: wrap; }
 [data-design="broadsheet"] .filter-bar-inner::before { content: "주제 →"; font-family: var(--mono); font-size: 0.68rem; font-weight: 700; letter-spacing: 2px; color: var(--text); flex: 0 0 auto; white-space: nowrap; order: 1; }
 [data-design="broadsheet"] .filter-bar .tag-chips { order: 2; flex: 1 1 auto; gap: 0.5rem 1.1rem; }
@@ -584,7 +588,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, [tabindex]:focus-vis
     [data-design="broadsheet"] .filter-bar .search-box { order: 4; flex: 1 0 100%; margin-left: 0; }
 }
 [data-design="broadsheet"] .month-group { border: none; border-bottom: 1px dotted var(--border); background: transparent; border-radius: 0; }
-[data-design="broadsheet"] .month-group summary { font-family: var(--serif); font-weight: 600; }
+/* 카드 배경을 없앤 디자인에서는 좌우 패딩을 제거해 date-group이 hero와 동일한 세로선에 정렬되도록 함 */
+[data-design="broadsheet"] .month-group summary { font-family: var(--serif); font-weight: 600; padding-left: 0; padding-right: 0; }
+[data-design="broadsheet"] .month-group .month-body { padding-left: 0; padding-right: 0; }
 [data-design="broadsheet"] .post-content a { color: var(--text); border-bottom: 1px solid var(--text); }
 [data-design="broadsheet"] .post-content blockquote { border-left: 3px solid var(--text); background: var(--bg-subtle); }
 [data-design="broadsheet"] .post-content code { background: var(--bg-subtle); color: var(--text); }
@@ -641,6 +647,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, [tabindex]:focus-vis
 
 /* ─────── A · 정제판 — hero 2-col + 오늘의 박스 ─────── */
 [data-design="refined"] .hero { display: grid; grid-template-columns: 1fr 420px; gap: 3rem; align-items: start; max-width: 1240px; }
+/* 하단 리포트 영역의 좌우 마진을 hero(메인)와 동일하게 맞춤 */
+[data-design="refined"] .posts-section { max-width: 1240px; }
+[data-design="refined"] .filter-bar-inner { max-width: 1240px; }
 [data-design="refined"] .hero-default { max-width: 560px; }
 [data-design="refined"] .hero-today-box {
     display: block;
@@ -675,6 +684,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, [tabindex]:focus-vis
 
 /* hero: 기본 블록은 숨기고 lede + sidebar 2-col */
 [data-design="editorial"] .hero { display: grid; grid-template-columns: 1fr 340px; gap: 3rem; align-items: start; max-width: 1240px; }
+/* 하단 리포트 영역의 좌우 마진을 hero(메인)와 동일하게 맞춤 */
+[data-design="editorial"] .posts-section { max-width: 1240px; }
 [data-design="editorial"] .hero-default { display: none; }
 [data-design="editorial"] .hero-lede-col { display: flex; flex-direction: column; padding-right: 1.5rem; border-right: 1px solid var(--border); }
 [data-design="editorial"] .hero-lede-col .hero-lede + .hero-lede { margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border); }
@@ -732,6 +743,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, [tabindex]:focus-vis
 
 /* hero: default 숨기고 front-c 노출 */
 [data-design="broadsheet"] .hero { max-width: 1280px; padding-top: 1.2rem; padding-bottom: 2rem; }
+/* 하단 리포트 영역의 좌우 마진을 hero(메인)와 동일하게 맞춤 */
+[data-design="broadsheet"] .posts-section { max-width: 1280px; }
 [data-design="broadsheet"] .hero-default { display: none; }
 [data-design="broadsheet"] .hero-front-c { display: block; }
 [data-design="broadsheet"] .hero-front-c .front-head { display: flex; justify-content: space-between; align-items: baseline; padding-bottom: 1rem; border-bottom: 1px solid var(--text); margin-bottom: 1.6rem; }
