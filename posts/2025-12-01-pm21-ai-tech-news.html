@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11월 모델 3연타 — GPT-5.1·Gemini 3·Claude 4.5가 남긴 것, 그리고 연말 반도체 — SONSLAB</title>
+    <link rel="icon" href="../assets/logo.jpg">
+    <link rel="alternate" type="application/atom+xml" title="SONSLAB Feed" href="../feed.xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/style.css">
+    <meta name="description" content="12월 첫 영업일을 마쳤다. 퇴근길에 커피 한 잔 더 내리면서, 노트북 열자마자 눈에 들어온 건 포트폴리오의 Nvidia 캔들이었다. 11월 한 달 동안 AI 프런티어 랩이 돌아가면서 모델을 던진 여파가 반도체 수급 그래프에도 또렷이 남아 있다.">
+    <meta name="author" content="SONSLAB">
+    <link rel="canonical" href="https://shonsubong.github.io/sonslab-blog/posts/2025-12-01-pm21-ai-tech-news.html">
+    <meta property="og:site_name" content="SONSLAB">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="11월 모델 3연타 — GPT-5.1·Gemini 3·Claude 4.5가 남긴 것, 그리고 연말 반도체">
+    <meta property="og:description" content="12월 첫 영업일을 마쳤다. 퇴근길에 커피 한 잔 더 내리면서, 노트북 열자마자 눈에 들어온 건 포트폴리오의 Nvidia 캔들이었다. 11월 한 달 동안 AI 프런티어 랩이 돌아가면서 모델을 던진 여파가 반도체 수급 그래프에도 또렷이 남아 있다.">
+    <meta property="og:url" content="https://shonsubong.github.io/sonslab-blog/posts/2025-12-01-pm21-ai-tech-news.html">
+    <meta property="og:image" content="https://shonsubong.github.io/sonslab-blog/assets/og/2025-12-01-pm21-ai-tech-news.png">
+    <meta property="og:locale" content="ko_KR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="11월 모델 3연타 — GPT-5.1·Gemini 3·Claude 4.5가 남긴 것, 그리고 연말 반도체">
+    <meta name="twitter:description" content="12월 첫 영업일을 마쳤다. 퇴근길에 커피 한 잔 더 내리면서, 노트북 열자마자 눈에 들어온 건 포트폴리오의 Nvidia 캔들이었다. 11월 한 달 동안 AI 프런티어 랩이 돌아가면서 모델을 던진 여파가 반도체 수급 그래프에도 또렷이 남아 있다.">
+    <meta name="twitter:image" content="https://shonsubong.github.io/sonslab-blog/assets/og/2025-12-01-pm21-ai-tech-news.png">
+    
+<script>
+(function() {
+    try {
+        var saved = localStorage.getItem('sonslab-theme');
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var theme = saved || (prefersDark ? 'dark' : 'light');
+        if (theme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+
+        var design = localStorage.getItem('sonslab-design') || 'current';
+        var allowed = ['current', 'refined', 'editorial', 'broadsheet'];
+        if (allowed.indexOf(design) === -1) design = 'current';
+        if (design !== 'current') document.documentElement.setAttribute('data-design', design);
+    } catch (e) {}
+})();
+</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "11월 모델 3연타 — GPT-5.1·Gemini 3·Claude 4.5가 남긴 것, 그리고 연말 반도체", "description": "12월 첫 영업일을 마쳤다. 퇴근길에 커피 한 잔 더 내리면서, 노트북 열자마자 눈에 들어온 건 포트폴리오의 Nvidia 캔들이었다. 11월 한 달 동안 AI 프런티어 랩이 돌아가면서 모델을 던진 여파가 반도체 수급 그래프에도 또렷이 남아 있다.", "url": "https://shonsubong.github.io/sonslab-blog/posts/2025-12-01-pm21-ai-tech-news.html", "mainEntityOfPage": "https://shonsubong.github.io/sonslab-blog/posts/2025-12-01-pm21-ai-tech-news.html", "inLanguage": "ko", "image": "https://shonsubong.github.io/sonslab-blog/assets/og/2025-12-01-pm21-ai-tech-news.png", "author": {"@type": "Person", "name": "SONSLAB"}, "publisher": {"@type": "Organization", "name": "SONSLAB", "logo": {"@type": "ImageObject", "url": "https://shonsubong.github.io/sonslab-blog/assets/logo.jpg"}}, "datePublished": "", "dateModified": ""}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "SONSLAB", "item": "https://shonsubong.github.io/sonslab-blog/"}, {"@type": "ListItem", "position": 2, "name": "글", "item": "https://shonsubong.github.io/sonslab-blog/#posts"}, {"@type": "ListItem", "position": 3, "name": "11월 모델 3연타 — GPT-5.1·Gemini 3·Claude 4.5가 남긴 것, 그리고 연말 반도체", "item": "https://shonsubong.github.io/sonslab-blog/posts/2025-12-01-pm21-ai-tech-news.html"}]}</script>
+</head>
+<body class="post-page">
+    <div class="reading-progress" id="reading-progress" role="progressbar" aria-label="읽기 진행률"></div>
+
+<header class="top-nav">
+    <div class="top-nav-inner">
+        <a href="../index.html" class="brand">
+            <img src="../assets/logo.jpg" alt="SONSLAB" onerror="this.style.display='none'">
+            <span class="name">SONSLAB</span>
+        </a>
+        <nav>
+            <a href="../index.html#posts">글</a>
+            <a href="../index.html#about">About</a>
+            <span class="nav-visits" title="오늘 · 누적 방문">
+                <img src="https://hits.sh/shonsubong.github.io/sonslab-blog.svg?view=today-total&style=flat-square&label=visits&color=1e3a5f&labelColor=1a2332" alt="오늘·누적 방문 수">
+            </span>
+            <div class="design-picker" title="디자인 전환">
+                <button type="button" class="design-picker-btn" id="design-picker-btn" aria-haspopup="listbox" aria-expanded="false" aria-label="디자인 전환">
+                    <span class="design-picker-icon" aria-hidden="true">◑</span>
+                    <span class="design-picker-current" id="design-picker-current">기본</span>
+                    <span class="design-picker-caret" aria-hidden="true">▾</span>
+                </button>
+                <ul class="design-picker-menu" id="design-picker-menu" role="listbox" aria-label="디자인 옵션">
+                    <li role="option" data-design="current"><strong>기본</strong><span>네이비+크림, 라운드 카드</span></li>
+                    <li role="option" data-design="refined"><strong>정제판 (A)</strong><span>신문·저널 톤, 헤어라인 구분선</span></li>
+                    <li role="option" data-design="editorial"><strong>에디토리얼 (B)</strong><span>이중선 마스트헤드, 세리프 강조</span></li>
+                    <li role="option" data-design="broadsheet"><strong>브로드시트 (C)</strong><span>웜 크림, 잉크블랙, 큰 세리프</span></li>
+                </ul>
+            </div>
+            <button type="button" class="theme-toggle" id="theme-toggle" aria-label="다크 모드 토글" title="다크/라이트 전환">
+                <span class="icon-moon" aria-hidden="true">🌙</span>
+                <span class="icon-sun" aria-hidden="true">☀</span>
+            </button>
+            <a href="../index.html#subscribe" class="nav-cta">이메일 구독</a>
+        </nav>
+    </div>
+</header>
+
+
+<article class="post-article">
+    <div class="post-header">
+        <a href="../index.html" class="back-link">← 전체 글 목록</a>
+        <h1>11월 모델 3연타 — GPT-5.1·Gemini 3·Claude 4.5가 남긴 것, 그리고 연말 반도체</h1>
+        <div class="post-meta">
+            
+            <span>2025-12-01 21:46</span>
+            <span>·</span>
+            <span>3분 읽기</span>
+        </div>
+    </div>
+    
+    <details class="post-toc" open><summary>목차</summary><div class="toc">
+<div class="toc">
+<ul>
+<li><a href="#11-3">11월 모델 3연타 — 월요일 밤의 정리</a><ul>
+<li><a href="#1112-gpt-51">11/12 — GPT-5.1, "빠른/생각하는" 두 갈래</a></li>
+<li><a href="#1118-gemini-3">11/18 — Gemini 3, 구글이 연초의 모양새를 뒤집었다</a></li>
+<li><a href="#1124-claude-opus-45">11/24 — Claude Opus 4.5, 가격표가 진짜 뉴스였다</a></li>
+<li><a href="#_1">반도체 현직자 각도에서</a></li>
+<li><a href="#_2">이번 주 관전 포인트</a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+</div>
+</details>
+    <div class="post-content">
+<h1 id="11-3">11월 모델 3연타 — 월요일 밤의 정리</h1>
+<p>12월 첫 영업일을 마쳤다. 퇴근길에 커피 한 잔 더 내리면서, 노트북 열자마자 눈에 들어온 건 포트폴리오의 <strong>Nvidia 캔들</strong>이었다. 11월 한 달 동안 AI 프런티어 랩이 돌아가면서 모델을 던진 여파가 반도체 수급 그래프에도 또렷이 남아 있다.</p>
+<p>오늘은 새 뉴스라기보단 <strong>지난 3주 요약 + 반도체 현직자 관점의 해석</strong>을 정리하고 싶다. 엔드투엔드 관점에서 11월을 다시 읽어보자.</p>
+<hr />
+<h2 id="1112-gpt-51">11/12 — GPT-5.1, "빠른/생각하는" 두 갈래</h2>
+<p>OpenAI가 11월 12일 <strong>GPT-5.1</strong>을 공개했다. 변형이 둘.</p>
+<ul>
+<li><strong>GPT-5.1 Instant</strong> — 대화·지시 이행용. 이전 모델의 성격을 잇는다.</li>
+<li><strong>GPT-5.1 Thinking</strong> — 추론 강화. 의외로 간단한 작업에서 더 빠르다.</li>
+</ul>
+<p>같은 날 <strong>GPT-5.1-Codex-Max</strong>도 나왔다. 수백만 토큰 수준의 컨텍스트에서 핵심은 남기고 잡음은 덜어내는 "장기 호흡" 코딩 모델. 며칠 써봤는데 거대 리팩터 워크플로에서 체감이 다르다. <em>우리 팀이 돌리는 파운드리 레시피 자동화 파이프라인</em>도 일부 이 모델로 옮기면서 프롬프트 엔지니어링 피로가 줄었다.</p>
+<h2 id="1118-gemini-3">11/18 — Gemini 3, 구글이 연초의 모양새를 뒤집었다</h2>
+<p>한 주 뒤 구글이 <strong>Gemini 3</strong>. 멀티모달 추론에서 SOTA를 찍었고, Search(AI Mode)와 Android 앱에 즉시 통합됐다. 몇몇 카테고리에서 GPT-5.1을 밀어냈다는 평이 순식간에 올라왔다.</p>
+<p>연초까지만 해도 "구글은 AI 경쟁에서 뒤처졌다"가 거의 합의된 서사였는데, 연말에 이렇게 엎어질 줄은 몰랐다. 벤치만의 얘기가 아니고, Flash가 Google Workspace 기본값으로 들어가는 순간 <strong>사용자 트래픽 측 분모가 통째로 다르다</strong>는 점이 체감된다.</p>
+<h2 id="1124-claude-opus-45">11/24 — Claude Opus 4.5, 가격표가 진짜 뉴스였다</h2>
+<p>그리고 11월 24일 <strong>Claude Opus 4.5</strong>. 코딩·자율 에이전트 쪽 최상위 모델로 포지셔닝됐고, SWE-bench류에서 이전 세대를 눌렀다.</p>
+<p>다만 나한테 더 큰 소식은 가격.</p>
+<ul>
+<li><strong>입력 $5 / 1M tokens</strong></li>
+<li><strong>출력 $25 / 1M tokens</strong></li>
+</ul>
+<p>기존 Claude Sonnet 4 대비 <strong>약 67% 인하</strong>. "프런티어 품질 + 공격적 가격"이라는 조합이 진짜 무서운 건, API 단가 곡선이 꺾이면 <strong>엔터프라이즈 POC의 JUMP가 바로 나온다</strong>는 점이다. 주말에 사내 Slack이 한참 들썩였던 이유.</p>
+<hr />
+<h2 id="_1">반도체 현직자 각도에서</h2>
+<p>세 모델을 따로 쓴 이유가 있다. 반도체 관점에서 보면 <strong>세 이벤트는 서로 다른 밸류체인 부담을 건드린다</strong>.</p>
+<ul>
+<li><strong>GPT-5.1-Codex-Max</strong> — 수백만 토큰 긴 컨텍스트를 "정리해가며" 쓴다는 건, 추론 시 KV cache 관리와 메모리 대역폭이 여전히 병목이라는 뜻. HBM3E 수급 드라마가 2026년에도 이어진다는 얘기.</li>
+<li><strong>Gemini 3 Flash</strong> — Workspace 트래픽으로 들어가면 <strong>TPU v5p 팜이 기저 부하로 계속 찰</strong> 것. Broadcom·Arista 같은 쪽 수주 모멘텀 지속.</li>
+<li><strong>Claude 4.5 가격 인하 + Blackwell</strong> — 단가 인하를 가능하게 하는 건 결국 토큰당 원가인데, 그 원가는 Blackwell/Blackwell Ultra 세대의 단위 처리량 증가 덕을 본다. 가격 인하는 <strong>Nvidia 납품이 실사용 단가에 반영되기 시작했다</strong>는 신호로도 읽힌다.</li>
+</ul>
+<p>요약하면, 11월 3연타는 <em>앱 레이어</em>의 이벤트처럼 보이지만 실체는 <strong>메모리·가속기·네트워킹</strong>으로 흘러내리는 체인 반응이다.</p>
+<h2 id="_2">이번 주 관전 포인트</h2>
+<ul>
+<li>OpenAI가 Gemini 3 쇼크로 <strong>GPT-5.2를 조기 공개</strong>한다는 소문. "Code Red"가 걸렸다는 보도도 돌고 있다.</li>
+<li>Anthropic 개발자 이벤트 스케줄.</li>
+<li>Microsoft Ignite 계열 공지 흐름.</li>
+</ul>
+<p>한 달 사이에 리더보드가 세 번 바뀐 판이다. "한 모델이 반년 군림한다"는 암묵적 리듬은 이제 없다. 벤치 숫자보단 <strong>워크플로 내재화 속도</strong>가 진짜 승부처가 될 것 같다.</p>
+<p>월요일 밤, 여기까지. 내일 프리마켓에서 보자.</p>
+    </div>
+    
+<div class="post-share">
+    <span class="share-label">공유하기</span>
+    <a href="https://twitter.com/intent/tweet?text=11월 모델 3연타 — GPT-5.1·Gemini 3·Claude 4.5가 남긴 것, 그리고 연말 반도체&url=https://shonsubong.github.io/sonslab-blog/posts/2025-12-01-pm21-ai-tech-news.html"
+       class="share-btn" target="_blank" rel="noopener" aria-label="X(Twitter)에 공유">
+        <span>X</span>
+    </a>
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://shonsubong.github.io/sonslab-blog/posts/2025-12-01-pm21-ai-tech-news.html"
+       class="share-btn" target="_blank" rel="noopener" aria-label="LinkedIn에 공유">
+        <span>in</span>
+    </a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://shonsubong.github.io/sonslab-blog/posts/2025-12-01-pm21-ai-tech-news.html"
+       class="share-btn" target="_blank" rel="noopener" aria-label="Facebook에 공유">
+        <span>f</span>
+    </a>
+    <button type="button" class="share-btn share-copy" id="share-copy-btn" data-url="https://shonsubong.github.io/sonslab-blog/posts/2025-12-01-pm21-ai-tech-news.html" aria-label="링크 복사">
+        <span>🔗 링크 복사</span>
+    </button>
+</div>
+    
+<nav class="post-nav-bottom" aria-label="이전/다음 글">
+    <a href="COWORK_AUTOBUILD_SETUP.html" class="post-nav-link prev">
+        <span class="post-nav-label">← 이전 글</span>
+        <span class="post-nav-title">COWORK_AUTOBUILD_SETUP</span>
+    </a>
+    <a href="2025-12-06-pm21-ai-tech-news.html" class="post-nav-link next">
+        <span class="post-nav-label">다음 글 →</span>
+        <span class="post-nav-title">Anthropic이 Bun을 품었다, Claude Code 연 $1B — 토요일 밤 체크</span>
+    </a>
+</nav>
+    
+<section class="related-posts" aria-label="최근 다른 리포트">
+    <div class="related-posts-label">최근 다른 리포트</div>
+    <ul class="related-list"><li><a href="2026-04-19-pm12-ai-tech-news.html"><span class="related-title">일요일 점심 — Tesla Robotaxi가 댈러스·휴스턴까지, 그리고 TSMC가 말해주는 2026년</span><span class="related-date">2026-04-19 · 오전 브리핑 · 12:18</span></a></li><li><a href="2026-04-19-am06-ai-tech-news.html"><span class="related-title">일요일 아침, Snap 1,000명과 &#x27;AI가 못 이기는 영역&#x27; — 두 기사를 나란히 놓고 읽다</span><span class="related-date">2026-04-19 · 새벽 리포트 · 06:14</span></a></li><li><a href="2026-04-18-pm22-ai-tech-news.html"><span class="related-title">밤에 Ising 리포 훑어보다가 — Samsung HBM4 로직 다이가 조용히 40% 올랐다</span><span class="related-date">2026-04-18 · 저녁 마감 · 22:17</span></a></li><li><a href="2026-04-18-pm17-ai-tech-news.html"><span class="related-title">토요일 오후 산책 다녀와서 — Opus 4.7 MRCR 낙폭, 개인 프로젝트로 직접 재봤다</span><span class="related-date">2026-04-18 · 오후 브리핑 · 17:14</span></a></li><li><a href="2026-04-18-pm12-ai-tech-news.html"><span class="related-title">호르무즈 열리고 테슬라가 숨 돌린 주말 — Cursor 500억 달러, Opus 4.7 논쟁, 그리고 Nvidia Ising</span><span class="related-date">2026-04-18 · 오전 브리핑 · 12:34</span></a></li></ul>
+</section>
+</article>
+
+
+<section class="subscribe-cta" id="subscribe">
+    <div class="sub-header">
+        <h3>매일 4번, 받은편지함으로</h3>
+        <p class="sub-desc">반도체·AI·시장 브리핑을 새벽·오전·오후·저녁 네 번 이메일로 받아보세요. 스팸 없음, 언제든 구독 취소.</p>
+    </div>
+    <form id="subscribe-form" class="subscribe-form" action="https://assets.mailerlite.com/jsonp/2275622/forms/185056263876380606/subscribe" method="post">
+        <input type="email" name="fields[email]" placeholder="your@email.com" required aria-label="이메일 주소">
+        <input type="hidden" name="ml-submit" value="1">
+        <button type="submit" class="btn btn-primary">구독하기</button>
+    </form>
+    <div id="subscribe-status" class="subscribe-status" role="status" aria-live="polite"></div>
+    <p class="subscribe-footnote">또는 RSS로 구독하기</p>
+    <div class="rss-copy-row">
+        <input id="rss-url" type="text" readonly value="https://shonsubong.github.io/sonslab-blog/feed.xml" aria-label="RSS 피드 URL">
+        <button id="rss-copy-btn" type="button" class="btn btn-secondary">URL 복사</button>
+    </div>
+    <p class="rss-hint">RSS 리더에 이 URL을 붙여넣으면 구독됩니다.</p>
+    <div class="rss-readers">
+        <span class="rss-readers-label">바로가기 (로그인 필요):</span>
+        <a href="https://www.inoreader.com/?add_feed=https%3A%2F%2Fshonsubong.github.io%2Fsonslab-blog%2Ffeed.xml" class="rss-reader-btn" target="_blank" rel="noopener">Inoreader</a>
+        <a href="https://theoldreader.com/feeds/subscribe?url=https%3A%2F%2Fshonsubong.github.io%2Fsonslab-blog%2Ffeed.xml" class="rss-reader-btn" target="_blank" rel="noopener">The Old Reader</a>
+        <a href="https://shonsubong.github.io/sonslab-blog/feed.xml" class="rss-reader-btn rss-raw" target="_blank" rel="noopener" title="Atom/XML 원본">Atom/XML</a>
+    </div>
+</section>
+
+
+<footer>
+    <div class="stats-row">
+        <img src="https://hits.sh/shonsubong.github.io/sonslab-blog.svg?view=today-total&style=flat-square&label=visits&color=1e3a5f&labelColor=1a2332" alt="Visit counter">
+        <span class="stat-inline">오늘 · 누적 방문</span>
+    </div>
+    <p style="margin-top: 1.2rem;">© 2026 SONSLAB — 현장 감각으로 읽는 AI와 테크</p>
+    <div style="margin-top: 0.5rem;">
+        <a href="../index.html#posts">글</a>·
+        <a href="../index.html#about">About</a>·
+        <a href="../feed.xml">RSS</a>·
+        <a href="mailto:starfox1211@naver.com">Contact</a>
+    </div>
+</footer>
+
+<button type="button" class="scroll-top" id="scroll-top" aria-label="맨 위로" title="맨 위로">↑</button>
+
+<script>
+(function() {
+    var bar = document.getElementById('reading-progress');
+    if (!bar) return;
+    function update() {
+        var h = document.documentElement, b = document.body;
+        var st = h.scrollTop || b.scrollTop;
+        var sh = (h.scrollHeight || b.scrollHeight) - h.clientHeight;
+        bar.style.width = (sh > 0 ? (st / sh) * 100 : 0) + '%';
+    }
+    window.addEventListener('scroll', update, {passive: true});
+    update();
+})();
+</script>
+
+
+<script>
+(function() {
+    // 외부 링크에 target=_blank, rel=noopener 자동 부여
+    var origin = window.location.origin;
+    document.querySelectorAll('.post-content a[href^="http"]').forEach(function(a) {
+        try {
+            var u = new URL(a.href);
+            if (u.origin !== origin) {
+                a.target = '_blank';
+                a.rel = 'noopener noreferrer';
+            }
+        } catch (e) {}
+    });
+    // 모바일에서 TOC 기본 접힘 (세로 공간 절약)
+    if (window.matchMedia('(max-width: 767px)').matches) {
+        var toc = document.querySelector('.post-toc');
+        if (toc && toc.hasAttribute('open')) toc.removeAttribute('open');
+    }
+    // 공유: 링크 복사
+    var copyBtn = document.getElementById('share-copy-btn');
+    if (copyBtn) {
+        copyBtn.addEventListener('click', async function() {
+            var url = copyBtn.dataset.url || window.location.href;
+            try {
+                if (navigator.clipboard && window.isSecureContext) {
+                    await navigator.clipboard.writeText(url);
+                } else {
+                    var ta = document.createElement('textarea');
+                    ta.value = url; document.body.appendChild(ta);
+                    ta.select(); document.execCommand('copy');
+                    document.body.removeChild(ta);
+                }
+                var span = copyBtn.querySelector('span');
+                var original = span.textContent;
+                span.textContent = '✓ 복사됨';
+                copyBtn.classList.add('copied');
+                setTimeout(function() {
+                    span.textContent = original;
+                    copyBtn.classList.remove('copied');
+                }, 2000);
+            } catch (e) {}
+        });
+    }
+})();
+</script>
+
+
+<script>
+(function() {
+    var form = document.getElementById('subscribe-form');
+    var status = document.getElementById('subscribe-status');
+    function setState(state, html) {
+        if (!status) return;
+        status.className = 'subscribe-status' + (state ? ' state-' + state : '');
+        status.innerHTML = html || '';
+    }
+    var rssInput = document.getElementById('rss-url');
+    var rssBtn = document.getElementById('rss-copy-btn');
+    if (rssInput && rssBtn) {
+        rssBtn.addEventListener('click', async function() {
+            var url = rssInput.value;
+            try {
+                if (navigator.clipboard && window.isSecureContext) {
+                    await navigator.clipboard.writeText(url);
+                } else {
+                    rssInput.select();
+                    rssInput.setSelectionRange(0, url.length);
+                    document.execCommand('copy');
+                }
+                var original = rssBtn.textContent;
+                rssBtn.textContent = '✓ 복사됨';
+                rssBtn.classList.add('copied');
+                setTimeout(function() {
+                    rssBtn.textContent = original;
+                    rssBtn.classList.remove('copied');
+                }, 2000);
+            } catch (err) {
+                rssInput.select();
+            }
+        });
+        rssInput.addEventListener('click', function() { rssInput.select(); });
+    }
+    // 공통 구독 submit 로직. 메인 폼 + 인라인 폼(B/C hero) 모두 처리.
+    function setFormState(statusEl, state, html, cls) {
+        if (!statusEl) return;
+        var base = cls || 'subscribe-status';
+        statusEl.className = base + (state ? ' state-' + state : '');
+        statusEl.innerHTML = html || '';
+    }
+    function attachSubscribe(f, statusEl, statusCls, successTemplate) {
+        if (!f) return;
+        f.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            var email = f.querySelector('input[type="email"]').value.trim();
+            if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                setFormState(statusEl, 'error', '올바른 이메일 주소를 입력해주세요.', statusCls);
+                return;
+            }
+            var btn = f.querySelector('button[type="submit"]');
+            var originalLabel = btn.textContent;
+            btn.disabled = true;
+            btn.classList.add('loading');
+            btn.textContent = '전송 중…';
+            setFormState(statusEl, 'loading', '', statusCls);
+            try {
+                var fd = new FormData(f);
+                var res = await fetch(f.action, { method: 'POST', body: fd });
+                var data = {};
+                try { data = await res.json(); } catch (e) {}
+                if (res.ok && data.success) {
+                    f.classList.add('hidden-post-success');
+                    var safe = email.replace(/[<>&"]/g, function(c) { return ({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'})[c]; });
+                    setFormState(statusEl, 'success', successTemplate(safe), statusCls);
+                } else {
+                    throw new Error((data && data.message) || '서버 응답 오류');
+                }
+            } catch (err) {
+                setFormState(statusEl, 'error', '일시적인 오류가 발생했습니다. 잠시 후 다시 시도해주세요.', statusCls);
+                btn.disabled = false;
+                btn.classList.remove('loading');
+                btn.textContent = originalLabel;
+            }
+        });
+    }
+    // 메인 구독 폼 (subscribe 섹션)
+    attachSubscribe(form, status, 'subscribe-status', function(safe) {
+        return '<strong>✓ 구독 신청을 받았습니다.</strong>' +
+            'SONSLAB이 <b>' + safe + '</b> 주소로 확인 이메일을 보냈습니다. ' +
+            '받은편지함(스팸함 포함)에서 확인 링크를 클릭하시면 구독이 완료됩니다.';
+    });
+    // 인라인 구독 폼 (B/C hero 내부)
+    document.querySelectorAll('form.inline-sub[data-subscribe]').forEach(function(f) {
+        var st = f.parentElement ? f.parentElement.querySelector('.inline-sub-status') : null;
+        attachSubscribe(f, st, 'inline-sub-status', function(safe) {
+            return '✓ <b>' + safe + '</b>로 확인 이메일을 보냈습니다.';
+        });
+    });
+})();
+</script>
+
+
+<script>
+(function() {
+    // 다크 모드 토글
+    var toggle = document.getElementById('theme-toggle');
+    if (toggle) {
+        toggle.addEventListener('click', function() {
+            var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+            if (isDark) {
+                document.documentElement.removeAttribute('data-theme');
+                try { localStorage.setItem('sonslab-theme', 'light'); } catch(e){}
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                try { localStorage.setItem('sonslab-theme', 'dark'); } catch(e){}
+            }
+        });
+    }
+    // 디자인 피커
+    var dpBtn = document.getElementById('design-picker-btn');
+    var dpMenu = document.getElementById('design-picker-menu');
+    var dpCurrent = document.getElementById('design-picker-current');
+    var dpLabels = { current: '기본', refined: '정제판', editorial: '에디토리얼', broadsheet: '브로드시트' };
+    function applyDesign(name) {
+        if (!dpLabels[name]) name = 'current';
+        if (name === 'current') document.documentElement.removeAttribute('data-design');
+        else document.documentElement.setAttribute('data-design', name);
+        try { localStorage.setItem('sonslab-design', name); } catch(e){}
+        if (dpCurrent) dpCurrent.textContent = dpLabels[name];
+        if (dpMenu) dpMenu.querySelectorAll('li').forEach(function(li){
+            li.classList.toggle('active', li.getAttribute('data-design') === name);
+        });
+    }
+    if (dpBtn && dpMenu) {
+        // 초기 라벨·활성 표시 동기화
+        var initialDesign = document.documentElement.getAttribute('data-design') || 'current';
+        applyDesign(initialDesign);
+        dpBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            var expanded = dpBtn.getAttribute('aria-expanded') === 'true';
+            dpBtn.setAttribute('aria-expanded', String(!expanded));
+            dpMenu.classList.toggle('open', !expanded);
+        });
+        dpMenu.querySelectorAll('li').forEach(function(li){
+            li.addEventListener('click', function(){
+                applyDesign(li.getAttribute('data-design'));
+                dpMenu.classList.remove('open');
+                dpBtn.setAttribute('aria-expanded', 'false');
+            });
+        });
+        document.addEventListener('click', function(e){
+            if (!dpMenu.contains(e.target) && e.target !== dpBtn) {
+                dpMenu.classList.remove('open');
+                dpBtn.setAttribute('aria-expanded', 'false');
+            }
+        });
+    }
+    // 맨 위로 버튼
+    var btn = document.getElementById('scroll-top');
+    if (btn) {
+        var toggleBtn = function() {
+            if (window.scrollY > 300) btn.classList.add('visible');
+            else btn.classList.remove('visible');
+        };
+        window.addEventListener('scroll', toggleBtn, {passive:true});
+        btn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        toggleBtn();
+    }
+})();
+</script>
+</body>
+</html>

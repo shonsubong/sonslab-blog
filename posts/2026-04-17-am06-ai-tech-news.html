@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opus 4.7 새벽 릴리스, Netflix 애프터마켓 10% 붕괴 — 반도체 현직자의 밤사이 정리 — SONSLAB</title>
+    <link rel="icon" href="../assets/logo.jpg">
+    <link rel="alternate" type="application/atom+xml" title="SONSLAB Feed" href="../feed.xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/style.css">
+    <meta name="description" content="커피 내리면서 프리마켓 확인하려고 노트북을 켰는데, 받은편지함 맨 위에 Anthropic의 Opus 4.7 릴리스 노트가 와 있다. 어제 오후 포스트에서 &quot;최근 Claude가 살짝 느려진 것 같다&quot;고 투덜댔는데, 하루 만에 풀 버전업이 떨어진 셈이다. 그 와중에 Netflix는 애프터마켓에서 10% 가까이 빠졌고, HBM4 16층 스택 경쟁은 진짜 공정 레벨 디테일까지 공개되기 시작했다. C...">
+    <meta name="author" content="SONSLAB">
+    <link rel="canonical" href="https://shonsubong.github.io/sonslab-blog/posts/2026-04-17-am06-ai-tech-news.html">
+    <meta property="og:site_name" content="SONSLAB">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Opus 4.7 새벽 릴리스, Netflix 애프터마켓 10% 붕괴 — 반도체 현직자의 밤사이 정리">
+    <meta property="og:description" content="커피 내리면서 프리마켓 확인하려고 노트북을 켰는데, 받은편지함 맨 위에 Anthropic의 Opus 4.7 릴리스 노트가 와 있다. 어제 오후 포스트에서 &quot;최근 Claude가 살짝 느려진 것 같다&quot;고 투덜댔는데, 하루 만에 풀 버전업이 떨어진 셈이다. 그 와중에 Netflix는 애프터마켓에서 10% 가까이 빠졌고, HBM4 16층 스택 경쟁은 진짜 공정 레벨 디테일까지 공개되기 시작했다. C...">
+    <meta property="og:url" content="https://shonsubong.github.io/sonslab-blog/posts/2026-04-17-am06-ai-tech-news.html">
+    <meta property="og:image" content="https://shonsubong.github.io/sonslab-blog/assets/og/2026-04-17-am06-ai-tech-news.png">
+    <meta property="og:locale" content="ko_KR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Opus 4.7 새벽 릴리스, Netflix 애프터마켓 10% 붕괴 — 반도체 현직자의 밤사이 정리">
+    <meta name="twitter:description" content="커피 내리면서 프리마켓 확인하려고 노트북을 켰는데, 받은편지함 맨 위에 Anthropic의 Opus 4.7 릴리스 노트가 와 있다. 어제 오후 포스트에서 &quot;최근 Claude가 살짝 느려진 것 같다&quot;고 투덜댔는데, 하루 만에 풀 버전업이 떨어진 셈이다. 그 와중에 Netflix는 애프터마켓에서 10% 가까이 빠졌고, HBM4 16층 스택 경쟁은 진짜 공정 레벨 디테일까지 공개되기 시작했다. C...">
+    <meta name="twitter:image" content="https://shonsubong.github.io/sonslab-blog/assets/og/2026-04-17-am06-ai-tech-news.png">
+    <meta property="article:published_time" content="2026-04-17T06:00:00+09:00">
+    <meta property="article:modified_time" content="2026-04-17T06:00:00+09:00">
+    
+<script>
+(function() {
+    try {
+        var saved = localStorage.getItem('sonslab-theme');
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var theme = saved || (prefersDark ? 'dark' : 'light');
+        if (theme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+
+        var design = localStorage.getItem('sonslab-design') || 'current';
+        var allowed = ['current', 'refined', 'editorial', 'broadsheet'];
+        if (allowed.indexOf(design) === -1) design = 'current';
+        if (design !== 'current') document.documentElement.setAttribute('data-design', design);
+    } catch (e) {}
+})();
+</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Opus 4.7 새벽 릴리스, Netflix 애프터마켓 10% 붕괴 — 반도체 현직자의 밤사이 정리", "description": "커피 내리면서 프리마켓 확인하려고 노트북을 켰는데, 받은편지함 맨 위에 Anthropic의 Opus 4.7 릴리스 노트가 와 있다. 어제 오후 포스트에서 \"최근 Claude가 살짝 느려진 것 같다\"고 투덜댔는데, 하루 만에 풀 버전업이 떨어진 셈이다. 그 와중에 Netflix는 애프터마켓에서 10% 가까이 빠졌고, HBM4 16층 스택 경쟁은 진짜 공정 레벨 디테일까지 공개되기 시작했다. C...", "url": "https://shonsubong.github.io/sonslab-blog/posts/2026-04-17-am06-ai-tech-news.html", "mainEntityOfPage": "https://shonsubong.github.io/sonslab-blog/posts/2026-04-17-am06-ai-tech-news.html", "inLanguage": "ko", "image": "https://shonsubong.github.io/sonslab-blog/assets/og/2026-04-17-am06-ai-tech-news.png", "author": {"@type": "Person", "name": "SONSLAB"}, "publisher": {"@type": "Organization", "name": "SONSLAB", "logo": {"@type": "ImageObject", "url": "https://shonsubong.github.io/sonslab-blog/assets/logo.jpg"}}, "datePublished": "2026-04-17T06:00:00+09:00", "dateModified": "2026-04-17T06:00:00+09:00"}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "SONSLAB", "item": "https://shonsubong.github.io/sonslab-blog/"}, {"@type": "ListItem", "position": 2, "name": "글", "item": "https://shonsubong.github.io/sonslab-blog/#posts"}, {"@type": "ListItem", "position": 3, "name": "Opus 4.7 새벽 릴리스, Netflix 애프터마켓 10% 붕괴 — 반도체 현직자의 밤사이 정리", "item": "https://shonsubong.github.io/sonslab-blog/posts/2026-04-17-am06-ai-tech-news.html"}]}</script>
+</head>
+<body class="post-page">
+    <div class="reading-progress" id="reading-progress" role="progressbar" aria-label="읽기 진행률"></div>
+
+<header class="top-nav">
+    <div class="top-nav-inner">
+        <a href="../index.html" class="brand">
+            <img src="../assets/logo.jpg" alt="SONSLAB" onerror="this.style.display='none'">
+            <span class="name">SONSLAB</span>
+        </a>
+        <nav>
+            <a href="../index.html#posts">글</a>
+            <a href="../index.html#about">About</a>
+            <span class="nav-visits" title="오늘 · 누적 방문">
+                <img src="https://hits.sh/shonsubong.github.io/sonslab-blog.svg?view=today-total&style=flat-square&label=visits&color=1e3a5f&labelColor=1a2332" alt="오늘·누적 방문 수">
+            </span>
+            <div class="design-picker" title="디자인 전환">
+                <button type="button" class="design-picker-btn" id="design-picker-btn" aria-haspopup="listbox" aria-expanded="false" aria-label="디자인 전환">
+                    <span class="design-picker-icon" aria-hidden="true">◑</span>
+                    <span class="design-picker-current" id="design-picker-current">기본</span>
+                    <span class="design-picker-caret" aria-hidden="true">▾</span>
+                </button>
+                <ul class="design-picker-menu" id="design-picker-menu" role="listbox" aria-label="디자인 옵션">
+                    <li role="option" data-design="current"><strong>기본</strong><span>네이비+크림, 라운드 카드</span></li>
+                    <li role="option" data-design="refined"><strong>정제판 (A)</strong><span>신문·저널 톤, 헤어라인 구분선</span></li>
+                    <li role="option" data-design="editorial"><strong>에디토리얼 (B)</strong><span>이중선 마스트헤드, 세리프 강조</span></li>
+                    <li role="option" data-design="broadsheet"><strong>브로드시트 (C)</strong><span>웜 크림, 잉크블랙, 큰 세리프</span></li>
+                </ul>
+            </div>
+            <button type="button" class="theme-toggle" id="theme-toggle" aria-label="다크 모드 토글" title="다크/라이트 전환">
+                <span class="icon-moon" aria-hidden="true">🌙</span>
+                <span class="icon-sun" aria-hidden="true">☀</span>
+            </button>
+            <a href="../index.html#subscribe" class="nav-cta">이메일 구독</a>
+        </nav>
+    </div>
+</header>
+
+
+<article class="post-article">
+    <div class="post-header">
+        <a href="../index.html" class="back-link">← 전체 글 목록</a>
+        <h1>Opus 4.7 새벽 릴리스, Netflix 애프터마켓 10% 붕괴 — 반도체 현직자의 밤사이 정리</h1>
+        <div class="post-meta">
+            <span class="time-label">새벽 리포트</span>
+            <span>2026년 04월 17일 (금) · 06:00</span>
+            <span>·</span>
+            <span>13분 읽기</span>
+        </div>
+    </div>
+    
+<div class="day-series-wrap" aria-label="같은 날의 다른 브리핑">
+    <div class="day-series-label"><span class="dot"></span><span>2026년 04월 17일 (금)의 브리핑</span></div>
+    <div class="day-series"><a href="#" class="day-series-item active" aria-current="page"><span class="series-time">06:00</span><span class="series-label">새벽 리포트</span></a><a href="2026-04-17-pm17-ai-tech-news.html" class="day-series-item"><span class="series-time">17:33</span><span class="series-label">오후 브리핑</span></a><a href="2026-04-17-pm22-ai-tech-news.html" class="day-series-item"><span class="series-time">22:37</span><span class="series-label">저녁 마감</span></a></div>
+</div>
+    <details class="post-toc" open><summary>목차</summary><div class="toc">
+<div class="toc">
+<ul>
+<li><a href="#opus-47-netflix-10">Opus 4.7 새벽 릴리스, Netflix 애프터마켓 10% 붕괴 — 반도체 현직자의 밤사이 정리</a><ul>
+<li><a href="#claude-opus-47">Claude Opus 4.7 — 매일 쓰는 입장에서 이건 확실히 체감된다</a></li>
+<li><a href="#netflix">Netflix, 경영진이 떠나고 가이던스가 빠진 밤</a></li>
+<li><a href="#hbm4-16">HBM4 16층 스택 — 공정 디테일까지 공개되기 시작했다</a></li>
+<li><a href="#openai-gpt-54-cyber-gemini-mac-pentagon">OpenAI GPT-5.4-Cyber, Gemini Mac 앱, 그리고 Pentagon 협상</a></li>
+<li><a href="#tesla">잠깐, Tesla는 어제 다시 빠졌다</a></li>
+<li><a href="#_1">한 줄 정리</a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+</div>
+</details>
+    <div class="post-content">
+<h1 id="opus-47-netflix-10">Opus 4.7 새벽 릴리스, Netflix 애프터마켓 10% 붕괴 — 반도체 현직자의 밤사이 정리</h1>
+<p>커피 내리면서 프리마켓 확인하려고 노트북을 켰는데, 받은편지함 맨 위에 Anthropic의 Opus 4.7 릴리스 노트가 와 있다. 어제 오후 포스트에서 "최근 Claude가 살짝 느려진 것 같다"고 투덜댔는데, 하루 만에 풀 버전업이 떨어진 셈이다. 그 와중에 Netflix는 애프터마켓에서 10% 가까이 빠졌고, HBM4 16층 스택 경쟁은 진짜 공정 레벨 디테일까지 공개되기 시작했다. Claude Code 유저, 반도체 현직자, 빅테크/테슬라 투자자 세 관점 모두 읽을 거리가 많은 밤이었다.</p>
+<hr />
+<h2 id="claude-opus-47">Claude Opus 4.7 — 매일 쓰는 입장에서 이건 확실히 체감된다</h2>
+<p>어제 저녁에 유출 보도가 돌더니, <a href="https://dataconomy.com/2026/04/15/2026-04-15-anthropic-to-launch-claude-opus-4-7-this-week/">이번 주 중 출시한다는 예고</a>가 맞아떨어졌다. Anthropic이 <a href="https://support.claude.com/en/articles/12138966-release-notes">Claude Opus 4.7을 4월 16일자로 일반 공개</a>했다. Claude Platform, <a href="https://aws.amazon.com/about-aws/whats-new/2026/04/claude-opus-4-7-amazon-bedrock/">Amazon Bedrock</a>, Google Cloud Vertex AI, Microsoft Foundry에 동시 배포됐고, <a href="https://github.blog/changelog/2026-04-16-claude-opus-4-7-is-generally-available/">GitHub Copilot에서도 GA로 올라왔다</a>. 가격은 Opus 4.6과 동일한 $5/$25 per million tokens.</p>
+<p>릴리스 노트를 훑어보는데, Claude Code를 매일 쓰는 입장에서 이건 확실히 기대되는 업데이트다. 코딩 벤치마크에서 <a href="https://felloai.com/anthropic-claude-opus-4-7/">13% 상승, 프로덕션 태스크 해결률 3배</a>. 무엇보다 반가운 건 xhigh라는 새 effort 레벨이 추가됐다는 점. 기존 high와 max 사이의 중간 단계인데, 어려운 문제 풀 때 latency와 reasoning 퀄리티의 트레이드오프를 더 세밀하게 조절할 수 있다. 여기에 task budgets라는 기능도 프리뷰로 붙었는데, 장시간 에이전트 작업에서 토큰 예산을 명시적으로 제한할 수 있다. Claude Code로 리팩토링 돌리면서 "얘가 너무 열심히 일하다 토큰 다 쓰는" 상황을 매일 경험하는 입장에서, 이건 실무에 바로 꽂히는 기능이다.</p>
+<p><code>/ultrareview</code> 슬래시 커맨드도 새로 붙었다. 기존 리뷰 대비 더 엄격한 코드 리뷰를 돌려주는 모드라는데, 아직 직접 써보진 못했고 출근하자마자 돌려볼 예정이다. 비전 쪽에서도 의미 있는 변화가 있는데, 이미지 최대 해상도가 긴 변 기준 1,568px에서 <a href="https://felloai.com/anthropic-claude-opus-4-7/">2,576px(약 3.75메가픽셀)로 확대</a>됐다. 스크린샷이나 다이어그램 분석할 때 체감이 있을 것 같다.</p>
+<p>다만 Axios에서 나온 <a href="https://www.axios.com/2026/04/16/anthropic-claude-opus-model-mythos">솔직한 코멘트</a>가 있다. Anthropic이 Opus 4.7이 자체 벤치마크에서 아직 공개하지 않은 Mythos 모델보다는 뒤처진다고 인정했다는 것. 어제 새벽 포스트에서 썼던 Project Glasswing의 그 Mythos 이야기다. 실무 유저 입장에서 이 고백은 오히려 신뢰가 간다. "가장 강력한 건 금융·정부·인프라 기업과만 통제적으로 공유하고, 나머지 일반 유저한테는 4.7을 준다"는 원칙을 계속 밀고 있다는 뜻이니까.</p>
+<p>유저 커뮤니티 반응은 복합적이다. 어제까지 이어지던 <a href="https://www.axios.com/2026/04/16/anthropic-claude-power-user-complaints">Claude 성능 저하 논란</a>도 여전히 진행 중이다. Anthropic은 Claude Code의 기본 reasoning 레벨을 낮췄다는 사실은 인정했지만, 그게 Mythos 훈련이나 compute 부족 때문은 아니라고 부인했다. 나도 지난주부터 간헐적 응답 지연을 겪었는데, Opus 4.7로 업그레이드되면서 나아지는지 오늘 하루 체감해봐야 할 것 같다.</p>
+<p>그리고 조금 예민한 이슈가 하나 더 있다. <a href="https://tech.yahoo.com/ai/claude/articles/anthropic-may-now-demand-government-000000288.html">Anthropic이 일부 기능에 대해 정부 발급 신분증과 실시간 셀카 인증을 요구하기 시작했다</a>. Mythos 수준의 모델을 컨트롤하는 걸 봤으니 이해는 가지만, 일반 유저 입장에서는 살짝 거부감이 드는 것도 사실이다. AI 플랫폼 개발자로서도 우리 제품에서 이런 KYC를 어디까지 적용해야 하는지 고민이 깊어진다.</p>
+<hr />
+<h2 id="netflix">Netflix, 경영진이 떠나고 가이던스가 빠진 밤</h2>
+<p>어제 TSMC 실적이 장을 끌어올렸다면, 장 마감 뒤에는 Netflix가 분위기를 꺾었다. <a href="https://www.thestreet.com/latest-news/stock-market-today-apr-16-2026-futures-rise-after-sp-nasdaq-hit-record-highs">Netflix가 애프터마켓에서 10% 급락</a>했다. 이유는 두 가지다.</p>
+<p>첫째, <a href="https://techcrunch.com/2026/04/16/netflix-co-founder-and-chair-reed-hastings-to-leave-board/">공동 창업자이자 현 의장인 Reed Hastings가 6월 주총을 끝으로 이사회에서 물러난다</a>. 29년 만이다. 2023년에 이미 Greg Peters와 Ted Sarandos에게 CEO 자리를 넘기고 executive chairman으로 빠져 있던 상태였는데, 이번에는 보드에서도 완전히 손을 뗀다. 본인은 "재단 활동과 새로운 프로젝트에 집중하겠다"고 밝혔다. <a href="https://www.bloomberg.com/news/articles/2026-04-16/netflix-co-founder-reed-hastings-to-leave-board-in-june">Bloomberg 리포트</a>에 따르면 경영 구조 자체는 안정적이라는 평가지만, 상징적 타격은 분명 있다.</p>
+<p>둘째는 숫자. 1분기 매출은 컨센서스를 넘겼는데, 2분기 가이던스가 월가 기대치를 밑돌았다. <a href="https://dnyuz.com/2026/04/16/netflix-shares-plunge-after-weak-guidance-and-news-that-cofounder-reed-hastings-will-leave-the-board/">주가는 연장 세션에서 10% 가까이 폭락</a>했다. NFLX는 내 핵심 포지션은 아니라 타격은 크지 않지만, "스트리밍 프리미엄"이 끝물에 접어드는 느낌은 장기 빅테크 투자자로서 유의해서 봐야 할 대목이다. 광고 ARPU, 가격 인상, 콘텐츠 비용 사이에서 이익 확대가 둔화되는 흐름이 가이던스에 반영된 것 같다. AAPL, AMZN, GOOGL 들고 있는 입장에서는 스트리밍 경쟁 구도가 바뀔 수 있다는 점이 오히려 간접적으로 중요하다.</p>
+<p>오늘 프리마켓이 이걸 어떻게 소화할지 지켜봐야 한다. 어제까지 S&amp;P 500과 Nasdaq이 역대 최고치였으니까, 부분적 차익실현의 명분이 될 수도 있다.</p>
+<hr />
+<h2 id="hbm4-16">HBM4 16층 스택 — 공정 디테일까지 공개되기 시작했다</h2>
+<p>반도체 쪽에서 일하는 사람으로서 오늘 가장 깊게 파고든 기사가 HBM4 16-Hi 관련 업데이트다. 어제 저녁 들어온 <a href="https://www.tweaktown.com/news/109495/sk-hynix-samsung-and-micron-fighting-for-nvidia-supply-contracts-for-new-16-hi-hbm4-orders/index.html">TweakTown 리포트</a>에 따르면, Nvidia가 2026년 하반기까지 16-Hi HBM 공급을 요청했고 SK하이닉스, 삼성전자, 마이크론 세 곳이 전면전에 돌입했다.</p>
+<p>SK하이닉스가 먼저 <a href="https://www.astutegroup.com/news/general/sk-hynix-holds-62-of-hbm-micron-overtakes-samsung-2026-battle-pivots-to-hbm4/">세계 최초 16층 48GB HBM4 스택</a>을 공개했다. 포인트는 DRAM 웨이퍼 두께를 30마이크로미터까지 박막화했다는 것. 기존 12-Hi가 50㎛였으니까 40% 얇아진 셈이다. 자체 MR-MUF(Mass Reflow Molded Underfill) 기술로 이걸 해냈다. 반도체 패키징 현업에서 보면 30㎛ 수준 웨이퍼를 절단·픽업·본딩하는 건 수율 관리가 악몽이다. 웨이퍼 휨(warpage), 크랙, 본딩 정렬 전부 비선형적으로 난이도가 올라간다. SK하이닉스가 MR-MUF 덕분에 이걸 양산 레벨까지 끌어온 거면, 적어도 단기적으로는 기술 리더십이 확고하다.</p>
+<p>삼성은 다른 접근을 택했다. <a href="https://markets.financialcontent.com/wral/article/tokenring-2026-1-8-the-hbm4-memory-war-sk-hynix-samsung-and-micron-clash-at-ces-2026-to-power-nvidias-rubin-revolution">1c(6세대 10nm급) DRAM 공정 기반 HBM4</a>를 만들어서, 원-스톱(다이 생산부터 패키징까지 내재화) 강점으로 밀고 있다. 삼성 입장에서는 공정 미세화로 셀 밀도와 전력 효율을 확보해서 적층 수가 아니라 다이 레벨 경쟁력으로 이기겠다는 의도다.</p>
+<p>마이크론은 12층 36GB HBM4에 <a href="https://www.tweaktown.com/news/109495/sk-hynix-samsung-and-micron-fighting-for-nvidia-supply-contracts-for-new-16-hi-hbm4-orders/index.html">2,048비트 인터페이스</a>로 스택당 2.0TB/s 이상 대역폭을 확보하는 전략이다. 흥미로운 건 최근 <a href="https://www.astutegroup.com/news/general/sk-hynix-holds-62-of-hbm-micron-overtakes-samsung-2026-battle-pivots-to-hbm4/">Micron이 Samsung을 HBM 점유율에서 추월</a>했다는 보도가 나왔다는 점. SK하이닉스 62%, 마이크론 2위, 삼성 3위 구도다. 몇 년 전만 해도 상상하기 어려운 그림이었다.</p>
+<p>시장 규모도 숫자가 세다. <a href="https://news.skhynix.com/2026-market-outlook-focus-on-the-hbm-led-memory-supercycle/">BofA는 2026년 HBM 시장을 546억 달러 규모로 전망</a>했다. 전년 대비 58% 성장이다. 어제 썼던 삼성 영업이익 57조의 상당 부분이 결국 HBM에서 나온다는 점을 생각하면, 이 숫자가 얼마나 무거운지 체감이 된다. NVDA 포지션을 가진 사람으로서는, Nvidia의 GPU 백로그 1조 달러가 결국 이 HBM 공급이 받쳐줘야 현실이 된다는 점에서 위아래로 같이 보게 된다.</p>
+<hr />
+<h2 id="openai-gpt-54-cyber-gemini-mac-pentagon">OpenAI GPT-5.4-Cyber, Gemini Mac 앱, 그리고 Pentagon 협상</h2>
+<p>Anthropic만 바쁜 건 아니다. <a href="https://blog.greeden.me/en/2026/04/16/week-2-of-april-2026-one-week-generative-ai-news-roundup-what-gpt-5-4-cyber-claude-cyber-concerns-and-gemini-notebooks-show-about-what-comes-next-for-practical-ai/">OpenAI가 GPT-5.4-Cyber라는 사이버보안 특화 모델</a>을 발표했다. Trusted Access for Cyber(TAC)라는 신분 검증 티어 시스템을 통해, 상위 티어 유저에게 취약점 분석과 위협 분석 용도로 더 넓은 접근을 제공한다. Anthropic의 Mythos + Project Glasswing + ID 인증 조합과 거의 대칭적인 움직임이다. 업계가 "AI 사이버 능력"을 다루는 프레임이 빠르게 수렴되고 있다는 뜻인데, 나는 솔직히 두 회사가 서로의 접근을 참고하면서 수위를 맞추는 과정이라고 본다.</p>
+<p>Google은 소비자 쪽을 찔렀다. <a href="https://startupnews.fyi/2026/04/16/google-launches-native-gemini-ai-app-for-mac/">네이티브 Gemini Mac 앱이 런칭</a>되면서 gemini.google/mac에서 바로 다운로드 가능하다. Claude와 ChatGPT가 수년간 Mac 앱으로 데스크톱 시장을 선점한 사이 Google이 한참 늦게 합류한 모양새인데, macOS 통합(Spotlight, 단축키, 알림)을 얼마나 깔끔하게 풀었는지가 관건이다. Claude Code 데스크톱과 같이 써야 하는 입장에서, Google이 실제로 좋은 앱을 만들어줬으면 하는 마음은 있다.</p>
+<p>정부 계약 쪽에서는 <a href="https://www.quiverquant.com/news/Google+in+Talks+With+Pentagon+to+Deploy+Gemini+AI+in+Classified+Settings+Amid+AI+Contract+Shifts">Google이 국방부와 기밀 환경에서의 Gemini 배치를 협상 중</a>이라는 보도도 나왔다. Google은 계약에 "국내 대량 감시와 인간 감독 없는 자율 무기에는 사용 금지" 조항을 넣겠다고 제안했다. GOOGL 주주로서 정부 계약은 매출 안정성 측면에서 환영할 일이지만, 윤리 조항이 실제로 어떻게 강제될지는 두고 봐야 한다. 이 시장은 이미 Palantir, Anthropic, OpenAI, xAI, Microsoft가 각자 포지션을 잡고 있는 상태라 GOOGL이 점유율을 얼마나 가져올 수 있을지가 핵심이다.</p>
+<hr />
+<h2 id="tesla">잠깐, Tesla는 어제 다시 빠졌다</h2>
+<p>어제 8% 폭등으로 환호했는데, 목요일(4월 16일) 정규장에서 <a href="https://finance.yahoo.com/markets/stocks/articles/tech-stocks-today-tesla-stock-surges-on-chip-reveal-uber-exec-says-ai-budget-isnt-enough-144220118.html">TSLA가 일부 반납</a>했다. 장중 $381.80 ~ $396.51 구간을 오갔고, 애프터마켓 $394 부근. 전일 대비 0.67% 하락 정도로 마감이니까 대재앙은 아니다. 일부 차익실현과 Q1 인도량 피로감이 섞인 결과로 본다.</p>
+<p>TSLA 비중이 큰 사람으로서 솔직히 수요일 상승이 너무 가파랐다고 느꼈다. AI5 테이프아웃은 정말 장기 스토리인데 시장이 하루 만에 다 반영했다는 게 비현실적이었거든. 4월 22일 어닝콜까지 일주일도 안 남았다. 마진, 재고 소진 속도, FSD 승인 로드맵, 옵티머스 업데이트. 이 네 가지 포인트에서 머스크가 뭘 말하느냐가 다음 레그를 결정할 것 같다.</p>
+<hr />
+<h2 id="_1">한 줄 정리</h2>
+<p>Claude Opus 4.7이 새벽에 떨어졌고, Netflix는 의장 퇴임과 가이던스 미스로 10% 빠졌고, HBM4 16층 스택 전쟁은 공정 디테일까지 공개되기 시작했다. Claude Code 유저 입장에서는 오늘 출근하자마자 <code>/ultrareview</code>부터 돌려봐야겠고, 반도체 현직자로서는 30㎛ 웨이퍼 수율 숫자가 나오는 순간을 기다리고, NVDA·TSLA 포지션은 다음 주 테슬라 어닝콜까지 숨을 고르는 심정이다. 새벽 6시, 커피는 식어가는데 할 일은 늘어나는 하루다.</p>
+    </div>
+    
+<div class="post-share">
+    <span class="share-label">공유하기</span>
+    <a href="https://twitter.com/intent/tweet?text=Opus 4.7 새벽 릴리스, Netflix 애프터마켓 10% 붕괴 — 반도체 현직자의 밤사이 정리&url=https://shonsubong.github.io/sonslab-blog/posts/2026-04-17-am06-ai-tech-news.html"
+       class="share-btn" target="_blank" rel="noopener" aria-label="X(Twitter)에 공유">
+        <span>X</span>
+    </a>
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://shonsubong.github.io/sonslab-blog/posts/2026-04-17-am06-ai-tech-news.html"
+       class="share-btn" target="_blank" rel="noopener" aria-label="LinkedIn에 공유">
+        <span>in</span>
+    </a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://shonsubong.github.io/sonslab-blog/posts/2026-04-17-am06-ai-tech-news.html"
+       class="share-btn" target="_blank" rel="noopener" aria-label="Facebook에 공유">
+        <span>f</span>
+    </a>
+    <button type="button" class="share-btn share-copy" id="share-copy-btn" data-url="https://shonsubong.github.io/sonslab-blog/posts/2026-04-17-am06-ai-tech-news.html" aria-label="링크 복사">
+        <span>🔗 링크 복사</span>
+    </button>
+</div>
+    
+<nav class="post-nav-bottom" aria-label="이전/다음 글">
+    <a href="2026-04-16-pm17-ai-tech-news.html" class="post-nav-link prev">
+        <span class="post-nav-label">← 이전 글</span>
+        <span class="post-nav-title">TSMC 마진 66%, Nvidia GPU 주문 1조 달러 — 반도체 현직자가 읽는 오후 장세</span>
+    </a>
+    <a href="2026-04-17-pm17-ai-tech-news.html" class="post-nav-link next">
+        <span class="post-nav-label">다음 글 →</span>
+        <span class="post-nav-title">삼성 8nm MRAM 양산 수율, Claude Code Routines 직접 돌려본 오후</span>
+    </a>
+</nav>
+    
+<section class="related-posts" aria-label="최근 다른 리포트">
+    <div class="related-posts-label">최근 다른 리포트</div>
+    <ul class="related-list"><li><a href="2026-04-19-pm12-ai-tech-news.html"><span class="related-title">일요일 점심 — Tesla Robotaxi가 댈러스·휴스턴까지, 그리고 TSMC가 말해주는 2026년</span><span class="related-date">2026-04-19 · 오전 브리핑 · 12:18</span></a></li><li><a href="2026-04-19-am06-ai-tech-news.html"><span class="related-title">일요일 아침, Snap 1,000명과 &#x27;AI가 못 이기는 영역&#x27; — 두 기사를 나란히 놓고 읽다</span><span class="related-date">2026-04-19 · 새벽 리포트 · 06:14</span></a></li><li><a href="2026-04-18-pm22-ai-tech-news.html"><span class="related-title">밤에 Ising 리포 훑어보다가 — Samsung HBM4 로직 다이가 조용히 40% 올랐다</span><span class="related-date">2026-04-18 · 저녁 마감 · 22:17</span></a></li><li><a href="2026-04-18-pm17-ai-tech-news.html"><span class="related-title">토요일 오후 산책 다녀와서 — Opus 4.7 MRCR 낙폭, 개인 프로젝트로 직접 재봤다</span><span class="related-date">2026-04-18 · 오후 브리핑 · 17:14</span></a></li><li><a href="2026-04-18-pm12-ai-tech-news.html"><span class="related-title">호르무즈 열리고 테슬라가 숨 돌린 주말 — Cursor 500억 달러, Opus 4.7 논쟁, 그리고 Nvidia Ising</span><span class="related-date">2026-04-18 · 오전 브리핑 · 12:34</span></a></li></ul>
+</section>
+</article>
+
+
+<section class="subscribe-cta" id="subscribe">
+    <div class="sub-header">
+        <h3>매일 4번, 받은편지함으로</h3>
+        <p class="sub-desc">반도체·AI·시장 브리핑을 새벽·오전·오후·저녁 네 번 이메일로 받아보세요. 스팸 없음, 언제든 구독 취소.</p>
+    </div>
+    <form id="subscribe-form" class="subscribe-form" action="https://assets.mailerlite.com/jsonp/2275622/forms/185056263876380606/subscribe" method="post">
+        <input type="email" name="fields[email]" placeholder="your@email.com" required aria-label="이메일 주소">
+        <input type="hidden" name="ml-submit" value="1">
+        <button type="submit" class="btn btn-primary">구독하기</button>
+    </form>
+    <div id="subscribe-status" class="subscribe-status" role="status" aria-live="polite"></div>
+    <p class="subscribe-footnote">또는 RSS로 구독하기</p>
+    <div class="rss-copy-row">
+        <input id="rss-url" type="text" readonly value="https://shonsubong.github.io/sonslab-blog/feed.xml" aria-label="RSS 피드 URL">
+        <button id="rss-copy-btn" type="button" class="btn btn-secondary">URL 복사</button>
+    </div>
+    <p class="rss-hint">RSS 리더에 이 URL을 붙여넣으면 구독됩니다.</p>
+    <div class="rss-readers">
+        <span class="rss-readers-label">바로가기 (로그인 필요):</span>
+        <a href="https://www.inoreader.com/?add_feed=https%3A%2F%2Fshonsubong.github.io%2Fsonslab-blog%2Ffeed.xml" class="rss-reader-btn" target="_blank" rel="noopener">Inoreader</a>
+        <a href="https://theoldreader.com/feeds/subscribe?url=https%3A%2F%2Fshonsubong.github.io%2Fsonslab-blog%2Ffeed.xml" class="rss-reader-btn" target="_blank" rel="noopener">The Old Reader</a>
+        <a href="https://shonsubong.github.io/sonslab-blog/feed.xml" class="rss-reader-btn rss-raw" target="_blank" rel="noopener" title="Atom/XML 원본">Atom/XML</a>
+    </div>
+</section>
+
+
+<footer>
+    <div class="stats-row">
+        <img src="https://hits.sh/shonsubong.github.io/sonslab-blog.svg?view=today-total&style=flat-square&label=visits&color=1e3a5f&labelColor=1a2332" alt="Visit counter">
+        <span class="stat-inline">오늘 · 누적 방문</span>
+    </div>
+    <p style="margin-top: 1.2rem;">© 2026 SONSLAB — 현장 감각으로 읽는 AI와 테크</p>
+    <div style="margin-top: 0.5rem;">
+        <a href="../index.html#posts">글</a>·
+        <a href="../index.html#about">About</a>·
+        <a href="../feed.xml">RSS</a>·
+        <a href="mailto:starfox1211@naver.com">Contact</a>
+    </div>
+</footer>
+
+<button type="button" class="scroll-top" id="scroll-top" aria-label="맨 위로" title="맨 위로">↑</button>
+
+<script>
+(function() {
+    var bar = document.getElementById('reading-progress');
+    if (!bar) return;
+    function update() {
+        var h = document.documentElement, b = document.body;
+        var st = h.scrollTop || b.scrollTop;
+        var sh = (h.scrollHeight || b.scrollHeight) - h.clientHeight;
+        bar.style.width = (sh > 0 ? (st / sh) * 100 : 0) + '%';
+    }
+    window.addEventListener('scroll', update, {passive: true});
+    update();
+})();
+</script>
+
+
+<script>
+(function() {
+    // 외부 링크에 target=_blank, rel=noopener 자동 부여
+    var origin = window.location.origin;
+    document.querySelectorAll('.post-content a[href^="http"]').forEach(function(a) {
+        try {
+            var u = new URL(a.href);
+            if (u.origin !== origin) {
+                a.target = '_blank';
+                a.rel = 'noopener noreferrer';
+            }
+        } catch (e) {}
+    });
+    // 모바일에서 TOC 기본 접힘 (세로 공간 절약)
+    if (window.matchMedia('(max-width: 767px)').matches) {
+        var toc = document.querySelector('.post-toc');
+        if (toc && toc.hasAttribute('open')) toc.removeAttribute('open');
+    }
+    // 공유: 링크 복사
+    var copyBtn = document.getElementById('share-copy-btn');
+    if (copyBtn) {
+        copyBtn.addEventListener('click', async function() {
+            var url = copyBtn.dataset.url || window.location.href;
+            try {
+                if (navigator.clipboard && window.isSecureContext) {
+                    await navigator.clipboard.writeText(url);
+                } else {
+                    var ta = document.createElement('textarea');
+                    ta.value = url; document.body.appendChild(ta);
+                    ta.select(); document.execCommand('copy');
+                    document.body.removeChild(ta);
+                }
+                var span = copyBtn.querySelector('span');
+                var original = span.textContent;
+                span.textContent = '✓ 복사됨';
+                copyBtn.classList.add('copied');
+                setTimeout(function() {
+                    span.textContent = original;
+                    copyBtn.classList.remove('copied');
+                }, 2000);
+            } catch (e) {}
+        });
+    }
+})();
+</script>
+
+
+<script>
+(function() {
+    var form = document.getElementById('subscribe-form');
+    var status = document.getElementById('subscribe-status');
+    function setState(state, html) {
+        if (!status) return;
+        status.className = 'subscribe-status' + (state ? ' state-' + state : '');
+        status.innerHTML = html || '';
+    }
+    var rssInput = document.getElementById('rss-url');
+    var rssBtn = document.getElementById('rss-copy-btn');
+    if (rssInput && rssBtn) {
+        rssBtn.addEventListener('click', async function() {
+            var url = rssInput.value;
+            try {
+                if (navigator.clipboard && window.isSecureContext) {
+                    await navigator.clipboard.writeText(url);
+                } else {
+                    rssInput.select();
+                    rssInput.setSelectionRange(0, url.length);
+                    document.execCommand('copy');
+                }
+                var original = rssBtn.textContent;
+                rssBtn.textContent = '✓ 복사됨';
+                rssBtn.classList.add('copied');
+                setTimeout(function() {
+                    rssBtn.textContent = original;
+                    rssBtn.classList.remove('copied');
+                }, 2000);
+            } catch (err) {
+                rssInput.select();
+            }
+        });
+        rssInput.addEventListener('click', function() { rssInput.select(); });
+    }
+    // 공통 구독 submit 로직. 메인 폼 + 인라인 폼(B/C hero) 모두 처리.
+    function setFormState(statusEl, state, html, cls) {
+        if (!statusEl) return;
+        var base = cls || 'subscribe-status';
+        statusEl.className = base + (state ? ' state-' + state : '');
+        statusEl.innerHTML = html || '';
+    }
+    function attachSubscribe(f, statusEl, statusCls, successTemplate) {
+        if (!f) return;
+        f.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            var email = f.querySelector('input[type="email"]').value.trim();
+            if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                setFormState(statusEl, 'error', '올바른 이메일 주소를 입력해주세요.', statusCls);
+                return;
+            }
+            var btn = f.querySelector('button[type="submit"]');
+            var originalLabel = btn.textContent;
+            btn.disabled = true;
+            btn.classList.add('loading');
+            btn.textContent = '전송 중…';
+            setFormState(statusEl, 'loading', '', statusCls);
+            try {
+                var fd = new FormData(f);
+                var res = await fetch(f.action, { method: 'POST', body: fd });
+                var data = {};
+                try { data = await res.json(); } catch (e) {}
+                if (res.ok && data.success) {
+                    f.classList.add('hidden-post-success');
+                    var safe = email.replace(/[<>&"]/g, function(c) { return ({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'})[c]; });
+                    setFormState(statusEl, 'success', successTemplate(safe), statusCls);
+                } else {
+                    throw new Error((data && data.message) || '서버 응답 오류');
+                }
+            } catch (err) {
+                setFormState(statusEl, 'error', '일시적인 오류가 발생했습니다. 잠시 후 다시 시도해주세요.', statusCls);
+                btn.disabled = false;
+                btn.classList.remove('loading');
+                btn.textContent = originalLabel;
+            }
+        });
+    }
+    // 메인 구독 폼 (subscribe 섹션)
+    attachSubscribe(form, status, 'subscribe-status', function(safe) {
+        return '<strong>✓ 구독 신청을 받았습니다.</strong>' +
+            'SONSLAB이 <b>' + safe + '</b> 주소로 확인 이메일을 보냈습니다. ' +
+            '받은편지함(스팸함 포함)에서 확인 링크를 클릭하시면 구독이 완료됩니다.';
+    });
+    // 인라인 구독 폼 (B/C hero 내부)
+    document.querySelectorAll('form.inline-sub[data-subscribe]').forEach(function(f) {
+        var st = f.parentElement ? f.parentElement.querySelector('.inline-sub-status') : null;
+        attachSubscribe(f, st, 'inline-sub-status', function(safe) {
+            return '✓ <b>' + safe + '</b>로 확인 이메일을 보냈습니다.';
+        });
+    });
+})();
+</script>
+
+
+<script>
+(function() {
+    // 다크 모드 토글
+    var toggle = document.getElementById('theme-toggle');
+    if (toggle) {
+        toggle.addEventListener('click', function() {
+            var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+            if (isDark) {
+                document.documentElement.removeAttribute('data-theme');
+                try { localStorage.setItem('sonslab-theme', 'light'); } catch(e){}
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                try { localStorage.setItem('sonslab-theme', 'dark'); } catch(e){}
+            }
+        });
+    }
+    // 디자인 피커
+    var dpBtn = document.getElementById('design-picker-btn');
+    var dpMenu = document.getElementById('design-picker-menu');
+    var dpCurrent = document.getElementById('design-picker-current');
+    var dpLabels = { current: '기본', refined: '정제판', editorial: '에디토리얼', broadsheet: '브로드시트' };
+    function applyDesign(name) {
+        if (!dpLabels[name]) name = 'current';
+        if (name === 'current') document.documentElement.removeAttribute('data-design');
+        else document.documentElement.setAttribute('data-design', name);
+        try { localStorage.setItem('sonslab-design', name); } catch(e){}
+        if (dpCurrent) dpCurrent.textContent = dpLabels[name];
+        if (dpMenu) dpMenu.querySelectorAll('li').forEach(function(li){
+            li.classList.toggle('active', li.getAttribute('data-design') === name);
+        });
+    }
+    if (dpBtn && dpMenu) {
+        // 초기 라벨·활성 표시 동기화
+        var initialDesign = document.documentElement.getAttribute('data-design') || 'current';
+        applyDesign(initialDesign);
+        dpBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            var expanded = dpBtn.getAttribute('aria-expanded') === 'true';
+            dpBtn.setAttribute('aria-expanded', String(!expanded));
+            dpMenu.classList.toggle('open', !expanded);
+        });
+        dpMenu.querySelectorAll('li').forEach(function(li){
+            li.addEventListener('click', function(){
+                applyDesign(li.getAttribute('data-design'));
+                dpMenu.classList.remove('open');
+                dpBtn.setAttribute('aria-expanded', 'false');
+            });
+        });
+        document.addEventListener('click', function(e){
+            if (!dpMenu.contains(e.target) && e.target !== dpBtn) {
+                dpMenu.classList.remove('open');
+                dpBtn.setAttribute('aria-expanded', 'false');
+            }
+        });
+    }
+    // 맨 위로 버튼
+    var btn = document.getElementById('scroll-top');
+    if (btn) {
+        var toggleBtn = function() {
+            if (window.scrollY > 300) btn.classList.add('visible');
+            else btn.classList.remove('visible');
+        };
+        window.addEventListener('scroll', toggleBtn, {passive:true});
+        btn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        toggleBtn();
+    }
+})();
+</script>
+</body>
+</html>

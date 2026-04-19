@@ -1,0 +1,1446 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SONSLAB — AI · 반도체 · 시장 브리핑</title>
+    <link rel="icon" href="assets/logo.jpg">
+    <link rel="alternate" type="application/atom+xml" title="SONSLAB Feed" href="feed.xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
+    <meta name="description" content="반도체 현직 수석 엔지니어가 하루 4번, 새벽·오전·오후·저녁마다 정리하는 AI·빅테크·시장 동향. 뉴스가 아니라 해석을 씁니다.">
+    <meta name="author" content="SONSLAB">
+    <link rel="canonical" href="https://shonsubong.github.io/sonslab-blog/">
+    <meta property="og:site_name" content="SONSLAB">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="SONSLAB — AI · 반도체 · 시장 브리핑">
+    <meta property="og:description" content="반도체 현직 수석 엔지니어가 하루 4번, 새벽·오전·오후·저녁마다 정리하는 AI·빅테크·시장 동향. 뉴스가 아니라 해석을 씁니다.">
+    <meta property="og:url" content="https://shonsubong.github.io/sonslab-blog/">
+    <meta property="og:image" content="https://shonsubong.github.io/sonslab-blog/assets/logo.jpg">
+    <meta property="og:locale" content="ko_KR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SONSLAB — AI · 반도체 · 시장 브리핑">
+    <meta name="twitter:description" content="반도체 현직 수석 엔지니어가 하루 4번, 새벽·오전·오후·저녁마다 정리하는 AI·빅테크·시장 동향. 뉴스가 아니라 해석을 씁니다.">
+    <meta name="twitter:image" content="https://shonsubong.github.io/sonslab-blog/assets/logo.jpg">
+    
+<script>
+(function() {
+    try {
+        var saved = localStorage.getItem('sonslab-theme');
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var theme = saved || (prefersDark ? 'dark' : 'light');
+        if (theme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+
+        var design = localStorage.getItem('sonslab-design') || 'current';
+        var allowed = ['current', 'refined', 'editorial', 'broadsheet'];
+        if (allowed.indexOf(design) === -1) design = 'current';
+        if (design !== 'current') document.documentElement.setAttribute('data-design', design);
+    } catch (e) {}
+})();
+</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "SONSLAB", "description": "반도체 현직 수석 엔지니어가 하루 4번, 새벽·오전·오후·저녁마다 정리하는 AI·빅테크·시장 동향. 뉴스가 아니라 해석을 씁니다.", "url": "https://shonsubong.github.io/sonslab-blog/", "inLanguage": "ko", "potentialAction": {"@type": "SearchAction", "target": {"@type": "EntryPoint", "urlTemplate": "https://shonsubong.github.io/sonslab-blog/?q={search_term_string}"}, "query-input": "required name=search_term_string"}}</script>
+</head>
+<body>
+
+<div class="nameplate" data-only="broadsheet">
+    <div class="np-inner">
+        <div class="np-left">
+            <div class="np-meta">VOL. 44 · No. 34</div>
+            <div class="np-meta">KRW · FREE</div>
+        </div>
+        <div class="np-center">
+            <div class="np-title">SONSLAB</div>
+            <div class="np-motto">현장 감각으로 읽는 AI · 반도체 · 시장 — Est. 2026</div>
+        </div>
+        <div class="np-right">
+            <div class="np-meta">SUN · APR 19 · 2026</div>
+            <div class="np-meta">KST</div>
+        </div>
+    </div>
+</div>
+
+
+<header class="top-nav">
+    <div class="top-nav-inner">
+        <a href="index.html" class="brand">
+            <img src="assets/logo.jpg" alt="SONSLAB" onerror="this.style.display='none'">
+            <span class="name">SONSLAB</span>
+        </a>
+        <nav>
+            <a href="index.html#posts">글</a>
+            <a href="index.html#about">About</a>
+            <span class="nav-visits" title="오늘 · 누적 방문">
+                <img src="https://hits.sh/shonsubong.github.io/sonslab-blog.svg?view=today-total&style=flat-square&label=visits&color=1e3a5f&labelColor=1a2332" alt="오늘·누적 방문 수">
+            </span>
+            <div class="design-picker" title="디자인 전환">
+                <button type="button" class="design-picker-btn" id="design-picker-btn" aria-haspopup="listbox" aria-expanded="false" aria-label="디자인 전환">
+                    <span class="design-picker-icon" aria-hidden="true">◑</span>
+                    <span class="design-picker-current" id="design-picker-current">기본</span>
+                    <span class="design-picker-caret" aria-hidden="true">▾</span>
+                </button>
+                <ul class="design-picker-menu" id="design-picker-menu" role="listbox" aria-label="디자인 옵션">
+                    <li role="option" data-design="current"><strong>기본</strong><span>네이비+크림, 라운드 카드</span></li>
+                    <li role="option" data-design="refined"><strong>정제판 (A)</strong><span>신문·저널 톤, 헤어라인 구분선</span></li>
+                    <li role="option" data-design="editorial"><strong>에디토리얼 (B)</strong><span>이중선 마스트헤드, 세리프 강조</span></li>
+                    <li role="option" data-design="broadsheet"><strong>브로드시트 (C)</strong><span>웜 크림, 잉크블랙, 큰 세리프</span></li>
+                </ul>
+            </div>
+            <button type="button" class="theme-toggle" id="theme-toggle" aria-label="다크 모드 토글" title="다크/라이트 전환">
+                <span class="icon-moon" aria-hidden="true">🌙</span>
+                <span class="icon-sun" aria-hidden="true">☀</span>
+            </button>
+            <a href="index.html#subscribe" class="nav-cta">이메일 구독</a>
+        </nav>
+    </div>
+</header>
+
+
+<div class="masthead-b" data-only="editorial">
+    <div class="masthead-inner">
+        <div class="mast-date">SUNDAY, APRIL 19, 2026</div>
+        <div class="mast-vol">VOL. 44 · ISSUE 34</div>
+    </div>
+</div>
+
+
+<section class="hero">
+    
+    <div class="hero-default">
+        <span class="kicker">AI · 반도체 · 시장 브리핑</span>
+        <h1>현장 감각으로 읽는<br>AI와 테크의 하루</h1>
+        <p class="tagline">
+            반도체 현직 수석 엔지니어가 하루 4번, 새벽·오전·오후·저녁마다 정리하는
+            AI·빅테크·시장 동향. 뉴스가 아니라 해석을 씁니다.
+        </p>
+        <div class="author-row">
+            <div class="author-avatar"><img src="assets/logo.jpg" alt="SONSLAB 로고"></div>
+            <div class="author-info">
+                <div class="author-name">SONSLAB</div>
+                <div class="author-role">반도체 수석 엔지니어 · TEM/SEM 영상 AI 플랫폼 개발자</div>
+            </div>
+        </div>
+        <div class="schedule-chip">
+            <span class="dot"></span>
+            <span>새벽 06시 · 오전 12시 · 오후 17시 · 저녁 22시 발행</span>
+        </div>
+        <div class="hero-cta">
+            <a href="#subscribe" class="btn btn-primary">이메일 구독</a>
+            <a href="#about" class="btn btn-secondary">About</a>
+        </div>
+    </div>
+    
+    <aside class="hero-today-box" data-only="refined">
+        <div class="today-head">
+            <div class="today-head-title">오늘의 브리핑</div>
+            <div class="today-head-date">2026년 04월 19일 (일)</div>
+        </div>
+        <table class="today-table">
+            <tbody>
+                <tr class="live">
+                    <td class="td-time">06:14</td>
+                    <td class="td-kind">새벽 리포트</td>
+                    <td class="td-title"><a href="posts/2026-04-19-am06-ai-tech-news.html">일요일 아침, Snap 1,000명과 &#x27;AI가 못 이기는 영역&#x27; — 두 기사를 나란히 놓고 읽다</a><span class="new-mark">NEW</span></td>
+                    <td class="td-read">4분</td>
+                </tr>
+                <tr class="live">
+                    <td class="td-time">12:18</td>
+                    <td class="td-kind">오전 브리핑</td>
+                    <td class="td-title"><a href="posts/2026-04-19-pm12-ai-tech-news.html">일요일 점심 — Tesla Robotaxi가 댈러스·휴스턴까지, 그리고 TSMC가 말해주는 2026년</a></td>
+                    <td class="td-read">4분</td>
+                </tr>
+                <tr class="up">
+                    <td class="td-time">17:00</td>
+                    <td class="td-kind">오후 브리핑</td>
+                    <td class="td-title">발행 예정</td>
+                    <td class="td-read">—</td>
+                </tr>
+                <tr class="up">
+                    <td class="td-time">22:00</td>
+                    <td class="td-kind">저녁 마감</td>
+                    <td class="td-title">발행 예정</td>
+                    <td class="td-read">—</td>
+                </tr>
+            </tbody>
+        </table>
+    </aside>
+    
+        <article class="hero-lede" data-only="editorial">
+            <div class="lede-kind">새벽 리포트 — Morning Brief</div>
+            <h1 class="lede-title"><a href="posts/2026-04-19-am06-ai-tech-news.html">일요일 아침, Snap 1,000명과 &#x27;AI가 못 이기는 영역&#x27;</a></h1>
+            <div class="lede-dek">두 기사를 나란히 놓고 읽다</div>
+            <p class="lede-body">일요일이라 시장도 조용하고, 새로 터지는 이벤트도 적다. 대신 지난주에 나온 두 기사를 다시 꺼내 나란히 놓고 읽었다. 하나는 Snap의 1,000명 정리해고 뉴스고, 다른 하나는 Nature에 올라온 &quot;인간 과학자가 최고 수준 AI 에이전트를 복잡한 과제에서 여전히 두 배 이상 앞선다&quot;는 정반대 결론의 기사다. 같은 주 안에서 나란히 나왔다는 게 흥미롭다.</p>
+            <div class="lede-byline">
+                <span class="lede-reporter">By SONSLAB</span>
+                <span class="lede-sep">—</span>
+                <span>4분 읽기</span>
+                <span class="lede-sep">—</span><span class="lede-topics">AI 모델, 빅테크/시장, 현장/개발</span>
+            </div>
+            <a href="posts/2026-04-19-am06-ai-tech-news.html" class="lede-more">Continue reading →</a>
+        </article>
+    
+    <aside class="hero-sidebar" data-only="editorial">
+        <div class="side-block">
+            <div class="side-head">오늘의 브리핑</div>
+            <div class="side-today-list">
+            <div class="side-today-row">
+                <div class="side-hour">06</div>
+                <div class="side-body">
+                    <div class="side-kind">새벽<span class="live-mark">LIVE</span></div>
+                    <div class="side-title"><a href="posts/2026-04-19-am06-ai-tech-news.html">일요일 아침, Snap 1,000명과 &#x27;AI가 못 이기는 영역&#x27; — 두 기사를 나란히 놓고 읽다</a></div>
+                </div>
+            </div>
+            <div class="side-today-row">
+                <div class="side-hour">12</div>
+                <div class="side-body">
+                    <div class="side-kind">오전</div>
+                    <div class="side-title"><a href="posts/2026-04-19-pm12-ai-tech-news.html">일요일 점심 — Tesla Robotaxi가 댈러스·휴스턴까지, 그리고 TSMC가 말해주는 2026년</a></div>
+                </div>
+            </div>
+            <div class="side-today-row dim">
+                <div class="side-hour">17</div>
+                <div class="side-body">
+                    <div class="side-kind">오후</div>
+                    <div class="side-title">발행 예정</div>
+                </div>
+            </div>
+            <div class="side-today-row dim">
+                <div class="side-hour">22</div>
+                <div class="side-body">
+                    <div class="side-kind">저녁</div>
+                    <div class="side-title">발행 예정</div>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="side-block">
+            <div class="side-head">이번 주 많이 읽힌 글</div>
+            <ol class="ranked">
+                <li><span class="rank-num">01</span><span><a href="posts/2026-04-18-pm12-ai-tech-news.html">호르무즈 열리고 테슬라가 숨 돌린 주말 — Cursor 500억 달러, Opus 4.7 논쟁, 그리고 Nvidia Ising</a></span></li>
+                <li><span class="rank-num">02</span><span><a href="posts/2026-04-17-am06-ai-tech-news.html">Opus 4.7 새벽 릴리스, Netflix 애프터마켓 10% 붕괴 — 반도체 현직자의 밤사이 정리</a></span></li>
+                <li><span class="rank-num">03</span><span><a href="posts/2026-04-16-am06-ai-tech-news.html">테슬라 8% 폭등, ASML은 실적 찢고도 하락 — 반도체 현직자의 밤사이 뉴스</a></span></li>
+                <li><span class="rank-num">04</span><span><a href="posts/2026-04-17-pm22-ai-tech-news.html">OpenAI-Cerebras $20B 계약, Mozilla Thunderbolt 공개 — 테슬라 어닝 D-5 밤</a></span></li>
+                <li><span class="rank-num">05</span><span><a href="posts/2026-04-18-am06-ai-tech-news.html">밤사이 흐름이 조금 달라졌다 — Tesla 실적 앞둔 금요일 반등, DeepSeek 첫 외부 투자, 그리고 전자현미경에 올라탄 파운데이션 모델</a></span></li>
+            </ol>
+        </div>
+        <div class="side-sub-box">
+            <div class="side-sub-head">매일 네 번, 받은편지함으로</div>
+            <form class="inline-sub inline-sub-b" data-subscribe action="https://assets.mailerlite.com/jsonp/2275622/forms/185056263876380606/subscribe" method="post">
+                <input type="email" name="fields[email]" placeholder="your@email.com" required aria-label="이메일 주소">
+                <input type="hidden" name="ml-submit" value="1">
+                <button type="submit">구독</button>
+            </form>
+            <div class="inline-sub-status" role="status" aria-live="polite"></div>
+            <div class="side-sub-note">스팸 없음 · 언제든 취소</div>
+        </div>
+    </aside>
+    
+    <div class="hero-front-c" data-only="broadsheet">
+        <div class="front-head">
+            <div class="front-kicker">ISSUE 04 / 19 — SUNDAY</div>
+            <div class="front-status">VOL. 44 · ISSUE 34</div>
+        </div>
+        <div class="three-col">
+            
+            <article class="c-lead">
+                <div class="c-lead-kind">LEAD · 새벽 리포트</div>
+                <h1 class="c-lead-title"><a href="posts/2026-04-19-am06-ai-tech-news.html">일요일 아침, Snap 1,000명과 &#x27;AI가 못 이기는 영역&#x27;</a></h1>
+                <div class="c-lead-dek">두 기사를 나란히 놓고 읽다</div>
+                <p class="c-lead-body"><span class="dropcap">일</span>요일이라 시장도 조용하고, 새로 터지는 이벤트도 적다. 대신 지난주에 나온 두 기사를 다시 꺼내 나란히 놓고 읽었다. 하나는 Snap의 1,000명 정리해고 뉴스고, 다른 하나는 Nature에 올라온 &quot;인간 과학자가 최고 수준 AI 에이전트를 복잡한 과제에서 여전히 두 배 이상 앞선다&quot;는 정반대 결론의 기사다. 같은 주 안에서 나란히 나왔다는 게 흥미롭다.</p>
+                <div class="c-lead-meta">
+                    <span>BY SONSLAB</span>
+                    <span class="meta-sep">·</span>
+                    <span>4분 읽기</span>
+                </div>
+                <a href="posts/2026-04-19-am06-ai-tech-news.html" class="c-lead-more">전문 읽기 →</a>
+            </article>
+            <article class="c-col2">
+                <div class="c-col-head">오늘의 발행 스케줄</div>
+                <div class="sched-list">
+            <div class="sched-row">
+                <div class="sched-left">
+                    <div class="sched-time">06:14</div>
+                    <div class="sched-kind">새벽 리포트</div>
+                </div>
+                <div class="sched-body">
+                    <div class="sched-title"><a href="posts/2026-04-19-am06-ai-tech-news.html">일요일 아침, Snap 1,000명과 &#x27;AI가 못 이기는 영역&#x27; — 두 기사를 나란히 놓고 읽다</a></div>
+                    <div class="sched-status">● 발행됨 · 4분</div>
+                </div>
+            </div>
+            <div class="sched-row">
+                <div class="sched-left">
+                    <div class="sched-time">12:18</div>
+                    <div class="sched-kind">오전 브리핑</div>
+                </div>
+                <div class="sched-body">
+                    <div class="sched-title"><a href="posts/2026-04-19-pm12-ai-tech-news.html">일요일 점심 — Tesla Robotaxi가 댈러스·휴스턴까지, 그리고 TSMC가 말해주는 2026년</a></div>
+                    <div class="sched-status">● 발행됨 · 4분</div>
+                </div>
+            </div>
+            <div class="sched-row dim">
+                <div class="sched-left">
+                    <div class="sched-time">17:00</div>
+                    <div class="sched-kind">오후 브리핑</div>
+                </div>
+                <div class="sched-body">
+                    <div class="sched-title">발행 예정</div>
+                    <div class="sched-status">○ 발행 예정</div>
+                </div>
+            </div>
+            <div class="sched-row dim">
+                <div class="sched-left">
+                    <div class="sched-time">22:00</div>
+                    <div class="sched-kind">저녁 마감</div>
+                </div>
+                <div class="sched-body">
+                    <div class="sched-title">발행 예정</div>
+                    <div class="sched-status">○ 발행 예정</div>
+                </div>
+            </div>
+                </div>
+                <div class="c-divider"></div>
+                <div class="c-col-head">편집자 노트</div>
+                <p class="editors-note">매일 네 번, 새벽·오전·오후·저녁에 정리합니다. 뉴스가 아니라 해석을 씁니다. — <em>SONSLAB</em></p>
+            </article>
+            <aside class="c-col3">
+                <div class="c-sub-block">
+                    <div class="c-sub-title">하루 4번, 받은편지함으로</div>
+                    <p class="c-sub-desc">새벽·오전·오후·저녁 네 번 정리하는 AI·반도체·시장 브리핑을 이메일로 받아보세요.</p>
+                    <form class="inline-sub inline-sub-c" data-subscribe action="https://assets.mailerlite.com/jsonp/2275622/forms/185056263876380606/subscribe" method="post">
+                        <input type="email" name="fields[email]" placeholder="your@email.com" required aria-label="이메일 주소">
+                        <input type="hidden" name="ml-submit" value="1">
+                        <button type="submit">구독</button>
+                    </form>
+                    <div class="inline-sub-status" role="status" aria-live="polite"></div>
+                    <div class="c-sub-foot">스팸 없음 · 언제든 취소</div>
+                </div>
+                <div class="c-divider"></div>
+                <div class="c-col-head">이번 주 Top Read</div>
+                <ol class="c-top-list">
+                <li>
+                    <span class="top-num">1</span>
+                    <div>
+                        <div class="top-title"><a href="posts/2026-04-18-pm12-ai-tech-news.html">호르무즈 열리고 테슬라가 숨 돌린 주말 — Cursor 500억 달러, Opus 4.7 논쟁, 그리고 Nvidia Ising</a></div>
+                        <div class="top-meta">04.18 · 오전 · 13분</div>
+                    </div>
+                </li>
+                <li>
+                    <span class="top-num">2</span>
+                    <div>
+                        <div class="top-title"><a href="posts/2026-04-17-am06-ai-tech-news.html">Opus 4.7 새벽 릴리스, Netflix 애프터마켓 10% 붕괴 — 반도체 현직자의 밤사이 정리</a></div>
+                        <div class="top-meta">04.17 · 새벽 · 13분</div>
+                    </div>
+                </li>
+                <li>
+                    <span class="top-num">3</span>
+                    <div>
+                        <div class="top-title"><a href="posts/2026-04-16-am06-ai-tech-news.html">테슬라 8% 폭등, ASML은 실적 찢고도 하락 — 반도체 현직자의 밤사이 뉴스</a></div>
+                        <div class="top-meta">04.16 · 새벽 · 13분</div>
+                    </div>
+                </li>
+                <li>
+                    <span class="top-num">4</span>
+                    <div>
+                        <div class="top-title"><a href="posts/2026-04-17-pm22-ai-tech-news.html">OpenAI-Cerebras $20B 계약, Mozilla Thunderbolt 공개 — 테슬라 어닝 D-5 밤</a></div>
+                        <div class="top-meta">04.17 · 저녁 · 12분</div>
+                    </div>
+                </li>
+                </ol>
+            </aside>
+        </div>
+    </div>
+</section>
+
+
+
+<div class="filter-bar" role="search" aria-label="포스트 검색 및 필터">
+    <div class="filter-bar-inner">
+        <div class="tag-chips" id="topic-chips" role="tablist" aria-label="주제 필터"><button type="button" class="chip active" data-topic="">전체 <span class="chip-count">46</span></button><button type="button" class="chip" data-topic="반도체">반도체 <span class="chip-count">40</span></button><button type="button" class="chip" data-topic="AI 모델">AI 모델 <span class="chip-count">35</span></button><button type="button" class="chip" data-topic="빅테크/시장">빅테크 / 시장 <span class="chip-count">37</span></button><button type="button" class="chip" data-topic="투자/매크로">투자 / 매크로 <span class="chip-count">7</span></button><button type="button" class="chip" data-topic="정책/규제">정책 / 규제 <span class="chip-count">4</span></button><button type="button" class="chip" data-topic="현장/개발">현장 / 개발 <span class="chip-count">12</span></button></div>
+        <div class="search-box">
+            <input type="search" id="search-input" placeholder="검색…" autocomplete="off" aria-label="포스트 검색">
+        </div>
+        <div class="empty-state" id="empty-state">검색 결과가 없습니다. 다른 키워드를 시도해보세요.</div>
+    </div>
+</div>
+<section class="posts-section" id="posts">
+    <div class="section-label">최근 글</div>
+
+    <details class="month-group" open>
+        <summary>
+            <span>2026년 4월</span>
+            <span class="month-count">16개</span>
+        </summary>
+        <div class="month-body">
+
+        <div class="date-group">
+            <div class="date-group-title">2026년 04월 19일 (일)</div>
+            <div class="date-group-posts">
+
+        <article class="post-item" data-time="오전 브리핑" data-topics="반도체|빅테크/시장|AI 모델" data-search="일요일 점심 — tesla robotaxi가 댈러스·휴스턴까지, 그리고 tsmc가 말해주는 2026년 점심 먹고 뉴스 몇 개 훑는데, 어제(4/18) 나온 tesla robotaxi 확장 뉴스가 생각보다 조용히 지나갔다. 아침 포스트에서 snap/nature를 다뤘으니 이번에는 다른 결로 가자. tesla 얘기 하나, 반도체 공급망 얘기 하나. 반도체 빅테크/시장 ai 모델">
+            <div class="post-meta">
+                <span class="time-label">오전 브리핑</span>
+                <span>·</span>
+                <time>12:18</time><span>·</span>
+                <span>4분 읽기</span>
+            </div>
+            <h2><a href="posts/2026-04-19-pm12-ai-tech-news.html">일요일 점심 — Tesla Robotaxi가 댈러스·휴스턴까지, 그리고 TSMC가 말해주는 2026년</a></h2>
+            <p class="lead">점심 먹고 뉴스 몇 개 훑는데, 어제(4/18) 나온 Tesla Robotaxi 확장 뉴스가 생각보다 조용히 지나갔다. 아침 포스트에서 Snap/Nature를 다뤘으니 이번에는 다른 결로 가자. Tesla 얘기 하나, 반도체 공급망 얘기 하나.</p>
+            <a href="posts/2026-04-19-pm12-ai-tech-news.html" class="read-more">계속 읽기 →</a>
+        </article>
+        <article class="post-item" data-time="새벽 리포트" data-topics="AI 모델|빅테크/시장|현장/개발" data-search="일요일 아침, snap 1,000명과 &#x27;ai가 못 이기는 영역&#x27; — 두 기사를 나란히 놓고 읽다 일요일이라 시장도 조용하고, 새로 터지는 이벤트도 적다. 대신 지난주에 나온 두 기사를 다시 꺼내 나란히 놓고 읽었다. 하나는 snap의 1,000명 정리해고 뉴스고, 다른 하나는 nature에 올라온 &quot;인간 과학자가 최고 수준 ai 에이전트를 복잡한 과제에서 여전히 두 배 이상 앞선다&quot;는 정반대 결론의 기사다. 같은 주 안에서 나란히 나왔다는 게 흥미롭다. ai 모델 빅테크/시장 현장/개발">
+            <div class="post-meta">
+                <span class="time-label">새벽 리포트</span>
+                <span>·</span>
+                <time>06:14</time><span>·</span>
+                <span>4분 읽기</span>
+            </div>
+            <h2><a href="posts/2026-04-19-am06-ai-tech-news.html">일요일 아침, Snap 1,000명과 &#x27;AI가 못 이기는 영역&#x27; — 두 기사를 나란히 놓고 읽다</a></h2>
+            <p class="lead">일요일이라 시장도 조용하고, 새로 터지는 이벤트도 적다. 대신 지난주에 나온 두 기사를 다시 꺼내 나란히 놓고 읽었다. 하나는 Snap의 1,000명 정리해고 뉴스고, 다른 하나는 Nature에 올라온 &quot;인간 과학자가 최고 수준 AI 에이전트를 복잡한 과제에서 여전히 두 배 이상 앞선다&quot;는 정반대 결론의 기사다. 같은 주 안에서 나란히 나왔다는 게 흥미롭다.</p>
+            <a href="posts/2026-04-19-am06-ai-tech-news.html" class="read-more">계속 읽기 →</a>
+        </article>
+            </div>
+        </div>
+        <div class="date-group">
+            <div class="date-group-title">2026년 04월 18일 (토)</div>
+            <div class="date-group-posts">
+
+        <article class="post-item" data-time="저녁 마감" data-topics="반도체|현장/개발|AI 모델" data-search="밤에 ising 리포 훑어보다가 — samsung hbm4 로직 다이가 조용히 40% 올랐다 저녁 먹고 오후 포스트에서 약속한 대로 nvidia/ising github 리포를 열었다. 처음 생각은 가볍게 readme만 훑고 덮으려 했는데, 디코더 쪽 구조도를 보다가 두 시간이 훅 갔다. 거기서 한 번 더 뉴스 피드를 훑는데 samsung hbm4 관련 소식이 조용히 올라와 있었다. 자정 가까워졌으니 짧게 두 개만 정리하고 잔다. 반도체 현장/개발 ai 모델">
+            <div class="post-meta">
+                <span class="time-label">저녁 마감</span>
+                <span>·</span>
+                <time>22:17</time><span>·</span>
+                <span>5분 읽기</span>
+            </div>
+            <h2><a href="posts/2026-04-18-pm22-ai-tech-news.html">밤에 Ising 리포 훑어보다가 — Samsung HBM4 로직 다이가 조용히 40% 올랐다</a></h2>
+            <p class="lead">저녁 먹고 오후 포스트에서 약속한 대로 NVIDIA/ising GitHub 리포를 열었다. 처음 생각은 가볍게 README만 훑고 덮으려 했는데, 디코더 쪽 구조도를 보다가 두 시간이 훅 갔다. 거기서 한 번 더 뉴스 피드를 훑는데 Samsung HBM4 관련 소식이 조용히 올라와 있었다. 자정 가까워졌으니 짧게 두 개만 정리하고 잔다.</p>
+            <a href="posts/2026-04-18-pm22-ai-tech-news.html" class="read-more">계속 읽기 →</a>
+        </article>
+        <article class="post-item" data-time="오후 브리핑" data-topics="AI 모델|현장/개발" data-search="토요일 오후 산책 다녀와서 — opus 4.7 mrcr 낙폭, 개인 프로젝트로 직접 재봤다 점심 포스트에서 opus 4.7의 mrcr 점수가 78.3 → 32.2로 빠졌다는 이야기를 꺼내놓고 산책을 다녀왔는데, 머릿속에서 그 숫자가 계속 맴돌았다. 벤치마크 하락이 실제 내 워크플로우에서 얼마나 체감되는지 궁금해서, 집에 돌아오자마자 개인 프로젝트 하나를 꺼내서 실험을 돌려봤다. ai 모델 현장/개발">
+            <div class="post-meta">
+                <span class="time-label">오후 브리핑</span>
+                <span>·</span>
+                <time>17:14</time><span>·</span>
+                <span>3분 읽기</span>
+            </div>
+            <h2><a href="posts/2026-04-18-pm17-ai-tech-news.html">토요일 오후 산책 다녀와서 — Opus 4.7 MRCR 낙폭, 개인 프로젝트로 직접 재봤다</a></h2>
+            <p class="lead">점심 포스트에서 Opus 4.7의 MRCR 점수가 78.3 → 32.2로 빠졌다는 이야기를 꺼내놓고 산책을 다녀왔는데, 머릿속에서 그 숫자가 계속 맴돌았다. 벤치마크 하락이 실제 내 워크플로우에서 얼마나 체감되는지 궁금해서, 집에 돌아오자마자 개인 프로젝트 하나를 꺼내서 실험을 돌려봤다.</p>
+            <a href="posts/2026-04-18-pm17-ai-tech-news.html" class="read-more">계속 읽기 →</a>
+        </article>
+        <article class="post-item" data-time="오전 브리핑" data-topics="반도체|AI 모델|투자/매크로" data-search="호르무즈 열리고 테슬라가 숨 돌린 주말 — cursor 500억 달러, opus 4.7 논쟁, 그리고 nvidia ising 점심 먹고 커피 내리면서 뉴스 피드를 다시 훑었다. 토요일이라 미국장은 닫혀 있지만, 금요일 장 마감까지의 흐름을 곱씹어보면 이번 주 가장 큰 그림은 결국 호르무즈 해협 재개 소식과 트럼프 관세 불확실성 속에서 시장이 버텨냈다는 거다. 그 위에 cursor 500억 달러 펀드레이즈, opus 4.7 토큰 논쟁, nvidia ising 공개가 올라왔다. 오후 산책 전에 정리해둔다. 반도체 ai 모델 투자/매크로">
+            <div class="post-meta">
+                <span class="time-label">오전 브리핑</span>
+                <span>·</span>
+                <time>12:34</time><span>·</span>
+                <span>13분 읽기</span>
+            </div>
+            <h2><a href="posts/2026-04-18-pm12-ai-tech-news.html">호르무즈 열리고 테슬라가 숨 돌린 주말 — Cursor 500억 달러, Opus 4.7 논쟁, 그리고 Nvidia Ising</a></h2>
+            <p class="lead">점심 먹고 커피 내리면서 뉴스 피드를 다시 훑었다. 토요일이라 미국장은 닫혀 있지만, 금요일 장 마감까지의 흐름을 곱씹어보면 이번 주 가장 큰 그림은 결국 호르무즈 해협 재개 소식과 트럼프 관세 불확실성 속에서 시장이 버텨냈다는 거다. 그 위에 Cursor 500억 달러 펀드레이즈, Opus 4.7 토큰 논쟁, Nvidia Ising 공개가 올라왔다. 오후 산책 전에 정리해둔다.</p>
+            <a href="posts/2026-04-18-pm12-ai-tech-news.html" class="read-more">계속 읽기 →</a>
+        </article>
+        <article class="post-item" data-time="새벽 리포트" data-topics="빅테크/시장|AI 모델|현장/개발" data-search="밤사이 흐름이 조금 달라졌다 — tesla 실적 앞둔 금요일 반등, deepseek 첫 외부 투자, 그리고 전자현미경에 올라탄 파운데이션 모델 토요일 새벽에 일찍 눈이 떠져서 커피 한 잔 내려놓고 뉴스 피드를 훑어봤다. 어제(금요일) 미국장은 생각보다 차분하게 마감했고, 오히려 tsla가 오랜 하락을 끊고 반등하는 그림이 나왔다. 반도체 업계에서 일하는 입장에서 한 주를 돌아보면 결국 tsmc q1 어닝, opus 4.7 출시, stanford ai index 2026 같은 굵직한 이벤트가 연달아 터진 한 주였고, 오늘 새벽 사이에... 빅테크/시장 ai 모델 현장/개발">
+            <div class="post-meta">
+                <span class="time-label">새벽 리포트</span>
+                <span>·</span>
+                <time>06:23</time><span>·</span>
+                <span>10분 읽기</span>
+            </div>
+            <h2><a href="posts/2026-04-18-am06-ai-tech-news.html">밤사이 흐름이 조금 달라졌다 — Tesla 실적 앞둔 금요일 반등, DeepSeek 첫 외부 투자, 그리고 전자현미경에 올라탄 파운데이션 모델</a></h2>
+            <p class="lead">토요일 새벽에 일찍 눈이 떠져서 커피 한 잔 내려놓고 뉴스 피드를 훑어봤다. 어제(금요일) 미국장은 생각보다 차분하게 마감했고, 오히려 TSLA가 오랜 하락을 끊고 반등하는 그림이 나왔다. 반도체 업계에서 일하는 입장에서 한 주를 돌아보면 결국 TSMC Q1 어닝, Opus 4.7 출시, Stanford AI Index 2026 같은 굵직한 이벤트가 연달아 터진 한 주였고, 오늘 새벽 사이에...</p>
+            <a href="posts/2026-04-18-am06-ai-tech-news.html" class="read-more">계속 읽기 →</a>
+        </article>
+            </div>
+        </div>
+        <div class="date-group">
+            <div class="date-group-title">2026년 04월 17일 (금)</div>
+            <div class="date-group-posts">
+
+        <article class="post-item" data-time="저녁 마감" data-topics="빅테크/시장|반도체|AI 모델" data-search="openai-cerebras $20b 계약, mozilla thunderbolt 공개 — 테슬라 어닝 d-5 밤 오늘 하루를 마무리하며 뉴스피드를 다시 훑어보니 장 끝난 뒤에 흐름이 바뀐 스토리가 몇 개 있다. 가장 큰 건 the information이 터뜨린 openai–cerebras $20b 규모 계약. mozilla가 슬그머니 내놓은 오픈소스 ai 클라이언트 thunderbolt도 개인적으로 꽤 흥미로웠고, stanford가 공개한 2026 ai index의 미중 격차 숫자도 오후 늦게 커뮤니티... 빅테크/시장 반도체 ai 모델">
+            <div class="post-meta">
+                <span class="time-label">저녁 마감</span>
+                <span>·</span>
+                <time>22:37</time><span>·</span>
+                <span>12분 읽기</span>
+            </div>
+            <h2><a href="posts/2026-04-17-pm22-ai-tech-news.html">OpenAI-Cerebras $20B 계약, Mozilla Thunderbolt 공개 — 테슬라 어닝 D-5 밤</a></h2>
+            <p class="lead">오늘 하루를 마무리하며 뉴스피드를 다시 훑어보니 장 끝난 뒤에 흐름이 바뀐 스토리가 몇 개 있다. 가장 큰 건 The Information이 터뜨린 OpenAI–Cerebras $20B 규모 계약. Mozilla가 슬그머니 내놓은 오픈소스 AI 클라이언트 Thunderbolt도 개인적으로 꽤 흥미로웠고, Stanford가 공개한 2026 AI Index의 미중 격차 숫자도 오후 늦게 커뮤니티...</p>
+            <a href="posts/2026-04-17-pm22-ai-tech-news.html" class="read-more">계속 읽기 →</a>
+        </article>
+        <article class="post-item" data-time="오후 브리핑" data-topics="반도체|AI 모델|현장/개발" data-search="삼성 8nm mram 양산 수율, claude code routines 직접 돌려본 오후 오후 장이 막 닫혔고, 포트폴리오를 열어보니 nasdaq 12거래일 연속 상승 기록이 드디어 깨졌다. 큰 하락은 아니지만 숨고르기 분위기는 분명했다. 그래도 오늘 오후 내내 머리를 끌고 있었던 건 장세보다 두 가지 이슈였다. 하나는 삼성이 isscc 2026에서 공개한 8nm 임베디드 mram 양산 수율 숫자, 다른 하나는 오후에 짬 내서 돌려본 claude code의 새 routines 기... 반도체 ai 모델 현장/개발">
+            <div class="post-meta">
+                <span class="time-label">오후 브리핑</span>
+                <span>·</span>
+                <time>17:33</time><span>·</span>
+                <span>10분 읽기</span>
+            </div>
+            <h2><a href="posts/2026-04-17-pm17-ai-tech-news.html">삼성 8nm MRAM 양산 수율, Claude Code Routines 직접 돌려본 오후</a></h2>
+            <p class="lead">오후 장이 막 닫혔고, 포트폴리오를 열어보니 Nasdaq 12거래일 연속 상승 기록이 드디어 깨졌다. 큰 하락은 아니지만 숨고르기 분위기는 분명했다. 그래도 오늘 오후 내내 머리를 끌고 있었던 건 장세보다 두 가지 이슈였다. 하나는 삼성이 ISSCC 2026에서 공개한 8nm 임베디드 MRAM 양산 수율 숫자, 다른 하나는 오후에 짬 내서 돌려본 Claude Code의 새 Routines 기...</p>
+            <a href="posts/2026-04-17-pm17-ai-tech-news.html" class="read-more">계속 읽기 →</a>
+        </article>
+        <article class="post-item" data-time="새벽 리포트" data-topics="AI 모델|반도체|빅테크/시장" data-search="opus 4.7 새벽 릴리스, netflix 애프터마켓 10% 붕괴 — 반도체 현직자의 밤사이 정리 커피 내리면서 프리마켓 확인하려고 노트북을 켰는데, 받은편지함 맨 위에 anthropic의 opus 4.7 릴리스 노트가 와 있다. 어제 오후 포스트에서 &quot;최근 claude가 살짝 느려진 것 같다&quot;고 투덜댔는데, 하루 만에 풀 버전업이 떨어진 셈이다. 그 와중에 netflix는 애프터마켓에서 10% 가까이 빠졌고, hbm4 16층 스택 경쟁은 진짜 공정 레벨 디테일까지 공개되기 시작했다. c... ai 모델 반도체 빅테크/시장">
+            <div class="post-meta">
+                <span class="time-label">새벽 리포트</span>
+                <span>·</span>
+                <time>06:00</time><span>·</span>
+                <span>13분 읽기</span>
+            </div>
+            <h2><a href="posts/2026-04-17-am06-ai-tech-news.html">Opus 4.7 새벽 릴리스, Netflix 애프터마켓 10% 붕괴 — 반도체 현직자의 밤사이 정리</a></h2>
+            <p class="lead">커피 내리면서 프리마켓 확인하려고 노트북을 켰는데, 받은편지함 맨 위에 Anthropic의 Opus 4.7 릴리스 노트가 와 있다. 어제 오후 포스트에서 &quot;최근 Claude가 살짝 느려진 것 같다&quot;고 투덜댔는데, 하루 만에 풀 버전업이 떨어진 셈이다. 그 와중에 Netflix는 애프터마켓에서 10% 가까이 빠졌고, HBM4 16층 스택 경쟁은 진짜 공정 레벨 디테일까지 공개되기 시작했다. C...</p>
+            <a href="posts/2026-04-17-am06-ai-tech-news.html" class="read-more">계속 읽기 →</a>
+        </article>
+            </div>
+        </div>
+        <div class="date-group">
+            <div class="date-group-title">2026년 04월 16일 (목)</div>
+            <div class="date-group-posts">
+
+        <article class="post-item" data-time="오후 브리핑" data-topics="반도체|빅테크/시장|AI 모델" data-search="tsmc 마진 66%, nvidia gpu 주문 1조 달러 — 반도체 현직자가 읽는 오후 장세 오전에 tsmc 어닝콜을 기다린다고 썼는데, 결과가 나왔다. 그로스 마진 66.2%. 반도체 파운드리에서 이 숫자가 나온다는 게 아직도 실감이 안 난다. nvidia는 10일 연속 상승에 jensen huang이 &quot;2027년까지 gpu 주문이 1조 달러&quot;라고 말했고, 삼성은 메모리 슈퍼사이클을 타고 분기 영업이익 57조를 찍었다. 한편 apple은 ai 수장을 갈아치웠고, 오픈소스 진영에서는... 반도체 빅테크/시장 ai 모델">
+            <div class="post-meta">
+                <span class="time-label">오후 브리핑</span>
+                <span>·</span>
+                <time>17:00</time><span>·</span>
+                <span>10분 읽기</span>
+            </div>
+            <h2><a href="posts/2026-04-16-pm17-ai-tech-news.html">TSMC 마진 66%, Nvidia GPU 주문 1조 달러 — 반도체 현직자가 읽는 오후 장세</a></h2>
+            <p class="lead">오전에 TSMC 어닝콜을 기다린다고 썼는데, 결과가 나왔다. 그로스 마진 66.2%. 반도체 파운드리에서 이 숫자가 나온다는 게 아직도 실감이 안 난다. Nvidia는 10일 연속 상승에 Jensen Huang이 &quot;2027년까지 GPU 주문이 1조 달러&quot;라고 말했고, 삼성은 메모리 슈퍼사이클을 타고 분기 영업이익 57조를 찍었다. 한편 Apple은 AI 수장을 갈아치웠고, 오픈소스 진영에서는...</p>
+            <a href="posts/2026-04-16-pm17-ai-tech-news.html" class="read-more">계속 읽기 →</a>
+        </article>
+        <article class="post-item" data-time="새벽 리포트" data-topics="반도체|빅테크/시장|AI 모델" data-search="테슬라 8% 폭등, asml은 실적 찢고도 하락 — 반도체 현직자의 밤사이 뉴스 새벽에 프리마켓 확인하다가 잠이 확 깼다. tsla가 8% 폭등해 있다. ai5 칩 테이프아웃에 ubs 업그레이드까지 겹치면서 9개월 만에 최대 상승이다. 테슬라 주주로서 당연히 기분이 좋은데, 옆을 보니까 asml이 실적을 터뜨리고도 주가가 빠져 있다. 나처럼 반도체 쪽에서 일하면서 빅테크와 테슬라를 들고 있는 사람한테는 희비가 교차하는 밤이었다. anthropic에서는 공개할 수 없을 만... 반도체 빅테크/시장 ai 모델">
+            <div class="post-meta">
+                <span class="time-label">새벽 리포트</span>
+                <span>·</span>
+                <time>06:00</time><span>·</span>
+                <span>13분 읽기</span>
+            </div>
+            <h2><a href="posts/2026-04-16-am06-ai-tech-news.html">테슬라 8% 폭등, ASML은 실적 찢고도 하락 — 반도체 현직자의 밤사이 뉴스</a></h2>
+            <p class="lead">새벽에 프리마켓 확인하다가 잠이 확 깼다. TSLA가 8% 폭등해 있다. AI5 칩 테이프아웃에 UBS 업그레이드까지 겹치면서 9개월 만에 최대 상승이다. 테슬라 주주로서 당연히 기분이 좋은데, 옆을 보니까 ASML이 실적을 터뜨리고도 주가가 빠져 있다. 나처럼 반도체 쪽에서 일하면서 빅테크와 테슬라를 들고 있는 사람한테는 희비가 교차하는 밤이었다. Anthropic에서는 공개할 수 없을 만...</p>
+            <a href="posts/2026-04-16-am06-ai-tech-news.html" class="read-more">계속 읽기 →</a>
+        </article>
+            </div>
+        </div>
+        <div class="date-group">
+            <div class="date-group-title">2026년 04월 15일 (수)</div>
+            <div class="date-group-posts">
+
+        <article class="post-item" data-time="저녁 마감" data-topics="반도체|빅테크/시장|정책/규제" data-search="meta가 nvidia 없이 가겠다고 선언한 저녁 하루를 마무리하면서 정리하는데, 오후 늦게 터진 소식 하나가 자꾸 머릿속에 남는다. meta가 broadcom과 손잡고 자체 ai 칩에 올인하겠다는 발표다. 오늘 하루 종일 ai 사이버 위협, 반도체 실적, 피지컬 ai 이야기를 전해왔는데, 저녁에 들어오니 판이 또 한 번 움직였다. 쉬지를 않는다. 반도체 빅테크/시장 정책/규제">
+            <div class="post-meta">
+                <span class="time-label">저녁 마감</span>
+                <span>·</span>
+                <time>22:00</time><span>·</span>
+                <span>8분 읽기</span>
+            </div>
+            <h2><a href="posts/2026-04-15-pm22-ai-tech-news.html">Meta가 Nvidia 없이 가겠다고 선언한 저녁</a></h2>
+            <p class="lead">하루를 마무리하면서 정리하는데, 오후 늦게 터진 소식 하나가 자꾸 머릿속에 남는다. Meta가 Broadcom과 손잡고 자체 AI 칩에 올인하겠다는 발표다. 오늘 하루 종일 AI 사이버 위협, 반도체 실적, 피지컬 AI 이야기를 전해왔는데, 저녁에 들어오니 판이 또 한 번 움직였다. 쉬지를 않는다.</p>
+            <a href="posts/2026-04-15-pm22-ai-tech-news.html" class="read-more">계속 읽기 →</a>
+        </article>
+        <article class="post-item" data-time="오후 브리핑" data-topics="반도체|정책/규제|빅테크/시장" data-search="연준 의장까지 나섰다 — ai 사이버 위협이 백악관을 흔든 오후 오후 들어서 분위기가 확 바뀌었다. 아침에는 오라클 감원과 asml 실적이 화제였는데, 오후에는 미국 정부 최고위급이 ai 보안 문제로 긴급 회동했다는 소식이 터졌다. 그 사이에 한국과 일본에서는 &quot;피지컬 ai&quot;라는 새로운 키워드가 조용히 부상하고 있고, 월가에서는 ai 주식에 대한 온도가 미묘하게 변하고 있다. 반도체 정책/규제 빅테크/시장">
+            <div class="post-meta">
+                <span class="time-label">오후 브리핑</span>
+                <span>·</span>
+                <time>17:00</time><span>·</span>
+                <span>7분 읽기</span>
+            </div>
+            <h2><a href="posts/2026-04-15-pm17-ai-tech-news.html">연준 의장까지 나섰다 — AI 사이버 위협이 백악관을 흔든 오후</a></h2>
+            <p class="lead">오후 들어서 분위기가 확 바뀌었다. 아침에는 오라클 감원과 ASML 실적이 화제였는데, 오후에는 미국 정부 최고위급이 AI 보안 문제로 긴급 회동했다는 소식이 터졌다. 그 사이에 한국과 일본에서는 &quot;피지컬 AI&quot;라는 새로운 키워드가 조용히 부상하고 있고, 월가에서는 AI 주식에 대한 온도가 미묘하게 변하고 있다.</p>
+            <a href="posts/2026-04-15-pm17-ai-tech-news.html" class="read-more">계속 읽기 →</a>
+        </article>
+        <article class="post-item" data-time="오전 브리핑" data-topics="빅테크/시장|반도체|AI 모델" data-search="오라클 3만 명, ai가 지운 일자리 — 그리고 오늘 밤 google i/o 개막 오전 내내 무거운 소식이 이어졌다. 새벽에 잠깐 접었던 탭들을 다시 열어보니, 오라클발 충격이 업계를 흔들고 있고, asml 실적이 나왔으며, openai는 또 다른 버전의 gpt를 슬그머니 내놓았다. 한 가지 분위기를 관통하는 키워드가 있다면 — ai가 이제 단순히 &quot;생산성을 높이는&quot; 도구가 아니라, 사람이 하던 일을 직접 대체하고 있다는 현실이 점점 수치로 증명되고 있다는 거다. 빅테크/시장 반도체 ai 모델">
+            <div class="post-meta">
+                <span class="time-label">오전 브리핑</span>
+                <span>·</span>
+                <time>12:00</time><span>·</span>
+                <span>5분 읽기</span>
+            </div>
+            <h2><a href="posts/2026-04-15-pm12-ai-tech-news.html">오라클 3만 명, AI가 지운 일자리 — 그리고 오늘 밤 Google I/O 개막</a></h2>
+            <p class="lead">오전 내내 무거운 소식이 이어졌다. 새벽에 잠깐 접었던 탭들을 다시 열어보니, 오라클발 충격이 업계를 흔들고 있고, ASML 실적이 나왔으며, OpenAI는 또 다른 버전의 GPT를 슬그머니 내놓았다. 한 가지 분위기를 관통하는 키워드가 있다면 — AI가 이제 단순히 &quot;생산성을 높이는&quot; 도구가 아니라, 사람이 하던 일을 직접 대체하고 있다는 현실이 점점 수치로 증명되고 있다는 거다.</p>
+            <a href="posts/2026-04-15-pm12-ai-tech-news.html" class="read-more">계속 읽기 →</a>
+        </article>
+        <article class="post-item" data-time="새벽 리포트" data-topics="빅테크/시장|AI 모델|반도체" data-search="openai가 microsoft에 등을 돌리고 있다 — 새벽에 읽는 ai 업계 파워게임 밤사이 뒤적이다 보니 꽤 흥미로운 소식들이 쌓여 있었다. 특히 openai 내부에서 흘러나온 메모 한 장이 업계 관계도를 다시 그리게 만들고 있고, 중국에서는 오픈소스 모델 하나가 조용히 판을 뒤집었다. 오늘은 반도체 실적 시즌 개막일이기도 하다. 하나씩 풀어보겠다. 빅테크/시장 ai 모델 반도체">
+            <div class="post-meta">
+                <span class="time-label">새벽 리포트</span>
+                <span>·</span>
+                <time>06:00</time><span>·</span>
+                <span>7분 읽기</span>
+            </div>
+            <h2><a href="posts/2026-04-15-am06-ai-tech-news.html">OpenAI가 Microsoft에 등을 돌리고 있다 — 새벽에 읽는 AI 업계 파워게임</a></h2>
+            <p class="lead">밤사이 뒤적이다 보니 꽤 흥미로운 소식들이 쌓여 있었다. 특히 OpenAI 내부에서 흘러나온 메모 한 장이 업계 관계도를 다시 그리게 만들고 있고, 중국에서는 오픈소스 모델 하나가 조용히 판을 뒤집었다. 오늘은 반도체 실적 시즌 개막일이기도 하다. 하나씩 풀어보겠다.</p>
+            <a href="posts/2026-04-15-am06-ai-tech-news.html" class="read-more">계속 읽기 →</a>
+        </article>
+        <article class="post-item" data-time="" data-topics="반도체|투자/매크로|빅테크/시장" data-search="돈이 몰리고 있다 — 4월 셋째 주, ai 업계에 무슨 일이 벌어지고 있나 요즘 테크 뉴스를 보면 숫자 단위가 점점 비현실적으로 느껴진다. 1분기 전 세계 벤처 투자가 3,000억 달러를 찍었다는 소식을 보고, 처음엔 오타인 줄 알았다. 그런데 진짜다. 그것도 80%가 ai 한 분야에 몰렸다. 오늘은 이 흐름을 중심으로, 지난 하루 동안 눈에 띄었던 소식들을 정리해봤다. 반도체 투자/매크로 빅테크/시장">
+            <div class="post-meta">
+                
+                
+                
+                <span>10분 읽기</span>
+            </div>
+            <h2><a href="posts/2026-04-15-ai-tech-news.html">돈이 몰리고 있다 — 4월 셋째 주, AI 업계에 무슨 일이 벌어지고 있나</a></h2>
+            <p class="lead">요즘 테크 뉴스를 보면 숫자 단위가 점점 비현실적으로 느껴진다. 1분기 전 세계 벤처 투자가 3,000억 달러를 찍었다는 소식을 보고, 처음엔 오타인 줄 알았다. 그런데 진짜다. 그것도 80%가 AI 한 분야에 몰렸다. 오늘은 이 흐름을 중심으로, 지난 하루 동안 눈에 띄었던 소식들을 정리해봤다.</p>
+            <a href="posts/2026-04-15-ai-tech-news.html" class="read-more">계속 읽기 →</a>
+        </article>
+            </div>
+        </div>
+        </div>
+    </details>
+    <details class="month-group">
+        <summary>
+            <span>2026년 3월</span>
+            <span class="month-count">8개</span>
+        </summary>
+        <div class="month-body">
+
+        <div class="date-group">
+            <div class="date-group-title">2026-03-31 23:31</div>
+            <div class="date-group-posts">
+
+        <article class="post-item" data-time="" data-topics="빅테크/시장|반도체|AI 모델" data-search="3월을 닫는 밤 — gtc부터 hbm5까지, 1분기를 한 번에 세우고 4월을 본다 화요일 밤 11시 반. 3월의 마지막 날이자 2026년 1분기의 마지막 밤이다. 회사는 오늘 결산 미팅이 하루 종일 잡혀 있었고, 집에 와서 저녁 먹고 나서야 조용히 앉아 연필을 잡는다. 달에 한 번, 특히 분기 마지막 날에는 반드시 한 번 뇌를 비워서 큰 그림을 다시 세워보는 습관이 있다. 단기 트레이드에 너무 오래 빠져 있으면 구조를 놓친다. 오늘이 그 날. 빅테크/시장 반도체 ai 모델 q1 wrap gtc hbm5 portfolio review apr preview">
+            <div class="post-meta">
+                
+                
+                
+                <span>4분 읽기</span>
+            </div>
+            <h2><a href="posts/2026-03-31-pm23-ai-tech-news.html">3월을 닫는 밤 — GTC부터 HBM5까지, 1분기를 한 번에 세우고 4월을 본다</a></h2>
+            <p class="lead">화요일 밤 11시 반. 3월의 마지막 날이자 2026년 1분기의 마지막 밤이다. 회사는 오늘 결산 미팅이 하루 종일 잡혀 있었고, 집에 와서 저녁 먹고 나서야 조용히 앉아 연필을 잡는다. 달에 한 번, 특히 분기 마지막 날에는 반드시 한 번 뇌를 비워서 큰 그림을 다시 세워보는 습관이 있다. 단기 트레이드에 너무 오래 빠져 있으면 구조를 놓친다. 오늘이 그 날.</p>
+            <a href="posts/2026-03-31-pm23-ai-tech-news.html" class="read-more">계속 읽기 →</a>
+        </article>
+            </div>
+        </div>
+        <div class="date-group">
+            <div class="date-group-title">2026-03-28 22:43</div>
+            <div class="date-group-posts">
+
+        <article class="post-item" data-time="저녁 마감" data-topics="반도체|빅테크/시장|AI 모델" data-search="마이크론 어닝 소화한 토요일 — hbm5 샘플링 공식화, 3월 마지막 주말 정리 토요일 밤. 아침에 아이 학원 데려다주고 돌아와 커피 내리면서 주간 마감 노트를 한 번 돌렸다. 이번 주는 마이크론 어닝 하나로 메모리 3사 순위가 한 칸씩 재배치된 주였다. 지난주 gtc 여진이 이번 주 마이크론 콜로 바통을 넘겼고, 바통이 넘어간 순간 시장이 hbm5 스토리를 다시 조립하기 시작했다. 주말 동안 자료 정리하면서 머리를 한 번 식혀야 한다. 반도체 빅테크/시장 ai 모델 micron earnings hbm5 sk hynix samsung portfolio">
+            <div class="post-meta">
+                <span class="time-label">저녁 마감</span>
+                <span>·</span>
+                
+                <span>5분 읽기</span>
+            </div>
+            <h2><a href="posts/2026-03-28-pm22-ai-tech-news.html">마이크론 어닝 소화한 토요일 — HBM5 샘플링 공식화, 3월 마지막 주말 정리</a></h2>
+            <p class="lead">토요일 밤. 아침에 아이 학원 데려다주고 돌아와 커피 내리면서 주간 마감 노트를 한 번 돌렸다. 이번 주는 마이크론 어닝 하나로 메모리 3사 순위가 한 칸씩 재배치된 주였다. 지난주 GTC 여진이 이번 주 마이크론 콜로 바통을 넘겼고, 바통이 넘어간 순간 시장이 HBM5 스토리를 다시 조립하기 시작했다. 주말 동안 자료 정리하면서 머리를 한 번 식혀야 한다.</p>
+            <a href="posts/2026-03-28-pm22-ai-tech-news.html" class="read-more">계속 읽기 →</a>
+        </article>
+            </div>
+        </div>
+        <div class="date-group">
+            <div class="date-group-title">2026-03-24 23:50</div>
+            <div class="date-group-posts">
+
+        <article class="post-item" data-time="" data-topics="AI 모델|반도체|빅테크/시장" data-search="gpt-5.3 탈환, claude 차기 모델 루머, 마이크론 d-1 — gtc 일주일 뒤의 풍경 화요일 밤 11시 반. 회사 회의가 끝없이 이어진 하루였고, 저녁 먹고 겨우 노트북 앞에 앉았다. 지난주 gtc가 한 주를 통째로 끌고 간 이벤트였는데, 의외로 그 다음 주가 더 시끄럽다. 모델 진영이 움직이고, 메모리 사이클이 다시 어닝 쪽으로 시선을 끌고 있다. 내일 마이크론 어닝이라 머리를 한 번 정돈하고 자려고 한다. ai 모델 반도체 빅테크/시장 openai gpt-5.3 anthropic micron earnings gemini">
+            <div class="post-meta">
+                
+                
+                
+                <span>5분 읽기</span>
+            </div>
+            <h2><a href="posts/2026-03-24-pm23-ai-tech-news.html">GPT-5.3 탈환, Claude 차기 모델 루머, 마이크론 D-1 — GTC 일주일 뒤의 풍경</a></h2>
+            <p class="lead">화요일 밤 11시 반. 회사 회의가 끝없이 이어진 하루였고, 저녁 먹고 겨우 노트북 앞에 앉았다. 지난주 GTC가 한 주를 통째로 끌고 간 이벤트였는데, 의외로 그 다음 주가 더 시끄럽다. 모델 진영이 움직이고, 메모리 사이클이 다시 어닝 쪽으로 시선을 끌고 있다. 내일 마이크론 어닝이라 머리를 한 번 정돈하고 자려고 한다.</p>
+            <a href="posts/2026-03-24-pm23-ai-tech-news.html" class="read-more">계속 읽기 →</a>
+        </article>
+            </div>
+        </div>
+        <div class="date-group">
+            <div class="date-group-title">2026-03-20 23:33</div>
+            <div class="date-group-posts">
+
+        <article class="post-item" data-time="" data-topics="반도체|빅테크/시장|투자/매크로" data-search="gtc 2026 정리 — rubin ultra 2027, nvlink 6세대 1.8tb/s, sovereign ai 10개국 금요일 밤. gtc 2026이 공식 폐막한 게 어제. 시장이 하루 소화한 후의 반응까지 묶어 정리한다. 이번 주는 gtc + fomc 더블 빅 이벤트였고, 업계 입장에서 소화할 게 너무 많아서 주말에 또 복습해야 한다. 반도체 빅테크/시장 투자/매크로 nvidia gtc rubin ultra nvlink 6 sovereign ai fomc">
+            <div class="post-meta">
+                
+                
+                
+                <span>3분 읽기</span>
+            </div>
+            <h2><a href="posts/2026-03-20-pm23-ai-tech-news.html">GTC 2026 정리 — Rubin Ultra 2027, NVLink 6세대 1.8TB/s, Sovereign AI 10개국</a></h2>
+            <p class="lead">금요일 밤. GTC 2026이 공식 폐막한 게 어제. 시장이 하루 소화한 후의 반응까지 묶어 정리한다. 이번 주는 GTC + FOMC 더블 빅 이벤트였고, 업계 입장에서 소화할 게 너무 많아서 주말에 또 복습해야 한다.</p>
+            <a href="posts/2026-03-20-pm23-ai-tech-news.html" class="read-more">계속 읽기 →</a>
+        </article>
+            </div>
+        </div>
+        <div class="date-group">
+            <div class="date-group-title">2026-03-14 21:22</div>
+            <div class="date-group-posts">
+
+        <article class="post-item" data-time="" data-topics="반도체|빅테크/시장" data-search="gtc d-3 — 주말 관망, 인텔 18a risk production 진입 보도 토요일. 오늘 아침 달리기 나갔다가 허벅지 근육 살짝 뻐근해서 저녁에 오래 뻗어 있었다. 이번 주는 큰 이벤트 없이 관망이 주제어. 반도체 빅테크/시장 intel 18a foundry gtc pre-week semi">
+            <div class="post-meta">
+                
+                
+                
+                <span>2분 읽기</span>
+            </div>
+            <h2><a href="posts/2026-03-14-pm21-ai-tech-news.html">GTC D-3 — 주말 관망, 인텔 18A Risk Production 진입 보도</a></h2>
+            <p class="lead">토요일. 오늘 아침 달리기 나갔다가 허벅지 근육 살짝 뻐근해서 저녁에 오래 뻗어 있었다. 이번 주는 큰 이벤트 없이 관망이 주제어.</p>
+            <a href="posts/2026-03-14-pm21-ai-tech-news.html" class="read-more">계속 읽기 →</a>
+        </article>
+            </div>
+        </div>
+        <div class="date-group">
+            <div class="date-group-title">2026-03-11 22:26</div>
+            <div class="date-group-posts">
+
+        <article class="post-item" data-time="저녁 마감" data-topics="반도체|AI 모델|투자/매크로" data-search="gtc d-6 — huang 기조연설 프리뷰, rubin &#x27;진짜 스펙&#x27;은 무엇인가 수요일. 내일 회사에서 큰 미팅이 있어서 오늘 밤은 짧게 정리만 하려고 했는데, gtc 프리뷰 글들이 이번 주 너무 많이 나와서 다 훑다가 결국 11시 넘어가고 있다. 반도체 ai 모델 투자/매크로 nvidia gtc rubin nvlink keynote preview">
+            <div class="post-meta">
+                <span class="time-label">저녁 마감</span>
+                <span>·</span>
+                
+                <span>2분 읽기</span>
+            </div>
+            <h2><a href="posts/2026-03-11-pm22-ai-tech-news.html">GTC D-6 — Huang 기조연설 프리뷰, Rubin &#x27;진짜 스펙&#x27;은 무엇인가</a></h2>
+            <p class="lead">수요일. 내일 회사에서 큰 미팅이 있어서 오늘 밤은 짧게 정리만 하려고 했는데, GTC 프리뷰 글들이 이번 주 너무 많이 나와서 다 훑다가 결국 11시 넘어가고 있다.</p>
+            <a href="posts/2026-03-11-pm22-ai-tech-news.html" class="read-more">계속 읽기 →</a>
+        </article>
+            </div>
+        </div>
+        <div class="date-group">
+            <div class="date-group-title">2026-03-07 22:05</div>
+            <div class="date-group-posts">
+
+        <article class="post-item" data-time="저녁 마감" data-topics="AI 모델|반도체|빅테크/시장" data-search="주말 정리 — mistral large 3, meta llama 4.5 티저, 반도체 주간 리뷰 토요일. 오후에 아이 데리고 동네 도서관 다녀오고, 저녁 먹고 이제야 뉴스 피드 정리. 이번 주는 오픈 모델 진영이 조용히 움직였다. ai 모델 반도체 빅테크/시장 mistral meta llama 4.5 open models portfolio">
+            <div class="post-meta">
+                <span class="time-label">저녁 마감</span>
+                <span>·</span>
+                
+                <span>2분 읽기</span>
+            </div>
+            <h2><a href="posts/2026-03-07-pm22-ai-tech-news.html">주말 정리 — Mistral Large 3, Meta Llama 4.5 티저, 반도체 주간 리뷰</a></h2>
+            <p class="lead">토요일. 오후에 아이 데리고 동네 도서관 다녀오고, 저녁 먹고 이제야 뉴스 피드 정리. 이번 주는 오픈 모델 진영이 조용히 움직였다.</p>
+            <a href="posts/2026-03-07-pm22-ai-tech-news.html" class="read-more">계속 읽기 →</a>
+        </article>
+            </div>
+        </div>
+        <div class="date-group">
+            <div class="date-group-title">2026-03-05 22:33</div>
+            <div class="date-group-posts">
+
+        <article class="post-item" data-time="저녁 마감" data-topics="반도체|빅테크/시장|AI 모델" data-search="3월 초 숨 고르기 — openai·xai 파운딩 라운드, gtc d-12 목요일. 2월이 이벤트로 꽉 찼던 탓에 3월 첫 주가 오히려 더 고요해 보인다. 오늘은 뉴스 피드 두 번 돌리고, 퇴근길에 읽은 것만 짧게 정리한다. 반도체 빅테크/시장 ai 모델 openai xai funding nvidia gtc market">
+            <div class="post-meta">
+                <span class="time-label">저녁 마감</span>
+                <span>·</span>
+                
+                <span>2분 읽기</span>
+            </div>
+            <h2><a href="posts/2026-03-05-pm22-ai-tech-news.html">3월 초 숨 고르기 — OpenAI·xAI 파운딩 라운드, GTC D-12</a></h2>
+            <p class="lead">목요일. 2월이 이벤트로 꽉 찼던 탓에 3월 첫 주가 오히려 더 고요해 보인다. 오늘은 뉴스 피드 두 번 돌리고, 퇴근길에 읽은 것만 짧게 정리한다.</p>
+            <a href="posts/2026-03-05-pm22-ai-tech-news.html" class="read-more">계속 읽기 →</a>
+        </article>
+            </div>
+        </div>
+        </div>
+    </details>
+    <details class="month-group">
+        <summary>
+            <span>2026년 2월</span>
+            <span class="month-count">6개</span>
+        </summary>
+        <div class="month-body">
+
+        <div class="date-group">
+            <div class="date-group-title">2026-02-28 21:34</div>
+            <div class="date-group-posts">
+
+        <article class="post-item" data-time="" data-topics="반도체|빅테크/시장|투자/매크로" data-search="2월 마지막 토요일 — nvidia 여진, 메모리 3사 보드 재정렬 2월 마지막 날. 어제 포스트에서 nvidia 어닝을 한 번 풀었으니, 오늘은 그 여진이 메모리·장비 바스킷에 어떻게 번졌는지만 짧게 정리하고 자려고 한다. 반도체 빅테크/시장 투자/매크로 memory hbm4 sk hynix samsung micron portfolio">
+            <div class="post-meta">
+                
+                
+                
+                <span>2분 읽기</span>
+            </div>
+            <h2><a href="posts/2026-02-28-pm21-ai-tech-news.html">2월 마지막 토요일 — Nvidia 여진, 메모리 3사 보드 재정렬</a></h2>
+            <p class="lead">2월 마지막 날. 어제 포스트에서 Nvidia 어닝을 한 번 풀었으니, 오늘은 그 여진이 메모리·장비 바스킷에 어떻게 번졌는지만 짧게 정리하고 자려고 한다.</p>
+            <a href="posts/2026-02-28-pm21-ai-tech-news.html" class="read-more">계속 읽기 →</a>
+        </article>
+            </div>
+        </div>
+        <div class="date-group">
+            <div class="date-group-title">2026-02-27 21:31</div>
+            <div class="date-group-posts">
+
+        <article class="post-item" data-time="" data-topics="반도체|빅테크/시장|현장/개발" data-search="nvidia $68b 분기, data center +75% — &#x27;ai 버블론&#x27;을 일거에 잠재웠다 금요일 밤. nvidia가 그저께(2/25) 어닝 발표를 했고, 어제(2/26)는 시장이 한 번 소화한 후 강한 랠리. 오늘은 한 번 식은 후의 반응까지 묶어 정리할 수 있는 타이밍이라 천천히 가본다. 반도체 빅테크/시장 현장/개발 nvidia q4 fy26 earnings data center rubin capex">
+            <div class="post-meta">
+                
+                
+                
+                <span>4분 읽기</span>
+            </div>
+            <h2><a href="posts/2026-02-27-pm21-ai-tech-news.html">Nvidia $68B 분기, Data Center +75% — &#x27;AI 버블론&#x27;을 일거에 잠재웠다</a></h2>
+            <p class="lead">금요일 밤. Nvidia가 그저께(2/25) 어닝 발표를 했고, 어제(2/26)는 시장이 한 번 소화한 후 강한 랠리. 오늘은 한 번 식은 후의 반응까지 묶어 정리할 수 있는 타이밍이라 천천히 가본다.</p>
+            <a href="posts/2026-02-27-pm21-ai-tech-news.html" class="read-more">계속 읽기 →</a>
+        </article>
+            </div>
+        </div>
+        <div class="date-group">
+            <div class="date-group-title">2026-02-20 23:50</div>
+            <div class="date-group-posts">
+
+        <article class="post-item" data-time="" data-topics="AI 모델|빅테크/시장|반도체" data-search="gemini 3.1 pro s2e 80.6%, sonnet 4.6, grok 4.20 — 뉴델리 주의 모델 3연타 금요일이 거의 넘어가는 시각. 이번 주는 개인적으로 너무 많아서 정리하면서 자려고 한다. 모델 3연타 + 인도 ai 서밋 + 다음 주 nvidia 어닝. 한 주에 이만한 이벤트 밀도는 12월 중순 이후 처음이다. ai 모델 빅테크/시장 반도체 gemini 3.1 pro claude sonnet 4.6 grok 4.20 india ai summit modi">
+            <div class="post-meta">
+                
+                
+                
+                <span>4분 읽기</span>
+            </div>
+            <h2><a href="posts/2026-02-20-pm23-ai-tech-news.html">Gemini 3.1 Pro S2E 80.6%, Sonnet 4.6, Grok 4.20 — 뉴델리 주의 모델 3연타</a></h2>
+            <p class="lead">금요일이 거의 넘어가는 시각. 이번 주는 개인적으로 너무 많아서 정리하면서 자려고 한다. 모델 3연타 + 인도 AI 서밋 + 다음 주 Nvidia 어닝. 한 주에 이만한 이벤트 밀도는 12월 중순 이후 처음이다.</p>
+            <a href="posts/2026-02-20-pm23-ai-tech-news.html" class="read-more">계속 읽기 →</a>
+        </article>
+            </div>
+        </div>
+        <div class="date-group">
+            <div class="date-group-title">2026-02-12 22:03</div>
+            <div class="date-group-posts">
+
+        <article class="post-item" data-time="저녁 마감" data-topics="빅테크/시장|AI 모델|반도체" data-search="뉴델리 ai 서밋 개막 d-4 — 2월 중순의 숨고르기 목요일. 회사에서 오늘 정기 코드 리뷰 두 건 있었고, 퇴근 후에야 뉴스 피드 열었다. 큰 사건은 없는 하루. 대신 다음 주가 짙은 구름이다. 빅테크/시장 ai 모델 반도체 india ai impact summit anthropic xai earnings season">
+            <div class="post-meta">
+                <span class="time-label">저녁 마감</span>
+                <span>·</span>
+                
+                <span>2분 읽기</span>
+            </div>
+            <h2><a href="posts/2026-02-12-pm22-ai-tech-news.html">뉴델리 AI 서밋 개막 D-4 — 2월 중순의 숨고르기</a></h2>
+            <p class="lead">목요일. 회사에서 오늘 정기 코드 리뷰 두 건 있었고, 퇴근 후에야 뉴스 피드 열었다. 큰 사건은 없는 하루. 대신 다음 주가 짙은 구름이다.</p>
+            <a href="posts/2026-02-12-pm22-ai-tech-news.html" class="read-more">계속 읽기 →</a>
+        </article>
+            </div>
+        </div>
+        <div class="date-group">
+            <div class="date-group-title">2026-02-08 22:38</div>
+            <div class="date-group-posts">
+
+        <article class="post-item" data-time="저녁 마감" data-topics="AI 모델|빅테크/시장|투자/매크로" data-search="주말 정리 — opus 4.6 실사용 3일, grok imagine의 존재감 목요일 opus 4.6 포스트 이후로 주말 내내 실무 작업을 조금씩 돌려봤다. 느낀 점 + grok imagine 짧은 메모. ai 모델 빅테크/시장 투자/매크로 claude opus 4.6 grok imagine xai anthropic">
+            <div class="post-meta">
+                <span class="time-label">저녁 마감</span>
+                <span>·</span>
+                
+                <span>2분 읽기</span>
+            </div>
+            <h2><a href="posts/2026-02-08-pm22-ai-tech-news.html">주말 정리 — Opus 4.6 실사용 3일, Grok Imagine의 존재감</a></h2>
+            <p class="lead">목요일 Opus 4.6 포스트 이후로 주말 내내 실무 작업을 조금씩 돌려봤다. 느낀 점 + Grok Imagine 짧은 메모.</p>
+            <a href="posts/2026-02-08-pm22-ai-tech-news.html" class="read-more">계속 읽기 →</a>
+        </article>
+            </div>
+        </div>
+        <div class="date-group">
+            <div class="date-group-title">2026-02-05 23:36</div>
+            <div class="date-group-posts">
+
+        <article class="post-item" data-time="" data-topics="AI 모델|반도체|빅테크/시장" data-search="claude opus 4.6, 1m 토큰 컨텍스트 — powerpoint·excel 직접 통합 퇴근하고 저녁 먹고 10시 넘어서야 오늘 발표 본격 정리. anthropic이 저녁 시간대에 푸는 걸 좋아하는 것 같은데, 덕분에 업계 사람들이 밤마다 바쁘다. ai 모델 반도체 빅테크/시장 anthropic claude opus 4.6 microsoft 365 1m context enterprise ai">
+            <div class="post-meta">
+                
+                
+                
+                <span>2분 읽기</span>
+            </div>
+            <h2><a href="posts/2026-02-05-pm23-ai-tech-news.html">Claude Opus 4.6, 1M 토큰 컨텍스트 — PowerPoint·Excel 직접 통합</a></h2>
+            <p class="lead">퇴근하고 저녁 먹고 10시 넘어서야 오늘 발표 본격 정리. Anthropic이 저녁 시간대에 푸는 걸 좋아하는 것 같은데, 덕분에 업계 사람들이 밤마다 바쁘다.</p>
+            <a href="posts/2026-02-05-pm23-ai-tech-news.html" class="read-more">계속 읽기 →</a>
+        </article>
+            </div>
+        </div>
+        </div>
+    </details>
+    <details class="month-group">
+        <summary>
+            <span>2026년 1월</span>
+            <span class="month-count">7개</span>
+        </summary>
+        <div class="month-body">
+
+        <div class="date-group">
+            <div class="date-group-title">2026-01-31 21:56</div>
+            <div class="date-group-posts">
+
+        <article class="post-item" data-time="" data-topics="반도체|빅테크/시장|AI 모델" data-search="1월 마감 — rubin·$470b·capex 공포, 한 달을 한 번에 요약 1월 마지막 날. 한 달을 되짚어본다. 요약 없이 넘기면 2월이 또 새로 시작되니까, 오늘 밤은 월간 정리만. 반도체 빅테크/시장 ai 모델 monthly wrap january 2026 nvidia rubin meta capex">
+            <div class="post-meta">
+                
+                
+                
+                <span>2분 읽기</span>
+            </div>
+            <h2><a href="posts/2026-01-31-pm21-ai-tech-news.html">1월 마감 — Rubin·$470B·Capex 공포, 한 달을 한 번에 요약</a></h2>
+            <p class="lead">1월 마지막 날. 한 달을 되짚어본다. 요약 없이 넘기면 2월이 또 새로 시작되니까, 오늘 밤은 월간 정리만.</p>
+            <a href="posts/2026-01-31-pm21-ai-tech-news.html" class="read-more">계속 읽기 →</a>
+        </article>
+            </div>
+        </div>
+        <div class="date-group">
+            <div class="date-group-title">2026-01-30 23:20</div>
+            <div class="date-group-posts">
+
+        <article class="post-item" data-time="" data-topics="빅테크/시장|반도체|AI 모델" data-search="meta $115~135b, ms azure +39% — 하이퍼스케일러 capex $470b의 밤 금요일 밤. 이번 주는 하이퍼스케일러 어닝이 집중된 주였다. meta(1/28), microsoft(1/28), apple(1/29). 이 셋이 같은 48시간 안에 2026 ai 지출 계획을 공개했고, 그 숫자들이 반도체 섹터 그래프를 직접 흔들었다. 빅테크/시장 반도체 ai 모델 meta microsoft apple q4 earnings capex ai spending nvidia">
+            <div class="post-meta">
+                
+                
+                
+                <span>4분 읽기</span>
+            </div>
+            <h2><a href="posts/2026-01-30-pm23-ai-tech-news.html">Meta $115~135B, MS Azure +39% — 하이퍼스케일러 Capex $470B의 밤</a></h2>
+            <p class="lead">금요일 밤. 이번 주는 하이퍼스케일러 어닝이 집중된 주였다. Meta(1/28), Microsoft(1/28), Apple(1/29). 이 셋이 같은 48시간 안에 2026 AI 지출 계획을 공개했고, 그 숫자들이 반도체 섹터 그래프를 직접 흔들었다.</p>
+            <a href="posts/2026-01-30-pm23-ai-tech-news.html" class="read-more">계속 읽기 →</a>
+        </article>
+            </div>
+        </div>
+        <div class="date-group">
+            <div class="date-group-title">2026-01-20 21:17</div>
+            <div class="date-group-posts">
+
+        <article class="post-item" data-time="" data-topics="반도체|빅테크/시장|투자/매크로" data-search="tsmc 4q 기록, asml 사상 최고 — 반도체 현직자가 읽는 숫자들 화요일 밤. 지난주 tsmc(1/15)·asml(1/16) 어닝을 실시간으로 못 봐서 주말에 보관해 뒀는데, 오늘에야 차분히 읽었다. 업계 사람 입장에선 이번 1월 중순이 2026년 반도체 섹터의 톤을 정한 구간이었다. 반도체 빅테크/시장 투자/매크로 tsmc asml semiconductor hbm capex ai demand">
+            <div class="post-meta">
+                
+                
+                
+                <span>3분 읽기</span>
+            </div>
+            <h2><a href="posts/2026-01-20-pm21-ai-tech-news.html">TSMC 4Q 기록, ASML 사상 최고 — 반도체 현직자가 읽는 숫자들</a></h2>
+            <p class="lead">화요일 밤. 지난주 TSMC(1/15)·ASML(1/16) 어닝을 실시간으로 못 봐서 주말에 보관해 뒀는데, 오늘에야 차분히 읽었다. 업계 사람 입장에선 이번 1월 중순이 2026년 반도체 섹터의 톤을 정한 구간이었다.</p>
+            <a href="posts/2026-01-20-pm21-ai-tech-news.html" class="read-more">계속 읽기 →</a>
+        </article>
+            </div>
+        </div>
+        <div class="date-group">
+            <div class="date-group-title">2026-01-12 21:15</div>
+            <div class="date-group-posts">
+
+        <article class="post-item" data-time="" data-topics="AI 모델|빅테크/시장|현장/개발" data-search="davos 개막일 — 프리마켓 조용한 월요일 밤의 메모 ces가 끝나고 월요일 출근. 사무실이 의외로 조용했다. 다들 ces 후폭풍에 지쳐서 그런 듯하다. ai 모델 빅테크/시장 현장/개발 davos openai merge labs chatgpt health">
+            <div class="post-meta">
+                
+                
+                
+                <span>1분 읽기</span>
+            </div>
+            <h2><a href="posts/2026-01-12-pm21-ai-tech-news.html">Davos 개막일 — 프리마켓 조용한 월요일 밤의 메모</a></h2>
+            <p class="lead">CES가 끝나고 월요일 출근. 사무실이 의외로 조용했다. 다들 CES 후폭풍에 지쳐서 그런 듯하다.</p>
+            <a href="posts/2026-01-12-pm21-ai-tech-news.html" class="read-more">계속 읽기 →</a>
+        </article>
+            </div>
+        </div>
+        <div class="date-group">
+            <div class="date-group-title">2026-01-10 23:10</div>
+            <div class="date-group-posts">
+
+        <article class="post-item" data-time="" data-topics="반도체|AI 모델|빅테크/시장" data-search="ces 2026 폐막 — anthropic $350b 밸류 이야기, rubin 이후 5일 정리 어제(1/9) ces 2026 공식 폐막. 아이를 재우고 늦게 책상에 앉았다. 일주일을 너무 빠르게 몰아 써서, 정리 안 하면 다음 주 출근 전에 뇌가 압축 풀리기 싫다고 하소연할 게 뻔하다. 반도체 ai 모델 빅테크/시장 ces 2026 nvidia vera rubin anthropic microsoft xai 투자">
+            <div class="post-meta">
+                
+                
+                
+                <span>3분 읽기</span>
+            </div>
+            <h2><a href="posts/2026-01-10-pm23-ai-tech-news.html">CES 2026 폐막 — Anthropic $350B 밸류 이야기, Rubin 이후 5일 정리</a></h2>
+            <p class="lead">어제(1/9) CES 2026 공식 폐막. 아이를 재우고 늦게 책상에 앉았다. 일주일을 너무 빠르게 몰아 써서, 정리 안 하면 다음 주 출근 전에 뇌가 압축 풀리기 싫다고 하소연할 게 뻔하다.</p>
+            <a href="posts/2026-01-10-pm23-ai-tech-news.html" class="read-more">계속 읽기 →</a>
+        </article>
+            </div>
+        </div>
+        <div class="date-group">
+            <div class="date-group-title">2026-01-06 23:24</div>
+            <div class="date-group-posts">
+
+        <article class="post-item" data-time="" data-topics="반도체|AI 모델|현장/개발" data-search="vera rubin 6칩 플랫폼 공개 — nvidia가 ces에서 blackwell 다음을 보여줬다 화요일 밤, ces 2026 공식 개막 다음 날. 어제(1/5) nvidia 키노트를 동시에 보면서 메모만 잔뜩 적어놨는데, 오늘 하루 종일 회사에서 동료들과 &quot;이게 진짜 의미하는 게 뭔가&quot; 토론하다 퇴근. 정리하면서 자야 할 것 같다. 반도체 ai 모델 현장/개발 nvidia ces 2026 vera rubin blackwell dlss 4.5 hbm">
+            <div class="post-meta">
+                
+                
+                
+                <span>4분 읽기</span>
+            </div>
+            <h2><a href="posts/2026-01-06-pm23-ai-tech-news.html">Vera Rubin 6칩 플랫폼 공개 — Nvidia가 CES에서 Blackwell 다음을 보여줬다</a></h2>
+            <p class="lead">화요일 밤, CES 2026 공식 개막 다음 날. 어제(1/5) Nvidia 키노트를 동시에 보면서 메모만 잔뜩 적어놨는데, 오늘 하루 종일 회사에서 동료들과 &quot;이게 진짜 의미하는 게 뭔가&quot; 토론하다 퇴근. 정리하면서 자야 할 것 같다.</p>
+            <a href="posts/2026-01-06-pm23-ai-tech-news.html" class="read-more">계속 읽기 →</a>
+        </article>
+            </div>
+        </div>
+        <div class="date-group">
+            <div class="date-group-title">2026-01-03 21:41</div>
+            <div class="date-group-posts">
+
+        <article class="post-item" data-time="" data-topics="반도체|빅테크/시장|현장/개발" data-search="2026 개막 — &#x27;hype에서 pragmatism으로&#x27;가 진짜일까 12월 31일 포스트에서 &quot;내년에도 매일 여기서 봅시다&quot;라고 썼는데, 이렇게 일찍 돌아올 줄 몰랐다. 연휴 사흘 동안 뉴스 피드를 의도적으로 닫아뒀는데, 오늘 재점검하다 보니 프레임 하나가 계속 걸린다. 1월 2일 techcrunch 제목 — &quot;2026, ai는 하이프에서 프래그머티즘으로 이동한다.&quot; 반도체 빅테크/시장 현장/개발 2026 outlook ces pragmatism ai capex">
+            <div class="post-meta">
+                
+                
+                
+                <span>2분 읽기</span>
+            </div>
+            <h2><a href="posts/2026-01-03-pm21-ai-tech-news.html">2026 개막 — &#x27;Hype에서 Pragmatism으로&#x27;가 진짜일까</a></h2>
+            <p class="lead">12월 31일 포스트에서 &quot;내년에도 매일 여기서 봅시다&quot;라고 썼는데, 이렇게 일찍 돌아올 줄 몰랐다. 연휴 사흘 동안 뉴스 피드를 의도적으로 닫아뒀는데, 오늘 재점검하다 보니 프레임 하나가 계속 걸린다. 1월 2일 TechCrunch 제목 — &quot;2026, AI는 하이프에서 프래그머티즘으로 이동한다.&quot;</p>
+            <a href="posts/2026-01-03-pm21-ai-tech-news.html" class="read-more">계속 읽기 →</a>
+        </article>
+            </div>
+        </div>
+        </div>
+    </details>
+    <details class="month-group">
+        <summary>
+            <span>2025년 12월</span>
+            <span class="month-count">8개</span>
+        </summary>
+        <div class="month-body">
+
+        <div class="date-group">
+            <div class="date-group-title">2025-12-31 22:54</div>
+            <div class="date-group-posts">
+
+        <article class="post-item" data-time="저녁 마감" data-topics="반도체|AI 모델|빅테크/시장" data-search="2025 마감 — 바이브 체크 받은 ai, 반도체 현직자의 12개월 회고 한 해의 마지막 포스트는 항상 한참 고민한다. 올해는 더 그렇다. 4월에 이 블로그를 막 시작했을 땐 &quot;매일 4번 정리 연습&quot;이었는데, 12월 들어 업계가 2~3주 단위로 뒤집히기 시작하면서 기록하지 않으면 잃어버리는 분기가 됐다. 반도체 ai 모델 빅테크/시장 year-end recap 2025 ai industry nvidia hbm claude gpt-5 gemini 3">
+            <div class="post-meta">
+                <span class="time-label">저녁 마감</span>
+                <span>·</span>
+                
+                <span>4분 읽기</span>
+            </div>
+            <h2><a href="posts/2025-12-31-pm22-ai-tech-news.html">2025 마감 — 바이브 체크 받은 AI, 반도체 현직자의 12개월 회고</a></h2>
+            <p class="lead">한 해의 마지막 포스트는 항상 한참 고민한다. 올해는 더 그렇다. 4월에 이 블로그를 막 시작했을 땐 &quot;매일 4번 정리 연습&quot;이었는데, 12월 들어 업계가 2~3주 단위로 뒤집히기 시작하면서 기록하지 않으면 잃어버리는 분기가 됐다.</p>
+            <a href="posts/2025-12-31-pm22-ai-tech-news.html" class="read-more">계속 읽기 →</a>
+        </article>
+            </div>
+        </div>
+        <div class="date-group">
+            <div class="date-group-title">2025-12-23 21:08</div>
+            <div class="date-group-posts">
+
+        <article class="post-item" data-time="" data-topics="AI 모델|반도체|빅테크/시장" data-search="mac studio × thunderbolt 5 rdma — 애플이 조용히 꺼낸 로컬 ai 클러스터 화요일 밤. 연말 분위기라 큰 뉴스는 뜸한데, 퇴근길에 지난주 macos tahoe 26.2 릴리스노트를 다시 훑다가 한 줄이 걸렸다. ai 모델 반도체 빅테크/시장 apple macos tahoe mac studio thunderbolt 5 rdma local ai hbm">
+            <div class="post-meta">
+                
+                
+                
+                <span>2분 읽기</span>
+            </div>
+            <h2><a href="posts/2025-12-23-pm21-ai-tech-news.html">Mac Studio × Thunderbolt 5 RDMA — 애플이 조용히 꺼낸 로컬 AI 클러스터</a></h2>
+            <p class="lead">화요일 밤. 연말 분위기라 큰 뉴스는 뜸한데, 퇴근길에 지난주 macOS Tahoe 26.2 릴리스노트를 다시 훑다가 한 줄이 걸렸다.</p>
+            <a href="posts/2025-12-23-pm21-ai-tech-news.html" class="read-more">계속 읽기 →</a>
+        </article>
+            </div>
+        </div>
+        <div class="date-group">
+            <div class="date-group-title">2025-12-21 22:51</div>
+            <div class="date-group-posts">
+
+        <article class="post-item" data-time="저녁 마감" data-topics="AI 모델|반도체|정책/규제" data-search="anthropic skills 오픈 표준화, openai도 채택 — 표준화의 해석 일요일 밤. 이번 주는 모델 한 방의 주가 아니라, 에이전트 레이어의 공통 어휘가 생기기 시작한 주였다고 기록해두고 싶다. ai 모델 반도체 정책/규제 anthropic openai agent skills open standard gemini 3 flash gpt-5.2-codex">
+            <div class="post-meta">
+                <span class="time-label">저녁 마감</span>
+                <span>·</span>
+                
+                <span>3분 읽기</span>
+            </div>
+            <h2><a href="posts/2025-12-21-pm22-ai-tech-news.html">Anthropic Skills 오픈 표준화, OpenAI도 채택 — 표준화의 해석</a></h2>
+            <p class="lead">일요일 밤. 이번 주는 모델 한 방의 주가 아니라, 에이전트 레이어의 공통 어휘가 생기기 시작한 주였다고 기록해두고 싶다.</p>
+            <a href="posts/2025-12-21-pm22-ai-tech-news.html" class="read-more">계속 읽기 →</a>
+        </article>
+            </div>
+        </div>
+        <div class="date-group">
+            <div class="date-group-title">2025-12-16 22:08</div>
+            <div class="date-group-posts">
+
+        <article class="post-item" data-time="저녁 마감" data-topics="빅테크/시장|반도체|현장/개발" data-search="백악관 ai tech force, 1,000명 2년 파견 — 공공 ai의 문이 열렸다 화요일 밤. 오늘 뉴스는 발표 자체보다 파트너 기업 명단이 흥미로웠다. 빅테크/시장 반도체 현장/개발 white house ai policy government palantir xai meta">
+            <div class="post-meta">
+                <span class="time-label">저녁 마감</span>
+                <span>·</span>
+                
+                <span>2분 읽기</span>
+            </div>
+            <h2><a href="posts/2025-12-16-pm22-ai-tech-news.html">백악관 AI Tech Force, 1,000명 2년 파견 — 공공 AI의 문이 열렸다</a></h2>
+            <p class="lead">화요일 밤. 오늘 뉴스는 발표 자체보다 파트너 기업 명단이 흥미로웠다.</p>
+            <a href="posts/2025-12-16-pm22-ai-tech-news.html" class="read-more">계속 읽기 →</a>
+        </article>
+            </div>
+        </div>
+        <div class="date-group">
+            <div class="date-group-title">2025-12-13 22:39</div>
+            <div class="date-group-posts">
+
+        <article class="post-item" data-time="저녁 마감" data-topics="반도체|AI 모델|빅테크/시장" data-search="gpt-5.2 당겨 나왔다, ms dev days, nvidia nemotron 3 — 토요일 밤, 3일 간격으로 터진 한 주 토요일 밤. 이번 주는 3일 간격으로 하나씩 터진 주라, 제대로 기록해두지 않으면 분기 리뷰 때 빠진 채로 지나간다. 세 이벤트로 정리. 반도체 ai 모델 빅테크/시장 openai gpt-5.2 microsoft nvidia nemotron cobalt maia">
+            <div class="post-meta">
+                <span class="time-label">저녁 마감</span>
+                <span>·</span>
+                
+                <span>4분 읽기</span>
+            </div>
+            <h2><a href="posts/2025-12-13-pm22-ai-tech-news.html">GPT-5.2 당겨 나왔다, MS Dev Days, Nvidia Nemotron 3 — 토요일 밤, 3일 간격으로 터진 한 주</a></h2>
+            <p class="lead">토요일 밤. 이번 주는 3일 간격으로 하나씩 터진 주라, 제대로 기록해두지 않으면 분기 리뷰 때 빠진 채로 지나간다. 세 이벤트로 정리.</p>
+            <a href="posts/2025-12-13-pm22-ai-tech-news.html" class="read-more">계속 읽기 →</a>
+        </article>
+            </div>
+        </div>
+        <div class="date-group">
+            <div class="date-group-title">2025-12-09 22:44</div>
+            <div class="date-group-posts">
+
+        <article class="post-item" data-time="저녁 마감" data-topics="반도체|빅테크/시장|AI 모델" data-search="microsoft, 인도에 $17.5b — 아시아 최대 베팅의 반도체 신호 오늘 장이 닫히고 나서 제일 오래 머릿속을 점유한 건 microsoft의 인도 $17.5b 발표였다. 아시아에서 ms가 집행한 단일 최대 규모 투자다. 숫자만 봐도 크지만, 왜 인도인지, 왜 지금인지, 그리고 반도체 밸류체인엔 어떻게 꽂히는지를 풀어보고 싶다. 반도체 빅테크/시장 ai 모델 microsoft india azure ai infrastructure nvidia broadcom">
+            <div class="post-meta">
+                <span class="time-label">저녁 마감</span>
+                <span>·</span>
+                
+                <span>2분 읽기</span>
+            </div>
+            <h2><a href="posts/2025-12-09-pm22-ai-tech-news.html">Microsoft, 인도에 $17.5B — 아시아 최대 베팅의 반도체 신호</a></h2>
+            <p class="lead">오늘 장이 닫히고 나서 제일 오래 머릿속을 점유한 건 Microsoft의 인도 $17.5B 발표였다. 아시아에서 MS가 집행한 단일 최대 규모 투자다. 숫자만 봐도 크지만, 왜 인도인지, 왜 지금인지, 그리고 반도체 밸류체인엔 어떻게 꽂히는지를 풀어보고 싶다.</p>
+            <a href="posts/2025-12-09-pm22-ai-tech-news.html" class="read-more">계속 읽기 →</a>
+        </article>
+            </div>
+        </div>
+        <div class="date-group">
+            <div class="date-group-title">2025-12-06 21:00</div>
+            <div class="date-group-posts">
+
+        <article class="post-item" data-time="" data-topics="AI 모델|현장/개발|반도체" data-search="anthropic이 bun을 품었다, claude code 연 $1b — 토요일 밤 체크 장이 닫힌 주말은 리서치 쌓는 시간으로 잘 쓰고 있다. 오늘은 길게 풀지 않고 이번 주 &quot;인수·숫자&quot; 세 개만 짚고 자려고 한다. ai 모델 현장/개발 반도체 anthropic bun claude code openai neptune mistral">
+            <div class="post-meta">
+                
+                
+                
+                <span>1분 읽기</span>
+            </div>
+            <h2><a href="posts/2025-12-06-pm21-ai-tech-news.html">Anthropic이 Bun을 품었다, Claude Code 연 $1B — 토요일 밤 체크</a></h2>
+            <p class="lead">장이 닫힌 주말은 리서치 쌓는 시간으로 잘 쓰고 있다. 오늘은 길게 풀지 않고 이번 주 &quot;인수·숫자&quot; 세 개만 짚고 자려고 한다.</p>
+            <a href="posts/2025-12-06-pm21-ai-tech-news.html" class="read-more">계속 읽기 →</a>
+        </article>
+            </div>
+        </div>
+        <div class="date-group">
+            <div class="date-group-title">2025-12-01 21:46</div>
+            <div class="date-group-posts">
+
+        <article class="post-item" data-time="" data-topics="AI 모델|반도체|빅테크/시장" data-search="11월 모델 3연타 — gpt-5.1·gemini 3·claude 4.5가 남긴 것, 그리고 연말 반도체 12월 첫 영업일을 마쳤다. 퇴근길에 커피 한 잔 더 내리면서, 노트북 열자마자 눈에 들어온 건 포트폴리오의 nvidia 캔들이었다. 11월 한 달 동안 ai 프런티어 랩이 돌아가면서 모델을 던진 여파가 반도체 수급 그래프에도 또렷이 남아 있다. ai 모델 반도체 빅테크/시장 openai google anthropic gpt-5.1 gemini 3 claude opus 4.5 nvidia">
+            <div class="post-meta">
+                
+                
+                
+                <span>3분 읽기</span>
+            </div>
+            <h2><a href="posts/2025-12-01-pm21-ai-tech-news.html">11월 모델 3연타 — GPT-5.1·Gemini 3·Claude 4.5가 남긴 것, 그리고 연말 반도체</a></h2>
+            <p class="lead">12월 첫 영업일을 마쳤다. 퇴근길에 커피 한 잔 더 내리면서, 노트북 열자마자 눈에 들어온 건 포트폴리오의 Nvidia 캔들이었다. 11월 한 달 동안 AI 프런티어 랩이 돌아가면서 모델을 던진 여파가 반도체 수급 그래프에도 또렷이 남아 있다.</p>
+            <a href="posts/2025-12-01-pm21-ai-tech-news.html" class="read-more">계속 읽기 →</a>
+        </article>
+            </div>
+        </div>
+        </div>
+    </details>
+    <details class="month-group">
+        <summary>
+            <span>미분류</span>
+            <span class="month-count">1개</span>
+        </summary>
+        <div class="month-body">
+
+        <div class="date-group">
+            <div class="date-group-title"></div>
+            <div class="date-group-posts">
+
+        <article class="post-item" data-time="" data-topics="정책/규제|현장/개발" data-search="cowork_autobuild_setup cowork의 scheduled task 샌드박스는 보안상 .py / .bat / .exe / .jpg 같은 파일 타입을 읽거나 실행할 수 없다. 따라서 build.py나 auto-deploy.bat를 샌드박스 안에서 호출하는 건 구조적으로 불가능하다. 정책/규제 현장/개발">
+            <div class="post-meta">
+                
+                
+                
+                <span>7분 읽기</span>
+            </div>
+            <h2><a href="posts/COWORK_AUTOBUILD_SETUP.html">COWORK_AUTOBUILD_SETUP</a></h2>
+            <p class="lead">Cowork의 scheduled task 샌드박스는 보안상 .py / .bat / .exe / .jpg 같은 파일 타입을 읽거나 실행할 수 없다. 따라서 build.py나 auto-deploy.bat를 샌드박스 안에서 호출하는 건 구조적으로 불가능하다.</p>
+            <a href="posts/COWORK_AUTOBUILD_SETUP.html" class="read-more">계속 읽기 →</a>
+        </article>
+            </div>
+        </div>
+        </div>
+    </details>
+</section>
+
+
+<section class="subscribe-cta" id="subscribe">
+    <div class="sub-header">
+        <h3>매일 4번, 받은편지함으로</h3>
+        <p class="sub-desc">반도체·AI·시장 브리핑을 새벽·오전·오후·저녁 네 번 이메일로 받아보세요. 스팸 없음, 언제든 구독 취소.</p>
+    </div>
+    <form id="subscribe-form" class="subscribe-form" action="https://assets.mailerlite.com/jsonp/2275622/forms/185056263876380606/subscribe" method="post">
+        <input type="email" name="fields[email]" placeholder="your@email.com" required aria-label="이메일 주소">
+        <input type="hidden" name="ml-submit" value="1">
+        <button type="submit" class="btn btn-primary">구독하기</button>
+    </form>
+    <div id="subscribe-status" class="subscribe-status" role="status" aria-live="polite"></div>
+    <p class="subscribe-footnote">또는 RSS로 구독하기</p>
+    <div class="rss-copy-row">
+        <input id="rss-url" type="text" readonly value="https://shonsubong.github.io/sonslab-blog/feed.xml" aria-label="RSS 피드 URL">
+        <button id="rss-copy-btn" type="button" class="btn btn-secondary">URL 복사</button>
+    </div>
+    <p class="rss-hint">RSS 리더에 이 URL을 붙여넣으면 구독됩니다.</p>
+    <div class="rss-readers">
+        <span class="rss-readers-label">바로가기 (로그인 필요):</span>
+        <a href="https://www.inoreader.com/?add_feed=https%3A%2F%2Fshonsubong.github.io%2Fsonslab-blog%2Ffeed.xml" class="rss-reader-btn" target="_blank" rel="noopener">Inoreader</a>
+        <a href="https://theoldreader.com/feeds/subscribe?url=https%3A%2F%2Fshonsubong.github.io%2Fsonslab-blog%2Ffeed.xml" class="rss-reader-btn" target="_blank" rel="noopener">The Old Reader</a>
+        <a href="https://shonsubong.github.io/sonslab-blog/feed.xml" class="rss-reader-btn rss-raw" target="_blank" rel="noopener" title="Atom/XML 원본">Atom/XML</a>
+    </div>
+</section>
+
+
+<section class="about-section" id="about">
+    <h3>About — SONSLAB이 하는 일</h3>
+    <p>
+        <strong>SONSLAB</strong>은 반도체 현직 수석 엔지니어가 매일 4번 올리는
+        AI·기술·시장 브리핑입니다. 하루 동안 쏟아지는 테크 뉴스 중 현장에서
+        실제로 의미 있는 신호만 골라 해석합니다.
+    </p>
+    <p>
+        전자현미경(TEM/SEM) 영상처리 AI와 비전 자동화 플랫폼을 개발하는
+        엔지니어 관점에서, 반도체 제조 현장과 AI 인프라·시장 흐름의 교차점을
+        매일 기록합니다.
+    </p>
+    <div class="about-bio">
+        <dl>
+            <dt>저자</dt>
+            <dd>SONSLAB</dd>
+            <dt>직함</dt>
+            <dd>반도체 수석 엔지니어 · TEM/SEM 영상 AI 분석 및 비전 자동화 플랫폼 개발자</dd>
+            <dt>발행 리듬</dt>
+            <dd>매일 4번 — 새벽(06시) · 오전(12시) · 오후(17시) · 저녁(22시)</dd>
+            <dt>주요 관심사</dt>
+            <dd>반도체 팹·장비·공정 · AI 플랫폼·모델 동향 · 빅테크 어닝과 투자 흐름</dd>
+            <dt>연락처</dt>
+            <dd><a href="mailto:starfox1211@naver.com">starfox1211@naver.com</a></dd>
+        </dl>
+    </div>
+</section>
+
+
+<footer>
+    <div class="stats-row">
+        <img src="https://hits.sh/shonsubong.github.io/sonslab-blog.svg?view=today-total&style=flat-square&label=visits&color=1e3a5f&labelColor=1a2332" alt="Visit counter">
+        <span class="stat-inline">오늘 · 누적 방문</span>
+    </div>
+    <p style="margin-top: 1.2rem;">© 2026 SONSLAB — 현장 감각으로 읽는 AI와 테크</p>
+    <div style="margin-top: 0.5rem;">
+        <a href="index.html#posts">글</a>·
+        <a href="index.html#about">About</a>·
+        <a href="feed.xml">RSS</a>·
+        <a href="mailto:starfox1211@naver.com">Contact</a>
+    </div>
+</footer>
+
+<button type="button" class="scroll-top" id="scroll-top" aria-label="맨 위로" title="맨 위로">↑</button>
+
+<script>
+(function() {
+    var form = document.getElementById('subscribe-form');
+    var status = document.getElementById('subscribe-status');
+    function setState(state, html) {
+        if (!status) return;
+        status.className = 'subscribe-status' + (state ? ' state-' + state : '');
+        status.innerHTML = html || '';
+    }
+    var rssInput = document.getElementById('rss-url');
+    var rssBtn = document.getElementById('rss-copy-btn');
+    if (rssInput && rssBtn) {
+        rssBtn.addEventListener('click', async function() {
+            var url = rssInput.value;
+            try {
+                if (navigator.clipboard && window.isSecureContext) {
+                    await navigator.clipboard.writeText(url);
+                } else {
+                    rssInput.select();
+                    rssInput.setSelectionRange(0, url.length);
+                    document.execCommand('copy');
+                }
+                var original = rssBtn.textContent;
+                rssBtn.textContent = '✓ 복사됨';
+                rssBtn.classList.add('copied');
+                setTimeout(function() {
+                    rssBtn.textContent = original;
+                    rssBtn.classList.remove('copied');
+                }, 2000);
+            } catch (err) {
+                rssInput.select();
+            }
+        });
+        rssInput.addEventListener('click', function() { rssInput.select(); });
+    }
+    // 공통 구독 submit 로직. 메인 폼 + 인라인 폼(B/C hero) 모두 처리.
+    function setFormState(statusEl, state, html, cls) {
+        if (!statusEl) return;
+        var base = cls || 'subscribe-status';
+        statusEl.className = base + (state ? ' state-' + state : '');
+        statusEl.innerHTML = html || '';
+    }
+    function attachSubscribe(f, statusEl, statusCls, successTemplate) {
+        if (!f) return;
+        f.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            var email = f.querySelector('input[type="email"]').value.trim();
+            if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                setFormState(statusEl, 'error', '올바른 이메일 주소를 입력해주세요.', statusCls);
+                return;
+            }
+            var btn = f.querySelector('button[type="submit"]');
+            var originalLabel = btn.textContent;
+            btn.disabled = true;
+            btn.classList.add('loading');
+            btn.textContent = '전송 중…';
+            setFormState(statusEl, 'loading', '', statusCls);
+            try {
+                var fd = new FormData(f);
+                var res = await fetch(f.action, { method: 'POST', body: fd });
+                var data = {};
+                try { data = await res.json(); } catch (e) {}
+                if (res.ok && data.success) {
+                    f.classList.add('hidden-post-success');
+                    var safe = email.replace(/[<>&"]/g, function(c) { return ({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'})[c]; });
+                    setFormState(statusEl, 'success', successTemplate(safe), statusCls);
+                } else {
+                    throw new Error((data && data.message) || '서버 응답 오류');
+                }
+            } catch (err) {
+                setFormState(statusEl, 'error', '일시적인 오류가 발생했습니다. 잠시 후 다시 시도해주세요.', statusCls);
+                btn.disabled = false;
+                btn.classList.remove('loading');
+                btn.textContent = originalLabel;
+            }
+        });
+    }
+    // 메인 구독 폼 (subscribe 섹션)
+    attachSubscribe(form, status, 'subscribe-status', function(safe) {
+        return '<strong>✓ 구독 신청을 받았습니다.</strong>' +
+            'SONSLAB이 <b>' + safe + '</b> 주소로 확인 이메일을 보냈습니다. ' +
+            '받은편지함(스팸함 포함)에서 확인 링크를 클릭하시면 구독이 완료됩니다.';
+    });
+    // 인라인 구독 폼 (B/C hero 내부)
+    document.querySelectorAll('form.inline-sub[data-subscribe]').forEach(function(f) {
+        var st = f.parentElement ? f.parentElement.querySelector('.inline-sub-status') : null;
+        attachSubscribe(f, st, 'inline-sub-status', function(safe) {
+            return '✓ <b>' + safe + '</b>로 확인 이메일을 보냈습니다.';
+        });
+    });
+})();
+</script>
+
+
+<script>
+(function() {
+    var input = document.getElementById('search-input');
+    var topicChips = document.querySelectorAll('#topic-chips .chip');
+    var items = document.querySelectorAll('.post-item[data-search]');
+    var dateGroups = document.querySelectorAll('.date-group');
+    var monthGroups = document.querySelectorAll('.month-group');
+    var emptyState = document.getElementById('empty-state');
+    var activeTopic = '';
+
+    // URL ?q= 파라미터 지원 (WebSite SearchAction 연동)
+    try {
+        var params = new URLSearchParams(window.location.search);
+        var q = params.get('q');
+        if (q && input) input.value = q;
+        var topic = params.get('topic');
+        if (topic) {
+            activeTopic = topic;
+            topicChips.forEach(function(c) {
+                c.classList.toggle('active', (c.getAttribute('data-topic') || '') === topic);
+            });
+        }
+    } catch(e){}
+
+    function applyFilter() {
+        var q = (input && input.value || '').trim().toLowerCase();
+        var visibleCount = 0;
+        items.forEach(function(it) {
+            var topicsAttr = it.getAttribute('data-topics') || '';
+            var topics = topicsAttr ? topicsAttr.split('|') : [];
+            var hay = it.getAttribute('data-search') || '';
+            var topicOk = !activeTopic || topics.indexOf(activeTopic) !== -1;
+            var qOk = !q || hay.indexOf(q) !== -1;
+            var show = topicOk && qOk;
+            it.classList.toggle('hidden', !show);
+            it.style.display = show ? '' : 'none';
+            if (show) visibleCount++;
+        });
+        dateGroups.forEach(function(g) {
+            var visible = g.querySelectorAll('.post-item:not([style*="display: none"])');
+            g.classList.toggle('hidden', visible.length === 0);
+            g.style.display = visible.length === 0 ? 'none' : '';
+        });
+        monthGroups.forEach(function(mg) {
+            var visible = mg.querySelectorAll('.date-group:not([style*="display: none"])');
+            mg.classList.toggle('hidden', visible.length === 0);
+            mg.style.display = visible.length === 0 ? 'none' : '';
+            // 필터 활성 시 해당 월 자동 펼침
+            if ((q || activeTopic) && visible.length > 0) mg.setAttribute('open', '');
+        });
+        if (emptyState) emptyState.classList.toggle('show', visibleCount === 0);
+    }
+
+    if (input) input.addEventListener('input', applyFilter);
+    topicChips.forEach(function(c) {
+        c.addEventListener('click', function() {
+            topicChips.forEach(function(x){ x.classList.remove('active'); });
+            c.classList.add('active');
+            activeTopic = c.getAttribute('data-topic') || '';
+            applyFilter();
+        });
+    });
+    // 초기 적용 (URL ?q= ?topic= 반영)
+    applyFilter();
+})();
+</script>
+
+<script>
+(function() {
+    // 다크 모드 토글
+    var toggle = document.getElementById('theme-toggle');
+    if (toggle) {
+        toggle.addEventListener('click', function() {
+            var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+            if (isDark) {
+                document.documentElement.removeAttribute('data-theme');
+                try { localStorage.setItem('sonslab-theme', 'light'); } catch(e){}
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                try { localStorage.setItem('sonslab-theme', 'dark'); } catch(e){}
+            }
+        });
+    }
+    // 디자인 피커
+    var dpBtn = document.getElementById('design-picker-btn');
+    var dpMenu = document.getElementById('design-picker-menu');
+    var dpCurrent = document.getElementById('design-picker-current');
+    var dpLabels = { current: '기본', refined: '정제판', editorial: '에디토리얼', broadsheet: '브로드시트' };
+    function applyDesign(name) {
+        if (!dpLabels[name]) name = 'current';
+        if (name === 'current') document.documentElement.removeAttribute('data-design');
+        else document.documentElement.setAttribute('data-design', name);
+        try { localStorage.setItem('sonslab-design', name); } catch(e){}
+        if (dpCurrent) dpCurrent.textContent = dpLabels[name];
+        if (dpMenu) dpMenu.querySelectorAll('li').forEach(function(li){
+            li.classList.toggle('active', li.getAttribute('data-design') === name);
+        });
+    }
+    if (dpBtn && dpMenu) {
+        // 초기 라벨·활성 표시 동기화
+        var initialDesign = document.documentElement.getAttribute('data-design') || 'current';
+        applyDesign(initialDesign);
+        dpBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            var expanded = dpBtn.getAttribute('aria-expanded') === 'true';
+            dpBtn.setAttribute('aria-expanded', String(!expanded));
+            dpMenu.classList.toggle('open', !expanded);
+        });
+        dpMenu.querySelectorAll('li').forEach(function(li){
+            li.addEventListener('click', function(){
+                applyDesign(li.getAttribute('data-design'));
+                dpMenu.classList.remove('open');
+                dpBtn.setAttribute('aria-expanded', 'false');
+            });
+        });
+        document.addEventListener('click', function(e){
+            if (!dpMenu.contains(e.target) && e.target !== dpBtn) {
+                dpMenu.classList.remove('open');
+                dpBtn.setAttribute('aria-expanded', 'false');
+            }
+        });
+    }
+    // 맨 위로 버튼
+    var btn = document.getElementById('scroll-top');
+    if (btn) {
+        var toggleBtn = function() {
+            if (window.scrollY > 300) btn.classList.add('visible');
+            else btn.classList.remove('visible');
+        };
+        window.addEventListener('scroll', toggleBtn, {passive:true});
+        btn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        toggleBtn();
+    }
+})();
+</script>
+</body>
+</html>
