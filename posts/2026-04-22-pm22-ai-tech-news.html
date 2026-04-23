@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>마이크론 어닝 소화한 토요일 — HBM5 샘플링 공식화, 3월 마지막 주말 정리 — SONSLAB</title>
+    <title>테슬라 콜 7시간 전 — 오늘 밤엔 엔비디아 Ising과 퀀텀 얘기나 하자 — SONSLAB</title>
     <link rel="icon" href="../assets/logo.jpg">
     <link rel="alternate" type="application/atom+xml" title="SONSLAB Feed" href="../feed.xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,20 +11,22 @@
     <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/style.css">
-    <meta name="description" content="토요일 밤. 아침에 아이 학원 데려다주고 돌아와 커피 내리면서 주간 마감 노트를 한 번 돌렸다. 이번 주는 마이크론 어닝 하나로 메모리 3사 순위가 한 칸씩 재배치된 주였다. 지난주 GTC 여진이 이번 주 마이크론 콜로 바통을 넘겼고, 바통이 넘어간 순간 시장이 HBM5 스토리를 다시 조립하기 시작했다. 주말 동안 자료 정리하면서 머리를 한 번 식혀야 한다.">
+    <meta name="description" content="밤 10시 조금 넘겼다. 미국장 마감 직후 TSLA가 $386.42, 애프터 $388.99에서 잔잔하게 걸쳐 있다(Public.com 애프터마켓). 한국 시각 내일 새벽 5~6시 사이에 콜이 풀린다. 아침에 뽑아둔 체크리스트 — 자동차 부문 gross margin 17% 바닥선, Terafab 분기별 CapEx 곡선, 로보택시 3개 도시 수치 — 이 세 개는 그대로 유효하다. 반복할 필요 없...">
     <meta name="author" content="SONSLAB">
-    <link rel="canonical" href="https://shonsubong.github.io/sonslab-blog/posts/2026-03-28-pm22-ai-tech-news.html">
+    <link rel="canonical" href="https://shonsubong.github.io/sonslab-blog/posts/2026-04-22-pm22-ai-tech-news.html">
     <meta property="og:site_name" content="SONSLAB">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="마이크론 어닝 소화한 토요일 — HBM5 샘플링 공식화, 3월 마지막 주말 정리">
-    <meta property="og:description" content="토요일 밤. 아침에 아이 학원 데려다주고 돌아와 커피 내리면서 주간 마감 노트를 한 번 돌렸다. 이번 주는 마이크론 어닝 하나로 메모리 3사 순위가 한 칸씩 재배치된 주였다. 지난주 GTC 여진이 이번 주 마이크론 콜로 바통을 넘겼고, 바통이 넘어간 순간 시장이 HBM5 스토리를 다시 조립하기 시작했다. 주말 동안 자료 정리하면서 머리를 한 번 식혀야 한다.">
-    <meta property="og:url" content="https://shonsubong.github.io/sonslab-blog/posts/2026-03-28-pm22-ai-tech-news.html">
-    <meta property="og:image" content="https://shonsubong.github.io/sonslab-blog/assets/og/2026-03-28-pm22-ai-tech-news.png">
+    <meta property="og:title" content="테슬라 콜 7시간 전 — 오늘 밤엔 엔비디아 Ising과 퀀텀 얘기나 하자">
+    <meta property="og:description" content="밤 10시 조금 넘겼다. 미국장 마감 직후 TSLA가 $386.42, 애프터 $388.99에서 잔잔하게 걸쳐 있다(Public.com 애프터마켓). 한국 시각 내일 새벽 5~6시 사이에 콜이 풀린다. 아침에 뽑아둔 체크리스트 — 자동차 부문 gross margin 17% 바닥선, Terafab 분기별 CapEx 곡선, 로보택시 3개 도시 수치 — 이 세 개는 그대로 유효하다. 반복할 필요 없...">
+    <meta property="og:url" content="https://shonsubong.github.io/sonslab-blog/posts/2026-04-22-pm22-ai-tech-news.html">
+    <meta property="og:image" content="https://shonsubong.github.io/sonslab-blog/assets/og/2026-04-22-pm22-ai-tech-news.png">
     <meta property="og:locale" content="ko_KR">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="마이크론 어닝 소화한 토요일 — HBM5 샘플링 공식화, 3월 마지막 주말 정리">
-    <meta name="twitter:description" content="토요일 밤. 아침에 아이 학원 데려다주고 돌아와 커피 내리면서 주간 마감 노트를 한 번 돌렸다. 이번 주는 마이크론 어닝 하나로 메모리 3사 순위가 한 칸씩 재배치된 주였다. 지난주 GTC 여진이 이번 주 마이크론 콜로 바통을 넘겼고, 바통이 넘어간 순간 시장이 HBM5 스토리를 다시 조립하기 시작했다. 주말 동안 자료 정리하면서 머리를 한 번 식혀야 한다.">
-    <meta name="twitter:image" content="https://shonsubong.github.io/sonslab-blog/assets/og/2026-03-28-pm22-ai-tech-news.png">
+    <meta name="twitter:title" content="테슬라 콜 7시간 전 — 오늘 밤엔 엔비디아 Ising과 퀀텀 얘기나 하자">
+    <meta name="twitter:description" content="밤 10시 조금 넘겼다. 미국장 마감 직후 TSLA가 $386.42, 애프터 $388.99에서 잔잔하게 걸쳐 있다(Public.com 애프터마켓). 한국 시각 내일 새벽 5~6시 사이에 콜이 풀린다. 아침에 뽑아둔 체크리스트 — 자동차 부문 gross margin 17% 바닥선, Terafab 분기별 CapEx 곡선, 로보택시 3개 도시 수치 — 이 세 개는 그대로 유효하다. 반복할 필요 없...">
+    <meta name="twitter:image" content="https://shonsubong.github.io/sonslab-blog/assets/og/2026-04-22-pm22-ai-tech-news.png">
+    <meta property="article:published_time" content="2026-04-22T22:08:00+09:00">
+    <meta property="article:modified_time" content="2026-04-22T22:08:00+09:00">
     
 <script>
 (function() {
@@ -54,8 +56,8 @@
     } catch (e) {}
 })();
 </script>
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "마이크론 어닝 소화한 토요일 — HBM5 샘플링 공식화, 3월 마지막 주말 정리", "description": "토요일 밤. 아침에 아이 학원 데려다주고 돌아와 커피 내리면서 주간 마감 노트를 한 번 돌렸다. 이번 주는 마이크론 어닝 하나로 메모리 3사 순위가 한 칸씩 재배치된 주였다. 지난주 GTC 여진이 이번 주 마이크론 콜로 바통을 넘겼고, 바통이 넘어간 순간 시장이 HBM5 스토리를 다시 조립하기 시작했다. 주말 동안 자료 정리하면서 머리를 한 번 식혀야 한다.", "url": "https://shonsubong.github.io/sonslab-blog/posts/2026-03-28-pm22-ai-tech-news.html", "mainEntityOfPage": "https://shonsubong.github.io/sonslab-blog/posts/2026-03-28-pm22-ai-tech-news.html", "inLanguage": "ko", "image": "https://shonsubong.github.io/sonslab-blog/assets/og/2026-03-28-pm22-ai-tech-news.png", "author": {"@type": "Person", "name": "SONSLAB"}, "publisher": {"@type": "Organization", "name": "SONSLAB", "logo": {"@type": "ImageObject", "url": "https://shonsubong.github.io/sonslab-blog/assets/logo.jpg"}}, "datePublished": "", "dateModified": ""}</script>
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "SONSLAB", "item": "https://shonsubong.github.io/sonslab-blog/"}, {"@type": "ListItem", "position": 2, "name": "글", "item": "https://shonsubong.github.io/sonslab-blog/#posts"}, {"@type": "ListItem", "position": 3, "name": "마이크론 어닝 소화한 토요일 — HBM5 샘플링 공식화, 3월 마지막 주말 정리", "item": "https://shonsubong.github.io/sonslab-blog/posts/2026-03-28-pm22-ai-tech-news.html"}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "테슬라 콜 7시간 전 — 오늘 밤엔 엔비디아 Ising과 퀀텀 얘기나 하자", "description": "밤 10시 조금 넘겼다. 미국장 마감 직후 TSLA가 $386.42, 애프터 $388.99에서 잔잔하게 걸쳐 있다(Public.com 애프터마켓). 한국 시각 내일 새벽 5~6시 사이에 콜이 풀린다. 아침에 뽑아둔 체크리스트 — 자동차 부문 gross margin 17% 바닥선, Terafab 분기별 CapEx 곡선, 로보택시 3개 도시 수치 — 이 세 개는 그대로 유효하다. 반복할 필요 없...", "url": "https://shonsubong.github.io/sonslab-blog/posts/2026-04-22-pm22-ai-tech-news.html", "mainEntityOfPage": "https://shonsubong.github.io/sonslab-blog/posts/2026-04-22-pm22-ai-tech-news.html", "inLanguage": "ko", "image": "https://shonsubong.github.io/sonslab-blog/assets/og/2026-04-22-pm22-ai-tech-news.png", "author": {"@type": "Person", "name": "SONSLAB"}, "publisher": {"@type": "Organization", "name": "SONSLAB", "logo": {"@type": "ImageObject", "url": "https://shonsubong.github.io/sonslab-blog/assets/logo.jpg"}}, "datePublished": "2026-04-22T22:08:00+09:00", "dateModified": "2026-04-22T22:08:00+09:00"}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "SONSLAB", "item": "https://shonsubong.github.io/sonslab-blog/"}, {"@type": "ListItem", "position": 2, "name": "글", "item": "https://shonsubong.github.io/sonslab-blog/#posts"}, {"@type": "ListItem", "position": 3, "name": "테슬라 콜 7시간 전 — 오늘 밤엔 엔비디아 Ising과 퀀텀 얘기나 하자", "item": "https://shonsubong.github.io/sonslab-blog/posts/2026-04-22-pm22-ai-tech-news.html"}]}</script>
 </head>
 <body class="post-page">
     <div class="reading-progress" id="reading-progress" role="progressbar" aria-label="읽기 진행률"></div>
@@ -99,25 +101,27 @@
 <article class="post-article">
     <div class="post-header">
         <a href="../index.html" class="back-link">← 전체 글 목록</a>
-        <h1>마이크론 어닝 소화한 토요일 — HBM5 샘플링 공식화, 3월 마지막 주말 정리</h1>
+        <h1>테슬라 콜 7시간 전 — 오늘 밤엔 엔비디아 Ising과 퀀텀 얘기나 하자</h1>
         <div class="post-meta">
             <span class="time-label">저녁 마감</span>
-            <span>2026-03-28 22:43</span>
+            <span>2026년 04월 22일 (수) · 22:08</span>
             <span>·</span>
-            <span>5분 읽기</span>
+            <span>8분 읽기</span>
         </div>
     </div>
     
+<div class="day-series-wrap" aria-label="같은 날의 다른 브리핑">
+    <div class="day-series-label"><span class="dot"></span><span>2026년 04월 22일 (수)의 브리핑</span></div>
+    <div class="day-series"><a href="2026-04-22-am06-ai-tech-news.html" class="day-series-item"><span class="series-time">06:12</span><span class="series-label">새벽 리포트</span></a><a href="2026-04-22-pm12-ai-tech-news.html" class="day-series-item"><span class="series-time">12:18</span><span class="series-label">오전 브리핑</span></a><a href="2026-04-22-pm17-ai-tech-news.html" class="day-series-item"><span class="series-time">17:14</span><span class="series-label">오후 브리핑</span></a><a href="#" class="day-series-item active" aria-current="page"><span class="series-time">22:08</span><span class="series-label">저녁 마감</span></a></div>
+</div>
     <details class="post-toc" open><summary>목차</summary><div class="toc">
 <div class="toc">
 <ul>
-<li><a href="#hbm5-3">마이크론 어닝 소화한 토요일 — HBM5 샘플링 공식화, 3월 마지막 주말 정리</a><ul>
-<li><a href="#fy25-q2-hbm5">마이크론 FY25 Q2 — HBM5 '샘플링'이 공식화됐다</a></li>
-<li><a href="#sk">SK하이닉스·삼성 — 주간 상대 강도</a></li>
-<li><a href="#_1">퀀트 리밸런싱 + 분기 말 수급 — 예상보다 얌전</a></li>
-<li><a href="#ai-dola-seed-20">중국 AI 진영 — Dola-Seed 2.0 업데이트 루머</a></li>
-<li><a href="#_2">다음 주 이벤트 프리뷰</a></li>
-<li><a href="#_3">한 줄 정리</a></li>
+<li><a href="#7-ising">테슬라 콜 7시간 전 — 오늘 밤엔 엔비디아 Ising과 퀀텀 얘기나 하자</a><ul>
+<li><a href="#ising-ai">Ising — AI로 양자 컴퓨터의 "지루한 두 문제"를 푼다</a></li>
+<li><a href="#xanadu-ceo">Xanadu CEO 억만장자 — 재료 반영이냐, 거품이냐</a></li>
+<li><a href="#nvidiatsmchbm">Nvidia·TSMC·HBM 체인과 어떻게 붙는가</a></li>
+<li><a href="#30">오늘 밤 마무리 — 내일 새벽~오후 30시간</a></li>
 </ul>
 </li>
 </ul>
@@ -126,64 +130,75 @@
 </div>
 </details>
     <div class="post-content">
-<h1 id="hbm5-3">마이크론 어닝 소화한 토요일 — HBM5 샘플링 공식화, 3월 마지막 주말 정리</h1>
-<p>토요일 밤. 아침에 아이 학원 데려다주고 돌아와 커피 내리면서 주간 마감 노트를 한 번 돌렸다. 이번 주는 <strong>마이크론 어닝 하나로 메모리 3사 순위가 한 칸씩 재배치</strong>된 주였다. 지난주 GTC 여진이 이번 주 마이크론 콜로 바통을 넘겼고, 바통이 넘어간 순간 시장이 HBM5 스토리를 다시 조립하기 시작했다. 주말 동안 자료 정리하면서 머리를 한 번 식혀야 한다.</p>
-<hr />
-<h2 id="fy25-q2-hbm5">마이크론 FY25 Q2 — HBM5 '샘플링'이 공식화됐다</h2>
-<p>3/25 수요일 장 마감 후 마이크론이 어닝을 열었다. 매출 $9.34B (컨센서스 $9.2B 상회), EPS $3.92 (컨센서스 $3.85 상회)로 <strong>어닝 서프라이즈</strong>. 주가는 시간외 +7%로 뛰었고, 다음 날 정규장에서는 +5%로 마감하면서 주간 +9%.</p>
-<p>숫자도 물론 좋았지만 <strong>시장이 반응한 포인트는 콜 안에 있었다</strong>. CFO Mark Murphy가 준비 발언에서 "HBM5 샘플링을 선도 고객사와 이미 진행 중"이라고 명시했고, Q&amp;A 세션에서 CEO Sanjay Mehrotra가 "2027년 상반기 양산 진입이 현실적 목표"라고 구체 타임라인까지 붙였다. SK하이닉스는 작년부터 HBM5 샘플링 언급을 해왔고, 이번 마이크론의 공식화로 <strong>HBM5 선도 2사(SK하이닉스 + 마이크론)</strong> 구도가 시장 인식에서 굳어지는 모양새다.</p>
-<p>삼성이 여기서 애매한 자리에 놓인다. 삼성은 HBM4 Nvidia 퀄을 이제야 통과 초읽기 단계에 들어간 상황이고, HBM5는 그보다 한 세대 뒤의 경쟁이다. 지난주 GTC에서 Nvidia가 Rubin Ultra(2027 H2) + HBM5 조합을 공식화했을 때 내가 "HBM5 공급체인 경쟁 본격화 발표"라고 썼는데, 이번 주 마이크론 콜이 그걸 <strong>분기 실적 레벨에서 확인</strong>시켜준 셈이다. 반도체 현직자 입장에서 보면 이 격차는 단순히 기술이 아니라 <strong>고객사 퀄·파운드리 CoWoS 할당·패키징 경험치</strong>까지 복합적으로 얽혀 있어서 쉽게 뒤집기 어렵다. 앞으로 6~9개월이 삼성에게는 중요한 반격 구간이다.</p>
-<p>HBM 매출 비중 숫자도 중요하게 봤다. 마이크론이 이번 분기 HBM 매출이 <strong>전체 매출의 29%에 달했다</strong>고 공시했다. 작년 같은 분기가 11%였으니까 1년 만에 2.5배 이상. SK하이닉스 HBM 비중이 40%대 중반으로 추정되는 걸 감안하면, 마이크론은 <strong>"HBM 기업으로의 체질 전환 2/3 지점"</strong> 쯤까지 왔다. 이 수치는 앞으로 분기마다 따라가면서 보정 지표로 쓸 만하다.</p>
-<h2 id="sk">SK하이닉스·삼성 — 주간 상대 강도</h2>
-<p>어닝 여진이 메모리 3사 주가에 그대로 찍혔다. SK하이닉스는 주간 +4%, 마이크론은 +9%, 삼성전자는 -1%. <strong>SK하이닉스가 여전히 프리미엄을 유지하지만, 마이크론이 상대 속도에서 치고 올라온 주</strong>였다. 삼성은 HBM4 Nvidia 퀄 관련 공식 코멘트 부재가 계속 발목을 잡고 있다. 외국계 리포트들이 "삼성 HBM4 퀄 통과는 2분기 말 가능성"으로 일정을 조금씩 밀고 있어서, 그 공식 확정이 있기 전까지는 섀도우 밸류가 유지될 공산이 크다.</p>
-<h2 id="_1">퀀트 리밸런싱 + 분기 말 수급 — 예상보다 얌전</h2>
-<p>이번 주 금요일이 3월 마지막 거래일이었고, 퀀트 리밸런싱이 포트폴리오 단으로 한 번 지나갔다. 당초엔 AI 바스킷이 기계적으로 빠질 가능성을 조금 걱정했는데, 실제로는 <strong>Nvidia -1%, Broadcom +0.5%, SK하이닉스 보합</strong>으로 수급 충격이 제한적이었다. Nvidia가 3월 한 달을 +4%로 마감하면서 <strong>GTC 랠리를 전부 반납하지 않고 버텨낸</strong> 모양새. 작년 3월 하락장을 경험했던 입장에서 보면 이번 3월은 훨씬 안정적이었다.</p>
-<h2 id="ai-dola-seed-20">중국 AI 진영 — Dola-Seed 2.0 업데이트 루머</h2>
-<p>지난주 Stanford AI Index 2026에서 <strong>미-중 최상위 모델 Arena 점수 차 39점</strong>이라는 숫자가 나왔는데, 이번 주에 중국 쪽에서 <strong>Dola-Seed 2.0 포인트 릴리즈(2.0.3) + Qwen 4 티저</strong>가 조용히 돌았다. 공식 벤치 갱신은 아직인데, 커뮤니티 실사용 리포트에서 <strong>장문 코딩 태스크에서 GPT-5.3에 근접</strong>이라는 언급이 나오기 시작했다. 하드웨어 수출 통제가 여전한 상황에서 알고리즘·효율 최적화로 간극을 좁히는 속도가 꽤 빠르다. 2026년 하반기에는 Arena 기준으로 격차가 한 자리수%로 떨어질 가능성도 무시 못한다.</p>
-<p>반도체 현직자 관점에서 이게 의미하는 건 두 가지다. 첫째, <strong>경량·특화 모델 시장에서 중국 모델이 글로벌 선택지로 올라오면</strong> 프런티어 3사(OpenAI·Anthropic·Google) 매출 프리미엄이 압박받을 가능성. 둘째, <strong>Nvidia GPU 판매 측면에서는 중국 접근 제약이 유지되는 한 중립적</strong>이라는 것. 구조적으로 AI 앱 레이어에서만 경쟁이 가열되고, 인프라 레이어는 Nvidia 해자가 유지되는 그림이 지속된다.</p>
-<h2 id="_2">다음 주 이벤트 프리뷰</h2>
-<p>다음 주는 4월 첫 주다. 이벤트 달력에서 눈에 들어오는 건 세 가지.</p>
-<p><strong>테슬라 Q1 인도 수치</strong> — 통상 분기 첫 주에 발표된다. 예상 레인지가 넓게 잡혀 있어서 이 숫자가 어느 쪽으로 터지든 자동차 섹터 전반의 바로미터가 된다. 모델 Y 리프레시의 실질적 임팩트가 여기서 처음 수치로 확인.</p>
-<p><strong>Meta Llama 4.5 공개 가능성</strong> — 3/7 포스트에서 티저를 다룬 그 모델. 10M 컨텍스트 루머가 사실로 확인되는지가 포인트. 만약 10M이 확정이면 Claude Opus 4.6의 1M을 10배 상회하면서 <strong>오픈 웨이트 진영이 컨텍스트 경쟁의 새 기준선</strong>을 찍게 된다.</p>
-<p><strong>Claude 차기 모델 루머</strong> — Dario가 팟캐스트에서 "close"라고 한 게 3/24. 4월 중순 컨퍼런스 가능성이 회자되지만 공식 일정은 미확인.</p>
-<h2 id="_3">한 줄 정리</h2>
-<p>마이크론이 HBM5 샘플링을 공식화하면서 <strong>메모리 3사 순위 재배치가 한 칸씩 일어난 주</strong>였다. GTC 발 Rubin Ultra + HBM5 스토리가 어닝으로 한 번 확인됐고, 시장은 분기 말 수급 충격을 별 잡음 없이 소화했다. 3월은 예상보다 훨씬 조용하게 마무리되는 중이고, 4월 첫 주가 오히려 매크로·모델 양쪽에서 변동성 구간이 될 가능성이 높다. 오늘 밤은 여기서 끊고 주말 독서 시간을 확보해야 한다 — 〈The Semiconductor Industry〉 챕터 3번을 끝내야 한다.</p>
-<p>— SONSLAB, 3/28 토요일 밤.</p>
+<h1 id="7-ising">테슬라 콜 7시간 전 — 오늘 밤엔 엔비디아 Ising과 퀀텀 얘기나 하자</h1>
+<p>밤 10시 조금 넘겼다. 미국장 마감 직후 TSLA가 $386.42, 애프터 $388.99에서 잔잔하게 걸쳐 있다(<a href="https://public.com/stocks/tsla/after-hours">Public.com 애프터마켓</a>). 한국 시각 내일 새벽 5~6시 사이에 콜이 풀린다. 아침에 뽑아둔 체크리스트 — <strong>자동차 부문 gross margin 17% 바닥선, Terafab 분기별 CapEx 곡선, 로보택시 3개 도시 수치</strong> — 이 세 개는 그대로 유효하다. 반복할 필요 없다.</p>
+<p>7시간 기다리는 시간 동안 오늘 하루 동안 내가 피드에서 계속 밀어뒀던 사이드 스토리 하나를 정리하고 넘어간다. 블로그 포스트 세 개를 실적 얘기로만 채워놓고 나니, 오늘 저녁 피드에서 가장 흥미로웠던 건 실적이 아니라 <strong>엔비디아 Ising과 Xanadu CEO 억만장자</strong> 쪽이었다.</p>
+<h2 id="ising-ai">Ising — AI로 양자 컴퓨터의 "지루한 두 문제"를 푼다</h2>
+<p>엔비디아가 4월 14일에 발표한 <a href="https://nvidianews.nvidia.com/news/nvidia-launches-ising-the-worlds-first-open-ai-models-to-accelerate-the-path-to-useful-quantum-computers">Ising</a>은 이름이 좀 이상하긴 한데(이징 모델에서 딴 거), 실체는 두 개다.</p>
+<ul>
+<li><strong>Ising Calibration</strong>: 35B 파라미터 VLM(vision-language model). 큐비트 멀티모달 데이터로 학습. 캘리브레이션 자동화가 핵심. 자체 벤치마크 QCalEval에서 Gemini 3.1 Pro·Claude Opus 4.6·GPT 5.4를 제쳤다고 주장</li>
+<li><strong>Ising Decoding</strong>: 3D CNN 두 버전. 에러 코렉션 디코딩. pyMatching(업계 오픈소스 표준) 대비 속도 2.5배·정확도 3배</li>
+</ul>
+<p>퀀텀 인사이더 쪽 <a href="https://thequantuminsider.com/2026/04/14/nvidia-launches-ising-the-worlds-first-open-ai-models-to-accelerate-the-path-to-useful-quantum-computers/">해설</a>을 같이 읽으면 발표의 의미가 또렷해진다. 양자 컴퓨터가 실용 단계로 안 가는 이유는 알고리즘이 아니라 <strong>캘리브레이션이 지루하고, 에러 코렉션 디코딩이 실시간이 안 되기 때문</strong>이다. 두 문제 모두 "물리 장비를 매번 수동으로 맞추고 후처리로 에러를 풀어내는" 반복 노동인데, 이걸 AI 모델로 자동화하면 장비 한 대당 운영 비용이 질적으로 바뀐다.</p>
+<p>반도체 현직 엔지니어 입장에서 보면 이 그림이 익숙하다. SEM·TEM 파이프라인에서 이미지 acquisition 파라미터 튜닝, 드리프트 보정, 노이즈 디노이징 같은 작업이 10년 전만 해도 오퍼레이터가 직접 손으로 돌리던 구간이었는데, 지금은 거의 다 딥러닝이 먹었다. 양자 쪽이 같은 궤적을 밟기 시작했다는 게 Ising 발표의 진짜 의미다.</p>
+<h2 id="xanadu-ceo">Xanadu CEO 억만장자 — 재료 반영이냐, 거품이냐</h2>
+<p>Ising 발표 이후 양자 섹터 전체가 붙었고, 그중 가장 드라마틱하게 맞은 건 <strong>Xanadu Quantum Technologies</strong>다. 3월 27일 SPAC으로 나스닥·TSX 상장된 포토닉 퀀텀 퓨어 플레이어. <a href="https://fortune.com/2026/04/22/christian-weedbrook-ceo-xanadu-quantum-technologies-net-worth-nvidia/">Fortune 오늘자</a>와 <a href="https://www.thestreet.com/crypto/markets/nvidia-launch-sends-quantum-stock-surging-251-mints-billionaire">TheStreet</a>에 따르면 주가 6거래일에 <strong>약 5배</strong>, CEO 크리스찬 위드브룩의 지분 가치가 $1.5B 근방까지 올라와서 억만장자 라인을 넘겼다.</p>
+<p>핵심 포인트는 <a href="https://thenextweb.com/news/nvidia-xanadu-quantum-computing-ceo-billionaire-stock-surge">Next Web 정리</a>가 뽑은 문장이다 — <strong>엔비디아는 Xanadu 주식을 사지도 않았고, 계약도 없고, 파트너로 거명도 안 했다</strong>. 시장이 "엔비디아가 양자 섹터를 공식 지지했다"고 해석해서 퓨어 플레이 아무 곳이나 급등시킨 구조다. 이건 재료 반영이라기보다 <strong>섹터 로테이션 + 공급 희소성</strong>에 가깝다. 순수 양자 주식이 시장에 몇 개 없다 보니 매수세가 한 번에 쏠리면 이렇게 퍼진다.</p>
+<p><a href="https://www.ibtimes.com.au/xanadu-quantum-stock-surges-194-ytd-buy-photonic-computing-hype-sell-before-reality-bites-2026-1866722">IBT의 회의적인 정리</a>도 같이 읽어볼 만하다. 포토닉 퀀텀은 구조적으로 흥미롭긴 한데, 유효한 상용 매출은 아직 미미하고 에러 코렉션 과제가 여전히 산 넘어 산이다. Ising이 그 산의 절반을 깎아줬다 정도가 현재의 해석이고, 나머지 절반은 각 회사가 직접 증명해야 한다.</p>
+<h2 id="nvidiatsmchbm">Nvidia·TSMC·HBM 체인과 어떻게 붙는가</h2>
+<p>Tesla 투자자 관점이든 Nvidia 투자자 관점이든, Ising 발표를 그냥 "엔비디아가 양자에도 발을 걸쳤다" 정도로 넘기면 한 층을 못 본 거다. 중요한 건 이게 <strong>엔비디아 GPU 위에서 돌아가는 AI 모델</strong>이라는 점이다. 양자 처리 장치(QPU) 자체는 다른 회사가 만들지만, 그 장비를 돌리기 위한 AI 가속 레이어는 엔비디아가 먹는다. <strong>CoWoS + HBM + GPU + CUDA + 이제 Ising</strong> — 무한 컴퓨트 루프에 레이어가 한 장 더 깔린 셈이다.</p>
+<p>점심 포스트에서 썼던 "HBM 빅3 × TSMC × Nvidia × OpenAI 무한 컴퓨트 루프" 논의에 Ising이 붙으면 그림이 이렇게 된다. 양자 쪽이 상용 단계에 가까워질수록, 고전 AI 가속기에 붙어 있는 HBM·CoWoS 수요는 <strong>줄지 않고 오히려 더 늘어난다</strong>. 하이브리드 시스템(양자 + 고전)이 기본이라는 게 Ising 설계 전제이기 때문이다. 이 관점에서 보면 SK하이닉스·TSMC에 단기로 찍힌 호재는 아니지만, 장기 서사에서 또 한 레이어가 보강된 쪽에 가깝다.</p>
+<h2 id="30">오늘 밤 마무리 — 내일 새벽~오후 30시간</h2>
+<ul>
+<li><strong>내일 새벽 5시 전후</strong>: Tesla 콜. 자동차 마진 17% 바닥선 한 줄에 다 걸려 있다. 6시 포스트에서 정리</li>
+<li><strong>내일 오후 3시 이후</strong>: SK하이닉스 실적. 이익률 70% 구간 실제 터치 여부, HBM4 최상위급 납품 톤. 오후~저녁 포스트에서</li>
+<li><strong>그 사이 시간</strong>: 오늘 본 Ising·Xanadu 소식이 내일 장 흐름에 어떻게 반영되는지 한국장 쪽에서도 관찰할 만함 (국내 상장 양자 관련주는 얇아서 큰 의미는 없지만, 메모리·AI 쪽 센티멘트에는 영향)</li>
+</ul>
+<p>실적 두 개를 하루에 같이 받는 건 드문 구도인데, 시간대가 정확히 갈라져 있어서 겹치지는 않는다. 기분상으로는 Tesla 콜 끝나고 두 시간 정도 숨 돌린 다음 SK하이닉스 받는 느낌이 될 것 같다.</p>
+<p>오늘 밤은 Ising 생각하면서 마감. 반도체 엔지니어로서 양자 쪽 AI 자동화를 구경하는 재미가 꽤 크다.</p>
+<p>Sources:
+- <a href="https://public.com/stocks/tsla/after-hours">Public.com — TSLA 애프터마켓 $388.99</a>
+- <a href="https://nvidianews.nvidia.com/news/nvidia-launches-ising-the-worlds-first-open-ai-models-to-accelerate-the-path-to-useful-quantum-computers">NVIDIA — Ising 공식 발표</a>
+- <a href="https://thequantuminsider.com/2026/04/14/nvidia-launches-ising-the-worlds-first-open-ai-models-to-accelerate-the-path-to-useful-quantum-computers/">Quantum Insider — Ising 해설</a>
+- <a href="https://fortune.com/2026/04/22/christian-weedbrook-ceo-xanadu-quantum-technologies-net-worth-nvidia/">Fortune — Xanadu CEO 억만장자</a>
+- <a href="https://www.thestreet.com/crypto/markets/nvidia-launch-sends-quantum-stock-surging-251-mints-billionaire">TheStreet — Xanadu 251% 급등</a>
+- <a href="https://thenextweb.com/news/nvidia-xanadu-quantum-computing-ceo-billionaire-stock-surge">TheNextWeb — 엔비디아는 Xanadu에 투자 안 했다</a>
+- <a href="https://www.ibtimes.com.au/xanadu-quantum-stock-surges-194-ytd-buy-photonic-computing-hype-sell-before-reality-bites-2026-1866722">IBT — Xanadu YTD 194% 회의론</a></p>
     </div>
     
 <div class="post-share">
     <span class="share-label">공유하기</span>
-    <a href="https://twitter.com/intent/tweet?text=마이크론 어닝 소화한 토요일 — HBM5 샘플링 공식화, 3월 마지막 주말 정리&url=https://shonsubong.github.io/sonslab-blog/posts/2026-03-28-pm22-ai-tech-news.html"
+    <a href="https://twitter.com/intent/tweet?text=테슬라 콜 7시간 전 — 오늘 밤엔 엔비디아 Ising과 퀀텀 얘기나 하자&url=https://shonsubong.github.io/sonslab-blog/posts/2026-04-22-pm22-ai-tech-news.html"
        class="share-btn" target="_blank" rel="noopener" aria-label="X(Twitter)에 공유">
         <span>X</span>
     </a>
-    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://shonsubong.github.io/sonslab-blog/posts/2026-03-28-pm22-ai-tech-news.html"
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://shonsubong.github.io/sonslab-blog/posts/2026-04-22-pm22-ai-tech-news.html"
        class="share-btn" target="_blank" rel="noopener" aria-label="LinkedIn에 공유">
         <span>in</span>
     </a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://shonsubong.github.io/sonslab-blog/posts/2026-03-28-pm22-ai-tech-news.html"
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://shonsubong.github.io/sonslab-blog/posts/2026-04-22-pm22-ai-tech-news.html"
        class="share-btn" target="_blank" rel="noopener" aria-label="Facebook에 공유">
         <span>f</span>
     </a>
-    <button type="button" class="share-btn share-copy" id="share-copy-btn" data-url="https://shonsubong.github.io/sonslab-blog/posts/2026-03-28-pm22-ai-tech-news.html" aria-label="링크 복사">
+    <button type="button" class="share-btn share-copy" id="share-copy-btn" data-url="https://shonsubong.github.io/sonslab-blog/posts/2026-04-22-pm22-ai-tech-news.html" aria-label="링크 복사">
         <span>🔗 링크 복사</span>
     </button>
 </div>
     
 <nav class="post-nav-bottom" aria-label="이전/다음 글">
-    <a href="2026-03-24-pm23-ai-tech-news.html" class="post-nav-link prev">
+    <a href="2026-04-22-pm17-ai-tech-news.html" class="post-nav-link prev">
         <span class="post-nav-label">← 이전 글</span>
-        <span class="post-nav-title">GPT-5.3 탈환, Claude 차기 모델 루머, 마이크론 D-1 — GTC 일주일 뒤의 풍경</span>
+        <span class="post-nav-title">Claude Code가 Pro 플랜에서 사라진다? — 유료 구독자 입장에서 본 앤트로픽의 조용한 테스트</span>
     </a>
-    <a href="2026-03-31-pm23-ai-tech-news.html" class="post-nav-link next">
+    <a href="2026-04-23-am06-ai-tech-news.html" class="post-nav-link next">
         <span class="post-nav-label">다음 글 →</span>
-        <span class="post-nav-title">3월을 닫는 밤 — GTC부터 HBM5까지, 1분기를 한 번에 세우고 4월을 본다</span>
+        <span class="post-nav-title">테슬라 자동차 마진 21.1% — &#x27;17% 바닥선&#x27;만 보라던 내가 멋쩍어지는 아침</span>
     </a>
 </nav>
     
 <section class="related-posts" aria-label="최근 다른 리포트">
     <div class="related-posts-label">최근 다른 리포트</div>
-    <ul class="related-list"><li><a href="2026-04-23-am06-ai-tech-news.html"><span class="related-title">테슬라 자동차 마진 21.1% — &#x27;17% 바닥선&#x27;만 보라던 내가 멋쩍어지는 아침</span><span class="related-date">2026-04-23 · 새벽 리포트 · 06:22</span></a></li><li><a href="2026-04-22-pm22-ai-tech-news.html"><span class="related-title">테슬라 콜 7시간 전 — 오늘 밤엔 엔비디아 Ising과 퀀텀 얘기나 하자</span><span class="related-date">2026-04-22 · 저녁 마감 · 22:08</span></a></li><li><a href="2026-04-22-pm17-ai-tech-news.html"><span class="related-title">Claude Code가 Pro 플랜에서 사라진다? — 유료 구독자 입장에서 본 앤트로픽의 조용한 테스트</span><span class="related-date">2026-04-22 · 오후 브리핑 · 17:14</span></a></li><li><a href="2026-04-22-pm12-ai-tech-news.html"><span class="related-title">SK하이닉스 실적 3시간 전 — 이익률 70% 구간, 오늘 본게임</span><span class="related-date">2026-04-22 · 오전 브리핑 · 12:18</span></a></li><li><a href="2026-04-22-am06-ai-tech-news.html"><span class="related-title">테슬라 실적 디데이 — 자동차 마진 17% 바닥선 하나만 보면 된다</span><span class="related-date">2026-04-22 · 새벽 리포트 · 06:12</span></a></li></ul>
+    <ul class="related-list"><li><a href="2026-04-23-am06-ai-tech-news.html"><span class="related-title">테슬라 자동차 마진 21.1% — &#x27;17% 바닥선&#x27;만 보라던 내가 멋쩍어지는 아침</span><span class="related-date">2026-04-23 · 새벽 리포트 · 06:22</span></a></li><li><a href="2026-04-21-pm22-ai-tech-news.html"><span class="related-title">테슬라 실적 이브 — 바클레이스 $360, 월가가 셋으로 갈라진 화요일 밤</span><span class="related-date">2026-04-21 · 저녁 마감 · 22:14</span></a></li><li><a href="2026-04-21-pm17-ai-tech-news.html"><span class="related-title">아마존, Anthropic에 250억 달러 추가 — Trainium 5GW 확보가 더 크다</span><span class="related-date">2026-04-21 · 오후 브리핑 · 17:18</span></a></li><li><a href="2026-04-21-pm12-ai-tech-news.html"><span class="related-title">테슬라 실적 D-1 — 인도 미스·재고 5만대·Terafab 한 줄, 점심에 정리</span><span class="related-date">2026-04-21 · 오전 브리핑 · 12:24</span></a></li><li><a href="2026-04-21-am06-ai-tech-news.html"><span class="related-title">SK하이닉스 D-2, 영업이익 40조·목표주가 200만원 줄상향 — 화요일 새벽 메모</span><span class="related-date">2026-04-21 · 새벽 리포트 · 06:18</span></a></li></ul>
 </section>
 </article>
 
