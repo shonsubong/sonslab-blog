@@ -7,6 +7,12 @@
         <priority>1.0</priority>
     </url>
     <url>
+        <loc>https://shonsubong.github.io/sonslab-blog/posts/2026-04-23-pm12-ai-tech-news.html</loc>
+        <lastmod>2026-04-23</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://shonsubong.github.io/sonslab-blog/posts/2026-04-23-am06-ai-tech-news.html</loc>
         <lastmod>2026-04-23</lastmod>
         <changefreq>monthly</changefreq>
@@ -368,6 +374,12 @@
     </url>
     <url>
         <loc>https://shonsubong.github.io/sonslab-blog/posts/COWORK_AUTOBUILD_SETUP.html</loc>
+        <lastmod>2026-04-23</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://shonsubong.github.io/sonslab-blog/posts/WRITING_NOTES.html</loc>
         <lastmod>2026-04-23</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
