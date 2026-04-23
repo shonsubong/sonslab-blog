@@ -104,7 +104,7 @@
             
             <span></span>
             <span>·</span>
-            <span>3분 읽기</span>
+            <span>4분 읽기</span>
         </div>
     </div>
     
@@ -119,7 +119,11 @@
 <li><a href="#2026-04-22">페르소나 보정 (2026-04-22 확정)</a></li>
 <li><a href="#2026-04-22_1">취재 범위 확장 (2026-04-22 지시)</a></li>
 <li><a href="#_1">기록 누적 규칙</a></li>
-<li><a href="#_2">변경 이력</a></li>
+<li><a href="#2026-04-23">한국 국내장 데이터 검증 규칙 (2026-04-23 확정)</a><ul>
+<li><a href="#_2">규칙</a></li>
+</ul>
+</li>
+<li><a href="#_3">변경 이력</a></li>
 </ul>
 </li>
 </ul>
@@ -181,9 +185,54 @@ SKILL.md(uploads/SKILL.md, read-only)를 보완하는 <strong>살아있는 메�
 <li>기존 항목과 충돌하면 최신 지시가 우선</li>
 <li>월 1회 이상 누적분 정리 필요</li>
 </ul>
-<h2 id="_2">변경 이력</h2>
+<hr />
+<h2 id="2026-04-23">한국 국내장 데이터 검증 규칙 (2026-04-23 확정)</h2>
+<p><strong>배경:</strong> 4/23 pm17 포스트에서 KOSPI 마감가·SK하이닉스·삼성전자 등락률을 장중 intraday 스냅샷(12시 57분 기준 -0.71%) 기준으로 잘못 기술. 실제로는 KOSPI 6,417.93 사상 최고 마감, SK하이닉스 +3.19%, 삼성전자 +3.45%로 동반 강세였음. 매크로·해외 뉴스 페어링에 집중하다 국내장 시세 확인을 소홀히 한 사고.</p>
+<h3 id="_2">규칙</h3>
+<ol>
+<li><strong>한국장 시세·수급 언급 시 반드시 종가 기준 데이터 2건 이상 교차 확인</strong></li>
+<li>지수(KOSPI/KOSDAQ), 개별 종목(SK하이닉스, 삼성전자 등) 등락률은 <strong>intraday 수치 사용 금지</strong></li>
+<li>서로 다른 매체(연합·뉴스핌·서울경제·톱스타뉴스·한경 등) 2건 이상에서 같은 종가·등락률을 교차 확인한 후에만 인용</li>
+<li>
+<p>한 매체에 장중 스냅샷 숫자만 있으면 "장중 ~" 표기로 명시하고, 종가 확정 뒤 포스트에서 반드시 정정</p>
+</li>
+<li>
+<p><strong>pm17·pm22 포스트는 KRX 장 마감(15:30) 이후 작성이 원칙</strong></p>
+</li>
+<li>pm17 (17시대): 종가 확정된 상태. 반드시 종가 기준으로 쓴다</li>
+<li>pm22 (22시대): 미국장 개장 직전. 한국장 종가 + 미국 프리마켓 둘 다 확인</li>
+<li>
+<p>pm12 (12시대): 오전 장중 반응은 쓰되, "오전 중 ~", "점심 현재 ~" 등 명시적 시간 한정 표현 사용</p>
+</li>
+<li>
+<p><strong>실적 발표일 당일 포스트 주의</strong></p>
+</li>
+<li>실적 당일은 장중 변동성이 크고, 오전 한 방향 → 오후 반전이 자주 나옴</li>
+<li>pm12에서 방향성 단정 금지 ("밀렸다/올랐다" 등). "오전엔 ~ 움직임, 오후 반응은 마감 보고" 식으로 여지 남기기</li>
+<li>
+<p>pm17에서는 반드시 종가로 최종 정리, pm12 판단과 어긋났다면 <strong>솔직히 정정</strong> (페르소나 톤과 일치)</p>
+</li>
+<li>
+<p><strong>외국인 수급 숫자</strong></p>
+</li>
+<li>"외국인 순매수 N조" 같은 숫자는 <strong>일간</strong> vs <strong>누적</strong> 구분 필수</li>
+<li>기사에 "4월 1일~22일 누적" 같은 기간이 붙어 있으면 그 기간 명시</li>
+<li>
+<p>당일 순매수/순매도 데이터는 KRX 공시 기반 매체(연합·뉴스핌·한경)에서 교차 확인</p>
+</li>
+<li>
+<p><strong>체크리스트 (pm17·pm22 포스트 작성 전)</strong></p>
+</li>
+<li>[ ] KOSPI·KOSDAQ 종가, 전일대비 등락률 (2개 소스 교차)</li>
+<li>[ ] 언급할 개별 종목 종가·등락률 (2개 소스 교차)</li>
+<li>[ ] 외인·개인·기관 순매수/순매도 (당일 기준인지 누적 기준인지)</li>
+<li>[ ] 실적 발표 당일이라면 pm12 본인 포스트에 방향성 단정 없었는지 재확인</li>
+</ol>
+<hr />
+<h2 id="_3">변경 이력</h2>
 <ul>
 <li>2026-04-22: 초기 생성. Max $200 페르소나 확정 + X thread/유명 팔로워 참고 의무화</li>
+<li>2026-04-23: 한국 국내장 데이터 검증 규칙 추가. pm17 SK하이닉스·삼성 등락률 오기(-1.9%/+1.0% → 실제 +3.19%/+3.45%) 정정 사고 기반</li>
 </ul>
     </div>
     
@@ -216,7 +265,7 @@ SKILL.md(uploads/SKILL.md, read-only)를 보완하는 <strong>살아있는 메�
     
 <section class="related-posts" aria-label="최근 다른 리포트">
     <div class="related-posts-label">최근 다른 리포트</div>
-    <ul class="related-list"><li><a href="2026-04-23-pm17-ai-tech-news.html"><span class="related-title">SK하이닉스는 -1.9%, 삼성은 +1.0% — 기록 실적에 밀리고 라이벌 기대감에 오른 장</span><span class="related-date">2026-04-23 · 오후 브리핑 · 17:08</span></a></li><li><a href="2026-04-23-pm12-ai-tech-news.html"><span class="related-title">SK하이닉스 분기 영업이익 37.6조 — 70% 마진 구간은 맞췄는데 시장 예상은 살짝 빗나갔다</span><span class="related-date">2026-04-23 · 오전 브리핑 · 12:18</span></a></li><li><a href="2026-04-23-am06-ai-tech-news.html"><span class="related-title">테슬라 자동차 마진 21.1% — &#x27;17% 바닥선&#x27;만 보라던 내가 멋쩍어지는 아침</span><span class="related-date">2026-04-23 · 새벽 리포트 · 06:22</span></a></li><li><a href="2026-04-22-pm22-ai-tech-news.html"><span class="related-title">테슬라 콜 7시간 전 — 오늘 밤엔 엔비디아 Ising과 퀀텀 얘기나 하자</span><span class="related-date">2026-04-22 · 저녁 마감 · 22:08</span></a></li><li><a href="2026-04-22-pm17-ai-tech-news.html"><span class="related-title">Claude Code가 Pro 플랜에서 사라진다? — Max $200 구독자 입장에서 본 앤트로픽의 조용한 테스트</span><span class="related-date">2026-04-22 · 오후 브리핑 · 17:14</span></a></li></ul>
+    <ul class="related-list"><li><a href="2026-04-23-pm17-ai-tech-news.html"><span class="related-title">KOSPI 사상 최고 6,417.93 — SK하이닉스·삼성 동반 +3%, 시장은 &#x27;3년 부족&#x27; 메시지 쪽에 섰다</span><span class="related-date">2026-04-23 · 오후 브리핑 · 17:12</span></a></li><li><a href="2026-04-23-pm12-ai-tech-news.html"><span class="related-title">SK하이닉스 분기 영업이익 37.6조 — 70% 마진 구간은 맞췄는데 시장 예상은 살짝 빗나갔다</span><span class="related-date">2026-04-23 · 오전 브리핑 · 12:18</span></a></li><li><a href="2026-04-23-am06-ai-tech-news.html"><span class="related-title">테슬라 자동차 마진 21.1% — &#x27;17% 바닥선&#x27;만 보라던 내가 멋쩍어지는 아침</span><span class="related-date">2026-04-23 · 새벽 리포트 · 06:22</span></a></li><li><a href="2026-04-22-pm22-ai-tech-news.html"><span class="related-title">테슬라 콜 7시간 전 — 오늘 밤엔 엔비디아 Ising과 퀀텀 얘기나 하자</span><span class="related-date">2026-04-22 · 저녁 마감 · 22:08</span></a></li><li><a href="2026-04-22-pm17-ai-tech-news.html"><span class="related-title">Claude Code가 Pro 플랜에서 사라진다? — Max $200 구독자 입장에서 본 앤트로픽의 조용한 테스트</span><span class="related-date">2026-04-22 · 오후 브리핑 · 17:14</span></a></li></ul>
 </section>
 </article>
 
