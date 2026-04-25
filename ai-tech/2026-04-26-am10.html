@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HW4도 흔들리는 금요일 오후 — 장비주는 종가까지 버텼나 — SONSLAB</title>
+    <title>DeepSeek V4의 MoE 라우팅이 H100을 두 배로 늘려놓는 법 — SONSLAB</title>
     <link rel="icon" href="../assets/logo.jpg">
     <link rel="alternate" type="application/atom+xml" title="SONSLAB Feed" href="../feed.xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,22 +11,22 @@
     <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/style.css">
-    <meta name="description" content="금요일 오후 장은 의외로 조용히 흘러갔다. Intel 훈풍이 아침 갭업으로 터지고 점심 무렵 테마 수급이 한 번 더 붙었는데, 그다음 오후엔 차익 실현이 조금씩 비치다가 마감까지 버틴 종목과 후반부에 밀린 종목이 갈렸다. 오늘 pm17은 세 줄만 본다. Tesla HW4 Plus 이슈, 국내 장비주 마감 톤, 다음 주 준비.">
+    <meta name="description" content="지난 며칠 동안 데일리에서 DeepSeek V4 공개와 GPT-5.5 가격 인하를 따로 다뤘다. 두 사건은 사실 한 흐름이다. 모델 학습 비용이 한 자릿수 백만 달러까지 내려오는 동안, 추론 비용이 그만큼 빠르게 떨어지지 않으면 의미가 없다. MoE(Mixture of Experts)는 추론 비용을 학습과 분리해서 떨어뜨리는 가장 현실적인 길이다.">
     <meta name="author" content="SONSLAB">
-    <link rel="canonical" href="https://shonsubong.github.io/sonslab-blog/posts/2026-04-24-pm17-ai-tech-news.html">
+    <link rel="canonical" href="https://shonsubong.github.io/sonslab-blog/ai-tech/2026-04-26-am10.html">
     <meta property="og:site_name" content="SONSLAB">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="HW4도 흔들리는 금요일 오후 — 장비주는 종가까지 버텼나">
-    <meta property="og:description" content="금요일 오후 장은 의외로 조용히 흘러갔다. Intel 훈풍이 아침 갭업으로 터지고 점심 무렵 테마 수급이 한 번 더 붙었는데, 그다음 오후엔 차익 실현이 조금씩 비치다가 마감까지 버틴 종목과 후반부에 밀린 종목이 갈렸다. 오늘 pm17은 세 줄만 본다. Tesla HW4 Plus 이슈, 국내 장비주 마감 톤, 다음 주 준비.">
-    <meta property="og:url" content="https://shonsubong.github.io/sonslab-blog/posts/2026-04-24-pm17-ai-tech-news.html">
-    <meta property="og:image" content="https://shonsubong.github.io/sonslab-blog/assets/og/2026-04-24-pm17-ai-tech-news.png">
+    <meta property="og:title" content="DeepSeek V4의 MoE 라우팅이 H100을 두 배로 늘려놓는 법">
+    <meta property="og:description" content="지난 며칠 동안 데일리에서 DeepSeek V4 공개와 GPT-5.5 가격 인하를 따로 다뤘다. 두 사건은 사실 한 흐름이다. 모델 학습 비용이 한 자릿수 백만 달러까지 내려오는 동안, 추론 비용이 그만큼 빠르게 떨어지지 않으면 의미가 없다. MoE(Mixture of Experts)는 추론 비용을 학습과 분리해서 떨어뜨리는 가장 현실적인 길이다.">
+    <meta property="og:url" content="https://shonsubong.github.io/sonslab-blog/ai-tech/2026-04-26-am10.html">
+    <meta property="og:image" content="https://shonsubong.github.io/sonslab-blog/assets/og/2026-04-26-am10.png">
     <meta property="og:locale" content="ko_KR">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="HW4도 흔들리는 금요일 오후 — 장비주는 종가까지 버텼나">
-    <meta name="twitter:description" content="금요일 오후 장은 의외로 조용히 흘러갔다. Intel 훈풍이 아침 갭업으로 터지고 점심 무렵 테마 수급이 한 번 더 붙었는데, 그다음 오후엔 차익 실현이 조금씩 비치다가 마감까지 버틴 종목과 후반부에 밀린 종목이 갈렸다. 오늘 pm17은 세 줄만 본다. Tesla HW4 Plus 이슈, 국내 장비주 마감 톤, 다음 주 준비.">
-    <meta name="twitter:image" content="https://shonsubong.github.io/sonslab-blog/assets/og/2026-04-24-pm17-ai-tech-news.png">
-    <meta property="article:published_time" content="2026-04-24T17:22:00+09:00">
-    <meta property="article:modified_time" content="2026-04-24T17:22:00+09:00">
+    <meta name="twitter:title" content="DeepSeek V4의 MoE 라우팅이 H100을 두 배로 늘려놓는 법">
+    <meta name="twitter:description" content="지난 며칠 동안 데일리에서 DeepSeek V4 공개와 GPT-5.5 가격 인하를 따로 다뤘다. 두 사건은 사실 한 흐름이다. 모델 학습 비용이 한 자릿수 백만 달러까지 내려오는 동안, 추론 비용이 그만큼 빠르게 떨어지지 않으면 의미가 없다. MoE(Mixture of Experts)는 추론 비용을 학습과 분리해서 떨어뜨리는 가장 현실적인 길이다.">
+    <meta name="twitter:image" content="https://shonsubong.github.io/sonslab-blog/assets/og/2026-04-26-am10.png">
+    <meta property="article:published_time" content="2026-04-26T10:00:00+09:00">
+    <meta property="article:modified_time" content="2026-04-26T10:00:00+09:00">
     
 <script>
 (function() {
@@ -56,10 +56,10 @@
     } catch (e) {}
 })();
 </script>
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "HW4도 흔들리는 금요일 오후 — 장비주는 종가까지 버텼나", "description": "금요일 오후 장은 의외로 조용히 흘러갔다. Intel 훈풍이 아침 갭업으로 터지고 점심 무렵 테마 수급이 한 번 더 붙었는데, 그다음 오후엔 차익 실현이 조금씩 비치다가 마감까지 버틴 종목과 후반부에 밀린 종목이 갈렸다. 오늘 pm17은 세 줄만 본다. Tesla HW4 Plus 이슈, 국내 장비주 마감 톤, 다음 주 준비.", "url": "https://shonsubong.github.io/sonslab-blog/posts/2026-04-24-pm17-ai-tech-news.html", "mainEntityOfPage": "https://shonsubong.github.io/sonslab-blog/posts/2026-04-24-pm17-ai-tech-news.html", "inLanguage": "ko", "image": "https://shonsubong.github.io/sonslab-blog/assets/og/2026-04-24-pm17-ai-tech-news.png", "author": {"@type": "Person", "name": "SONSLAB"}, "publisher": {"@type": "Organization", "name": "SONSLAB", "logo": {"@type": "ImageObject", "url": "https://shonsubong.github.io/sonslab-blog/assets/logo.jpg"}}, "datePublished": "2026-04-24T17:22:00+09:00", "dateModified": "2026-04-24T17:22:00+09:00"}</script>
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "SONSLAB", "item": "https://shonsubong.github.io/sonslab-blog/"}, {"@type": "ListItem", "position": 2, "name": "글", "item": "https://shonsubong.github.io/sonslab-blog/#posts"}, {"@type": "ListItem", "position": 3, "name": "HW4도 흔들리는 금요일 오후 — 장비주는 종가까지 버텼나", "item": "https://shonsubong.github.io/sonslab-blog/posts/2026-04-24-pm17-ai-tech-news.html"}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "DeepSeek V4의 MoE 라우팅이 H100을 두 배로 늘려놓는 법", "description": "지난 며칠 동안 데일리에서 DeepSeek V4 공개와 GPT-5.5 가격 인하를 따로 다뤘다. 두 사건은 사실 한 흐름이다. 모델 학습 비용이 한 자릿수 백만 달러까지 내려오는 동안, 추론 비용이 그만큼 빠르게 떨어지지 않으면 의미가 없다. MoE(Mixture of Experts)는 추론 비용을 학습과 분리해서 떨어뜨리는 가장 현실적인 길이다.", "url": "https://shonsubong.github.io/sonslab-blog/ai-tech/2026-04-26-am10.html", "mainEntityOfPage": "https://shonsubong.github.io/sonslab-blog/ai-tech/2026-04-26-am10.html", "inLanguage": "ko", "image": "https://shonsubong.github.io/sonslab-blog/assets/og/2026-04-26-am10.png", "author": {"@type": "Person", "name": "SONSLAB"}, "publisher": {"@type": "Organization", "name": "SONSLAB", "logo": {"@type": "ImageObject", "url": "https://shonsubong.github.io/sonslab-blog/assets/logo.jpg"}}, "datePublished": "2026-04-26T10:00:00+09:00", "dateModified": "2026-04-26T10:00:00+09:00"}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "SONSLAB", "item": "https://shonsubong.github.io/sonslab-blog/"}, {"@type": "ListItem", "position": 2, "name": "글", "item": "https://shonsubong.github.io/sonslab-blog/#posts"}, {"@type": "ListItem", "position": 3, "name": "DeepSeek V4의 MoE 라우팅이 H100을 두 배로 늘려놓는 법", "item": "https://shonsubong.github.io/sonslab-blog/ai-tech/2026-04-26-am10.html"}]}</script>
 </head>
-<body class="post-page" data-category="daily">
+<body class="post-page" data-category="ai-tech">
     <div class="reading-progress" id="reading-progress" role="progressbar" aria-label="읽기 진행률"></div>
 
 <aside class="site-sidebar" id="site-sidebar" aria-label="사이트 메뉴">
@@ -71,8 +71,8 @@
         <div class="sidebar-section-label">카테고리</div>
         <ul class="sidebar-cat-list">
             <li><a href="../index.html" class="">홈 <span class="sidebar-cat-count">76</span></a></li>
-            <li><a href="../index.html#posts" class="active">데일리 브리핑 <span class="sidebar-cat-count">75</span></a></li>
-            <li><a href="../ai-tech/index.html" class="">AI 기술 딥다이브 <span class="sidebar-cat-count">1</span></a></li>
+            <li><a href="../index.html#posts" class="">데일리 브리핑 <span class="sidebar-cat-count">75</span></a></li>
+            <li><a href="../ai-tech/index.html" class="active">AI 기술 딥다이브 <span class="sidebar-cat-count">1</span></a></li>
             <li><a href="../index.html#about">About</a></li>
             <li><a href="../feed.xml">RSS</a></li>
         </ul>
@@ -133,27 +133,26 @@
 
 <article class="post-article">
     <div class="post-header">
-        <a href="../index.html" class="back-link">← 전체 글 목록</a>
-        <h1>HW4도 흔들리는 금요일 오후 — 장비주는 종가까지 버텼나</h1>
+        <a href="index.html" class="back-link">← AI 기술 목록</a>
+        <h1>DeepSeek V4의 MoE 라우팅이 H100을 두 배로 늘려놓는 법</h1>
         <div class="post-meta">
-            <span class="time-label">오후 브리핑</span>
-            <span>2026년 04월 24일 (금) · 17:22</span>
+            <span class="time-label">AI 딥다이브</span>
+            <span>2026년 04월 26일 (일) · 10:00</span>
             <span>·</span>
-            <span>5분 읽기</span>
+            <span>6분 읽기</span>
         </div>
     </div>
     
-<div class="day-series-wrap" aria-label="같은 날의 다른 브리핑">
-    <div class="day-series-label"><span class="dot"></span><span>2026년 04월 24일 (금)의 브리핑</span></div>
-    <div class="day-series"><a href="2026-04-24-am06-ai-tech-news.html" class="day-series-item"><span class="series-time">06:18</span><span class="series-label">새벽 리포트</span></a><a href="2026-04-24-pm12-ai-tech-news.html" class="day-series-item"><span class="series-time">12:17</span><span class="series-label">오전 브리핑</span></a><a href="#" class="day-series-item active" aria-current="page"><span class="series-time">17:22</span><span class="series-label">오후 브리핑</span></a><a href="2026-04-24-pm22-ai-tech-news.html" class="day-series-item"><span class="series-time">22:14</span><span class="series-label">저녁 마감</span></a></div>
-</div>
     <details class="post-toc" open><summary>목차</summary><div class="toc">
 <div class="toc">
 <ul>
-<li><a href="#hw4">HW4도 흔들리는 금요일 오후 — 장비주는 종가까지 버텼나</a><ul>
-<li><a href="#hw4-plus-hw3-hw4">HW4 Plus — HW3 다음은 HW4 차례인가</a></li>
-<li><a href="#_1">국내 장비주 — 오후엔 갭업 흔들림, 종가 톤은 유지</a></li>
-<li><a href="#429">다음 주 — 4/29 메가 이벤트, 포지션 재편 주말</a></li>
+<li><a href="#deepseek-v4-moe-h100">DeepSeek V4의 MoE 라우팅이 H100을 두 배로 늘려놓는 법</a><ul>
+<li><a href="#tldr">TL;DR</a></li>
+<li><a href="#moe">배경 — 왜 지금 MoE인가</a></li>
+<li><a href="#_1">핵심 메커니즘 — 토큰 라우팅</a></li>
+<li><a href="#30">코드로 보는 라우팅 — 30줄 의사코드</a></li>
+<li><a href="#_2">한계와 반론</a></li>
+<li><a href="#_3">현직 엔지니어 관점</a></li>
 </ul>
 </li>
 </ul>
@@ -162,69 +161,103 @@
 </div>
 </details>
     <div class="post-content">
-<h1 id="hw4">HW4도 흔들리는 금요일 오후 — 장비주는 종가까지 버텼나</h1>
-<p>금요일 오후 장은 의외로 조용히 흘러갔다. Intel 훈풍이 아침 갭업으로 터지고 점심 무렵 테마 수급이 한 번 더 붙었는데, 그다음 오후엔 차익 실현이 조금씩 비치다가 마감까지 버틴 종목과 후반부에 밀린 종목이 갈렸다. 오늘 pm17은 세 줄만 본다. Tesla HW4 Plus 이슈, 국내 장비주 마감 톤, 다음 주 준비.</p>
-<h2 id="hw4-plus-hw3-hw4">HW4 Plus — HW3 다음은 HW4 차례인가</h2>
-<p>어제(한국 시간 기준 오늘 새벽) Electrek에 붙은 기사 하나가 흥미롭다. Tesla가 <strong>HW4 Plus</strong>를 공개했는데, 메모리를 두 배로 늘린 사양이라고 한다. 스펙만 보면 HW4 대비 뚜렷한 업그레이드인데, 시장이 이걸 반가워하지 않는 쪽으로 받는 분위기다. (<a href="https://electrek.co/2026/04/23/tesla-hw4-plus-upgrade-will-hw4-follow-hw3/">Electrek — Tesla HW4 Plus upgrade</a>)</p>
-<p>기사 제목이 노골적이다. "<strong>Will HW4 follow HW3 to the grave?</strong>" 어제 어닝 콜에서 "HW3는 unsupervised FSD 불가 — 메모리 bandwidth가 HW4의 1/8"이라는 발언이 나온 직후에 HW4 Plus가 얹히니까, 논리적 질문이 따라붙는다. 지금 HW4를 달고 출고되는 차량도 2~3년 뒤 "Plus 아니면 안 된다"로 밀릴 가능성은 없나.</p>
-<p>Tesla 투자자 관점에서 이 이슈는 숫자보다 <strong>내러티브의 안정성</strong> 문제다. 작년까지 "구매한 FSD는 평생 보장"이라는 브랜드 프라미스였는데, 이걸 물리적 하드웨어 교체 요구로 번역하는 순간 잔여 가치(resale value)에 연쇄가 붙는다. 어제 새벽 포스트에서 마이크로 팩토리 세 이슈 풀어놨을 때는 HW3 한정 얘기였는데, Plus가 등장하면서 "HW4도 잠재적 전환 대상"이라는 라인이 추가로 열렸다. 주말 X 타임라인에 HW4 소유자들 우려 thread가 붙기 시작할 것 같다.</p>
-<p>프리마켓(한국 시간 기준 오후 4시대)은 <strong>-1.2% 근방</strong>에서 움직였다. 어제 종가 $372.46 기준. HW4 Plus 이슈 자체가 금요일 시초가를 크게 흔드는 재료는 아닌데, 어제 -3.9% 뒤에 쿠션 없이 한 번 더 밀리는 그림이라면 주말 심리에 눌린다. 밤 10시 30분 정규장 개장 보고 pm22에서 다시 정리한다. (<a href="https://public.com/stocks/tsla/pre-market">TSLA 프리마켓 — Public.com</a>)</p>
-<h2 id="_1">국내 장비주 — 오후엔 갭업 흔들림, 종가 톤은 유지</h2>
-<p>점심 포스트에서 "테마 수급이 종가까지 살아남는지가 오늘의 테스트"라고 썼다. 결과부터 말하면, <strong>업종별로 쪼개진 장</strong>이 됐다.</p>
+<h1 id="deepseek-v4-moe-h100">DeepSeek V4의 MoE 라우팅이 H100을 두 배로 늘려놓는 법</h1>
+<h2 id="tldr">TL;DR</h2>
 <ul>
-<li><strong>ALD·CVD 장비 쪽(원익IPS·주성엔지니어링)</strong>: 오전 갭업 폭을 일부 반납했지만 상승 기조는 종가까지 유지. Intel 파일럿 라인 수주 가시화 리포트 문구가 주 후반부터 증권사 여러 곳에서 겹친 영향이 크다</li>
-<li><strong>HBM 후공정(한미반도체)</strong>: 상대적으로 조용한 움직임. HBM은 어제 SK하이닉스 콜 반영이 이미 끝난 상태라 Intel 훈풍의 2차 수혜로는 직접 연결되지 않는 자리</li>
-<li><strong>세정·검사·계측</strong>: 테마에서 빠져 있는 구간 그대로. Intel이 이쪽은 자체 내재화 비중이 높다는 구조적 이유라 테마 편입에 시간이 더 걸린다</li>
+<li>DeepSeek V4(4/24 공개)는 671B 파라미터를 가졌지만 토큰당 활성 파라미터는 37B에 불과한 MoE 구조다.</li>
+<li>핵심은 "expert routing" — 같은 GPU 클러스터로 dense 모델 대비 거의 두 배의 유효 처리량을 뽑아낸다.</li>
+<li>온디바이스에는 직접 못 가지만, 라우팅 아이디어 자체는 엣지 추론 최적화에 그대로 옮길 수 있다.</li>
 </ul>
-<p>종가 수치는 KRX 공식 확정 이후 장 후 보도 올라오면 pm22에서 다시 인용한다. 오늘 pm17 단계에서는 "장 마감 방향만 본다"로 정리한다. 점심 때 "방향성 단정 금지"라고 쓴 뒤에 오후엔 정반대로 숫자 확정 들이미는 건 앞뒤가 안 맞는 톤이라, 여기서는 의식적으로 선을 그어둔다.</p>
-<p>회사 안에서 보는 관점으로 한 줄 더 붙이면, TEM/SEM 검사 장비 쪽은 "발주 재료는 붙었으나 아직 검증 라인엔 안 왔다"가 이번 주 체감이다. Intel 18A 실제 양산 볼륨이 뚜렷해지는 건 여름 이후로 보인다. (이 부분은 평일 회사 안에서 본 인상이고, 구체 발주 건수·스펙은 쓸 수 없다.)</p>
-<h2 id="429">다음 주 — 4/29 메가 이벤트, 포지션 재편 주말</h2>
-<p>다음 주 큰 거는 하나로 모인다. <strong>4월 29일(수) Microsoft·Alphabet·Meta·Amazon 어닝 + FOMC 같은 날</strong>. 네 빅테크가 2026년 CapEx 가이던스를 어디까지 올리느냐가 Nvidia·AMD·SK하이닉스·삼성의 하반기 수주 강도를 결정한다. Alphabet은 올해 2025 대비 거의 2배 CapEx가 이미 예고됐고, Meta는 $115~135B 연간 가이던스가 나와 있다. 이 숫자들이 <strong>더 올라가면</strong> 수급이 한 번 더 반도체로 몰리고, <strong>유지되거나 내려가면</strong> "show me the money" 쪽으로 흐름이 쉬프트한다. (<a href="https://www.home.saxo/content/articles/equities/mag-7-earnings-preview-april-2026-22042026">Saxo — Mag 7 Earnings Preview April 2026</a>)</p>
-<p>FOMC와 같은 날이라는 점도 변수. 금리 동향이 어긋난 해석과 겹치면 빅테크 개별 숫자가 좋아도 시장 반응이 엉뚱하게 붙는다. 주말 동안 컨센서스 업데이트 한 번 돌려볼 생각이다.</p>
+<h2 id="moe">배경 — 왜 지금 MoE인가</h2>
+<p>지난 며칠 동안 데일리에서 DeepSeek V4 공개와 GPT-5.5 가격 인하를 따로 다뤘다. 두 사건은 사실 한 흐름이다. 모델 학습 비용이 한 자릿수 백만 달러까지 내려오는 동안, 추론 비용이 그만큼 빠르게 떨어지지 않으면 의미가 없다. <strong>MoE(Mixture of Experts)</strong>는 추론 비용을 학습과 분리해서 떨어뜨리는 가장 현실적인 길이다.</p>
+<p>dense 모델은 모든 토큰이 모든 파라미터를 통과한다. 671B 모델이라면 토큰 한 개당 671B만큼의 행렬 곱이 필요하다. MoE는 다르다. 라우터(작은 신경망)가 <strong>각 토큰마다 어느 expert를 쓸지 결정</strong>하고, 선택된 expert만 활성화된다. DeepSeek V4의 경우 256개 expert 중 8개만 토큰당 활성 — 그래서 유효 파라미터가 37B로 떨어진다.</p>
+<h2 id="_1">핵심 메커니즘 — 토큰 라우팅</h2>
+<pre class="codehilite"><code>[입력 토큰] ──&gt; [Router (linear + softmax)] ──&gt; top-k expert 선택
+                          │
+                          ▼
+        ┌──────────┬──────────┬──────────┬──────────┐
+        │ Expert 1 │ Expert 2 │   ...    │ Expert N │
+        └──────────┴──────────┴──────────┴──────────┘
+                          │
+                          ▼  (활성된 expert 출력의 가중합)
+                       [출력]
+</code></pre>
+
+<p>라우터는 토큰 임베딩을 받아 expert별 점수를 매기고, 상위 k개(보통 1~2개)를 선택한다. 어려운 점은 두 가지다.</p>
+<ol>
+<li><strong>로드 밸런싱</strong> — 라우터가 한쪽 expert로만 토큰을 몰면 GPU 활용률이 망가진다. DeepSeek V4는 auxiliary loss + sequence-level balance 손실을 함께 써서 expert별 활성 빈도를 평탄화한다.</li>
+<li><strong>통신 비용</strong> — expert가 여러 GPU에 흩어져 있으면 토큰을 해당 GPU로 보내고(<code>all-to-all</code>) 결과를 다시 받아오는 통신이 dense 대비 두세 배 든다. DeepSeek는 이 부분을 <strong>node 내부 라우팅을 우선시(<code>device-limited routing</code>)</strong>해서 inter-node 통신을 절반 가까이 줄였다고 보고한다.</li>
+</ol>
+<h2 id="30">코드로 보는 라우팅 — 30줄 의사코드</h2>
+<p>실제 DeepSeek 구현은 PyTorch 기반이고 통신 최적화가 핵심이지만, 라우팅 자체의 본질은 단순하다.</p>
+<pre class="codehilite"><code class="language-python">import torch
+import torch.nn as nn
+import torch.nn.functional as F
+
+class TopKRouter(nn.Module):
+    def __init__(self, hidden_dim, num_experts, top_k=2):
+        super().__init__()
+        self.gate = nn.Linear(hidden_dim, num_experts, bias=False)
+        self.top_k = top_k
+
+    def forward(self, x):  # x: [batch, seq, hidden]
+        logits = self.gate(x)                       # [B, S, E]
+        scores = F.softmax(logits, dim=-1)
+        top_w, top_idx = scores.topk(self.top_k, dim=-1)  # [B, S, k]
+        # 정규화: 선택된 k개만 가중치 합이 1이 되도록
+        top_w = top_w / top_w.sum(dim=-1, keepdim=True)
+        return top_w, top_idx
+
+# 추론 단계: 토큰별로 선택된 expert만 forward
+def moe_forward(x, router, experts):
+    weights, indices = router(x)
+    out = torch.zeros_like(x)
+    for k in range(weights.size(-1)):
+        for e in range(len(experts)):
+            mask = (indices[..., k] == e)
+            if mask.any():
+                out[mask] += experts[e](x[mask]) * weights[..., k][mask].unsqueeze(-1)
+    return out
+</code></pre>
+
+<p>실전 구현은 이 이중 루프를 GPU 친화적으로 풀어야 한다 — <code>dispatch</code> / <code>combine</code> 커뮤니케이션 커널이 핵심이고, <a href="https://arxiv.org/abs/2401.06066">DeepSeek-MoE 논문</a>과 <a href="https://github.com/databricks/megablocks">Megablocks</a>가 좋은 참고다.</p>
+<h2 id="_2">한계와 반론</h2>
+<ul>
+<li><strong>메모리는 줄지 않는다.</strong> expert가 모두 GPU에 올라가 있어야 하므로 671B 모델은 여전히 671B만큼의 VRAM을 잡아먹는다. 추론 <em>연산</em>은 줄지만 <em>메모리</em>는 그대로다.</li>
+<li><strong>라우팅 불안정성.</strong> 작은 모델에서는 expert 활용 편중이 심하다. DeepSeek가 잘 되는 이유 중 하나는 모델이 충분히 크기 때문이다 (<a href="https://arxiv.org/abs/2101.03961">Switch Transformer 분석</a>에서 비슷한 관찰).</li>
+<li><strong>벤치마크 함정.</strong> "활성 파라미터 37B = dense 37B와 동급"은 거짓에 가깝다. expert 다양성 덕분에 표현력은 더 크지만, 짧은 컨텍스트·간단한 태스크에서는 dense 7B보다 못한 경우도 보고된다 (<a href="https://magazine.sebastianraschka.com/p/sparse-llms-2026">Sebastian Raschka의 분석</a>).</li>
+</ul>
+<h2 id="_3">현직 엔지니어 관점</h2>
+<p>반도체 현장에서 MoE 라우팅 아이디어는 <strong>온디바이스 추론 최적화</strong>로 그대로 옮길 수 있다. 모바일 NPU에 dense 7B 모델을 통째로 올리는 건 메모리·전력 모두 부담이지만, "라우터가 5개 task-specific subnetwork 중 하나를 고르고 그것만 메모리로 swap-in"하는 구조는 충분히 가능하다. Apple이 iOS 자체 모델에 비슷한 패턴을 쓴다는 관찰이 <a href="https://x.com/karpathy">@karpathy의 X 노트</a>에서도 언급된 적이 있다. DeepSeek가 보여주는 건 결국 "조건부 계산이 통한다"는 점이고, 이게 통하면 엣지에서 모델 크기를 늘릴 여지가 한 단계 더 생긴다. 개인 PC에서 Claude Code 쓰면서 항상 답답한 토큰 throughput이, 이런 라우팅이 클라이언트단까지 내려오는 날에는 좀 풀릴 것 같다.</p>
 <hr />
-<p>금요일은 여기까지. 한국장 종가 확정·TSLA 정규장 개장 반응은 pm22에서 이어간다.</p>
-<p>Sources:
-- <a href="https://electrek.co/2026/04/23/tesla-hw4-plus-upgrade-will-hw4-follow-hw3/">Electrek — Tesla HW4 Plus 공개; HW4 후속 전환 우려 제기</a>
-- <a href="https://www.teslaoracle.com/2026/04/23/tesla-hw3-vehicles-cant-achieve-unsupervised-fsd-v14-lite-to-be-released-by-june-musk-on-q1-2026-earnings-call/">Tesla Oracle — Q1 2026 콜 HW3 unsupervised FSD 불가 발언, V14-lite 6월 배포</a>
-- <a href="https://public.com/stocks/tsla/pre-market">TSLA 프리마켓 — Public.com</a>
-- <a href="https://www.trendforce.com/news/2026/04/20/news-intel-foundry-said-to-boost-equipment-orders-by-50-yoy-14a-may-draw-major-customers-by-year-end/">TrendForce — Intel Foundry 장비 발주 전년비 +50%, 14A 연말 고객 유치 전망</a>
-- <a href="https://www.home.saxo/content/articles/equities/mag-7-earnings-preview-april-2026-22042026">Saxo — Mag 7 Earnings Preview April 2026, 4/29 4사 어닝 + FOMC 동시</a></p>
+<p><strong>더 읽을거리</strong></p>
+<ul>
+<li><a href="https://arxiv.org/abs/2412.19437">DeepSeek-V3 Technical Report</a> — V4의 직전 버전. 라우팅 디테일이 가장 자세하다.</li>
+<li><a href="https://github.com/databricks/megablocks">Megablocks</a> — MoE를 GPU에서 실제로 효율적으로 돌리는 구현.</li>
+<li><a href="https://arxiv.org/abs/2101.03961">Switch Transformer (Google)</a> — top-1 라우팅의 원조.</li>
+</ul>
     </div>
     
 <div class="post-share">
     <span class="share-label">공유하기</span>
-    <a href="https://twitter.com/intent/tweet?text=HW4도 흔들리는 금요일 오후 — 장비주는 종가까지 버텼나&url=https://shonsubong.github.io/sonslab-blog/posts/2026-04-24-pm17-ai-tech-news.html"
+    <a href="https://twitter.com/intent/tweet?text=DeepSeek V4의 MoE 라우팅이 H100을 두 배로 늘려놓는 법&url=https://shonsubong.github.io/sonslab-blog/ai-tech/2026-04-26-am10.html"
        class="share-btn" target="_blank" rel="noopener" aria-label="X(Twitter)에 공유">
         <span>X</span>
     </a>
-    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://shonsubong.github.io/sonslab-blog/posts/2026-04-24-pm17-ai-tech-news.html"
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://shonsubong.github.io/sonslab-blog/ai-tech/2026-04-26-am10.html"
        class="share-btn" target="_blank" rel="noopener" aria-label="LinkedIn에 공유">
         <span>in</span>
     </a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://shonsubong.github.io/sonslab-blog/posts/2026-04-24-pm17-ai-tech-news.html"
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://shonsubong.github.io/sonslab-blog/ai-tech/2026-04-26-am10.html"
        class="share-btn" target="_blank" rel="noopener" aria-label="Facebook에 공유">
         <span>f</span>
     </a>
-    <button type="button" class="share-btn share-copy" id="share-copy-btn" data-url="https://shonsubong.github.io/sonslab-blog/posts/2026-04-24-pm17-ai-tech-news.html" aria-label="링크 복사">
+    <button type="button" class="share-btn share-copy" id="share-copy-btn" data-url="https://shonsubong.github.io/sonslab-blog/ai-tech/2026-04-26-am10.html" aria-label="링크 복사">
         <span>🔗 링크 복사</span>
     </button>
 </div>
     
-<nav class="post-nav-bottom" aria-label="이전/다음 글">
-    <a href="2026-04-24-pm12-ai-tech-news.html" class="post-nav-link prev">
-        <span class="post-nav-label">← 이전 글</span>
-        <span class="post-nav-title">Intel 파운드리 훈풍, 국내 장비주로 언제 오나 — 점심 정리</span>
-    </a>
-    <a href="2026-04-24-pm22-ai-tech-news.html" class="post-nav-link next">
-        <span class="post-nav-label">다음 글 →</span>
-        <span class="post-nav-title">테슬라×인텔 14A, 하루 종일 안 풀었던 이야기 — 금요일 밤 정리</span>
-    </a>
-</nav>
     
-<section class="related-posts" aria-label="최근 다른 리포트">
-    <div class="related-posts-label">최근 다른 리포트</div>
-    <ul class="related-list"><li><a href="2026-04-26-am06-ai-tech-news.html"><span class="related-title">일요일 새벽 — 4월 한 달, 오픈웨이트가 진짜로 자리를 잡았다</span><span class="related-date">2026-04-26 · 새벽 리포트 · 06:08</span></a></li><li><a href="2026-04-25-pm22-ai-tech-news.html"><span class="related-title">토요일 밤 — 4/29까지 4일, 무엇을 보고 들어갈까</span><span class="related-date">2026-04-25 · 저녁 마감 · 22:24</span></a></li><li><a href="2026-04-25-pm17-ai-tech-news.html"><span class="related-title">토요일 오후 — 한국 시총이 영국까지 1,400억 달러 남았다</span><span class="related-date">2026-04-25 · 오후 브리핑 · 17:14</span></a></li><li><a href="2026-04-25-pm12-ai-tech-news.html"><span class="related-title">토요일 점심 — DeepSeek V4가 또 판을 흔들었다</span><span class="related-date">2026-04-25 · 오전 브리핑 · 12:18</span></a></li><li><a href="2026-04-25-am06-ai-tech-news.html"><span class="related-title">주말 첫 새벽 — 원전 IPO가 1조 넘게 들어왔다</span><span class="related-date">2026-04-25 · 새벽 리포트 · 06:12</span></a></li></ul>
-</section>
 </article>
 
 

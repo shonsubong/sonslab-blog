@@ -56,12 +56,39 @@
 </script>
     <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "SONSLAB", "description": "반도체 현직 수석 엔지니어가 하루 4번, 새벽·오전·오후·저녁마다 정리하는 AI·빅테크·시장 동향. 뉴스가 아니라 해석을 씁니다.", "url": "https://shonsubong.github.io/sonslab-blog/", "inLanguage": "ko", "potentialAction": {"@type": "SearchAction", "target": {"@type": "EntryPoint", "urlTemplate": "https://shonsubong.github.io/sonslab-blog/?q={search_term_string}"}, "query-input": "required name=search_term_string"}}</script>
 </head>
-<body>
+<body data-category="daily">
+
+<aside class="site-sidebar" id="site-sidebar" aria-label="사이트 메뉴">
+    <a href="index.html" class="sidebar-brand">
+        <img src="assets/logo.jpg" alt="SONSLAB" onerror="this.style.display='none'">
+        <span class="name">SONSLAB</span>
+    </a>
+    <div class="sidebar-section">
+        <div class="sidebar-section-label">카테고리</div>
+        <ul class="sidebar-cat-list">
+            <li><a href="index.html" class="active">홈 <span class="sidebar-cat-count">76</span></a></li>
+            <li><a href="index.html#posts" class="">데일리 브리핑 <span class="sidebar-cat-count">75</span></a></li>
+            <li><a href="ai-tech/index.html" class="">AI 기술 딥다이브 <span class="sidebar-cat-count">1</span></a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="feed.xml">RSS</a></li>
+        </ul>
+    </div>
+    <div class="sidebar-section">
+        <div class="sidebar-section-label">데일리 최근 글</div>
+        <ul class="sidebar-recent"><li><a href="posts/2026-04-26-am06-ai-tech-news.html"><span class="r-title">일요일 새벽 — 4월 한 달, 오픈웨이트가 진짜로 자리를 잡았다</span><span class="r-meta">2026-04-26 · 새벽 리포트</span></a></li><li><a href="posts/2026-04-25-pm22-ai-tech-news.html"><span class="r-title">토요일 밤 — 4/29까지 4일, 무엇을 보고 들어갈까</span><span class="r-meta">2026-04-25 · 저녁 마감</span></a></li><li><a href="posts/2026-04-25-pm17-ai-tech-news.html"><span class="r-title">토요일 오후 — 한국 시총이 영국까지 1,400억 달러 남았다</span><span class="r-meta">2026-04-25 · 오후 브리핑</span></a></li><li><a href="posts/2026-04-25-pm12-ai-tech-news.html"><span class="r-title">토요일 점심 — DeepSeek V4가 또 판을 흔들었다</span><span class="r-meta">2026-04-25 · 오전 브리핑</span></a></li><li><a href="posts/2026-04-25-am06-ai-tech-news.html"><span class="r-title">주말 첫 새벽 — 원전 IPO가 1조 넘게 들어왔다</span><span class="r-meta">2026-04-25 · 새벽 리포트</span></a></li></ul>
+    </div>
+    <div class="sidebar-section">
+        <div class="sidebar-section-label">AI 기술 최근 글</div>
+        <ul class="sidebar-recent"><li><a href="ai-tech/2026-04-26-am10.html"><span class="r-title">DeepSeek V4의 MoE 라우팅이 H100을 두 배로 늘려놓는 법</span><span class="r-meta">2026-04-26 · AI 딥다이브</span></a></li></ul>
+    </div>
+</aside>
+<div class="sidebar-backdrop" id="sidebar-backdrop" aria-hidden="true"></div>
+
 
 <div class="nameplate" data-only="broadsheet">
     <div class="np-inner">
         <div class="np-left">
-            <div class="np-meta">VOL. 44 · No. 40</div>
+            <div class="np-meta">VOL. 44 · No. 41</div>
             <div class="np-meta">KRW · FREE</div>
         </div>
         <div class="np-center">
@@ -69,7 +96,7 @@
             <div class="np-motto">현장 감각으로 읽는 AI · 반도체 · 시장 — Est. 2026</div>
         </div>
         <div class="np-right">
-            <div class="np-meta">SAT · APR 25 · 2026</div>
+            <div class="np-meta">SUN · APR 26 · 2026</div>
             <div class="np-meta">KST</div>
         </div>
     </div>
@@ -78,12 +105,18 @@
 
 <header class="top-nav">
     <div class="top-nav-inner">
+        <button type="button" class="sidebar-toggle" id="sidebar-toggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="site-sidebar">
+            <span class="sidebar-toggle-bar"></span>
+            <span class="sidebar-toggle-bar"></span>
+            <span class="sidebar-toggle-bar"></span>
+        </button>
         <a href="index.html" class="brand">
             <img src="assets/logo.jpg" alt="SONSLAB" onerror="this.style.display='none'">
             <span class="name">SONSLAB</span>
         </a>
         <nav>
-            <a href="index.html#posts">글</a>
+            <a href="index.html#posts">데일리</a>
+            <a href="ai-tech/index.html">AI 기술</a>
             <a href="index.html#about">About</a>
             <span class="nav-visits" title="오늘 · 누적 방문">
                 <img src="https://hits.sh/shonsubong.github.io/sonslab-blog.svg?view=today-total&style=flat-square&label=visits&color=1e3a5f&labelColor=1a2332" alt="오늘·누적 방문 수">
@@ -114,8 +147,8 @@
 
 <div class="masthead-b" data-only="editorial">
     <div class="masthead-inner">
-        <div class="mast-date">SATURDAY, APRIL 25, 2026</div>
-        <div class="mast-vol">VOL. 44 · ISSUE 40</div>
+        <div class="mast-date">SUNDAY, APRIL 26, 2026</div>
+        <div class="mast-vol">VOL. 44 · ISSUE 41</div>
     </div>
 </div>
 
@@ -149,33 +182,33 @@
     <aside class="hero-today-box" data-only="refined">
         <div class="today-head">
             <div class="today-head-title">오늘의 브리핑</div>
-            <div class="today-head-date">2026년 04월 25일 (토)</div>
+            <div class="today-head-date">2026년 04월 26일 (일)</div>
         </div>
         <table class="today-table">
             <tbody>
                 <tr class="live">
-                    <td class="td-time">06:12</td>
+                    <td class="td-time">06:08</td>
                     <td class="td-kind">새벽 리포트</td>
-                    <td class="td-title"><a href="posts/2026-04-25-am06-ai-tech-news.html">주말 첫 새벽 — 원전 IPO가 1조 넘게 들어왔다</a><span class="new-mark">NEW</span></td>
-                    <td class="td-read">7분</td>
+                    <td class="td-title"><a href="posts/2026-04-26-am06-ai-tech-news.html">일요일 새벽 — 4월 한 달, 오픈웨이트가 진짜로 자리를 잡았다</a><span class="new-mark">NEW</span></td>
+                    <td class="td-read">4분</td>
                 </tr>
-                <tr class="live">
-                    <td class="td-time">12:18</td>
+                <tr class="up">
+                    <td class="td-time">12:00</td>
                     <td class="td-kind">오전 브리핑</td>
-                    <td class="td-title"><a href="posts/2026-04-25-pm12-ai-tech-news.html">토요일 점심 — DeepSeek V4가 또 판을 흔들었다</a></td>
-                    <td class="td-read">8분</td>
+                    <td class="td-title">발행 예정</td>
+                    <td class="td-read">—</td>
                 </tr>
-                <tr class="live">
-                    <td class="td-time">17:14</td>
+                <tr class="up">
+                    <td class="td-time">17:00</td>
                     <td class="td-kind">오후 브리핑</td>
-                    <td class="td-title"><a href="posts/2026-04-25-pm17-ai-tech-news.html">토요일 오후 — 한국 시총이 영국까지 1,400억 달러 남았다</a></td>
-                    <td class="td-read">8분</td>
+                    <td class="td-title">발행 예정</td>
+                    <td class="td-read">—</td>
                 </tr>
-                <tr class="live">
-                    <td class="td-time">22:24</td>
+                <tr class="up">
+                    <td class="td-time">22:00</td>
                     <td class="td-kind">저녁 마감</td>
-                    <td class="td-title"><a href="posts/2026-04-25-pm22-ai-tech-news.html">토요일 밤 — 4/29까지 4일, 무엇을 보고 들어갈까</a></td>
-                    <td class="td-read">6분</td>
+                    <td class="td-title">발행 예정</td>
+                    <td class="td-read">—</td>
                 </tr>
             </tbody>
         </table>
@@ -184,32 +217,19 @@
         <div class="hero-lede-col" data-only="editorial">
             
         <article class="hero-lede" data-only="editorial">
-            <div class="lede-kind">저녁 마감 — Morning Brief</div>
-            <h1 class="lede-title"><a href="posts/2026-04-25-pm22-ai-tech-news.html">토요일 밤</a></h1>
-            <div class="lede-dek">4/29까지 4일, 무엇을 보고 들어갈까</div>
-            <p class="lede-body">밤 10시 넘었다. 오늘 새벽엔 X-energy 원전 IPO, 점심엔 DeepSeek V4, 오후엔 한국·대만 시총 + GPT-5.5까지 길게 풀었으니 밤 포스트는 짧게 간다. 주말이 토·일 이틀 남았고, 다음 주 수요일(4/29)이 이번 어닝 시즌의 진짜 분수령이다. 자기 전에 그날 체크리스트만 한 번 정리한다.</p>
+            <div class="lede-kind">새벽 리포트 — Morning Brief</div>
+            <h1 class="lede-title"><a href="posts/2026-04-26-am06-ai-tech-news.html">일요일 새벽</a></h1>
+            <div class="lede-dek">4월 한 달, 오픈웨이트가 진짜로 자리를 잡았다</div>
+            <p class="lede-body">일요일 새벽. 어제 밤에 4/29 체크리스트까지 다 적어놨으니 오늘 새벽은 가볍게 간다. 평소처럼 4건 다 채우는 스케줄 말고, 한 주 동안 머릿속에서 정리되지 않았던 한 가지 — 4월 한 달 동안 떨어진 오픈웨이트 모델들 — 만 짚고 넘어가려고 한다.</p>
             <div class="lede-byline">
                 <span class="lede-reporter">By SONSLAB</span>
                 <span class="lede-sep">—</span>
-                <span>6분 읽기</span>
-                <span class="lede-sep">—</span><span class="lede-topics">빅테크/시장, AI 모델, 반도체</span>
+                <span>4분 읽기</span>
+                <span class="lede-sep">—</span><span class="lede-topics">AI 모델, 현장/개발, 빅테크/시장</span>
             </div>
-            <a href="posts/2026-04-25-pm22-ai-tech-news.html" class="lede-more">Continue reading →</a>
+            <a href="posts/2026-04-26-am06-ai-tech-news.html" class="lede-more">Continue reading →</a>
         </article>
             
-        <article class="hero-lede is-sub" data-only="editorial">
-            <div class="lede-kind">오후 브리핑</div>
-            <h1 class="lede-title"><a href="posts/2026-04-25-pm17-ai-tech-news.html">토요일 오후</a></h1>
-            <div class="lede-dek">한국 시총이 영국까지 1,400억 달러 남았다</div>
-            
-            <div class="lede-byline">
-                <span class="lede-reporter">By SONSLAB</span>
-                <span class="lede-sep">—</span>
-                <span>8분 읽기</span>
-                <span class="lede-sep">—</span><span class="lede-topics">AI 모델, 반도체, 투자/매크로</span>
-            </div>
-            <a href="posts/2026-04-25-pm17-ai-tech-news.html" class="lede-more">Continue reading →</a>
-        </article>
         </div>
     
     <aside class="hero-sidebar" data-only="editorial">
@@ -220,28 +240,28 @@
                 <div class="side-hour">06</div>
                 <div class="side-body">
                     <div class="side-kind">새벽<span class="live-mark">LIVE</span></div>
-                    <div class="side-title"><a href="posts/2026-04-25-am06-ai-tech-news.html">주말 첫 새벽 — 원전 IPO가 1조 넘게 들어왔다</a></div>
+                    <div class="side-title"><a href="posts/2026-04-26-am06-ai-tech-news.html">일요일 새벽 — 4월 한 달, 오픈웨이트가 진짜로 자리를 잡았다</a></div>
                 </div>
             </div>
-            <div class="side-today-row">
+            <div class="side-today-row dim">
                 <div class="side-hour">12</div>
                 <div class="side-body">
                     <div class="side-kind">오전</div>
-                    <div class="side-title"><a href="posts/2026-04-25-pm12-ai-tech-news.html">토요일 점심 — DeepSeek V4가 또 판을 흔들었다</a></div>
+                    <div class="side-title">발행 예정</div>
                 </div>
             </div>
-            <div class="side-today-row">
+            <div class="side-today-row dim">
                 <div class="side-hour">17</div>
                 <div class="side-body">
                     <div class="side-kind">오후</div>
-                    <div class="side-title"><a href="posts/2026-04-25-pm17-ai-tech-news.html">토요일 오후 — 한국 시총이 영국까지 1,400억 달러 남았다</a></div>
+                    <div class="side-title">발행 예정</div>
                 </div>
             </div>
-            <div class="side-today-row">
+            <div class="side-today-row dim">
                 <div class="side-hour">22</div>
                 <div class="side-body">
                     <div class="side-kind">저녁</div>
-                    <div class="side-title"><a href="posts/2026-04-25-pm22-ai-tech-news.html">토요일 밤 — 4/29까지 4일, 무엇을 보고 들어갈까</a></div>
+                    <div class="side-title">발행 예정</div>
                 </div>
             </div>
             </div>
@@ -270,64 +290,64 @@
     
     <div class="hero-front-c" data-only="broadsheet">
         <div class="front-head">
-            <div class="front-kicker">ISSUE 04 / 25 — SATURDAY</div>
-            <div class="front-status">VOL. 44 · ISSUE 40</div>
+            <div class="front-kicker">ISSUE 04 / 26 — SUNDAY</div>
+            <div class="front-status">VOL. 44 · ISSUE 41</div>
         </div>
         <div class="three-col">
             
             <article class="c-lead">
-                <div class="c-lead-kind">LEAD · 저녁 마감</div>
-                <h1 class="c-lead-title"><a href="posts/2026-04-25-pm22-ai-tech-news.html">토요일 밤</a></h1>
-                <div class="c-lead-dek">4/29까지 4일, 무엇을 보고 들어갈까</div>
-                <p class="c-lead-body"><span class="dropcap">밤</span> 10시 넘었다. 오늘 새벽엔 X-energy 원전 IPO, 점심엔 DeepSeek V4, 오후엔 한국·대만 시총 + GPT-5.5까지 길게 풀었으니 밤 포스트는 짧게 간다. 주말이 토·일 이틀 남았고, 다음 주 수요일(4/29)이 이번 어닝 시즌의 진짜 분수령이다. 자기 전에 그날 체크리스트만 한 번 정리한다.</p>
+                <div class="c-lead-kind">LEAD · 새벽 리포트</div>
+                <h1 class="c-lead-title"><a href="posts/2026-04-26-am06-ai-tech-news.html">일요일 새벽</a></h1>
+                <div class="c-lead-dek">4월 한 달, 오픈웨이트가 진짜로 자리를 잡았다</div>
+                <p class="c-lead-body"><span class="dropcap">일</span>요일 새벽. 어제 밤에 4/29 체크리스트까지 다 적어놨으니 오늘 새벽은 가볍게 간다. 평소처럼 4건 다 채우는 스케줄 말고, 한 주 동안 머릿속에서 정리되지 않았던 한 가지 — 4월 한 달 동안 떨어진 오픈웨이트 모델들 — 만 짚고 넘어가려고 한다.</p>
                 <div class="c-lead-meta">
                     <span>BY SONSLAB</span>
                     <span class="meta-sep">·</span>
-                    <span>6분 읽기</span>
+                    <span>4분 읽기</span>
                 </div>
-                <a href="posts/2026-04-25-pm22-ai-tech-news.html" class="c-lead-more">전문 읽기 →</a>
+                <a href="posts/2026-04-26-am06-ai-tech-news.html" class="c-lead-more">전문 읽기 →</a>
             </article>
             <article class="c-col2">
                 <div class="c-col-head">오늘의 발행 스케줄</div>
                 <div class="sched-list">
             <div class="sched-row">
                 <div class="sched-left">
-                    <div class="sched-time">06:12</div>
+                    <div class="sched-time">06:08</div>
                     <div class="sched-kind">새벽 리포트</div>
                 </div>
                 <div class="sched-body">
-                    <div class="sched-title"><a href="posts/2026-04-25-am06-ai-tech-news.html">주말 첫 새벽 — 원전 IPO가 1조 넘게 들어왔다</a></div>
-                    <div class="sched-status">● 발행됨 · 7분</div>
+                    <div class="sched-title"><a href="posts/2026-04-26-am06-ai-tech-news.html">일요일 새벽 — 4월 한 달, 오픈웨이트가 진짜로 자리를 잡았다</a></div>
+                    <div class="sched-status">● 발행됨 · 4분</div>
                 </div>
             </div>
-            <div class="sched-row">
+            <div class="sched-row dim">
                 <div class="sched-left">
-                    <div class="sched-time">12:18</div>
+                    <div class="sched-time">12:00</div>
                     <div class="sched-kind">오전 브리핑</div>
                 </div>
                 <div class="sched-body">
-                    <div class="sched-title"><a href="posts/2026-04-25-pm12-ai-tech-news.html">토요일 점심 — DeepSeek V4가 또 판을 흔들었다</a></div>
-                    <div class="sched-status">● 발행됨 · 8분</div>
+                    <div class="sched-title">발행 예정</div>
+                    <div class="sched-status">○ 발행 예정</div>
                 </div>
             </div>
-            <div class="sched-row">
+            <div class="sched-row dim">
                 <div class="sched-left">
-                    <div class="sched-time">17:14</div>
+                    <div class="sched-time">17:00</div>
                     <div class="sched-kind">오후 브리핑</div>
                 </div>
                 <div class="sched-body">
-                    <div class="sched-title"><a href="posts/2026-04-25-pm17-ai-tech-news.html">토요일 오후 — 한국 시총이 영국까지 1,400억 달러 남았다</a></div>
-                    <div class="sched-status">● 발행됨 · 8분</div>
+                    <div class="sched-title">발행 예정</div>
+                    <div class="sched-status">○ 발행 예정</div>
                 </div>
             </div>
-            <div class="sched-row">
+            <div class="sched-row dim">
                 <div class="sched-left">
-                    <div class="sched-time">22:24</div>
+                    <div class="sched-time">22:00</div>
                     <div class="sched-kind">저녁 마감</div>
                 </div>
                 <div class="sched-body">
-                    <div class="sched-title"><a href="posts/2026-04-25-pm22-ai-tech-news.html">토요일 밤 — 4/29까지 4일, 무엇을 보고 들어갈까</a></div>
-                    <div class="sched-status">● 발행됨 · 6분</div>
+                    <div class="sched-title">발행 예정</div>
+                    <div class="sched-status">○ 발행 예정</div>
                 </div>
             </div>
                 </div>
@@ -388,7 +408,7 @@
 
 <div class="filter-bar" role="search" aria-label="포스트 검색 및 필터">
     <div class="filter-bar-inner">
-        <div class="tag-chips" id="topic-chips" role="tablist" aria-label="주제 필터"><button type="button" class="chip active" data-topic="">전체 <span class="chip-count">73</span></button><button type="button" class="chip" data-topic="반도체">반도체 <span class="chip-count">67</span></button><button type="button" class="chip" data-topic="AI 모델">AI 모델 <span class="chip-count">49</span></button><button type="button" class="chip" data-topic="빅테크/시장">빅테크 / 시장 <span class="chip-count">61</span></button><button type="button" class="chip" data-topic="투자/매크로">투자 / 매크로 <span class="chip-count">18</span></button><button type="button" class="chip" data-topic="정책/규제">정책 / 규제 <span class="chip-count">5</span></button><button type="button" class="chip" data-topic="현장/개발">현장 / 개발 <span class="chip-count">15</span></button></div>
+        <div class="tag-chips" id="topic-chips" role="tablist" aria-label="주제 필터"><button type="button" class="chip active" data-topic="">전체 <span class="chip-count">75</span></button><button type="button" class="chip" data-topic="반도체">반도체 <span class="chip-count">68</span></button><button type="button" class="chip" data-topic="AI 모델">AI 모델 <span class="chip-count">51</span></button><button type="button" class="chip" data-topic="빅테크/시장">빅테크 / 시장 <span class="chip-count">62</span></button><button type="button" class="chip" data-topic="투자/매크로">투자 / 매크로 <span class="chip-count">18</span></button><button type="button" class="chip" data-topic="정책/규제">정책 / 규제 <span class="chip-count">5</span></button><button type="button" class="chip" data-topic="현장/개발">현장 / 개발 <span class="chip-count">17</span></button></div>
         <div class="search-box">
             <input type="search" id="search-input" placeholder="검색…" autocomplete="off" aria-label="포스트 검색">
         </div>
@@ -396,15 +416,32 @@
     </div>
 </div>
 <section class="posts-section" id="posts">
-    <div class="section-label">최근 글</div>
+    <div class="section-label">데일리 브리핑</div>
 
     <details class="month-group" open>
         <summary>
             <span>2026년 4월</span>
-            <span class="month-count">42개</span>
+            <span class="month-count">43개</span>
         </summary>
         <div class="month-body">
 
+        <div class="date-group">
+            <div class="date-group-title">2026년 04월 26일 (일)</div>
+            <div class="date-group-posts">
+
+        <article class="post-item" data-time="새벽 리포트" data-topics="AI 모델|현장/개발|빅테크/시장" data-search="일요일 새벽 — 4월 한 달, 오픈웨이트가 진짜로 자리를 잡았다 일요일 새벽. 어제 밤에 4/29 체크리스트까지 다 적어놨으니 오늘 새벽은 가볍게 간다. 평소처럼 4건 다 채우는 스케줄 말고, 한 주 동안 머릿속에서 정리되지 않았던 한 가지 — 4월 한 달 동안 떨어진 오픈웨이트 모델들 — 만 짚고 넘어가려고 한다. ai 모델 현장/개발 빅테크/시장">
+            <div class="post-meta">
+                <span class="time-label">새벽 리포트</span>
+                <span>·</span>
+                <time>06:08</time><span>·</span>
+                <span>4분 읽기</span>
+            </div>
+            <h2><a href="posts/2026-04-26-am06-ai-tech-news.html">일요일 새벽 — 4월 한 달, 오픈웨이트가 진짜로 자리를 잡았다</a></h2>
+            <p class="lead">일요일 새벽. 어제 밤에 4/29 체크리스트까지 다 적어놨으니 오늘 새벽은 가볍게 간다. 평소처럼 4건 다 채우는 스케줄 말고, 한 주 동안 머릿속에서 정리되지 않았던 한 가지 — 4월 한 달 동안 떨어진 오픈웨이트 모델들 — 만 짚고 넘어가려고 한다.</p>
+            <a href="posts/2026-04-26-am06-ai-tech-news.html" class="read-more">계속 읽기 →</a>
+        </article>
+            </div>
+        </div>
         <div class="date-group">
             <div class="date-group-title">2026년 04월 25일 (토)</div>
             <div class="date-group-posts">
@@ -1467,7 +1504,7 @@
     <details class="month-group">
         <summary>
             <span>미분류</span>
-            <span class="month-count">2개</span>
+            <span class="month-count">3개</span>
         </summary>
         <div class="month-body">
 
@@ -1475,6 +1512,17 @@
             <div class="date-group-title"></div>
             <div class="date-group-posts">
 
+        <article class="post-item" data-time="" data-topics="현장/개발|반도체|AI 모델" data-search="ai_tech_notes ai-tech-deepdive 스케줄드 태스크(매일 kst 10:00) 실행 시 참고용 살아있는 메모. 현장/개발 반도체 ai 모델">
+            <div class="post-meta">
+                
+                
+                
+                <span>5분 읽기</span>
+            </div>
+            <h2><a href="posts/AI_TECH_NOTES.html">AI_TECH_NOTES</a></h2>
+            <p class="lead">ai-tech-deepdive 스케줄드 태스크(매일 KST 10:00) 실행 시 참고용 살아있는 메모.</p>
+            <a href="posts/AI_TECH_NOTES.html" class="read-more">계속 읽기 →</a>
+        </article>
         <article class="post-item" data-time="" data-topics="현장/개발|정책/규제" data-search="cowork_autobuild_setup cowork의 scheduled task 샌드박스는 보안상 .py / .bat / .exe / .jpg 같은 파일 타입을 읽거나 실행할 수 없다. 따라서 build.py나 auto-deploy.bat를 샌드박스 안에서 호출하는 건 구조적으로 불가능하다. 현장/개발 정책/규제">
             <div class="post-meta">
                 
@@ -1833,5 +1881,40 @@
     }
 })();
 </script>
+
+<script>
+(function() {
+    var btn = document.getElementById('sidebar-toggle');
+    var sidebar = document.getElementById('site-sidebar');
+    var backdrop = document.getElementById('sidebar-backdrop');
+    if (!btn || !sidebar) return;
+    function open() {
+        sidebar.classList.add('open');
+        if (backdrop) backdrop.classList.add('show');
+        btn.setAttribute('aria-expanded', 'true');
+        btn.setAttribute('aria-label', '메뉴 닫기');
+    }
+    function close() {
+        sidebar.classList.remove('open');
+        if (backdrop) backdrop.classList.remove('show');
+        btn.setAttribute('aria-expanded', 'false');
+        btn.setAttribute('aria-label', '메뉴 열기');
+    }
+    btn.addEventListener('click', function() {
+        if (sidebar.classList.contains('open')) close(); else open();
+    });
+    if (backdrop) backdrop.addEventListener('click', close);
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && sidebar.classList.contains('open')) close();
+    });
+    // 사이드바 내부 링크를 누르면 모바일에선 닫는다
+    sidebar.querySelectorAll('a').forEach(function(a) {
+        a.addEventListener('click', function() {
+            if (window.matchMedia('(max-width: 1023px)').matches) close();
+        });
+    });
+})();
+</script>
+
 </body>
 </html>
