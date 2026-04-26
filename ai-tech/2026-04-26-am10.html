@@ -74,6 +74,7 @@
             <li><a href="../index.html#posts" class="">데일리 브리핑 <span class="sidebar-cat-count">77</span></a></li>
             <li><a href="../ai-tech/index.html" class="active">AI 기술 딥다이브 <span class="sidebar-cat-count">1</span></a></li>
             <li><a href="../claude-tips/index.html" class="">Claude Code 팁 <span class="sidebar-cat-count">18</span></a></li>
+            <li><a href="../manuals/claude-code.html">Claude Code 메뉴얼 <span class="sidebar-cat-count">PDF</span></a></li>
             <li><a href="../index.html#about">About</a></li>
             <li><a href="../feed.xml">RSS</a></li>
         </ul>
@@ -558,45 +559,4 @@ def moe_forward(x, router, experts):
         window.addEventListener('scroll', toggleBtn, {passive:true});
         btn.addEventListener('click', function() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-        toggleBtn();
-    }
-})();
-</script>
-
-<script>
-(function() {
-    var btn = document.getElementById('sidebar-toggle');
-    var sidebar = document.getElementById('site-sidebar');
-    var backdrop = document.getElementById('sidebar-backdrop');
-    if (!btn || !sidebar) return;
-    function open() {
-        sidebar.classList.add('open');
-        if (backdrop) backdrop.classList.add('show');
-        btn.setAttribute('aria-expanded', 'true');
-        btn.setAttribute('aria-label', '메뉴 닫기');
-    }
-    function close() {
-        sidebar.classList.remove('open');
-        if (backdrop) backdrop.classList.remove('show');
-        btn.setAttribute('aria-expanded', 'false');
-        btn.setAttribute('aria-label', '메뉴 열기');
-    }
-    btn.addEventListener('click', function() {
-        if (sidebar.classList.contains('open')) close(); else open();
-    });
-    if (backdrop) backdrop.addEventListener('click', close);
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && sidebar.classList.contains('open')) close();
-    });
-    // 사이드바 내부 링크를 누르면 모바일에선 닫는다
-    sidebar.querySelectorAll('a').forEach(function(a) {
-        a.addEventListener('click', function() {
-            if (window.matchMedia('(max-width: 1023px)').matches) close();
-        });
-    });
-})();
-</script>
-
-</body>
-</html>
+  

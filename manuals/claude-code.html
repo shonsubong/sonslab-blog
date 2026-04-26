@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude Code 한글 가이드북 — SONSLAB</title>
+    <link rel="icon" href="../assets/logo.jpg">
+    <link rel="alternate" type="application/atom+xml" title="SONSLAB Feed" href="../feed.xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/style.css">
+    <style>
+      .manual-page .post-content { max-width: 760px; }
+      .manual-hero p { font-size: 1.05rem; line-height: 1.7; }
+      .manual-cta {
+          display: inline-block; padding: 0.75em 1.3em; border-radius: 8px;
+          background: #0b3d91; color: #fff; text-decoration: none;
+          font-weight: 600; box-shadow: 0 4px 14px rgba(11,61,145,0.18);
+      }
+      .manual-cta:hover { background: #1e3a5f; }
+      .manual-changelog {
+          margin-top: 2em; padding: 1.2em 1.4em; border-radius: 10px;
+          background: #f5f5ee; border: 1px solid #e0dccb;
+      }
+      [data-theme=dark] .manual-changelog { background: #1c2030; border-color: #303547; }
+      .guidebook-toc { list-style: none; padding-left: 0; }
+      .guidebook-toc > li.part { margin-bottom: 1em; }
+      .guidebook-toc > li.part > strong { color: #0b3d91; font-size: 1.05em; }
+      .guidebook-toc ol { list-style: decimal; padding-left: 1.6em; margin: 0.4em 0 0 0; }
+      .guidebook-toc ol li { margin-bottom: 0.2em; color: #444; }
+      [data-theme=dark] .guidebook-toc > li.part > strong { color: #6aa6ff; }
+      [data-theme=dark] .guidebook-toc ol li { color: #bbb; }
+    </style>
+    <meta name="description" content="처음부터 실전까지, 한 권으로 끝내는 Claude Code 한국어 가이드북. SONSLAB이 매주 큐레이션·갱신.">
+    <meta name="author" content="SONSLAB">
+    <link rel="canonical" href="https://shonsubong.github.io/sonslab-blog/manuals/claude-code.html">
+    <meta property="og:site_name" content="SONSLAB">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Claude Code 한글 가이드북 — SONSLAB">
+    <meta property="og:description" content="처음부터 실전까지, 한 권으로 끝내는 Claude Code 한국어 가이드북. SONSLAB이 매주 큐레이션·갱신.">
+    <meta property="og:url" content="https://shonsubong.github.io/sonslab-blog/manuals/claude-code.html">
+    <meta property="og:image" content="https://shonsubong.github.io/sonslab-blog/assets/logo.jpg">
+    <meta property="og:locale" content="ko_KR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Claude Code 한글 가이드북 — SONSLAB">
+    <meta name="twitter:description" content="처음부터 실전까지, 한 권으로 끝내는 Claude Code 한국어 가이드북. SONSLAB이 매주 큐레이션·갱신.">
+    <meta name="twitter:image" content="https://shonsubong.github.io/sonslab-blog/assets/logo.jpg">
+    
+<script>
+(function() {
+    try {
+        var saved = localStorage.getItem('sonslab-theme');
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var theme = saved || (prefersDark ? 'dark' : 'light');
+        if (theme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+
+        // 디자인 pref: 'random' | 'current' | 'refined' | 'editorial' | 'broadsheet'
+        // 저장값이 없거나 'random'이면 매 페이지 로드마다 4개 중 하나를 무작위로 추출.
+        var pref = localStorage.getItem('sonslab-design') || 'random';
+        var allowed = ['current', 'refined', 'editorial', 'broadsheet'];
+        var resolved;
+        if (pref === 'random') {
+            resolved = allowed[Math.floor(Math.random() * allowed.length)];
+        } else if (allowed.indexOf(pref) === -1) {
+            pref = 'current';
+            resolved = 'current';
+        } else {
+            resolved = pref;
+        }
+        if (resolved !== 'current') document.documentElement.setAttribute('data-design', resolved);
+        // body script가 재추출 없이 라벨만 맞추도록 결과를 공유.
+        window.__sonslabDesignPref = pref;
+        window.__sonslabDesignResolved = resolved;
+    } catch (e) {}
+})();
+</script>
+</head>
+<body class="post-page" data-category="manual">
+    <div class="reading-progress" id="reading-progress" role="progressbar" aria-label="읽기 진행률"></div>
+
+<aside class="site-sidebar" id="site-sidebar" aria-label="사이트 메뉴">
+    <a href="../index.html" class="sidebar-brand">
+        <img src="../assets/logo.jpg" alt="SONSLAB" onerror="this.style.display='none'">
+        <span class="name">SONSLAB</span>
+    </a>
+    <div class="sidebar-section">
+        <div class="sidebar-section-label">카테고리</div>
+        <ul class="sidebar-cat-list">
+            <li><a href="../index.html" class="">홈 <span class="sidebar-cat-count">93</span></a></li>
+            <li><a href="../index.html#posts" class="">데일리 브리핑 <span class="sidebar-cat-count">74</span></a></li>
+            <li><a href="../ai-tech/index.html" class="">AI 기술 딥다이브 <span class="sidebar-cat-count">1</span></a></li>
+            <li><a href="../claude-tips/index.html" class="">Claude Code 팁 <span class="sidebar-cat-count">18</span></a></li>
+            <li><a href="../manuals/claude-code.html" class="active">Claude Code 메뉴얼 <span class="sidebar-cat-count">PDF</span></a></li>
+            <li><a href="../index.html#about">About</a></li>
+            <li><a href="../feed.xml">RSS</a></li>
+        </ul>
+    </div>
+    <div class="sidebar-section">
+        <div class="sidebar-section-label">데일리 최근 글</div>
+        <ul class="sidebar-recent"><li><a href="../posts/2026-04-26-pm17-ai-tech-news.html"><span class="r-title">OpenClaw 인터넷 노출 21,000건 — 에이전트 시대 첫 보안 위기</span><span class="r-meta">17:18</span></a></li><li><a href="../posts/2026-04-26-pm12-ai-tech-news.html"><span class="r-title">OpenAI Workspace Agents, 5월 6일에 무료 끝난다</span><span class="r-meta">12:14</span></a></li><li><a href="../posts/2026-04-26-am06-ai-tech-news.html"><span class="r-title">4월 한 달, 오픈웨이트가 진짜로 자리를 잡았다</span><span class="r-meta">06:08</span></a></li><li><a href="../posts/2026-04-25-pm22-ai-tech-news.html"><span class="r-title">4/29까지 4일, 무엇을 보고 들어갈까 — 실적 시즌 분수령 체크리스트</span><span class="r-meta">22:24</span></a></li><li><a href="../posts/2026-04-25-pm17-ai-tech-news.html"><span class="r-title">한국 시총이 영국까지 1,400억 달러 남았다 — GPT-5.5와 DeepSeek V4 같은 주</span><span class="r-meta">17:14</span></a></li></ul>
+    </div>
+    <div class="sidebar-section">
+        <div class="sidebar-section-label">AI 기술 최근 글</div>
+        <ul class="sidebar-recent"><li><a href="../ai-tech/2026-04-26-am10.html"><span class="r-title">DeepSeek V4의 MoE 라우팅이 H100을 두 배로 늘려놓는 법</span><span class="r-meta">AI 딥다이브</span></a></li></ul>
+    </div>
+    <div class="sidebar-section">
+        <div class="sidebar-section-label">Claude Code 팁 최근 글</div>
+        <ul class="sidebar-recent"><li><a href="../claude-tips/2026-04-26-pm23.html"><span class="r-title">/clear와 /compact의 차이만 알아도 컨텍스트가 두 배로 늘어난다</span><span class="r-meta">23:00</span></a></li><li><a href="../claude-tips/2026-03-30-pm23.html"><span class="r-title">다중 에이전트 오케스트레이션 — 실제 적용 패턴 세 가지</span><span class="r-meta">23:00</span></a></li><li><a href="../claude-tips/2026-03-27-pm23.html"><span class="r-title">bash 도구를 allowlist로 묶어 사고 위험을 한 자리수로 떨어뜨린다</span><span class="r-meta">23:00</span></a></li><li><a href="../claude-tips/2026-03-24-pm23.html"><span class="r-title">Claude Code의 plugin 시스템 — Cowork·CLI 양쪽에서 정리한다</span><span class="r-meta">23:00</span></a></li><li><a href="../claude-tips/2026-03-20-pm23.html"><span class="r-title">settings.json 우선순위 — 한 번 알면 다시 안 헷갈린다</span><span class="r-meta">23:00</span></a></li></ul>
+    </div>
+</aside>
+<div class="sidebar-backdrop" id="sidebar-backdrop" aria-hidden="true"></div>
+
+
+<header class="top-nav">
+    <div class="top-nav-inner">
+        <button type="button" class="sidebar-toggle" id="sidebar-toggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="site-sidebar">
+            <span class="sidebar-toggle-bar"></span>
+            <span class="sidebar-toggle-bar"></span>
+            <span class="sidebar-toggle-bar"></span>
+        </button>
+        <a href="../index.html" class="brand">
+            <img src="../assets/logo.jpg" alt="SONSLAB" onerror="this.style.display='none'">
+            <span class="name">SONSLAB</span>
+        </a>
+        <nav>
+            <a href="../index.html#posts">데일리</a>
+            <a href="../ai-tech/index.html">AI 기술</a>
+            <a href="../claude-tips/index.html">Claude Code 팁</a>
+            <a href="../index.html#about">About</a>
+            <span class="nav-visits" title="오늘 · 누적 방문">
+                <img src="https://hits.sh/shonsubong.github.io/sonslab-blog.svg?view=today-total&style=flat-square&label=visits&color=1e3a5f&labelColor=1a2332" alt="오늘·누적 방문 수">
+            </span>
+            <div class="design-picker" title="디자인 전환">
+                <button type="button" class="design-picker-btn" id="design-picker-btn" aria-haspopup="listbox" aria-expanded="false" aria-label="디자인 전환">
+                    <span class="design-picker-icon" aria-hidden="true">◑</span>
+                    <span class="design-picker-current" id="design-picker-current">기본</span>
+                    <span class="design-picker-caret" aria-hidden="true">▾</span>
+                </button>
+                <ul class="design-picker-menu" id="design-picker-menu" role="listbox" aria-label="디자인 옵션">
+                    <li role="option" data-design="random"><strong>랜덤</strong><span>접속할 때마다 무작위 디자인</span></li>
+                    <li role="option" data-design="current"><strong>기본</strong><span>네이비+크림, 라운드 카드</span></li>
+                    <li role="option" data-design="refined"><strong>정제판 (A)</strong><span>신문·저널 톤, 헤어라인 구분선</span></li>
+                    <li role="option" data-design="editorial"><strong>에디토리얼 (B)</strong><span>이중선 마스트헤드, 세리프 강조</span></li>
+                    <li role="option" data-design="broadsheet"><strong>브로드시트 (C)</strong><span>웜 크림, 잉크블랙, 큰 세리프</span></li>
+                </ul>
+            </div>
+            <button type="button" class="theme-toggle" id="theme-toggle" aria-label="다크 모드 토글" title="다크/라이트 전환">
+                <span class="icon-moon" aria-hidden="true">🌙</span>
+                <span class="icon-sun" aria-hidden="true">☀</span>
+            </button>
+            <a href="../index.html#subscribe" class="nav-cta">이메일 구독</a>
+        </nav>
+    </div>
+</header>
+
+
+<article class="post-article manual-page">
+    <div class="post-header">
+        <a href="../index.html" class="back-link">← 홈으로</a>
+        <h1>Claude Code 한글 가이드북</h1>
+        <div class="post-meta">
+            <span>2026-04-26 갱신</span>
+            <span>·</span>
+            <span>102쪽</span>
+            <span>·</span>
+            <span>매주 일요일 20:00 KST 자동 갱신</span>
+        </div>
+    </div>
+
+    <div class="post-content">
+        <section class="manual-hero">
+            <p>처음부터 실전까지, <strong>한 권으로 끝내는 Claude Code 한국어 가이드북</strong>입니다.
+            Anthropic 공식 <a href="https://code.claude.com/docs" target="_blank" rel="noopener">code.claude.com/docs</a> 를
+            번역만 한 게 아니라, 실제 매일 쓰는 순서대로 다시 큐레이션했어요.</p>
+            <p style="margin-top:1.2em;">
+                <a href="pdf/claude-code-manual-2026-04-26.pdf" target="_blank" rel="noopener" class="manual-cta">
+                    📘 가이드북 PDF 새 탭으로 열기 (2026-04-26, 102쪽)
+                </a>
+            </p>
+        </section>
+
+        <section class="manual-changelog">
+            <h2>이번 판이 다른 점</h2>
+            <p>기존 999쪽 영문 레퍼런스 사본을 폐기하고, <strong>5개 Part로 큐레이션한 한글 가이드북</strong>으로 새로 썼습니다.
+            engineering:documentation 스킬의 “독자 먼저 / 가장 유용한 것 위로 / 설명보다 예시” 원칙을 따랐습니다.</p>
+        </section>
+
+        <section>
+            <h2>목차</h2>
+            <ol class='guidebook-toc'><li class="part"><strong>Part 1 — 시작하기 (초급)</strong><ol><li>1. Claude Code 란 무엇인가</li><li>2. 설치</li><li>3. 첫 실행과 프로젝트 이해</li><li>4. 첫 5분 — 실전 워크플로</li><li>5. agent loop 이해하기</li><li>6. CLAUDE.md 첫 작성</li><li>7. 흔한 막힘과 해결 (초급)</li></ol></li><li class="part"><strong>Part 2 — 일상 사용 (초급→중급)</strong><ol><li>1. CLAUDE.md 깊이 있게</li><li>2. 메모리 시스템 — # 와 /memory</li><li>3. 슬래시 명령</li><li>4. 파일 편집 워크플로</li><li>5. 터미널 통합</li><li>6. Plan 모드 깊이 있게</li><li>7. Git 통합</li><li>8. 권한 설정 첫발</li></ol></li><li class="part"><strong>Part 3 — 도구 확장 (중급)</strong><ol><li>1. MCP — 외부 도구 연결 (개요)</li><li>2. 자주 쓰는 MCP 톱 10</li><li>3. 사용자 정의 MCP 서버 만들기</li><li>4. Skills — 특정 작업 모범 사례</li><li>5. Skills 만들기 (실전)</li><li>6. Plugins — 묶음 설치</li><li>7. 플러그인 만들기·배포</li><li>8. Hooks — 자동 실행 후크</li><li>9. Subagents — 서브에이전트</li></ol></li><li class="part"><strong>Part 4 — Agent SDK (중급→고급)</strong><ol><li>1. Agent SDK 개요</li><li>2. Python SDK 빠른 시작</li><li>3. TypeScript SDK 빠른 시작</li><li>4. 시스템 프롬프트 수정</li><li>5. 사용자 정의 도구 추가</li><li>6. Streaming Output</li><li>7. Streaming Input</li><li>8. Structured Output</li><li>9. Tool Search</li><li>10. Channels — 외부에서 이벤트 밀어넣기</li><li>11. SDK 안에서의 Subagents</li><li>12. 승인 흐름</li></ol></li><li class="part"><strong>Part 5 — 운영 (중급)</strong><ol><li>1. 베스트 프랙티스</li><li>2. 비용 관리</li><li>3. 성능 튜닝</li><li>4. 보안 기본</li><li>5. 권한 정책 깊이</li><li>6. 트러블슈팅</li><li>7. 협업 워크플로</li><li>8. 다른 환경 — Web · IDE · Chrome · Desktop</li></ol></li><li class="part"><strong>Part 6 — 고급 패턴 (고급)</strong><ol><li>1. 서브에이전트 오케스트레이션</li><li>2. 채널 + 서브에이전트로 라이브 시스템</li><li>3. 마이그레이션·리팩터링 자동화</li><li>4. CI/CD 통합</li><li>5. 보안 샌드박싱</li><li>6. 텔레메트리·모니터링</li><li>7. 멀티프로젝트 워크플로</li><li>8. 자가 페이싱 자동화 (Monitor + /loop)</li></ol></li><li class="part"><strong>Part 7 — 엔터프라이즈 (고급)</strong><ol><li>1. 조직 배포 결정 트리</li><li>2. Bedrock / Vertex / Foundry 통합</li><li>3. SSO · SCIM 으로 좌석 관리</li><li>4. 감사 로그·컴플라이언스</li><li>5. LLM Gateway</li><li>6. 관리자 강제 정책 (Managed Settings)</li></ol></li><li class="part"><strong>부록</strong><ol><li>1. 자주 쓰는 명령 빠른 참조</li><li>2. 한·영 용어집 (확장판)</li><li>3. 슬래시 명령 전체 목록</li><li>4. MCP 서버 카탈로그</li><li>5. 환경 변수 참조</li><li>6. 에러 코드 사전</li><li>7. 학습 리소스</li><li>8. 변경 이력 (2026-04 기준 주요)</li></ol></li><li class="part"><strong>Part 8 — 실전 시나리오 모음</strong><ol><li>1. 시나리오 1 — 신입의 첫 주 (초급)</li><li>2. 시나리오 2 — 한 주의 사이드 프로젝트 (초급→중급)</li><li>3. 시나리오 3 — 운영 인시던트 대응 (중급)</li><li>4. 시나리오 4 — 큰 마이그레이션 (중급→고급)</li><li>5. 시나리오 5 — 사내 도구 자동화 (고급)</li><li>6. 시나리오 6 — Hooks 로 정책 강제 (고급)</li><li>7. 시나리오 7 — 멀티 에이전트로 신규 서비스 부트스트랩 (고급)</li><li>8. 시나리오 8 — 클로드 코드와 함께하는 기술 면접 준비 (개인 활용)</li><li>9. 시나리오 9 — 100% 한국어 프로젝트 운영</li><li>10. 시나리오 10 — 본인의 학습 가속</li></ol></li><li class="part"><strong>Part 9 — 쿡북 (실전 레시피)</strong><ol><li>1. 코드 이해 / 탐색</li><li>2. 리팩터링</li><li>3. 디버깅</li><li>4. 테스트 작성</li><li>5. 데이터베이스</li><li>6. 보안</li><li>7. 성능</li><li>8. 문서</li><li>9. 회의·소통</li></ol></li><li class="part"><strong>Part 10 — 자주 묻는 질문</strong><ol><li>1. 비용</li><li>2. 보안</li><li>3. 권장 사용</li><li>4. 학습</li></ol></li><li class="part"><strong>Part 11 — 프롬프트 템플릿 모음</strong><ol><li>1. 코드 검토 템플릿</li><li>2. 작업 분할 템플릿</li><li>3. 학습 템플릿</li><li>4. 운영 템플릿</li><li>5. 디자인 템플릿</li><li>6. 커뮤니케이션 템플릿</li><li>7. 코드 작성 템플릿</li><li>8. 자동화 템플릿</li><li>9. 데이터 분석 템플릿</li><li>10. 글쓰기 템플릿</li><li>11. 회고 템플릿</li></ol></li><li class="part"><strong>Part 12 — 마무리 — 한 달 동안 만져 보기 가이드</strong><ol><li>1. 주 학습 계획</li><li>2. 한 달 후의 본인</li><li>3. 추천 다음 단계</li><li>4. 이 책에 대한 한 마디</li></ol></li></ol>
+        </section>
+
+        <section>
+            <h2>활용 안내</h2>
+            <ul>
+                <li>처음이라면 Part 1 → Part 2 순서대로 한 번 훑고, 본인 프로젝트에서 한 시간 가지고 놀아 보세요.</li>
+                <li>이미 쓰고 있다면 Part 3 (도구 확장) 또는 Part 5 (운영) 만 골라 보셔도 됩니다.</li>
+                <li>본 가이드북은 비공식 정리본입니다. 권한·보안·결제·법적 사안은 공식 문서를 1차 자료로 확인하세요.</li>
+                <li>피드백/오류 제보는 <a href="../index.html#about">About</a> 페이지의 이메일로.</li>
+            </ul>
+        </section>
+    </div>
+</article>
+
+
+<footer>
+    <div class="stats-row">
+        <img src="https://hits.sh/shonsubong.github.io/sonslab-blog.svg?view=today-total&style=flat-square&label=visits&color=1e3a5f&labelColor=1a2332" alt="Visit counter">
+        <span class="stat-inline">오늘 · 누적 방문</span>
+    </div>
+    <p style="margin-top: 1.2rem;">© 2026 SONSLAB — 현장 감각으로 읽는 AI와 테크</p>
+    <div style="margin-top: 0.5rem;">
+        <a href="../index.html#posts">글</a>·
+        <a href="../index.html#about">About</a>·
+        <a href="../feed.xml">RSS</a>·
+        <a href="mailto:starfox1211@naver.com">Contact</a>
+    </div>
+</footer>
+
+<button type="button" class="scroll-top" id="scroll-top" aria-label="맨 위로" title="맨 위로">↑</button>
+
+<script>
+(function() {
+    // 다크 모드 토글
+    var toggle = document.getElementById('theme-toggle');
+    if (toggle) {
+        toggle.addEventListener('click', function() {
+            var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+            if (isDark) {
+                document.documentElement.removeAttribute('data-theme');
+                try { localStorage.setItem('sonslab-theme', 'light'); } catch(e){}
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                try { localStorage.setItem('sonslab-theme', 'dark'); } catch(e){}
+            }
+        });
+    }
+    // 디자인 피커
+    var dpBtn = document.getElementById('design-picker-btn');
+    var dpMenu = document.getElementById('design-picker-menu');
+    var dpCurrent = document.getElementById('design-picker-current');
+    var dpLabels = { current: '기본', refined: '정제판', editorial: '에디토리얼', broadsheet: '브로드시트', random: '랜덤' };
+    var DP_ALLOWED = ['current', 'refined', 'editorial', 'broadsheet'];
+    function dpResolve(pref, avoid) {
+        if (pref === 'random') {
+            var pool = DP_ALLOWED;
+            if (avoid && DP_ALLOWED.indexOf(avoid) !== -1 && DP_ALLOWED.length > 1) {
+                pool = DP_ALLOWED.filter(function(x) { return x !== avoid; });
+            }
+            return pool[Math.floor(Math.random() * pool.length)];
+        }
+        if (DP_ALLOWED.indexOf(pref) === -1) return 'current';
+        return pref;
+    }
+    function dpSyncLabel(pref, resolved) {
+        if (dpCurrent) {
+            dpCurrent.textContent = (pref === 'random')
+                ? dpLabels.random + ' (' + dpLabels[resolved] + ')'
+                : dpLabels[pref];
+        }
+        if (dpMenu) dpMenu.querySelectorAll('li').forEach(function(li){
+            li.classList.toggle('active', li.getAttribute('data-design') === pref);
+        });
+    }
+    function applyDesign(pref) {
+        if (!dpLabels[pref]) pref = 'random';
+        // 랜덤 클릭 시 현재 디자인을 피해서 체감되는 변화를 보장.
+        var current = document.documentElement.getAttribute('data-design') || 'current';
+        var resolved = dpResolve(pref, current);
+        if (resolved === 'current') document.documentElement.removeAttribute('data-design');
+        else document.documentElement.setAttribute('data-design', resolved);
+        try { localStorage.setItem('sonslab-design', pref); } catch(e){}
+        dpSyncLabel(pref, resolved);
+    }
+    if (dpBtn && dpMenu) {
+        // 초기 동기화는 head 스크립트가 이미 resolved를 적용했으니 재추출 없이 라벨만 맞춤.
+        var initPref = (typeof window.__sonslabDesignPref !== 'undefined')
+            ? window.__sonslabDesignPref
+            : (localStorage.getItem('sonslab-design') || 'random');
+        var initResolved = (typeof window.__sonslabDesignResolved !== 'undefined')
+            ? window.__sonslabDesignResolved
+            : (document.documentElement.getAttribute('data-design') || 'current');
+        dpSyncLabel(initPref, initResolved);
+        dpBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            var expanded = dpBtn.getAttribute('aria-expanded') === 'true';
+            dpBtn.setAttribute('aria-expanded', String(!expanded));
+            dpMenu.classList.toggle('open', !expanded);
+        });
+        dpMenu.querySelectorAll('li').forEach(function(li){
+            li.addEventListener('click', function(){
+                applyDesign(li.getAttribute('data-design'));
+                dpMenu.classList.remove('open');
+                dpBtn.setAttribute('aria-expanded', 'false');
+            });
+        });
+        document.addEventListener('click', function(e){
+            if (!dpMenu.contains(e.target) && e.target !== dpBtn) {
+                dpMenu.classList.remove('open');
+                dpBtn.setAttribute('aria-expanded', 'false');
+            }
+        });
+    }
+    // 맨 위로 버튼
+    var btn = document.getElementById('scroll-top');
+    if (btn) {
+        var toggleBtn = function() {
+            if (window.scrollY > 300) btn.classList.add('visible');
+            else btn.classList.remove('visible');
+        };
+        window.addEventListener('scroll', toggleBtn, {passive:true});
+        btn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        toggleBtn();
+    }
+})();
+</script>
+</body>
+</html>
