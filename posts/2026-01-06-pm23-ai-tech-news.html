@@ -86,7 +86,7 @@
     </div>
     <div class="sidebar-section">
         <div class="sidebar-section-label">Claude Code 팁 최근 글</div>
-        <ul class="sidebar-recent"><li><a href="../claude-tips/2026-04-26-pm23.html"><span class="r-title">/clear와 /compact의 차이만 알아도 컨텍스트가 두 배로 늘어난다</span><span class="r-meta">2026-04-26 · 23:43</span></a></li><li><a href="../claude-tips/2026-03-30-pm23.html"><span class="r-title">다중 에이전트 오케스트레이션 — 실제 적용 패턴 세 가지</span><span class="r-meta">2026-03-30 · 23:48</span></a></li><li><a href="../claude-tips/2026-03-27-pm23.html"><span class="r-title">bash 도구를 allowlist로 묶어 사고 위험을 한 자리수로 떨어뜨린다</span><span class="r-meta">2026-03-27 · 23:27</span></a></li><li><a href="../claude-tips/2026-03-24-pm23.html"><span class="r-title">Claude Code의 plugin 시스템 — Cowork·CLI 양쪽에서 정리한다</span><span class="r-meta">2026-03-24 · 23:59</span></a></li><li><a href="../claude-tips/2026-03-20-pm23.html"><span class="r-title">settings.json 우선순위 — 한 번 알면 다시 안 헷갈린다</span><span class="r-meta">2026-03-20 · 23:24</span></a></li></ul>
+        <ul class="sidebar-recent"><li><a href="../claude-tips/2026-04-26-pm23.html"><span class="r-title">/clear와 /compact의 차이만 알아도 컨텍스트가 두 배로 늘어난다</span><span class="r-meta">2026-04-26 · 23:00</span></a></li><li><a href="../claude-tips/2026-03-30-pm23.html"><span class="r-title">다중 에이전트 오케스트레이션 — 실제 적용 패턴 세 가지</span><span class="r-meta">2026-03-30 · 23:00</span></a></li><li><a href="../claude-tips/2026-03-27-pm23.html"><span class="r-title">bash 도구를 allowlist로 묶어 사고 위험을 한 자리수로 떨어뜨린다</span><span class="r-meta">2026-03-27 · 23:00</span></a></li><li><a href="../claude-tips/2026-03-24-pm23.html"><span class="r-title">Claude Code의 plugin 시스템 — Cowork·CLI 양쪽에서 정리한다</span><span class="r-meta">2026-03-24 · 23:00</span></a></li><li><a href="../claude-tips/2026-03-20-pm23.html"><span class="r-title">settings.json 우선순위 — 한 번 알면 다시 안 헷갈린다</span><span class="r-meta">2026-03-20 · 23:00</span></a></li></ul>
     </div>
 </aside>
 <div class="sidebar-backdrop" id="sidebar-backdrop" aria-hidden="true"></div>
@@ -140,7 +140,7 @@
         <a href="../index.html" class="back-link">← 전체 글 목록</a>
         <h1>Vera Rubin 6칩 플랫폼 공개 — Nvidia가 CES에서 Blackwell 다음을 보여줬다</h1>
         <div class="post-meta">
-            <span class="time-label">심야 팁</span>
+            
             <span>2026-01-06 23:24</span>
             <span>·</span>
             <span>4분 읽기</span>
@@ -366,6 +366,41 @@
 
 <script>
 (function() {
+    var btn = document.getElementById('sidebar-toggle');
+    var sidebar = document.getElementById('site-sidebar');
+    var backdrop = document.getElementById('sidebar-backdrop');
+    if (!btn || !sidebar) return;
+    function open() {
+        sidebar.classList.add('open');
+        if (backdrop) backdrop.classList.add('show');
+        btn.setAttribute('aria-expanded', 'true');
+        btn.setAttribute('aria-label', '메뉴 닫기');
+    }
+    function close() {
+        sidebar.classList.remove('open');
+        if (backdrop) backdrop.classList.remove('show');
+        btn.setAttribute('aria-expanded', 'false');
+        btn.setAttribute('aria-label', '메뉴 열기');
+    }
+    btn.addEventListener('click', function() {
+        if (sidebar.classList.contains('open')) close(); else open();
+    });
+    if (backdrop) backdrop.addEventListener('click', close);
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && sidebar.classList.contains('open')) close();
+    });
+    // 사이드바 내부 링크를 누르면 모바일에선 닫는다
+    sidebar.querySelectorAll('a').forEach(function(a) {
+        a.addEventListener('click', function() {
+            if (window.matchMedia('(max-width: 1023px)').matches) close();
+        });
+    });
+})();
+</script>
+
+
+<script>
+(function() {
     var form = document.getElementById('subscribe-form');
     var status = document.getElementById('subscribe-status');
     function setState(state, html) {
@@ -555,40 +590,5 @@
     }
 })();
 </script>
-
-<script>
-(function() {
-    var btn = document.getElementById('sidebar-toggle');
-    var sidebar = document.getElementById('site-sidebar');
-    var backdrop = document.getElementById('sidebar-backdrop');
-    if (!btn || !sidebar) return;
-    function open() {
-        sidebar.classList.add('open');
-        if (backdrop) backdrop.classList.add('show');
-        btn.setAttribute('aria-expanded', 'true');
-        btn.setAttribute('aria-label', '메뉴 닫기');
-    }
-    function close() {
-        sidebar.classList.remove('open');
-        if (backdrop) backdrop.classList.remove('show');
-        btn.setAttribute('aria-expanded', 'false');
-        btn.setAttribute('aria-label', '메뉴 열기');
-    }
-    btn.addEventListener('click', function() {
-        if (sidebar.classList.contains('open')) close(); else open();
-    });
-    if (backdrop) backdrop.addEventListener('click', close);
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && sidebar.classList.contains('open')) close();
-    });
-    // 사이드바 내부 링크를 누르면 모바일에선 닫는다
-    sidebar.querySelectorAll('a').forEach(function(a) {
-        a.addEventListener('click', function() {
-            if (window.matchMedia('(max-width: 1023px)').matches) close();
-        });
-    });
-})();
-</script>
-
 </body>
 </html>
