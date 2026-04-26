@@ -871,7 +871,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, [tabindex]:focus-vis
 .sidebar-recent a { display: block; text-decoration: none; color: var(--text); padding: 0.25rem 0.5rem; border-radius: 6px; transition: background .12s; }
 .sidebar-recent a:hover { background: var(--bg-subtle); }
 .sidebar-recent .r-title { font-size: 0.84rem; line-height: 1.35; font-weight: 500; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-.sidebar-recent .r-meta { font-size: 0.7rem; color: var(--text-muted); margin-top: 0.1rem; }
+.sidebar-recent .r-meta { display: none; }
 
 /* 햄버거 토글 */
 .sidebar-toggle {
