@@ -358,8 +358,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, [tabindex]:focus-vis
 [data-theme="dark"] .theme-toggle .icon-moon { display: none; }
 
 /* ─── 검색 + 필터 ─── */
-.filter-bar { margin: 0 0 1rem; }
-.filter-bar-inner { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: flex; flex-direction: row; align-items: center; gap: 1rem; flex-wrap: wrap; }
+.filter-bar { max-width: 1200px; margin: 0 auto 2rem; border-top: 1px solid var(--border-soft); border-bottom: 1px solid var(--border-soft); background: var(--bg-subtle); }
+.filter-bar-inner { max-width: 1200px; margin: 0 auto; padding: 0.7rem 1.5rem; display: flex; flex-direction: row; align-items: center; gap: 1rem; flex-wrap: wrap; }
+.filter-bar-inner::before { content: "주제"; font-family: var(--mono); font-size: 0.72rem; font-weight: 700; letter-spacing: 2px; color: var(--text-muted); flex: 0 0 auto; white-space: nowrap; order: 1; }
 .filter-bar .search-box { position: relative; order: 3; flex: 0 0 240px; margin-left: auto; }
 .filter-bar input[type="search"] { width: 100%; background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 0.55rem 0.9rem; color: var(--text); font-size: 0.9rem; font-family: inherit; transition: border-color .15s, box-shadow .15s; }
 .filter-bar input[type="search"]:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(var(--accent-rgb), 0.12); }
@@ -486,6 +487,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, [tabindex]:focus-vis
 [data-design="refined"] .post-item h2 { letter-spacing: -0.3px; }
 [data-design="refined"] .post-meta { font-family: var(--mono); letter-spacing: 0.3px; font-size: 0.78rem; }
 [data-design="refined"] .time-label { color: var(--text); font-weight: 600; }
+[data-design="refined"] .filter-bar { max-width: 1240px; border-top: 1px solid var(--text); border-bottom: 1px solid var(--text); background: var(--bg); }
+[data-design="refined"] .filter-bar-inner::before { color: var(--text); }
 [data-design="refined"] .filter-bar input[type="search"] { background: transparent; border: none; border-bottom: 1px solid var(--text); border-radius: 0; padding: 0.5rem 0.25rem; }
 [data-design="refined"] .filter-bar input[type="search"]:focus { box-shadow: none; border-bottom-color: var(--accent); }
 [data-design="refined"] .filter-bar .chip { border: none; border-bottom: 1px solid transparent; border-radius: 0; padding: 0.25rem 0.55rem; background: transparent; color: var(--text-muted); }
