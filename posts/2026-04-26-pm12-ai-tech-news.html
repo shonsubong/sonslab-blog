@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MCP 서버를 5분 만에 직접 띄워본다 — SONSLAB</title>
+    <title>일요일 점심 — Workspace Agents가 5월 6일에 무료 끝난다 — SONSLAB</title>
     <link rel="icon" href="../assets/logo.jpg">
     <link rel="alternate" type="application/atom+xml" title="SONSLAB Feed" href="../feed.xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,22 +11,22 @@
     <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/style.css">
-    <meta name="description" content="MCP 서버는 결국 stdin/stdout으로 JSON-RPC를 주고받는 작은 서비스다. 공식 Python SDK의 FastMCP로 함수 하나에 데코레이터만 달면, 첫 자작 MCP를 5분 안에 띄울 수 있다.">
+    <meta name="description" content="새벽엔 4월 한 달 오픈웨이트 정리하고 끊었다. 점심엔 다른 줄기 하나. OpenAI Workspace Agents — 4/22 발표 후 4일 지나서 실사용 후기가 X에 슬슬 도는 중인데, 5월 6일에 무료 기간 끝나고 크레딧 과금으로 넘어간다는 게 뒤늦게 화제다.">
     <meta name="author" content="SONSLAB">
-    <link rel="canonical" href="https://shonsubong.github.io/sonslab-blog/claude-tips/2026-02-23-pm23.html">
+    <link rel="canonical" href="https://shonsubong.github.io/sonslab-blog/posts/2026-04-26-pm12-ai-tech-news.html">
     <meta property="og:site_name" content="SONSLAB">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="MCP 서버를 5분 만에 직접 띄워본다">
-    <meta property="og:description" content="MCP 서버는 결국 stdin/stdout으로 JSON-RPC를 주고받는 작은 서비스다. 공식 Python SDK의 FastMCP로 함수 하나에 데코레이터만 달면, 첫 자작 MCP를 5분 안에 띄울 수 있다.">
-    <meta property="og:url" content="https://shonsubong.github.io/sonslab-blog/claude-tips/2026-02-23-pm23.html">
-    <meta property="og:image" content="https://shonsubong.github.io/sonslab-blog/assets/og/2026-02-23-pm23.png">
+    <meta property="og:title" content="일요일 점심 — Workspace Agents가 5월 6일에 무료 끝난다">
+    <meta property="og:description" content="새벽엔 4월 한 달 오픈웨이트 정리하고 끊었다. 점심엔 다른 줄기 하나. OpenAI Workspace Agents — 4/22 발표 후 4일 지나서 실사용 후기가 X에 슬슬 도는 중인데, 5월 6일에 무료 기간 끝나고 크레딧 과금으로 넘어간다는 게 뒤늦게 화제다.">
+    <meta property="og:url" content="https://shonsubong.github.io/sonslab-blog/posts/2026-04-26-pm12-ai-tech-news.html">
+    <meta property="og:image" content="https://shonsubong.github.io/sonslab-blog/assets/og/2026-04-26-pm12-ai-tech-news.png">
     <meta property="og:locale" content="ko_KR">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="MCP 서버를 5분 만에 직접 띄워본다">
-    <meta name="twitter:description" content="MCP 서버는 결국 stdin/stdout으로 JSON-RPC를 주고받는 작은 서비스다. 공식 Python SDK의 FastMCP로 함수 하나에 데코레이터만 달면, 첫 자작 MCP를 5분 안에 띄울 수 있다.">
-    <meta name="twitter:image" content="https://shonsubong.github.io/sonslab-blog/assets/og/2026-02-23-pm23.png">
-    <meta property="article:published_time" content="2026-02-23T23:00:00+09:00">
-    <meta property="article:modified_time" content="2026-02-23T23:00:00+09:00">
+    <meta name="twitter:title" content="일요일 점심 — Workspace Agents가 5월 6일에 무료 끝난다">
+    <meta name="twitter:description" content="새벽엔 4월 한 달 오픈웨이트 정리하고 끊었다. 점심엔 다른 줄기 하나. OpenAI Workspace Agents — 4/22 발표 후 4일 지나서 실사용 후기가 X에 슬슬 도는 중인데, 5월 6일에 무료 기간 끝나고 크레딧 과금으로 넘어간다는 게 뒤늦게 화제다.">
+    <meta name="twitter:image" content="https://shonsubong.github.io/sonslab-blog/assets/og/2026-04-26-pm12-ai-tech-news.png">
+    <meta property="article:published_time" content="2026-04-26T12:14:00+09:00">
+    <meta property="article:modified_time" content="2026-04-26T12:14:00+09:00">
     
 <script>
 (function() {
@@ -56,10 +56,10 @@
     } catch (e) {}
 })();
 </script>
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "MCP 서버를 5분 만에 직접 띄워본다", "description": "MCP 서버는 결국 stdin/stdout으로 JSON-RPC를 주고받는 작은 서비스다. 공식 Python SDK의 FastMCP로 함수 하나에 데코레이터만 달면, 첫 자작 MCP를 5분 안에 띄울 수 있다.", "url": "https://shonsubong.github.io/sonslab-blog/claude-tips/2026-02-23-pm23.html", "mainEntityOfPage": "https://shonsubong.github.io/sonslab-blog/claude-tips/2026-02-23-pm23.html", "inLanguage": "ko", "image": "https://shonsubong.github.io/sonslab-blog/assets/og/2026-02-23-pm23.png", "author": {"@type": "Person", "name": "SONSLAB"}, "publisher": {"@type": "Organization", "name": "SONSLAB", "logo": {"@type": "ImageObject", "url": "https://shonsubong.github.io/sonslab-blog/assets/logo.jpg"}}, "datePublished": "2026-02-23T23:00:00+09:00", "dateModified": "2026-02-23T23:00:00+09:00"}</script>
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "SONSLAB", "item": "https://shonsubong.github.io/sonslab-blog/"}, {"@type": "ListItem", "position": 2, "name": "글", "item": "https://shonsubong.github.io/sonslab-blog/#posts"}, {"@type": "ListItem", "position": 3, "name": "MCP 서버를 5분 만에 직접 띄워본다", "item": "https://shonsubong.github.io/sonslab-blog/claude-tips/2026-02-23-pm23.html"}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "일요일 점심 — Workspace Agents가 5월 6일에 무료 끝난다", "description": "새벽엔 4월 한 달 오픈웨이트 정리하고 끊었다. 점심엔 다른 줄기 하나. OpenAI Workspace Agents — 4/22 발표 후 4일 지나서 실사용 후기가 X에 슬슬 도는 중인데, 5월 6일에 무료 기간 끝나고 크레딧 과금으로 넘어간다는 게 뒤늦게 화제다.", "url": "https://shonsubong.github.io/sonslab-blog/posts/2026-04-26-pm12-ai-tech-news.html", "mainEntityOfPage": "https://shonsubong.github.io/sonslab-blog/posts/2026-04-26-pm12-ai-tech-news.html", "inLanguage": "ko", "image": "https://shonsubong.github.io/sonslab-blog/assets/og/2026-04-26-pm12-ai-tech-news.png", "author": {"@type": "Person", "name": "SONSLAB"}, "publisher": {"@type": "Organization", "name": "SONSLAB", "logo": {"@type": "ImageObject", "url": "https://shonsubong.github.io/sonslab-blog/assets/logo.jpg"}}, "datePublished": "2026-04-26T12:14:00+09:00", "dateModified": "2026-04-26T12:14:00+09:00"}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "SONSLAB", "item": "https://shonsubong.github.io/sonslab-blog/"}, {"@type": "ListItem", "position": 2, "name": "글", "item": "https://shonsubong.github.io/sonslab-blog/#posts"}, {"@type": "ListItem", "position": 3, "name": "일요일 점심 — Workspace Agents가 5월 6일에 무료 끝난다", "item": "https://shonsubong.github.io/sonslab-blog/posts/2026-04-26-pm12-ai-tech-news.html"}]}</script>
 </head>
-<body class="post-page" data-category="claude-tips">
+<body class="post-page" data-category="daily">
     <div class="reading-progress" id="reading-progress" role="progressbar" aria-label="읽기 진행률"></div>
 
 <aside class="site-sidebar" id="site-sidebar" aria-label="사이트 메뉴">
@@ -71,9 +71,9 @@
         <div class="sidebar-section-label">카테고리</div>
         <ul class="sidebar-cat-list">
             <li><a href="../index.html" class="">홈 <span class="sidebar-cat-count">96</span></a></li>
-            <li><a href="../index.html#posts" class="">데일리 브리핑 <span class="sidebar-cat-count">77</span></a></li>
+            <li><a href="../index.html#posts" class="active">데일리 브리핑 <span class="sidebar-cat-count">77</span></a></li>
             <li><a href="../ai-tech/index.html" class="">AI 기술 딥다이브 <span class="sidebar-cat-count">1</span></a></li>
-            <li><a href="../claude-tips/index.html" class="active">Claude Code 팁 <span class="sidebar-cat-count">18</span></a></li>
+            <li><a href="../claude-tips/index.html" class="">Claude Code 팁 <span class="sidebar-cat-count">18</span></a></li>
             <li><a href="../index.html#about">About</a></li>
             <li><a href="../feed.xml">RSS</a></li>
         </ul>
@@ -139,25 +139,29 @@
 
 <article class="post-article">
     <div class="post-header">
-        <a href="index.html" class="back-link">← Claude Code 팁 목록</a>
-        <h1>MCP 서버를 5분 만에 직접 띄워본다</h1>
+        <a href="../index.html" class="back-link">← 전체 글 목록</a>
+        <h1>일요일 점심 — Workspace Agents가 5월 6일에 무료 끝난다</h1>
         <div class="post-meta">
-            <span class="time-label">심야 팁</span>
-            <span>2026년 02월 23일 (월) · 23:33</span>
+            <span class="time-label">오전 브리핑</span>
+            <span>2026년 04월 26일 (일) · 12:14</span>
             <span>·</span>
-            <span>2분 읽기</span>
+            <span>6분 읽기</span>
         </div>
     </div>
     
+<div class="day-series-wrap" aria-label="같은 날의 다른 브리핑">
+    <div class="day-series-label"><span class="dot"></span><span>2026년 04월 26일 (일)의 브리핑</span></div>
+    <div class="day-series"><a href="2026-04-26-am06-ai-tech-news.html" class="day-series-item"><span class="series-time">06:08</span><span class="series-label">새벽 리포트</span></a><a href="#" class="day-series-item active" aria-current="page"><span class="series-time">12:14</span><span class="series-label">오전 브리핑</span></a></div>
+</div>
     <details class="post-toc" open><summary>목차</summary><div class="toc">
 <div class="toc">
 <ul>
-<li><a href="#mcp-5">MCP 서버를 5분 만에 직접 띄워본다</a><ul>
-<li><a href="#_1">한 줄 요약</a></li>
-<li><a href="#_2">어떤 상황에서 쓰나</a></li>
-<li><a href="#_3">실제 절차</a></li>
-<li><a href="#_4">주의/한계</a></li>
-<li><a href="#_5">더 읽을거리</a></li>
+<li><a href="#workspace-agents-5-6">일요일 점심 — Workspace Agents가 5월 6일에 무료 끝난다</a><ul>
+<li><a href="#workspace-agents">정리 — Workspace Agents가 뭐냐</a></li>
+<li><a href="#x">X에서 도는 후기</a></li>
+<li><a href="#_1">개인 입장에서 — 살짝 거리는 둔다</a></li>
+<li><a href="#google-turboquant">그리고 — Google TurboQuant 페이퍼가 같이 떴다</a></li>
+<li><a href="#_2">점심 메모</a></li>
 </ul>
 </li>
 </ul>
@@ -166,84 +170,69 @@
 </div>
 </details>
     <div class="post-content">
-<h1 id="mcp-5">MCP 서버를 5분 만에 직접 띄워본다</h1>
-<h2 id="_1">한 줄 요약</h2>
-<p>MCP 서버는 결국 stdin/stdout으로 JSON-RPC를 주고받는 작은 서비스다. 공식 Python SDK의 <code>FastMCP</code>로 함수 하나에 데코레이터만 달면, 첫 자작 MCP를 5분 안에 띄울 수 있다.</p>
-<h2 id="_2">어떤 상황에서 쓰나</h2>
-<p>Claude에게 사내 사양·개인 데이터에 접근시킬 때다. 공개 connector 목록에 없는 시스템(자체 DB, 사내 위키, 개인 노트)을 직접 노출하고 싶을 때 가장 빠른 길이 자작 MCP다.</p>
-<h2 id="_3">실제 절차</h2>
-<p>Python 기준 5분 코스.</p>
-<pre class="codehilite"><code class="language-bash"># 1. 작업 폴더 만들고 SDK 설치
-mkdir my-first-mcp &amp;&amp; cd my-first-mcp
-uv init
-uv add &quot;mcp[cli]&quot;
-</code></pre>
-
-<pre class="codehilite"><code class="language-python"># server.py — @mcp.tool() 데코레이터로 함수만 노출하면 끝.
-from mcp.server.fastmcp import FastMCP
-
-mcp = FastMCP(&quot;my-first-mcp&quot;)
-
-@mcp.tool()
-def hello(name: str) -&gt; str:
-    &quot;&quot;&quot;간단한 인사 도구. 동작 확인용.&quot;&quot;&quot;
-    return f&quot;안녕하세요, {name}님.&quot;
-
-if __name__ == &quot;__main__&quot;:
-    mcp.run()
-</code></pre>
-
-<p>Claude Code에 등록은 한 줄.</p>
-<pre class="codehilite"><code class="language-bash">claude mcp add my-first-mcp -- uv run python /full/path/to/server.py
-claude mcp list
-</code></pre>
-
-<p><code>--</code> 뒤가 stdio로 띄울 명령이다. 이후 세션에서 <code>hello</code> 도구가 자동으로 보인다.</p>
-<h2 id="_4">주의/한계</h2>
+<h1 id="workspace-agents-5-6">일요일 점심 — Workspace Agents가 5월 6일에 무료 끝난다</h1>
+<p>새벽엔 4월 한 달 오픈웨이트 정리하고 끊었다. 점심엔 다른 줄기 하나. <strong>OpenAI Workspace Agents</strong> — 4/22 발표 후 4일 지나서 실사용 후기가 X에 슬슬 도는 중인데, 5월 6일에 무료 기간 끝나고 크레딧 과금으로 넘어간다는 게 뒤늦게 화제다.</p>
+<h2 id="workspace-agents">정리 — Workspace Agents가 뭐냐</h2>
+<p>발표 그 자체는 4일 전이라 뉴스라기엔 살짝 늦지만, 실제 그림은 지금 와서 더 또렷해졌다.</p>
 <ul>
-<li>첫 도구는 <strong>부작용 없는 read-only</strong>로 시작하자. 실수 디버깅이 훨씬 쉽다.</li>
-<li>개인 데이터 접근 권한은 좁게. 회사 자산은 절대 노출 금지.</li>
-<li>응답이 오래 걸리면 Claude가 타임아웃을 만난다. 비동기·스트리밍은 처음부터 신경 쓰자.</li>
+<li>기존 Custom GPT의 <strong>후속 제품</strong>. ChatGPT Business / Enterprise / Edu / Teachers 플랜 한정 리서치 프리뷰</li>
+<li>Codex 백본. 기획서 작성, 코드 리뷰, 메시지 응답 같은 <strong>정형화된 업무</strong>를 반복 실행하는 데 초점</li>
+<li>첫날부터 <strong>Slack, Google Workspace(Gmail/Drive/Calendar/Docs/Sheets), Salesforce</strong> 직결 커넥터</li>
+<li>일정 트리거(스케줄) + Slack 멘션 트리거. 즉 <strong>사용자가 자리에 없을 때도 작동</strong></li>
+<li>5월 6일까지 무료, 이후 크레딧 기반 과금 (<a href="https://openai.com/index/introducing-workspace-agents-in-chatgpt/">OpenAI — Introducing workspace agents</a>, <a href="https://venturebeat.com/orchestration/openai-unveils-workspace-agents-a-successor-to-custom-gpts-for-enterprises-that-can-plug-directly-into-slack-salesforce-and-more">VentureBeat — Workspace Agents</a>)</li>
 </ul>
-<h2 id="_5">더 읽을거리</h2>
-<ul>
-<li><a href="https://modelcontextprotocol.io">MCP 공식 사양</a></li>
-</ul>
+<p>진짜 차이점은 "Slack에서 멘션하면 자동 픽업"이라는 트리거 모델이다. Custom GPT는 결국 ChatGPT 창에서 사람이 시작 버튼 눌러야 했는데, Workspace Agents는 <strong>메시지 자체가 작업 큐</strong>가 된다. Anthropic의 Managed Agents가 4월 중순에 같은 방향(장시간 호라이즌, 안정 인터페이스)으로 먼저 나왔고, 이번 OpenAI 발표가 사실상 같은 시장에서 정면 충돌한 그림.</p>
+<h2 id="x">X에서 도는 후기</h2>
+<p>@swyx가 쓴 스레드가 가장 핵심을 짚었다 — <em>"이건 GPT가 아니라 Zapier+ChatGPT를 합친 것에 가깝다."</em> 즉 워크플로우 자동화 영역 일부를 OpenAI가 직접 흡수하기 시작했다는 평. 반대편에선 <em>"Claude가 이미 MCP로 같은 그림을 1년째 그려왔는데, OpenAI가 폐쇄형으로 다시 그리는 거"</em>라는 비판도 있다. 둘 다 맞는 말이다.</p>
+<p>소규모 팀들 사이에선 <strong>5월 6일 전에 일단 만들어두자</strong>는 분위기. 무료 기간 동안 회사 내부 워크플로우(보고서 자동 작성, PR 1차 리뷰, 회의록 정리)를 몇 개 묶어두고, 크레딧 가격 보고 나서 유지/폐기 결정한다는 그림이다.</p>
+<h2 id="_1">개인 입장에서 — 살짝 거리는 둔다</h2>
+<p>집에서 Claude Code Max로 개인 프로젝트 돌리는 입장에선 Workspace Agents를 당장 끌어쓸 일은 없다. ChatGPT Business 플랜 가입자만 쓸 수 있어서 개인 Plus·Pro로는 진입 자체가 안 된다. 가격 리스크 측면에서도, 크레딧 과금이 시작되면 에이전트형 워크로드는 토큰 폭주가 흔하다. 5/6 직후에 <em>"써보니 한 달에 $X 나왔다"</em> 글이 한 무더기 나올 거고, 거기서부터 다시 보면 된다.</p>
+<p>회사 차원에선 또 다르다. 회사 보안 정책상 외부 API 호출이 막혀있는 환경에선 Workspace Agents를 직접 쓸 일이 없다. 다만 <strong>이런 워크플로우 자동화 패턴이 표준화되고 있다</strong>는 점은 사내 평가 자료에 들어갈 만한 지표다. 사내 LLM 게이트웨이 위에 같은 추상(트리거→에이전트→커넥터)을 어떻게 올릴 거냐, 라는 질문이 다음 분기 IT 회의 어딘가에서 나올 가능성이 크다.</p>
+<h2 id="google-turboquant">그리고 — Google TurboQuant 페이퍼가 같이 떴다</h2>
+<p>ICLR 2026에서 Google이 <strong>TurboQuant</strong>라는 KV 캐시 양자화 알고리즘을 발표했다. 멀티 GPU 추론에서 가장 큰 메모리 병목이 KV 캐시인데, 이걸 <strong>3-bit까지 양자화하면서 정확도 손실 0%, 메모리 6배 절감, 어텐션 연산 8배 가속</strong>이라고 주장한다. (<a href="https://www.nextbigfuture.com/2026/04/2026-is-breakthrough-year-for-reliable-ai-world-models-and-continual-learning-prototypes.html">NextBigFuture — 2026 breakthroughs in reliable AI</a>)</p>
+<p>새벽 포스트에서 "1.6T MoE 풀 호스팅은 비현실적"이라고 적었는데, 이런 KV 양자화가 보편화되면 그 경계선이 또 한 번 내려간다. 추론 비용 곡선이 매 분기 단위로 무너지고 있다는 게 4월의 진짜 그림이다 — 모델 발표 헤드라인보다 추론 인프라 페이퍼들이 더 본질적인 변곡점이다.</p>
+<h2 id="_2">점심 메모</h2>
+<p>평일이면 회사 인프라 회의 안건으로 Workspace Agents·TurboQuant 둘 다 올렸겠는데, 일요일이니 우선 머릿속에만 정리. 4/29 화요일이 빅테크 어닝 시작이고, <strong>각 사가 이런 추론 인프라 비용 절감을 어떻게 가이던스에 반영하는지</strong>가 다음 주 두 번째 관전 포인트다(첫 번째는 어제 적은 sovereign AI 화법).</p>
+<p>오후엔 잠깐 산책하고 다시 돌아온다.</p>
+<p>Sources:
+- <a href="https://openai.com/index/introducing-workspace-agents-in-chatgpt/">OpenAI — Introducing workspace agents in ChatGPT</a>
+- <a href="https://venturebeat.com/orchestration/openai-unveils-workspace-agents-a-successor-to-custom-gpts-for-enterprises-that-can-plug-directly-into-slack-salesforce-and-more">VentureBeat — OpenAI unveils Workspace Agents, successor to custom GPTs</a>
+- <a href="https://9to5mac.com/2026/04/22/openai-updates-chatgpt-with-codex-powered-workspace-agents-for-teams/">9to5Mac — OpenAI updates ChatGPT with Codex-powered workspace agents for teams</a>
+- <a href="https://www.neowin.net/news/openai-launches-autonomous-workspace-agents-in-chatgpt/">Neowin — OpenAI launches autonomous Workspace Agents in ChatGPT</a>
+- <a href="https://www.testingcatalog.com/openai-launched-24-7-always-on-workspace-agents-in-chatgpt/">TestingCatalog — 24/7 always-on Workspace Agents</a>
+- <a href="https://www.nextbigfuture.com/2026/04/2026-is-breakthrough-year-for-reliable-ai-world-models-and-continual-learning-prototypes.html">NextBigFuture — 2026 Breakthrough Year for Reliable AI World Models</a></p>
     </div>
     
 <div class="post-share">
     <span class="share-label">공유하기</span>
-    <a href="https://twitter.com/intent/tweet?text=MCP 서버를 5분 만에 직접 띄워본다&url=https://shonsubong.github.io/sonslab-blog/claude-tips/2026-02-23-pm23.html"
+    <a href="https://twitter.com/intent/tweet?text=일요일 점심 — Workspace Agents가 5월 6일에 무료 끝난다&url=https://shonsubong.github.io/sonslab-blog/posts/2026-04-26-pm12-ai-tech-news.html"
        class="share-btn" target="_blank" rel="noopener" aria-label="X(Twitter)에 공유">
         <span>X</span>
     </a>
-    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://shonsubong.github.io/sonslab-blog/claude-tips/2026-02-23-pm23.html"
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://shonsubong.github.io/sonslab-blog/posts/2026-04-26-pm12-ai-tech-news.html"
        class="share-btn" target="_blank" rel="noopener" aria-label="LinkedIn에 공유">
         <span>in</span>
     </a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://shonsubong.github.io/sonslab-blog/claude-tips/2026-02-23-pm23.html"
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://shonsubong.github.io/sonslab-blog/posts/2026-04-26-pm12-ai-tech-news.html"
        class="share-btn" target="_blank" rel="noopener" aria-label="Facebook에 공유">
         <span>f</span>
     </a>
-    <button type="button" class="share-btn share-copy" id="share-copy-btn" data-url="https://shonsubong.github.io/sonslab-blog/claude-tips/2026-02-23-pm23.html" aria-label="링크 복사">
+    <button type="button" class="share-btn share-copy" id="share-copy-btn" data-url="https://shonsubong.github.io/sonslab-blog/posts/2026-04-26-pm12-ai-tech-news.html" aria-label="링크 복사">
         <span>🔗 링크 복사</span>
     </button>
 </div>
     
 <nav class="post-nav-bottom" aria-label="이전/다음 글">
-    <a href="2026-02-19-pm23.html" class="post-nav-link prev">
+    <a href="2026-04-26-am06-ai-tech-news.html" class="post-nav-link prev">
         <span class="post-nav-label">← 이전 글</span>
-        <span class="post-nav-title">PreToolUse hook 한 줄로 위험한 명령을 사전 차단한다</span>
+        <span class="post-nav-title">일요일 새벽 — 4월 한 달, 오픈웨이트가 진짜로 자리를 잡았다</span>
     </a>
-    <a href="2026-02-27-pm23.html" class="post-nav-link next">
-        <span class="post-nav-label">다음 글 →</span>
-        <span class="post-nav-title">커스텀 슬래시 명령으로 매일 쓰는 흐름을 한 줄에 묶는다</span>
-    </a>
+    
 </nav>
     
 <section class="related-posts" aria-label="최근 다른 리포트">
     <div class="related-posts-label">최근 다른 리포트</div>
-    <ul class="related-list"><li><a href="2026-04-26-pm23.html"><span class="related-title">/clear와 /compact의 차이만 알아도 컨텍스트가 두 배로 늘어난다</span><span class="related-date">2026-04-26 · 심야 팁 · 23:00</span></a></li><li><a href="2026-03-30-pm23.html"><span class="related-title">다중 에이전트 오케스트레이션 — 실제 적용 패턴 세 가지</span><span class="related-date">2026-03-30 · 심야 팁 · 23:00</span></a></li><li><a href="2026-03-27-pm23.html"><span class="related-title">bash 도구를 allowlist로 묶어 사고 위험을 한 자리수로 떨어뜨린다</span><span class="related-date">2026-03-27 · 심야 팁 · 23:00</span></a></li><li><a href="2026-03-24-pm23.html"><span class="related-title">Claude Code의 plugin 시스템 — Cowork·CLI 양쪽에서 정리한다</span><span class="related-date">2026-03-24 · 심야 팁 · 23:00</span></a></li><li><a href="2026-03-20-pm23.html"><span class="related-title">settings.json 우선순위 — 한 번 알면 다시 안 헷갈린다</span><span class="related-date">2026-03-20 · 심야 팁 · 23:00</span></a></li></ul>
+    <ul class="related-list"><li><a href="2026-04-25-pm22-ai-tech-news.html"><span class="related-title">토요일 밤 — 4/29까지 4일, 무엇을 보고 들어갈까</span><span class="related-date">2026-04-25 · 저녁 마감 · 22:24</span></a></li><li><a href="2026-04-25-pm17-ai-tech-news.html"><span class="related-title">토요일 오후 — 한국 시총이 영국까지 1,400억 달러 남았다</span><span class="related-date">2026-04-25 · 오후 브리핑 · 17:14</span></a></li><li><a href="2026-04-25-pm12-ai-tech-news.html"><span class="related-title">토요일 점심 — DeepSeek V4가 또 판을 흔들었다</span><span class="related-date">2026-04-25 · 오전 브리핑 · 12:18</span></a></li><li><a href="2026-04-25-am06-ai-tech-news.html"><span class="related-title">주말 첫 새벽 — 원전 IPO가 1조 넘게 들어왔다</span><span class="related-date">2026-04-25 · 새벽 리포트 · 06:12</span></a></li><li><a href="2026-04-24-pm22-ai-tech-news.html"><span class="related-title">테슬라×인텔 14A, 하루 종일 안 풀었던 이야기 — 금요일 밤 정리</span><span class="related-date">2026-04-24 · 저녁 마감 · 22:14</span></a></li></ul>
 </section>
 </article>
 
