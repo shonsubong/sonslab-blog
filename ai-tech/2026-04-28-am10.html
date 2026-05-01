@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>돈이 몰리고 있다 — 4월 셋째 주, AI 업계에 무슨 일이 벌어지고 있나 — SONSLAB</title>
+    <title>추측 디코딩이 vLLM 기본값이 된 이유 — SONSLAB</title>
     <link rel="icon" href="../assets/logo.jpg">
     <link rel="alternate" type="application/atom+xml" title="SONSLAB Feed" href="../feed.xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,22 +11,22 @@
     <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/style.css">
-    <meta name="description" content="요즘 테크 뉴스를 보면 숫자 단위가 점점 비현실적으로 느껴진다. 1분기 전 세계 벤처 투자가 3,000억 달러를 찍었다는 소식을 보고, 처음엔 오타인 줄 알았다. 그런데 진짜다. 그것도 80%가 AI 한 분야에 몰렸다. 오늘은 이 흐름을 중심으로, 지난 하루 동안 눈에 띄었던 소식들을 정리해봤다.">
+    <meta name="description" content="직전 두 주 동안 두 사건이 겹쳤다. 4월 17일 vLLM 0.8.0 릴리스가 EAGLE-3 통합을 experimental에서 stable로 올렸고, 같은 주 SGLang 팀이 RadixAttention과 EAGLE-3를 같이 켰을 때 Llama-3.1-70B 기준 처리량을 2.3배까지 끌어올렸다는 결과를 공개했다 (SGLang 0.4 release notes). production 기본값이...">
     <meta name="author" content="SONSLAB">
-    <link rel="canonical" href="https://shonsubong.github.io/sonslab-blog/posts/2026-04-15-ai-tech-news.html">
+    <link rel="canonical" href="https://shonsubong.github.io/sonslab-blog/ai-tech/2026-04-28-am10.html">
     <meta property="og:site_name" content="SONSLAB">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="돈이 몰리고 있다 — 4월 셋째 주, AI 업계에 무슨 일이 벌어지고 있나">
-    <meta property="og:description" content="요즘 테크 뉴스를 보면 숫자 단위가 점점 비현실적으로 느껴진다. 1분기 전 세계 벤처 투자가 3,000억 달러를 찍었다는 소식을 보고, 처음엔 오타인 줄 알았다. 그런데 진짜다. 그것도 80%가 AI 한 분야에 몰렸다. 오늘은 이 흐름을 중심으로, 지난 하루 동안 눈에 띄었던 소식들을 정리해봤다.">
-    <meta property="og:url" content="https://shonsubong.github.io/sonslab-blog/posts/2026-04-15-ai-tech-news.html">
-    <meta property="og:image" content="https://shonsubong.github.io/sonslab-blog/assets/og/2026-04-15-ai-tech-news.png">
+    <meta property="og:title" content="추측 디코딩이 vLLM 기본값이 된 이유">
+    <meta property="og:description" content="직전 두 주 동안 두 사건이 겹쳤다. 4월 17일 vLLM 0.8.0 릴리스가 EAGLE-3 통합을 experimental에서 stable로 올렸고, 같은 주 SGLang 팀이 RadixAttention과 EAGLE-3를 같이 켰을 때 Llama-3.1-70B 기준 처리량을 2.3배까지 끌어올렸다는 결과를 공개했다 (SGLang 0.4 release notes). production 기본값이...">
+    <meta property="og:url" content="https://shonsubong.github.io/sonslab-blog/ai-tech/2026-04-28-am10.html">
+    <meta property="og:image" content="https://shonsubong.github.io/sonslab-blog/assets/logo.jpg">
     <meta property="og:locale" content="ko_KR">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="돈이 몰리고 있다 — 4월 셋째 주, AI 업계에 무슨 일이 벌어지고 있나">
-    <meta name="twitter:description" content="요즘 테크 뉴스를 보면 숫자 단위가 점점 비현실적으로 느껴진다. 1분기 전 세계 벤처 투자가 3,000억 달러를 찍었다는 소식을 보고, 처음엔 오타인 줄 알았다. 그런데 진짜다. 그것도 80%가 AI 한 분야에 몰렸다. 오늘은 이 흐름을 중심으로, 지난 하루 동안 눈에 띄었던 소식들을 정리해봤다.">
-    <meta name="twitter:image" content="https://shonsubong.github.io/sonslab-blog/assets/og/2026-04-15-ai-tech-news.png">
-    <meta property="article:published_time" content="2026-04-15T00:00:00+09:00">
-    <meta property="article:modified_time" content="2026-04-15T00:00:00+09:00">
+    <meta name="twitter:title" content="추측 디코딩이 vLLM 기본값이 된 이유">
+    <meta name="twitter:description" content="직전 두 주 동안 두 사건이 겹쳤다. 4월 17일 vLLM 0.8.0 릴리스가 EAGLE-3 통합을 experimental에서 stable로 올렸고, 같은 주 SGLang 팀이 RadixAttention과 EAGLE-3를 같이 켰을 때 Llama-3.1-70B 기준 처리량을 2.3배까지 끌어올렸다는 결과를 공개했다 (SGLang 0.4 release notes). production 기본값이...">
+    <meta name="twitter:image" content="https://shonsubong.github.io/sonslab-blog/assets/logo.jpg">
+    <meta property="article:published_time" content="2026-04-28T10:00:00+09:00">
+    <meta property="article:modified_time" content="2026-04-28T10:00:00+09:00">
     
 <script>
 (function() {
@@ -56,10 +56,10 @@
     } catch (e) {}
 })();
 </script>
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "돈이 몰리고 있다 — 4월 셋째 주, AI 업계에 무슨 일이 벌어지고 있나", "description": "요즘 테크 뉴스를 보면 숫자 단위가 점점 비현실적으로 느껴진다. 1분기 전 세계 벤처 투자가 3,000억 달러를 찍었다는 소식을 보고, 처음엔 오타인 줄 알았다. 그런데 진짜다. 그것도 80%가 AI 한 분야에 몰렸다. 오늘은 이 흐름을 중심으로, 지난 하루 동안 눈에 띄었던 소식들을 정리해봤다.", "url": "https://shonsubong.github.io/sonslab-blog/posts/2026-04-15-ai-tech-news.html", "mainEntityOfPage": "https://shonsubong.github.io/sonslab-blog/posts/2026-04-15-ai-tech-news.html", "inLanguage": "ko", "image": "https://shonsubong.github.io/sonslab-blog/assets/og/2026-04-15-ai-tech-news.png", "author": {"@type": "Person", "name": "SONSLAB"}, "publisher": {"@type": "Organization", "name": "SONSLAB", "logo": {"@type": "ImageObject", "url": "https://shonsubong.github.io/sonslab-blog/assets/logo.jpg"}}, "datePublished": "2026-04-15T00:00:00+09:00", "dateModified": "2026-04-15T00:00:00+09:00"}</script>
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "SONSLAB", "item": "https://shonsubong.github.io/sonslab-blog/"}, {"@type": "ListItem", "position": 2, "name": "글", "item": "https://shonsubong.github.io/sonslab-blog/#posts"}, {"@type": "ListItem", "position": 3, "name": "돈이 몰리고 있다 — 4월 셋째 주, AI 업계에 무슨 일이 벌어지고 있나", "item": "https://shonsubong.github.io/sonslab-blog/posts/2026-04-15-ai-tech-news.html"}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "추측 디코딩이 vLLM 기본값이 된 이유", "description": "직전 두 주 동안 두 사건이 겹쳤다. 4월 17일 vLLM 0.8.0 릴리스가 EAGLE-3 통합을 experimental에서 stable로 올렸고, 같은 주 SGLang 팀이 RadixAttention과 EAGLE-3를 같이 켰을 때 Llama-3.1-70B 기준 처리량을 2.3배까지 끌어올렸다는 결과를 공개했다 (SGLang 0.4 release notes). production 기본값이...", "url": "https://shonsubong.github.io/sonslab-blog/ai-tech/2026-04-28-am10.html", "mainEntityOfPage": "https://shonsubong.github.io/sonslab-blog/ai-tech/2026-04-28-am10.html", "inLanguage": "ko", "image": "https://shonsubong.github.io/sonslab-blog/assets/logo.jpg", "author": {"@type": "Person", "name": "SONSLAB"}, "publisher": {"@type": "Organization", "name": "SONSLAB", "logo": {"@type": "ImageObject", "url": "https://shonsubong.github.io/sonslab-blog/assets/logo.jpg"}}, "datePublished": "2026-04-28T10:00:00+09:00", "dateModified": "2026-04-28T10:00:00+09:00"}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "SONSLAB", "item": "https://shonsubong.github.io/sonslab-blog/"}, {"@type": "ListItem", "position": 2, "name": "글", "item": "https://shonsubong.github.io/sonslab-blog/#posts"}, {"@type": "ListItem", "position": 3, "name": "추측 디코딩이 vLLM 기본값이 된 이유", "item": "https://shonsubong.github.io/sonslab-blog/ai-tech/2026-04-28-am10.html"}]}</script>
 </head>
-<body class="post-page" data-category="daily">
+<body class="post-page" data-category="ai-tech">
     <div class="reading-progress" id="reading-progress" role="progressbar" aria-label="읽기 진행률"></div>
 
 <aside class="site-sidebar" id="site-sidebar" aria-label="사이트 메뉴">
@@ -71,8 +71,8 @@
         <div class="sidebar-section-label">카테고리</div>
         <ul class="sidebar-cat-list">
             <li><a href="../index.html" class="">홈 <span class="sidebar-cat-count">120</span></a></li>
-            <li><a href="../index.html#posts" class="active">데일리 브리핑 <span class="sidebar-cat-count">95</span></a></li>
-            <li><a href="../ai-tech/index.html" class="">AI 기술 딥다이브 <span class="sidebar-cat-count">4</span></a></li>
+            <li><a href="../index.html#posts" class="">데일리 브리핑 <span class="sidebar-cat-count">95</span></a></li>
+            <li><a href="../ai-tech/index.html" class="active">AI 기술 딥다이브 <span class="sidebar-cat-count">4</span></a></li>
             <li><a href="../claude-tips/index.html" class="">Claude Code 팁 <span class="sidebar-cat-count">21</span></a></li>
             <li><a href="../manuals/claude-code.html" class="">Claude Code 가이드북 <span class="sidebar-cat-count">PDF</span></a></li>
             <li><a href="../index.html#about">About</a></li>
@@ -140,31 +140,26 @@
 
 <article class="post-article">
     <div class="post-header">
-        <a href="../index.html" class="back-link">← 전체 글 목록</a>
-        <h1>돈이 몰리고 있다 — 4월 셋째 주, AI 업계에 무슨 일이 벌어지고 있나</h1>
+        <a href="index.html" class="back-link">← AI 기술 목록</a>
+        <h1>추측 디코딩이 vLLM 기본값이 된 이유</h1>
         <div class="post-meta">
-            
-            <span>2026년 04월 15일 (수)</span>
+            <span class="time-label">AI 딥다이브</span>
+            <span>2026년 04월 28일 (화) · 10:00</span>
             <span>·</span>
-            <span>10분 읽기</span>
+            <span>5분 읽기</span>
         </div>
     </div>
     
-<div class="day-series-wrap" aria-label="같은 날의 다른 브리핑">
-    <div class="day-series-label"><span class="dot"></span><span>2026년 04월 15일 (수)의 브리핑</span></div>
-    <div class="day-series"><a href="2026-04-15-am06-ai-tech-news.html" class="day-series-item"><span class="series-time">06:00</span><span class="series-label">새벽 리포트</span></a><a href="2026-04-15-pm12-ai-tech-news.html" class="day-series-item"><span class="series-time">12:00</span><span class="series-label">오전 브리핑</span></a><a href="2026-04-15-pm17-ai-tech-news.html" class="day-series-item"><span class="series-time">17:00</span><span class="series-label">오후 브리핑</span></a><a href="2026-04-15-pm22-ai-tech-news.html" class="day-series-item"><span class="series-time">22:00</span><span class="series-label">저녁 마감</span></a><a href="#" class="day-series-item active" aria-current="page"><span class="series-time"></span><span class="series-label">리포트</span></a></div>
-</div>
     <details class="post-toc" open><summary>목차</summary><div class="toc">
 <div class="toc">
 <ul>
-<li><a href="#4-ai">돈이 몰리고 있다 — 4월 셋째 주, AI 업계에 무슨 일이 벌어지고 있나</a><ul>
-<li><a href="#_1">모델 전쟁, 이제 성능이 아니라 '쓸모'의 싸움</a></li>
-<li><a href="#_2">빅테크는 다음 판을 준비 중</a></li>
-<li><a href="#_3">개발자 세계에서 벌어지는 일들</a></li>
-<li><a href="#_4">반도체 — 칩보다 '포장'이 문제</a></li>
-<li><a href="#_5">규제의 파도가 밀려온다</a></li>
-<li><a href="#_6">돈은 어디로 흐르고 있나</a></li>
-<li><a href="#_7">한 줄 정리</a></li>
+<li><a href="#vllm">추측 디코딩이 vLLM 기본값이 된 이유</a><ul>
+<li><a href="#tldr">TL;DR</a></li>
+<li><a href="#_1">배경 — 왜 지금 다시 이 주제인가</a></li>
+<li><a href="#_2">핵심 메커니즘</a></li>
+<li><a href="#_3">코드 예시</a></li>
+<li><a href="#_4">한계·반론</a></li>
+<li><a href="#_5">현직 엔지니어 관점</a></li>
 </ul>
 </li>
 </ul>
@@ -173,80 +168,102 @@
 </div>
 </details>
     <div class="post-content">
-<h1 id="4-ai">돈이 몰리고 있다 — 4월 셋째 주, AI 업계에 무슨 일이 벌어지고 있나</h1>
-<p>요즘 테크 뉴스를 보면 숫자 단위가 점점 비현실적으로 느껴진다. 1분기 전 세계 벤처 투자가 3,000억 달러를 찍었다는 소식을 보고, 처음엔 오타인 줄 알았다. 그런데 진짜다. 그것도 80%가 AI 한 분야에 몰렸다. 오늘은 이 흐름을 중심으로, 지난 하루 동안 눈에 띄었던 소식들을 정리해봤다.</p>
+<h1 id="vllm">추측 디코딩이 vLLM 기본값이 된 이유</h1>
+<h2 id="tldr">TL;DR</h2>
+<ul>
+<li>큰 모델로 토큰 한 개를 만들 때 비용 대부분은 연산이 아니라 HBM 대역폭이다. 추측 디코딩은 작은 draft가 K개 토큰을 미리 던지고 큰 target이 한 번에 검증해, 토큰당 메모리 왕복을 줄인다.</li>
+<li>4월 17일 vLLM 0.8.0이 EAGLE-3를 stable로 승격. 끄면 비용 경쟁에서 밀리는 단계다.</li>
+<li>다만 도메인이 바뀌면 acceptance rate가 0.3대까지 떨어진다. 잘 돌리려면 도메인별 draft head를 따로 학습해야 한다.</li>
+</ul>
+<h2 id="_1">배경 — 왜 지금 다시 이 주제인가</h2>
+<p>직전 두 주 동안 두 사건이 겹쳤다. 4월 17일 vLLM 0.8.0 릴리스가 EAGLE-3 통합을 experimental에서 stable로 올렸고, 같은 주 SGLang 팀이 RadixAttention과 EAGLE-3를 같이 켰을 때 Llama-3.1-70B 기준 처리량을 2.3배까지 끌어올렸다는 결과를 공개했다 (<a href="https://lmsys.org/blog/2026-04-sglang-spec">SGLang 0.4 release notes</a>). production 기본값이 옮겨가는 순간이라는 신호다. MoE가 "토큰당 활성 파라미터"를 줄여 추론 비용을 깎는다면, 추측 디코딩은 "토큰당 메모리 왕복"을 줄여 같은 목적을 다른 축에서 달성한다. 둘은 직교한다 — 같이 켜면 곱해진다.</p>
+<h2 id="_2">핵심 메커니즘</h2>
+<p>기본 디코딩의 병목은 연산이 아니라 메모리다. 70B 모델 FP16이라면 토큰 한 개를 만들기 위해 가중치 약 140GB를 HBM에서 매번 읽어와야 한다. H100 SXM의 HBM3 대역폭이 3.35TB/s, 토큰당 이론 최소 약 42ms — 텐서 코어는 남고 메모리만 갈린다.</p>
+<p>추측 디코딩은 다음과 같이 흘러간다.</p>
+<pre class="codehilite"><code>[프롬프트]
+   │
+   ▼
+[Draft (작은 모델)] ── K개 토큰 후보 생성 ──▶ [t1 t2 ... tK]
+                                                   │
+                                                   ▼
+[Target (큰 모델)]  ── 1번의 forward로 K+1개 위치 동시 검증
+                                                   │
+                                                   ▼
+[수락된 j개 + Target이 새로 만든 1개] = j+1개 토큰
+</code></pre>
+
+<p>핵심은 "한 번의 forward에 K+1개 토큰 위치를 동시에 검증"한다는 점이다. 검증은 batch 차원에 K를 끼워 넣는 형태라, 가중치 메모리 왕복은 1번이지만 계산량은 K배 늘어난다. 메모리 바운드 워크로드에서 컴퓨트 K배는 거의 공짜에 가깝다 — 안 쓰던 텐서 코어를 일하게 만드는 셈이다.</p>
+<p>EAGLE 계열의 차별점은 별도 draft 모델을 두지 않는다는 것이다. target 모델의 hidden state를 입력으로 받는 가벼운 head 한 개만 학습한다. EAGLE-3는 마지막 layer 하나가 아니라 multi-layer hidden을 활용해 acceptance rate를 0.7대까지 끌어올렸다 (<a href="https://arxiv.org/abs/2503.01840">EAGLE-3 — arXiv 2503.01840</a>).</p>
+<h2 id="_3">코드 예시</h2>
+<p>vLLM에서 EAGLE-3 켜는 법은 설정 한 블록이다.</p>
+<pre class="codehilite"><code class="language-python">from vllm import LLM, SamplingParams
+
+llm = LLM(
+    model=&quot;meta-llama/Llama-3.1-70B-Instruct&quot;,
+    speculative_config={
+        &quot;method&quot;: &quot;eagle3&quot;,
+        &quot;model&quot;: &quot;yuhuili/EAGLE3-Llama3.1-70B&quot;,
+        &quot;num_speculative_tokens&quot;: 5,
+    },
+    gpu_memory_utilization=0.9,
+)
+
+out = llm.generate(
+    [&quot;추측 디코딩의 원리를 설명해줘.&quot;],
+    SamplingParams(max_tokens=512, temperature=0.7),
+)
+</code></pre>
+
+<p>수식은 단순하다. acceptance rate를 α라 하면, K개 추측 토큰 중 평균 수락 길이는 <code>(1 - α^(K+1)) / (1 - α) - 1</code>. α=0.7, K=5라면 약 1.86개. 큰 모델 forward 한 번이 평균 <code>1.86 + 1 = 2.86</code>개 토큰을 만든다는 뜻이고, 이론상 처리량 2.86배다. 실제 production에서는 그보다 낮게 잡히는데, 이유는 다음 섹션에 있다.</p>
+<h2 id="_4">한계·반론</h2>
+<p>세 가지가 걸린다.</p>
+<p>첫째, 도메인 시프트. 일반 대화로 학습한 draft head를 코드 생성에 던지면 acceptance rate가 0.3대까지 떨어진다. SemiAnalysis가 production 트래픽으로 측정한 평균 α는 0.5~0.6대였다 (<a href="https://semianalysis.com/2026/03/spec-decoding-reality">SemiAnalysis — Spec Decoding Reality Check</a>). 벤더 데모의 "2.3배"는 best case다.</p>
+<p>둘째, 긴 출력일수록 누적 오류로 α가 떨어진다. 4K 토큰 이상 생성에서 후반부 acceptance rate는 초반의 60% 수준으로 줄어든다.</p>
+<p>셋째, batch가 커지면 이득이 빠르게 줄어든다. batch=1에서 가장 빛나고, batch 32 이상이면 워크로드가 컴퓨트 바운드로 넘어가 K배 계산량이 그대로 부담으로 돌아온다. 트래픽 많은 서버에서는 의외로 미묘한 결정이다.</p>
+<h2 id="_5">현직 엔지니어 관점</h2>
+<p>반도체 쪽에서 보면 추측 디코딩은 "HBM 대역폭이 가장 비싼 자원"이라는 사실의 가장 직접적인 인정이다. H100 SXM이 3.35TB/s, B200이 8TB/s, B300까지 가도 토큰당 메모리 왕복이 비용 대부분이라는 가정은 더 강하게 성립한다. 온디바이스에서는 결정적이다 — Snapdragon X Elite의 LPDDR5X 대역폭은 H100의 2~3% 수준이라, 추측 디코딩 없이는 7B 모델도 인터랙티브 응답이 어렵다. 결국 칩 설계 단계에서 "draft + verify" 패턴을 가속할 작은 NPU 코어를 따로 두는 아키텍처가 나오리라 본다. 한두 해 안에 "추측 디코딩 친화적 칩"이라는 마케팅 카테고리가 붙을 것 같다.</p>
 <hr />
-<h2 id="_1">모델 전쟁, 이제 성능이 아니라 '쓸모'의 싸움</h2>
-<p>AI 모델 리더보드를 보면 요즘은 1위가 누구인지보다, 각 모델이 뭘 잘하는지가 더 중요해졌다. 3월 기준으로 Anthropic이 근소한 차이로 앞서 있고 xAI, Google, OpenAI가 바짝 뒤따르는 상황인데, 솔직히 상위권 모델들 사이의 성능 차이는 일반 사용자가 체감하기 어려운 수준이다. 결국 비용이 얼마나 합리적인지, 얼마나 안정적으로 돌아가는지가 선택의 기준이 되고 있다. (<a href="https://llm-stats.com/ai-news">llm-stats</a>)</p>
-<p>이런 와중에 Meta가 'Muse Spark'라는 새 모델을 들고 나왔다. Alexandr Wang이 이끄는 Meta Superintelligence Labs의 첫 작품인데, Meta가 올해 AI에만 1,150억~1,350억 달러를 쏟아붓겠다고 하니 농담이 아니다. 작년 대비 거의 두 배 수준이다. (<a href="https://www.cnbc.com/2026/04/08/meta-debuts-first-major-ai-model-since-14-billion-deal-to-bring-in-alexandr-wang.html">CNBC</a>)</p>
-<p>한편 Nature에 재밌는 연구가 하나 실렸다. 복잡한 과학적 문제를 놓고 인간 과학자와 최첨단 AI 에이전트를 붙여봤더니, 아직은 인간이 이긴다는 결과다. 단순 작업이야 AI가 압도적이지만, 창의적 문제 해결이나 여러 맥락을 동시에 고려하는 복합 추론에서는 사람의 우위가 여전하다. AI를 '대체재'가 아니라 '협업 도구'로 봐야 한다는 시각에 무게를 실어주는 연구다. (<a href="https://www.nature.com/articles/d41586-026-01199-z">Nature</a>)</p>
-<p>Stanford AI Index 2026 보고서도 나왔는데, 인상적인 대목이 있었다. AI 채택 속도가 PC나 인터넷보다 빠르다는 거다. 매출 성장도 역대 어떤 기술 붐보다 가파르다. 다만 보고서는 이면도 짚는다 — 데이터센터 전력 소비가 뉴욕 주 피크 수요에 맞먹는 29.6GW에 달하고, GPT-4o 하나를 돌리는 데 드는 물이 연간 1,200만 명의 식수량을 넘길 수 있다고 한다. 성장은 눈부신데, 지속가능한지는 물음표다. (<a href="https://spectrum.ieee.org/state-of-ai-index-2026">IEEE Spectrum</a>)</p>
-<hr />
-<h2 id="_2">빅테크는 다음 판을 준비 중</h2>
-<p>OpenAI의 IPO 이야기가 점점 구체적으로 나오고 있다. 기업가치 최대 1조 달러, 개인 투자자에게도 참여 기회를 열겠다는 계획이다. 이게 실현되면 AI 산업 역사상 가장 큰 IPO가 될 텐데, 개인적으로는 개인 투자자 배정 부분이 흥미롭다. 보통 이 규모의 IPO에서 개인에게 물량을 주는 건 흔치 않으니까. (<a href="https://techstartups.com/2026/04/09/top-tech-news-today-april-9-2026/">Tech Startups</a>)</p>
-<p>AWS 쪽 실적도 눈에 띈다. AI 매출 런레이트가 분기 기준 150억 달러를 넘겼고, 아마존 자체 칩 사업(Graviton, Trainium)도 연 200억 달러 이상으로 올라섰다. 클라우드 3사가 AI 인프라에 천문학적 금액을 투자해왔는데, 숫자로 증명되기 시작한 셈이다. (<a href="https://techstartups.com/2026/04/13/top-tech-news-today-april-13-2026/">Tech Startups</a>)</p>
-<p>좀 씁쓸한 소식도 있다. PwC가 AI 경제 효과를 분석했는데, 이익의 75%를 상위 20% 기업이 가져간다고 한다. 단순히 AI를 도입한 것만으로는 부족하고, 성장 전략의 핵심에 AI를 놓은 기업만 실질적 이익을 보고 있다는 얘기다. AI가 격차를 줄여줄 거라 기대했던 사람들에겐 좀 실망스러운 결과일 수 있다. (<a href="https://www.pwc.com/gx/en/news-room/press-releases/2026/pwc-2026-ai-performance-study.html">PwC</a>)</p>
-<hr />
-<h2 id="_3">개발자 세계에서 벌어지는 일들</h2>
-<p>보안 쪽에서 꽤 큰 뉴스가 하나 있었다. Anthropic이 'Project Glasswing'이라는 프로그램을 한정 공개했는데, Claude Mythos 모델이 소프트웨어 취약점을 인간 전문가 수준으로 찾아낼 수 있게 되면서, 이걸 방어 목적으로 먼저 쓰겠다는 전략이다. 공격에 악용될 수 있는 기술을 방어자에게 먼저 넘긴다는 접근이 인상적이다. (<a href="https://www.theregister.com/2026/04/10/project_glasswing/">The Register</a>)</p>
-<p>GitHub 통계를 보면, 지난해 3,600만 명이 새로 합류했다. 인도에서만 520만 명이다. 브라질, 인도네시아, 일본, 독일 등에서도 큰 폭의 성장을 보였고, 오픈소스가 점점 더 글로벌해지고 있다는 걸 체감할 수 있는 수치다. (<a href="https://www.infoq.com/news/2026/03/github-ai-2026/">InfoQ</a>)</p>
-<p>그런데 개발자가 늘어난 만큼 문제도 생겼다. 요즘 오픈소스 프로젝트 메인테이너들 사이에서 'AI 슬롭'이 큰 골칫거리다. AI로 생성한 저품질 PR이나 이슈가 쏟아지는데, 대부분 부정확하거나 쓸모없어서 리뷰하는 것 자체가 시간 낭비라는 불만이 많다. 차라리 직접 코드를 짜는 게 빠르다는 메인테이너도 있을 정도다. AI 도구의 명과 암이 동시에 드러나는 대목이다. (<a href="https://github.blog/open-source/maintainers/what-to-expect-for-open-source-in-2026/">GitHub Blog</a>)</p>
-<p>좋은 소식도 있다. Chainguard가 'EmeritOSS'라는 프로그램을 시작했다. 한때 널리 쓰였지만 관리자가 떠나면서 방치된 오픈소스 프로젝트들을 포크해서 보안 패치와 의존성 관리를 이어가겠다는 건데, 오픈소스 생태계의 오랜 숙제에 대한 현실적인 해법이라고 생각한다. (<a href="https://www.itbrew.com/stories/2026/04/09/an-emeritoss-effort-maintains-archived-open-source-projects">IT Brew</a>)</p>
-<hr />
-<h2 id="_4">반도체 — 칩보다 '포장'이 문제</h2>
-<p>반도체 업계에서 요즘 가장 뜨거운 키워드는 의외로 '패키징'이다. Nvidia가 TSMC의 최첨단 CoWoS 패키징 용량을 사실상 독점 수준으로 확보했는데, 이게 업계 전체의 병목이 되고 있다. TSMC가 ASE, Amkor 같은 외부 업체에 일부를 맡기고, 미국에 첫 패키징 공장까지 짓고 있는 걸 보면 상황이 얼마나 빠듯한지 알 수 있다. 재밌는 건 Elon Musk가 텍사스에서 Intel에 커스텀 칩을 맡기고 있다는 소문이 돌고 있다는 점이다. (<a href="https://www.cnbc.com/2026/04/08/tsmc-nvidia-advanced-packaging-intel.html">CNBC</a>)</p>
-<p>TSMC 1분기 실적은 전년 대비 35% 성장. CoWoS 패키징만 놓고 보면 80% 성장이다. AI 인프라 수요가 꺾이지 않고 있다는 강력한 신호다. (<a href="https://medium.com/@adnanmasood/semiconductors-in-2026-the-ai-driven-upswing-meets-structural-bottlenecks-3568b004905b">Medium</a>)</p>
-<p>삼성도 분위기가 좋다. 메모리 칩 슈퍼사이클에 힘입어 1분기 영업이익이 57.2조 원, 전년 대비 8배 급증이 전망된다. HBM 메모리 수요가 워낙 폭발적이라 삼성 반도체 사업이 확실한 V자 반등을 보이고 있다. (<a href="https://www.distillintelligence.com/briefings/semiconductors-ai-chips-2026-04-10">Distill Intelligence</a>)</p>
-<p>다만 Nvidia 차세대 Rubin GPU에 메모리 이슈가 있다는 보도는 좀 걸린다. Blackwell 후속 아키텍처인데 일정이 밀릴 수 있다니, 내년 AI 칩 로드맵에 영향이 있을 수도 있다. (<a href="https://www.distillintelligence.com/briefings/semiconductors-ai-chips-2026-04-10">Distill Intelligence</a>)</p>
-<hr />
-<h2 id="_5">규제의 파도가 밀려온다</h2>
-<p>미국 각 주에서 AI 관련 법안이 쏟아지고 있다. 올해만 600건 이상 발의됐다. 특히 4월부터 발효되는 AI 챗봇 규제가 눈에 띈다. 워싱턴 주는 AI라는 사실을 사전에 고지해야 하고, 사용자가 위기 상황에 처하면 자동으로 위기 서비스에 연결해야 한다. 메인 주는 아예 AI 치료 봇을 전면 금지하는 법안을 추진 중이다. AI가 정신건강에 미치는 영향에 대해 사회가 진지하게 고민하기 시작했다는 신호다. (<a href="https://www.roborhythms.com/ai-companion-chatbot-regulation-wave-2026/">RoboRhythms</a>)</p>
-<p>연방 차원에서도 움직임이 있다. 법무부가 AI 소송 전담 태스크포스를 만들었는데, 주 정부 AI 법률 중 연방법에 저촉되거나 위헌 소지가 있는 것들을 걸러내겠다는 취지다. 연방과 주 사이에 AI 규제를 놓고 줄다리기가 본격화되는 모양새다. (<a href="https://www.insideglobaltech.com/2026/04/06/u-s-tech-legislative-regulatory-update-first-quarter-2026/">Inside Global Tech</a>)</p>
-<p>인디애나, 유타, 워싱턴 주는 건강보험사가 AI만으로 보험금 지급을 거부하지 못하도록 하는 법을 통과시켰다. AI 규제가 점점 산업별로 세분화되고 있다. (<a href="https://www.onetrust.com/blog/where-ai-regulation-is-heading-in-2026-a-global-outlook/">OneTrust</a>)</p>
-<p>유럽 쪽에서는 그리스가 내년 1월부터 15세 미만 소셜미디어 전면 금지를 선언했다. 청소년 온라인 보호에 대한 유럽의 강경 기조가 이어지고 있다. (<a href="https://techstartups.com/2026/04/09/top-tech-news-today-april-9-2026/">Tech Startups</a>)</p>
-<hr />
-<h2 id="_6">돈은 어디로 흐르고 있나</h2>
-<p>서두에서도 언급했지만, 숫자가 정말 놀랍다. 1분기 글로벌 벤처 투자 3,000억 달러. 전년 동기 대비 150% 이상 증가. 이 중 2,420억 달러, 그러니까 80%가 AI에 갔다. 작년 1분기의 55%도 높다고 했는데 이건 차원이 다르다. (<a href="https://news.crunchbase.com/venture/record-breaking-funding-ai-global-q1-2026/">Crunchbase</a>)</p>
-<p>규모도 규모지만, 집중도가 무섭다. 역대 최대 벤처 라운드 5건 중 4건이 이번 분기에 나왔다. OpenAI 1,220억 달러, Anthropic 300억 달러, xAI 200억 달러, Waymo 160억 달러. 이 4곳이 전체 글로벌 벤처 투자의 65%를 가져갔다. (<a href="https://news.crunchbase.com/venture/foundational-ai-startup-funding-doubled-openai-anthropic-xai-q1-2026/">Crunchbase</a>)</p>
-<p>이 돈이 어디에 쓰이나 봤더니, 상당 부분이 전력 인프라로 간다. Google, Microsoft, Amazon이 AI 데이터센터 전력 확보를 위해 차세대 원자력 프로젝트에 투자하고 있다. AI 데이터센터 전력 수요가 뉴욕 주 전체 피크 수요를 넘어섰으니, 이제 전기를 어디서 가져오느냐가 AI 경쟁의 숨은 변수가 됐다. (<a href="https://techstartups.com/2026/04/13/top-tech-news-today-april-13-2026/">Tech Startups</a>)</p>
-<hr />
-<h2 id="_7">한 줄 정리</h2>
-<p>오늘 뉴스를 관통하는 키워드를 고르라면 <strong>'집중'</strong>이다. 돈은 AI에 집중되고, AI의 이익은 소수 기업에 집중되고, 칩 생산 능력은 Nvidia에 집중되고 있다. 이 집중이 혁신을 가속하는 건 분명한데, 동시에 리스크이기도 하다. 나머지 생태계가 건강하게 유지되느냐가 올해 하반기 관전 포인트가 될 것 같다.</p>
+<p><strong>더 읽을거리</strong></p>
+<ul>
+<li><a href="https://arxiv.org/abs/2503.01840">EAGLE-3 — arXiv 2503.01840</a> — 다층 hidden을 draft head 입력으로 활용한 최신 변형.</li>
+<li><a href="https://docs.vllm.ai/en/latest/features/spec_decode.html">vLLM Speculative Decoding 가이드</a> — 실전 설정값과 트러블슈팅.</li>
+<li><a href="https://x.com/karpathy/status/1697358515329683638">@karpathy on memory-bound vs compute-bound inference (X)</a> — 왜 토큰 생성이 메모리 바운드인지에 대한 짧은 노트.</li>
+</ul>
     </div>
     
 <div class="post-share">
     <span class="share-label">공유하기</span>
-    <a href="https://twitter.com/intent/tweet?text=돈이 몰리고 있다 — 4월 셋째 주, AI 업계에 무슨 일이 벌어지고 있나&url=https://shonsubong.github.io/sonslab-blog/posts/2026-04-15-ai-tech-news.html"
+    <a href="https://twitter.com/intent/tweet?text=추측 디코딩이 vLLM 기본값이 된 이유&url=https://shonsubong.github.io/sonslab-blog/ai-tech/2026-04-28-am10.html"
        class="share-btn" target="_blank" rel="noopener" aria-label="X(Twitter)에 공유">
         <span>X</span>
     </a>
-    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://shonsubong.github.io/sonslab-blog/posts/2026-04-15-ai-tech-news.html"
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://shonsubong.github.io/sonslab-blog/ai-tech/2026-04-28-am10.html"
        class="share-btn" target="_blank" rel="noopener" aria-label="LinkedIn에 공유">
         <span>in</span>
     </a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://shonsubong.github.io/sonslab-blog/posts/2026-04-15-ai-tech-news.html"
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://shonsubong.github.io/sonslab-blog/ai-tech/2026-04-28-am10.html"
        class="share-btn" target="_blank" rel="noopener" aria-label="Facebook에 공유">
         <span>f</span>
     </a>
-    <button type="button" class="share-btn share-copy" id="share-copy-btn" data-url="https://shonsubong.github.io/sonslab-blog/posts/2026-04-15-ai-tech-news.html" aria-label="링크 복사">
+    <button type="button" class="share-btn share-copy" id="share-copy-btn" data-url="https://shonsubong.github.io/sonslab-blog/ai-tech/2026-04-28-am10.html" aria-label="링크 복사">
         <span>🔗 링크 복사</span>
     </button>
 </div>
     
 <nav class="post-nav-bottom" aria-label="이전/다음 글">
-    <a href="2026-03-31-pm23-ai-tech-news.html" class="post-nav-link prev">
+    <a href="2026-04-26-am10.html" class="post-nav-link prev">
         <span class="post-nav-label">← 이전 글</span>
-        <span class="post-nav-title">3월을 닫는 밤 — GTC부터 HBM5까지, 1분기를 한 번에 세우고 4월을 본다</span>
+        <span class="post-nav-title">DeepSeek V4의 MoE 라우팅이 H100을 두 배로 늘려놓는 법</span>
     </a>
-    <a href="2026-04-15-am06-ai-tech-news.html" class="post-nav-link next">
+    <a href="2026-04-29-am10.html" class="post-nav-link next">
         <span class="post-nav-label">다음 글 →</span>
-        <span class="post-nav-title">OpenAI가 Microsoft에 등을 돌리고 있다 — 새벽에 읽는 AI 업계 파워게임</span>
+        <span class="post-nav-title">백만 토큰 컨텍스트의 실효 길이 — RULER가 드러낸 것</span>
     </a>
 </nav>
     
 <section class="related-posts" aria-label="최근 다른 리포트">
     <div class="related-posts-label">최근 다른 리포트</div>
-    <ul class="related-list"><li><a href="2026-05-02-am06-ai-tech-news.html"><span class="related-title">Pentagon이 7개 AI 회사 위에 올라탔다 — Anthropic만 또 빠진 자리</span><span class="related-date">2026-05-02 · 새벽 리포트 · 06:11</span></a></li><li><a href="2026-05-01-pm22-ai-tech-news.html"><span class="related-title">OpenAI가 처음으로 AWS Bedrock에 깔렸다 — Moonshot은 같은 주에 FlashKDA로 커널을 풀었다</span><span class="related-date">2026-05-01 · 저녁 마감 · 22:08</span></a></li><li><a href="2026-05-01-pm17-ai-tech-news.html"><span class="related-title">FSD가 한 모델로 합쳐진 주, Kimi K2.6이 오픈웨이트 자리를 다시 그었다 — HBM4 3년치는 이미 다 팔렸다</span><span class="related-date">2026-05-01 · 오후 브리핑 · 17:14</span></a></li><li><a href="2026-05-01-pm12-ai-tech-news.html"><span class="related-title">Anthropic이 OpenAI를 처음으로 넘었다 — $900B 라운드 위에 Claude Code 런레이트가 깔렸다</span><span class="related-date">2026-05-01 · 오전 브리핑 · 12:21</span></a></li><li><a href="2026-05-01-am06-ai-tech-news.html"><span class="related-title">애플 분기 신기록 위에 Gemini-Siri 라인이 처음으로 잡혔다 — 같은 새벽 OpenAI는 사이버 전용 모델을 굴렸다</span><span class="related-date">2026-05-01 · 새벽 리포트 · 06:18</span></a></li></ul>
+    <ul class="related-list"><li><a href="2026-05-01-am10.html"><span class="related-title">MXFP4 — 4비트 부동소수점이 INT4를 밀어낸 이유</span><span class="related-date">2026-05-01 · AI 딥다이브 · 10:00</span></a></li><li><a href="2026-04-29-am10.html"><span class="related-title">백만 토큰 컨텍스트의 실효 길이 — RULER가 드러낸 것</span><span class="related-date">2026-04-29 · AI 딥다이브 · 10:00</span></a></li><li><a href="2026-04-26-am10.html"><span class="related-title">DeepSeek V4의 MoE 라우팅이 H100을 두 배로 늘려놓는 법</span><span class="related-date">2026-04-26 · AI 딥다이브 · 10:00</span></a></li></ul>
 </section>
 </article>
 

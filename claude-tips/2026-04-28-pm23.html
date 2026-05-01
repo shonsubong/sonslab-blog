@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>돈이 몰리고 있다 — 4월 셋째 주, AI 업계에 무슨 일이 벌어지고 있나 — SONSLAB</title>
+    <title>/model로 작업마다 다른 두뇌를 골라 쓴다 — SONSLAB</title>
     <link rel="icon" href="../assets/logo.jpg">
     <link rel="alternate" type="application/atom+xml" title="SONSLAB Feed" href="../feed.xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,22 +11,22 @@
     <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/style.css">
-    <meta name="description" content="요즘 테크 뉴스를 보면 숫자 단위가 점점 비현실적으로 느껴진다. 1분기 전 세계 벤처 투자가 3,000억 달러를 찍었다는 소식을 보고, 처음엔 오타인 줄 알았다. 그런데 진짜다. 그것도 80%가 AI 한 분야에 몰렸다. 오늘은 이 흐름을 중심으로, 지난 하루 동안 눈에 띄었던 소식들을 정리해봤다.">
+    <meta name="description" content="/model 한 줄이면 세션 안에서 사용 모델을 바꿀 수 있다. Sonnet으로 빠르게 코드 짜다가 까다로운 설계 결정엔 Opus로 잠깐 갈아타고, 가벼운 정리는 Haiku에 넘긴다. MAX 플랜 토큰 한도를 같은 양으로도 더 효율 있게 쓰는 가장 단순한 방법이다.">
     <meta name="author" content="SONSLAB">
-    <link rel="canonical" href="https://shonsubong.github.io/sonslab-blog/posts/2026-04-15-ai-tech-news.html">
+    <link rel="canonical" href="https://shonsubong.github.io/sonslab-blog/claude-tips/2026-04-28-pm23.html">
     <meta property="og:site_name" content="SONSLAB">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="돈이 몰리고 있다 — 4월 셋째 주, AI 업계에 무슨 일이 벌어지고 있나">
-    <meta property="og:description" content="요즘 테크 뉴스를 보면 숫자 단위가 점점 비현실적으로 느껴진다. 1분기 전 세계 벤처 투자가 3,000억 달러를 찍었다는 소식을 보고, 처음엔 오타인 줄 알았다. 그런데 진짜다. 그것도 80%가 AI 한 분야에 몰렸다. 오늘은 이 흐름을 중심으로, 지난 하루 동안 눈에 띄었던 소식들을 정리해봤다.">
-    <meta property="og:url" content="https://shonsubong.github.io/sonslab-blog/posts/2026-04-15-ai-tech-news.html">
-    <meta property="og:image" content="https://shonsubong.github.io/sonslab-blog/assets/og/2026-04-15-ai-tech-news.png">
+    <meta property="og:title" content="/model로 작업마다 다른 두뇌를 골라 쓴다">
+    <meta property="og:description" content="/model 한 줄이면 세션 안에서 사용 모델을 바꿀 수 있다. Sonnet으로 빠르게 코드 짜다가 까다로운 설계 결정엔 Opus로 잠깐 갈아타고, 가벼운 정리는 Haiku에 넘긴다. MAX 플랜 토큰 한도를 같은 양으로도 더 효율 있게 쓰는 가장 단순한 방법이다.">
+    <meta property="og:url" content="https://shonsubong.github.io/sonslab-blog/claude-tips/2026-04-28-pm23.html">
+    <meta property="og:image" content="https://shonsubong.github.io/sonslab-blog/assets/logo.jpg">
     <meta property="og:locale" content="ko_KR">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="돈이 몰리고 있다 — 4월 셋째 주, AI 업계에 무슨 일이 벌어지고 있나">
-    <meta name="twitter:description" content="요즘 테크 뉴스를 보면 숫자 단위가 점점 비현실적으로 느껴진다. 1분기 전 세계 벤처 투자가 3,000억 달러를 찍었다는 소식을 보고, 처음엔 오타인 줄 알았다. 그런데 진짜다. 그것도 80%가 AI 한 분야에 몰렸다. 오늘은 이 흐름을 중심으로, 지난 하루 동안 눈에 띄었던 소식들을 정리해봤다.">
-    <meta name="twitter:image" content="https://shonsubong.github.io/sonslab-blog/assets/og/2026-04-15-ai-tech-news.png">
-    <meta property="article:published_time" content="2026-04-15T00:00:00+09:00">
-    <meta property="article:modified_time" content="2026-04-15T00:00:00+09:00">
+    <meta name="twitter:title" content="/model로 작업마다 다른 두뇌를 골라 쓴다">
+    <meta name="twitter:description" content="/model 한 줄이면 세션 안에서 사용 모델을 바꿀 수 있다. Sonnet으로 빠르게 코드 짜다가 까다로운 설계 결정엔 Opus로 잠깐 갈아타고, 가벼운 정리는 Haiku에 넘긴다. MAX 플랜 토큰 한도를 같은 양으로도 더 효율 있게 쓰는 가장 단순한 방법이다.">
+    <meta name="twitter:image" content="https://shonsubong.github.io/sonslab-blog/assets/logo.jpg">
+    <meta property="article:published_time" content="2026-04-28T23:00:00+09:00">
+    <meta property="article:modified_time" content="2026-04-28T23:00:00+09:00">
     
 <script>
 (function() {
@@ -56,10 +56,10 @@
     } catch (e) {}
 })();
 </script>
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "돈이 몰리고 있다 — 4월 셋째 주, AI 업계에 무슨 일이 벌어지고 있나", "description": "요즘 테크 뉴스를 보면 숫자 단위가 점점 비현실적으로 느껴진다. 1분기 전 세계 벤처 투자가 3,000억 달러를 찍었다는 소식을 보고, 처음엔 오타인 줄 알았다. 그런데 진짜다. 그것도 80%가 AI 한 분야에 몰렸다. 오늘은 이 흐름을 중심으로, 지난 하루 동안 눈에 띄었던 소식들을 정리해봤다.", "url": "https://shonsubong.github.io/sonslab-blog/posts/2026-04-15-ai-tech-news.html", "mainEntityOfPage": "https://shonsubong.github.io/sonslab-blog/posts/2026-04-15-ai-tech-news.html", "inLanguage": "ko", "image": "https://shonsubong.github.io/sonslab-blog/assets/og/2026-04-15-ai-tech-news.png", "author": {"@type": "Person", "name": "SONSLAB"}, "publisher": {"@type": "Organization", "name": "SONSLAB", "logo": {"@type": "ImageObject", "url": "https://shonsubong.github.io/sonslab-blog/assets/logo.jpg"}}, "datePublished": "2026-04-15T00:00:00+09:00", "dateModified": "2026-04-15T00:00:00+09:00"}</script>
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "SONSLAB", "item": "https://shonsubong.github.io/sonslab-blog/"}, {"@type": "ListItem", "position": 2, "name": "글", "item": "https://shonsubong.github.io/sonslab-blog/#posts"}, {"@type": "ListItem", "position": 3, "name": "돈이 몰리고 있다 — 4월 셋째 주, AI 업계에 무슨 일이 벌어지고 있나", "item": "https://shonsubong.github.io/sonslab-blog/posts/2026-04-15-ai-tech-news.html"}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "/model로 작업마다 다른 두뇌를 골라 쓴다", "description": "/model 한 줄이면 세션 안에서 사용 모델을 바꿀 수 있다. Sonnet으로 빠르게 코드 짜다가 까다로운 설계 결정엔 Opus로 잠깐 갈아타고, 가벼운 정리는 Haiku에 넘긴다. MAX 플랜 토큰 한도를 같은 양으로도 더 효율 있게 쓰는 가장 단순한 방법이다.", "url": "https://shonsubong.github.io/sonslab-blog/claude-tips/2026-04-28-pm23.html", "mainEntityOfPage": "https://shonsubong.github.io/sonslab-blog/claude-tips/2026-04-28-pm23.html", "inLanguage": "ko", "image": "https://shonsubong.github.io/sonslab-blog/assets/logo.jpg", "author": {"@type": "Person", "name": "SONSLAB"}, "publisher": {"@type": "Organization", "name": "SONSLAB", "logo": {"@type": "ImageObject", "url": "https://shonsubong.github.io/sonslab-blog/assets/logo.jpg"}}, "datePublished": "2026-04-28T23:00:00+09:00", "dateModified": "2026-04-28T23:00:00+09:00"}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "SONSLAB", "item": "https://shonsubong.github.io/sonslab-blog/"}, {"@type": "ListItem", "position": 2, "name": "글", "item": "https://shonsubong.github.io/sonslab-blog/#posts"}, {"@type": "ListItem", "position": 3, "name": "/model로 작업마다 다른 두뇌를 골라 쓴다", "item": "https://shonsubong.github.io/sonslab-blog/claude-tips/2026-04-28-pm23.html"}]}</script>
 </head>
-<body class="post-page" data-category="daily">
+<body class="post-page" data-category="claude-tips">
     <div class="reading-progress" id="reading-progress" role="progressbar" aria-label="읽기 진행률"></div>
 
 <aside class="site-sidebar" id="site-sidebar" aria-label="사이트 메뉴">
@@ -71,9 +71,9 @@
         <div class="sidebar-section-label">카테고리</div>
         <ul class="sidebar-cat-list">
             <li><a href="../index.html" class="">홈 <span class="sidebar-cat-count">120</span></a></li>
-            <li><a href="../index.html#posts" class="active">데일리 브리핑 <span class="sidebar-cat-count">95</span></a></li>
+            <li><a href="../index.html#posts" class="">데일리 브리핑 <span class="sidebar-cat-count">95</span></a></li>
             <li><a href="../ai-tech/index.html" class="">AI 기술 딥다이브 <span class="sidebar-cat-count">4</span></a></li>
-            <li><a href="../claude-tips/index.html" class="">Claude Code 팁 <span class="sidebar-cat-count">21</span></a></li>
+            <li><a href="../claude-tips/index.html" class="active">Claude Code 팁 <span class="sidebar-cat-count">21</span></a></li>
             <li><a href="../manuals/claude-code.html" class="">Claude Code 가이드북 <span class="sidebar-cat-count">PDF</span></a></li>
             <li><a href="../index.html#about">About</a></li>
             <li><a href="../feed.xml">RSS</a></li>
@@ -140,31 +140,25 @@
 
 <article class="post-article">
     <div class="post-header">
-        <a href="../index.html" class="back-link">← 전체 글 목록</a>
-        <h1>돈이 몰리고 있다 — 4월 셋째 주, AI 업계에 무슨 일이 벌어지고 있나</h1>
+        <a href="index.html" class="back-link">← Claude Code 팁 목록</a>
+        <h1>/model로 작업마다 다른 두뇌를 골라 쓴다</h1>
         <div class="post-meta">
-            
-            <span>2026년 04월 15일 (수)</span>
+            <span class="time-label">심야 팁</span>
+            <span>2026년 04월 28일 (화) · 23:39</span>
             <span>·</span>
-            <span>10분 읽기</span>
+            <span>2분 읽기</span>
         </div>
     </div>
     
-<div class="day-series-wrap" aria-label="같은 날의 다른 브리핑">
-    <div class="day-series-label"><span class="dot"></span><span>2026년 04월 15일 (수)의 브리핑</span></div>
-    <div class="day-series"><a href="2026-04-15-am06-ai-tech-news.html" class="day-series-item"><span class="series-time">06:00</span><span class="series-label">새벽 리포트</span></a><a href="2026-04-15-pm12-ai-tech-news.html" class="day-series-item"><span class="series-time">12:00</span><span class="series-label">오전 브리핑</span></a><a href="2026-04-15-pm17-ai-tech-news.html" class="day-series-item"><span class="series-time">17:00</span><span class="series-label">오후 브리핑</span></a><a href="2026-04-15-pm22-ai-tech-news.html" class="day-series-item"><span class="series-time">22:00</span><span class="series-label">저녁 마감</span></a><a href="#" class="day-series-item active" aria-current="page"><span class="series-time"></span><span class="series-label">리포트</span></a></div>
-</div>
     <details class="post-toc" open><summary>목차</summary><div class="toc">
 <div class="toc">
 <ul>
-<li><a href="#4-ai">돈이 몰리고 있다 — 4월 셋째 주, AI 업계에 무슨 일이 벌어지고 있나</a><ul>
-<li><a href="#_1">모델 전쟁, 이제 성능이 아니라 '쓸모'의 싸움</a></li>
-<li><a href="#_2">빅테크는 다음 판을 준비 중</a></li>
-<li><a href="#_3">개발자 세계에서 벌어지는 일들</a></li>
-<li><a href="#_4">반도체 — 칩보다 '포장'이 문제</a></li>
-<li><a href="#_5">규제의 파도가 밀려온다</a></li>
-<li><a href="#_6">돈은 어디로 흐르고 있나</a></li>
-<li><a href="#_7">한 줄 정리</a></li>
+<li><a href="#model">/model로 작업마다 다른 두뇌를 골라 쓴다</a><ul>
+<li><a href="#_1">한 줄 요약</a></li>
+<li><a href="#_2">어떤 상황에서 쓰나</a></li>
+<li><a href="#_3">실제 명령</a></li>
+<li><a href="#_4">주의/한계</a></li>
+<li><a href="#_5">더 읽을거리</a></li>
 </ul>
 </li>
 </ul>
@@ -173,80 +167,81 @@
 </div>
 </details>
     <div class="post-content">
-<h1 id="4-ai">돈이 몰리고 있다 — 4월 셋째 주, AI 업계에 무슨 일이 벌어지고 있나</h1>
-<p>요즘 테크 뉴스를 보면 숫자 단위가 점점 비현실적으로 느껴진다. 1분기 전 세계 벤처 투자가 3,000억 달러를 찍었다는 소식을 보고, 처음엔 오타인 줄 알았다. 그런데 진짜다. 그것도 80%가 AI 한 분야에 몰렸다. 오늘은 이 흐름을 중심으로, 지난 하루 동안 눈에 띄었던 소식들을 정리해봤다.</p>
-<hr />
-<h2 id="_1">모델 전쟁, 이제 성능이 아니라 '쓸모'의 싸움</h2>
-<p>AI 모델 리더보드를 보면 요즘은 1위가 누구인지보다, 각 모델이 뭘 잘하는지가 더 중요해졌다. 3월 기준으로 Anthropic이 근소한 차이로 앞서 있고 xAI, Google, OpenAI가 바짝 뒤따르는 상황인데, 솔직히 상위권 모델들 사이의 성능 차이는 일반 사용자가 체감하기 어려운 수준이다. 결국 비용이 얼마나 합리적인지, 얼마나 안정적으로 돌아가는지가 선택의 기준이 되고 있다. (<a href="https://llm-stats.com/ai-news">llm-stats</a>)</p>
-<p>이런 와중에 Meta가 'Muse Spark'라는 새 모델을 들고 나왔다. Alexandr Wang이 이끄는 Meta Superintelligence Labs의 첫 작품인데, Meta가 올해 AI에만 1,150억~1,350억 달러를 쏟아붓겠다고 하니 농담이 아니다. 작년 대비 거의 두 배 수준이다. (<a href="https://www.cnbc.com/2026/04/08/meta-debuts-first-major-ai-model-since-14-billion-deal-to-bring-in-alexandr-wang.html">CNBC</a>)</p>
-<p>한편 Nature에 재밌는 연구가 하나 실렸다. 복잡한 과학적 문제를 놓고 인간 과학자와 최첨단 AI 에이전트를 붙여봤더니, 아직은 인간이 이긴다는 결과다. 단순 작업이야 AI가 압도적이지만, 창의적 문제 해결이나 여러 맥락을 동시에 고려하는 복합 추론에서는 사람의 우위가 여전하다. AI를 '대체재'가 아니라 '협업 도구'로 봐야 한다는 시각에 무게를 실어주는 연구다. (<a href="https://www.nature.com/articles/d41586-026-01199-z">Nature</a>)</p>
-<p>Stanford AI Index 2026 보고서도 나왔는데, 인상적인 대목이 있었다. AI 채택 속도가 PC나 인터넷보다 빠르다는 거다. 매출 성장도 역대 어떤 기술 붐보다 가파르다. 다만 보고서는 이면도 짚는다 — 데이터센터 전력 소비가 뉴욕 주 피크 수요에 맞먹는 29.6GW에 달하고, GPT-4o 하나를 돌리는 데 드는 물이 연간 1,200만 명의 식수량을 넘길 수 있다고 한다. 성장은 눈부신데, 지속가능한지는 물음표다. (<a href="https://spectrum.ieee.org/state-of-ai-index-2026">IEEE Spectrum</a>)</p>
-<hr />
-<h2 id="_2">빅테크는 다음 판을 준비 중</h2>
-<p>OpenAI의 IPO 이야기가 점점 구체적으로 나오고 있다. 기업가치 최대 1조 달러, 개인 투자자에게도 참여 기회를 열겠다는 계획이다. 이게 실현되면 AI 산업 역사상 가장 큰 IPO가 될 텐데, 개인적으로는 개인 투자자 배정 부분이 흥미롭다. 보통 이 규모의 IPO에서 개인에게 물량을 주는 건 흔치 않으니까. (<a href="https://techstartups.com/2026/04/09/top-tech-news-today-april-9-2026/">Tech Startups</a>)</p>
-<p>AWS 쪽 실적도 눈에 띈다. AI 매출 런레이트가 분기 기준 150억 달러를 넘겼고, 아마존 자체 칩 사업(Graviton, Trainium)도 연 200억 달러 이상으로 올라섰다. 클라우드 3사가 AI 인프라에 천문학적 금액을 투자해왔는데, 숫자로 증명되기 시작한 셈이다. (<a href="https://techstartups.com/2026/04/13/top-tech-news-today-april-13-2026/">Tech Startups</a>)</p>
-<p>좀 씁쓸한 소식도 있다. PwC가 AI 경제 효과를 분석했는데, 이익의 75%를 상위 20% 기업이 가져간다고 한다. 단순히 AI를 도입한 것만으로는 부족하고, 성장 전략의 핵심에 AI를 놓은 기업만 실질적 이익을 보고 있다는 얘기다. AI가 격차를 줄여줄 거라 기대했던 사람들에겐 좀 실망스러운 결과일 수 있다. (<a href="https://www.pwc.com/gx/en/news-room/press-releases/2026/pwc-2026-ai-performance-study.html">PwC</a>)</p>
-<hr />
-<h2 id="_3">개발자 세계에서 벌어지는 일들</h2>
-<p>보안 쪽에서 꽤 큰 뉴스가 하나 있었다. Anthropic이 'Project Glasswing'이라는 프로그램을 한정 공개했는데, Claude Mythos 모델이 소프트웨어 취약점을 인간 전문가 수준으로 찾아낼 수 있게 되면서, 이걸 방어 목적으로 먼저 쓰겠다는 전략이다. 공격에 악용될 수 있는 기술을 방어자에게 먼저 넘긴다는 접근이 인상적이다. (<a href="https://www.theregister.com/2026/04/10/project_glasswing/">The Register</a>)</p>
-<p>GitHub 통계를 보면, 지난해 3,600만 명이 새로 합류했다. 인도에서만 520만 명이다. 브라질, 인도네시아, 일본, 독일 등에서도 큰 폭의 성장을 보였고, 오픈소스가 점점 더 글로벌해지고 있다는 걸 체감할 수 있는 수치다. (<a href="https://www.infoq.com/news/2026/03/github-ai-2026/">InfoQ</a>)</p>
-<p>그런데 개발자가 늘어난 만큼 문제도 생겼다. 요즘 오픈소스 프로젝트 메인테이너들 사이에서 'AI 슬롭'이 큰 골칫거리다. AI로 생성한 저품질 PR이나 이슈가 쏟아지는데, 대부분 부정확하거나 쓸모없어서 리뷰하는 것 자체가 시간 낭비라는 불만이 많다. 차라리 직접 코드를 짜는 게 빠르다는 메인테이너도 있을 정도다. AI 도구의 명과 암이 동시에 드러나는 대목이다. (<a href="https://github.blog/open-source/maintainers/what-to-expect-for-open-source-in-2026/">GitHub Blog</a>)</p>
-<p>좋은 소식도 있다. Chainguard가 'EmeritOSS'라는 프로그램을 시작했다. 한때 널리 쓰였지만 관리자가 떠나면서 방치된 오픈소스 프로젝트들을 포크해서 보안 패치와 의존성 관리를 이어가겠다는 건데, 오픈소스 생태계의 오랜 숙제에 대한 현실적인 해법이라고 생각한다. (<a href="https://www.itbrew.com/stories/2026/04/09/an-emeritoss-effort-maintains-archived-open-source-projects">IT Brew</a>)</p>
-<hr />
-<h2 id="_4">반도체 — 칩보다 '포장'이 문제</h2>
-<p>반도체 업계에서 요즘 가장 뜨거운 키워드는 의외로 '패키징'이다. Nvidia가 TSMC의 최첨단 CoWoS 패키징 용량을 사실상 독점 수준으로 확보했는데, 이게 업계 전체의 병목이 되고 있다. TSMC가 ASE, Amkor 같은 외부 업체에 일부를 맡기고, 미국에 첫 패키징 공장까지 짓고 있는 걸 보면 상황이 얼마나 빠듯한지 알 수 있다. 재밌는 건 Elon Musk가 텍사스에서 Intel에 커스텀 칩을 맡기고 있다는 소문이 돌고 있다는 점이다. (<a href="https://www.cnbc.com/2026/04/08/tsmc-nvidia-advanced-packaging-intel.html">CNBC</a>)</p>
-<p>TSMC 1분기 실적은 전년 대비 35% 성장. CoWoS 패키징만 놓고 보면 80% 성장이다. AI 인프라 수요가 꺾이지 않고 있다는 강력한 신호다. (<a href="https://medium.com/@adnanmasood/semiconductors-in-2026-the-ai-driven-upswing-meets-structural-bottlenecks-3568b004905b">Medium</a>)</p>
-<p>삼성도 분위기가 좋다. 메모리 칩 슈퍼사이클에 힘입어 1분기 영업이익이 57.2조 원, 전년 대비 8배 급증이 전망된다. HBM 메모리 수요가 워낙 폭발적이라 삼성 반도체 사업이 확실한 V자 반등을 보이고 있다. (<a href="https://www.distillintelligence.com/briefings/semiconductors-ai-chips-2026-04-10">Distill Intelligence</a>)</p>
-<p>다만 Nvidia 차세대 Rubin GPU에 메모리 이슈가 있다는 보도는 좀 걸린다. Blackwell 후속 아키텍처인데 일정이 밀릴 수 있다니, 내년 AI 칩 로드맵에 영향이 있을 수도 있다. (<a href="https://www.distillintelligence.com/briefings/semiconductors-ai-chips-2026-04-10">Distill Intelligence</a>)</p>
-<hr />
-<h2 id="_5">규제의 파도가 밀려온다</h2>
-<p>미국 각 주에서 AI 관련 법안이 쏟아지고 있다. 올해만 600건 이상 발의됐다. 특히 4월부터 발효되는 AI 챗봇 규제가 눈에 띈다. 워싱턴 주는 AI라는 사실을 사전에 고지해야 하고, 사용자가 위기 상황에 처하면 자동으로 위기 서비스에 연결해야 한다. 메인 주는 아예 AI 치료 봇을 전면 금지하는 법안을 추진 중이다. AI가 정신건강에 미치는 영향에 대해 사회가 진지하게 고민하기 시작했다는 신호다. (<a href="https://www.roborhythms.com/ai-companion-chatbot-regulation-wave-2026/">RoboRhythms</a>)</p>
-<p>연방 차원에서도 움직임이 있다. 법무부가 AI 소송 전담 태스크포스를 만들었는데, 주 정부 AI 법률 중 연방법에 저촉되거나 위헌 소지가 있는 것들을 걸러내겠다는 취지다. 연방과 주 사이에 AI 규제를 놓고 줄다리기가 본격화되는 모양새다. (<a href="https://www.insideglobaltech.com/2026/04/06/u-s-tech-legislative-regulatory-update-first-quarter-2026/">Inside Global Tech</a>)</p>
-<p>인디애나, 유타, 워싱턴 주는 건강보험사가 AI만으로 보험금 지급을 거부하지 못하도록 하는 법을 통과시켰다. AI 규제가 점점 산업별로 세분화되고 있다. (<a href="https://www.onetrust.com/blog/where-ai-regulation-is-heading-in-2026-a-global-outlook/">OneTrust</a>)</p>
-<p>유럽 쪽에서는 그리스가 내년 1월부터 15세 미만 소셜미디어 전면 금지를 선언했다. 청소년 온라인 보호에 대한 유럽의 강경 기조가 이어지고 있다. (<a href="https://techstartups.com/2026/04/09/top-tech-news-today-april-9-2026/">Tech Startups</a>)</p>
-<hr />
-<h2 id="_6">돈은 어디로 흐르고 있나</h2>
-<p>서두에서도 언급했지만, 숫자가 정말 놀랍다. 1분기 글로벌 벤처 투자 3,000억 달러. 전년 동기 대비 150% 이상 증가. 이 중 2,420억 달러, 그러니까 80%가 AI에 갔다. 작년 1분기의 55%도 높다고 했는데 이건 차원이 다르다. (<a href="https://news.crunchbase.com/venture/record-breaking-funding-ai-global-q1-2026/">Crunchbase</a>)</p>
-<p>규모도 규모지만, 집중도가 무섭다. 역대 최대 벤처 라운드 5건 중 4건이 이번 분기에 나왔다. OpenAI 1,220억 달러, Anthropic 300억 달러, xAI 200억 달러, Waymo 160억 달러. 이 4곳이 전체 글로벌 벤처 투자의 65%를 가져갔다. (<a href="https://news.crunchbase.com/venture/foundational-ai-startup-funding-doubled-openai-anthropic-xai-q1-2026/">Crunchbase</a>)</p>
-<p>이 돈이 어디에 쓰이나 봤더니, 상당 부분이 전력 인프라로 간다. Google, Microsoft, Amazon이 AI 데이터센터 전력 확보를 위해 차세대 원자력 프로젝트에 투자하고 있다. AI 데이터센터 전력 수요가 뉴욕 주 전체 피크 수요를 넘어섰으니, 이제 전기를 어디서 가져오느냐가 AI 경쟁의 숨은 변수가 됐다. (<a href="https://techstartups.com/2026/04/13/top-tech-news-today-april-13-2026/">Tech Startups</a>)</p>
-<hr />
-<h2 id="_7">한 줄 정리</h2>
-<p>오늘 뉴스를 관통하는 키워드를 고르라면 <strong>'집중'</strong>이다. 돈은 AI에 집중되고, AI의 이익은 소수 기업에 집중되고, 칩 생산 능력은 Nvidia에 집중되고 있다. 이 집중이 혁신을 가속하는 건 분명한데, 동시에 리스크이기도 하다. 나머지 생태계가 건강하게 유지되느냐가 올해 하반기 관전 포인트가 될 것 같다.</p>
+<h1 id="model">/model로 작업마다 다른 두뇌를 골라 쓴다</h1>
+<h2 id="_1">한 줄 요약</h2>
+<p><code>/model</code> 한 줄이면 세션 안에서 사용 모델을 바꿀 수 있다. Sonnet으로 빠르게 코드 짜다가 까다로운 설계 결정엔 Opus로 잠깐 갈아타고, 가벼운 정리는 Haiku에 넘긴다. MAX 플랜 토큰 한도를 같은 양으로도 더 효율 있게 쓰는 가장 단순한 방법이다.</p>
+<h2 id="_2">어떤 상황에서 쓰나</h2>
+<p>기본값(주로 Sonnet)이 모든 작업에 최선은 아니다. 한 세션 안에서 작업 성격이 자주 바뀌는데 매번 새 세션을 띄우면 컨텍스트가 흩어진다. 모델만 갈아 끼우면 컨텍스트는 그대로 두고 두뇌만 바꿀 수 있다.</p>
+<p>전형적인 분기는 이렇다.</p>
+<ul>
+<li><strong>Sonnet</strong> — 일상 코드 작성·리팩터링·테스트. 속도와 품질 균형이 좋고 토큰 비용도 합리적이다.</li>
+<li><strong>Opus</strong> — 시스템 설계, 어려운 디버그, 보안 리뷰처럼 한 번의 판단 가치가 큰 일.</li>
+<li><strong>Haiku</strong> — 잡정리, 짧은 요약, 단순 변환. 비싸지 않고 응답이 빠르다.</li>
+</ul>
+<h2 id="_3">실제 명령</h2>
+<p>세션 안에서 그냥 입력한다.</p>
+<pre class="codehilite"><code class="language-text">/model
+</code></pre>
+
+<p>인자 없이 부르면 인터랙티브 메뉴가 뜨고 사용 가능한 모델 목록이 나온다. 화살표로 골라 enter를 누르면 즉시 적용된다. 별칭으로 바로 전환할 수도 있다.</p>
+<pre class="codehilite"><code class="language-text">/model sonnet
+/model opus
+/model haiku
+</code></pre>
+
+<p>세션 시작 시 기본 모델은 <code>~/.claude/settings.json</code>의 <code>model</code> 키로 고정한다.</p>
+<pre class="codehilite"><code class="language-json">{
+  &quot;model&quot;: &quot;sonnet&quot;
+}
+</code></pre>
+
+<p>프로젝트 단위로 다른 기본을 쓰고 싶다면 <code>&lt;repo&gt;/.claude/settings.json</code>에 같은 키를 두면 된다. settings 우선순위는 프로젝트가 사용자 전역을 덮는다.</p>
+<h2 id="_4">주의/한계</h2>
+<ul>
+<li>모델을 바꿔도 <strong>이미 누적된 컨텍스트는 그대로 따라간다</strong>. 이전 모델 응답을 다음 모델이 그대로 보고 이어 가니, 일관된 톤이 필요한 긴 글 작업이라면 같은 모델로 끝까지 가는 편이 안전하다.</li>
+<li>모델별 단가와 속도 차이가 크다. Opus를 기본으로 두면 토큰 한도가 빠르게 빠진다. 기본은 Sonnet, 어려운 순간만 Opus가 정석이다.</li>
+<li>정확한 모델 식별자(예: <code>claude-sonnet-4-6</code> 같은 풀 네임)는 시간이 지나면 바뀐다. 풀 네임을 settings에 박아두기보단 <code>sonnet</code>·<code>opus</code>·<code>haiku</code> 같은 별칭을 쓰는 편이 업그레이드를 자연스럽게 받는다.</li>
+</ul>
+<h2 id="_5">더 읽을거리</h2>
+<ul>
+<li><a href="https://docs.claude.com/en/docs/claude-code/slash-commands">Claude Code 공식 문서 — Slash commands</a></li>
+<li><a href="https://docs.claude.com/en/docs/claude-code/settings">Claude Code 공식 문서 — Settings</a></li>
+</ul>
     </div>
     
 <div class="post-share">
     <span class="share-label">공유하기</span>
-    <a href="https://twitter.com/intent/tweet?text=돈이 몰리고 있다 — 4월 셋째 주, AI 업계에 무슨 일이 벌어지고 있나&url=https://shonsubong.github.io/sonslab-blog/posts/2026-04-15-ai-tech-news.html"
+    <a href="https://twitter.com/intent/tweet?text=/model로 작업마다 다른 두뇌를 골라 쓴다&url=https://shonsubong.github.io/sonslab-blog/claude-tips/2026-04-28-pm23.html"
        class="share-btn" target="_blank" rel="noopener" aria-label="X(Twitter)에 공유">
         <span>X</span>
     </a>
-    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://shonsubong.github.io/sonslab-blog/posts/2026-04-15-ai-tech-news.html"
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://shonsubong.github.io/sonslab-blog/claude-tips/2026-04-28-pm23.html"
        class="share-btn" target="_blank" rel="noopener" aria-label="LinkedIn에 공유">
         <span>in</span>
     </a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://shonsubong.github.io/sonslab-blog/posts/2026-04-15-ai-tech-news.html"
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://shonsubong.github.io/sonslab-blog/claude-tips/2026-04-28-pm23.html"
        class="share-btn" target="_blank" rel="noopener" aria-label="Facebook에 공유">
         <span>f</span>
     </a>
-    <button type="button" class="share-btn share-copy" id="share-copy-btn" data-url="https://shonsubong.github.io/sonslab-blog/posts/2026-04-15-ai-tech-news.html" aria-label="링크 복사">
+    <button type="button" class="share-btn share-copy" id="share-copy-btn" data-url="https://shonsubong.github.io/sonslab-blog/claude-tips/2026-04-28-pm23.html" aria-label="링크 복사">
         <span>🔗 링크 복사</span>
     </button>
 </div>
     
 <nav class="post-nav-bottom" aria-label="이전/다음 글">
-    <a href="2026-03-31-pm23-ai-tech-news.html" class="post-nav-link prev">
+    <a href="2026-04-26-pm23.html" class="post-nav-link prev">
         <span class="post-nav-label">← 이전 글</span>
-        <span class="post-nav-title">3월을 닫는 밤 — GTC부터 HBM5까지, 1분기를 한 번에 세우고 4월을 본다</span>
+        <span class="post-nav-title">/clear와 /compact의 차이만 알아도 컨텍스트가 두 배로 늘어난다</span>
     </a>
-    <a href="2026-04-15-am06-ai-tech-news.html" class="post-nav-link next">
+    <a href="2026-04-29-pm23.html" class="post-nav-link next">
         <span class="post-nav-label">다음 글 →</span>
-        <span class="post-nav-title">OpenAI가 Microsoft에 등을 돌리고 있다 — 새벽에 읽는 AI 업계 파워게임</span>
+        <span class="post-nav-title">SKILL.md 한 장으로 매일 하는 절차를 자동 트리거시킨다</span>
     </a>
 </nav>
     
 <section class="related-posts" aria-label="최근 다른 리포트">
     <div class="related-posts-label">최근 다른 리포트</div>
-    <ul class="related-list"><li><a href="2026-05-02-am06-ai-tech-news.html"><span class="related-title">Pentagon이 7개 AI 회사 위에 올라탔다 — Anthropic만 또 빠진 자리</span><span class="related-date">2026-05-02 · 새벽 리포트 · 06:11</span></a></li><li><a href="2026-05-01-pm22-ai-tech-news.html"><span class="related-title">OpenAI가 처음으로 AWS Bedrock에 깔렸다 — Moonshot은 같은 주에 FlashKDA로 커널을 풀었다</span><span class="related-date">2026-05-01 · 저녁 마감 · 22:08</span></a></li><li><a href="2026-05-01-pm17-ai-tech-news.html"><span class="related-title">FSD가 한 모델로 합쳐진 주, Kimi K2.6이 오픈웨이트 자리를 다시 그었다 — HBM4 3년치는 이미 다 팔렸다</span><span class="related-date">2026-05-01 · 오후 브리핑 · 17:14</span></a></li><li><a href="2026-05-01-pm12-ai-tech-news.html"><span class="related-title">Anthropic이 OpenAI를 처음으로 넘었다 — $900B 라운드 위에 Claude Code 런레이트가 깔렸다</span><span class="related-date">2026-05-01 · 오전 브리핑 · 12:21</span></a></li><li><a href="2026-05-01-am06-ai-tech-news.html"><span class="related-title">애플 분기 신기록 위에 Gemini-Siri 라인이 처음으로 잡혔다 — 같은 새벽 OpenAI는 사이버 전용 모델을 굴렸다</span><span class="related-date">2026-05-01 · 새벽 리포트 · 06:18</span></a></li></ul>
+    <ul class="related-list"><li><a href="2026-04-30-pm23.html"><span class="related-title">@로 파일을 콕 짚어주면 Claude Code가 헤매지 않는다</span><span class="related-date">2026-04-30 · 심야 팁 · 23:00</span></a></li><li><a href="2026-04-29-pm23.html"><span class="related-title">SKILL.md 한 장으로 매일 하는 절차를 자동 트리거시킨다</span><span class="related-date">2026-04-29 · 심야 팁 · 23:00</span></a></li><li><a href="2026-04-26-pm23.html"><span class="related-title">/clear와 /compact의 차이만 알아도 컨텍스트가 두 배로 늘어난다</span><span class="related-date">2026-04-26 · 심야 팁 · 23:00</span></a></li><li><a href="2026-03-30-pm23.html"><span class="related-title">다중 에이전트 오케스트레이션 — 실제 적용 패턴 세 가지</span><span class="related-date">2026-03-30 · 심야 팁 · 23:00</span></a></li><li><a href="2026-03-27-pm23.html"><span class="related-title">bash 도구를 allowlist로 묶어 사고 위험을 한 자리수로 떨어뜨린다</span><span class="related-date">2026-03-27 · 심야 팁 · 23:00</span></a></li></ul>
 </section>
 </article>
 
