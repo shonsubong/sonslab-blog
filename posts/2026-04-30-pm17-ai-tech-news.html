@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude Sonnet 4.5의 1M 컨텍스트 베타가 오늘로 끝난다 — 그리고 Tesla FSD가 한 모델로 합쳐졌다 — SONSLAB</title>
+    <link rel="icon" href="../assets/logo.jpg">
+    <link rel="alternate" type="application/atom+xml" title="SONSLAB Feed" href="../feed.xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/style.css">
+    <meta name="description" content="퇴근 버스. 자리 잡고 X 한 번 쓸어보니까 새벽·점심에 적은 결과 다른 라인이 두 개 보인다. 하나는 오늘 자정에 진짜로 닫히는 Claude의 1M 컨텍스트 베타 라인, 다른 하나는 어제·그제 사이에 와이드 롤아웃이 확정된 Tesla FSD V14.3.2의 &quot;하나의 모델&quot; 라인. 둘 다 &quot;써본 사람이 직접 영향을 받는&quot; 결의 뉴스라 짧게 묶어둔다.">
+    <meta name="author" content="SONSLAB">
+    <link rel="canonical" href="https://shonsubong.github.io/sonslab-blog/posts/2026-04-30-pm17-ai-tech-news.html">
+    <meta property="og:site_name" content="SONSLAB">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Claude Sonnet 4.5의 1M 컨텍스트 베타가 오늘로 끝난다 — 그리고 Tesla FSD가 한 모델로 합쳐졌다">
+    <meta property="og:description" content="퇴근 버스. 자리 잡고 X 한 번 쓸어보니까 새벽·점심에 적은 결과 다른 라인이 두 개 보인다. 하나는 오늘 자정에 진짜로 닫히는 Claude의 1M 컨텍스트 베타 라인, 다른 하나는 어제·그제 사이에 와이드 롤아웃이 확정된 Tesla FSD V14.3.2의 &quot;하나의 모델&quot; 라인. 둘 다 &quot;써본 사람이 직접 영향을 받는&quot; 결의 뉴스라 짧게 묶어둔다.">
+    <meta property="og:url" content="https://shonsubong.github.io/sonslab-blog/posts/2026-04-30-pm17-ai-tech-news.html">
+    <meta property="og:image" content="https://shonsubong.github.io/sonslab-blog/assets/og/2026-04-30-pm17-ai-tech-news.png">
+    <meta property="og:locale" content="ko_KR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Claude Sonnet 4.5의 1M 컨텍스트 베타가 오늘로 끝난다 — 그리고 Tesla FSD가 한 모델로 합쳐졌다">
+    <meta name="twitter:description" content="퇴근 버스. 자리 잡고 X 한 번 쓸어보니까 새벽·점심에 적은 결과 다른 라인이 두 개 보인다. 하나는 오늘 자정에 진짜로 닫히는 Claude의 1M 컨텍스트 베타 라인, 다른 하나는 어제·그제 사이에 와이드 롤아웃이 확정된 Tesla FSD V14.3.2의 &quot;하나의 모델&quot; 라인. 둘 다 &quot;써본 사람이 직접 영향을 받는&quot; 결의 뉴스라 짧게 묶어둔다.">
+    <meta name="twitter:image" content="https://shonsubong.github.io/sonslab-blog/assets/og/2026-04-30-pm17-ai-tech-news.png">
+    <meta property="article:published_time" content="2026-04-30T17:18:00+09:00">
+    <meta property="article:modified_time" content="2026-04-30T17:18:00+09:00">
+    
+<script>
+(function() {
+    try {
+        var saved = localStorage.getItem('sonslab-theme');
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var theme = saved || (prefersDark ? 'dark' : 'light');
+        if (theme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+
+        // 디자인 pref: 'random' | 'current' | 'refined' | 'editorial' | 'broadsheet'
+        // 저장값이 없거나 'random'이면 매 페이지 로드마다 4개 중 하나를 무작위로 추출.
+        var pref = localStorage.getItem('sonslab-design') || 'random';
+        var allowed = ['current', 'refined', 'editorial', 'broadsheet'];
+        var resolved;
+        if (pref === 'random') {
+            resolved = allowed[Math.floor(Math.random() * allowed.length)];
+        } else if (allowed.indexOf(pref) === -1) {
+            pref = 'current';
+            resolved = 'current';
+        } else {
+            resolved = pref;
+        }
+        if (resolved !== 'current') document.documentElement.setAttribute('data-design', resolved);
+        // body script가 재추출 없이 라벨만 맞추도록 결과를 공유.
+        window.__sonslabDesignPref = pref;
+        window.__sonslabDesignResolved = resolved;
+    } catch (e) {}
+})();
+</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Claude Sonnet 4.5의 1M 컨텍스트 베타가 오늘로 끝난다 — 그리고 Tesla FSD가 한 모델로 합쳐졌다", "description": "퇴근 버스. 자리 잡고 X 한 번 쓸어보니까 새벽·점심에 적은 결과 다른 라인이 두 개 보인다. 하나는 오늘 자정에 진짜로 닫히는 Claude의 1M 컨텍스트 베타 라인, 다른 하나는 어제·그제 사이에 와이드 롤아웃이 확정된 Tesla FSD V14.3.2의 \"하나의 모델\" 라인. 둘 다 \"써본 사람이 직접 영향을 받는\" 결의 뉴스라 짧게 묶어둔다.", "url": "https://shonsubong.github.io/sonslab-blog/posts/2026-04-30-pm17-ai-tech-news.html", "mainEntityOfPage": "https://shonsubong.github.io/sonslab-blog/posts/2026-04-30-pm17-ai-tech-news.html", "inLanguage": "ko", "image": "https://shonsubong.github.io/sonslab-blog/assets/og/2026-04-30-pm17-ai-tech-news.png", "author": {"@type": "Person", "name": "SONSLAB"}, "publisher": {"@type": "Organization", "name": "SONSLAB", "logo": {"@type": "ImageObject", "url": "https://shonsubong.github.io/sonslab-blog/assets/logo.jpg"}}, "datePublished": "2026-04-30T17:18:00+09:00", "dateModified": "2026-04-30T17:18:00+09:00"}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "SONSLAB", "item": "https://shonsubong.github.io/sonslab-blog/"}, {"@type": "ListItem", "position": 2, "name": "글", "item": "https://shonsubong.github.io/sonslab-blog/#posts"}, {"@type": "ListItem", "position": 3, "name": "Claude Sonnet 4.5의 1M 컨텍스트 베타가 오늘로 끝난다 — 그리고 Tesla FSD가 한 모델로 합쳐졌다", "item": "https://shonsubong.github.io/sonslab-blog/posts/2026-04-30-pm17-ai-tech-news.html"}]}</script>
+</head>
+<body class="post-page" data-category="daily">
+    <div class="reading-progress" id="reading-progress" role="progressbar" aria-label="읽기 진행률"></div>
+
+<aside class="site-sidebar" id="site-sidebar" aria-label="사이트 메뉴">
+    <a href="../index.html" class="sidebar-brand">
+        <img src="../assets/logo.jpg" alt="SONSLAB" onerror="this.style.display='none'">
+        <span class="name">SONSLAB</span>
+    </a>
+    <div class="sidebar-section">
+        <div class="sidebar-section-label">카테고리</div>
+        <ul class="sidebar-cat-list">
+            <li><a href="../index.html" class="">홈 <span class="sidebar-cat-count">119</span></a></li>
+            <li><a href="../index.html#posts" class="active">데일리 브리핑 <span class="sidebar-cat-count">94</span></a></li>
+            <li><a href="../ai-tech/index.html" class="">AI 기술 딥다이브 <span class="sidebar-cat-count">4</span></a></li>
+            <li><a href="../claude-tips/index.html" class="">Claude Code 팁 <span class="sidebar-cat-count">21</span></a></li>
+            <li><a href="../manuals/claude-code.html" class="">Claude Code 가이드북 <span class="sidebar-cat-count">PDF</span></a></li>
+            <li><a href="../index.html#about">About</a></li>
+            <li><a href="../feed.xml">RSS</a></li>
+        </ul>
+    </div>
+    <div class="sidebar-section">
+        <div class="sidebar-section-label">데일리 최근 글</div>
+        <ul class="sidebar-recent"><li><a href="../posts/2026-05-01-pm22-ai-tech-news.html"><span class="r-title">OpenAI가 처음으로 AWS Bedrock에 깔렸다 — Moonshot은 같은 주에 FlashKDA로 커널을 풀었다</span><span class="r-meta">저녁 마감</span></a></li><li><a href="../posts/2026-05-01-pm17-ai-tech-news.html"><span class="r-title">FSD가 한 모델로 합쳐진 주, Kimi K2.6이 오픈웨이트 자리를 다시 그었다 — HBM4 3년치는 이미 다 팔렸다</span><span class="r-meta">오후 브리핑</span></a></li><li><a href="../posts/2026-05-01-pm12-ai-tech-news.html"><span class="r-title">Anthropic이 OpenAI를 처음으로 넘었다 — $900B 라운드 위에 Claude Code 런레이트가 깔렸다</span><span class="r-meta">오전 브리핑</span></a></li><li><a href="../posts/2026-05-01-am06-ai-tech-news.html"><span class="r-title">애플 분기 신기록 위에 Gemini-Siri 라인이 처음으로 잡혔다 — 같은 새벽 OpenAI는 사이버 전용 모델을 굴렸다</span><span class="r-meta">새벽 리포트</span></a></li><li><a href="../posts/2026-04-30-pm22-ai-tech-news.html"><span class="r-title">Anthropic 컴퓨트 캡이 다시 한번 위로 뛰었다 — AWS Q1, 그리고 8시간 뒤의 애플 어닝</span><span class="r-meta">저녁 마감</span></a></li></ul>
+    </div>
+    <div class="sidebar-section">
+        <div class="sidebar-section-label">AI 기술 최근 글</div>
+        <ul class="sidebar-recent"><li><a href="../ai-tech/2026-05-01-am10.html"><span class="r-title">MXFP4 — 4비트 부동소수점이 INT4를 밀어낸 이유</span><span class="r-meta">AI 딥다이브</span></a></li><li><a href="../ai-tech/2026-04-29-am10.html"><span class="r-title">백만 토큰 컨텍스트의 실효 길이 — RULER가 드러낸 것</span><span class="r-meta">AI 딥다이브</span></a></li><li><a href="../ai-tech/2026-04-28-am10.html"><span class="r-title">추측 디코딩이 vLLM 기본값이 된 이유</span><span class="r-meta">AI 딥다이브</span></a></li><li><a href="../ai-tech/2026-04-26-am10.html"><span class="r-title">DeepSeek V4의 MoE 라우팅이 H100을 두 배로 늘려놓는 법</span><span class="r-meta">AI 딥다이브</span></a></li></ul>
+    </div>
+    <div class="sidebar-section">
+        <div class="sidebar-section-label">Claude Code 팁 최근 글</div>
+        <ul class="sidebar-recent"><li><a href="../claude-tips/2026-04-30-pm23.html"><span class="r-title">@로 파일을 콕 짚어주면 Claude Code가 헤매지 않는다</span><span class="r-meta">23:00</span></a></li><li><a href="../claude-tips/2026-04-29-pm23.html"><span class="r-title">SKILL.md 한 장으로 매일 하는 절차를 자동 트리거시킨다</span><span class="r-meta">23:00</span></a></li><li><a href="../claude-tips/2026-04-28-pm23.html"><span class="r-title">/model로 작업마다 다른 두뇌를 골라 쓴다</span><span class="r-meta">23:00</span></a></li><li><a href="../claude-tips/2026-04-26-pm23.html"><span class="r-title">/clear와 /compact의 차이만 알아도 컨텍스트가 두 배로 늘어난다</span><span class="r-meta">23:00</span></a></li><li><a href="../claude-tips/2026-03-30-pm23.html"><span class="r-title">다중 에이전트 오케스트레이션 — 실제 적용 패턴 세 가지</span><span class="r-meta">23:00</span></a></li></ul>
+    </div>
+</aside>
+<div class="sidebar-backdrop" id="sidebar-backdrop" aria-hidden="true"></div>
+
+
+<header class="top-nav">
+    <div class="top-nav-inner">
+        <button type="button" class="sidebar-toggle" id="sidebar-toggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="site-sidebar">
+            <span class="sidebar-toggle-bar"></span>
+            <span class="sidebar-toggle-bar"></span>
+            <span class="sidebar-toggle-bar"></span>
+        </button>
+        <a href="../index.html" class="brand">
+            <img src="../assets/logo.jpg" alt="SONSLAB" onerror="this.style.display='none'">
+            <span class="name">SONSLAB</span>
+        </a>
+        <nav>
+            <a href="../index.html#posts">데일리</a>
+            <a href="../ai-tech/index.html">AI 기술</a>
+            <a href="../claude-tips/index.html">Claude Code 팁</a>
+            <a href="../index.html#about">About</a>
+            <span class="nav-visits" title="오늘 · 누적 방문">
+                <img src="https://hits.sh/shonsubong.github.io/sonslab-blog.svg?view=today-total&style=flat-square&label=visits&color=1e3a5f&labelColor=1a2332" alt="오늘·누적 방문 수">
+            </span>
+            <div class="design-picker" title="디자인 전환">
+                <button type="button" class="design-picker-btn" id="design-picker-btn" aria-haspopup="listbox" aria-expanded="false" aria-label="디자인 전환">
+                    <span class="design-picker-icon" aria-hidden="true">◑</span>
+                    <span class="design-picker-current" id="design-picker-current">기본</span>
+                    <span class="design-picker-caret" aria-hidden="true">▾</span>
+                </button>
+                <ul class="design-picker-menu" id="design-picker-menu" role="listbox" aria-label="디자인 옵션">
+                    <li role="option" data-design="random"><strong>랜덤</strong><span>접속할 때마다 무작위 디자인</span></li>
+                    <li role="option" data-design="current"><strong>기본</strong><span>네이비+크림, 라운드 카드</span></li>
+                    <li role="option" data-design="refined"><strong>정제판 (A)</strong><span>신문·저널 톤, 헤어라인 구분선</span></li>
+                    <li role="option" data-design="editorial"><strong>에디토리얼 (B)</strong><span>이중선 마스트헤드, 세리프 강조</span></li>
+                    <li role="option" data-design="broadsheet"><strong>브로드시트 (C)</strong><span>웜 크림, 잉크블랙, 큰 세리프</span></li>
+                </ul>
+            </div>
+            <button type="button" class="theme-toggle" id="theme-toggle" aria-label="다크 모드 토글" title="다크/라이트 전환">
+                <span class="icon-moon" aria-hidden="true">🌙</span>
+                <span class="icon-sun" aria-hidden="true">☀</span>
+            </button>
+            <a href="../index.html#subscribe" class="nav-cta">이메일 구독</a>
+        </nav>
+    </div>
+</header>
+
+
+<article class="post-article">
+    <div class="post-header">
+        <a href="../index.html" class="back-link">← 전체 글 목록</a>
+        <h1>Claude Sonnet 4.5의 1M 컨텍스트 베타가 오늘로 끝난다 — 그리고 Tesla FSD가 한 모델로 합쳐졌다</h1>
+        <div class="post-meta">
+            <span class="time-label">오후 브리핑</span>
+            <span>2026년 04월 30일 (목) · 17:18</span>
+            <span>·</span>
+            <span>9분 읽기</span>
+        </div>
+    </div>
+    
+<div class="day-series-wrap" aria-label="같은 날의 다른 브리핑">
+    <div class="day-series-label"><span class="dot"></span><span>2026년 04월 30일 (목)의 브리핑</span></div>
+    <div class="day-series"><a href="2026-04-30-am06-ai-tech-news.html" class="day-series-item"><span class="series-time">06:14</span><span class="series-label">새벽 리포트</span></a><a href="2026-04-30-pm12-ai-tech-news.html" class="day-series-item"><span class="series-time">12:23</span><span class="series-label">오전 브리핑</span></a><a href="#" class="day-series-item active" aria-current="page"><span class="series-time">17:18</span><span class="series-label">오후 브리핑</span></a><a href="2026-04-30-pm22-ai-tech-news.html" class="day-series-item"><span class="series-time">22:11</span><span class="series-label">저녁 마감</span></a></div>
+</div>
+    <details class="post-toc" open><summary>목차</summary><div class="toc">
+<div class="toc">
+<ul>
+<li><a href="#claude-sonnet-45-1m-tesla-fsd">Claude Sonnet 4.5의 1M 컨텍스트 베타가 오늘로 끝난다 — 그리고 Tesla FSD가 한 모델로 합쳐졌다</a><ul>
+<li><a href="#1m">오늘 끝나는 1M 컨텍스트 베타 — 정확히 어디가 닫히고, 어디는 안 닫히는가</a></li>
+<li><a href="#tesla-fsd-v1432-smart-summonfsdrobotaxi">Tesla FSD V14.3.2 — Smart Summon·FSD·Robotaxi가 하나의 모델로 합쳐졌다</a></li>
+<li><a href="#ios-27-ai-bloomberg">짧게 — 애플 iOS 27 사진 AI가 Bloomberg에 새고 있다</a></li>
+<li><a href="#_1">퇴근 버스에서 한 줄</a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+</div>
+</details>
+    <div class="post-content">
+<h1 id="claude-sonnet-45-1m-tesla-fsd">Claude Sonnet 4.5의 1M 컨텍스트 베타가 오늘로 끝난다 — 그리고 Tesla FSD가 한 모델로 합쳐졌다</h1>
+<p>퇴근 버스. 자리 잡고 X 한 번 쓸어보니까 새벽·점심에 적은 결과 다른 라인이 두 개 보인다. 하나는 <em>오늘 자정에 진짜로</em> 닫히는 Claude의 1M 컨텍스트 베타 라인, 다른 하나는 어제·그제 사이에 와이드 롤아웃이 확정된 Tesla FSD V14.3.2의 <em>"하나의 모델"</em> 라인. 둘 다 <em>"써본 사람이 직접 영향을 받는"</em> 결의 뉴스라 짧게 묶어둔다.</p>
+<h2 id="1m">오늘 끝나는 1M 컨텍스트 베타 — 정확히 어디가 닫히고, 어디는 안 닫히는가</h2>
+<p><a href="https://platform.claude.com/docs/en/release-notes/overview">Anthropic 공지</a>대로 <strong>오늘(4월 30일) 자로 Claude Sonnet 4.5와 Sonnet 4의 <code>context-1m-2025-08-07</code> 베타 헤더가 효력을 잃는다.</strong> 이 헤더로 1M 토큰까지 늘려 쓰던 라인이 오늘 자정 이후엔 200K로 다시 잘린다는 뜻이고, 200K를 넘기는 요청은 그대로 에러로 떨어진다. 200K 이하로만 쓰던 케이스는 그대로 굴러간다 — 잘리는 건 <em>"긴 컨텍스트 베타 위에서만 굴러가던 트래픽"</em> 뿐이다. (<a href="https://pasqualepillitteri.it/en/news/1451/anthropic-1m-context-beta-retirement-april-30-2026">Pasquale Pillitteri — Anthropic Retires the 1M Context Beta: Migrate Before April 30, 2026</a>)</p>
+<p>다만 1M 자체가 사라지는 게 아니라는 게 핵심이다. <a href="https://happycapyguide.com/blog/claude-sonnet-46-opus-46-1m-token-migration-2026">3월 13일에 Sonnet 4.6/Opus 4.6에서 1M 컨텍스트가 GA로 풀렸다</a>. 베타 헤더 없이, 표준 가격에서 그대로 1M까지 쓸 수 있다. 4.5/4 베타 시절에 붙어 있던 <em>"input 가격이 두 배"</em> 의 롱컨텍스트 프리미엄이 GA에서는 사라진 게 결의 큰 변화다. 즉 4.6 라인으로 옮기면 <em>더 비싸지지 않고도 1M까지 늘릴 수 있다</em>는 그림.</p>
+<p>엔지니어 자리에서 신경 쓰이는 건 두 군데다. 하나는 <strong>Claude Code 쪽 자동 라우팅</strong>. Claude Code MAX로 매일 굴리는 입장에서 보면, 4.5 위에서 굴러가던 긴 세션을 명시적으로 바꿔준 게 아니라 그냥 <em>"sonnet"</em> 으로 잡고 쓰던 케이스가 많을 텐데, 4.6으로 자동 승격된 환경이라면 오늘 자정 이후에도 그대로 1M이 살아 있다. 4.5에 핀해둔 환경이 있다면 베타 헤더가 죽기 전에 4.6 또는 Opus 4.6으로 옮기는 게 안전하다. 다른 하나는 <strong>써드파티 SDK·미들웨어</strong>. LangChain·LlamaIndex·LiteLLM 같은 라우팅 레이어가 모델 ID를 기존 <code>claude-sonnet-4-5</code> 로 하드코딩해놓은 케이스가 의외로 많다. <em>"오늘부터 갑자기 200K에서 잘리네"</em> 라는 이슈가 새벽 사이에 X에 깔리기 시작할 가능성이 높다.</p>
+<p>개인적인 얘기 한 줄. 이번 주말 집에서 오픈소스 코드 정리할 때 Sonnet 4.6 + 1M으로 한 번 더 굴려봐야겠다. 베타 헤더 안 붙이고도 <em>프리미엄 안 붙는</em> 1M이라는 게 실제 사용감이 어떻게 다른지 — 4.5 베타 때처럼 <em>"긴 컨텍스트 들어가면 답이 흐릿해진다"</em> 라는 결이 정말 줄어드는지 직접 보고 싶다. 회사 자리에서는 어차피 Claude Code 못 쓰니까 이건 집에서만 가능한 실험.</p>
+<h2 id="tesla-fsd-v1432-smart-summonfsdrobotaxi">Tesla FSD V14.3.2 — Smart Summon·FSD·Robotaxi가 <em>하나의</em> 모델로 합쳐졌다</h2>
+<p>다른 라인. 어제(4월 28일) <a href="https://www.notateslaapp.com/news/4033/tesla-fsd-v1432-unifies-fsd-models-across-robotaxi-and-customer-vehicles-improves-summon-and-adds-new-menu">Tesla가 FSD V14.3.2의 와이드 롤아웃을 확정</a>했다. 핵심 한 줄은 <em>"Robotaxi에 들어가 있던 모델 = Smart Summon 모델 = 일반 FSD 모델"</em> 이 됐다는 것. 그동안은 같은 회사가 만들었어도 코덱이 분기되어 있던 라인이 단일 foundation 모델로 합쳐졌다.</p>
+<p>엔지니어로서 이 통합이 묵직한 이유는 <em>데이터 플라이휠</em>의 모양이 바뀌기 때문이다. 기존엔 Austin·Dallas·Houston의 무감독 Robotaxi에서 쌓인 엣지케이스가 일반 FSD 라인으로 직접 흘러들지 않았다. 이번 V14.3.2부터는 <em>"Robotaxi 한 대에서 한 번 풀린 까다로운 상황의 학습이 다음 OTA에서 일반 차량에도 그대로 들어오는"</em> 구조가 된다. 반대 방향도 같다 — 수십만 대 일반 차량에서 잡힌 코너케이스가 Robotaxi 라인의 폴리시도 같이 끌어올린다. 한 모델이 양방향으로 데이터를 빨아들이는 그림이다. (<a href="https://www.teslaoracle.com/2026/04/27/tesla-rolls-out-fsd-v14-3-2-2026-2-9-8-first-impressions-release-notes-rollout-status/">Tesla Oracle — Tesla rolls out FSD v14.3.2 (2026.2.9.8)</a>)</p>
+<p>성능 디테일도 같이 풀렸다. <strong>AI 컴파일러와 런타임이 MLIR로 다시 쓰여서 반응 속도가 20% 빨라졌다.</strong> Smart Summon을 호출하면 차가 <em>"체감상 명확히 더 빨리 움직인다"</em> 는 첫 사용기들이 X에 같이 도는데, @WholeMarsBlog가 올린 영상에서 보면 <em>"앱 누른 직후 0.5초 안에 차가 움직이기 시작한다"</em> 는 톤이다. MLIR로 갈아탄 게 단순 컴파일 시간 단축이 아니라 <em>런타임 inference latency</em>에 직접 닿았다는 게 결의 핵심.</p>
+<p>Tesla 투자자 관점에서 보면, 이번 통합은 <a href="https://assets-ir.tesla.com/tesla-contents/IR/TSLA-Q1-2026-Update.pdf">4월 초 Q1 어닝콜에서 푼 <em>"한 모델로 합치겠다"</em> 라인</a>의 첫 매출 신호에 가깝다. Robotaxi 확장(현재 Austin + Dallas + Houston)이 일반 FSD 사용자 데이터로 가속되는 구조가 됐으니까, 다음 분기에 <em>"Robotaxi 도시 추가 속도"</em> 가 한 단계 빨라질 가능성이 있다. 다만 이건 어디까지나 모델 통합이 깔아준 <em>기술적 가능성</em>이고, 실제 도시 확장은 규제·보험 라인이 같이 풀려야 한다는 단서가 같이 붙는다.</p>
+<h2 id="ios-27-ai-bloomberg">짧게 — 애플 iOS 27 사진 AI가 Bloomberg에 새고 있다</h2>
+<p>오늘 밤 미국 AMC에 애플 어닝이 풀린다. 그 직전에 <a href="https://www.bloomberg.com/news/articles/2026-04-28/apple-s-ios-27-macos-27-photo-editing-with-ai-to-extend-enhance-and-reframe">Mark Gurman이 한 번 더 깐</a> iOS 27 디테일이 결을 잡아준다 — <em>Extend, Enhance, Reframe</em> 세 개의 AI 사진 편집 기능이 들어가는데, 모두 <strong>온디바이스 inference</strong>로 돈다. Apple Silicon M4·A18 Pro 라인 위에서 이미지 생성형 모델을 직접 굴린다는 얘기. 아직 정식 발표 전이라 디테일은 <em>루머 단계</em>고 WWDC 2026(6월 8일)에서 공식 발표가 나올 거란 게 일반적인 관측이다.</p>
+<p>새벽에 정리한 알파벳·메타·마이크로소프트 capex 그림에서 <em>"AI 매출이 어디로 잡히는가"</em> 가 핵심이었는데, 애플은 정확히 그 반대편 결에 서 있다. capex가 동급 회사 대비 1/10 수준인데도 <em>"디바이스에서 도는 AI"</em> 라는 다른 카드를 들고 들어온다. 오늘 밤 콜에서 capex 가이던스보다 <a href="https://applemagazine.com/apple-intelligence-2026-deep-dive/">iPhone 17 사이클의 Apple Intelligence 어태치율</a>이 어떤 톤으로 풀리는지가 더 묵직한 한 줄이 될 가능성이 높다.</p>
+<h2 id="_1">퇴근 버스에서 한 줄</h2>
+<p>오늘 자정 1M 베타가 닫히는 라인이랑, 한 모델로 합쳐진 FSD 라인이 <em>우연히</em> 같은 날에 겹친 게 아니다 — 둘 다 <em>"베타로 갈라져 있던 라인이 GA로 한 갈래로 모이는"</em> 결의 이벤트다. 모델 컨텍스트도, 자율주행 폴리시도, 한 분기 안에 <em>"여러 라인을 동시에 굴리던 시즌이 끝나가는"</em> 신호가 같이 잡히는 중이다. 다음 라운드는 <em>각자가 깔아둔 단일 라인을 얼마나 멀리 끌고 가는가</em>가 평가의 결이 될 거 같다. 집 도착하면 4.6 + 1M으로 주말 코드 한 번 돌려볼 예정.</p>
+<p>Sources:
+- <a href="https://pasqualepillitteri.it/en/news/1451/anthropic-1m-context-beta-retirement-april-30-2026">Pasquale Pillitteri — Anthropic Retires the 1M Context Beta: Migrate Before April 30, 2026</a>
+- <a href="https://platform.claude.com/docs/en/release-notes/overview">Claude Platform Release Notes</a>
+- <a href="https://happycapyguide.com/blog/claude-sonnet-46-opus-46-1m-token-migration-2026">Happycapy Guide — Claude Sonnet 4.6 vs Opus 4.6: 1M Token Context Is Now Standard — Migration Guide</a>
+- <a href="https://www.notateslaapp.com/news/4033/tesla-fsd-v1432-unifies-fsd-models-across-robotaxi-and-customer-vehicles-improves-summon-and-adds-new-menu">Not a Tesla App — Tesla FSD V14.3.2 Unifies FSD Models Across Robotaxi and Customer Vehicles</a>
+- <a href="https://www.teslaoracle.com/2026/04/27/tesla-rolls-out-fsd-v14-3-2-2026-2-9-8-first-impressions-release-notes-rollout-status/">Tesla Oracle — Tesla rolls out FSD v14.3.2 (2026.2.9.8): first impressions, release notes</a>
+- <a href="https://assets-ir.tesla.com/tesla-contents/IR/TSLA-Q1-2026-Update.pdf">Tesla — Q1 2026 Update</a>
+- <a href="https://www.bloomberg.com/news/articles/2026-04-28/apple-s-ios-27-macos-27-photo-editing-with-ai-to-extend-enhance-and-reframe">Bloomberg — Apple's iOS 27, macOS 27: Photo Editing With AI to Extend, Enhance and Reframe</a>
+- <a href="https://applemagazine.com/apple-intelligence-2026-deep-dive/">AppleMagazine — Apple Intelligence 2026 Future Forecast and Deep-Dive Analysis</a></p>
+    </div>
+    
+<div class="post-share">
+    <span class="share-label">공유하기</span>
+    <a href="https://twitter.com/intent/tweet?text=Claude Sonnet 4.5의 1M 컨텍스트 베타가 오늘로 끝난다 — 그리고 Tesla FSD가 한 모델로 합쳐졌다&url=https://shonsubong.github.io/sonslab-blog/posts/2026-04-30-pm17-ai-tech-news.html"
+       class="share-btn" target="_blank" rel="noopener" aria-label="X(Twitter)에 공유">
+        <span>X</span>
+    </a>
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://shonsubong.github.io/sonslab-blog/posts/2026-04-30-pm17-ai-tech-news.html"
+       class="share-btn" target="_blank" rel="noopener" aria-label="LinkedIn에 공유">
+        <span>in</span>
+    </a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://shonsubong.github.io/sonslab-blog/posts/2026-04-30-pm17-ai-tech-news.html"
+       class="share-btn" target="_blank" rel="noopener" aria-label="Facebook에 공유">
+        <span>f</span>
+    </a>
+    <button type="button" class="share-btn share-copy" id="share-copy-btn" data-url="https://shonsubong.github.io/sonslab-blog/posts/2026-04-30-pm17-ai-tech-news.html" aria-label="링크 복사">
+        <span>🔗 링크 복사</span>
+    </button>
+</div>
+    
+<nav class="post-nav-bottom" aria-label="이전/다음 글">
+    <a href="2026-04-30-pm12-ai-tech-news.html" class="post-nav-link prev">
+        <span class="post-nav-label">← 이전 글</span>
+        <span class="post-nav-title">AI 벤치마크 8개가 한꺼번에 뚫렸다 — Berkeley 에이전트가 던진 점심의 질문</span>
+    </a>
+    <a href="2026-04-30-pm22-ai-tech-news.html" class="post-nav-link next">
+        <span class="post-nav-label">다음 글 →</span>
+        <span class="post-nav-title">Anthropic 컴퓨트 캡이 다시 한번 위로 뛰었다 — AWS Q1, 그리고 8시간 뒤의 애플 어닝</span>
+    </a>
+</nav>
+    
+<section class="related-posts" aria-label="최근 다른 리포트">
+    <div class="related-posts-label">최근 다른 리포트</div>
+    <ul class="related-list"><li><a href="2026-05-01-pm22-ai-tech-news.html"><span class="related-title">OpenAI가 처음으로 AWS Bedrock에 깔렸다 — Moonshot은 같은 주에 FlashKDA로 커널을 풀었다</span><span class="related-date">2026-05-01 · 저녁 마감 · 22:08</span></a></li><li><a href="2026-05-01-pm17-ai-tech-news.html"><span class="related-title">FSD가 한 모델로 합쳐진 주, Kimi K2.6이 오픈웨이트 자리를 다시 그었다 — HBM4 3년치는 이미 다 팔렸다</span><span class="related-date">2026-05-01 · 오후 브리핑 · 17:14</span></a></li><li><a href="2026-05-01-pm12-ai-tech-news.html"><span class="related-title">Anthropic이 OpenAI를 처음으로 넘었다 — $900B 라운드 위에 Claude Code 런레이트가 깔렸다</span><span class="related-date">2026-05-01 · 오전 브리핑 · 12:21</span></a></li><li><a href="2026-05-01-am06-ai-tech-news.html"><span class="related-title">애플 분기 신기록 위에 Gemini-Siri 라인이 처음으로 잡혔다 — 같은 새벽 OpenAI는 사이버 전용 모델을 굴렸다</span><span class="related-date">2026-05-01 · 새벽 리포트 · 06:18</span></a></li><li><a href="2026-04-29-pm22-ai-tech-news.html"><span class="related-title">마이크로소프트-OpenAI 독점이 풀렸다 — 같은 주에 DeepMind는 서울에 첫 해외 AI 캠퍼스를 잡았다</span><span class="related-date">2026-04-29 · 저녁 마감 · 22:14</span></a></li></ul>
+</section>
+</article>
+
+
+<section class="subscribe-cta" id="subscribe">
+    <div class="sub-header">
+        <h3>매일 4번, 받은편지함으로</h3>
+        <p class="sub-desc">반도체·AI·시장 브리핑을 새벽·오전·오후·저녁 네 번 이메일로 받아보세요. 스팸 없음, 언제든 구독 취소.</p>
+    </div>
+    <form id="subscribe-form" class="subscribe-form" action="https://assets.mailerlite.com/jsonp/2275622/forms/185056263876380606/subscribe" method="post">
+        <input type="email" name="fields[email]" placeholder="your@email.com" required aria-label="이메일 주소">
+        <input type="hidden" name="ml-submit" value="1">
+        <button type="submit" class="btn btn-primary">구독하기</button>
+    </form>
+    <div id="subscribe-status" class="subscribe-status" role="status" aria-live="polite"></div>
+    <p class="subscribe-footnote">또는 RSS로 구독하기</p>
+    <div class="rss-copy-row">
+        <input id="rss-url" type="text" readonly value="https://shonsubong.github.io/sonslab-blog/feed.xml" aria-label="RSS 피드 URL">
+        <button id="rss-copy-btn" type="button" class="btn btn-secondary">URL 복사</button>
+    </div>
+    <p class="rss-hint">RSS 리더에 이 URL을 붙여넣으면 구독됩니다.</p>
+    <div class="rss-readers">
+        <span class="rss-readers-label">바로가기 (로그인 필요):</span>
+        <a href="https://www.inoreader.com/?add_feed=https%3A%2F%2Fshonsubong.github.io%2Fsonslab-blog%2Ffeed.xml" class="rss-reader-btn" target="_blank" rel="noopener">Inoreader</a>
+        <a href="https://theoldreader.com/feeds/subscribe?url=https%3A%2F%2Fshonsubong.github.io%2Fsonslab-blog%2Ffeed.xml" class="rss-reader-btn" target="_blank" rel="noopener">The Old Reader</a>
+        <a href="https://shonsubong.github.io/sonslab-blog/feed.xml" class="rss-reader-btn rss-raw" target="_blank" rel="noopener" title="Atom/XML 원본">Atom/XML</a>
+    </div>
+</section>
+
+
+<footer>
+    <div class="stats-row">
+        <img src="https://hits.sh/shonsubong.github.io/sonslab-blog.svg?view=today-total&style=flat-square&label=visits&color=1e3a5f&labelColor=1a2332" alt="Visit counter">
+        <span class="stat-inline">오늘 · 누적 방문</span>
+    </div>
+    <p style="margin-top: 1.2rem;">© 2026 SONSLAB — 현장 감각으로 읽는 AI와 테크</p>
+    <div style="margin-top: 0.5rem;">
+        <a href="../index.html#posts">글</a>·
+        <a href="../index.html#about">About</a>·
+        <a href="../feed.xml">RSS</a>·
+        <a href="mailto:starfox1211@naver.com">Contact</a>
+    </div>
+</footer>
+
+<button type="button" class="scroll-top" id="scroll-top" aria-label="맨 위로" title="맨 위로">↑</button>
+
+<script>
+(function() {
+    var bar = document.getElementById('reading-progress');
+    if (!bar) return;
+    function update() {
+        var h = document.documentElement, b = document.body;
+        var st = h.scrollTop || b.scrollTop;
+        var sh = (h.scrollHeight || b.scrollHeight) - h.clientHeight;
+        bar.style.width = (sh > 0 ? (st / sh) * 100 : 0) + '%';
+    }
+    window.addEventListener('scroll', update, {passive: true});
+    update();
+})();
+</script>
+
+
+<script>
+(function() {
+    // 외부 링크에 target=_blank, rel=noopener 자동 부여
+    var origin = window.location.origin;
+    document.querySelectorAll('.post-content a[href^="http"]').forEach(function(a) {
+        try {
+            var u = new URL(a.href);
+            if (u.origin !== origin) {
+                a.target = '_blank';
+                a.rel = 'noopener noreferrer';
+            }
+        } catch (e) {}
+    });
+    // 모바일에서 TOC 기본 접힘 (세로 공간 절약)
+    if (window.matchMedia('(max-width: 767px)').matches) {
+        var toc = document.querySelector('.post-toc');
+        if (toc && toc.hasAttribute('open')) toc.removeAttribute('open');
+    }
+    // 공유: 링크 복사
+    var copyBtn = document.getElementById('share-copy-btn');
+    if (copyBtn) {
+        copyBtn.addEventListener('click', async function() {
+            var url = copyBtn.dataset.url || window.location.href;
+            try {
+                if (navigator.clipboard && window.isSecureContext) {
+                    await navigator.clipboard.writeText(url);
+                } else {
+                    var ta = document.createElement('textarea');
+                    ta.value = url; document.body.appendChild(ta);
+                    ta.select(); document.execCommand('copy');
+                    document.body.removeChild(ta);
+                }
+                var span = copyBtn.querySelector('span');
+                var original = span.textContent;
+                span.textContent = '✓ 복사됨';
+                copyBtn.classList.add('copied');
+                setTimeout(function() {
+                    span.textContent = original;
+                    copyBtn.classList.remove('copied');
+                }, 2000);
+            } catch (e) {}
+        });
+    }
+})();
+</script>
+
+
+<script>
+(function() {
+    var btn = document.getElementById('sidebar-toggle');
+    var sidebar = document.getElementById('site-sidebar');
+    var backdrop = document.getElementById('sidebar-backdrop');
+    if (!btn || !sidebar) return;
+    function open() {
+        sidebar.classList.add('open');
+        if (backdrop) backdrop.classList.add('show');
+        btn.setAttribute('aria-expanded', 'true');
+        btn.setAttribute('aria-label', '메뉴 닫기');
+    }
+    function close() {
+        sidebar.classList.remove('open');
+        if (backdrop) backdrop.classList.remove('show');
+        btn.setAttribute('aria-expanded', 'false');
+        btn.setAttribute('aria-label', '메뉴 열기');
+    }
+    btn.addEventListener('click', function() {
+        if (sidebar.classList.contains('open')) close(); else open();
+    });
+    if (backdrop) backdrop.addEventListener('click', close);
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && sidebar.classList.contains('open')) close();
+    });
+    // 사이드바 내부 링크를 누르면 모바일에선 닫는다
+    sidebar.querySelectorAll('a').forEach(function(a) {
+        a.addEventListener('click', function() {
+            if (window.matchMedia('(max-width: 1023px)').matches) close();
+        });
+    });
+})();
+</script>
+
+
+<script>
+(function() {
+    var form = document.getElementById('subscribe-form');
+    var status = document.getElementById('subscribe-status');
+    function setState(state, html) {
+        if (!status) return;
+        status.className = 'subscribe-status' + (state ? ' state-' + state : '');
+        status.innerHTML = html || '';
+    }
+    var rssInput = document.getElementById('rss-url');
+    var rssBtn = document.getElementById('rss-copy-btn');
+    if (rssInput && rssBtn) {
+        rssBtn.addEventListener('click', async function() {
+            var url = rssInput.value;
+            try {
+                if (navigator.clipboard && window.isSecureContext) {
+                    await navigator.clipboard.writeText(url);
+                } else {
+                    rssInput.select();
+                    rssInput.setSelectionRange(0, url.length);
+                    document.execCommand('copy');
+                }
+                var original = rssBtn.textContent;
+                rssBtn.textContent = '✓ 복사됨';
+                rssBtn.classList.add('copied');
+                setTimeout(function() {
+                    rssBtn.textContent = original;
+                    rssBtn.classList.remove('copied');
+                }, 2000);
+            } catch (err) {
+                rssInput.select();
+            }
+        });
+        rssInput.addEventListener('click', function() { rssInput.select(); });
+    }
+    // 공통 구독 submit 로직. 메인 폼 + 인라인 폼(B/C hero) 모두 처리.
+    function setFormState(statusEl, state, html, cls) {
+        if (!statusEl) return;
+        var base = cls || 'subscribe-status';
+        statusEl.className = base + (state ? ' state-' + state : '');
+        statusEl.innerHTML = html || '';
+    }
+    function attachSubscribe(f, statusEl, statusCls, successTemplate) {
+        if (!f) return;
+        f.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            var email = f.querySelector('input[type="email"]').value.trim();
+            if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                setFormState(statusEl, 'error', '올바른 이메일 주소를 입력해주세요.', statusCls);
+                return;
+            }
+            var btn = f.querySelector('button[type="submit"]');
+            var originalLabel = btn.textContent;
+            btn.disabled = true;
+            btn.classList.add('loading');
+            btn.textContent = '전송 중…';
+            setFormState(statusEl, 'loading', '', statusCls);
+            try {
+                var fd = new FormData(f);
+                var res = await fetch(f.action, { method: 'POST', body: fd });
+                var data = {};
+                try { data = await res.json(); } catch (e) {}
+                if (res.ok && data.success) {
+                    f.classList.add('hidden-post-success');
+                    var safe = email.replace(/[<>&"]/g, function(c) { return ({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'})[c]; });
+                    setFormState(statusEl, 'success', successTemplate(safe), statusCls);
+                } else {
+                    throw new Error((data && data.message) || '서버 응답 오류');
+                }
+            } catch (err) {
+                setFormState(statusEl, 'error', '일시적인 오류가 발생했습니다. 잠시 후 다시 시도해주세요.', statusCls);
+                btn.disabled = false;
+                btn.classList.remove('loading');
+                btn.textContent = originalLabel;
+            }
+        });
+    }
+    // 메인 구독 폼 (subscribe 섹션)
+    attachSubscribe(form, status, 'subscribe-status', function(safe) {
+        return '<strong>✓ 구독 신청을 받았습니다.</strong>' +
+            'SONSLAB이 <b>' + safe + '</b> 주소로 확인 이메일을 보냈습니다. ' +
+            '받은편지함(스팸함 포함)에서 확인 링크를 클릭하시면 구독이 완료됩니다.';
+    });
+    // 인라인 구독 폼 (B/C hero 내부)
+    document.querySelectorAll('form.inline-sub[data-subscribe]').forEach(function(f) {
+        var st = f.parentElement ? f.parentElement.querySelector('.inline-sub-status') : null;
+        attachSubscribe(f, st, 'inline-sub-status', function(safe) {
+            return '✓ <b>' + safe + '</b>로 확인 이메일을 보냈습니다.';
+        });
+    });
+})();
+</script>
+
+
+<script>
+(function() {
+    // 다크 모드 토글
+    var toggle = document.getElementById('theme-toggle');
+    if (toggle) {
+        toggle.addEventListener('click', function() {
+            var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+            if (isDark) {
+                document.documentElement.removeAttribute('data-theme');
+                try { localStorage.setItem('sonslab-theme', 'light'); } catch(e){}
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                try { localStorage.setItem('sonslab-theme', 'dark'); } catch(e){}
+            }
+        });
+    }
+    // 디자인 피커
+    var dpBtn = document.getElementById('design-picker-btn');
+    var dpMenu = document.getElementById('design-picker-menu');
+    var dpCurrent = document.getElementById('design-picker-current');
+    var dpLabels = { current: '기본', refined: '정제판', editorial: '에디토리얼', broadsheet: '브로드시트', random: '랜덤' };
+    var DP_ALLOWED = ['current', 'refined', 'editorial', 'broadsheet'];
+    function dpResolve(pref, avoid) {
+        if (pref === 'random') {
+            var pool = DP_ALLOWED;
+            if (avoid && DP_ALLOWED.indexOf(avoid) !== -1 && DP_ALLOWED.length > 1) {
+                pool = DP_ALLOWED.filter(function(x) { return x !== avoid; });
+            }
+            return pool[Math.floor(Math.random() * pool.length)];
+        }
+        if (DP_ALLOWED.indexOf(pref) === -1) return 'current';
+        return pref;
+    }
+    function dpSyncLabel(pref, resolved) {
+        if (dpCurrent) {
+            dpCurrent.textContent = (pref === 'random')
+                ? dpLabels.random + ' (' + dpLabels[resolved] + ')'
+                : dpLabels[pref];
+        }
+        if (dpMenu) dpMenu.querySelectorAll('li').forEach(function(li){
+            li.classList.toggle('active', li.getAttribute('data-design') === pref);
+        });
+    }
+    function applyDesign(pref) {
+        if (!dpLabels[pref]) pref = 'random';
+        // 랜덤 클릭 시 현재 디자인을 피해서 체감되는 변화를 보장.
+        var current = document.documentElement.getAttribute('data-design') || 'current';
+        var resolved = dpResolve(pref, current);
+        if (resolved === 'current') document.documentElement.removeAttribute('data-design');
+        else document.documentElement.setAttribute('data-design', resolved);
+        try { localStorage.setItem('sonslab-design', pref); } catch(e){}
+        dpSyncLabel(pref, resolved);
+    }
+    if (dpBtn && dpMenu) {
+        // 초기 동기화는 head 스크립트가 이미 resolved를 적용했으니 재추출 없이 라벨만 맞춤.
+        var initPref = (typeof window.__sonslabDesignPref !== 'undefined')
+            ? window.__sonslabDesignPref
+            : (localStorage.getItem('sonslab-design') || 'random');
+        var initResolved = (typeof window.__sonslabDesignResolved !== 'undefined')
+            ? window.__sonslabDesignResolved
+            : (document.documentElement.getAttribute('data-design') || 'current');
+        dpSyncLabel(initPref, initResolved);
+        dpBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            var expanded = dpBtn.getAttribute('aria-expanded') === 'true';
+            dpBtn.setAttribute('aria-expanded', String(!expanded));
+            dpMenu.classList.toggle('open', !expanded);
+        });
+        dpMenu.querySelectorAll('li').forEach(function(li){
+            li.addEventListener('click', function(){
+                applyDesign(li.getAttribute('data-design'));
+                dpMenu.classList.remove('open');
+                dpBtn.setAttribute('aria-expanded', 'false');
+            });
+        });
+        document.addEventListener('click', function(e){
+            if (!dpMenu.contains(e.target) && e.target !== dpBtn) {
+                dpMenu.classList.remove('open');
+                dpBtn.setAttribute('aria-expanded', 'false');
+            }
+        });
+    }
+    // 맨 위로 버튼
+    var btn = document.getElementById('scroll-top');
+    if (btn) {
+        var toggleBtn = function() {
+            if (window.scrollY > 300) btn.classList.add('visible');
+            else btn.classList.remove('visible');
+        };
+        window.addEventListener('scroll', toggleBtn, {passive:true});
+        btn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        toggleBtn();
+    }
+})();
+</script>
+</body>
+</html>
