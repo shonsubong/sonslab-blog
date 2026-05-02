@@ -197,18 +197,17 @@ t1 → t2 → t3 → t4 → ... → tN              (N step, 직렬)
     for t in range(T):
         logits = model(seq)                   # 전 시퀀스 1회 forward
         probs = softmax(logits)
-        # 마스크 자리 중 가장 확신 높은 자리부터 unmask
         k = remaining_masks(seq) // (T - t)
         positions = topk_confidence(probs, seq, k)
         seq = unmask_at(seq, positions, probs)
     return seq
 </code></pre>
 
-<p>자기회귀 루프와 비교해 step 수가 시퀀스 길이가 아니라 T로 결정되는 게 핵심이다. T=N이면 사실상 자기회귀 비용이고, T=N/16이면 메모리 round-trip이 16배 줄어든다. 어텐션 FLOPS는 매 step 풀 시퀀스라 더 들지만, 추론 GPU에서는 메모리 bandwidth가 먼저 천장이라 wall-clock이 잡힌다.</p>
+<p>step 수가 시퀀스 길이가 아니라 T로 결정되는 게 핵심이다. T=N/16이면 메모리 round-trip이 16배 줄고, 어텐션 FLOPS는 늘지만 추론 GPU는 메모리 bandwidth가 먼저 천장이라 wall-clock이 잡힌다.</p>
 <h2 id="_5">한계·반론</h2>
 <p>낙관론을 그대로 받기엔 아직 위험이 많다. 첫째, Mercury 1000 tok/s는 코드처럼 <strong>구조 강한 도메인</strong> 측정치다. 자유 서술·긴 추론 체인에서 step 수를 줄이면 품질이 무너진다는 보고가 여러 곳에서 나온다 (<a href="https://simonwillison.net/2025/Mar/4/mercury/">Simon Willison — Mercury 사용기</a>). 둘째, 확산형은 KV 캐시 재사용이 안 된다 — 자기회귀 추론 인프라가 쌓아온 캐시 최적화 혜택이 사라진다. 셋째, RLHF·DPO가 자기회귀 가정에 묶여 있어 확산형 전용 alignment 레시피가 미성숙하다 (<a href="https://www.interconnects.ai/p/diffusion-llms">Nathan Lambert — Diffusion LLMs 정리</a>). "더 빠르다"를 받기 전에 어떤 도메인·디코딩 budget인지 한 번 더 봐야 한다.</p>
 <h2 id="_6">현직 엔지니어 관점</h2>
-<p>반도체 입장에서 보면 확산형은 자기회귀의 정반대 부담을 만든다. 자기회귀는 HBM bandwidth가 천장이라 HBM3E·HBM4 세대 경쟁이 곧 throughput으로 환산되는 구조였다. 확산형은 매 step 풀 어텐션이라 부담이 <strong>compute 쪽</strong>으로 옮겨간다 — Blackwell처럼 sparse·structured compute가 강한 칩이 유리해지고, 메모리 대역폭 우위 단독으로는 차별화가 약해진다. 온디바이스 NPU 시각에서는 step 수가 16~64로 한정되면 <strong>결정적 latency 예측</strong>이 가능해져 실시간 UX 설계가 한결 쉬워진다 — 자기회귀의 가변 출력 길이가 만들어내던 latency 분산이 사라진다는 뜻이다. 산업용 vision pipeline·로봇 제어처럼 응답 시간 boundary가 강한 워크로드가 가장 먼저 후보다. 다만 "범용 챗봇 자리까지 확산형이 들어올 것"으로 단정하지는 말자 — 현재 입증된 우위는 코드·구조화 출력이라는 좁은 띠뿐이다.</p>
+<p>반도체 입장에서 보면 확산형은 자기회귀의 정반대 부담을 만든다. 자기회귀는 HBM 대역폭이 천장이라 HBM3E·HBM4 세대 경쟁이 곧 throughput이었다. 확산형은 매 step 풀 어텐션이라 부담이 <strong>compute 쪽</strong>으로 옮겨간다 — Blackwell처럼 sparse·structured compute가 강한 칩이 유리하고, 메모리 대역폭 단독 우위는 약해진다. 온디바이스 NPU 시각에서는 step 수가 16~64로 한정되면 <strong>결정적 latency 예측</strong>이 가능해져 실시간 UX 설계가 쉬워진다 — 자기회귀의 가변 출력 길이가 만들던 latency 분산이 사라진다. 산업용 vision pipeline·로봇 제어처럼 응답 시간 boundary가 강한 워크로드가 첫 후보다. 다만 범용 챗봇까지 단정하지는 말자 — 현재 입증된 우위는 코드·구조화 출력이라는 좁은 띠뿐이다.</p>
 <hr />
 <p><strong>더 읽을거리</strong></p>
 <ul>
