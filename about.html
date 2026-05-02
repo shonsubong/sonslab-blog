@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About — SONSLAB · 로고 의미와 브랜드 이야기</title>
+    <link rel="icon" href="assets/logo.jpg">
+    <link rel="alternate" type="application/atom+xml" title="SONSLAB Feed" href="feed.xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
+    <style>
+      .about-page .post-content { max-width: 760px; }
+      .about-hero { text-align: center; margin-bottom: 2.4em; }
+      .about-hero img.brand-mark {
+          width: 220px; height: 220px; object-fit: cover;
+          border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+          background: #fff;
+      }
+      .about-hero .tag { display: inline-block; margin-top: 1em;
+          padding: 0.35em 0.9em; border-radius: 999px;
+          background: #eef2f8; color: #1e3a5f; font-size: 0.85em; font-weight: 600;
+          letter-spacing: 0.02em;
+      }
+      [data-theme=dark] .about-hero .tag { background: #1c2030; color: #6aa6ff; }
+      .about-pull {
+          margin: 2em 0; padding: 1.4em 1.6em; border-left: 4px solid #0b3d91;
+          background: #f7f9fc; border-radius: 6px;
+          font-size: 1.08em; line-height: 1.7;
+      }
+      [data-theme=dark] .about-pull { background: #1a2332; border-left-color: #6aa6ff; }
+      .symbol-grid {
+          display: grid; gap: 1.2em;
+          grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+          margin: 1.4em 0 0.4em 0;
+      }
+      .symbol-card {
+          padding: 1.2em 1.3em; border-radius: 12px;
+          background: #fff; border: 1px solid #e5e8ee;
+          box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+      }
+      [data-theme=dark] .symbol-card { background: #1c2030; border-color: #303547; }
+      .symbol-card h3 {
+          margin: 0 0 0.5em 0; font-size: 1.05em;
+          color: #0b3d91; display: flex; align-items: center; gap: 0.45em;
+      }
+      [data-theme=dark] .symbol-card h3 { color: #6aa6ff; }
+      .symbol-card .sym {
+          display: inline-flex; align-items: center; justify-content: center;
+          width: 1.8em; height: 1.8em; border-radius: 50%;
+          background: #eef2f8; color: #0b3d91; font-weight: 700;
+      }
+      [data-theme=dark] .symbol-card .sym { background: #2a3145; color: #6aa6ff; }
+      .symbol-card p { margin: 0; font-size: 0.96em; line-height: 1.65; color: #444; }
+      [data-theme=dark] .symbol-card p { color: #c4c8d2; }
+      .brand-lines {
+          counter-reset: brand-line;
+          list-style: none; padding-left: 0; margin-top: 1em;
+      }
+      .brand-lines li {
+          counter-increment: brand-line;
+          padding: 0.7em 0.4em 0.7em 2.6em; position: relative;
+          border-bottom: 1px dashed #d8dde5;
+      }
+      [data-theme=dark] .brand-lines li { border-bottom-color: #303547; }
+      .brand-lines li:last-child { border-bottom: none; }
+      .brand-lines li::before {
+          content: counter(brand-line);
+          position: absolute; left: 0.4em; top: 0.7em;
+          width: 1.7em; height: 1.7em; line-height: 1.7em; text-align: center;
+          background: #0b3d91; color: #fff; border-radius: 50%;
+          font-size: 0.8em; font-weight: 700;
+      }
+      [data-theme=dark] .brand-lines li::before { background: #6aa6ff; color: #1a2332; }
+      .about-bio { margin-top: 2.4em; }
+      .about-cta {
+          display: inline-block; margin-top: 0.6em; padding: 0.65em 1.2em;
+          border-radius: 8px; background: #0b3d91; color: #fff !important;
+          text-decoration: none !important; font-weight: 600;
+      }
+      .about-cta:hover { background: #1e3a5f; }
+      .variant-grid {
+          display: grid; gap: 1em;
+          grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+          margin: 1.2em 0;
+      }
+      .variant-card {
+          padding: 1em 0.9em; border-radius: 12px;
+          background: #fff; border: 1px solid #e5e8ee;
+          box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+          text-align: center; display: flex; flex-direction: column; gap: 0.5em;
+          align-items: center;
+      }
+      [data-theme=dark] .variant-card { background: #1c2030; border-color: #303547; }
+      .variant-card .v-img {
+          width: 96px; height: 96px; border-radius: 12px;
+          background: #f5f7fb; display: flex; align-items: center; justify-content: center;
+          font-size: 2.2em;
+          overflow: hidden;
+      }
+      [data-theme=dark] .variant-card .v-img { background: #2a3145; }
+      .variant-card .v-img img { width: 100%; height: 100%; object-fit: contain; }
+      .variant-card .v-name {
+          font-weight: 700; font-size: 0.98em; color: #0b3d91;
+      }
+      [data-theme=dark] .variant-card .v-name { color: #6aa6ff; }
+      .variant-card .v-desc {
+          font-size: 0.85em; line-height: 1.5; color: #555;
+      }
+      [data-theme=dark] .variant-card .v-desc { color: #b8bcc8; }
+      .variant-note {
+          margin-top: 0.4em; padding: 0.9em 1.1em; border-radius: 10px;
+          background: #fff8e6; border: 1px solid #f0e3b6; font-size: 0.92em;
+          line-height: 1.6; color: #5b4a14;
+      }
+      [data-theme=dark] .variant-note { background: #2a2515; border-color: #5a4d22; color: #d8c890; }
+    </style>
+    <meta name="description" content="SONSLAB은 작은 아이디어를 손수레에 싣고, 질문과 실험으로 세상 밖 현실로 옮겨 나아가는 창의 실험실입니다. 로고에 담긴 손수레 · 물음표 · 전구 · 두 눈의 의미를 소개합니다.">
+    <meta name="author" content="SONSLAB">
+    <link rel="canonical" href="https://shonsubong.github.io/sonslab-blog/about.html">
+    <meta property="og:site_name" content="SONSLAB">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="About — SONSLAB · 로고 의미와 브랜드 이야기">
+    <meta property="og:description" content="SONSLAB은 작은 아이디어를 손수레에 싣고, 질문과 실험으로 세상 밖 현실로 옮겨 나아가는 창의 실험실입니다.">
+    <meta property="og:url" content="https://shonsubong.github.io/sonslab-blog/about.html">
+    <meta property="og:image" content="https://shonsubong.github.io/sonslab-blog/assets/logo.jpg">
+    <meta property="og:locale" content="ko_KR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="About — SONSLAB · 로고 의미와 브랜드 이야기">
+    <meta name="twitter:description" content="SONSLAB은 작은 아이디어를 손수레에 싣고, 질문과 실험으로 세상 밖 현실로 옮겨 나아가는 창의 실험실입니다.">
+    <meta name="twitter:image" content="https://shonsubong.github.io/sonslab-blog/assets/logo.jpg">
+
+<script>
+(function() {
+    try {
+        var saved = localStorage.getItem('sonslab-theme');
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var theme = saved || (prefersDark ? 'dark' : 'light');
+        if (theme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+
+        var pref = localStorage.getItem('sonslab-design') || 'random';
+        var allowed = ['current', 'refined', 'editorial', 'broadsheet'];
+        var resolved;
+        if (pref === 'random') {
+            resolved = allowed[Math.floor(Math.random() * allowed.length)];
+        } else if (allowed.indexOf(pref) === -1) {
+            pref = 'current';
+            resolved = 'current';
+        } else {
+            resolved = pref;
+        }
+        if (resolved !== 'current') document.documentElement.setAttribute('data-design', resolved);
+        window.__sonslabDesignPref = pref;
+        window.__sonslabDesignResolved = resolved;
+    } catch (e) {}
+})();
+</script>
+</head>
+<body class="post-page" data-category="about">
+    <div class="reading-progress" id="reading-progress" role="progressbar" aria-label="읽기 진행률"></div>
+
+<aside class="site-sidebar" id="site-sidebar" aria-label="사이트 메뉴">
+    <a href="index.html" class="sidebar-brand">
+        <img src="assets/logo.jpg" alt="SONSLAB" onerror="this.style.display='none'">
+        <span class="name">SONSLAB</span>
+    </a>
+    <div class="sidebar-section">
+        <div class="sidebar-section-label">카테고리</div>
+        <ul class="sidebar-cat-list">
+            <li><a href="index.html">홈</a></li>
+            <li><a href="index.html#posts">데일리 브리핑</a></li>
+            <li><a href="ai-tech/index.html">AI 기술 딥다이브</a></li>
+            <li><a href="claude-tips/index.html">Claude Code 팁</a></li>
+            <li><a href="manuals/claude-code.html">Claude Code 가이드북 <span class="sidebar-cat-count">PDF</span></a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="feed.xml">RSS</a></li>
+        </ul>
+    </div>
+</aside>
+<div class="sidebar-backdrop" id="sidebar-backdrop" aria-hidden="true"></div>
+
+
+<header class="top-nav">
+    <div class="top-nav-inner">
+        <button type="button" class="sidebar-toggle" id="sidebar-toggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="site-sidebar">
+            <span class="sidebar-toggle-bar"></span>
+            <span class="sidebar-toggle-bar"></span>
+            <span class="sidebar-toggle-bar"></span>
+        </button>
+        <a href="index.html" class="brand">
+            <img src="assets/logo.jpg" alt="SONSLAB" onerror="this.style.display='none'">
+            <span class="name">SONSLAB</span>
+        </a>
+        <nav>
+            <a href="index.html#posts">데일리</a>
+            <a href="ai-tech/index.html">AI 기술</a>
+            <a href="claude-tips/index.html">Claude Code 팁</a>
+            <a href="about.html" class="active">About</a>
+            <span class="nav-visits" title="오늘 · 누적 방문">
+                <img src="https://hits.sh/shonsubong.github.io/sonslab-blog.svg?view=today-total&style=flat-square&label=visits&color=1e3a5f&labelColor=1a2332" alt="오늘·누적 방문 수">
+            </span>
+            <button type="button" class="theme-toggle" id="theme-toggle" aria-label="다크 모드 토글" title="다크/라이트 전환">
+                <span class="icon-moon" aria-hidden="true">🌙</span>
+                <span class="icon-sun" aria-hidden="true">☀</span>
+            </button>
+            <a href="index.html#subscribe" class="nav-cta">이메일 구독</a>
+        </nav>
+    </div>
+</header>
+
+
+<article class="post-article about-page">
+    <div class="post-header">
+        <a href="index.html" class="back-link">← 홈으로</a>
+        <h1>About — SONSLAB</h1>
+        <div class="post-meta">
+            <span>로고에 담긴 의미</span>
+            <span>·</span>
+            <span>창의 실험실 SONSLAB</span>
+        </div>
+    </div>
+
+    <div class="post-content">
+        <section class="about-hero">
+            <img class="brand-mark" src="assets/logo.jpg" alt="SONSLAB 로고 — 손수레 모티브">
+            <div class="tag">손수레 · 물음표 · 전구 · 두 눈</div>
+        </section>
+
+        <p>
+            <strong>SONSLAB</strong>은 작은 아이디어를 손수레에 싣고,
+            질문과 실험을 통해 더 큰 가능성으로 옮겨가는
+            <strong>창의 실험실</strong>을 의미합니다.
+        </p>
+        <p>
+            SONSLAB의 로고는 단순한 물음표가 아니라,
+            <strong>호기심을 실어 나르는 손수레</strong>를 형상화한 디자인입니다.
+            네 가지 모티브가 한 형태 안에 겹쳐 있습니다 — 손수레, 물음표, 전구, 그리고 두 눈.
+        </p>
+
+        <div class="about-pull">
+            “SONSLAB은 손수레처럼 작지만 단단하게,
+            아이디어를 싣고 작은 생각을 세상 밖 현실로 옮겨 나아감을 의미합니다.”
+        </div>
+
+        <section>
+            <h2>로고 속 네 가지 모티브</h2>
+            <div class="symbol-grid">
+                <div class="symbol-card">
+                    <h3><span class="sym">1</span> 손수레 — 아이디어를 옮기는 힘</h3>
+                    <p>
+                        손수레는 크고 화려한 기계가 아니지만,
+                        무언가를 직접 싣고, 밀고, 움직이게 만드는 가장 실용적인 도구입니다.
+                        SONSLAB도 거창한 말보다 작은 생각을 직접 실험하고
+                        조금씩 앞으로 옮기는 <strong>실행력</strong>을 중요하게 생각합니다.
+                        손수레는 <em>생각을 현실로 옮기는 도구</em>를 상징합니다.
+                    </p>
+                </div>
+                <div class="symbol-card">
+                    <h3><span class="sym">2</span> 물음표 — 앞으로 나아가게 하는 질문</h3>
+                    <p>
+                        손수레의 형태를 닮은 큰 물음표는
+                        “왜?”, “어떻게?”, “다르게 할 수 없을까?”라는 질문을 의미합니다.
+                        SONSLAB은 정답을 그냥 받아들이는 곳이 아니라,
+                        <strong>질문을 통해 새로운 길을 찾아가는 공간</strong>입니다.
+                    </p>
+                </div>
+                <div class="symbol-card">
+                    <h3><span class="sym">3</span> 전구 — 손수레에 실린 아이디어</h3>
+                    <p>
+                        전구는 손수레에 실린 가장 소중한 짐입니다.
+                        바로 아이디어, 깨달음, 창의적인 가능성이지요.
+                        작은 아이디어 하나라도 소중히 싣고, 실험하고 다듬어
+                        <strong>콘텐츠 · 기술 · 교육 · 자동화 · 발명</strong>으로
+                        발전시킨다는 의미를 담고 있습니다.
+                    </p>
+                </div>
+                <div class="symbol-card">
+                    <h3><span class="sym">4</span> 두 눈 — 관찰하고 발견하는 시선</h3>
+                    <p>
+                        아래의 두 눈은 손수레의 바퀴처럼 보이면서도,
+                        <strong>세상을 관찰하는 눈</strong>을 의미합니다.
+                        SONSLAB은 그냥 지나칠 수 있는 일상 속에서도
+                        재미있는 질문과 새로운 아이디어를 발견합니다.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>로고 시리즈 — 분야별 변형(Variant)</h2>
+            <p>
+                SONSLAB의 로고는 하나의 그림이 아니라, <strong>공통된 베이스 + 분야별로 바뀌는 짐(cargo)</strong>으로 이뤄진
+                <strong>변형 시리즈</strong>입니다.
+                손수레 · 물음표 · 두 눈은 그대로 두고, 손수레 위 짐칸에 실리는 아이콘만
+                바뀌면서 그날의 주제·콘텐츠 카테고리를 표현합니다.
+                "오늘은 어떤 아이디어를 싣고 가는가?"가 짐 자리에 그려진다고 보시면 됩니다.
+            </p>
+            <div class="variant-grid">
+                <div class="variant-card">
+                    <div class="v-img"><img src="assets/logo-variants/SONSLAB(Empty).jpg" alt="베이스 로고" loading="lazy" onerror="this.parentElement.textContent='🛒';"></div>
+                    <div class="v-name">Base — 베이스</div>
+                    <div class="v-desc">짐 없는 빈 손수레 — 시작과 무한한 가능성</div>
+                </div>
+                <div class="variant-card">
+                    <div class="v-img"><img src="assets/logo-variants/SONSLAB(Idea).jpg" alt="아이디어 로고" loading="lazy" onerror="this.parentElement.textContent='💡';"></div>
+                    <div class="v-name">Idea — 아이디어</div>
+                    <div class="v-desc">전구를 실은 메인 변형 — 깨달음과 창의적 가능성</div>
+                </div>
+                <div class="variant-card">
+                    <div class="v-img"><img src="assets/logo-variants/SONSLAB(AI).jpg" alt="AI 반도체 로고" loading="lazy" onerror="this.parentElement.textContent='🤖';"></div>
+                    <div class="v-name">AI · 반도체</div>
+                    <div class="v-desc">AI 칩과 회로 — 데일리 브리핑·기술 딥다이브</div>
+                </div>
+                <div class="variant-card">
+                    <div class="v-img"><img src="assets/logo-variants/SONSLAB(Brain).jpg" alt="뇌 신경망 로고" loading="lazy" onerror="this.parentElement.textContent='🧠';"></div>
+                    <div class="v-name">Brain — 인지</div>
+                    <div class="v-desc">뉴럴 네트워크 — 연구·논문·AI 모델 분석</div>
+                </div>
+                <div class="variant-card">
+                    <div class="v-img"><img src="assets/logo-variants/SONSLAB(DeepLearning).jpg" alt="딥러닝 로고" loading="lazy" onerror="this.parentElement.textContent='🕸️';"></div>
+                    <div class="v-name">Deep Learning — 딥러닝</div>
+                    <div class="v-desc">노드·간선 그래프 — 모델 구조·학습 과정 해설</div>
+                </div>
+                <div class="variant-card">
+                    <div class="v-img"><img src="assets/logo-variants/SONSLAB(Book).jpg" alt="책 로고" loading="lazy" onerror="this.parentElement.textContent='📘';"></div>
+                    <div class="v-name">Book — 학습</div>
+                    <div class="v-desc">책 두 권 — 가이드북·교육·학습 콘텐츠</div>
+                </div>
+                <div class="variant-card">
+                    <div class="v-img"><img src="assets/logo-variants/SONSLAB(DNA).jpg" alt="DNA 로고" loading="lazy" onerror="this.parentElement.textContent='🧬';"></div>
+                    <div class="v-name">DNA — 바이오</div>
+                    <div class="v-desc">이중 나선 — 생명·바이오테크·헬스 주제</div>
+                </div>
+                <div class="variant-card">
+                    <div class="v-img"><img src="assets/logo-variants/SONSLAB(Game).jpg" alt="게임 로고" loading="lazy" onerror="this.parentElement.textContent='🎮';"></div>
+                    <div class="v-name">Game — 게임</div>
+                    <div class="v-desc">컨트롤러 — 게임·인터랙티브 실험</div>
+                </div>
+                <div class="variant-card">
+                    <div class="v-img"><img src="assets/logo-variants/SONSLAB(House).jpg" alt="집 로고" loading="lazy" onerror="this.parentElement.textContent='🏠';"></div>
+                    <div class="v-name">House — 일상</div>
+                    <div class="v-desc">집 — 라이프·살림·홈오토메이션</div>
+                </div>
+                <div class="variant-card">
+                    <div class="v-img"><img src="assets/logo-variants/SONSLAB(Music).jpg" alt="음악 로고" loading="lazy" onerror="this.parentElement.textContent='🎵';"></div>
+                    <div class="v-name">Music — 음악</div>
+                    <div class="v-desc">음표 — 사운드·음악·오디오 실험</div>
+                </div>
+                <div class="variant-card">
+                    <div class="v-img"><img src="assets/logo-variants/SONSLAB(Music2).jpg" alt="음악 2 로고" loading="lazy" onerror="this.parentElement.textContent='🎶';"></div>
+                    <div class="v-name">Music II — 음악 (variant)</div>
+                    <div class="v-desc">음표 변형 — 라이브·플레이리스트 큐레이션</div>
+                </div>
+                <div class="variant-card">
+                    <div class="v-img"><img src="assets/logo-variants/SONSLAB(Piza).jpg" alt="피자 로고" loading="lazy" onerror="this.parentElement.textContent='🍕';"></div>
+                    <div class="v-name">Pizza — 음식</div>
+                    <div class="v-desc">피자 — 미식·레시피·일상의 즐거움</div>
+                </div>
+                <div class="variant-card">
+                    <div class="v-img"><img src="assets/logo-variants/SONSLAB(Youtube).jpg" alt="유튜브 로고" loading="lazy" onerror="this.parentElement.textContent='▶️';"></div>
+                    <div class="v-name">YouTube — 영상</div>
+                    <div class="v-desc">플레이 버튼 — 영상 콘텐츠·튜토리얼</div>
+                </div>
+                <div class="variant-card">
+                    <div class="v-img"><img src="assets/logo-variants/SONSLAB(Sketch).jpg" alt="스케치 로고" loading="lazy" onerror="this.parentElement.textContent='✏️';"></div>
+                    <div class="v-name">Sketch — 드로잉</div>
+                    <div class="v-desc">연필 스케치 — 아이디어 노트·디자인 초안</div>
+                </div>
+                <div class="variant-card">
+                    <div class="v-img"><img src="assets/logo-variants/SONSLAB(3dpen).jpg" alt="3D 펜 로고" loading="lazy" onerror="this.parentElement.textContent='🖊️';"></div>
+                    <div class="v-name">3D Pen — 메이커</div>
+                    <div class="v-desc">3D 펜 — 만들기·프로토타이핑·DIY</div>
+                </div>
+            </div>
+            <div class="variant-note">
+                💡 <strong>로고 시스템의 약속</strong> —
+                베이스(손수레 · 물음표 · 두 눈)는 절대 바뀌지 않습니다.
+                바뀌는 건 짐칸 위에 올려지는 아이콘 하나뿐입니다.
+                새로운 카테고리가 생기면 짐만 바꿔서 시리즈를 확장합니다.
+            </div>
+            <p style="margin-top:1em; font-size:0.92em; color:#666;">
+                <em>※ 변형 이미지는 <code>assets/logo-variants/SONSLAB(이름).jpg</code> 형태로 보관됩니다.
+                새 카테고리가 생기면 같은 베이스에 짐만 바꿔 그린 변형을 추가합니다.</em>
+            </p>
+        </section>
+
+        <section>
+            <h2>한 줄 의미</h2>
+            <p>
+                <strong>SONSLAB은 작은 아이디어를 손수레에 싣고,
+                질문과 실험으로 세상 밖으로 옮기는 창의 실험실입니다.</strong>
+            </p>
+        </section>
+
+        <section>
+            <h2>브랜드 문장 후보</h2>
+            <ol class="brand-lines">
+                <li>아이디어를 싣고, 질문으로 굴러가는 실험실.</li>
+                <li>작은 생각을 현실로 옮기는 창의 손수레.</li>
+                <li>호기심을 싣고, 가능성을 향해 나아가다.</li>
+                <li>질문을 밀고, 아이디어를 나르는 곳.</li>
+                <li>생각을 싣고 세상으로 나아가는 SONSLAB.</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>SONSLAB이 매일 하는 일</h2>
+            <p>
+                반도체 현직 수석 엔지니어가 매일 4번 올리는 AI · 기술 · 시장 브리핑입니다.
+                하루 동안 쏟아지는 테크 뉴스 중 현장에서 실제로 의미 있는 신호만 골라 해석합니다.
+                전자현미경(TEM/SEM) 영상처리 AI와 비전 자동화 플랫폼을 개발하는 엔지니어 관점에서,
+                반도체 제조 현장과 AI 인프라 · 시장 흐름의 교차점을 매일 기록합니다.
+            </p>
+            <div class="about-bio">
+                <dl>
+                    <dt>저자</dt>
+                    <dd>SONSLAB</dd>
+                    <dt>직함</dt>
+                    <dd>반도체 수석 엔지니어 · TEM/SEM 영상 AI 분석 및 비전 자동화 플랫폼 개발자</dd>
+                    <dt>발행 리듬</dt>
+                    <dd>매일 4번 — 새벽(06시) · 오전(12시) · 오후(17시) · 저녁(22시)</dd>
+                    <dt>주요 관심사</dt>
+                    <dd>반도체 팹 · 장비 · 공정 · AI 플랫폼 · 모델 동향 · 빅테크 어닝과 투자 흐름</dd>
+                    <dt>연락처</dt>
+                    <dd><a href="mailto:starfox1211@naver.com">starfox1211@naver.com</a></dd>
+                </dl>
+            </div>
+            <p style="margin-top:1.6em;">
+                <a class="about-cta" href="index.html#subscribe">이메일 구독으로 매일 받아보기 →</a>
+            </p>
+        </section>
+    </div>
+</article>
+
+
+<footer>
+    <div class="stats-row">
+        <img src="https://hits.sh/shonsubong.github.io/sonslab-blog.svg?view=today-total&style=flat-square&label=visits&color=1e3a5f&labelColor=1a2332" alt="Visit counter">
+        <span class="stat-inline">오늘 · 누적 방문</span>
+    </div>
+    <p style="margin-top: 1.2rem;">© 2026 SONSLAB — 현장 감각으로 읽는 AI와 테크</p>
+    <div style="margin-top: 0.5rem;">
+        <a href="index.html#posts">글</a>·
+        <a href="about.html">About</a>·
+        <a href="feed.xml">RSS</a>·
+        <a href="mailto:starfox1211@naver.com">Contact</a>
+    </div>
+</footer>
+
+<button type="button" class="scroll-top" id="scroll-top" aria-label="맨 위로" title="맨 위로">↑</button>
+
+<script>
+(function() {
+    var toggle = document.getElementById('theme-toggle');
+    if (toggle) {
+        toggle.addEventListener('click', function() {
+            var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+            if (isDark) {
+                document.documentElement.removeAttribute('data-theme');
+                try { localStorage.setItem('sonslab-theme', 'light'); } catch(e){}
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                try { localStorage.setItem('sonslab-theme', 'dark'); } catch(e){}
+            }
+        });
+    }
+    var btn = document.getElementById('scroll-top');
+    if (btn) {
+        var toggleBtn = function() {
+            if (window.scrollY > 300) btn.classList.add('visible');
+            else btn.classList.remove('visible');
+        };
+        window.addEventListener('scroll', toggleBtn, {passive:true});
+        btn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        toggleBtn();
+    }
+    // 사이드바 토글
+    var sbToggle = document.getElementById('sidebar-toggle');
+    var sb = document.getElementById('site-sidebar');
+    var bd = document.getElementById('sidebar-backdrop');
+    if (sbToggle && sb) {
+        var setOpen = function(open) {
+            sb.classList.toggle('open', open);
+            if (bd) bd.classList.toggle('open', open);
+            sbToggle.setAttribute('aria-expanded', String(open));
+            document.body.classList.toggle('sidebar-open', open);
+        };
+        sbToggle.addEventListener('click', function(){
+            setOpen(!sb.classList.contains('open'));
+        });
+        if (bd) bd.addEventListener('click', function(){ setOpen(false); });
+    }
+    // 읽기 진행률
+    var prog = document.getElementById('reading-progress');
+    if (prog) {
+        var updateProg = function() {
+            var h = document.documentElement;
+            var scrolled = h.scrollTop;
+            var height = h.scrollHeight - h.clientHeight;
+            var pct = height > 0 ? (scrolled / height) * 100 : 0;
+            prog.style.width = pct + '%';
+        };
+        window.addEventListener('scroll', updateProg, {passive:true});
+        updateProg();
+    }
+})();
+</script>
+</body>
+</html>
