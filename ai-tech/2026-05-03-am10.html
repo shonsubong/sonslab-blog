@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>200억 달러짜리 SRAM 베팅 — Groq 3 LPU가 Vera Rubin에 들어간 이유 — SONSLAB</title>
+    <link rel="icon" href="../assets/logo.jpg">
+    <link rel="alternate" type="application/atom+xml" title="SONSLAB Feed" href="../feed.xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/style.css">
+    <meta name="description" content="GTC 2026에서 NVIDIA는 Vera Rubin 플랫폼을 공개하면서 일곱 개의 새 칩을 양산 단계로 올렸다. 그 안에 Groq 3 LPU가 끼어 있다는 게 가장 의외였다. NVIDIA가 자체 GPU 라인업 옆에 외부 라이선스 IP를 박아 넣었다는 점, 그것도 HBM이 아니라 SRAM 기반 칩이라는 점에서다. 라이선스 액수 200억 달러는 NVIDIA 역사상 최대 규모다 (Tom&#x27;s Ha...">
+    <meta name="author" content="SONSLAB">
+    <link rel="canonical" href="https://shonsubong.github.io/sonslab-blog/ai-tech/2026-05-03-am10.html">
+    <meta property="og:site_name" content="SONSLAB">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="200억 달러짜리 SRAM 베팅 — Groq 3 LPU가 Vera Rubin에 들어간 이유">
+    <meta property="og:description" content="GTC 2026에서 NVIDIA는 Vera Rubin 플랫폼을 공개하면서 일곱 개의 새 칩을 양산 단계로 올렸다. 그 안에 Groq 3 LPU가 끼어 있다는 게 가장 의외였다. NVIDIA가 자체 GPU 라인업 옆에 외부 라이선스 IP를 박아 넣었다는 점, 그것도 HBM이 아니라 SRAM 기반 칩이라는 점에서다. 라이선스 액수 200억 달러는 NVIDIA 역사상 최대 규모다 (Tom&#x27;s Ha...">
+    <meta property="og:url" content="https://shonsubong.github.io/sonslab-blog/ai-tech/2026-05-03-am10.html">
+    <meta property="og:image" content="https://shonsubong.github.io/sonslab-blog/assets/logo.jpg">
+    <meta property="og:locale" content="ko_KR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="200억 달러짜리 SRAM 베팅 — Groq 3 LPU가 Vera Rubin에 들어간 이유">
+    <meta name="twitter:description" content="GTC 2026에서 NVIDIA는 Vera Rubin 플랫폼을 공개하면서 일곱 개의 새 칩을 양산 단계로 올렸다. 그 안에 Groq 3 LPU가 끼어 있다는 게 가장 의외였다. NVIDIA가 자체 GPU 라인업 옆에 외부 라이선스 IP를 박아 넣었다는 점, 그것도 HBM이 아니라 SRAM 기반 칩이라는 점에서다. 라이선스 액수 200억 달러는 NVIDIA 역사상 최대 규모다 (Tom&#x27;s Ha...">
+    <meta name="twitter:image" content="https://shonsubong.github.io/sonslab-blog/assets/logo.jpg">
+    <meta property="article:published_time" content="2026-05-03T10:00:00+09:00">
+    <meta property="article:modified_time" content="2026-05-03T10:00:00+09:00">
+    
+<script>
+(function() {
+    try {
+        var saved = localStorage.getItem('sonslab-theme');
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var theme = saved || (prefersDark ? 'dark' : 'light');
+        if (theme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+
+        // 디자인 pref: 'random' | 'current' | 'refined' | 'editorial' | 'broadsheet'
+        // 저장값이 없거나 'random'이면 매 페이지 로드마다 4개 중 하나를 무작위로 추출.
+        var pref = localStorage.getItem('sonslab-design') || 'random';
+        var allowed = ['current', 'refined', 'editorial', 'broadsheet'];
+        var resolved;
+        if (pref === 'random') {
+            resolved = allowed[Math.floor(Math.random() * allowed.length)];
+        } else if (allowed.indexOf(pref) === -1) {
+            pref = 'current';
+            resolved = 'current';
+        } else {
+            resolved = pref;
+        }
+        if (resolved !== 'current') document.documentElement.setAttribute('data-design', resolved);
+        // body script가 재추출 없이 라벨만 맞추도록 결과를 공유.
+        window.__sonslabDesignPref = pref;
+        window.__sonslabDesignResolved = resolved;
+    } catch (e) {}
+})();
+</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "200억 달러짜리 SRAM 베팅 — Groq 3 LPU가 Vera Rubin에 들어간 이유", "description": "GTC 2026에서 NVIDIA는 Vera Rubin 플랫폼을 공개하면서 일곱 개의 새 칩을 양산 단계로 올렸다. 그 안에 Groq 3 LPU가 끼어 있다는 게 가장 의외였다. NVIDIA가 자체 GPU 라인업 옆에 외부 라이선스 IP를 박아 넣었다는 점, 그것도 HBM이 아니라 SRAM 기반 칩이라는 점에서다. 라이선스 액수 200억 달러는 NVIDIA 역사상 최대 규모다 (Tom's Ha...", "url": "https://shonsubong.github.io/sonslab-blog/ai-tech/2026-05-03-am10.html", "mainEntityOfPage": "https://shonsubong.github.io/sonslab-blog/ai-tech/2026-05-03-am10.html", "inLanguage": "ko", "image": "https://shonsubong.github.io/sonslab-blog/assets/logo.jpg", "author": {"@type": "Person", "name": "SONSLAB"}, "publisher": {"@type": "Organization", "name": "SONSLAB", "logo": {"@type": "ImageObject", "url": "https://shonsubong.github.io/sonslab-blog/assets/logo.jpg"}}, "datePublished": "2026-05-03T10:00:00+09:00", "dateModified": "2026-05-03T10:00:00+09:00"}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "SONSLAB", "item": "https://shonsubong.github.io/sonslab-blog/"}, {"@type": "ListItem", "position": 2, "name": "글", "item": "https://shonsubong.github.io/sonslab-blog/#posts"}, {"@type": "ListItem", "position": 3, "name": "200억 달러짜리 SRAM 베팅 — Groq 3 LPU가 Vera Rubin에 들어간 이유", "item": "https://shonsubong.github.io/sonslab-blog/ai-tech/2026-05-03-am10.html"}]}</script>
+</head>
+<body class="post-page" data-category="ai-tech">
+    <div class="reading-progress" id="reading-progress" role="progressbar" aria-label="읽기 진행률"></div>
+
+<aside class="site-sidebar" id="site-sidebar" aria-label="사이트 메뉴">
+    <a href="../index.html" class="sidebar-brand">
+        <img src="../assets/logo.jpg" alt="SONSLAB" onerror="this.style.display='none'">
+        <span class="name">SONSLAB</span>
+    </a>
+    <div class="sidebar-section">
+        <div class="sidebar-section-label">카테고리</div>
+        <ul class="sidebar-cat-list">
+            <li><a href="../index.html" class="">홈 <span class="sidebar-cat-count">133</span></a></li>
+            <li><a href="../index.html#posts" class="">데일리 브리핑 <span class="sidebar-cat-count">104</span></a></li>
+            <li><a href="../ai-tech/index.html" class="active">AI 기술 딥다이브 <span class="sidebar-cat-count">7</span></a></li>
+            <li><a href="../claude-tips/index.html" class="">Claude Code 팁 <span class="sidebar-cat-count">22</span></a></li>
+            <li><a href="../manuals/claude-code.html" class="">Claude Code 가이드북 <span class="sidebar-cat-count">PDF</span></a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../feed.xml">RSS</a></li>
+        </ul>
+    </div>
+    <div class="sidebar-section">
+        <div class="sidebar-section-label">데일리 최근 글</div>
+        <ul class="sidebar-recent"><li><a href="../posts/2026-05-03-pm17-ai-tech-news.html"><span class="r-title">Mistral Medium 3.5가 풀렸다 — 모두가 MoE로 갈 때 혼자 128B 덴스로 던진 자리</span><span class="r-meta">오후 브리핑</span></a></li><li><a href="../posts/2026-05-03-pm17-ai-tech-news.html"><span class="r-title">Mistral Medium 3.5가 풀렸다 — 모두가 MoE로 갈 때 혼자 128B 덴스로 던진 자리</span><span class="r-meta">오후 브리핑</span></a></li><li><a href="../posts/2026-05-03-pm12-ai-tech-news.html"><span class="r-title">NIST가 DeepSeek V4 Pro를 직접 측정했다 — 가장 강력한 중국 오픈웨이트, 그러나 frontier에서 8개월 뒤</span><span class="r-meta">오전 브리핑</span></a></li><li><a href="../posts/2026-05-03-pm12-ai-tech-news.html"><span class="r-title">NIST가 DeepSeek V4 Pro를 직접 측정했다 — 가장 강력한 중국 오픈웨이트, 그러나 frontier에서 8개월 뒤</span><span class="r-meta">오전 브리핑</span></a></li><li><a href="../posts/2026-05-03-am06-ai-tech-news.html"><span class="r-title">EU가 AI 라벨링 2차 초안을 풀었다 — 8월 시행 D-3개월, Anthropic은 Blender 안으로</span><span class="r-meta">새벽 리포트</span></a></li></ul>
+    </div>
+    <div class="sidebar-section">
+        <div class="sidebar-section-label">AI 기술 최근 글</div>
+        <ul class="sidebar-recent"><li><a href="../ai-tech/2026-05-03-am10.html"><span class="r-title">200억 달러짜리 SRAM 베팅 — Groq 3 LPU가 Vera Rubin에 들어간 이유</span><span class="r-meta">AI 딥다이브</span></a></li><li><a href="../ai-tech/2026-05-02-pm12.html"><span class="r-title">Anthropic만 빠진 펜타곤 7사 계약 — 가드레일 협상이 실제로 끝나는 풍경</span><span class="r-meta">AI 딥다이브</span></a></li><li><a href="../ai-tech/2026-05-02-am10.html"><span class="r-title">확산형 언어 모델이 자기회귀의 직렬성을 깨뜨리는 법</span><span class="r-meta">AI 딥다이브</span></a></li><li><a href="../ai-tech/2026-05-01-am10.html"><span class="r-title">MXFP4 — 4비트 부동소수점이 INT4를 밀어낸 이유</span><span class="r-meta">AI 딥다이브</span></a></li><li><a href="../ai-tech/2026-04-29-am10.html"><span class="r-title">백만 토큰 컨텍스트의 실효 길이 — RULER가 드러낸 것</span><span class="r-meta">AI 딥다이브</span></a></li></ul>
+    </div>
+    <div class="sidebar-section">
+        <div class="sidebar-section-label">Claude Code 팁 최근 글</div>
+        <ul class="sidebar-recent"><li><a href="../claude-tips/2026-05-02-pm23.html"><span class="r-title">PostToolUse hook으로 파일을 고칠 때마다 포맷터를 자동으로 돌린다</span><span class="r-meta">23:00</span></a></li><li><a href="../claude-tips/2026-04-30-pm23.html"><span class="r-title">@로 파일을 콕 짚어주면 Claude Code가 헤매지 않는다</span><span class="r-meta">23:00</span></a></li><li><a href="../claude-tips/2026-04-29-pm23.html"><span class="r-title">SKILL.md 한 장으로 매일 하는 절차를 자동 트리거시킨다</span><span class="r-meta">23:00</span></a></li><li><a href="../claude-tips/2026-04-28-pm23.html"><span class="r-title">/model로 작업마다 다른 두뇌를 골라 쓴다</span><span class="r-meta">23:00</span></a></li><li><a href="../claude-tips/2026-04-26-pm23.html"><span class="r-title">/clear와 /compact의 차이만 알아도 컨텍스트가 두 배로 늘어난다</span><span class="r-meta">23:00</span></a></li></ul>
+    </div>
+</aside>
+<div class="sidebar-backdrop" id="sidebar-backdrop" aria-hidden="true"></div>
+
+
+<header class="top-nav">
+    <div class="top-nav-inner">
+        <button type="button" class="sidebar-toggle" id="sidebar-toggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="site-sidebar">
+            <span class="sidebar-toggle-bar"></span>
+            <span class="sidebar-toggle-bar"></span>
+            <span class="sidebar-toggle-bar"></span>
+        </button>
+        <a href="../index.html" class="brand">
+            <img src="../assets/logo.jpg" alt="SONSLAB" onerror="this.style.display='none'">
+            <span class="name">SONSLAB</span>
+        </a>
+        <nav>
+            <a href="../index.html#posts">데일리</a>
+            <a href="../ai-tech/index.html">AI 기술</a>
+            <a href="../claude-tips/index.html">Claude Code 팁</a>
+            <a href="../about.html">About</a>
+            <span class="nav-visits" title="오늘 · 누적 방문">
+                <img src="https://hits.sh/shonsubong.github.io/sonslab-blog.svg?view=today-total&style=flat-square&label=visits&color=1e3a5f&labelColor=1a2332" alt="오늘·누적 방문 수">
+            </span>
+            <div class="design-picker" title="디자인 전환">
+                <button type="button" class="design-picker-btn" id="design-picker-btn" aria-haspopup="listbox" aria-expanded="false" aria-label="디자인 전환">
+                    <span class="design-picker-icon" aria-hidden="true">◑</span>
+                    <span class="design-picker-current" id="design-picker-current">기본</span>
+                    <span class="design-picker-caret" aria-hidden="true">▾</span>
+                </button>
+                <ul class="design-picker-menu" id="design-picker-menu" role="listbox" aria-label="디자인 옵션">
+                    <li role="option" data-design="random"><strong>랜덤</strong><span>접속할 때마다 무작위 디자인</span></li>
+                    <li role="option" data-design="current"><strong>기본</strong><span>네이비+크림, 라운드 카드</span></li>
+                    <li role="option" data-design="refined"><strong>정제판 (A)</strong><span>신문·저널 톤, 헤어라인 구분선</span></li>
+                    <li role="option" data-design="editorial"><strong>에디토리얼 (B)</strong><span>이중선 마스트헤드, 세리프 강조</span></li>
+                    <li role="option" data-design="broadsheet"><strong>브로드시트 (C)</strong><span>웜 크림, 잉크블랙, 큰 세리프</span></li>
+                </ul>
+            </div>
+            <button type="button" class="theme-toggle" id="theme-toggle" aria-label="다크 모드 토글" title="다크/라이트 전환">
+                <span class="icon-moon" aria-hidden="true">🌙</span>
+                <span class="icon-sun" aria-hidden="true">☀</span>
+            </button>
+            <a href="../index.html#subscribe" class="nav-cta">이메일 구독</a>
+        </nav>
+    </div>
+</header>
+
+
+<article class="post-article">
+    <div class="post-header">
+        <a href="index.html" class="back-link">← AI 기술 목록</a>
+        <h1>200억 달러짜리 SRAM 베팅 — Groq 3 LPU가 Vera Rubin에 들어간 이유</h1>
+        <div class="post-meta">
+            <span class="time-label">AI 딥다이브</span>
+            <span>2026년 05월 03일 (일) · 10:00</span>
+            <span>·</span>
+            <span>6분 읽기</span>
+        </div>
+    </div>
+    
+    <details class="post-toc" open><summary>목차</summary><div class="toc">
+<div class="toc">
+<ul>
+<li><a href="#200-sram-groq-3-lpu-vera-rubin">200억 달러짜리 SRAM 베팅 — Groq 3 LPU가 Vera Rubin에 들어간 이유</a><ul>
+<li><a href="#tldr">TL;DR</a></li>
+<li><a href="#why-now">배경 — Why now</a></li>
+<li><a href="#sram-">핵심 메커니즘 — SRAM-온리 결정론</a></li>
+<li><a href="#8b-lpx">수치 계산 — 8B 모델을 LPX 랙에 올리면</a></li>
+<li><a href="#_1">한계·반론</a></li>
+<li><a href="#_2">현직 엔지니어 관점</a></li>
+<li><a href="#_3">부록 — 더 읽을거리</a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+</div>
+</details>
+    <div class="post-content">
+<h1 id="200-sram-groq-3-lpu-vera-rubin">200억 달러짜리 SRAM 베팅 — Groq 3 LPU가 Vera Rubin에 들어간 이유</h1>
+<h2 id="tldr">TL;DR</h2>
+<ul>
+<li>NVIDIA가 200억 달러를 주고 Groq의 IP를 라이선스해 만든 Groq 3 LPU가 GTC 2026에서 공개됐고, Vera Rubin 플랫폼에 통합돼 2026년 하반기에 출하된다.</li>
+<li>칩당 500 MB 온칩 SRAM, 150 TB/s 메모리 대역폭. H100 HBM3(3.35 TB/s)의 약 45배. HBM을 통째로 빼고 SRAM만 가진 결정론적 데이터플로 칩이라는 점이 본질이다.</li>
+<li>LPX 랙 한 대에 256개 LPU가 들어가 SRAM 총합 128 GB. 결정론적 디코드 지연을 무기로 GPU의 배치 의존성을 정면 부정하는 추론 전용 베팅이다.</li>
+</ul>
+<h2 id="why-now">배경 — Why now</h2>
+<p>GTC 2026에서 NVIDIA는 Vera Rubin 플랫폼을 공개하면서 일곱 개의 새 칩을 양산 단계로 올렸다. 그 안에 Groq 3 LPU가 끼어 있다는 게 가장 의외였다. NVIDIA가 자체 GPU 라인업 옆에 외부 라이선스 IP를 박아 넣었다는 점, 그것도 HBM이 아니라 SRAM 기반 칩이라는 점에서다. 라이선스 액수 200억 달러는 NVIDIA 역사상 최대 규모다 (<a href="https://www.tomshardware.com/tech-industry/semiconductors/nvidias-20-billion-groq-deal-produces-its-first-chip">Tom's Hardware — Nvidia's $20 billion Groq deal</a>).</p>
+<p>직전 1주일에 굳어진 그림이 하나 더 있다. Google이 4월 22일 TPU 8t/8i 두 칩을 분리 발표했고 (<a href="https://www.cnbc.com/2026/04/22/google-launches-training-and-inference-tpus-in-latest-shot-at-nvidia.html">CNBC — Google TPU 8</a>), OpenAI는 Cerebras에서 200억 달러어치를 사기로 했다. 추론과 훈련을 같은 GPU로 묶는 시대가 끝났다는 신호가 한 주에 세 번 나온 셈이다.</p>
+<h2 id="sram-">핵심 메커니즘 — SRAM-온리 결정론</h2>
+<p>GPU는 HBM에 가중치를 두고 매 토큰마다 다시 페치해 온다. HBM3 SXM 기준 3.35 TB/s, 페치당 수백 ns. 캐시·프리페처·MMU 큐 어디서든 막히면 디코드 지연이 흔들린다.</p>
+<p>LPU는 이 메모리 계층 자체를 부정한다.</p>
+<div class="codehilite"><pre><span></span><code><span class="k">[GPU 추론 경로]              [LPU 추론 경로]</span><span class="w"></span>
+<span class="na">HBM 3.35 TB/s                SRAM 150 TB/s (×45)</span><span class="w"></span>
+<span class="w">  </span><span class="na">↓ (수백 ns, 가변)            ↓ (수 ns, 고정)</span><span class="w"></span>
+<span class="na">L2/L1 캐시·프리페처          없음</span><span class="w"></span>
+<span class="w">  </span><span class="na">↓                           ↓</span><span class="w"></span>
+<span class="na">SM 스케줄러·warp              결정론적 데이터플로</span><span class="w"></span>
+<span class="w">  </span><span class="na">↓ (배치 의존)                ↓ (사이클당 동일)</span><span class="w"></span>
+<span class="na">가변 디코드 지연             평탄한 디코드 지연</span><span class="w"></span>
+</code></pre></div>
+
+<p>500 MB SRAM이 가중치의 <em>주 저장소</em>다 — 캐시가 아니다. 모든 클록 사이클이 컴파일 타임에 정해진 데이터플로 그래프를 따라간다. 분기 예측도, 투기 실행도, 런타임 스케줄링도 없다 (<a href="https://developer.nvidia.com/blog/inside-nvidia-groq-3-lpx-the-low-latency-inference-accelerator-for-the-nvidia-vera-rubin-platform/">NVIDIA Developer — Inside Groq 3 LPX</a>).</p>
+<h2 id="8b-lpx">수치 계산 — 8B 모델을 LPX 랙에 올리면</h2>
+<p>Llama 3 8B를 BF16으로 올리면 가중치만 16 GB. LPU 칩당 SRAM 500 MB이므로 단순 분할로 32개 칩이 필요하다. 256-LPU 랙은 8B 모델을 약 8 인스턴스 동시에 올린다는 뜻이다.</p>
+<div class="codehilite"><pre><span></span><code><span class="n">model_params</span>   <span class="o">=</span> <span class="mf">8e9</span>          <span class="c1"># 8B</span>
+<span class="n">weight_bytes</span>   <span class="o">=</span> <span class="mi">2</span>            <span class="c1"># BF16</span>
+<span class="n">total_weights</span>  <span class="o">=</span> <span class="mf">16e9</span>         <span class="c1"># 16 GB</span>
+<span class="n">chip_sram</span>      <span class="o">=</span> <span class="mf">0.5e9</span>        <span class="c1"># 500 MB</span>
+<span class="n">chips_needed</span>   <span class="o">=</span> <span class="n">total_weights</span> <span class="o">/</span> <span class="n">chip_sram</span>   <span class="c1"># 32</span>
+<span class="n">rack_chips</span>     <span class="o">=</span> <span class="mi">256</span>
+<span class="n">instances</span>      <span class="o">=</span> <span class="n">rack_chips</span> <span class="o">//</span> <span class="n">chips_needed</span>  <span class="c1"># 8</span>
+</code></pre></div>
+
+<p>70B 모델을 BF16으로 올리려 하면 140 GB → 280칩이 필요해 한 랙도 모자라다. 추론 전용임을 못 박는 숫자다. 인용된 벤치 기준 Llama 3 8B에서 1300 tok/s 이상이 나오고, 같은 모델 H100은 약 100 tok/s 수준이다 (<a href="https://groq.com/blog/inside-the-lpu-deconstructing-groq-speed">Groq Blog — Inside the LPU</a>).</p>
+<h2 id="_1">한계·반론</h2>
+<p>첫째, 500 MB SRAM은 4nm Samsung 공정에서도 다이의 상당 부분을 잡아먹는다. 모델이 한 칩에 안 들어가면 모든 게 인터커넥트 문제로 바뀐다. 칩 간 스케일업은 2.5 TB/s — SRAM 150 TB/s의 60분의 1이다. 분할이 깊어질수록 결정론 우위가 깎인다.</p>
+<p>둘째, MoE처럼 전문가가 많은 모델은 활성화 파라미터가 적어도 전체가 SRAM에 있어야 한다. 직전에 다룬 DeepSeek V4류 라우팅에는 칩 수요가 산술적으로 불리하다.</p>
+<p>셋째, Cerebras 진영의 반박이 있다. WSE-3는 단일 웨이퍼에 44 GB SRAM, 21 PB/s 내부 대역폭이라 같은 SRAM 베팅을 더 큰 스케일에서 한 셈이고, 칩 간 통신 자체가 사라진다 (<a href="https://www.cerebras.ai/blog/cerebras-cs-3-vs-groq-lpu">Cerebras — CS-3 vs Groq LPU</a>).</p>
+<h2 id="_2">현직 엔지니어 관점</h2>
+<p>반도체 쪽 사람으로서 가장 흥미로운 건 SRAM 셀 면적과 칩 수요의 트레이드오프다. 4nm SRAM 셀은 약 0.021 µm² 부근에서 거의 멈춰 있어 500 MB SRAM은 100 mm² 이상을 잡아먹는다 — 다이 절반 가까이가 메모리다. N3 노드부터 SRAM 스케일링이 로직만큼 빠르지 않다는 한계가 잘 알려져 있어, 다음 LPU 세대가 칩당 1 GB로 가는 길은 공정 미세화보다 3D 스택(SRAM 다이를 로직 위에 본딩)으로 풀릴 가능성이 높다. 온디바이스 NPU가 이미 SRAM을 주 가중치 저장소로 쓰는 흐름과 같은 곡선이라, Groq의 데이터센터 베팅을 모바일 NPU가 엣지에서 먼저 검증해 준 셈이다. NVIDIA가 자기 GPU 옆에 LPU를 붙인 이번 결정은 추론 워크로드가 "메모리 대역폭이 본질, 연산은 부수"로 수렴한다는 인정의 신호로 읽힌다.</p>
+<h2 id="_3">부록 — 더 읽을거리</h2>
+<ul>
+<li><a href="https://nvidianews.nvidia.com/news/nvidia-vera-rubin-platform">NVIDIA Vera Rubin 플랫폼 공식 발표</a></li>
+<li><a href="https://arxiv.org/html/2408.07326v1">arXiv 2408.07326 — LPU: A Latency-Optimized Processor</a></li>
+<li><a href="https://spectrum.ieee.org/nvidia-groq-3">IEEE Spectrum — Nvidia Groq 3</a></li>
+<li><a href="https://www.spheron.network/blog/nvidia-groq-3-lpu-explained/">Spheron Blog — Groq 3 LPU 경제성 분석</a>
+                                                                                                                                                                                                                 </li>
+</ul>
+    </div>
+    
+<div class="post-share">
+    <span class="share-label">공유하기</span>
+    <a href="https://twitter.com/intent/tweet?text=200억 달러짜리 SRAM 베팅 — Groq 3 LPU가 Vera Rubin에 들어간 이유&url=https://shonsubong.github.io/sonslab-blog/ai-tech/2026-05-03-am10.html"
+       class="share-btn" target="_blank" rel="noopener" aria-label="X(Twitter)에 공유">
+        <span>X</span>
+    </a>
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://shonsubong.github.io/sonslab-blog/ai-tech/2026-05-03-am10.html"
+       class="share-btn" target="_blank" rel="noopener" aria-label="LinkedIn에 공유">
+        <span>in</span>
+    </a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://shonsubong.github.io/sonslab-blog/ai-tech/2026-05-03-am10.html"
+       class="share-btn" target="_blank" rel="noopener" aria-label="Facebook에 공유">
+        <span>f</span>
+    </a>
+    <button type="button" class="share-btn share-copy" id="share-copy-btn" data-url="https://shonsubong.github.io/sonslab-blog/ai-tech/2026-05-03-am10.html" aria-label="링크 복사">
+        <span>🔗 링크 복사</span>
+    </button>
+</div>
+    
+<nav class="post-nav-bottom" aria-label="이전/다음 글">
+    <a href="2026-05-02-pm12.html" class="post-nav-link prev">
+        <span class="post-nav-label">← 이전 글</span>
+        <span class="post-nav-title">Anthropic만 빠진 펜타곤 7사 계약 — 가드레일 협상이 실제로 끝나는 풍경</span>
+    </a>
+    
+</nav>
+    
+<section class="related-posts" aria-label="최근 다른 리포트">
+    <div class="related-posts-label">최근 다른 리포트</div>
+    <ul class="related-list"><li><a href="2026-05-02-pm12.html"><span class="related-title">Anthropic만 빠진 펜타곤 7사 계약 — 가드레일 협상이 실제로 끝나는 풍경</span><span class="related-date">2026-05-02 · 오전 브리핑 · 12:30</span></a></li><li><a href="2026-05-02-am10.html"><span class="related-title">확산형 언어 모델이 자기회귀의 직렬성을 깨뜨리는 법</span><span class="related-date">2026-05-02 · AI 딥다이브 · 10:00</span></a></li><li><a href="2026-05-01-am10.html"><span class="related-title">MXFP4 — 4비트 부동소수점이 INT4를 밀어낸 이유</span><span class="related-date">2026-05-01 · AI 딥다이브 · 10:00</span></a></li><li><a href="2026-04-29-am10.html"><span class="related-title">백만 토큰 컨텍스트의 실효 길이 — RULER가 드러낸 것</span><span class="related-date">2026-04-29 · AI 딥다이브 · 10:00</span></a></li><li><a href="2026-04-28-am10.html"><span class="related-title">추측 디코딩이 vLLM 기본값이 된 이유</span><span class="related-date">2026-04-28 · AI 딥다이브 · 10:00</span></a></li></ul>
+</section>
+</article>
+
+
+<section class="subscribe-cta" id="subscribe">
+    <div class="sub-header">
+        <h3>매일 4번, 받은편지함으로</h3>
+        <p class="sub-desc">반도체·AI·시장 브리핑을 새벽·오전·오후·저녁 네 번 이메일로 받아보세요. 스팸 없음, 언제든 구독 취소.</p>
+    </div>
+    <form id="subscribe-form" class="subscribe-form" action="https://assets.mailerlite.com/jsonp/2275622/forms/185056263876380606/subscribe" method="post">
+        <input type="email" name="fields[email]" placeholder="your@email.com" required aria-label="이메일 주소">
+        <input type="hidden" name="ml-submit" value="1">
+        <button type="submit" class="btn btn-primary">구독하기</button>
+    </form>
+    <div id="subscribe-status" class="subscribe-status" role="status" aria-live="polite"></div>
+    <p class="subscribe-footnote">또는 RSS로 구독하기</p>
+    <div class="rss-copy-row">
+        <input id="rss-url" type="text" readonly value="https://shonsubong.github.io/sonslab-blog/feed.xml" aria-label="RSS 피드 URL">
+        <button id="rss-copy-btn" type="button" class="btn btn-secondary">URL 복사</button>
+    </div>
+    <p class="rss-hint">RSS 리더에 이 URL을 붙여넣으면 구독됩니다.</p>
+    <div class="rss-readers">
+        <span class="rss-readers-label">바로가기 (로그인 필요):</span>
+        <a href="https://www.inoreader.com/?add_feed=https%3A%2F%2Fshonsubong.github.io%2Fsonslab-blog%2Ffeed.xml" class="rss-reader-btn" target="_blank" rel="noopener">Inoreader</a>
+        <a href="https://theoldreader.com/feeds/subscribe?url=https%3A%2F%2Fshonsubong.github.io%2Fsonslab-blog%2Ffeed.xml" class="rss-reader-btn" target="_blank" rel="noopener">The Old Reader</a>
+        <a href="https://shonsubong.github.io/sonslab-blog/feed.xml" class="rss-reader-btn rss-raw" target="_blank" rel="noopener" title="Atom/XML 원본">Atom/XML</a>
+    </div>
+</section>
+
+
+<footer>
+    <div class="stats-row">
+        <img src="https://hits.sh/shonsubong.github.io/sonslab-blog.svg?view=today-total&style=flat-square&label=visits&color=1e3a5f&labelColor=1a2332" alt="Visit counter">
+        <span class="stat-inline">오늘 · 누적 방문</span>
+    </div>
+    <p style="margin-top: 1.2rem;">© 2026 SONSLAB — 현장 감각으로 읽는 AI와 테크</p>
+    <div style="margin-top: 0.5rem;">
+        <a href="../index.html#posts">글</a>·
+        <a href="../index.html#about">About</a>·
+        <a href="../feed.xml">RSS</a>·
+        <a href="mailto:sonslab1211@naver.com">Contact</a>
+    </div>
+</footer>
+
+<button type="button" class="scroll-top" id="scroll-top" aria-label="맨 위로" title="맨 위로">↑</button>
+
+<script>
+(function() {
+    var bar = document.getElementById('reading-progress');
+    if (!bar) return;
+    function update() {
+        var h = document.documentElement, b = document.body;
+        var st = h.scrollTop || b.scrollTop;
+        var sh = (h.scrollHeight || b.scrollHeight) - h.clientHeight;
+        bar.style.width = (sh > 0 ? (st / sh) * 100 : 0) + '%';
+    }
+    window.addEventListener('scroll', update, {passive: true});
+    update();
+})();
+</script>
+
+
+<script>
+(function() {
+    // 외부 링크에 target=_blank, rel=noopener 자동 부여
+    var origin = window.location.origin;
+    document.querySelectorAll('.post-content a[href^="http"]').forEach(function(a) {
+        try {
+            var u = new URL(a.href);
+            if (u.origin !== origin) {
+                a.target = '_blank';
+                a.rel = 'noopener noreferrer';
+            }
+        } catch (e) {}
+    });
+    // 모바일에서 TOC 기본 접힘 (세로 공간 절약)
+    if (window.matchMedia('(max-width: 767px)').matches) {
+        var toc = document.querySelector('.post-toc');
+        if (toc && toc.hasAttribute('open')) toc.removeAttribute('open');
+    }
+    // 공유: 링크 복사
+    var copyBtn = document.getElementById('share-copy-btn');
+    if (copyBtn) {
+        copyBtn.addEventListener('click', async function() {
+            var url = copyBtn.dataset.url || window.location.href;
+            try {
+                if (navigator.clipboard && window.isSecureContext) {
+                    await navigator.clipboard.writeText(url);
+                } else {
+                    var ta = document.createElement('textarea');
+                    ta.value = url; document.body.appendChild(ta);
+                    ta.select(); document.execCommand('copy');
+                    document.body.removeChild(ta);
+                }
+                var span = copyBtn.querySelector('span');
+                var original = span.textContent;
+                span.textContent = '✓ 복사됨';
+                copyBtn.classList.add('copied');
+                setTimeout(function() {
+                    span.textContent = original;
+                    copyBtn.classList.remove('copied');
+                }, 2000);
+            } catch (e) {}
+        });
+    }
+})();
+</script>
+
+
+<script>
+(function() {
+    var btn = document.getElementById('sidebar-toggle');
+    var sidebar = document.getElementById('site-sidebar');
+    var backdrop = document.getElementById('sidebar-backdrop');
+    if (!btn || !sidebar) return;
+    function open() {
+        sidebar.classList.add('open');
+        if (backdrop) backdrop.classList.add('show');
+        btn.setAttribute('aria-expanded', 'true');
+        btn.setAttribute('aria-label', '메뉴 닫기');
+    }
+    function close() {
+        sidebar.classList.remove('open');
+        if (backdrop) backdrop.classList.remove('show');
+        btn.setAttribute('aria-expanded', 'false');
+        btn.setAttribute('aria-label', '메뉴 열기');
+    }
+    btn.addEventListener('click', function() {
+        if (sidebar.classList.contains('open')) close(); else open();
+    });
+    if (backdrop) backdrop.addEventListener('click', close);
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && sidebar.classList.contains('open')) close();
+    });
+    // 사이드바 내부 링크를 누르면 모바일에선 닫는다
+    sidebar.querySelectorAll('a').forEach(function(a) {
+        a.addEventListener('click', function() {
+            if (window.matchMedia('(max-width: 1023px)').matches) close();
+        });
+    });
+})();
+</script>
+
+
+<script>
+(function() {
+    var form = document.getElementById('subscribe-form');
+    var status = document.getElementById('subscribe-status');
+    function setState(state, html) {
+        if (!status) return;
+        status.className = 'subscribe-status' + (state ? ' state-' + state : '');
+        status.innerHTML = html || '';
+    }
+    var rssInput = document.getElementById('rss-url');
+    var rssBtn = document.getElementById('rss-copy-btn');
+    if (rssInput && rssBtn) {
+        rssBtn.addEventListener('click', async function() {
+            var url = rssInput.value;
+            try {
+                if (navigator.clipboard && window.isSecureContext) {
+                    await navigator.clipboard.writeText(url);
+                } else {
+                    rssInput.select();
+                    rssInput.setSelectionRange(0, url.length);
+                    document.execCommand('copy');
+                }
+                var original = rssBtn.textContent;
+                rssBtn.textContent = '✓ 복사됨';
+                rssBtn.classList.add('copied');
+                setTimeout(function() {
+                    rssBtn.textContent = original;
+                    rssBtn.classList.remove('copied');
+                }, 2000);
+            } catch (err) {
+                rssInput.select();
+            }
+        });
+        rssInput.addEventListener('click', function() { rssInput.select(); });
+    }
+    // 공통 구독 submit 로직. 메인 폼 + 인라인 폼(B/C hero) 모두 처리.
+    function setFormState(statusEl, state, html, cls) {
+        if (!statusEl) return;
+        var base = cls || 'subscribe-status';
+        statusEl.className = base + (state ? ' state-' + state : '');
+        statusEl.innerHTML = html || '';
+    }
+    function attachSubscribe(f, statusEl, statusCls, successTemplate) {
+        if (!f) return;
+        f.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            var email = f.querySelector('input[type="email"]').value.trim();
+            if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                setFormState(statusEl, 'error', '올바른 이메일 주소를 입력해주세요.', statusCls);
+                return;
+            }
+            var btn = f.querySelector('button[type="submit"]');
+            var originalLabel = btn.textContent;
+            btn.disabled = true;
+            btn.classList.add('loading');
+            btn.textContent = '전송 중…';
+            setFormState(statusEl, 'loading', '', statusCls);
+            try {
+                var fd = new FormData(f);
+                var res = await fetch(f.action, { method: 'POST', body: fd });
+                var data = {};
+                try { data = await res.json(); } catch (e) {}
+                if (res.ok && data.success) {
+                    f.classList.add('hidden-post-success');
+                    var safe = email.replace(/[<>&"]/g, function(c) { return ({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'})[c]; });
+                    setFormState(statusEl, 'success', successTemplate(safe), statusCls);
+                } else {
+                    throw new Error((data && data.message) || '서버 응답 오류');
+                }
+            } catch (err) {
+                setFormState(statusEl, 'error', '일시적인 오류가 발생했습니다. 잠시 후 다시 시도해주세요.', statusCls);
+                btn.disabled = false;
+                btn.classList.remove('loading');
+                btn.textContent = originalLabel;
+            }
+        });
+    }
+    // 메인 구독 폼 (subscribe 섹션)
+    attachSubscribe(form, status, 'subscribe-status', function(safe) {
+        return '<strong>✓ 구독 신청을 받았습니다.</strong>' +
+            'SONSLAB이 <b>' + safe + '</b> 주소로 확인 이메일을 보냈습니다. ' +
+            '받은편지함(스팸함 포함)에서 확인 링크를 클릭하시면 구독이 완료됩니다.';
+    });
+    // 인라인 구독 폼 (B/C hero 내부)
+    document.querySelectorAll('form.inline-sub[data-subscribe]').forEach(function(f) {
+        var st = f.parentElement ? f.parentElement.querySelector('.inline-sub-status') : null;
+        attachSubscribe(f, st, 'inline-sub-status', function(safe) {
+            return '✓ <b>' + safe + '</b>로 확인 이메일을 보냈습니다.';
+        });
+    });
+})();
+</script>
+
+
+<script>
+(function() {
+    // 다크 모드 토글
+    var toggle = document.getElementById('theme-toggle');
+    if (toggle) {
+        toggle.addEventListener('click', function() {
+            var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+            if (isDark) {
+                document.documentElement.removeAttribute('data-theme');
+                try { localStorage.setItem('sonslab-theme', 'light'); } catch(e){}
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                try { localStorage.setItem('sonslab-theme', 'dark'); } catch(e){}
+            }
+        });
+    }
+    // 디자인 피커
+    var dpBtn = document.getElementById('design-picker-btn');
+    var dpMenu = document.getElementById('design-picker-menu');
+    var dpCurrent = document.getElementById('design-picker-current');
+    var dpLabels = { current: '기본', refined: '정제판', editorial: '에디토리얼', broadsheet: '브로드시트', random: '랜덤' };
+    var DP_ALLOWED = ['current', 'refined', 'editorial', 'broadsheet'];
+    function dpResolve(pref, avoid) {
+        if (pref === 'random') {
+            var pool = DP_ALLOWED;
+            if (avoid && DP_ALLOWED.indexOf(avoid) !== -1 && DP_ALLOWED.length > 1) {
+                pool = DP_ALLOWED.filter(function(x) { return x !== avoid; });
+            }
+            return pool[Math.floor(Math.random() * pool.length)];
+        }
+        if (DP_ALLOWED.indexOf(pref) === -1) return 'current';
+        return pref;
+    }
+    function dpSyncLabel(pref, resolved) {
+        if (dpCurrent) {
+            dpCurrent.textContent = (pref === 'random')
+                ? dpLabels.random + ' (' + dpLabels[resolved] + ')'
+                : dpLabels[pref];
+        }
+        if (dpMenu) dpMenu.querySelectorAll('li').forEach(function(li){
+            li.classList.toggle('active', li.getAttribute('data-design') === pref);
+        });
+    }
+    function applyDesign(pref) {
+        if (!dpLabels[pref]) pref = 'random';
+        // 랜덤 클릭 시 현재 디자인을 피해서 체감되는 변화를 보장.
+        var current = document.documentElement.getAttribute('data-design') || 'current';
+        var resolved = dpResolve(pref, current);
+        if (resolved === 'current') document.documentElement.removeAttribute('data-design');
+        else document.documentElement.setAttribute('data-design', resolved);
+        try { localStorage.setItem('sonslab-design', pref); } catch(e){}
+        dpSyncLabel(pref, resolved);
+    }
+    if (dpBtn && dpMenu) {
+        // 초기 동기화는 head 스크립트가 이미 resolved를 적용했으니 재추출 없이 라벨만 맞춤.
+        var initPref = (typeof window.__sonslabDesignPref !== 'undefined')
+            ? window.__sonslabDesignPref
+            : (localStorage.getItem('sonslab-design') || 'random');
+        var initResolved = (typeof window.__sonslabDesignResolved !== 'undefined')
+            ? window.__sonslabDesignResolved
+            : (document.documentElement.getAttribute('data-design') || 'current');
+        dpSyncLabel(initPref, initResolved);
+        dpBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            var expanded = dpBtn.getAttribute('aria-expanded') === 'true';
+            dpBtn.setAttribute('aria-expanded', String(!expanded));
+            dpMenu.classList.toggle('open', !expanded);
+        });
+        dpMenu.querySelectorAll('li').forEach(function(li){
+            li.addEventListener('click', function(){
+                applyDesign(li.getAttribute('data-design'));
+                dpMenu.classList.remove('open');
+                dpBtn.setAttribute('aria-expanded', 'false');
+            });
+        });
+        document.addEventListener('click', function(e){
+            if (!dpMenu.contains(e.target) && e.target !== dpBtn) {
+                dpMenu.classList.remove('open');
+                dpBtn.setAttribute('aria-expanded', 'false');
+            }
+        });
+    }
+    // 맨 위로 버튼
+    var btn = document.getElementById('scroll-top');
+    if (btn) {
+        var toggleBtn = function() {
+            if (window.scrollY > 300) btn.classList.add('visible');
+            else btn.classList.remove('visible');
+        };
+        window.addEventListener('scroll', toggleBtn, {passive:true});
+        btn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        toggleBtn();
+    }
+})();
+</script>
+</body>
+</html>

@@ -1,10 +1,10 @@
 {
   "versions": [
     {
-      "issued_on": "2026-05-01",
-      "week_label": "v2026.17-guidebook",
+      "issued_on": "2026-05-03",
+      "week_label": "v2026.18-guidebook",
       "filename": "claude-code-manual-2026-04-26.pdf",
-      "page_count": 126,
+      "page_count": 127,
       "section_count": 118,
       "section_titles": [
         "Part 1 — 시작하기 (초급) / Claude Code 란 무엇인가",
@@ -50,6 +50,7 @@
         "Part 5 — 운영 (중급) / 권한 정책 깊이",
         "Part 5 — 운영 (중급) / 트러블슈팅",
         "Part 5 — 운영 (중급) / 협업 워크플로",
+        "Part 5 — 운영 (중급) / 딥 링크 — `claude-cli://` 로 세션 한 번에 열기 (2026-04 도입)",
         "Part 5 — 운영 (중급) / 다른 환경 — Web · IDE · Chrome · Desktop",
         "Part 6 — 고급 패턴 (고급) / 서브에이전트 오케스트레이션",
         "Part 6 — 고급 패턴 (고급) / 채널 + 서브에이전트로 라이브 시스템",
@@ -123,8 +124,7 @@
         "Part 15 — 실전 꿀팁 모음 / 학습 꿀팁",
         "Part 15 — 실전 꿀팁 모음 / 협업 꿀팁",
         "Part 16 — MCP & Skills 활용 사례 심화 / 가장 인기 있는 MCP 톱 15 와 활용 패턴",
-        "Part 16 — MCP & Skills 활용 사례 심화 / 실전 Skills 활용 사례 10 가지",
-        "Part 16 — MCP & Skills 활용 사례 심화 / Skills + MCP 결합 활용"
+        "Part 16 — MCP & Skills 활용 사례 심화 / 실전 Skills 활용 사례 10 가지"
       ],
       "format": "guidebook",
       "change": {
