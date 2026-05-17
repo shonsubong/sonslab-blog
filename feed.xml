@@ -5,8 +5,672 @@
     <link href="https://shonsubong.github.io/sonslab-blog/" rel="alternate" type="text/html"/>
     <link href="https://shonsubong.github.io/sonslab-blog/feed.xml" rel="self" type="application/atom+xml"/>
     <id>https://shonsubong.github.io/sonslab-blog/</id>
-    <updated>2026-05-03T17:18:00+09:00</updated>
+    <updated>2026-05-17T17:18:00+09:00</updated>
     <author><name>SONSLAB</name></author>
+    <entry>
+        <title>Anthropic이 정렬 연구 자리에 Claude를 끼워넣었다 — 자동화된 연구원이 5일 만에 사람을 앞선 결</title>
+        <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-05-17-pm17-ai-tech-news.html"/>
+        <id>https://shonsubong.github.io/sonslab-blog/posts/2026-05-17-pm17-ai-tech-news.html</id>
+        <published>2026-05-17T17:18:00+09:00</published>
+        <updated>2026-05-17T17:18:00+09:00</updated>
+        <summary>일요일 오후다. 점심 자리에서 HBM4 공급 갈림을 짚어두고 거실 소파에 좀 누웠다가, 다시 책상에 앉아 X 타임라인을 굴려봤다. 새벽엔 Grok Build 끼어든 자리·점심엔 Vera Rubin 위 메모리 결을 짚어둔 하루의 끝자락에서, 오후 자리에 한 단 다른 결 — 모델 자리·하드웨어 자리가 아니라, 그 모델을 어떻게 길들이느냐의 결. Anthropic alignment science ...</summary>
+        <category term="AI"/>
+        <category term="Tech"/>
+        <category term="News"/>
+        <author><name>SONSLAB</name></author>
+    </entry>
+    <entry>
+        <title>HBM4 공급이 갈린 자리 — Vera Rubin 위에서 SK하이닉스가 70%, 삼성이 30%를 잡았다</title>
+        <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-05-17-pm12-ai-tech-news.html"/>
+        <id>https://shonsubong.github.io/sonslab-blog/posts/2026-05-17-pm12-ai-tech-news.html</id>
+        <published>2026-05-17T12:24:00+09:00</published>
+        <updated>2026-05-17T12:24:00+09:00</updated>
+        <summary>일요일 점심이다. 새벽엔 Grok Build가 끼어든 자리를 짚어두고 거실에 잠깐 누웠다가, 점심 라면 끓이는 동안 노트북을 다시 열었는데 X 타임라인이 HBM4 공급 자리로 다시 끓고 있었다. 어제 사이에 트렌드포스 라인이 한 번 더 갱신됐고, KED Global이 끼고, 코리아헤럴드가 또 받았다. 새벽 자리에서 모델 결을 짚어뒀다면, 점심 자리는 그 모델을 굴리는 하드웨어 결이다.</summary>
+        <category term="AI"/>
+        <category term="Tech"/>
+        <category term="News"/>
+        <author><name>SONSLAB</name></author>
+    </entry>
+    <entry>
+        <title>xAI가 코딩 에이전트 자리에 끼어들었다 — Grok Build, 세 갈래로 갈라진 봄의 결</title>
+        <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-05-17-am06-ai-tech-news.html"/>
+        <id>https://shonsubong.github.io/sonslab-blog/posts/2026-05-17-am06-ai-tech-news.html</id>
+        <published>2026-05-17T06:08:00+09:00</published>
+        <updated>2026-05-17T06:08:00+09:00</updated>
+        <summary>일요일 새벽이다. 어제 밤에 Gemini Omni 누출 자리를 짚어두고 거실 불을 끄러 가다가, 마지막에 X 타임라인 한 번 더 굴려봤는데 그 자리에 한 줄이 박혀 있었다 — xAI가 Grok Build를 풀었다. 미국 시간 5월 14일 자리. 어제 새벽엔 OpenAI Codex 폰 결을 짚어두고, 점심엔 Nemotron Nano Omni를, 오후엔 Runway 세계모델을, 밤엔 Gemini...</summary>
+        <category term="AI"/>
+        <category term="Tech"/>
+        <category term="News"/>
+        <author><name>SONSLAB</name></author>
+    </entry>
+    <entry>
+        <title>Gemini Omni 누출 — I/O 사흘 전, 영상·이미지·텍스트를 한 모델로 묶는 신호</title>
+        <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-05-16-pm22-ai-tech-news.html"/>
+        <id>https://shonsubong.github.io/sonslab-blog/posts/2026-05-16-pm22-ai-tech-news.html</id>
+        <published>2026-05-16T22:18:00+09:00</published>
+        <updated>2026-05-16T22:18:00+09:00</updated>
+        <summary>토요일 밤이다. 오후에 Runway가 영상에서 세계모델로 노선을 옮긴 결과 Gemini Spark 자리를 짚어두고 거실 불을 한 단 낮췄는데, X 자리에서 같이 묶여 떨어진 결 하나가 새벽에 짚어둘 자리보다 한 단 더 묵직하게 박혔다 — Gemini Omni. Spark가 에이전트 자리의 결이라면, Omni는 모델 자체의 결이다. 사흘 뒤 키노트 전에 둘 다 누출됐다는 것 자체가 결의 톤을 ...</summary>
+        <category term="AI"/>
+        <category term="Tech"/>
+        <category term="News"/>
+        <author><name>SONSLAB</name></author>
+    </entry>
+    <entry>
+        <title>Runway가 영상에서 세계모델로 방향을 틀었다 — Cerebras 데뷔와 사흘 뒤 I/O 사이</title>
+        <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-05-16-pm17-ai-tech-news.html"/>
+        <id>https://shonsubong.github.io/sonslab-blog/posts/2026-05-16-pm17-ai-tech-news.html</id>
+        <published>2026-05-16T17:14:00+09:00</published>
+        <updated>2026-05-16T17:14:00+09:00</updated>
+        <summary>토요일 오후, 햇볕이 거실 바닥까지 길게 들어오는 시간. 점심에 짚어둔 Nemotron Nano Omni와 Sakana Conductor 두 결을 한 번 더 굴려보다가, 어제 미국 자리에서 한 단 묵직하게 떨어진 결 하나가 눈에 박혔다 — Runway가 AI 영상 생성을 떠나 세계모델(world model) 회사로 노선을 옮기는 결. TechCrunch가 5월 15일에 정리한 라인이 가장 또...</summary>
+        <category term="AI"/>
+        <category term="Tech"/>
+        <category term="News"/>
+        <author><name>SONSLAB</name></author>
+    </entry>
+    <entry>
+        <title>30B 멀티모달과 7B 오케스트레이터 — 작은 오픈 모델이 큰 결을 다시 흔든다</title>
+        <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-05-16-pm12-ai-tech-news.html"/>
+        <id>https://shonsubong.github.io/sonslab-blog/posts/2026-05-16-pm12-ai-tech-news.html</id>
+        <published>2026-05-16T12:34:00+09:00</published>
+        <updated>2026-05-16T12:34:00+09:00</updated>
+        <summary>토요일 점심이다. 새벽에 짚어둔 Codex 폰 결을 한 번 더 굴려보다가, 끝에 메모로 남겨둔 NVIDIA Nemotron 3 Nano Omni 자리를 다시 펴봤다. 그러다 자연스럽게 같이 묶이는 결이 하나 더 있더라 — Sakana AI Conductor. 두 결을 나란히 놓고 보면, 봄 한가운데서 작은 오픈 모델이 두 갈래 다른 방향으로 큰 모델 자리를 흔드는 그림이 또렷하다.</summary>
+        <category term="AI"/>
+        <category term="Tech"/>
+        <category term="News"/>
+        <author><name>SONSLAB</name></author>
+    </entry>
+    <entry>
+        <title>OpenAI가 Codex를 핸드폰으로 끌어냈다 — 코딩 에이전트의 컨트롤 서피스가 책상 밖으로 옮겨간 첫 결</title>
+        <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-05-16-am06-ai-tech-news.html"/>
+        <id>https://shonsubong.github.io/sonslab-blog/posts/2026-05-16-am06-ai-tech-news.html</id>
+        <published>2026-05-16T06:18:00+09:00</published>
+        <updated>2026-05-16T06:18:00+09:00</updated>
+        <summary>토요일 새벽이다. 어제 밤에 Anthropic이 6월 15일부터 Agent SDK·claude -p 자리를 별도 크레딧 풀로 떼어낸다는 결을 짚어두고 잠들었는데, 정작 새벽 한 시간 전쯤 한 단 묵직하게 다시 들어온 결은 반대편 자리였다. 같은 주(미국 5월 14일) 자리에 OpenAI가 Codex를 ChatGPT 모바일 앱 자리로 통째로 옮겨둔 결. 두 결을 묶어서 짚어두면, 2026년 봄...</summary>
+        <category term="AI"/>
+        <category term="Tech"/>
+        <category term="News"/>
+        <author><name>SONSLAB</name></author>
+    </entry>
+    <entry>
+        <title>Anthropic이 SDK 자리를 따로 떼어 갈았다 — 6월 15일부터 Claude Code MAX 결의 절반이 다른 통장으로 옮겨간다</title>
+        <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-05-15-pm22-ai-tech-news.html"/>
+        <id>https://shonsubong.github.io/sonslab-blog/posts/2026-05-15-pm22-ai-tech-news.html</id>
+        <published>2026-05-15T22:21:00+09:00</published>
+        <updated>2026-05-15T22:21:00+09:00</updated>
+        <summary>밤이다. 점심에 Gemini Spark, 오후에 Higgsfield Supercomputer를 짚으면서 에이전트 결이 단일 모델 자리에서 오케스트레이션 자리로 한 단 올라가는 톤을 두 번 적어뒀는데, 정작 밤에 가장 묵직하게 떨어진 결은 그 결을 과금 모델 자리에서 한 단 다시 짚어내는 그림이었다. Anthropic이 한국시간으로 오늘 새벽(미국 5월 14일)에 풀어둔 Agent SDK·cl...</summary>
+        <category term="AI"/>
+        <category term="Tech"/>
+        <category term="News"/>
+        <author><name>SONSLAB</name></author>
+    </entry>
+    <entry>
+        <title>Higgsfield Supercomputer가 떨어졌다 — 한 프롬프트로 광고 한 주를 통째로 만드는 멀티 에이전트 결</title>
+        <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-05-15-pm17-ai-tech-news.html"/>
+        <id>https://shonsubong.github.io/sonslab-blog/posts/2026-05-15-pm17-ai-tech-news.html</id>
+        <published>2026-05-15T17:24:00+09:00</published>
+        <updated>2026-05-15T17:24:00+09:00</updated>
+        <summary>퇴근 버스 안. 점심에 Gemini Spark 리크 자리를 짚어두고 Computer Use·Operator·Spark 세 결이 한 자리에서 부딪친다고 적어뒀는데, 오후로 넘어오면서 묘하게 한 결이 더 또렷하게 박혔다. Higgsfield가 5월 13일 자리에 풀어둔 &quot;Supercomputer&quot;. 에이전트 결이 단일 모델 자리에서 오케스트레이션 자리로 한 단 더 위로 올라간 그림이다. 점심 자...</summary>
+        <category term="AI"/>
+        <category term="Tech"/>
+        <category term="News"/>
+        <author><name>SONSLAB</name></author>
+    </entry>
+    <entry>
+        <title>Gemini Spark 브랜드가 베타에서 새 나왔다 — I/O 2026 나흘 전, 구글이 에이전트 결을 한 단 고쳐 잡는 그림</title>
+        <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-05-15-pm12-ai-tech-news.html"/>
+        <id>https://shonsubong.github.io/sonslab-blog/posts/2026-05-15-pm12-ai-tech-news.html</id>
+        <published>2026-05-15T12:18:00+09:00</published>
+        <updated>2026-05-15T12:18:00+09:00</updated>
+        <summary>점심이다. 새벽에 Altman closing arguments와 TSMC CoWoS 14 레티클 두 결을 묶어두고, 평결 자리가 다음 주 어느 시각에 떨어질 가능성이 있어서 pm에서 한 번 더 짚는다고 적어뒀는데 — 정작 점심에 한 단 더 묵직하게 들어온 결은 다른 자리였다. 9to5Google이 어제(미국 5월 14일) 자리에 풀어둔 Gemini Spark insight. Google ap...</summary>
+        <category term="AI"/>
+        <category term="Tech"/>
+        <category term="News"/>
+        <author><name>SONSLAB</name></author>
+    </entry>
+    <entry>
+        <title>올트먼 재판 변론이 끝났다 — 같은 날 TSMC는 CoWoS 14 레티클 로드맵을 깔았다</title>
+        <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-05-15-am06-ai-tech-news.html"/>
+        <id>https://shonsubong.github.io/sonslab-blog/posts/2026-05-15-am06-ai-tech-news.html</id>
+        <published>2026-05-15T06:14:00+09:00</published>
+        <updated>2026-05-15T06:14:00+09:00</updated>
+        <summary>새벽이다. 어제 밤 22시 자리에서 closing arguments 자리는 아직 시작 전이라고 적어두고 잠들었는데, 일어나니 미국 서부 시간으로 목요일 오전 9시부터 변론이 통째로 굴러갔다. 같은 날 대만 신주(Hsinchu)에서 TSMC 2026 Technology Symposium이 열리면서 CoWoS 14 레티클 로드맵이 떨어졌다. 새벽 한 자리에 두 결이 같이 박혀 있다. 묘하게 결의...</summary>
+        <category term="AI"/>
+        <category term="Tech"/>
+        <category term="News"/>
+        <author><name>SONSLAB</name></author>
+    </entry>
+    <entry>
+        <title>AI가 직접 만든 첫 zero-day가 잡혔다 — 같은 주 Mythos·GPT-5.5-Cyber는 EU 자리에서 결이 갈라졌고</title>
+        <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-05-14-pm22-ai-tech-news.html"/>
+        <id>https://shonsubong.github.io/sonslab-blog/posts/2026-05-14-pm22-ai-tech-news.html</id>
+        <published>2026-05-14T22:11:00+09:00</published>
+        <updated>2026-05-14T22:11:00+09:00</updated>
+        <summary>밤이다. 낮에 Android 에이전트·Ramp 도입율 정리해두고 22시에 Altman closing 한 번 더 짚는다고 적어뒀는데, 본격 정리하려고 앉으니까 closing arguments 자리는 아직 시작도 안 한 톤이다. 한국 시간 22시는 미국 서부 시간 목요일 새벽 6시. 9시 자리 개정 시각까지 한 단 더 기다려야 결의 톤이 박힌다. 그래서 오늘밤은 자리를 한 번 옮긴다 — Goog...</summary>
+        <category term="AI"/>
+        <category term="Tech"/>
+        <category term="News"/>
+        <author><name>SONSLAB</name></author>
+    </entry>
+    <entry>
+        <title>Android가 통째로 에이전트가 된다 — 같은 주 Anthropic, 비즈니스 도입율로 OpenAI 첫 추월</title>
+        <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-05-14-pm17-ai-tech-news.html"/>
+        <id>https://shonsubong.github.io/sonslab-blog/posts/2026-05-14-pm17-ai-tech-news.html</id>
+        <published>2026-05-14T17:22:00+09:00</published>
+        <updated>2026-05-14T17:22:00+09:00</updated>
+        <summary>퇴근 버스 안. 새벽 자리에 Reuters 로보택시 트래킹 묶어두고, 점심에 SWE-bench / Altman closing 정리해뒀으니 오후는 다른 결로 한 번 옮긴다. 화요일에 풀린 Gemini Intelligence on Android가 본격적으로 리뷰가 쌓이기 시작했고, 어제 풀린 Ramp 4월 AI Index 데이터가 한 단 묵직하다 — Anthropic이 처음으로 비즈니스 도입율에...</summary>
+        <category term="AI"/>
+        <category term="Tech"/>
+        <category term="News"/>
+        <author><name>SONSLAB</name></author>
+    </entry>
+    <entry>
+        <title>Altman 재판 마지막 변론 자리, SWE-bench Verified는 vendor 점수와 독립 검증 결이 또 갈라졌다</title>
+        <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-05-14-pm12-ai-tech-news.html"/>
+        <id>https://shonsubong.github.io/sonslab-blog/posts/2026-05-14-pm12-ai-tech-news.html</id>
+        <published>2026-05-14T12:21:00+09:00</published>
+        <updated>2026-05-14T12:21:00+09:00</updated>
+        <summary>점심이다. 새벽에 한 줄 짚어둔 Altman closing arguments가 한국 시간으로 목요일 오늘밤(현지 목요일 오전) 자리에 들어간다. 출근 버스에서 NBC Bay Area 라이브 라인을 한 번 훑고 왔는데, 정작 한 단 더 무게 있게 본 결은 따로였다 — SWE-bench Verified 자리에서 vendor 발표 점수와 독립 검증 점수가 또 한 번 갈라졌다는 톤이다. 둘 다 한 ...</summary>
+        <category term="AI"/>
+        <category term="Tech"/>
+        <category term="News"/>
+        <author><name>SONSLAB</name></author>
+    </entry>
+    <entry>
+        <title>오스틴 로보택시 50대, 절반은 15분 이상 대기 — 같은 새벽 OpenAI 음성 3종 스택도 정리</title>
+        <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-05-14-am06-ai-tech-news.html"/>
+        <id>https://shonsubong.github.io/sonslab-blog/posts/2026-05-14-am06-ai-tech-news.html</id>
+        <published>2026-05-14T06:14:00+09:00</published>
+        <updated>2026-05-14T06:14:00+09:00</updated>
+        <summary>새벽이다. 어제 밤에 Anthropic $900B 라운드와 Claude for Legal까지 묶어두고 잤는데, 자는 사이에 한 단 다른 결의 뉴스가 쌓였다. Reuters가 3주짜리 현장 트래킹을 끝내고 오스틴 로보택시 운영 실태를 정면으로 풀었고, OpenAI는 며칠 전에 풀었던 Realtime 음성 모델 3종에 대한 디테일이 본격적으로 굴러가기 시작했다. 둘 다 AI가 &quot;데모&quot;에서 &quot;실서...</summary>
+        <category term="AI"/>
+        <category term="Tech"/>
+        <category term="News"/>
+        <author><name>SONSLAB</name></author>
+    </entry>
+    <entry>
+        <title>Anthropic이 $900B 라운드 결을 들고 들어왔다 — 같은 날 Claude for Legal로 변호사 자리를 통째로 끌어안은 라인</title>
+        <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-05-13-pm22-ai-tech-news.html"/>
+        <id>https://shonsubong.github.io/sonslab-blog/posts/2026-05-13-pm22-ai-tech-news.html</id>
+        <published>2026-05-13T22:18:00+09:00</published>
+        <updated>2026-05-13T22:18:00+09:00</updated>
+        <summary>밤 자리에 정리한다. 새벽엔 Altman 첫날 증언, 점심엔 Gemini Intelligence가 안드로이드 OS 자리에 박힌 결, 오후엔 구글 GTIG의 AI 무기화 제로데이와 OpenAI Daybreak를 묶었다. 자기 직전에 한 번 더 묵직한 결이 풀렸다 — Anthropic이 $900B 밸류로 $30~50B 라운드 결을 들고 들어온 그림, 그리고 정확히 같은 자리에서 Claude fo...</summary>
+        <category term="AI"/>
+        <category term="Tech"/>
+        <category term="News"/>
+        <author><name>SONSLAB</name></author>
+    </entry>
+    <entry>
+        <title>구글이 AI로 무기화된 첫 제로데이를 잡았다 — 같은 날 OpenAI Daybreak도 풀린 라인</title>
+        <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-05-13-pm17-ai-tech-news.html"/>
+        <id>https://shonsubong.github.io/sonslab-blog/posts/2026-05-13-pm17-ai-tech-news.html</id>
+        <published>2026-05-13T17:22:00+09:00</published>
+        <updated>2026-05-13T17:22:00+09:00</updated>
+        <summary>퇴근 버스에서 정리한다. 새벽엔 Altman 첫날 증언과 Mythos·GPT-5.5-Cyber EU 결을 묶었고, 점심엔 안드로이드의 Gemini Intelligence를 풀어뒀다. 그 사이에 한 단 더 묵직한 결이 한국 시간 화요일 깊은 밤에 풀렸다 — 구글 GTIG(Threat Intelligence Group)가 야생에서 AI로 무기화된 첫 제로데이 결을 잡아낸 그림. 모델·OS 라인이...</summary>
+        <category term="AI"/>
+        <category term="Tech"/>
+        <category term="News"/>
+        <author><name>SONSLAB</name></author>
+    </entry>
+    <entry>
+        <title>Gemini Intelligence가 안드로이드를 통째로 에이전트로 바꿨다 — 화면을 보고 앱을 직접 누르는 결</title>
+        <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-05-13-pm12-ai-tech-news.html"/>
+        <id>https://shonsubong.github.io/sonslab-blog/posts/2026-05-13-pm12-ai-tech-news.html</id>
+        <published>2026-05-13T12:14:00+09:00</published>
+        <updated>2026-05-13T12:14:00+09:00</updated>
+        <summary>점심 자리. 새벽 자리에 Altman 첫날 증언 결과 Mythos·GPT-5.5-Cyber EU 결을 묶어뒀다. 한국 시간으로 화요일 깊은 밤 자리에 풀린 결이 한 단 묵직했다 — Google이 The Android Show: I/O Edition 자리에서 Gemini Intelligence 결을 통째로 풀어둔 그림. 다음주 5월 19일 자리의 I/O 본키노트 결을 한 단 앞서 푼 자리인데,...</summary>
+        <category term="AI"/>
+        <category term="Tech"/>
+        <category term="News"/>
+        <author><name>SONSLAB</name></author>
+    </entry>
+    <entry>
+        <title>올트먼이 증인석에서 머스크의 &#x27;아이들에게 통제권&#x27; 발언을 풀었다 — 같은 자리, Mythos는 EU 결을 닫고 GPT-5.5-Cyber는 열었다</title>
+        <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-05-13-am06-ai-tech-news.html"/>
+        <id>https://shonsubong.github.io/sonslab-blog/posts/2026-05-13-am06-ai-tech-news.html</id>
+        <published>2026-05-13T06:08:00+09:00</published>
+        <updated>2026-05-13T06:08:00+09:00</updated>
+        <summary>수요일 새벽. 어제 자기 전 자리엔 Altman 첫 증언 결과 MCP의 Linux Foundation 편입, Tesla FSD Europe 결을 묶어뒀다. 자기 사이에 한국 시간으로 화요일 오후 자리에 풀린 결이 묵직했다 — 오클랜드 법정에서 Altman이 결의 첫날을 풀어둔 자리, 그리고 그 직전 자리에 EU가 OpenAI·Anthropic 두 자리에 같은 사이버 모델을 요청했는데 결이 정...</summary>
+        <category term="AI"/>
+        <category term="Tech"/>
+        <category term="News"/>
+        <author><name>SONSLAB</name></author>
+    </entry>
+    <entry>
+        <title>Altman이 드디어 증인석에 섰다 — 같은 밤, MCP가 Linux Foundation 안으로 들어갔다</title>
+        <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-05-12-pm22-ai-tech-news.html"/>
+        <id>https://shonsubong.github.io/sonslab-blog/posts/2026-05-12-pm22-ai-tech-news.html</id>
+        <published>2026-05-12T22:18:00+09:00</published>
+        <updated>2026-05-12T22:18:00+09:00</updated>
+        <summary>화요일 밤. 새벽엔 Nadella 증언 / $92B, 점심엔 SK하이닉스 EMIB, 퇴근 자리엔 GPT-Realtime-Translate와 Sutskever 52페이지 문서 결을 풀어뒀다. 자기 전 자리에 X 타임라인을 한 번 더 켰는데, 결의 톤은 두 줄이 또렷했다 — Sam Altman이 드디어 증인석에 선 결, 그리고 MCP가 Linux Foundation 거버넌스 안으로 정식 편입된 ...</summary>
+        <category term="AI"/>
+        <category term="Tech"/>
+        <category term="News"/>
+        <author><name>SONSLAB</name></author>
+    </entry>
+    <entry>
+        <title>GPT-Realtime-Translate가 한국어를 13개 출력 언어 안에 박았다 — SOV 자리의 결을 일부러 기다리는 톤</title>
+        <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-05-12-pm17-ai-tech-news.html"/>
+        <id>https://shonsubong.github.io/sonslab-blog/posts/2026-05-12-pm17-ai-tech-news.html</id>
+        <published>2026-05-12T17:22:00+09:00</published>
+        <updated>2026-05-12T17:22:00+09:00</updated>
+        <summary>화요일 퇴근 버스. 새벽엔 Nadella 증언 / Microsoft가 OpenAI에서 노린 $92B, 점심엔 SK하이닉스 EMIB 결과 GPT-5.5 Instant 기본값을 풀어뒀다. 회사 자리는 영상 처리 파이프라인 결로 평소대로 굴리고, 버스에 앉아 X 타임라인을 켰는데 결의 톤이 한 단 다른 자리로 옮겨붙어 있었다 — GPT-Realtime-Translate가 정식으로 Realtime ...</summary>
+        <category term="AI"/>
+        <category term="Tech"/>
+        <category term="News"/>
+        <author><name>SONSLAB</name></author>
+    </entry>
+    <entry>
+        <title>SK하이닉스가 Intel EMIB를 만지기 시작했다 — CoWoS가 막힌 자리의 우회 결</title>
+        <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-05-12-pm12-ai-tech-news.html"/>
+        <id>https://shonsubong.github.io/sonslab-blog/posts/2026-05-12-pm12-ai-tech-news.html</id>
+        <published>2026-05-12T12:24:00+09:00</published>
+        <updated>2026-05-12T12:24:00+09:00</updated>
+        <summary>화요일 점심. 새벽 자리엔 Nadella 증언 / Microsoft가 OpenAI에서 노린 $92B 결을 풀어뒀는데, 점심 자리에 X 타임라인이 흔들린 결은 자본 라인이 아니라 패키징 라인이었다. SK하이닉스가 Intel의 EMIB 2.5D 패키징 자리를 직접 만지기 시작했다는 결 — 어제(현지 시간 5월 11일) TrendForce 라인이 풀어둔 톤이 Tom&#x27;s Hardware 라인까지 결...</summary>
+        <category term="AI"/>
+        <category term="Tech"/>
+        <category term="News"/>
+        <author><name>SONSLAB</name></author>
+    </entry>
+    <entry>
+        <title>나델라가 증인석에 섰다 — Microsoft가 OpenAI에서 노린 결이 $92B로 풀렸다</title>
+        <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-05-12-am06-ai-tech-news.html"/>
+        <id>https://shonsubong.github.io/sonslab-blog/posts/2026-05-12-am06-ai-tech-news.html</id>
+        <published>2026-05-12T06:15:00+09:00</published>
+        <updated>2026-05-12T06:15:00+09:00</updated>
+        <summary>화요일 새벽. 어제 자리는 Nvidia $40B / 4개월로 새벽을 열고, 점심엔 Mythos 한 달과 HBM4 16-Hi, 퇴근엔 Claude 한도 두 배·SpaceX Colossus 1, 자기 전엔 Nemotron 3 결을 풀어두며 결의 톤이 컴퓨트·오픈웨이트·정렬 자리로 묵직하게 굴러갔다. 그런데 한국 시간으로 자는 사이, 오클랜드 법정 자리에서 결의 톤이 다른 면으로 한 번 더 풀렸다...</summary>
+        <category term="AI"/>
+        <category term="Tech"/>
+        <category term="News"/>
+        <author><name>SONSLAB</name></author>
+    </entry>
+    <entry>
+        <title>Nemotron 3 가 오픈웨이트 자리에 다시 박혔다 — Nano·Super·Ultra 세 줄과 Mamba-Transformer MoE</title>
+        <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-05-11-pm22-ai-tech-news.html"/>
+        <id>https://shonsubong.github.io/sonslab-blog/posts/2026-05-11-pm22-ai-tech-news.html</id>
+        <published>2026-05-11T22:18:00+09:00</published>
+        <updated>2026-05-11T22:18:00+09:00</updated>
+        <summary>월요일 밤. 새벽엔 Nvidia $40B 지분 투자, 점심엔 Mythos 한 달과 HBM4 16-Hi, 퇴근 자리엔 Claude 한도 두 배와 Teaching Claude Why 결을 풀어뒀다. 하루 종일 결의 톤이 frontier·컴퓨트·정렬 자리에서 묵직하게 돌았는데, 자기 전에 한 줄 더 짚어두고 싶은 결이 X 타임라인에서 다시 떠올랐다 — Nvidia Nemotron 3이 오픈웨이트 ...</summary>
+        <category term="AI"/>
+        <category term="Tech"/>
+        <category term="News"/>
+        <author><name>SONSLAB</name></author>
+    </entry>
+    <entry>
+        <title>Claude 사용량이 두 배가 됐다 — SpaceX Colossus 1, 220k GPU가 한 달 안에 붙는다</title>
+        <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-05-11-pm17-ai-tech-news.html"/>
+        <id>https://shonsubong.github.io/sonslab-blog/posts/2026-05-11-pm17-ai-tech-news.html</id>
+        <published>2026-05-11T17:08:00+09:00</published>
+        <updated>2026-05-11T17:08:00+09:00</updated>
+        <summary>월요일 퇴근 버스. 회사 자리는 영상 처리 결로 하루를 굴리고 자리를 마무리하고, 버스에 앉자마자 핸드폰 X 타임라인을 켰다. 새벽엔 Nvidia $40B, 점심엔 Mythos 한 달과 HBM4 16-Hi 결을 풀어뒀는데, 퇴근 버스 자리에선 결의 톤이 한 단 더 사적인 자리로 옮겨붙는다 — 내가 매일 쓰는 Claude Max 자리의 한도가 이번 주에 두 배로 풀렸다는 결. 그 결의 뒤에 S...</summary>
+        <category term="AI"/>
+        <category term="Tech"/>
+        <category term="News"/>
+        <author><name>SONSLAB</name></author>
+    </entry>
+    <entry>
+        <title>Mythos Preview 한 달 — 제로데이 수천 건과 Glasswing 40개 라인이 한 자리에 박혔다</title>
+        <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-05-11-pm12-ai-tech-news.html"/>
+        <id>https://shonsubong.github.io/sonslab-blog/posts/2026-05-11-pm12-ai-tech-news.html</id>
+        <published>2026-05-11T12:14:00+09:00</published>
+        <updated>2026-05-11T12:14:00+09:00</updated>
+        <summary>월요일 점심. 새벽에 Nvidia $40B / 4개월 결을 풀어두고 회사로 들어와 점심 자리에 앉았다. 사내 식당에서 김치찌개 한 그릇 비우고 자리로 돌아오면서 X 타임라인을 훑어봤는데, 점심 자리에 묵직하게 도는 결은 두 줄이다. 한 줄은 Claude Mythos Preview가 4월 16일 첫 공개 이후 정확히 한 달이 된 자리에서 red.anthropic.com 라인이 한 단 더 풀린 ...</summary>
+        <category term="AI"/>
+        <category term="Tech"/>
+        <category term="News"/>
+        <author><name>SONSLAB</name></author>
+    </entry>
+    <entry>
+        <title>Nvidia AI 지분 투자가 $40B을 넘었다 — IREN·Corning이 한 주에 묶이며 &#x27;순환 자본&#x27; 라인이 다시 떠올랐다</title>
+        <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-05-11-am06-ai-tech-news.html"/>
+        <id>https://shonsubong.github.io/sonslab-blog/posts/2026-05-11-am06-ai-tech-news.html</id>
+        <published>2026-05-11T06:17:00+09:00</published>
+        <updated>2026-05-11T06:17:00+09:00</updated>
+        <summary>월요일 새벽. 주말 자리에 Anthropic·Google $200B과 오픈웨이트 4랩 천장 결, OpenAI Realtime API GA 결, Tesla FSD V14.3.2 결을 두툼하게 풀어둬서 어깨가 한 단 무거운 자리. 그래도 주말 사이 X 타임라인에서 가장 묵직하게 도는 결이 한 줄 있어서, 출근 버스에서 풀 결을 미리 짚어두려고 커피 한 잔만 내리면서 자리에 앉았다 — Nvidia...</summary>
+        <category term="AI"/>
+        <category term="Tech"/>
+        <category term="News"/>
+        <author><name>SONSLAB</name></author>
+    </entry>
+    <entry>
+        <title>테슬라가 로보택시·FSD·스마트 서먼을 한 장의 신경망 위에 묶었다 — 같은 자리에 미국 정부 사전 평가 결로 frontier 5개 랩이 한 줄에 섰다</title>
+        <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-05-10-pm17-ai-tech-news.html"/>
+        <id>https://shonsubong.github.io/sonslab-blog/posts/2026-05-10-pm17-ai-tech-news.html</id>
+        <published>2026-05-10T17:09:00+09:00</published>
+        <updated>2026-05-10T17:09:00+09:00</updated>
+        <summary>일요일 오후. 새벽엔 Anthropic·Google $200B과 오픈웨이트 4랩 천장 결, 점심엔 OpenAI Realtime API GA·Grok 4.3 결을 두툼하게 풀어둬서, 오후 자리는 결의 무게를 한 단 가볍게 잡고 가도 되는 톤이다. 베란다 창문 열어두고 커피 한 잔 더 내리면서 X 타임라인을 훑어보니, 일요일 오후 자리에 진짜 묵직하게 도는 결은 자율주행 자리 한 줄과 AI 정책...</summary>
+        <category term="AI"/>
+        <category term="Tech"/>
+        <category term="News"/>
+        <author><name>SONSLAB</name></author>
+    </entry>
+    <entry>
+        <title>OpenAI 음성 3종이 한 번에 풀렸다 — Realtime API가 정식 출시되며 GPT-5급 추론·70개 언어 통역이 같은 자리에 박혔다</title>
+        <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-05-10-pm12-ai-tech-news.html"/>
+        <id>https://shonsubong.github.io/sonslab-blog/posts/2026-05-10-pm12-ai-tech-news.html</id>
+        <published>2026-05-10T12:18:00+09:00</published>
+        <updated>2026-05-10T12:18:00+09:00</updated>
+        <summary>일요일 점심. 새벽에 Anthropic·Google $200B 결과 오픈웨이트 4랩 천장 라인을 길게 풀어두고 일어났더니, 정작 점심 자리에 묵직하게 도는 결은 음성 쪽이다. 5월 7~8일 자리에 OpenAI 블로그가 풀어둔 톤이 또렷하다 — Realtime API가 베타를 졸업했고, 같이 모델 3종이 한 번에 풀렸다. GPT-Realtime-2·GPT-Realtime-Translate·GP...</summary>
+        <category term="AI"/>
+        <category term="Tech"/>
+        <category term="News"/>
+        <author><name>SONSLAB</name></author>
+    </entry>
+    <entry>
+        <title>Anthropic이 Google에 5년·$200B을 박았다 — 오픈웨이트 4랩 자리는 12일 안에 같은 천장에 닿았다</title>
+        <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-05-10-am06-ai-tech-news.html"/>
+        <id>https://shonsubong.github.io/sonslab-blog/posts/2026-05-10-am06-ai-tech-news.html</id>
+        <published>2026-05-10T06:11:00+09:00</published>
+        <updated>2026-05-10T06:11:00+09:00</updated>
+        <summary>일요일 새벽. 어제 토요일 자리에 새벽-점심-오후-밤까지 백악관 EO·Kimi K2.6·V4-Flash·Anthropic Managed Agents 라인을 줄줄이 풀어두고 잤더니, 머리가 한 번 더 정리되어서 일어난 자리. 커피 한 잔만 내려놓고 X 타임라인을 훑어보니 오늘 새벽엔 결의 무게가 컴퓨트·자본 자리로 한 단 옮겨와 있다. 5월 5일 자리에 풀린 The Information 라인이...</summary>
+        <category term="AI"/>
+        <category term="Tech"/>
+        <category term="News"/>
+        <author><name>SONSLAB</name></author>
+    </entry>
+    <entry>
+        <title>Anthropic이 Claude 에이전트에 잠을 재웠다 — dreaming·outcomes·orchestration이 한 자리에 묶였다</title>
+        <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-05-09-pm22-ai-tech-news.html"/>
+        <id>https://shonsubong.github.io/sonslab-blog/posts/2026-05-09-pm22-ai-tech-news.html</id>
+        <published>2026-05-09T22:14:00+09:00</published>
+        <updated>2026-05-09T22:14:00+09:00</updated>
+        <summary>토요일 밤. 새벽에 백악관 EO 라인을 짚고, 점심에 Kimi K2.6 결을 풀고, 오후에 DeepSeek V4-Flash까지 한 번 굴려보고 나니 책상 위에 진한 커피 한 잔만 남았다. 4건째 글이라 어깨가 무거워질 자리인데, 오히려 결이 가벼워지는 라인 하나가 X 타임라인에서 묵직하게 돌고 있다 — Anthropic Managed Agents에 풀린 dreaming·outcomes·mul...</summary>
+        <category term="AI"/>
+        <category term="Tech"/>
+        <category term="News"/>
+        <author><name>SONSLAB</name></author>
+    </entry>
+    <entry>
+        <title>DeepSeek V4-Flash가 13B 활성으로 같은 자리를 잡았다 — 백만 토큰 자리에 KV 캐시는 V3.2의 7%</title>
+        <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-05-09-pm17-ai-tech-news.html"/>
+        <id>https://shonsubong.github.io/sonslab-blog/posts/2026-05-09-pm17-ai-tech-news.html</id>
+        <published>2026-05-09T17:18:00+09:00</published>
+        <updated>2026-05-09T17:18:00+09:00</updated>
+        <summary>토요일 오후. 점심 자리에 Kimi K2.6 INT4 빌드를 한 번 띄워보고, 바람도 한 번 쐬고 들어와서 다시 책상. 점심 글 끝줄에 짚어둔 DeepSeek V4-Flash를 진짜 한 번 굴려볼 자리다. K2.6이 오픈웨이트 코딩 자리의 윗줄을 잡은 결이라면, V4-Flash는 비용·컨텍스트·지연시간의 결을 한 단 더 깎은 자리다. 두 모델 모두 MIT 라이선스 자리에 풀려서, 같은 한 주...</summary>
+        <category term="AI"/>
+        <category term="Tech"/>
+        <category term="News"/>
+        <author><name>SONSLAB</name></author>
+    </entry>
+    <entry>
+        <title>Kimi K2.6가 오픈웨이트 코딩 자리의 윗줄을 잡았다 — Opus 4.7·GPT-5.5와 같은 라인에 묶였다</title>
+        <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-05-09-pm12-ai-tech-news.html"/>
+        <id>https://shonsubong.github.io/sonslab-blog/posts/2026-05-09-pm12-ai-tech-news.html</id>
+        <published>2026-05-09T12:23:00+09:00</published>
+        <updated>2026-05-09T12:23:00+09:00</updated>
+        <summary>토요일 점심. 새벽에 백악관 EO 라인과 Cloudflare 1,100명 정리 결을 짚어두고, 한 끼 비우고 다시 책상 앞. X 타임라인이 또 다른 자리에서 돌고 있다 — Moonshot Kimi K2.6. 4월 20일 자리에 풀린 모델이긴 한데, 5월 자리로 들어와서 결이 한 단 묵직해진 톤이다. 어제 밤에 NVIDIA Nemotron 3 Super가 오픈웨이트 자리의 새 기준을 박은 결을...</summary>
+        <category term="AI"/>
+        <category term="Tech"/>
+        <category term="News"/>
+        <author><name>SONSLAB</name></author>
+    </entry>
+    <entry>
+        <title>백악관이 AI 모델을 &#x27;FDA 약품처럼&#x27; 심사하겠다 — 같은 주 Cloudflare는 1,100명을 잘랐다</title>
+        <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-05-09-am06-ai-tech-news.html"/>
+        <id>https://shonsubong.github.io/sonslab-blog/posts/2026-05-09-am06-ai-tech-news.html</id>
+        <published>2026-05-09T06:12:00+09:00</published>
+        <updated>2026-05-09T06:12:00+09:00</updated>
+        <summary>토요일 새벽. 알람도 없는 자리에 눈이 먼저 떠져서 커피만 한 잔 내려놓고 책상에 앉았다. 어제 밤에 Nemotron 3 Super와 FSD V14.3.2까지 한 번 정리하고 잤는데, 그 사이에 결의 무게가 또 다른 자리로 옮겨가 있다. 한쪽은 백악관, 다른 한쪽은 Cloudflare. 톤은 완전히 다른데 같은 한 주 자리에 박힌 결이 묘하게 한 방향을 가리킨다 — AI가 더 위험해지고 있다...</summary>
+        <category term="AI"/>
+        <category term="Tech"/>
+        <category term="News"/>
+        <author><name>SONSLAB</name></author>
+    </entry>
+    <entry>
+        <title>Nemotron 3 Super가 오픈웨이트 자리의 새 기준을 박았다 — 같은 주, Tesla는 운전 전체를 한 모델로 묶었다</title>
+        <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-05-08-pm22-ai-tech-news.html"/>
+        <id>https://shonsubong.github.io/sonslab-blog/posts/2026-05-08-pm22-ai-tech-news.html</id>
+        <published>2026-05-08T22:18:00+09:00</published>
+        <updated>2026-05-08T22:18:00+09:00</updated>
+        <summary>금요일 밤. 책상 정리하면서 X 타임라인을 한 번 더 훑는다. 오늘 새벽엔 Gemini 3.1 Flash-Lite GA와 Microsoft AI 보급률 17.8%, 점심엔 SubQ 1000배 효율 주장과 Google TurboQuant, 오후엔 GPT-5.5 Instant와 Anthropic Mythos OT 반발까지 짚었다. 하루 동안 너무 바삐 굴렀으니 밤은 가볍게 두 줄만 정리한다 — ...</summary>
+        <category term="AI"/>
+        <category term="Tech"/>
+        <category term="News"/>
+        <author><name>SONSLAB</name></author>
+    </entry>
+    <entry>
+        <title>GPT-5.5 Instant이 ChatGPT 기본 모델로 깔렸다 — 같은 주 Anthropic Mythos는 OT 업계의 반발에 부딪혔다</title>
+        <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-05-08-pm17-ai-tech-news.html"/>
+        <id>https://shonsubong.github.io/sonslab-blog/posts/2026-05-08-pm17-ai-tech-news.html</id>
+        <published>2026-05-08T17:14:00+09:00</published>
+        <updated>2026-05-08T17:14:00+09:00</updated>
+        <summary>금요일 퇴근 버스. 화성에서 수지로 올라가는 길에 노트북 대신 핸드폰만 켜고 한 줄 정리한다. 오늘 새벽엔 Gemini 3.1 Flash-Lite GA와 Microsoft AI 보급률 17.8% 라인을 짚었고, 점심엔 SubQ의 1000배 효율 주장과 Google TurboQuant의 3비트 KV 캐시를 같이 깔았는데, 오후 자리엔 결의 무게가 다시 한 번 옮겨갔다 — OpenAI가 GPT-...</summary>
+        <category term="AI"/>
+        <category term="Tech"/>
+        <category term="News"/>
+        <author><name>SONSLAB</name></author>
+    </entry>
+    <entry>
+        <title>SubQ가 어텐션을 1000분의 1로 줄였다고 주장했다 — 같은 주 Google TurboQuant는 KV 캐시를 3비트까지 잘랐다</title>
+        <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-05-08-pm12-ai-tech-news.html"/>
+        <id>https://shonsubong.github.io/sonslab-blog/posts/2026-05-08-pm12-ai-tech-news.html</id>
+        <published>2026-05-08T12:18:00+09:00</published>
+        <updated>2026-05-08T12:18:00+09:00</updated>
+        <summary>회사 카페테리아에서 점심 먹으면서 노트북을 켰다. 새벽엔 Gemini 3.1 Flash-Lite가 GA로 들어온 자리와 Microsoft의 글로벌 AI 보급률 17.8% 라인을 짚었는데, 점심에 다시 보니 같은 주에 굴러간 두 줄이 더 무겁다 — 모델 가격이 잘리는 이유 그 자체에 들어가는 라인. 하나는 Miami 스타트업 Subquadratic이 푼 SubQ의 1000배 효율 주장, 다른 ...</summary>
+        <category term="AI"/>
+        <category term="Tech"/>
+        <category term="News"/>
+        <author><name>SONSLAB</name></author>
+    </entry>
+    <entry>
+        <title>Gemini 3.1 Flash-Lite가 엔터프라이즈로 들어왔다 — 같은 날 Microsoft는 글로벌 AI 보급률 17.8%를 풀었다</title>
+        <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-05-08-am06-ai-tech-news.html"/>
+        <id>https://shonsubong.github.io/sonslab-blog/posts/2026-05-08-am06-ai-tech-news.html</id>
+        <published>2026-05-08T06:08:00+09:00</published>
+        <updated>2026-05-08T06:08:00+09:00</updated>
+        <summary>금요일 새벽. 알람이 울리기 한 시간 전에 눈이 떠져서, 커피 한 잔 내려놓고 노트북 앞에 앉았다. 어제 하루 동안 SpaceX Colossus 1 → Anthropic, NIST CAISI의 DeepSeek 평가, Anthropic의 월가 에이전트 10개까지 큰 묶음을 셋이나 짚어뒀는데, 밤사이 또 결이 두 줄 더 깔렸다 — Google이 Gemini 3.1 Flash-Lite를 GA로 풀...</summary>
+        <category term="AI"/>
+        <category term="Tech"/>
+        <category term="News"/>
+        <author><name>SONSLAB</name></author>
+    </entry>
+    <entry>
+        <title>Anthropic이 월가에 에이전트 10개를 풀었다 — FactSet 8% 빠지고, 같은 주 Meta는 휴머노이드 파운데이션을 사들였다</title>
+        <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-05-07-pm22-ai-tech-news.html"/>
+        <id>https://shonsubong.github.io/sonslab-blog/posts/2026-05-07-pm22-ai-tech-news.html</id>
+        <published>2026-05-07T22:14:00+09:00</published>
+        <updated>2026-05-07T22:14:00+09:00</updated>
+        <summary>목요일 밤. 거실 불 절반만 켜고 자리에 앉았다. 새벽엔 Code with Claude SF 키노트의 워크플로우를 짚었고, 점심엔 SpaceX Colossus가 통째로 Anthropic으로 넘어간 결을, 오후엔 NIST CAISI가 DeepSeek V4 Pro는 8개월 뒤라고 푼 라인을 썼다. 하루를 닫으면서 한 묶음 더 정리해두고 싶은 게 생겼다 — 이번 주 초에 Anthropic이 월가에...</summary>
+        <category term="AI"/>
+        <category term="Tech"/>
+        <category term="News"/>
+        <author><name>SONSLAB</name></author>
+    </entry>
+    <entry>
+        <title>NIST가 DeepSeek V4는 미국보다 8개월 뒤라고 풀었다 — 같은 주에 Qwen3.6-27B는 397B를 이겼다</title>
+        <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-05-07-pm17-ai-tech-news.html"/>
+        <id>https://shonsubong.github.io/sonslab-blog/posts/2026-05-07-pm17-ai-tech-news.html</id>
+        <published>2026-05-07T17:24:00+09:00</published>
+        <updated>2026-05-07T17:24:00+09:00</updated>
+        <summary>목요일 오후. 회사 자리는 이미 짐 정리 톤이고, 잠시 후면 퇴근 버스에 오를 자리다. 새벽엔 Code with Claude SF 키노트의 워크플로우 결을, 점심엔 SpaceX Colossus 1이 통째로 Anthropic으로 넘어간 결을 짚었다. 이번 자리는 결을 다른 라인으로 굴린다 — 미국 정부 자리에서 중국 모델은 8개월 뒤처졌다는 라인을 풀었고, 같은 주에 알리바바 자리에서는 27B...</summary>
+        <category term="AI"/>
+        <category term="Tech"/>
+        <category term="News"/>
+        <author><name>SONSLAB</name></author>
+    </entry>
+    <entry>
+        <title>SpaceX의 Colossus 1이 통째로 Anthropic으로 갔다 — 300MW·GPU 22만 장, Claude Code 한도도 2배</title>
+        <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-05-07-pm12-ai-tech-news.html"/>
+        <id>https://shonsubong.github.io/sonslab-blog/posts/2026-05-07-pm12-ai-tech-news.html</id>
+        <published>2026-05-07T12:18:00+09:00</published>
+        <updated>2026-05-07T12:18:00+09:00</updated>
+        <summary>목요일 점심. 회사 카페에서 김치찌개 한 그릇 비우고 자리에 돌아왔다. 새벽 자리에서 Code with Claude 키노트의 워크플로우 결을 정리해뒀는데, 같은 키노트의 반대쪽 결이 점심 자리쯤에 X 타임라인을 다시 흔든다 — SpaceX의 Colossus 1 데이터센터를 Anthropic이 통째로 가져갔다. 그리고 그 결의 옆에 Claude Code 5시간 한도가 두 배로 풀렸다는 라인이 ...</summary>
+        <category term="AI"/>
+        <category term="Tech"/>
+        <category term="News"/>
+        <author><name>SONSLAB</name></author>
+    </entry>
+    <entry>
+        <title>Code Review 에이전트 팀과 Remote Agents가 한 자리에 풀렸다 — Code with Claude SF 키노트가 깐 결</title>
+        <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-05-07-am06-ai-tech-news.html"/>
+        <id>https://shonsubong.github.io/sonslab-blog/posts/2026-05-07-am06-ai-tech-news.html</id>
+        <published>2026-05-07T06:18:00+09:00</published>
+        <updated>2026-05-07T06:18:00+09:00</updated>
+        <summary>목요일 새벽. 보리차 한 잔 따라두고 자리에 앉았다. 어젯밤 한국 자리로 새벽 1시 자리 — SF 자리 9 AM PT 자리에서 Code with Claude가 풀렸고, 키노트 한 시간이 그대로 끝난 톤. 어제 pm22 자리에서 결을 짚어두면서 &quot;Jupiter v1-p 풀릴지, Opus 4.7 옆에 결 한 줄 깔릴지&quot;를 적어뒀는데, 결은 다른 라인으로 굴러갔다 — 모델 자리가 아니라 Claud...</summary>
+        <category term="AI"/>
+        <category term="Tech"/>
+        <category term="News"/>
+        <author><name>SONSLAB</name></author>
+    </entry>
+    <entry>
+        <title>ChatGPT 기본 모델이 GPT-5.5 Instant로 갈렸다 — 환각이 절반 이하로 떨어진 결</title>
+        <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-05-06-pm22-ai-tech-news.html"/>
+        <id>https://shonsubong.github.io/sonslab-blog/posts/2026-05-06-pm22-ai-tech-news.html</id>
+        <published>2026-05-06T22:18:00+09:00</published>
+        <updated>2026-05-06T22:18:00+09:00</updated>
+        <summary>수요일 밤. 책상에 보리차 한 잔 다시 따라두고 X 타임라인을 한 번 더 훑었는데, 어제 미국 자리에서 풀린 TechCrunch 라인이 하루 지나도 결이 안 식는다 — GPT-5.5 Instant가 ChatGPT의 기본 모델 자리에 그대로 갈아끼워진 결. 새 모델 자리가 풀린 게 아니다. 모든 무료·유료 사용자의 디폴트 자리가 한 번에 바뀐 결이라, 무게가 묘하게 다르다.</summary>
+        <category term="AI"/>
+        <category term="Tech"/>
+        <category term="News"/>
+        <author><name>SONSLAB</name></author>
+    </entry>
+    <entry>
+        <title>SAP가 €10억을 한 번에 깔았다 — Prior Labs 인수와 *구조화 데이터* 자리</title>
+        <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-05-06-pm17-ai-tech-news.html"/>
+        <id>https://shonsubong.github.io/sonslab-blog/posts/2026-05-06-pm17-ai-tech-news.html</id>
+        <published>2026-05-06T17:22:00+09:00</published>
+        <updated>2026-05-06T17:22:00+09:00</updated>
+        <summary>수요일 퇴근 버스. 자리에 앉아서 X 타임라인을 한 번 훑었더니, 어제부터 SAP가 Prior Labs를 통째로 사버린 결이 계속 스레드 자리에 굴러 들어온다 — TechCrunch가 풀어둔 라인대로 짚으면 18개월 된 독일 AI 랩 자리에 11억 6천만 달러. 결을 한 번 더 다듬으면 SAP 공식 라인 자리에서는 향후 4년간 €10억 이상이라는 톤으로 깔려 있다. 어느 쪽으로 읽든 결은 무...</summary>
+        <category term="AI"/>
+        <category term="Tech"/>
+        <category term="News"/>
+        <author><name>SONSLAB</name></author>
+    </entry>
+    <entry>
+        <title>에이전트가 웹을 뜯어 먹는다 — Cloudflare가 매일 10억 건의 &#x27;HTTP 402&#x27;를 흘려보내는 자리</title>
+        <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-05-06-pm12-ai-tech-news.html"/>
+        <id>https://shonsubong.github.io/sonslab-blog/posts/2026-05-06-pm12-ai-tech-news.html</id>
+        <published>2026-05-06T12:24:00+09:00</published>
+        <updated>2026-05-06T12:24:00+09:00</updated>
+        <summary>수요일 점심. 회사 책상에 보리차 한 잔 따라두고 X 타임라인을 한 번 훑었더니, 어젯밤 미국 자리에서 Coindesk가 풀어둔 라인이 그대로 스레드로 굴러 들어온다 — Cloudflare가 매일 10억 건의 HTTP 402 &quot;Payment Required&quot; 응답을 흘려보내고 있다. 이걸 한 줄로 자르면 AI 에이전트가 웹 경제 자리를 통째로 뜯어 먹는 결이 이제 통계 자리에서 또렷하게 굳었...</summary>
+        <category term="AI"/>
+        <category term="Tech"/>
+        <category term="News"/>
+        <author><name>SONSLAB</name></author>
+    </entry>
+    <entry>
+        <title>TurboQuant이 KV 캐시를 6배 눌러버렸다 — 추론 메모리 벽이 한 단 내려갔다</title>
+        <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-05-06-am06-ai-tech-news.html"/>
+        <id>https://shonsubong.github.io/sonslab-blog/posts/2026-05-06-am06-ai-tech-news.html</id>
+        <published>2026-05-06T06:18:00+09:00</published>
+        <updated>2026-05-06T06:18:00+09:00</updated>
+        <summary>수요일 새벽. 보리차 한 잔 따라두고 자리에 앉아 X 타임라인을 한 번 훑었더니, 어젯밤 미국 자리에서 Tom&#x27;s Hardware가 띄운 라인이 다시 한 번 스레드로 돌아 들어온다 — Google TurboQuant. ICLR 2026 자리에서 풀린 결인데, 며칠 전 research.google 블로그가 정식 라인을 풀어둔 뒤로 결이 한 번 더 식지 않고 굳어가는 톤. KV 캐시 자리를 3비...</summary>
+        <category term="AI"/>
+        <category term="Tech"/>
+        <category term="News"/>
+        <author><name>SONSLAB</name></author>
+    </entry>
+    <entry>
+        <title>NVIDIA Ising이 양자컴퓨터의 OS 자리를 차지했다 — 오류 정정 결을 AI가 갈아낸다</title>
+        <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-05-05-pm22-ai-tech-news.html"/>
+        <id>https://shonsubong.github.io/sonslab-blog/posts/2026-05-05-pm22-ai-tech-news.html</id>
+        <published>2026-05-05T22:18:00+09:00</published>
+        <updated>2026-05-05T22:18:00+09:00</updated>
+        <summary>화요일 밤. 회사 일을 한 단락 마무리하고 집에 들어와 보리차 한 잔 따라두고 X 타임라인을 한 번 훑었더니, 어제 미국 자리에서 Motley Fool이 띄운 라인이 다시 한 번 스레드로 돌아 들어온다 — NVIDIA Ising. 4월 중순에 풀린 결인데, 한 달 가까이 지난 자리에서 결이 다시 뜨거워졌다. 2주 뒤 Code with Claude SF가 깔리는 자리 한쪽에서, AI가 양자컴퓨...</summary>
+        <category term="AI"/>
+        <category term="Tech"/>
+        <category term="News"/>
+        <category term="Semiconductor"/>
+        <author><name>SONSLAB</name></author>
+    </entry>
+    <entry>
+        <title>SK하이닉스 M15X가 이달 청주에서 결을 깐다 — Rubin·HBM4 자리에 한 단계 빨리 들어간다</title>
+        <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-05-05-pm17-ai-tech-news.html"/>
+        <id>https://shonsubong.github.io/sonslab-blog/posts/2026-05-05-pm17-ai-tech-news.html</id>
+        <published>2026-05-05T17:24:00+09:00</published>
+        <updated>2026-05-05T17:24:00+09:00</updated>
+        <summary>화요일 오후. 회사 일을 한 단락 마무리하고 퇴근 버스에 앉아 X 타임라인을 한 번 훑었더니, 오늘 자리에서 한국 반도체 자리 결이 한 줄 또렷하게 깔린다 — SK하이닉스 청주 M15X가 이달 가동. 연초부터 슬슬 라인업이 풀리던 결인데, Businesskorea 정리대로 5월 첫 클린룸 시운전이 들어가고 @jukan05 X 스레드가 한 발 더 나간 결을 풀어둔 자리 — 양산 일정이 원래 계...</summary>
+        <category term="AI"/>
+        <category term="Tech"/>
+        <category term="News"/>
+        <category term="Semiconductor"/>
+        <author><name>SONSLAB</name></author>
+    </entry>
+    <entry>
+        <title>Anthropic 내부에 &#x27;Jupiter v1-p&#x27;가 떴다 — Code with Claude SF 하루 전, Claude 5 가족이 들어오는 결</title>
+        <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-05-05-pm12-ai-tech-news.html"/>
+        <id>https://shonsubong.github.io/sonslab-blog/posts/2026-05-05-pm12-ai-tech-news.html</id>
+        <published>2026-05-05T12:14:00+09:00</published>
+        <updated>2026-05-05T12:14:00+09:00</updated>
+        <summary>화요일 점심. 회사 책상에 보리차 한 잔 따라두고 X 타임라인을 한 번 훑었더니, 오전 자리에 적어둔 Anthropic·OpenAI 월스트리트 합작사 결 옆에 한 줄이 더 깔린다 — 내부 테스트 로그에 &#x27;claude-jupiter-v1-p&#x27; 등장. TestingCatalog 정리대로 4월 30일에 처음 보인 라인이고, @testingcatalog X 스레드가 그 결을 그대로 풀어둔 자리. 내...</summary>
+        <category term="AI"/>
+        <category term="Tech"/>
+        <category term="News"/>
+        <author><name>SONSLAB</name></author>
+    </entry>
+    <entry>
+        <title>Anthropic·OpenAI가 같은 월요일에 월스트리트와 합작사를 깔았다 — 엔터프라이즈 AI가 컨설팅 자리를 직접 들어가는 결</title>
+        <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-05-05-am06-ai-tech-news.html"/>
+        <id>https://shonsubong.github.io/sonslab-blog/posts/2026-05-05-am06-ai-tech-news.html</id>
+        <published>2026-05-05T06:18:00+09:00</published>
+        <updated>2026-05-05T06:18:00+09:00</updated>
+        <summary>화요일 새벽. 보리차 한 잔 따라두고 X 타임라인을 한 번 훑었더니, 어제 미국 월요일에 결을 한 번에 끄집어낸 라인이 두 줄 깔려 있다 — Anthropic 1.5B 합작사, 그리고 OpenAI 4B 합작사. 둘 다 같은 날, 둘 다 월스트리트 자금, 둘 다 엔터프라이즈 AI 배포가 목표 자리. 모델 스펙 자랑이 아니라, Accenture·McKinsey가 차지하던 자리를 AI 회사가 직접...</summary>
+        <category term="AI"/>
+        <category term="Tech"/>
+        <category term="News"/>
+        <author><name>SONSLAB</name></author>
+    </entry>
+    <entry>
+        <title>Tesla FSD가 100억 마일을 찍었다 — 머스크가 그어둔 임계선을 일요일에 넘긴 자리</title>
+        <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-05-04-pm22-ai-tech-news.html"/>
+        <id>https://shonsubong.github.io/sonslab-blog/posts/2026-05-04-pm22-ai-tech-news.html</id>
+        <published>2026-05-04T22:14:00+09:00</published>
+        <updated>2026-05-04T22:14:00+09:00</updated>
+        <summary>월요일 밤. 형광등 끄고 책상 스탠드만 남겨둔 채 X 타임라인을 한 번 더 훑었더니, 새벽·점심·오후에 적어둔 결 옆에 또 한 줄이 깔린다 — Tesla FSD 누적 100억 마일. Electrek이 일요일에 띄운 라인이고, X에서 @SawyerMerritt·@WholeMarsBlog 같은 추적 계정들이 같은 결로 쏟아내고 있다. 묘한 건 이 100억 마일이 그냥 누적 숫자가 아니라, 1월에...</summary>
+        <category term="AI"/>
+        <category term="Tech"/>
+        <category term="News"/>
+        <category term="Autonomy"/>
+        <author><name>SONSLAB</name></author>
+    </entry>
+    <entry>
+        <title>SK하이닉스가 NVIDIA HBM4 물량을 줄이는 자리 — Rubin 지연 그림자가 다시 길어진다</title>
+        <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-05-04-pm17-ai-tech-news.html"/>
+        <id>https://shonsubong.github.io/sonslab-blog/posts/2026-05-04-pm17-ai-tech-news.html</id>
+        <published>2026-05-04T17:12:00+09:00</published>
+        <updated>2026-05-04T17:12:00+09:00</updated>
+        <summary>월요일 오후. 퇴근 버스에 앉아 X 타임라인을 한 번 훑었더니 결이 묘하게 한쪽으로 기울어 있다. 새벽에 적은 Code with Claude SF 수요일 라인 옆에, 오후 결로 깔린 한 줄 — SK하이닉스가 올해 NVIDIA향 HBM4 물량을 20~30% 줄이는 방향으로 검토 중. 4월 15일 Digitimes 기사가 처음 띄운 라인이고, 그 뒤로 3주 가까이 X에서 @jukan05 같은 공...</summary>
+        <category term="AI"/>
+        <category term="Tech"/>
+        <category term="News"/>
+        <category term="Semiconductor"/>
+        <author><name>SONSLAB</name></author>
+    </entry>
+    <entry>
+        <title>Claude Security 베타가 풀렸다 — 패턴 매칭이 아니라 코드를 읽는 보안 스캐너의 결</title>
+        <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-05-04-pm12-ai-tech-news.html"/>
+        <id>https://shonsubong.github.io/sonslab-blog/posts/2026-05-04-pm12-ai-tech-news.html</id>
+        <published>2026-05-04T12:18:00+09:00</published>
+        <updated>2026-05-04T12:18:00+09:00</updated>
+        <summary>월요일 점심. 회사 책상에 돌아와 보리차 한 잔 따라두고 X 타임라인을 훑어보니, 새벽에 적은 Code with Claude SF 라인 옆에 한 줄이 더 깔린다 — Claude Security 공개 베타. 4월 30일에 Anthropic 블로그가 풀리고 5월 1일에 한 번 더 업데이트된 라인. Enterprise 고객 자리에서 Opus 4.7 위에 도는 코드 보안 스캐너가 정식으로 열렸다.</summary>
+        <category term="AI"/>
+        <category term="Tech"/>
+        <category term="News"/>
+        <author><name>SONSLAB</name></author>
+    </entry>
+    <entry>
+        <title>이번 주 한 줄 — 에이전트 인프라가 5월 6일 한 자리에서 동시에 깔린다</title>
+        <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-05-04-am06-ai-tech-news.html"/>
+        <id>https://shonsubong.github.io/sonslab-blog/posts/2026-05-04-am06-ai-tech-news.html</id>
+        <published>2026-05-04T06:14:00+09:00</published>
+        <updated>2026-05-04T06:14:00+09:00</updated>
+        <summary>월요일 새벽. 보리차 한 잔 옆에 두고 X 타임라인을 한 번 훑었더니, 이번 주 결이 묘하게 한 자리에 모인다. 5월 6일 수요일 — 같은 날에 Code with Claude SF가 풀리고, OpenAI 워크스페이스 에이전트의 무료 시범 자리가 끝나면서 크레딧 과금이 켜지고, 직전 주 수요일에 깔린 Cloudflare-Stripe 자율 프로비저닝 프로토콜이 같이 굴러간다. 모델 스펙 자랑이 ...</summary>
+        <category term="AI"/>
+        <category term="Tech"/>
+        <category term="News"/>
+        <author><name>SONSLAB</name></author>
+    </entry>
+    <entry>
+        <title>구글이 Anthropic에 $40B를 더 깔았다 — 현금 $10B와 5GW TPU 약속의 결</title>
+        <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-05-03-pm22-ai-tech-news.html"/>
+        <id>https://shonsubong.github.io/sonslab-blog/posts/2026-05-03-pm22-ai-tech-news.html</id>
+        <published>2026-05-03T22:11:00+09:00</published>
+        <updated>2026-05-03T22:11:00+09:00</updated>
+        <summary>일요일 밤. 점심엔 NIST가 잰 DeepSeek V4 Pro, 오후엔 Mistral Medium 3.5를 적었으니, 마감 글은 결이 다르게 가야 깔끔하다. 이번 주에 그어진 가장 굵은 한 줄은 모델이 아니라 돈과 컴퓨트다 — 4월 24일에 풀린 구글-Anthropic $40B 라운드와, 그 위에 같이 깔린 5GW TPU 약속. 책상 위 노트북 옆에 보리차 한 잔 놓고 한 번만 정리해두면 다...</summary>
+        <category term="AI"/>
+        <category term="Tech"/>
+        <category term="News"/>
+        <author><name>SONSLAB</name></author>
+    </entry>
     <entry>
         <title>Mistral Medium 3.5가 풀렸다 — 모두가 MoE로 갈 때 혼자 128B 덴스로 던진 자리</title>
         <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-05-03-pm17-ai-tech-news.html"/>
@@ -863,8 +1527,8 @@
         <title>3월을 닫는 밤 — GTC부터 HBM5까지, 1분기를 한 번에 세우고 4월을 본다</title>
         <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-03-31-pm23-ai-tech-news.html"/>
         <id>https://shonsubong.github.io/sonslab-blog/posts/2026-03-31-pm23-ai-tech-news.html</id>
-        <published>2026-05-03T11:18:38+09:00</published>
-        <updated>2026-05-03T11:18:38+09:00</updated>
+        <published>2026-05-17T11:22:55+09:00</published>
+        <updated>2026-05-17T11:22:55+09:00</updated>
         <summary>화요일 밤 11시 반. 3월의 마지막 날이자 2026년 1분기의 마지막 밤이다. 회사는 오늘 결산 미팅이 하루 종일 잡혀 있었고, 집에 와서 저녁 먹고 나서야 조용히 앉아 연필을 잡는다. 달에 한 번, 특히 분기 마지막 날에는 반드시 한 번 뇌를 비워서 큰 그림을 다시 세워보는 습관이 있다. 단기 트레이드에 너무 오래 빠져 있으면 구조를 놓친다. 오늘이 그 날.</summary>
         <author><name>SONSLAB</name></author>
     </entry>
@@ -872,8 +1536,8 @@
         <title>마이크론 어닝 소화한 토요일 — HBM5 샘플링 공식화, 3월 마지막 주말 정리</title>
         <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-03-28-pm22-ai-tech-news.html"/>
         <id>https://shonsubong.github.io/sonslab-blog/posts/2026-03-28-pm22-ai-tech-news.html</id>
-        <published>2026-05-03T11:18:38+09:00</published>
-        <updated>2026-05-03T11:18:38+09:00</updated>
+        <published>2026-05-17T11:22:55+09:00</published>
+        <updated>2026-05-17T11:22:55+09:00</updated>
         <summary>토요일 밤. 아침에 아이 학원 데려다주고 돌아와 커피 내리면서 주간 마감 노트를 한 번 돌렸다. 이번 주는 마이크론 어닝 하나로 메모리 3사 순위가 한 칸씩 재배치된 주였다. 지난주 GTC 여진이 이번 주 마이크론 콜로 바통을 넘겼고, 바통이 넘어간 순간 시장이 HBM5 스토리를 다시 조립하기 시작했다. 주말 동안 자료 정리하면서 머리를 한 번 식혀야 한다.</summary>
         <author><name>SONSLAB</name></author>
     </entry>
@@ -881,8 +1545,8 @@
         <title>GPT-5.3 탈환, Claude 차기 모델 루머, 마이크론 D-1 — GTC 일주일 뒤의 풍경</title>
         <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-03-24-pm23-ai-tech-news.html"/>
         <id>https://shonsubong.github.io/sonslab-blog/posts/2026-03-24-pm23-ai-tech-news.html</id>
-        <published>2026-05-03T11:18:38+09:00</published>
-        <updated>2026-05-03T11:18:38+09:00</updated>
+        <published>2026-05-17T11:22:55+09:00</published>
+        <updated>2026-05-17T11:22:55+09:00</updated>
         <summary>화요일 밤 11시 반. 회사 회의가 끝없이 이어진 하루였고, 저녁 먹고 겨우 노트북 앞에 앉았다. 지난주 GTC가 한 주를 통째로 끌고 간 이벤트였는데, 의외로 그 다음 주가 더 시끄럽다. 모델 진영이 움직이고, 메모리 사이클이 다시 어닝 쪽으로 시선을 끌고 있다. 내일 마이크론 어닝이라 머리를 한 번 정돈하고 자려고 한다.</summary>
         <author><name>SONSLAB</name></author>
     </entry>
@@ -890,8 +1554,8 @@
         <title>GTC 2026 정리 — Rubin Ultra 2027, NVLink 6세대 1.8TB/s, Sovereign AI 10개국</title>
         <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-03-20-pm23-ai-tech-news.html"/>
         <id>https://shonsubong.github.io/sonslab-blog/posts/2026-03-20-pm23-ai-tech-news.html</id>
-        <published>2026-05-03T11:18:38+09:00</published>
-        <updated>2026-05-03T11:18:38+09:00</updated>
+        <published>2026-05-17T11:22:55+09:00</published>
+        <updated>2026-05-17T11:22:55+09:00</updated>
         <summary>금요일 밤. GTC 2026이 공식 폐막한 게 어제. 시장이 하루 소화한 후의 반응까지 묶어 정리한다. 이번 주는 GTC + FOMC 더블 빅 이벤트였고, 업계 입장에서 소화할 게 너무 많아서 주말에 또 복습해야 한다.</summary>
         <author><name>SONSLAB</name></author>
     </entry>
@@ -899,8 +1563,8 @@
         <title>GTC D-3 — 주말 관망, 인텔 18A Risk Production 진입 보도</title>
         <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-03-14-pm21-ai-tech-news.html"/>
         <id>https://shonsubong.github.io/sonslab-blog/posts/2026-03-14-pm21-ai-tech-news.html</id>
-        <published>2026-05-03T11:18:38+09:00</published>
-        <updated>2026-05-03T11:18:38+09:00</updated>
+        <published>2026-05-17T11:22:55+09:00</published>
+        <updated>2026-05-17T11:22:55+09:00</updated>
         <summary>토요일. 오늘 아침 달리기 나갔다가 허벅지 근육 살짝 뻐근해서 저녁에 오래 뻗어 있었다. 이번 주는 큰 이벤트 없이 관망이 주제어.</summary>
         <author><name>SONSLAB</name></author>
     </entry>
@@ -908,8 +1572,8 @@
         <title>GTC D-6 — Huang 기조연설 프리뷰, Rubin &#x27;진짜 스펙&#x27;은 무엇인가</title>
         <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-03-11-pm22-ai-tech-news.html"/>
         <id>https://shonsubong.github.io/sonslab-blog/posts/2026-03-11-pm22-ai-tech-news.html</id>
-        <published>2026-05-03T11:18:38+09:00</published>
-        <updated>2026-05-03T11:18:38+09:00</updated>
+        <published>2026-05-17T11:22:55+09:00</published>
+        <updated>2026-05-17T11:22:55+09:00</updated>
         <summary>수요일. 내일 회사에서 큰 미팅이 있어서 오늘 밤은 짧게 정리만 하려고 했는데, GTC 프리뷰 글들이 이번 주 너무 많이 나와서 다 훑다가 결국 11시 넘어가고 있다.</summary>
         <author><name>SONSLAB</name></author>
     </entry>
@@ -917,8 +1581,8 @@
         <title>주말 정리 — Mistral Large 3, Meta Llama 4.5 티저, 반도체 주간 리뷰</title>
         <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-03-07-pm22-ai-tech-news.html"/>
         <id>https://shonsubong.github.io/sonslab-blog/posts/2026-03-07-pm22-ai-tech-news.html</id>
-        <published>2026-05-03T11:18:38+09:00</published>
-        <updated>2026-05-03T11:18:38+09:00</updated>
+        <published>2026-05-17T11:22:55+09:00</published>
+        <updated>2026-05-17T11:22:55+09:00</updated>
         <summary>토요일. 오후에 아이 데리고 동네 도서관 다녀오고, 저녁 먹고 이제야 뉴스 피드 정리. 이번 주는 오픈 모델 진영이 조용히 움직였다.</summary>
         <author><name>SONSLAB</name></author>
     </entry>
@@ -926,8 +1590,8 @@
         <title>3월 초 숨 고르기 — OpenAI·xAI 파운딩 라운드, GTC D-12</title>
         <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-03-05-pm22-ai-tech-news.html"/>
         <id>https://shonsubong.github.io/sonslab-blog/posts/2026-03-05-pm22-ai-tech-news.html</id>
-        <published>2026-05-03T11:18:38+09:00</published>
-        <updated>2026-05-03T11:18:38+09:00</updated>
+        <published>2026-05-17T11:22:55+09:00</published>
+        <updated>2026-05-17T11:22:55+09:00</updated>
         <summary>목요일. 2월이 이벤트로 꽉 찼던 탓에 3월 첫 주가 오히려 더 고요해 보인다. 오늘은 뉴스 피드 두 번 돌리고, 퇴근길에 읽은 것만 짧게 정리한다.</summary>
         <author><name>SONSLAB</name></author>
     </entry>
@@ -935,8 +1599,8 @@
         <title>2월 마지막 토요일 — Nvidia 여진, 메모리 3사 보드 재정렬</title>
         <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-02-28-pm21-ai-tech-news.html"/>
         <id>https://shonsubong.github.io/sonslab-blog/posts/2026-02-28-pm21-ai-tech-news.html</id>
-        <published>2026-05-03T11:18:38+09:00</published>
-        <updated>2026-05-03T11:18:38+09:00</updated>
+        <published>2026-05-17T11:22:55+09:00</published>
+        <updated>2026-05-17T11:22:55+09:00</updated>
         <summary>2월 마지막 날. 어제 포스트에서 Nvidia 어닝을 한 번 풀었으니, 오늘은 그 여진이 메모리·장비 바스킷에 어떻게 번졌는지만 짧게 정리하고 자려고 한다.</summary>
         <author><name>SONSLAB</name></author>
     </entry>
@@ -944,8 +1608,8 @@
         <title>Nvidia $68B 분기, Data Center +75% — &#x27;AI 버블론&#x27;을 일거에 잠재웠다</title>
         <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-02-27-pm21-ai-tech-news.html"/>
         <id>https://shonsubong.github.io/sonslab-blog/posts/2026-02-27-pm21-ai-tech-news.html</id>
-        <published>2026-05-03T11:18:38+09:00</published>
-        <updated>2026-05-03T11:18:38+09:00</updated>
+        <published>2026-05-17T11:22:55+09:00</published>
+        <updated>2026-05-17T11:22:55+09:00</updated>
         <summary>금요일 밤. Nvidia가 그저께(2/25) 어닝 발표를 했고, 어제(2/26)는 시장이 한 번 소화한 후 강한 랠리. 오늘은 한 번 식은 후의 반응까지 묶어 정리할 수 있는 타이밍이라 천천히 가본다.</summary>
         <author><name>SONSLAB</name></author>
     </entry>
@@ -953,8 +1617,8 @@
         <title>Gemini 3.1 Pro S2E 80.6%, Sonnet 4.6, Grok 4.20 — 뉴델리 주의 모델 3연타</title>
         <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-02-20-pm23-ai-tech-news.html"/>
         <id>https://shonsubong.github.io/sonslab-blog/posts/2026-02-20-pm23-ai-tech-news.html</id>
-        <published>2026-05-03T11:18:38+09:00</published>
-        <updated>2026-05-03T11:18:38+09:00</updated>
+        <published>2026-05-17T11:22:55+09:00</published>
+        <updated>2026-05-17T11:22:55+09:00</updated>
         <summary>금요일이 거의 넘어가는 시각. 이번 주는 개인적으로 너무 많아서 정리하면서 자려고 한다. 모델 3연타 + 인도 AI 서밋 + 다음 주 Nvidia 어닝. 한 주에 이만한 이벤트 밀도는 12월 중순 이후 처음이다.</summary>
         <author><name>SONSLAB</name></author>
     </entry>
@@ -962,8 +1626,8 @@
         <title>뉴델리 AI 서밋 개막 D-4 — 2월 중순의 숨고르기</title>
         <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-02-12-pm22-ai-tech-news.html"/>
         <id>https://shonsubong.github.io/sonslab-blog/posts/2026-02-12-pm22-ai-tech-news.html</id>
-        <published>2026-05-03T11:18:38+09:00</published>
-        <updated>2026-05-03T11:18:38+09:00</updated>
+        <published>2026-05-17T11:22:55+09:00</published>
+        <updated>2026-05-17T11:22:55+09:00</updated>
         <summary>목요일. 회사에서 오늘 정기 코드 리뷰 두 건 있었고, 퇴근 후에야 뉴스 피드 열었다. 큰 사건은 없는 하루. 대신 다음 주가 짙은 구름이다.</summary>
         <author><name>SONSLAB</name></author>
     </entry>
@@ -971,8 +1635,8 @@
         <title>주말 정리 — Opus 4.6 실사용 3일, Grok Imagine의 존재감</title>
         <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-02-08-pm22-ai-tech-news.html"/>
         <id>https://shonsubong.github.io/sonslab-blog/posts/2026-02-08-pm22-ai-tech-news.html</id>
-        <published>2026-05-03T11:18:38+09:00</published>
-        <updated>2026-05-03T11:18:38+09:00</updated>
+        <published>2026-05-17T11:22:55+09:00</published>
+        <updated>2026-05-17T11:22:55+09:00</updated>
         <summary>목요일 Opus 4.6 포스트 이후로 주말 내내 실무 작업을 조금씩 돌려봤다. 느낀 점 + Grok Imagine 짧은 메모.</summary>
         <author><name>SONSLAB</name></author>
     </entry>
@@ -980,8 +1644,8 @@
         <title>Claude Opus 4.6, 1M 토큰 컨텍스트 — PowerPoint·Excel 직접 통합</title>
         <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-02-05-pm23-ai-tech-news.html"/>
         <id>https://shonsubong.github.io/sonslab-blog/posts/2026-02-05-pm23-ai-tech-news.html</id>
-        <published>2026-05-03T11:18:38+09:00</published>
-        <updated>2026-05-03T11:18:38+09:00</updated>
+        <published>2026-05-17T11:22:55+09:00</published>
+        <updated>2026-05-17T11:22:55+09:00</updated>
         <summary>퇴근하고 저녁 먹고 10시 넘어서야 오늘 발표 본격 정리. Anthropic이 저녁 시간대에 푸는 걸 좋아하는 것 같은데, 덕분에 업계 사람들이 밤마다 바쁘다.</summary>
         <author><name>SONSLAB</name></author>
     </entry>
@@ -989,8 +1653,8 @@
         <title>1월 마감 — Rubin·$470B·Capex 공포, 한 달을 한 번에 요약</title>
         <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-01-31-pm21-ai-tech-news.html"/>
         <id>https://shonsubong.github.io/sonslab-blog/posts/2026-01-31-pm21-ai-tech-news.html</id>
-        <published>2026-05-03T11:18:38+09:00</published>
-        <updated>2026-05-03T11:18:38+09:00</updated>
+        <published>2026-05-17T11:22:55+09:00</published>
+        <updated>2026-05-17T11:22:55+09:00</updated>
         <summary>1월 마지막 날. 한 달을 되짚어본다. 요약 없이 넘기면 2월이 또 새로 시작되니까, 오늘 밤은 월간 정리만.</summary>
         <author><name>SONSLAB</name></author>
     </entry>
@@ -998,8 +1662,8 @@
         <title>Meta $115~135B, MS Azure +39% — 하이퍼스케일러 Capex $470B의 밤</title>
         <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-01-30-pm23-ai-tech-news.html"/>
         <id>https://shonsubong.github.io/sonslab-blog/posts/2026-01-30-pm23-ai-tech-news.html</id>
-        <published>2026-05-03T11:18:38+09:00</published>
-        <updated>2026-05-03T11:18:38+09:00</updated>
+        <published>2026-05-17T11:22:55+09:00</published>
+        <updated>2026-05-17T11:22:55+09:00</updated>
         <summary>금요일 밤. 이번 주는 하이퍼스케일러 어닝이 집중된 주였다. Meta(1/28), Microsoft(1/28), Apple(1/29). 이 셋이 같은 48시간 안에 2026 AI 지출 계획을 공개했고, 그 숫자들이 반도체 섹터 그래프를 직접 흔들었다.</summary>
         <author><name>SONSLAB</name></author>
     </entry>
@@ -1007,8 +1671,8 @@
         <title>TSMC 4Q 기록, ASML 사상 최고 — 반도체 현직자가 읽는 숫자들</title>
         <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-01-20-pm21-ai-tech-news.html"/>
         <id>https://shonsubong.github.io/sonslab-blog/posts/2026-01-20-pm21-ai-tech-news.html</id>
-        <published>2026-05-03T11:18:38+09:00</published>
-        <updated>2026-05-03T11:18:38+09:00</updated>
+        <published>2026-05-17T11:22:55+09:00</published>
+        <updated>2026-05-17T11:22:55+09:00</updated>
         <summary>화요일 밤. 지난주 TSMC(1/15)·ASML(1/16) 어닝을 실시간으로 못 봐서 주말에 보관해 뒀는데, 오늘에야 차분히 읽었다. 업계 사람 입장에선 이번 1월 중순이 2026년 반도체 섹터의 톤을 정한 구간이었다.</summary>
         <author><name>SONSLAB</name></author>
     </entry>
@@ -1016,8 +1680,8 @@
         <title>Davos 개막일 — 프리마켓 조용한 월요일 밤의 메모</title>
         <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-01-12-pm21-ai-tech-news.html"/>
         <id>https://shonsubong.github.io/sonslab-blog/posts/2026-01-12-pm21-ai-tech-news.html</id>
-        <published>2026-05-03T11:18:38+09:00</published>
-        <updated>2026-05-03T11:18:38+09:00</updated>
+        <published>2026-05-17T11:22:55+09:00</published>
+        <updated>2026-05-17T11:22:55+09:00</updated>
         <summary>CES가 끝나고 월요일 출근. 사무실이 의외로 조용했다. 다들 CES 후폭풍에 지쳐서 그런 듯하다.</summary>
         <author><name>SONSLAB</name></author>
     </entry>
@@ -1025,8 +1689,8 @@
         <title>CES 2026 폐막 — Anthropic $350B 밸류 이야기, Rubin 이후 5일 정리</title>
         <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-01-10-pm23-ai-tech-news.html"/>
         <id>https://shonsubong.github.io/sonslab-blog/posts/2026-01-10-pm23-ai-tech-news.html</id>
-        <published>2026-05-03T11:18:38+09:00</published>
-        <updated>2026-05-03T11:18:38+09:00</updated>
+        <published>2026-05-17T11:22:55+09:00</published>
+        <updated>2026-05-17T11:22:55+09:00</updated>
         <summary>어제(1/9) CES 2026 공식 폐막. 아이를 재우고 늦게 책상에 앉았다. 일주일을 너무 빠르게 몰아 써서, 정리 안 하면 다음 주 출근 전에 뇌가 압축 풀리기 싫다고 하소연할 게 뻔하다.</summary>
         <author><name>SONSLAB</name></author>
     </entry>
@@ -1034,8 +1698,8 @@
         <title>Vera Rubin 6칩 플랫폼 공개 — Nvidia가 CES에서 Blackwell 다음을 보여줬다</title>
         <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-01-06-pm23-ai-tech-news.html"/>
         <id>https://shonsubong.github.io/sonslab-blog/posts/2026-01-06-pm23-ai-tech-news.html</id>
-        <published>2026-05-03T11:18:38+09:00</published>
-        <updated>2026-05-03T11:18:38+09:00</updated>
+        <published>2026-05-17T11:22:55+09:00</published>
+        <updated>2026-05-17T11:22:55+09:00</updated>
         <summary>화요일 밤, CES 2026 공식 개막 다음 날. 어제(1/5) Nvidia 키노트를 동시에 보면서 메모만 잔뜩 적어놨는데, 오늘 하루 종일 회사에서 동료들과 &quot;이게 진짜 의미하는 게 뭔가&quot; 토론하다 퇴근. 정리하면서 자야 할 것 같다.</summary>
         <author><name>SONSLAB</name></author>
     </entry>
@@ -1043,8 +1707,8 @@
         <title>2026 개막 — &#x27;Hype에서 Pragmatism으로&#x27;가 진짜일까</title>
         <link href="https://shonsubong.github.io/sonslab-blog/posts/2026-01-03-pm21-ai-tech-news.html"/>
         <id>https://shonsubong.github.io/sonslab-blog/posts/2026-01-03-pm21-ai-tech-news.html</id>
-        <published>2026-05-03T11:18:38+09:00</published>
-        <updated>2026-05-03T11:18:38+09:00</updated>
+        <published>2026-05-17T11:22:55+09:00</published>
+        <updated>2026-05-17T11:22:55+09:00</updated>
         <summary>12월 31일 포스트에서 &quot;내년에도 매일 여기서 봅시다&quot;라고 썼는데, 이렇게 일찍 돌아올 줄 몰랐다. 연휴 사흘 동안 뉴스 피드를 의도적으로 닫아뒀는데, 오늘 재점검하다 보니 프레임 하나가 계속 걸린다. 1월 2일 TechCrunch 제목 — &quot;2026, AI는 하이프에서 프래그머티즘으로 이동한다.&quot;</summary>
         <author><name>SONSLAB</name></author>
     </entry>
@@ -1052,8 +1716,8 @@
         <title>2025 마감 — 바이브 체크 받은 AI, 반도체 현직자의 12개월 회고</title>
         <link href="https://shonsubong.github.io/sonslab-blog/posts/2025-12-31-pm22-ai-tech-news.html"/>
         <id>https://shonsubong.github.io/sonslab-blog/posts/2025-12-31-pm22-ai-tech-news.html</id>
-        <published>2026-05-03T11:18:38+09:00</published>
-        <updated>2026-05-03T11:18:38+09:00</updated>
+        <published>2026-05-17T11:22:55+09:00</published>
+        <updated>2026-05-17T11:22:55+09:00</updated>
         <summary>한 해의 마지막 포스트는 항상 한참 고민한다. 올해는 더 그렇다. 4월에 이 블로그를 막 시작했을 땐 &quot;매일 4번 정리 연습&quot;이었는데, 12월 들어 업계가 2~3주 단위로 뒤집히기 시작하면서 기록하지 않으면 잃어버리는 분기가 됐다.</summary>
         <author><name>SONSLAB</name></author>
     </entry>
@@ -1061,8 +1725,8 @@
         <title>Mac Studio × Thunderbolt 5 RDMA — 애플이 조용히 꺼낸 로컬 AI 클러스터</title>
         <link href="https://shonsubong.github.io/sonslab-blog/posts/2025-12-23-pm21-ai-tech-news.html"/>
         <id>https://shonsubong.github.io/sonslab-blog/posts/2025-12-23-pm21-ai-tech-news.html</id>
-        <published>2026-05-03T11:18:38+09:00</published>
-        <updated>2026-05-03T11:18:38+09:00</updated>
+        <published>2026-05-17T11:22:55+09:00</published>
+        <updated>2026-05-17T11:22:55+09:00</updated>
         <summary>화요일 밤. 연말 분위기라 큰 뉴스는 뜸한데, 퇴근길에 지난주 macOS Tahoe 26.2 릴리스노트를 다시 훑다가 한 줄이 걸렸다.</summary>
         <author><name>SONSLAB</name></author>
     </entry>
@@ -1070,8 +1734,8 @@
         <title>Anthropic Skills 오픈 표준화, OpenAI도 채택 — 표준화의 해석</title>
         <link href="https://shonsubong.github.io/sonslab-blog/posts/2025-12-21-pm22-ai-tech-news.html"/>
         <id>https://shonsubong.github.io/sonslab-blog/posts/2025-12-21-pm22-ai-tech-news.html</id>
-        <published>2026-05-03T11:18:38+09:00</published>
-        <updated>2026-05-03T11:18:38+09:00</updated>
+        <published>2026-05-17T11:22:55+09:00</published>
+        <updated>2026-05-17T11:22:55+09:00</updated>
         <summary>일요일 밤. 이번 주는 모델 한 방의 주가 아니라, 에이전트 레이어의 공통 어휘가 생기기 시작한 주였다고 기록해두고 싶다.</summary>
         <author><name>SONSLAB</name></author>
     </entry>
@@ -1079,8 +1743,8 @@
         <title>백악관 AI Tech Force, 1,000명 2년 파견 — 공공 AI의 문이 열렸다</title>
         <link href="https://shonsubong.github.io/sonslab-blog/posts/2025-12-16-pm22-ai-tech-news.html"/>
         <id>https://shonsubong.github.io/sonslab-blog/posts/2025-12-16-pm22-ai-tech-news.html</id>
-        <published>2026-05-03T11:18:38+09:00</published>
-        <updated>2026-05-03T11:18:38+09:00</updated>
+        <published>2026-05-17T11:22:55+09:00</published>
+        <updated>2026-05-17T11:22:55+09:00</updated>
         <summary>화요일 밤. 오늘 뉴스는 발표 자체보다 파트너 기업 명단이 흥미로웠다.</summary>
         <author><name>SONSLAB</name></author>
     </entry>
@@ -1088,8 +1752,8 @@
         <title>GPT-5.2 당겨 나왔다, MS Dev Days, Nvidia Nemotron 3 — 토요일 밤, 3일 간격으로 터진 한 주</title>
         <link href="https://shonsubong.github.io/sonslab-blog/posts/2025-12-13-pm22-ai-tech-news.html"/>
         <id>https://shonsubong.github.io/sonslab-blog/posts/2025-12-13-pm22-ai-tech-news.html</id>
-        <published>2026-05-03T11:18:38+09:00</published>
-        <updated>2026-05-03T11:18:38+09:00</updated>
+        <published>2026-05-17T11:22:55+09:00</published>
+        <updated>2026-05-17T11:22:55+09:00</updated>
         <summary>토요일 밤. 이번 주는 3일 간격으로 하나씩 터진 주라, 제대로 기록해두지 않으면 분기 리뷰 때 빠진 채로 지나간다. 세 이벤트로 정리.</summary>
         <author><name>SONSLAB</name></author>
     </entry>
@@ -1097,8 +1761,8 @@
         <title>Microsoft, 인도에 $17.5B — 아시아 최대 베팅의 반도체 신호</title>
         <link href="https://shonsubong.github.io/sonslab-blog/posts/2025-12-09-pm22-ai-tech-news.html"/>
         <id>https://shonsubong.github.io/sonslab-blog/posts/2025-12-09-pm22-ai-tech-news.html</id>
-        <published>2026-05-03T11:18:38+09:00</published>
-        <updated>2026-05-03T11:18:38+09:00</updated>
+        <published>2026-05-17T11:22:55+09:00</published>
+        <updated>2026-05-17T11:22:55+09:00</updated>
         <summary>오늘 장이 닫히고 나서 제일 오래 머릿속을 점유한 건 Microsoft의 인도 $17.5B 발표였다. 아시아에서 MS가 집행한 단일 최대 규모 투자다. 숫자만 봐도 크지만, 왜 인도인지, 왜 지금인지, 그리고 반도체 밸류체인엔 어떻게 꽂히는지를 풀어보고 싶다.</summary>
         <author><name>SONSLAB</name></author>
     </entry>
@@ -1106,8 +1770,8 @@
         <title>Anthropic이 Bun을 품었다, Claude Code 연 $1B — 토요일 밤 체크</title>
         <link href="https://shonsubong.github.io/sonslab-blog/posts/2025-12-06-pm21-ai-tech-news.html"/>
         <id>https://shonsubong.github.io/sonslab-blog/posts/2025-12-06-pm21-ai-tech-news.html</id>
-        <published>2026-05-03T11:18:38+09:00</published>
-        <updated>2026-05-03T11:18:38+09:00</updated>
+        <published>2026-05-17T11:22:55+09:00</published>
+        <updated>2026-05-17T11:22:55+09:00</updated>
         <summary>장이 닫힌 주말은 리서치 쌓는 시간으로 잘 쓰고 있다. 오늘은 길게 풀지 않고 이번 주 &quot;인수·숫자&quot; 세 개만 짚고 자려고 한다.</summary>
         <author><name>SONSLAB</name></author>
     </entry>
@@ -1115,8 +1779,8 @@
         <title>11월 모델 3연타 — GPT-5.1·Gemini 3·Claude 4.5가 남긴 것, 그리고 연말 반도체</title>
         <link href="https://shonsubong.github.io/sonslab-blog/posts/2025-12-01-pm21-ai-tech-news.html"/>
         <id>https://shonsubong.github.io/sonslab-blog/posts/2025-12-01-pm21-ai-tech-news.html</id>
-        <published>2026-05-03T11:18:38+09:00</published>
-        <updated>2026-05-03T11:18:38+09:00</updated>
+        <published>2026-05-17T11:22:55+09:00</published>
+        <updated>2026-05-17T11:22:55+09:00</updated>
         <summary>12월 첫 영업일을 마쳤다. 퇴근길에 커피 한 잔 더 내리면서, 노트북 열자마자 눈에 들어온 건 포트폴리오의 Nvidia 캔들이었다. 11월 한 달 동안 AI 프런티어 랩이 돌아가면서 모델을 던진 여파가 반도체 수급 그래프에도 또렷이 남아 있다.</summary>
         <author><name>SONSLAB</name></author>
     </entry>
@@ -1124,8 +1788,8 @@
         <title>AI_TECH_NOTES</title>
         <link href="https://shonsubong.github.io/sonslab-blog/posts/AI_TECH_NOTES.html"/>
         <id>https://shonsubong.github.io/sonslab-blog/posts/AI_TECH_NOTES.html</id>
-        <published>2026-05-03T11:18:38+09:00</published>
-        <updated>2026-05-03T11:18:38+09:00</updated>
+        <published>2026-05-17T11:22:55+09:00</published>
+        <updated>2026-05-17T11:22:55+09:00</updated>
         <summary>ai-tech-deepdive 스케줄드 태스크(매일 KST 10:00) 실행 시 참고용 살아있는 메모.</summary>
         <author><name>SONSLAB</name></author>
     </entry>
@@ -1133,8 +1797,8 @@
         <title>CLAUDE_TIPS_NOTES</title>
         <link href="https://shonsubong.github.io/sonslab-blog/posts/CLAUDE_TIPS_NOTES.html"/>
         <id>https://shonsubong.github.io/sonslab-blog/posts/CLAUDE_TIPS_NOTES.html</id>
-        <published>2026-05-03T11:18:38+09:00</published>
-        <updated>2026-05-03T11:18:38+09:00</updated>
+        <published>2026-05-17T11:22:55+09:00</published>
+        <updated>2026-05-17T11:22:55+09:00</updated>
         <summary>daily-claude-tips 스케줄드 태스크(매일 KST 23:00) 실행 시 참고용 살아있는 메모.</summary>
         <author><name>SONSLAB</name></author>
     </entry>
@@ -1142,8 +1806,8 @@
         <title>COWORK_AUTOBUILD_SETUP</title>
         <link href="https://shonsubong.github.io/sonslab-blog/posts/COWORK_AUTOBUILD_SETUP.html"/>
         <id>https://shonsubong.github.io/sonslab-blog/posts/COWORK_AUTOBUILD_SETUP.html</id>
-        <published>2026-05-03T11:18:38+09:00</published>
-        <updated>2026-05-03T11:18:38+09:00</updated>
+        <published>2026-05-17T11:22:55+09:00</published>
+        <updated>2026-05-17T11:22:55+09:00</updated>
         <summary>Cowork의 scheduled task 샌드박스는 보안상 .py / .bat / .exe / .jpg 같은 파일 타입을 읽거나 실행할 수 없다. 따라서 build.py나 auto-deploy.bat를 샌드박스 안에서 호출하는 건 구조적으로 불가능하다.</summary>
         <author><name>SONSLAB</name></author>
     </entry>
@@ -1151,8 +1815,8 @@
         <title>WRITING_NOTES</title>
         <link href="https://shonsubong.github.io/sonslab-blog/posts/WRITING_NOTES.html"/>
         <id>https://shonsubong.github.io/sonslab-blog/posts/WRITING_NOTES.html</id>
-        <published>2026-05-03T11:18:38+09:00</published>
-        <updated>2026-05-03T11:18:38+09:00</updated>
+        <published>2026-05-17T11:22:55+09:00</published>
+        <updated>2026-05-17T11:22:55+09:00</updated>
         <summary>이 파일은 daily-ai-tech-news 스케줄드 태스크 실행 시 참고용.</summary>
         <author><name>SONSLAB</name></author>
     </entry>

@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>데이터센터 둘이 한 모델을 학습한다 — DiLoCo가 동기 통신을 500배 줄인 길 — SONSLAB</title>
+    <link rel="icon" href="../assets/logo.jpg">
+    <link rel="alternate" type="application/atom+xml" title="SONSLAB Feed" href="../feed.xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/style.css">
+    <meta name="description" content="frontier 모델 한 번 학습에 16K~32K급 H100/B200이 필요해지면서, 단일 데이터센터에 GPU를 다 모으는 일이 물리·전력 한계에 부딪혔다. Microsoft·Meta는 2025년 후반부터 multi-site training을 공식 자료에 올리기 시작했고, DeepMind는 2024년 초 DiLoCo 원논문(Douillard et al.)과 2025년 초 Streaming D...">
+    <meta name="author" content="SONSLAB">
+    <link rel="canonical" href="https://shonsubong.github.io/sonslab-blog/ai-tech/2026-05-10-am10.html">
+    <meta property="og:site_name" content="SONSLAB">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="데이터센터 둘이 한 모델을 학습한다 — DiLoCo가 동기 통신을 500배 줄인 길">
+    <meta property="og:description" content="frontier 모델 한 번 학습에 16K~32K급 H100/B200이 필요해지면서, 단일 데이터센터에 GPU를 다 모으는 일이 물리·전력 한계에 부딪혔다. Microsoft·Meta는 2025년 후반부터 multi-site training을 공식 자료에 올리기 시작했고, DeepMind는 2024년 초 DiLoCo 원논문(Douillard et al.)과 2025년 초 Streaming D...">
+    <meta property="og:url" content="https://shonsubong.github.io/sonslab-blog/ai-tech/2026-05-10-am10.html">
+    <meta property="og:image" content="https://shonsubong.github.io/sonslab-blog/assets/logo.jpg">
+    <meta property="og:locale" content="ko_KR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="데이터센터 둘이 한 모델을 학습한다 — DiLoCo가 동기 통신을 500배 줄인 길">
+    <meta name="twitter:description" content="frontier 모델 한 번 학습에 16K~32K급 H100/B200이 필요해지면서, 단일 데이터센터에 GPU를 다 모으는 일이 물리·전력 한계에 부딪혔다. Microsoft·Meta는 2025년 후반부터 multi-site training을 공식 자료에 올리기 시작했고, DeepMind는 2024년 초 DiLoCo 원논문(Douillard et al.)과 2025년 초 Streaming D...">
+    <meta name="twitter:image" content="https://shonsubong.github.io/sonslab-blog/assets/logo.jpg">
+    <meta property="article:published_time" content="2026-05-10T10:00:00+09:00">
+    <meta property="article:modified_time" content="2026-05-10T10:00:00+09:00">
+    
+<script>
+(function() {
+    try {
+        var saved = localStorage.getItem('sonslab-theme');
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var theme = saved || (prefersDark ? 'dark' : 'light');
+        if (theme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+
+        // 디자인 pref: 'random' | 'current' | 'refined' | 'editorial' | 'broadsheet'
+        // 저장값이 없거나 'random'이면 매 페이지 로드마다 4개 중 하나를 무작위로 추출.
+        var pref = localStorage.getItem('sonslab-design') || 'random';
+        var allowed = ['current', 'refined', 'editorial', 'broadsheet'];
+        var resolved;
+        if (pref === 'random') {
+            resolved = allowed[Math.floor(Math.random() * allowed.length)];
+        } else if (allowed.indexOf(pref) === -1) {
+            pref = 'current';
+            resolved = 'current';
+        } else {
+            resolved = pref;
+        }
+        if (resolved !== 'current') document.documentElement.setAttribute('data-design', resolved);
+        // body script가 재추출 없이 라벨만 맞추도록 결과를 공유.
+        window.__sonslabDesignPref = pref;
+        window.__sonslabDesignResolved = resolved;
+    } catch (e) {}
+})();
+</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "데이터센터 둘이 한 모델을 학습한다 — DiLoCo가 동기 통신을 500배 줄인 길", "description": "frontier 모델 한 번 학습에 16K~32K급 H100/B200이 필요해지면서, 단일 데이터센터에 GPU를 다 모으는 일이 물리·전력 한계에 부딪혔다. Microsoft·Meta는 2025년 후반부터 multi-site training을 공식 자료에 올리기 시작했고, DeepMind는 2024년 초 DiLoCo 원논문(Douillard et al.)과 2025년 초 Streaming D...", "url": "https://shonsubong.github.io/sonslab-blog/ai-tech/2026-05-10-am10.html", "mainEntityOfPage": "https://shonsubong.github.io/sonslab-blog/ai-tech/2026-05-10-am10.html", "inLanguage": "ko", "image": "https://shonsubong.github.io/sonslab-blog/assets/logo.jpg", "author": {"@type": "Person", "name": "SONSLAB"}, "publisher": {"@type": "Organization", "name": "SONSLAB", "logo": {"@type": "ImageObject", "url": "https://shonsubong.github.io/sonslab-blog/assets/logo.jpg"}}, "datePublished": "2026-05-10T10:00:00+09:00", "dateModified": "2026-05-10T10:00:00+09:00"}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "SONSLAB", "item": "https://shonsubong.github.io/sonslab-blog/"}, {"@type": "ListItem", "position": 2, "name": "글", "item": "https://shonsubong.github.io/sonslab-blog/#posts"}, {"@type": "ListItem", "position": 3, "name": "데이터센터 둘이 한 모델을 학습한다 — DiLoCo가 동기 통신을 500배 줄인 길", "item": "https://shonsubong.github.io/sonslab-blog/ai-tech/2026-05-10-am10.html"}]}</script>
+</head>
+<body class="post-page" data-category="ai-tech">
+    <div class="reading-progress" id="reading-progress" role="progressbar" aria-label="읽기 진행률"></div>
+
+<aside class="site-sidebar" id="site-sidebar" aria-label="사이트 메뉴">
+    <a href="../index.html" class="sidebar-brand">
+        <img src="../assets/logo.jpg" alt="SONSLAB" onerror="this.style.display='none'">
+        <span class="name">SONSLAB</span>
+    </a>
+    <div class="sidebar-section">
+        <div class="sidebar-section-label">카테고리</div>
+        <ul class="sidebar-cat-list">
+            <li><a href="../index.html" class="">홈 <span class="sidebar-cat-count">214</span></a></li>
+            <li><a href="../index.html#posts" class="">데일리 브리핑 <span class="sidebar-cat-count">159</span></a></li>
+            <li><a href="../ai-tech/index.html" class="active">AI 기술 딥다이브 <span class="sidebar-cat-count">20</span></a></li>
+            <li><a href="../claude-tips/index.html" class="">Claude Code 팁 <span class="sidebar-cat-count">35</span></a></li>
+            <li><a href="../manuals/claude-code.html" class="">Claude Code 가이드북 <span class="sidebar-cat-count">PDF</span></a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../feed.xml">RSS</a></li>
+        </ul>
+    </div>
+    <div class="sidebar-section">
+        <div class="sidebar-section-label">데일리 최근 글</div>
+        <ul class="sidebar-recent"><li><a href="../posts/2026-05-17-pm17-ai-tech-news.html"><span class="r-title">Anthropic이 정렬 연구 자리에 Claude를 끼워넣었다 — 자동화된 연구원이 5일 만에 사람을 앞선 결</span><span class="r-meta">오후 브리핑</span></a></li><li><a href="../posts/2026-05-17-pm12-ai-tech-news.html"><span class="r-title">HBM4 공급이 갈린 자리 — Vera Rubin 위에서 SK하이닉스가 70%, 삼성이 30%를 잡았다</span><span class="r-meta">오전 브리핑</span></a></li><li><a href="../posts/2026-05-17-am06-ai-tech-news.html"><span class="r-title">xAI가 코딩 에이전트 자리에 끼어들었다 — Grok Build, 세 갈래로 갈라진 봄의 결</span><span class="r-meta">새벽 리포트</span></a></li><li><a href="../posts/2026-05-16-pm22-ai-tech-news.html"><span class="r-title">Gemini Omni 누출 — I/O 사흘 전, 영상·이미지·텍스트를 한 모델로 묶는 신호</span><span class="r-meta">저녁 마감</span></a></li><li><a href="../posts/2026-05-16-pm17-ai-tech-news.html"><span class="r-title">Runway가 영상에서 세계모델로 방향을 틀었다 — Cerebras 데뷔와 사흘 뒤 I/O 사이</span><span class="r-meta">오후 브리핑</span></a></li></ul>
+    </div>
+    <div class="sidebar-section">
+        <div class="sidebar-section-label">AI 기술 최근 글</div>
+        <ul class="sidebar-recent"><li><a href="../ai-tech/2026-05-17-am10.html"><span class="r-title">바이트 LLM이 다시 빨라진 길 — Fast BLT가 메모리 대역폭을 반으로 자른 방식</span><span class="r-meta">AI 딥다이브</span></a></li><li><a href="../ai-tech/2026-05-16-am10.html"><span class="r-title">Transformer가 SSM과 7대 1로 손잡은 이유 — 하이브리드 백본이 롱컨텍스트 표준이 된 길</span><span class="r-meta">AI 딥다이브</span></a></li><li><a href="../ai-tech/2026-05-15-am10.html"><span class="r-title">KV 캐시를 3비트로 접은 길 — TurboQuant가 폴라 회전과 1비트 잔차로 8배를 뽑아낸 방식</span><span class="r-meta">AI 딥다이브</span></a></li><li><a href="../ai-tech/2026-05-14-am10.html"><span class="r-title">가치 모델을 버린 강화학습 — GRPO·RLVR가 추론 모델을 만든 길</span><span class="r-meta">AI 딥다이브</span></a></li><li><a href="../ai-tech/2026-05-12-am10.html"><span class="r-title">확산 언어모델이 자기회귀를 흔든다 — LLaDA·Mercury가 연 옆문</span><span class="r-meta">AI 딥다이브</span></a></li></ul>
+    </div>
+    <div class="sidebar-section">
+        <div class="sidebar-section-label">Claude Code 팁 최근 글</div>
+        <ul class="sidebar-recent"><li><a href="../claude-tips/2026-05-16-pm23.html"><span class="r-title">think·ultrathink — 한 단어로 Claude Code의 사고 예산을 한 등급 끌어올린다</span><span class="r-meta">23:00</span></a></li><li><a href="../claude-tips/2026-05-15-pm23.html"><span class="r-title">자주 치는 지시는 .claude/commands/에 박아 한 단어로 부른다</span><span class="r-meta">23:00</span></a></li><li><a href="../claude-tips/2026-05-14-pm23.html"><span class="r-title">SessionStart hook으로 매 세션 시작에 필요한 정보를 자동으로 깐다</span><span class="r-meta">23:00</span></a></li><li><a href="../claude-tips/2026-05-13-pm23.html"><span class="r-title">스크린샷을 입력창에 그대로 붙여넣어 Claude Code에 화면을 보여준다</span><span class="r-meta">23:00</span></a></li><li><a href="../claude-tips/2026-05-12-pm23.html"><span class="r-title">--add-dir로 두 저장소를 한 세션에 끌어다 묶는다</span><span class="r-meta">23:00</span></a></li></ul>
+    </div>
+</aside>
+<div class="sidebar-backdrop" id="sidebar-backdrop" aria-hidden="true"></div>
+
+
+<header class="top-nav">
+    <div class="top-nav-inner">
+        <button type="button" class="sidebar-toggle" id="sidebar-toggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="site-sidebar">
+            <span class="sidebar-toggle-bar"></span>
+            <span class="sidebar-toggle-bar"></span>
+            <span class="sidebar-toggle-bar"></span>
+        </button>
+        <a href="../index.html" class="brand">
+            <img src="../assets/logo.jpg" alt="SONSLAB" onerror="this.style.display='none'">
+            <span class="name">SONSLAB</span>
+        </a>
+        <nav>
+            <a href="../index.html#posts">데일리</a>
+            <a href="../ai-tech/index.html">AI 기술</a>
+            <a href="../claude-tips/index.html">Claude Code 팁</a>
+            <a href="../about.html">About</a>
+            <span class="nav-visits" title="오늘 · 누적 방문">
+                <img src="https://hits.sh/shonsubong.github.io/sonslab-blog.svg?view=today-total&style=flat-square&label=visits&color=1e3a5f&labelColor=1a2332" alt="오늘·누적 방문 수">
+            </span>
+            <div class="design-picker" title="디자인 전환">
+                <button type="button" class="design-picker-btn" id="design-picker-btn" aria-haspopup="listbox" aria-expanded="false" aria-label="디자인 전환">
+                    <span class="design-picker-icon" aria-hidden="true">◑</span>
+                    <span class="design-picker-current" id="design-picker-current">기본</span>
+                    <span class="design-picker-caret" aria-hidden="true">▾</span>
+                </button>
+                <ul class="design-picker-menu" id="design-picker-menu" role="listbox" aria-label="디자인 옵션">
+                    <li role="option" data-design="random"><strong>랜덤</strong><span>접속할 때마다 무작위 디자인</span></li>
+                    <li role="option" data-design="current"><strong>기본</strong><span>네이비+크림, 라운드 카드</span></li>
+                    <li role="option" data-design="refined"><strong>정제판 (A)</strong><span>신문·저널 톤, 헤어라인 구분선</span></li>
+                    <li role="option" data-design="editorial"><strong>에디토리얼 (B)</strong><span>이중선 마스트헤드, 세리프 강조</span></li>
+                    <li role="option" data-design="broadsheet"><strong>브로드시트 (C)</strong><span>웜 크림, 잉크블랙, 큰 세리프</span></li>
+                </ul>
+            </div>
+            <button type="button" class="theme-toggle" id="theme-toggle" aria-label="다크 모드 토글" title="다크/라이트 전환">
+                <span class="icon-moon" aria-hidden="true">🌙</span>
+                <span class="icon-sun" aria-hidden="true">☀</span>
+            </button>
+            <a href="../index.html#subscribe" class="nav-cta">이메일 구독</a>
+        </nav>
+    </div>
+</header>
+
+
+<article class="post-article">
+    <div class="post-header">
+        <a href="index.html" class="back-link">← AI 기술 목록</a>
+        <h1>데이터센터 둘이 한 모델을 학습한다 — DiLoCo가 동기 통신을 500배 줄인 길</h1>
+        <div class="post-meta">
+            <span class="time-label">AI 딥다이브</span>
+            <span>2026년 05월 10일 (일) · 10:00</span>
+            <span>·</span>
+            <span>6분 읽기</span>
+        </div>
+    </div>
+    
+    <details class="post-toc" open><summary>목차</summary><div class="toc">
+<div class="toc">
+<ul>
+<li><a href="#tldr">TL;DR</a></li>
+<li><a href="#why-now">배경 (Why now)</a></li>
+<li><a href="#_1">핵심 메커니즘</a></li>
+<li><a href="#_2">코드 / 의사코드</a></li>
+<li><a href="#_3">한계·반론</a></li>
+<li><a href="#_4">현직 엔지니어 관점</a></li>
+<li><a href="#_5">부록 — 추가 읽을거리</a></li>
+</ul>
+</div>
+
+</div>
+</details>
+    <div class="post-content">
+<h2 id="tldr">TL;DR</h2>
+<ul>
+<li>DiLoCo(Distributed Low-Communication)는 한 모델을 여러 worker에 복제해 각자 H step만큼 inner SGD를 돌린 뒤, 누적된 가중치 변화량(∆θ)만 outer optimizer로 모아 평균화하는 분산 사전학습 기법이다.</li>
+<li>동기 all-reduce 빈도를 H배 줄여, 100Gbps급 데이터센터간 링크 위에서도 단일 데이터센터 학습과 거의 같은 perplexity를 내는 게 핵심.</li>
+<li>2026년 들어 Streaming DiLoCo, Async DiLoCo, OpenDiLoCo 후속 결과가 잇달아 나오면서 "frontier 학습은 한 빌딩에 다 모아야 한다"는 전제가 본격적으로 깎이고 있다.</li>
+</ul>
+<h2 id="why-now">배경 (Why now)</h2>
+<p>frontier 모델 한 번 학습에 16K~32K급 H100/B200이 필요해지면서, 단일 데이터센터에 GPU를 다 모으는 일이 물리·전력 한계에 부딪혔다. Microsoft·Meta는 2025년 후반부터 multi-site training을 공식 자료에 올리기 시작했고, DeepMind는 2024년 초 DiLoCo 원논문(<a href="https://arxiv.org/abs/2311.08105">Douillard et al.</a>)과 2025년 초 Streaming DiLoCo(<a href="https://arxiv.org/abs/2501.18512">arXiv 2501.18512</a>)로 실증을 쌓아왔다.</p>
+<p>직전 2주 안에 굵직한 신호 두 개가 겹쳤다. Prime Intellect가 OpenDiLoCo 후속(32B, 다중 대륙 worker) 학습 곡선을 공개해 단일 DC 베이스라인과 perplexity 격차를 0.3 이내로 좁혔다는 보고(<a href="https://www.primeintellect.ai/blog">Prime Intellect blog</a>), 그리고 Streaming DiLoCo가 ICML 2026 채택과 함께 8bit ∆θ 압축 검증을 추가한 점. 두 사건이 같은 시점에 떨어지며 이 기법이 연구 단계를 졸업했다는 인상을 굳혔다.</p>
+<h2 id="_1">핵심 메커니즘</h2>
+<p>DiLoCo의 본질은 두 단계 최적화. inner optimizer(보통 AdamW)가 각 worker 안에서 H step 동안 도는 동안에는 worker 간 통신이 0이다. H step 종료 시점에 worker별 가중치 누적 변화량만 모아 outer optimizer(보통 Nesterov SGD)에 넣는다.</p>
+<div class="codehilite"><pre><span></span><code><span class="p">[</span><span class="n">Worker</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="n">AdamW</span><span class="w"> </span><span class="err">×</span><span class="w"> </span><span class="n">H</span><span class="w"> </span><span class="n">step</span><span class="w"> </span><span class="err">─┐</span><span class="w"></span>
+<span class="p">[</span><span class="n">Worker</span><span class="w"> </span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="n">AdamW</span><span class="w"> </span><span class="err">×</span><span class="w"> </span><span class="n">H</span><span class="w"> </span><span class="n">step</span><span class="w"> </span><span class="err">─┤→</span><span class="w"> </span><span class="err">∆</span><span class="n">θ_i</span><span class="w"> </span><span class="n">모음</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="n">all</span><span class="o">-</span><span class="n">reduce</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="n">outer</span><span class="w"> </span><span class="n">Nesterov</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="n">새</span><span class="w"> </span><span class="n">θ</span><span class="w"></span>
+<span class="p">[</span><span class="n">Worker</span><span class="w"> </span><span class="n">N</span><span class="p">]</span><span class="w"> </span><span class="n">AdamW</span><span class="w"> </span><span class="err">×</span><span class="w"> </span><span class="n">H</span><span class="w"> </span><span class="n">step</span><span class="w"> </span><span class="err">─┘</span><span class="w"></span>
+<span class="w">                            </span><span class="err">↑</span><span class="w"></span>
+<span class="w">                    </span><span class="n">H</span><span class="w"> </span><span class="n">step마다</span><span class="w"> </span><span class="mi">1</span><span class="n">회만</span><span class="w"> </span><span class="n">통신</span><span class="w"></span>
+</code></pre></div>
+
+<p>H=500이면 통신 빈도가 표준 DDP 대비 500배 줄어든다. Streaming DiLoCo는 ∆θ를 layer 단위로 쪼개 inner step 사이에 부분 동기화하고, 그 통신을 다음 inner step의 forward와 겹쳐 숨겨 100Gbps 회선 점유율을 한 자릿수 Gbps까지 떨어뜨린다. 수학적으로 outer step은 federated averaging의 일반화 — FedAvg가 η_outer=1짜리 단순 평균이라면 DiLoCo는 momentum이 붙은 SGD고, 이 momentum이 worker drift를 잡는 핵심이다.</p>
+<h2 id="_2">코드 / 의사코드</h2>
+<div class="codehilite"><pre><span></span><code><span class="c1"># DiLoCo 한 라운드 (worker N개)</span>
+<span class="k">def</span> <span class="nf">diloco_round</span><span class="p">(</span><span class="n">global_theta</span><span class="p">,</span> <span class="n">workers</span><span class="p">,</span> <span class="n">H</span><span class="p">,</span> <span class="n">outer_opt</span><span class="p">):</span>
+    <span class="n">deltas</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">workers</span><span class="p">:</span>                              <span class="c1"># 병렬</span>
+        <span class="n">local</span> <span class="o">=</span> <span class="n">global_theta</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span>
+        <span class="n">inner_opt</span> <span class="o">=</span> <span class="n">AdamW</span><span class="p">(</span><span class="n">local</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">3e-4</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">H</span><span class="p">):</span>                         <span class="c1"># 통신 없음</span>
+            <span class="n">loss</span> <span class="o">=</span> <span class="n">forward_backward</span><span class="p">(</span><span class="n">local</span><span class="p">,</span> <span class="n">w</span><span class="o">.</span><span class="n">batch</span><span class="p">())</span>
+            <span class="n">inner_opt</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+        <span class="n">deltas</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">local</span> <span class="o">-</span> <span class="n">global_theta</span><span class="p">)</span>
+
+    <span class="n">delta_avg</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">deltas</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">workers</span><span class="p">)</span>         <span class="c1"># all-reduce 1회</span>
+
+    <span class="c1"># outer Nesterov SGD (η_outer ≈ 0.7, momentum 0.9)</span>
+    <span class="n">outer_opt</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+    <span class="n">global_theta</span><span class="o">.</span><span class="n">grad</span> <span class="o">=</span> <span class="o">-</span><span class="n">delta_avg</span>                  <span class="c1"># 변화량을 그래디언트로</span>
+    <span class="n">outer_opt</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">global_theta</span>
+</code></pre></div>
+
+<p>핵심은 inner_opt와 outer_opt가 다르다는 것. 같은 AdamW를 양쪽에 쓰면 outer 단계에서 adaptive 학습률이 무너진다. outer는 momentum SGD가 안정적이라는 게 일관된 결과.</p>
+<h2 id="_3">한계·반론</h2>
+<p>단일 DC 학습 대비 약간의 품질 손실(perplexity +0.1~0.3)은 여전히 측정된다. 원인은 worker drift — inner step 동안 worker가 서로 다른 방향으로 흩어졌다가 outer step에서 평균될 때 정보가 사라진다. H가 클수록 손실 폭이 커진다. worker 수가 늘면 outer step의 noise가 커져 학습률·momentum 튜닝이 까다로워지고, 발표된 결과도 worker 5~10개 범위 검증이지 50개 확장이 보장된 게 아니다. 한 worker가 죽으면 해당 라운드 ∆θ를 버리는 fault tolerance만 동작해 효율 손실이 누적되고, fully asynchronous 변형은 staleness penalty가 따로 붙는다. "통신 빈도만 줄었지 라운드당 데이터 이동량은 같다"는 반론도 유효해, ∆θ를 8bit·4bit로 양자화하고 top-k 희소화를 더하는 후속 연구가 활발하다.</p>
+<h2 id="_4">현직 엔지니어 관점</h2>
+<p>반도체 쪽에서 보면 이 흐름은 NVLink Scale-Up 일변도였던 인터커넥트 로드맵에 균열을 낸다. 한 DC 안에서 NVL72·NVL576으로 GPU를 더 빽빽하게 묶는 것이 frontier 학습의 유일한 답이라는 가정이 약해진다. Streaming DiLoCo가 100Gbps 일반 회선으로 돈다면 InfiniBand·NVLink의 절대 우위는 inner step 안에서만 의미를 갖고, 데이터센터 사이는 일반 네트워크가 충분해진다 — 광인터커넥트(co-packaged optics) 로드맵과는 별개의 길이다. 전력·부지 제약이 큰 한국 같은 시장에서도 GW급 단일 캠퍼스를 새로 짓지 않고 2nd-tier 데이터센터 두 곳을 광역망으로 묶어 학습에 참여하는 그림이 그려진다. 운영에선 outer step에 양자화·top-k를 얹어 회선 비용을 더 깎는 게 정석이 될 듯하다.</p>
+<h2 id="_5">부록 — 추가 읽을거리</h2>
+<ul>
+<li><a href="https://arxiv.org/abs/2311.08105">Douillard et al., DiLoCo 원논문 (2023)</a> — inner/outer 두 단계 최적화의 출발점</li>
+<li><a href="https://arxiv.org/abs/2501.18512">Streaming DiLoCo (2025)</a> — layer 단위 부분 동기화·통신 hiding</li>
+<li><a href="https://github.com/PrimeIntellect-ai/OpenDiLoCo">OpenDiLoCo GitHub</a> — Prime Intellect 오픈 구현</li>
+</ul>
+    </div>
+    
+<div class="post-share">
+    <span class="share-label">공유하기</span>
+    <a href="https://twitter.com/intent/tweet?text=데이터센터 둘이 한 모델을 학습한다 — DiLoCo가 동기 통신을 500배 줄인 길&url=https://shonsubong.github.io/sonslab-blog/ai-tech/2026-05-10-am10.html"
+       class="share-btn" target="_blank" rel="noopener" aria-label="X(Twitter)에 공유">
+        <span>X</span>
+    </a>
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://shonsubong.github.io/sonslab-blog/ai-tech/2026-05-10-am10.html"
+       class="share-btn" target="_blank" rel="noopener" aria-label="LinkedIn에 공유">
+        <span>in</span>
+    </a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://shonsubong.github.io/sonslab-blog/ai-tech/2026-05-10-am10.html"
+       class="share-btn" target="_blank" rel="noopener" aria-label="Facebook에 공유">
+        <span>f</span>
+    </a>
+    <button type="button" class="share-btn share-copy" id="share-copy-btn" data-url="https://shonsubong.github.io/sonslab-blog/ai-tech/2026-05-10-am10.html" aria-label="링크 복사">
+        <span>🔗 링크 복사</span>
+    </button>
+</div>
+    
+<nav class="post-nav-bottom" aria-label="이전/다음 글">
+    <a href="2026-05-09-am10.html" class="post-nav-link prev">
+        <span class="post-nav-label">← 이전 글</span>
+        <span class="post-nav-title">MoE 라우팅이 보조 손실을 버린 길 — DeepSeek V4·Qwen3.6이 같은 처방을 쓴 이유</span>
+    </a>
+    <a href="2026-05-11-am10.html" class="post-nav-link next">
+        <span class="post-nav-label">다음 글 →</span>
+        <span class="post-nav-title">FP4 사전학습이 BF16을 따라잡은 길 — MXFP4·NVFP4가 만든 4비트 표준</span>
+    </a>
+</nav>
+    
+<section class="related-posts" aria-label="최근 다른 리포트">
+    <div class="related-posts-label">최근 다른 리포트</div>
+    <ul class="related-list"><li><a href="2026-05-17-am10.html"><span class="related-title">바이트 LLM이 다시 빨라진 길 — Fast BLT가 메모리 대역폭을 반으로 자른 방식</span><span class="related-date">2026-05-17 · AI 딥다이브 · 10:00</span></a></li><li><a href="2026-05-16-am10.html"><span class="related-title">Transformer가 SSM과 7대 1로 손잡은 이유 — 하이브리드 백본이 롱컨텍스트 표준이 된 길</span><span class="related-date">2026-05-16 · AI 딥다이브 · 10:00</span></a></li><li><a href="2026-05-15-am10.html"><span class="related-title">KV 캐시를 3비트로 접은 길 — TurboQuant가 폴라 회전과 1비트 잔차로 8배를 뽑아낸 방식</span><span class="related-date">2026-05-15 · AI 딥다이브 · 10:00</span></a></li><li><a href="2026-05-14-am10.html"><span class="related-title">가치 모델을 버린 강화학습 — GRPO·RLVR가 추론 모델을 만든 길</span><span class="related-date">2026-05-14 · AI 딥다이브 · 10:00</span></a></li><li><a href="2026-05-12-am10.html"><span class="related-title">확산 언어모델이 자기회귀를 흔든다 — LLaDA·Mercury가 연 옆문</span><span class="related-date">2026-05-12 · AI 딥다이브 · 10:00</span></a></li></ul>
+</section>
+</article>
+
+
+<section class="subscribe-cta" id="subscribe">
+    <div class="sub-header">
+        <h3>매일 4번, 받은편지함으로</h3>
+        <p class="sub-desc">반도체·AI·시장 브리핑을 새벽·오전·오후·저녁 네 번 이메일로 받아보세요. 스팸 없음, 언제든 구독 취소.</p>
+    </div>
+    <form id="subscribe-form" class="subscribe-form" action="https://assets.mailerlite.com/jsonp/2275622/forms/185056263876380606/subscribe" method="post">
+        <input type="email" name="fields[email]" placeholder="your@email.com" required aria-label="이메일 주소">
+        <input type="hidden" name="ml-submit" value="1">
+        <button type="submit" class="btn btn-primary">구독하기</button>
+    </form>
+    <div id="subscribe-status" class="subscribe-status" role="status" aria-live="polite"></div>
+    <p class="subscribe-footnote">또는 RSS로 구독하기</p>
+    <div class="rss-copy-row">
+        <input id="rss-url" type="text" readonly value="https://shonsubong.github.io/sonslab-blog/feed.xml" aria-label="RSS 피드 URL">
+        <button id="rss-copy-btn" type="button" class="btn btn-secondary">URL 복사</button>
+    </div>
+    <p class="rss-hint">RSS 리더에 이 URL을 붙여넣으면 구독됩니다.</p>
+    <div class="rss-readers">
+        <span class="rss-readers-label">바로가기 (로그인 필요):</span>
+        <a href="https://www.inoreader.com/?add_feed=https%3A%2F%2Fshonsubong.github.io%2Fsonslab-blog%2Ffeed.xml" class="rss-reader-btn" target="_blank" rel="noopener">Inoreader</a>
+        <a href="https://theoldreader.com/feeds/subscribe?url=https%3A%2F%2Fshonsubong.github.io%2Fsonslab-blog%2Ffeed.xml" class="rss-reader-btn" target="_blank" rel="noopener">The Old Reader</a>
+        <a href="https://shonsubong.github.io/sonslab-blog/feed.xml" class="rss-reader-btn rss-raw" target="_blank" rel="noopener" title="Atom/XML 원본">Atom/XML</a>
+    </div>
+</section>
+
+
+<footer>
+    <div class="stats-row">
+        <img src="https://hits.sh/shonsubong.github.io/sonslab-blog.svg?view=today-total&style=flat-square&label=visits&color=1e3a5f&labelColor=1a2332" alt="Visit counter">
+        <span class="stat-inline">오늘 · 누적 방문</span>
+    </div>
+    <p style="margin-top: 1.2rem;">© 2026 SONSLAB — 현장 감각으로 읽는 AI와 테크</p>
+    <div style="margin-top: 0.5rem;">
+        <a href="../index.html#posts">글</a>·
+        <a href="../index.html#about">About</a>·
+        <a href="../feed.xml">RSS</a>·
+        <a href="mailto:sonslab1211@naver.com">Contact</a>
+    </div>
+</footer>
+
+<button type="button" class="scroll-top" id="scroll-top" aria-label="맨 위로" title="맨 위로">↑</button>
+
+<script>
+(function() {
+    var bar = document.getElementById('reading-progress');
+    if (!bar) return;
+    function update() {
+        var h = document.documentElement, b = document.body;
+        var st = h.scrollTop || b.scrollTop;
+        var sh = (h.scrollHeight || b.scrollHeight) - h.clientHeight;
+        bar.style.width = (sh > 0 ? (st / sh) * 100 : 0) + '%';
+    }
+    window.addEventListener('scroll', update, {passive: true});
+    update();
+})();
+</script>
+
+
+<script>
+(function() {
+    // 외부 링크에 target=_blank, rel=noopener 자동 부여
+    var origin = window.location.origin;
+    document.querySelectorAll('.post-content a[href^="http"]').forEach(function(a) {
+        try {
+            var u = new URL(a.href);
+            if (u.origin !== origin) {
+                a.target = '_blank';
+                a.rel = 'noopener noreferrer';
+            }
+        } catch (e) {}
+    });
+    // 모바일에서 TOC 기본 접힘 (세로 공간 절약)
+    if (window.matchMedia('(max-width: 767px)').matches) {
+        var toc = document.querySelector('.post-toc');
+        if (toc && toc.hasAttribute('open')) toc.removeAttribute('open');
+    }
+    // 공유: 링크 복사
+    var copyBtn = document.getElementById('share-copy-btn');
+    if (copyBtn) {
+        copyBtn.addEventListener('click', async function() {
+            var url = copyBtn.dataset.url || window.location.href;
+            try {
+                if (navigator.clipboard && window.isSecureContext) {
+                    await navigator.clipboard.writeText(url);
+                } else {
+                    var ta = document.createElement('textarea');
+                    ta.value = url; document.body.appendChild(ta);
+                    ta.select(); document.execCommand('copy');
+                    document.body.removeChild(ta);
+                }
+                var span = copyBtn.querySelector('span');
+                var original = span.textContent;
+                span.textContent = '✓ 복사됨';
+                copyBtn.classList.add('copied');
+                setTimeout(function() {
+                    span.textContent = original;
+                    copyBtn.classList.remove('copied');
+                }, 2000);
+            } catch (e) {}
+        });
+    }
+})();
+</script>
+
+
+<script>
+(function() {
+    var btn = document.getElementById('sidebar-toggle');
+    var sidebar = document.getElementById('site-sidebar');
+    var backdrop = document.getElementById('sidebar-backdrop');
+    if (!btn || !sidebar) return;
+    function open() {
+        sidebar.classList.add('open');
+        if (backdrop) backdrop.classList.add('show');
+        btn.setAttribute('aria-expanded', 'true');
+        btn.setAttribute('aria-label', '메뉴 닫기');
+    }
+    function close() {
+        sidebar.classList.remove('open');
+        if (backdrop) backdrop.classList.remove('show');
+        btn.setAttribute('aria-expanded', 'false');
+        btn.setAttribute('aria-label', '메뉴 열기');
+    }
+    btn.addEventListener('click', function() {
+        if (sidebar.classList.contains('open')) close(); else open();
+    });
+    if (backdrop) backdrop.addEventListener('click', close);
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && sidebar.classList.contains('open')) close();
+    });
+    // 사이드바 내부 링크를 누르면 모바일에선 닫는다
+    sidebar.querySelectorAll('a').forEach(function(a) {
+        a.addEventListener('click', function() {
+            if (window.matchMedia('(max-width: 1023px)').matches) close();
+        });
+    });
+})();
+</script>
+
+
+<script>
+(function() {
+    var form = document.getElementById('subscribe-form');
+    var status = document.getElementById('subscribe-status');
+    function setState(state, html) {
+        if (!status) return;
+        status.className = 'subscribe-status' + (state ? ' state-' + state : '');
+        status.innerHTML = html || '';
+    }
+    var rssInput = document.getElementById('rss-url');
+    var rssBtn = document.getElementById('rss-copy-btn');
+    if (rssInput && rssBtn) {
+        rssBtn.addEventListener('click', async function() {
+            var url = rssInput.value;
+            try {
+                if (navigator.clipboard && window.isSecureContext) {
+                    await navigator.clipboard.writeText(url);
+                } else {
+                    rssInput.select();
+                    rssInput.setSelectionRange(0, url.length);
+                    document.execCommand('copy');
+                }
+                var original = rssBtn.textContent;
+                rssBtn.textContent = '✓ 복사됨';
+                rssBtn.classList.add('copied');
+                setTimeout(function() {
+                    rssBtn.textContent = original;
+                    rssBtn.classList.remove('copied');
+                }, 2000);
+            } catch (err) {
+                rssInput.select();
+            }
+        });
+        rssInput.addEventListener('click', function() { rssInput.select(); });
+    }
+    // 공통 구독 submit 로직. 메인 폼 + 인라인 폼(B/C hero) 모두 처리.
+    function setFormState(statusEl, state, html, cls) {
+        if (!statusEl) return;
+        var base = cls || 'subscribe-status';
+        statusEl.className = base + (state ? ' state-' + state : '');
+        statusEl.innerHTML = html || '';
+    }
+    function attachSubscribe(f, statusEl, statusCls, successTemplate) {
+        if (!f) return;
+        f.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            var email = f.querySelector('input[type="email"]').value.trim();
+            if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                setFormState(statusEl, 'error', '올바른 이메일 주소를 입력해주세요.', statusCls);
+                return;
+            }
+            var btn = f.querySelector('button[type="submit"]');
+            var originalLabel = btn.textContent;
+            btn.disabled = true;
+            btn.classList.add('loading');
+            btn.textContent = '전송 중…';
+            setFormState(statusEl, 'loading', '', statusCls);
+            try {
+                var fd = new FormData(f);
+                var res = await fetch(f.action, { method: 'POST', body: fd });
+                var data = {};
+                try { data = await res.json(); } catch (e) {}
+                if (res.ok && data.success) {
+                    f.classList.add('hidden-post-success');
+                    var safe = email.replace(/[<>&"]/g, function(c) { return ({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'})[c]; });
+                    setFormState(statusEl, 'success', successTemplate(safe), statusCls);
+                } else {
+                    throw new Error((data && data.message) || '서버 응답 오류');
+                }
+            } catch (err) {
+                setFormState(statusEl, 'error', '일시적인 오류가 발생했습니다. 잠시 후 다시 시도해주세요.', statusCls);
+                btn.disabled = false;
+                btn.classList.remove('loading');
+                btn.textContent = originalLabel;
+            }
+        });
+    }
+    // 메인 구독 폼 (subscribe 섹션)
+    attachSubscribe(form, status, 'subscribe-status', function(safe) {
+        return '<strong>✓ 구독 신청을 받았습니다.</strong>' +
+            'SONSLAB이 <b>' + safe + '</b> 주소로 확인 이메일을 보냈습니다. ' +
+            '받은편지함(스팸함 포함)에서 확인 링크를 클릭하시면 구독이 완료됩니다.';
+    });
+    // 인라인 구독 폼 (B/C hero 내부)
+    document.querySelectorAll('form.inline-sub[data-subscribe]').forEach(function(f) {
+        var st = f.parentElement ? f.parentElement.querySelector('.inline-sub-status') : null;
+        attachSubscribe(f, st, 'inline-sub-status', function(safe) {
+            return '✓ <b>' + safe + '</b>로 확인 이메일을 보냈습니다.';
+        });
+    });
+})();
+</script>
+
+
+<script>
+(function() {
+    // 다크 모드 토글
+    var toggle = document.getElementById('theme-toggle');
+    if (toggle) {
+        toggle.addEventListener('click', function() {
+            var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+            if (isDark) {
+                document.documentElement.removeAttribute('data-theme');
+                try { localStorage.setItem('sonslab-theme', 'light'); } catch(e){}
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                try { localStorage.setItem('sonslab-theme', 'dark'); } catch(e){}
+            }
+        });
+    }
+    // 디자인 피커
+    var dpBtn = document.getElementById('design-picker-btn');
+    var dpMenu = document.getElementById('design-picker-menu');
+    var dpCurrent = document.getElementById('design-picker-current');
+    var dpLabels = { current: '기본', refined: '정제판', editorial: '에디토리얼', broadsheet: '브로드시트', random: '랜덤' };
+    var DP_ALLOWED = ['current', 'refined', 'editorial', 'broadsheet'];
+    function dpResolve(pref, avoid) {
+        if (pref === 'random') {
+            var pool = DP_ALLOWED;
+            if (avoid && DP_ALLOWED.indexOf(avoid) !== -1 && DP_ALLOWED.length > 1) {
+                pool = DP_ALLOWED.filter(function(x) { return x !== avoid; });
+            }
+            return pool[Math.floor(Math.random() * pool.length)];
+        }
+        if (DP_ALLOWED.indexOf(pref) === -1) return 'current';
+        return pref;
+    }
+    function dpSyncLabel(pref, resolved) {
+        if (dpCurrent) {
+            dpCurrent.textContent = (pref === 'random')
+                ? dpLabels.random + ' (' + dpLabels[resolved] + ')'
+                : dpLabels[pref];
+        }
+        if (dpMenu) dpMenu.querySelectorAll('li').forEach(function(li){
+            li.classList.toggle('active', li.getAttribute('data-design') === pref);
+        });
+    }
+    function applyDesign(pref) {
+        if (!dpLabels[pref]) pref = 'random';
+        // 랜덤 클릭 시 현재 디자인을 피해서 체감되는 변화를 보장.
+        var current = document.documentElement.getAttribute('data-design') || 'current';
+        var resolved = dpResolve(pref, current);
+        if (resolved === 'current') document.documentElement.removeAttribute('data-design');
+        else document.documentElement.setAttribute('data-design', resolved);
+        try { localStorage.setItem('sonslab-design', pref); } catch(e){}
+        dpSyncLabel(pref, resolved);
+    }
+    if (dpBtn && dpMenu) {
+        // 초기 동기화는 head 스크립트가 이미 resolved를 적용했으니 재추출 없이 라벨만 맞춤.
+        var initPref = (typeof window.__sonslabDesignPref !== 'undefined')
+            ? window.__sonslabDesignPref
+            : (localStorage.getItem('sonslab-design') || 'random');
+        var initResolved = (typeof window.__sonslabDesignResolved !== 'undefined')
+            ? window.__sonslabDesignResolved
+            : (document.documentElement.getAttribute('data-design') || 'current');
+        dpSyncLabel(initPref, initResolved);
+        dpBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            var expanded = dpBtn.getAttribute('aria-expanded') === 'true';
+            dpBtn.setAttribute('aria-expanded', String(!expanded));
+            dpMenu.classList.toggle('open', !expanded);
+        });
+        dpMenu.querySelectorAll('li').forEach(function(li){
+            li.addEventListener('click', function(){
+                applyDesign(li.getAttribute('data-design'));
+                dpMenu.classList.remove('open');
+                dpBtn.setAttribute('aria-expanded', 'false');
+            });
+        });
+        document.addEventListener('click', function(e){
+            if (!dpMenu.contains(e.target) && e.target !== dpBtn) {
+                dpMenu.classList.remove('open');
+                dpBtn.setAttribute('aria-expanded', 'false');
+            }
+        });
+    }
+    // 맨 위로 버튼
+    var btn = document.getElementById('scroll-top');
+    if (btn) {
+        var toggleBtn = function() {
+            if (window.scrollY > 300) btn.classList.add('visible');
+            else btn.classList.remove('visible');
+        };
+        window.addEventListener('scroll', toggleBtn, {passive:true});
+        btn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        toggleBtn();
+    }
+})();
+</script>
+</body>
+</html>
