@@ -1,11 +1,11 @@
 {
   "versions": [
     {
-      "issued_on": "2026-05-24",
-      "week_label": "v2026.21-guidebook",
+      "issued_on": "2026-05-31",
+      "week_label": "v2026.22-guidebook",
       "filename": "claude-code-manual-2026-04-26.pdf",
-      "page_count": 137,
-      "section_count": 122,
+      "page_count": 141,
+      "section_count": 123,
       "section_titles": [
         "Part 1 — 시작하기 (초급) / Claude Code 란 무엇인가",
         "Part 1 — 시작하기 (초급) / 설치",
@@ -64,6 +64,7 @@
         "Part 6 — 고급 패턴 (고급) / `/goal` — 조건이 충족될 때까지 자율 진행 (2026-05 도입)",
         "Part 6 — 고급 패턴 (고급) / Worktrees — 병렬 세션을 충돌 없이 (2026-05 정식화)",
         "Part 6 — 고급 패턴 (고급) / 병렬 작업 도구 비교 — 무엇을 언제 쓰나",
+        "Part 6 — 고급 패턴 (고급) / Dynamic workflows — 스크립트로 굴리는 대규모 오케스트레이션 (2026-05 도입)",
         "Part 7 — 엔터프라이즈 (고급) / 조직 배포 결정 트리",
         "Part 7 — 엔터프라이즈 (고급) / Bedrock / Vertex / Foundry 통합",
         "Part 7 — 엔터프라이즈 (고급) / SSO · SCIM 으로 좌석 관리",

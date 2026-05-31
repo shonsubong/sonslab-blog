@@ -11,19 +11,19 @@
     <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/style.css">
-    <meta name="description" content="Claude Code를 대화창에서만 쓰면 자동화로 넘어가기 어렵다. -p 플래그 하나면 같은 엔진을 일반 셸 명령처럼 호출해, 다른 명령의 출력을 파이프로 밀어넣고 결과를 파일로 받아낼 수 있다.">
+    <meta name="description" content="매일 똑같은 작업을 Claude Code 대화창에서 손으로 치고 있다면 한 번 멈춰서 짜증을 내볼 만하다. 빌드 로그 요약, PR 변경분 오타 잡기, 블로그 글 다듬기 같은 건 사람이 매번 타이핑할 일이 아니다. -p 플래그 하나만 알면 같은 엔진을 일반 셸 명령처럼 호출하고, 파이프로 입력을 밀어넣고, 결과를 파일로 받을 수 있다.">
     <meta name="author" content="SONSLAB">
     <link rel="canonical" href="https://shonsubong.github.io/sonslab-blog/claude-tips/2026-05-24-pm23.html">
     <meta property="og:site_name" content="SONSLAB">
     <meta property="og:type" content="article">
     <meta property="og:title" content="claude -p — 대화창 없이 셸 스크립트 안에서 Claude Code를 돌린다">
-    <meta property="og:description" content="Claude Code를 대화창에서만 쓰면 자동화로 넘어가기 어렵다. -p 플래그 하나면 같은 엔진을 일반 셸 명령처럼 호출해, 다른 명령의 출력을 파이프로 밀어넣고 결과를 파일로 받아낼 수 있다.">
+    <meta property="og:description" content="매일 똑같은 작업을 Claude Code 대화창에서 손으로 치고 있다면 한 번 멈춰서 짜증을 내볼 만하다. 빌드 로그 요약, PR 변경분 오타 잡기, 블로그 글 다듬기 같은 건 사람이 매번 타이핑할 일이 아니다. -p 플래그 하나만 알면 같은 엔진을 일반 셸 명령처럼 호출하고, 파이프로 입력을 밀어넣고, 결과를 파일로 받을 수 있다.">
     <meta property="og:url" content="https://shonsubong.github.io/sonslab-blog/claude-tips/2026-05-24-pm23.html">
     <meta property="og:image" content="https://shonsubong.github.io/sonslab-blog/assets/logo.jpg">
     <meta property="og:locale" content="ko_KR">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="claude -p — 대화창 없이 셸 스크립트 안에서 Claude Code를 돌린다">
-    <meta name="twitter:description" content="Claude Code를 대화창에서만 쓰면 자동화로 넘어가기 어렵다. -p 플래그 하나면 같은 엔진을 일반 셸 명령처럼 호출해, 다른 명령의 출력을 파이프로 밀어넣고 결과를 파일로 받아낼 수 있다.">
+    <meta name="twitter:description" content="매일 똑같은 작업을 Claude Code 대화창에서 손으로 치고 있다면 한 번 멈춰서 짜증을 내볼 만하다. 빌드 로그 요약, PR 변경분 오타 잡기, 블로그 글 다듬기 같은 건 사람이 매번 타이핑할 일이 아니다. -p 플래그 하나만 알면 같은 엔진을 일반 셸 명령처럼 호출하고, 파이프로 입력을 밀어넣고, 결과를 파일로 받을 수 있다.">
     <meta name="twitter:image" content="https://shonsubong.github.io/sonslab-blog/assets/logo.jpg">
     <meta property="article:published_time" content="2026-05-24T23:00:00+09:00">
     <meta property="article:modified_time" content="2026-05-24T23:00:00+09:00">
@@ -56,7 +56,7 @@
     } catch (e) {}
 })();
 </script>
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "claude -p — 대화창 없이 셸 스크립트 안에서 Claude Code를 돌린다", "description": "Claude Code를 대화창에서만 쓰면 자동화로 넘어가기 어렵다. -p 플래그 하나면 같은 엔진을 일반 셸 명령처럼 호출해, 다른 명령의 출력을 파이프로 밀어넣고 결과를 파일로 받아낼 수 있다.", "url": "https://shonsubong.github.io/sonslab-blog/claude-tips/2026-05-24-pm23.html", "mainEntityOfPage": "https://shonsubong.github.io/sonslab-blog/claude-tips/2026-05-24-pm23.html", "inLanguage": "ko", "image": "https://shonsubong.github.io/sonslab-blog/assets/logo.jpg", "author": {"@type": "Person", "name": "SONSLAB"}, "publisher": {"@type": "Organization", "name": "SONSLAB", "logo": {"@type": "ImageObject", "url": "https://shonsubong.github.io/sonslab-blog/assets/logo.jpg"}}, "datePublished": "2026-05-24T23:00:00+09:00", "dateModified": "2026-05-24T23:00:00+09:00"}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "claude -p — 대화창 없이 셸 스크립트 안에서 Claude Code를 돌린다", "description": "매일 똑같은 작업을 Claude Code 대화창에서 손으로 치고 있다면 한 번 멈춰서 짜증을 내볼 만하다. 빌드 로그 요약, PR 변경분 오타 잡기, 블로그 글 다듬기 같은 건 사람이 매번 타이핑할 일이 아니다. -p 플래그 하나만 알면 같은 엔진을 일반 셸 명령처럼 호출하고, 파이프로 입력을 밀어넣고, 결과를 파일로 받을 수 있다.", "url": "https://shonsubong.github.io/sonslab-blog/claude-tips/2026-05-24-pm23.html", "mainEntityOfPage": "https://shonsubong.github.io/sonslab-blog/claude-tips/2026-05-24-pm23.html", "inLanguage": "ko", "image": "https://shonsubong.github.io/sonslab-blog/assets/logo.jpg", "author": {"@type": "Person", "name": "SONSLAB"}, "publisher": {"@type": "Organization", "name": "SONSLAB", "logo": {"@type": "ImageObject", "url": "https://shonsubong.github.io/sonslab-blog/assets/logo.jpg"}}, "datePublished": "2026-05-24T23:00:00+09:00", "dateModified": "2026-05-24T23:00:00+09:00"}</script>
     <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "SONSLAB", "item": "https://shonsubong.github.io/sonslab-blog/"}, {"@type": "ListItem", "position": 2, "name": "글", "item": "https://shonsubong.github.io/sonslab-blog/#posts"}, {"@type": "ListItem", "position": 3, "name": "claude -p — 대화창 없이 셸 스크립트 안에서 Claude Code를 돌린다", "item": "https://shonsubong.github.io/sonslab-blog/claude-tips/2026-05-24-pm23.html"}]}</script>
 </head>
 <body class="post-page" data-category="claude-tips">
@@ -70,10 +70,10 @@
     <div class="sidebar-section">
         <div class="sidebar-section-label">카테고리</div>
         <ul class="sidebar-cat-list">
-            <li><a href="../index.html" class="">홈 <span class="sidebar-cat-count">252</span></a></li>
-            <li><a href="../index.html#posts" class="">데일리 브리핑 <span class="sidebar-cat-count">184</span></a></li>
-            <li><a href="../ai-tech/index.html" class="">AI 기술 딥다이브 <span class="sidebar-cat-count">27</span></a></li>
-            <li><a href="../claude-tips/index.html" class="active">Claude Code 팁 <span class="sidebar-cat-count">41</span></a></li>
+            <li><a href="../index.html" class="">홈 <span class="sidebar-cat-count">280</span></a></li>
+            <li><a href="../index.html#posts" class="">데일리 브리핑 <span class="sidebar-cat-count">202</span></a></li>
+            <li><a href="../ai-tech/index.html" class="">AI 기술 딥다이브 <span class="sidebar-cat-count">32</span></a></li>
+            <li><a href="../claude-tips/index.html" class="active">Claude Code 팁 <span class="sidebar-cat-count">46</span></a></li>
             <li><a href="../manuals/claude-code.html" class="">Claude Code 가이드북 <span class="sidebar-cat-count">PDF</span></a></li>
             <li><a href="../about.html">About</a></li>
             <li><a href="../feed.xml">RSS</a></li>
@@ -81,15 +81,15 @@
     </div>
     <div class="sidebar-section">
         <div class="sidebar-section-label">데일리 최근 글</div>
-        <ul class="sidebar-recent"><li><a href="../posts/2026-05-25-am06-ai-tech-news.html"><span class="r-title">교황의 첫 회칙이 AI를 다뤘다 — Anthropic 공동창업자와 같은 무대에 선 &#x27;인간 존엄</span><span class="r-meta">새벽 리포트</span></a></li><li><a href="../posts/2026-05-24-pm22-ai-tech-news.html"><span class="r-title">Gemini 3.5 Flash, 작년 Pro를 넘은 막내 — 벤치는 이겼는데 실전 코드는 또 다른 얘기</span><span class="r-meta">저녁 마감</span></a></li><li><a href="../posts/2026-05-24-pm17-ai-tech-news.html"><span class="r-title">AI 안전 경고와 규제 폐기가 같은 주에 나왔다 — 잭 클락의 옥스퍼드 강연, 무산된 백악관 행정명령, 메타의 직원 추적</span><span class="r-meta">오후 브리핑</span></a></li><li><a href="../posts/2026-05-24-pm12-ai-tech-news.html"><span class="r-title">Anthropic이 라이벌들이 쓰던 SDK 공장을 통째로 사버렸다 — 경쟁의 축이 모델에서 &#x27;도구 레이어&#x27;로</span><span class="r-meta">오전 브리핑</span></a></li><li><a href="../posts/2026-05-24-am06-ai-tech-news.html"><span class="r-title">이번 공급망 공격은 Claude Code 키까지 노렸다 — VS Code 확장 하나가 11분 만에 한 일</span><span class="r-meta">새벽 리포트</span></a></li></ul>
+        <ul class="sidebar-recent"><li><a href="../posts/2026-05-31-pm22-ai-tech-news.html"><span class="r-title">Codex Pro 2배 혜택이 오늘 자정에 닫힌다 — 같은 주에 오픈웨이트는 또 한 칸 좁혔다</span><span class="r-meta">저녁 마감</span></a></li><li><a href="../posts/2026-05-31-pm17-ai-tech-news.html"><span class="r-title">Siri의 새 두뇌가 Gemini로 정해졌다 — Claude는 옵션 자리, WWDC가 8일 남았다</span><span class="r-meta">오후 브리핑</span></a></li><li><a href="../posts/2026-05-31-am06-ai-tech-news.html"><span class="r-title">NVIDIA N1X가 노트북 안으로 들어온다 — Vera Rubin·Physical AI까지 한 묶음으로</span><span class="r-meta">새벽 리포트</span></a></li><li><a href="../posts/2026-05-29-am06-ai-tech-news.html"><span class="r-title">Opus 4.8 떨어졌고, 같은 날 Anthropic 시총이 $965B로 OpenAI를 넘었다</span><span class="r-meta">새벽 리포트</span></a></li><li><a href="../posts/2026-05-28-pm17-ai-tech-news.html"><span class="r-title">Qwen 3.7 Max가 35시간 무중단으로 돌아간다 — Claude Code 하네스까지 받는다</span><span class="r-meta">오후 브리핑</span></a></li></ul>
     </div>
     <div class="sidebar-section">
         <div class="sidebar-section-label">AI 기술 최근 글</div>
-        <ul class="sidebar-recent"><li><a href="../ai-tech/2026-05-25-am10.html"><span class="r-title">어텐션마다 오차를 증명한다 — KV 캐시 양자화에 &#x27;인증서&#x27;를 붙이는 법</span><span class="r-meta">AI 딥다이브</span></a></li><li><a href="../ai-tech/2026-05-24-am10.html"><span class="r-title">4비트로 10조 토큰을 학습한 길 — NVFP4가 FP8 정확도를 따라잡은 방식</span><span class="r-meta">AI 딥다이브</span></a></li><li><a href="../ai-tech/2026-05-23-am10.html"><span class="r-title">RL은 추론을 가르치지 않는다 — 토큰 1~3%만 건드리는 &#x27;선택&#x27;이라는 재해석</span><span class="r-meta">AI 딥다이브</span></a></li><li><a href="../ai-tech/2026-05-22-am10.html"><span class="r-title">검증을 별도 에이전트로 떼어낸 순간 — 루브릭 채점 루프가 추론 시점 품질을 끌어올린 방식</span><span class="r-meta">AI 딥다이브</span></a></li><li><a href="../ai-tech/2026-05-21-am10.html"><span class="r-title">메모리가 반쯤 커스텀 칩이 된 순간 — HBM4가 베이스 다이를 파운드리로 보낸 이유</span><span class="r-meta">AI 딥다이브</span></a></li></ul>
+        <ul class="sidebar-recent"><li><a href="../ai-tech/2026-05-31-am10.html"><span class="r-title">HBM4E 12단 샘플이 출하됐다 — 메모리 천장이 한 칸 더 올라간 사흘</span><span class="r-meta">AI 딥다이브</span></a></li><li><a href="../ai-tech/2026-05-29-am10.html"><span class="r-title">1M 컨텍스트 시대의 옆문 — TTT-E2E가 어텐션 위에 학습 루프를 얹은 방식</span><span class="r-meta">AI 딥다이브</span></a></li><li><a href="../ai-tech/2026-05-28-am10.html"><span class="r-title">광 모듈이 스위치 패키지 안으로 들어왔다 — CPO가 인터커넥트 전력 벽을 우회한 방식</span><span class="r-meta">AI 딥다이브</span></a></li><li><a href="../ai-tech/2026-05-27-am10.html"><span class="r-title">한 블록으로 N층을 흉내내는 길 — Mixture of Recursions와 토큰별 깊이</span><span class="r-meta">AI 딥다이브</span></a></li><li><a href="../ai-tech/2026-05-26-am10.html"><span class="r-title">자가회귀 독점이 흔들렸다 — 디퓨전 LLM이 추론을 1.7초로 끊은 방식</span><span class="r-meta">AI 딥다이브</span></a></li></ul>
     </div>
     <div class="sidebar-section">
         <div class="sidebar-section-label">Claude Code 팁 최근 글</div>
-        <ul class="sidebar-recent"><li><a href="../claude-tips/2026-05-24-pm23.html"><span class="r-title">claude -p — 대화창 없이 셸 스크립트 안에서 Claude Code를 돌린다</span><span class="r-meta">23:00</span></a></li><li><a href="../claude-tips/2026-05-23-pm23.html"><span class="r-title">Biome v2 — ESLint·Prettier 두 도구를 Rust 바이너리 하나로 대체한다</span><span class="r-meta">23:00</span></a></li><li><a href="../claude-tips/2026-05-21-pm23.html"><span class="r-title">GitHub 이슈에 @claude만 달면 Claude Code가 PR을 만들어 올린다</span><span class="r-meta">23:00</span></a></li><li><a href="../claude-tips/2026-05-20-pm23.html"><span class="r-title">/resume과 -c — 끊긴 Claude Code 세션을 그대로 이어 받는다</span><span class="r-meta">23:00</span></a></li><li><a href="../claude-tips/2026-05-19-pm23.html"><span class="r-title">Claude Code /goal — 완료 조건만 박아두고 끝까지 돌게 만든다</span><span class="r-meta">23:00</span></a></li></ul>
+        <ul class="sidebar-recent"><li><a href="../claude-tips/2026-05-31-pm23.html"><span class="r-title">흩어진 명령·hook·skill을 plugin 한 묶음으로 새 머신에 한 줄로 깐다</span><span class="r-meta">23:00</span></a></li><li><a href="../claude-tips/2026-05-29-pm23.html"><span class="r-title">git worktree로 Claude Code 세션을 분리해 충돌 없이 병렬로 굴린다</span><span class="r-meta">23:00</span></a></li><li><a href="../claude-tips/2026-05-27-pm23.html"><span class="r-title">위험한 Bash 명령은 PreToolUse hook 한 장으로 실행 전에 끊는다</span><span class="r-meta">23:00</span></a></li><li><a href="../claude-tips/2026-05-26-pm23.html"><span class="r-title">/init 한 줄로 새 저장소를 Claude Code에 통째로 소개한다</span><span class="r-meta">23:00</span></a></li><li><a href="../claude-tips/2026-05-25-pm23.html"><span class="r-title">claude agents — 여러 Claude Code 세션을 한 화면에서 굴린다</span><span class="r-meta">23:00</span></a></li></ul>
     </div>
 </aside>
 <div class="sidebar-backdrop" id="sidebar-backdrop" aria-hidden="true"></div>
@@ -150,45 +150,29 @@
         </div>
     </div>
     
-    <details class="post-toc" open><summary>목차</summary><div class="toc">
-<div class="toc">
-<ul>
-<li><a href="#_1">언제 쓰나</a></li>
-<li><a href="#_2">방법</a></li>
-<li><a href="#_3">주의/한계</a></li>
-<li><a href="#_4">더 읽을 거리</a></li>
-</ul>
-</div>
-
-</div>
-</details>
+    
     <div class="post-content">
-<p>Claude Code를 대화창에서만 쓰면 자동화로 넘어가기 어렵다. <code>-p</code> 플래그 하나면 같은 엔진을 일반 셸 명령처럼 호출해, 다른 명령의 출력을 파이프로 밀어넣고 결과를 파일로 받아낼 수 있다.</p>
-<h2 id="_1">언제 쓰나</h2>
-<p>매번 터미널을 열어 질문을 타이핑하는 대신, 빌드 로그를 분석하거나 PR 변경분에서 오타를 잡는 일을 스크립트나 CI에 끼워 넣고 싶을 때 쓴다. cron, 깃 훅, <code>package.json</code> 스크립트 어디서 호출하든 사람 손 없이 같은 작업이 반복된다. 개인 블로그 빌드나 정리 작업처럼 매일 도는 절차에 특히 잘 맞는다.</p>
-<h2 id="_2">방법</h2>
-<p>가장 기본형은 프롬프트를 인자로 넘기는 것이다.</p>
-<pre class="codehilite"><code>claude -p &quot;auth 모듈이 하는 일을 요약해줘&quot;
-</code></pre>
+<p>매일 똑같은 작업을 Claude Code 대화창에서 손으로 치고 있다면 한 번 멈춰서 짜증을 내볼 만하다. 빌드 로그 요약, PR 변경분 오타 잡기, 블로그 글 다듬기 같은 건 사람이 매번 타이핑할 일이 아니다. <code>-p</code> 플래그 하나만 알면 같은 엔진을 일반 셸 명령처럼 호출하고, 파이프로 입력을 밀어넣고, 결과를 파일로 받을 수 있다.</p>
+<p>처음 이 모드가 절실해진 건 매일 밤 도는 블로그 빌드 스크립트에 짧은 요약 단계를 끼우고 싶을 때였다. cron이나 깃 훅 안에서 사람 손 없이 같은 일을 시키려면 대화 모드는 못 쓴다. 그래서 헤드리스가 필요하다.</p>
+<p>가장 단순한 모양은 프롬프트를 그대로 인자로 넘기는 것이다.</p>
+<div class="codehilite"><pre><span></span><code>claude -p &quot;auth 모듈이 하는 일을 요약해줘&quot;
+</code></pre></div>
 
-<p>표준입력을 읽으므로 다른 명령의 출력을 그대로 파이프로 넘긴다.</p>
-<pre class="codehilite"><code>cat build-error.txt | claude -p '이 빌드 에러의 근본 원인을 짧게 설명해줘' &gt; output.txt
-</code></pre>
+<p>표준입력도 그대로 먹는다. 다른 명령의 출력을 파이프로 흘려보내면 된다.</p>
+<div class="codehilite"><pre><span></span><code>cat build-error.txt | claude -p &#39;이 빌드 에러의 근본 원인을 짧게 설명해줘&#39; &gt; output.txt
+</code></pre></div>
 
-<p>스크립트에서 결과만 뽑아 쓰려면 <code>--output-format json</code>으로 구조화 출력을 받아 jq로 꺼낸다.</p>
-<pre class="codehilite"><code>claude -p &quot;이 프로젝트 요약&quot; --output-format json | jq -r '.result'
-</code></pre>
+<p>스크립트에서 결과만 깔끔하게 뽑고 싶을 땐 JSON으로 받아 jq로 꺼내는 게 편하다.</p>
+<div class="codehilite"><pre><span></span><code>claude -p &quot;이 프로젝트 요약&quot; --output-format json | jq -r &#39;.result&#39;
+</code></pre></div>
 
-<p>도구 승인 프롬프트가 자동화를 멈춰 세우므로 <code>--allowedTools</code>로 필요한 도구를 미리 허용한다.</p>
-<pre class="codehilite"><code>claude -p &quot;테스트 돌리고 실패 고쳐줘&quot; --allowedTools &quot;Bash,Read,Edit&quot;
-</code></pre>
+<p>자동화에서 진짜 짜증나는 건 도구 승인 프롬프트다. 한 번이라도 사람 손이 필요해지면 cron이 거기서 멈춘다. <code>--allowedTools</code>로 미리 풀어둔다.</p>
+<div class="codehilite"><pre><span></span><code>claude -p &quot;테스트 돌리고 실패 고쳐줘&quot; --allowedTools &quot;Bash,Read,Edit&quot;
+</code></pre></div>
 
-<p>앞 작업을 이어가려면 <code>--continue</code>(가장 최근 대화)나 <code>--resume &lt;세션ID&gt;</code>를 붙인다.</p>
-<h2 id="_3">주의/한계</h2>
-<p>슬래시 명령(<code>/commit</code> 등)과 사용자 스킬은 대화 모드 전용이다. <code>-p</code>에서는 명령을 부르지 말고 하려는 작업을 문장으로 풀어 쓴다. 파이프 입력은 v2.1.128부터 10MB 상한이 있어, 더 큰 입력은 파일로 저장해 경로를 프롬프트에 적어 넘긴다. CI에서 매번 같은 결과가 필요하면 <code>--bare</code>를 붙여 로컬 hook·MCP·CLAUDE.md 자동 로딩을 끄고 명시한 플래그만 적용되게 한다.</p>
-<p>한 가지 더, 2026년 6월 15일부터 구독 플랜에서 <code>claude -p</code>와 Agent SDK 사용량은 대화형 한도와 별개인 월간 Agent SDK 크레딧에서 차감된다. MAX 구독자도 자동화 호출량을 따로 관리해야 한다는 뜻이다(정확한 크레딧 한도는 출시 후 공개 — 확인 필요).</p>
-<h2 id="_4">더 읽을 거리</h2>
-<p>(<a href="https://code.claude.com/docs/en/headless">Claude Code Docs — Run Claude Code programmatically</a>)</p>
+<p>앞 대화를 이어가야 할 땐 <code>--continue</code>(가장 최근 세션)나 <code>--resume &lt;세션ID&gt;</code>를 붙인다.</p>
+<p>여기서 한 가지 함정. 슬래시 명령(<code>/commit</code> 같은 것)과 사용자 스킬은 대화 모드 전용이다. <code>-p</code>로는 못 부르니, 하려는 작업을 그냥 문장으로 풀어 적는다. 파이프 입력은 v2.1.128부터 10MB 상한이 생겨서, 큰 입력은 파일로 저장한 뒤 경로만 프롬프트에 적어 넘기는 편이 안전하다. CI에서 매번 결과가 흔들리는 게 싫다면 <code>--bare</code>를 붙여 로컬 hook·MCP·CLAUDE.md 자동 로딩을 끄고 명시한 플래그만 적용되게 한다.</p>
+<p>알아둘 만한 변동도 있다. 2026년 6월 15일부터 구독 플랜에서 <code>claude -p</code>와 Agent SDK 사용량은 대화형 한도와 별개인 월간 Agent SDK 크레딧에서 차감된다. MAX 구독자라도 자동화 호출량은 따로 관리해야 한다는 뜻이다(정확한</p>
     </div>
     
 <div class="post-share">
@@ -215,12 +199,15 @@
         <span class="post-nav-label">← 이전 글</span>
         <span class="post-nav-title">Biome v2 — ESLint·Prettier 두 도구를 Rust 바이너리 하나로 대체한다</span>
     </a>
-    
+    <a href="2026-05-25-pm23.html" class="post-nav-link next">
+        <span class="post-nav-label">다음 글 →</span>
+        <span class="post-nav-title">claude agents — 여러 Claude Code 세션을 한 화면에서 굴린다</span>
+    </a>
 </nav>
     
 <section class="related-posts" aria-label="최근 다른 리포트">
     <div class="related-posts-label">최근 다른 리포트</div>
-    <ul class="related-list"><li><a href="2026-05-23-pm23.html"><span class="related-title">Biome v2 — ESLint·Prettier 두 도구를 Rust 바이너리 하나로 대체한다</span><span class="related-date">2026-05-23 · 심야 팁 · 23:00</span></a></li><li><a href="2026-05-21-pm23.html"><span class="related-title">GitHub 이슈에 @claude만 달면 Claude Code가 PR을 만들어 올린다</span><span class="related-date">2026-05-21 · 심야 팁 · 23:00</span></a></li><li><a href="2026-05-20-pm23.html"><span class="related-title">/resume과 -c — 끊긴 Claude Code 세션을 그대로 이어 받는다</span><span class="related-date">2026-05-20 · 심야 팁 · 23:00</span></a></li><li><a href="2026-05-19-pm23.html"><span class="related-title">Claude Code /goal — 완료 조건만 박아두고 끝까지 돌게 만든다</span><span class="related-date">2026-05-19 · 심야 팁 · 23:00</span></a></li><li><a href="2026-05-17-pm23.html"><span class="related-title">/mcp 한 줄로 지금 붙어 있는 MCP 서버와 도구를 한눈에 본다</span><span class="related-date">2026-05-17 · 심야 팁 · 23:00</span></a></li></ul>
+    <ul class="related-list"><li><a href="2026-05-31-pm23.html"><span class="related-title">흩어진 명령·hook·skill을 plugin 한 묶음으로 새 머신에 한 줄로 깐다</span><span class="related-date">2026-05-31 · 심야 팁 · 23:00</span></a></li><li><a href="2026-05-29-pm23.html"><span class="related-title">git worktree로 Claude Code 세션을 분리해 충돌 없이 병렬로 굴린다</span><span class="related-date">2026-05-29 · 심야 팁 · 23:00</span></a></li><li><a href="2026-05-27-pm23.html"><span class="related-title">위험한 Bash 명령은 PreToolUse hook 한 장으로 실행 전에 끊는다</span><span class="related-date">2026-05-27 · 심야 팁 · 23:00</span></a></li><li><a href="2026-05-26-pm23.html"><span class="related-title">/init 한 줄로 새 저장소를 Claude Code에 통째로 소개한다</span><span class="related-date">2026-05-26 · 심야 팁 · 23:00</span></a></li><li><a href="2026-05-25-pm23.html"><span class="related-title">claude agents — 여러 Claude Code 세션을 한 화면에서 굴린다</span><span class="related-date">2026-05-25 · 심야 팁 · 23:00</span></a></li></ul>
 </section>
 </article>
 

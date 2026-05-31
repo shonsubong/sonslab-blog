@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RL은 추론을 가르치지 않는다 — 토큰 1~3%만 건드리는 &#x27;선택&#x27;이라는 재해석 — SONSLAB</title>
+    <title>RL은 추론을 가르치는 게 아니다 — 토큰 1~3%만 건드린다는 재해석 — SONSLAB</title>
     <link rel="icon" href="../assets/logo.jpg">
     <link rel="alternate" type="application/atom+xml" title="SONSLAB Feed" href="../feed.xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,19 +11,19 @@
     <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/style.css">
-    <meta name="description" content="2025년 봄 칭화대 연구가 던진 질문 — RLVR로 튜닝한 모델이 pass@1은 이기지만 pass@k(k가 클 때)는 베이스 모델이 따라잡는다 — 이후 &quot;RL은 새 능력을 주는가, 기존 분포를 좁힐 뿐인가&quot; 논쟁이 1년을 끌었다 (Yang et al. — RL이 베이스 모델을 넘는가). 5월 7일, 이 논쟁을 토큰 단위로 못 박는 두 편이 같은 날 arXiv에 올라왔다. 하나는 &quot;RL의 효...">
+    <meta name="description" content="2025년 봄 칭화대 연구가 던진 질문이 1년을 끌었다. RLVR로 튜닝한 모델이 pass@1은 이기지만 pass@k(k가 클 때)는 베이스 모델이 따라잡는다는 결과였다 (Yang et al.). &quot;RL은 새 능력을 주는가, 분포를 좁힐 뿐인가.&quot;">
     <meta name="author" content="SONSLAB">
     <link rel="canonical" href="https://shonsubong.github.io/sonslab-blog/ai-tech/2026-05-23-am10.html">
     <meta property="og:site_name" content="SONSLAB">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="RL은 추론을 가르치지 않는다 — 토큰 1~3%만 건드리는 &#x27;선택&#x27;이라는 재해석">
-    <meta property="og:description" content="2025년 봄 칭화대 연구가 던진 질문 — RLVR로 튜닝한 모델이 pass@1은 이기지만 pass@k(k가 클 때)는 베이스 모델이 따라잡는다 — 이후 &quot;RL은 새 능력을 주는가, 기존 분포를 좁힐 뿐인가&quot; 논쟁이 1년을 끌었다 (Yang et al. — RL이 베이스 모델을 넘는가). 5월 7일, 이 논쟁을 토큰 단위로 못 박는 두 편이 같은 날 arXiv에 올라왔다. 하나는 &quot;RL의 효...">
+    <meta property="og:title" content="RL은 추론을 가르치는 게 아니다 — 토큰 1~3%만 건드린다는 재해석">
+    <meta property="og:description" content="2025년 봄 칭화대 연구가 던진 질문이 1년을 끌었다. RLVR로 튜닝한 모델이 pass@1은 이기지만 pass@k(k가 클 때)는 베이스 모델이 따라잡는다는 결과였다 (Yang et al.). &quot;RL은 새 능력을 주는가, 분포를 좁힐 뿐인가.&quot;">
     <meta property="og:url" content="https://shonsubong.github.io/sonslab-blog/ai-tech/2026-05-23-am10.html">
     <meta property="og:image" content="https://shonsubong.github.io/sonslab-blog/assets/logo.jpg">
     <meta property="og:locale" content="ko_KR">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="RL은 추론을 가르치지 않는다 — 토큰 1~3%만 건드리는 &#x27;선택&#x27;이라는 재해석">
-    <meta name="twitter:description" content="2025년 봄 칭화대 연구가 던진 질문 — RLVR로 튜닝한 모델이 pass@1은 이기지만 pass@k(k가 클 때)는 베이스 모델이 따라잡는다 — 이후 &quot;RL은 새 능력을 주는가, 기존 분포를 좁힐 뿐인가&quot; 논쟁이 1년을 끌었다 (Yang et al. — RL이 베이스 모델을 넘는가). 5월 7일, 이 논쟁을 토큰 단위로 못 박는 두 편이 같은 날 arXiv에 올라왔다. 하나는 &quot;RL의 효...">
+    <meta name="twitter:title" content="RL은 추론을 가르치는 게 아니다 — 토큰 1~3%만 건드린다는 재해석">
+    <meta name="twitter:description" content="2025년 봄 칭화대 연구가 던진 질문이 1년을 끌었다. RLVR로 튜닝한 모델이 pass@1은 이기지만 pass@k(k가 클 때)는 베이스 모델이 따라잡는다는 결과였다 (Yang et al.). &quot;RL은 새 능력을 주는가, 분포를 좁힐 뿐인가.&quot;">
     <meta name="twitter:image" content="https://shonsubong.github.io/sonslab-blog/assets/logo.jpg">
     <meta property="article:published_time" content="2026-05-23T10:00:00+09:00">
     <meta property="article:modified_time" content="2026-05-23T10:00:00+09:00">
@@ -56,8 +56,8 @@
     } catch (e) {}
 })();
 </script>
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "RL은 추론을 가르치지 않는다 — 토큰 1~3%만 건드리는 '선택'이라는 재해석", "description": "2025년 봄 칭화대 연구가 던진 질문 — RLVR로 튜닝한 모델이 pass@1은 이기지만 pass@k(k가 클 때)는 베이스 모델이 따라잡는다 — 이후 \"RL은 새 능력을 주는가, 기존 분포를 좁힐 뿐인가\" 논쟁이 1년을 끌었다 (Yang et al. — RL이 베이스 모델을 넘는가). 5월 7일, 이 논쟁을 토큰 단위로 못 박는 두 편이 같은 날 arXiv에 올라왔다. 하나는 \"RL의 효...", "url": "https://shonsubong.github.io/sonslab-blog/ai-tech/2026-05-23-am10.html", "mainEntityOfPage": "https://shonsubong.github.io/sonslab-blog/ai-tech/2026-05-23-am10.html", "inLanguage": "ko", "image": "https://shonsubong.github.io/sonslab-blog/assets/logo.jpg", "author": {"@type": "Person", "name": "SONSLAB"}, "publisher": {"@type": "Organization", "name": "SONSLAB", "logo": {"@type": "ImageObject", "url": "https://shonsubong.github.io/sonslab-blog/assets/logo.jpg"}}, "datePublished": "2026-05-23T10:00:00+09:00", "dateModified": "2026-05-23T10:00:00+09:00"}</script>
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "SONSLAB", "item": "https://shonsubong.github.io/sonslab-blog/"}, {"@type": "ListItem", "position": 2, "name": "글", "item": "https://shonsubong.github.io/sonslab-blog/#posts"}, {"@type": "ListItem", "position": 3, "name": "RL은 추론을 가르치지 않는다 — 토큰 1~3%만 건드리는 '선택'이라는 재해석", "item": "https://shonsubong.github.io/sonslab-blog/ai-tech/2026-05-23-am10.html"}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "RL은 추론을 가르치는 게 아니다 — 토큰 1~3%만 건드린다는 재해석", "description": "2025년 봄 칭화대 연구가 던진 질문이 1년을 끌었다. RLVR로 튜닝한 모델이 pass@1은 이기지만 pass@k(k가 클 때)는 베이스 모델이 따라잡는다는 결과였다 (Yang et al.). \"RL은 새 능력을 주는가, 분포를 좁힐 뿐인가.\"", "url": "https://shonsubong.github.io/sonslab-blog/ai-tech/2026-05-23-am10.html", "mainEntityOfPage": "https://shonsubong.github.io/sonslab-blog/ai-tech/2026-05-23-am10.html", "inLanguage": "ko", "image": "https://shonsubong.github.io/sonslab-blog/assets/logo.jpg", "author": {"@type": "Person", "name": "SONSLAB"}, "publisher": {"@type": "Organization", "name": "SONSLAB", "logo": {"@type": "ImageObject", "url": "https://shonsubong.github.io/sonslab-blog/assets/logo.jpg"}}, "datePublished": "2026-05-23T10:00:00+09:00", "dateModified": "2026-05-23T10:00:00+09:00"}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "SONSLAB", "item": "https://shonsubong.github.io/sonslab-blog/"}, {"@type": "ListItem", "position": 2, "name": "글", "item": "https://shonsubong.github.io/sonslab-blog/#posts"}, {"@type": "ListItem", "position": 3, "name": "RL은 추론을 가르치는 게 아니다 — 토큰 1~3%만 건드린다는 재해석", "item": "https://shonsubong.github.io/sonslab-blog/ai-tech/2026-05-23-am10.html"}]}</script>
 </head>
 <body class="post-page" data-category="ai-tech">
     <div class="reading-progress" id="reading-progress" role="progressbar" aria-label="읽기 진행률"></div>
@@ -70,10 +70,10 @@
     <div class="sidebar-section">
         <div class="sidebar-section-label">카테고리</div>
         <ul class="sidebar-cat-list">
-            <li><a href="../index.html" class="">홈 <span class="sidebar-cat-count">252</span></a></li>
-            <li><a href="../index.html#posts" class="">데일리 브리핑 <span class="sidebar-cat-count">184</span></a></li>
-            <li><a href="../ai-tech/index.html" class="active">AI 기술 딥다이브 <span class="sidebar-cat-count">27</span></a></li>
-            <li><a href="../claude-tips/index.html" class="">Claude Code 팁 <span class="sidebar-cat-count">41</span></a></li>
+            <li><a href="../index.html" class="">홈 <span class="sidebar-cat-count">280</span></a></li>
+            <li><a href="../index.html#posts" class="">데일리 브리핑 <span class="sidebar-cat-count">202</span></a></li>
+            <li><a href="../ai-tech/index.html" class="active">AI 기술 딥다이브 <span class="sidebar-cat-count">32</span></a></li>
+            <li><a href="../claude-tips/index.html" class="">Claude Code 팁 <span class="sidebar-cat-count">46</span></a></li>
             <li><a href="../manuals/claude-code.html" class="">Claude Code 가이드북 <span class="sidebar-cat-count">PDF</span></a></li>
             <li><a href="../about.html">About</a></li>
             <li><a href="../feed.xml">RSS</a></li>
@@ -81,15 +81,15 @@
     </div>
     <div class="sidebar-section">
         <div class="sidebar-section-label">데일리 최근 글</div>
-        <ul class="sidebar-recent"><li><a href="../posts/2026-05-25-am06-ai-tech-news.html"><span class="r-title">교황의 첫 회칙이 AI를 다뤘다 — Anthropic 공동창업자와 같은 무대에 선 &#x27;인간 존엄</span><span class="r-meta">새벽 리포트</span></a></li><li><a href="../posts/2026-05-24-pm22-ai-tech-news.html"><span class="r-title">Gemini 3.5 Flash, 작년 Pro를 넘은 막내 — 벤치는 이겼는데 실전 코드는 또 다른 얘기</span><span class="r-meta">저녁 마감</span></a></li><li><a href="../posts/2026-05-24-pm17-ai-tech-news.html"><span class="r-title">AI 안전 경고와 규제 폐기가 같은 주에 나왔다 — 잭 클락의 옥스퍼드 강연, 무산된 백악관 행정명령, 메타의 직원 추적</span><span class="r-meta">오후 브리핑</span></a></li><li><a href="../posts/2026-05-24-pm12-ai-tech-news.html"><span class="r-title">Anthropic이 라이벌들이 쓰던 SDK 공장을 통째로 사버렸다 — 경쟁의 축이 모델에서 &#x27;도구 레이어&#x27;로</span><span class="r-meta">오전 브리핑</span></a></li><li><a href="../posts/2026-05-24-am06-ai-tech-news.html"><span class="r-title">이번 공급망 공격은 Claude Code 키까지 노렸다 — VS Code 확장 하나가 11분 만에 한 일</span><span class="r-meta">새벽 리포트</span></a></li></ul>
+        <ul class="sidebar-recent"><li><a href="../posts/2026-05-31-pm22-ai-tech-news.html"><span class="r-title">Codex Pro 2배 혜택이 오늘 자정에 닫힌다 — 같은 주에 오픈웨이트는 또 한 칸 좁혔다</span><span class="r-meta">저녁 마감</span></a></li><li><a href="../posts/2026-05-31-pm17-ai-tech-news.html"><span class="r-title">Siri의 새 두뇌가 Gemini로 정해졌다 — Claude는 옵션 자리, WWDC가 8일 남았다</span><span class="r-meta">오후 브리핑</span></a></li><li><a href="../posts/2026-05-31-am06-ai-tech-news.html"><span class="r-title">NVIDIA N1X가 노트북 안으로 들어온다 — Vera Rubin·Physical AI까지 한 묶음으로</span><span class="r-meta">새벽 리포트</span></a></li><li><a href="../posts/2026-05-29-am06-ai-tech-news.html"><span class="r-title">Opus 4.8 떨어졌고, 같은 날 Anthropic 시총이 $965B로 OpenAI를 넘었다</span><span class="r-meta">새벽 리포트</span></a></li><li><a href="../posts/2026-05-28-pm17-ai-tech-news.html"><span class="r-title">Qwen 3.7 Max가 35시간 무중단으로 돌아간다 — Claude Code 하네스까지 받는다</span><span class="r-meta">오후 브리핑</span></a></li></ul>
     </div>
     <div class="sidebar-section">
         <div class="sidebar-section-label">AI 기술 최근 글</div>
-        <ul class="sidebar-recent"><li><a href="../ai-tech/2026-05-25-am10.html"><span class="r-title">어텐션마다 오차를 증명한다 — KV 캐시 양자화에 &#x27;인증서&#x27;를 붙이는 법</span><span class="r-meta">AI 딥다이브</span></a></li><li><a href="../ai-tech/2026-05-24-am10.html"><span class="r-title">4비트로 10조 토큰을 학습한 길 — NVFP4가 FP8 정확도를 따라잡은 방식</span><span class="r-meta">AI 딥다이브</span></a></li><li><a href="../ai-tech/2026-05-23-am10.html"><span class="r-title">RL은 추론을 가르치지 않는다 — 토큰 1~3%만 건드리는 &#x27;선택&#x27;이라는 재해석</span><span class="r-meta">AI 딥다이브</span></a></li><li><a href="../ai-tech/2026-05-22-am10.html"><span class="r-title">검증을 별도 에이전트로 떼어낸 순간 — 루브릭 채점 루프가 추론 시점 품질을 끌어올린 방식</span><span class="r-meta">AI 딥다이브</span></a></li><li><a href="../ai-tech/2026-05-21-am10.html"><span class="r-title">메모리가 반쯤 커스텀 칩이 된 순간 — HBM4가 베이스 다이를 파운드리로 보낸 이유</span><span class="r-meta">AI 딥다이브</span></a></li></ul>
+        <ul class="sidebar-recent"><li><a href="../ai-tech/2026-05-31-am10.html"><span class="r-title">HBM4E 12단 샘플이 출하됐다 — 메모리 천장이 한 칸 더 올라간 사흘</span><span class="r-meta">AI 딥다이브</span></a></li><li><a href="../ai-tech/2026-05-29-am10.html"><span class="r-title">1M 컨텍스트 시대의 옆문 — TTT-E2E가 어텐션 위에 학습 루프를 얹은 방식</span><span class="r-meta">AI 딥다이브</span></a></li><li><a href="../ai-tech/2026-05-28-am10.html"><span class="r-title">광 모듈이 스위치 패키지 안으로 들어왔다 — CPO가 인터커넥트 전력 벽을 우회한 방식</span><span class="r-meta">AI 딥다이브</span></a></li><li><a href="../ai-tech/2026-05-27-am10.html"><span class="r-title">한 블록으로 N층을 흉내내는 길 — Mixture of Recursions와 토큰별 깊이</span><span class="r-meta">AI 딥다이브</span></a></li><li><a href="../ai-tech/2026-05-26-am10.html"><span class="r-title">자가회귀 독점이 흔들렸다 — 디퓨전 LLM이 추론을 1.7초로 끊은 방식</span><span class="r-meta">AI 딥다이브</span></a></li></ul>
     </div>
     <div class="sidebar-section">
         <div class="sidebar-section-label">Claude Code 팁 최근 글</div>
-        <ul class="sidebar-recent"><li><a href="../claude-tips/2026-05-24-pm23.html"><span class="r-title">claude -p — 대화창 없이 셸 스크립트 안에서 Claude Code를 돌린다</span><span class="r-meta">23:00</span></a></li><li><a href="../claude-tips/2026-05-23-pm23.html"><span class="r-title">Biome v2 — ESLint·Prettier 두 도구를 Rust 바이너리 하나로 대체한다</span><span class="r-meta">23:00</span></a></li><li><a href="../claude-tips/2026-05-21-pm23.html"><span class="r-title">GitHub 이슈에 @claude만 달면 Claude Code가 PR을 만들어 올린다</span><span class="r-meta">23:00</span></a></li><li><a href="../claude-tips/2026-05-20-pm23.html"><span class="r-title">/resume과 -c — 끊긴 Claude Code 세션을 그대로 이어 받는다</span><span class="r-meta">23:00</span></a></li><li><a href="../claude-tips/2026-05-19-pm23.html"><span class="r-title">Claude Code /goal — 완료 조건만 박아두고 끝까지 돌게 만든다</span><span class="r-meta">23:00</span></a></li></ul>
+        <ul class="sidebar-recent"><li><a href="../claude-tips/2026-05-31-pm23.html"><span class="r-title">흩어진 명령·hook·skill을 plugin 한 묶음으로 새 머신에 한 줄로 깐다</span><span class="r-meta">23:00</span></a></li><li><a href="../claude-tips/2026-05-29-pm23.html"><span class="r-title">git worktree로 Claude Code 세션을 분리해 충돌 없이 병렬로 굴린다</span><span class="r-meta">23:00</span></a></li><li><a href="../claude-tips/2026-05-27-pm23.html"><span class="r-title">위험한 Bash 명령은 PreToolUse hook 한 장으로 실행 전에 끊는다</span><span class="r-meta">23:00</span></a></li><li><a href="../claude-tips/2026-05-26-pm23.html"><span class="r-title">/init 한 줄로 새 저장소를 Claude Code에 통째로 소개한다</span><span class="r-meta">23:00</span></a></li><li><a href="../claude-tips/2026-05-25-pm23.html"><span class="r-title">claude agents — 여러 Claude Code 세션을 한 화면에서 굴린다</span><span class="r-meta">23:00</span></a></li></ul>
     </div>
 </aside>
 <div class="sidebar-backdrop" id="sidebar-backdrop" aria-hidden="true"></div>
@@ -141,7 +141,7 @@
 <article class="post-article">
     <div class="post-header">
         <a href="index.html" class="back-link">← AI 기술 목록</a>
-        <h1>RL은 추론을 가르치지 않는다 — 토큰 1~3%만 건드리는 &#x27;선택&#x27;이라는 재해석</h1>
+        <h1>RL은 추론을 가르치는 게 아니다 — 토큰 1~3%만 건드린다는 재해석</h1>
         <div class="post-meta">
             <span class="time-label">AI 딥다이브</span>
             <span>2026년 05월 23일 (토) · 10:00</span>
@@ -154,12 +154,12 @@
 <div class="toc">
 <ul>
 <li><a href="#tldr">TL;DR</a></li>
-<li><a href="#why-now">배경 (Why now)</a></li>
-<li><a href="#_1">핵심 메커니즘</a></li>
-<li><a href="#_2">코드 / 수식 예시</a></li>
-<li><a href="#_3">한계·반론</a></li>
-<li><a href="#_4">현직 엔지니어 관점</a></li>
-<li><a href="#_5">부록 — 더 읽을거리</a></li>
+<li><a href="#_1">배경</a></li>
+<li><a href="#_2">핵심 메커니즘</a></li>
+<li><a href="#_3">코드 / 수식</a></li>
+<li><a href="#_4">한계·반론</a></li>
+<li><a href="#_5">현직 엔지니어 관점</a></li>
+<li><a href="#_6">더 읽을거리</a></li>
 </ul>
 </div>
 
@@ -168,38 +168,41 @@
     <div class="post-content">
 <h2 id="tldr">TL;DR</h2>
 <ul>
-<li>RLVR이 추론을 끌어올리는 실체는 새 능력 습득이 아니라, 베이스 모델이 이미 아는 분기 중 <strong>불확실한 1~3% 토큰에서만</strong> 올바른 쪽을 골라주는 희소한 교정이라는 분석이 나왔다.</li>
-<li>같은 날 올라온 다른 논문은 RL 학습 연산량이 추론 깊이에 대해 멱법칙($T \propto D^{\gamma}$)을 따르고, 논리 표현력이 커질수록 지수 $\gamma$가 1.04에서 2.60까지 치솟는다는 걸 측정했다.</li>
-<li>두 결과를 합치면 RL은 "가르치기"보다 "비싸게 골라내기"에 가깝다. 엔트로피만 보면 RL 루프 없이도 비슷한 효과를 수백~수천 배 싸게 재현할 수 있다.</li>
+<li>RLVR이 추론을 끌어올리는 실체는 새 능력을 가르치는 게 아니라, 베이스 모델이 이미 아는 분기 중 불확실한 1~3% 토큰에서만 올바른 쪽을 골라주는 희소한 교정이라는 분석이 나왔다.</li>
+<li>같은 날 올라온 다른 논문은 RL 학습 연산량이 추론 깊이에 대해 멱법칙($T \propto D^{\gamma}$)을 따르고, 논리 표현력이 커질수록 지수가 1.04에서 2.60까지 치솟는다는 걸 측정했다.</li>
+<li>두 결과를 합치면 RL은 가르치기보다 비싸게 골라내기에 가깝다. 엔트로피만 보면 RL 루프 없이 수백~수천 배 싸게 비슷한 효과가 난다.</li>
 </ul>
-<h2 id="why-now">배경 (Why now)</h2>
-<p>2025년 봄 칭화대 연구가 던진 질문 — RLVR로 튜닝한 모델이 pass@1은 이기지만 pass@k(k가 클 때)는 베이스 모델이 따라잡는다 — 이후 "RL은 새 능력을 주는가, 기존 분포를 좁힐 뿐인가" 논쟁이 1년을 끌었다 (<a href="https://arxiv.org/abs/2504.13837">Yang et al. — RL이 베이스 모델을 넘는가</a>). 5월 7일, 이 논쟁을 토큰 단위로 못 박는 두 편이 같은 날 arXiv에 올라왔다. 하나는 "RL의 효과는 희소한 정책 선택"이라 주장하고 (<a href="https://arxiv.org/abs/2605.06241">Akgül et al.</a>), 다른 하나는 "그 선택의 비용이 난도에 따라 멱법칙으로 폭발한다"는 걸 측정했다 (<a href="https://arxiv.org/abs/2605.06638">Wang et al.</a>).</p>
-<h2 id="_1">핵심 메커니즘</h2>
-<p>Paper A의 관찰은 단순하면서 강하다. RL이 실제로 바꾸는 토큰은 전체의 1~3%뿐이고, 그 자리는 모두 베이스 모델의 엔트로피가 높은(=어느 분기로 갈지 망설이는) 지점이다. 게다가 RL이 밀어주는 토큰은 항상 베이스 모델의 top-5 후보 안에 있다. 정답 경로는 이미 분포 안에 있고, RL은 갈림길에서만 "이쪽"을 찍어줄 뿐이다.</p>
-<pre class="codehilite"><code>저엔트로피 토큰 (확신)         고엔트로피 토큰 (망설임)
-  the -&gt; quick -&gt; ...           [  +   /   -   /   x  ]  &lt;- RL 개입
-   분포 그대로 통과               top-5 안에서 한 후보로 질량 이동
-</code></pre>
+<h2 id="_1">배경</h2>
+<p>2025년 봄 칭화대 연구가 던진 질문이 1년을 끌었다. RLVR로 튜닝한 모델이 pass@1은 이기지만 pass@k(k가 클 때)는 베이스 모델이 따라잡는다는 결과였다 (<a href="https://arxiv.org/abs/2504.13837">Yang et al.</a>). "RL은 새 능력을 주는가, 분포를 좁힐 뿐인가."</p>
+<p>5월 7일, 그 논쟁을 토큰 단위로 못 박는 두 편이 같은 날 arXiv에 올라왔다. 하나는 RL의 효과가 희소한 정책 선택이라 주장하고 (<a href="https://arxiv.org/abs/2605.06241">Akgül et al.</a>), 다른 하나는 그 선택의 비용이 난도에 따라 멱법칙으로 폭발한다는 걸 측정했다 (<a href="https://arxiv.org/abs/2605.06638">Wang et al.</a>).</p>
+<h2 id="_2">핵심 메커니즘</h2>
+<p>Paper A의 관찰은 단순하면서 강하다. RL이 실제로 바꾸는 토큰은 전체의 1~3%, 그 자리는 모두 베이스 모델 엔트로피가 높은(=어느 분기로 갈지 망설이는) 지점이다. RL이 밀어주는 토큰은 항상 베이스 모델의 top-5 후보 안에 있다. 정답 경로는 이미 분포 안에 있고, RL은 갈림길에서 "이쪽"을 찍어줄 뿐이다.</p>
+<div class="codehilite"><pre><span></span><code>저엔트로피 토큰 <span class="p">(</span>확신<span class="p">)</span>         고엔트로피 토큰 <span class="p">(</span>망설임<span class="p">)</span>
+  <span class="n">the</span> <span class="o">-&gt;</span> <span class="n">quick</span> <span class="o">-&gt;</span> <span class="kc">...</span>           <span class="p">[</span>  <span class="o">+</span>   <span class="o">/</span>   <span class="o">-</span>   <span class="o">/</span>   <span class="n">x</span>  <span class="p">]</span>  <span class="o">&lt;-</span> <span class="n">RL</span> 개입
+   분포 그대로 통과              <span class="n">top</span><span class="m">-5</span> 안에서 한 후보로 질량 이동
+</code></pre></div>
 
-<p>핵심은 이 교정이 <strong>저차원</strong>이라는 점이다. 모델 파라미터의 극히 일부로 표현된다. 그래서 온라인 생성 없이, 베이스 모델 롤아웃 수백 개에 엔트로피 게이팅과 대조 손실만 얹어도 같은 효과를 낸다(저자들의 RL-free 방법 ReasonMaxxer).</p>
-<h2 id="_2">코드 / 수식 예시</h2>
-<p>핵심은 "어디를 고칠지"를 RL 보상이 아니라 베이스 엔트로피로 정한다는 데 있다.</p>
-<pre class="codehilite"><code class="language-python"># 엔트로피 게이팅: RL 루프 없이 교정 지점만 고른다
-for tok in rollout:
-    p = base_model.next_token_probs(tok.context)   # 베이스 분포
-    H = -(p * p.log()).sum()                        # 토큰 엔트로피
-    if H &gt; tau:                                     # 망설이는 자리만 통과
-        # 정답 롤아웃 토큰 vs 오답 토큰을 대조
-        loss += contrastive(p, pos=correct_tok, neg=wrong_tok)
-# 온라인 생성도, 리워드 모델도 없음 -&gt; 단일 GPU 수 분
-</code></pre>
+<p>이 교정은 저차원이다. 그래서 온라인 생성 없이 베이스 모델 롤아웃 수백 개에 엔트로피 게이팅과 대조 손실만 얹어도 비슷한 효과가 난다(저자들의 RL-free 방법 ReasonMaxxer).</p>
+<h2 id="_3">코드 / 수식</h2>
+<p>핵심은 "어디를 고칠지"를 RL 보상이 아니라 베이스 엔트로피로 정한다는 점이다.</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># 엔트로피 게이팅: RL 루프 없이 교정 지점만 고른다</span>
+<span class="k">for</span> <span class="n">tok</span> <span class="ow">in</span> <span class="n">rollout</span><span class="p">:</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">base_model</span><span class="o">.</span><span class="n">next_token_probs</span><span class="p">(</span><span class="n">tok</span><span class="o">.</span><span class="n">context</span><span class="p">)</span>   <span class="c1"># 베이스 분포</span>
+    <span class="n">H</span> <span class="o">=</span> <span class="o">-</span><span class="p">(</span><span class="n">p</span> <span class="o">*</span> <span class="n">p</span><span class="o">.</span><span class="n">log</span><span class="p">())</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>                        <span class="c1"># 토큰 엔트로피</span>
+    <span class="k">if</span> <span class="n">H</span> <span class="o">&gt;</span> <span class="n">tau</span><span class="p">:</span>                                     <span class="c1"># 망설이는 자리만 통과</span>
+        <span class="n">loss</span> <span class="o">+=</span> <span class="n">contrastive</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="n">correct_tok</span><span class="p">,</span> <span class="n">neg</span><span class="o">=</span><span class="n">wrong_tok</span><span class="p">)</span>
+<span class="c1"># 온라인 생성도 리워드 모델도 없음. 단일 GPU에서 수 분</span>
+</code></pre></div>
 
-<p>비용 쪽은 Paper B가 채운다. 학습 연산량 $T$와 추론 깊이 $D$는 $T \propto D^{\gamma}$ ($R^2 &gt; 0.99$)를 따른다. 표현력이 if-then뿐일 땐 $\gamma \approx 1.04$로 거의 선형이지만, and/or/not/전칭(for all)이 들어가면 $\gamma \approx 2.60$까지 가파르게 오른다. 같은 깊이라도 "무엇으로" 학습하느냐가 전이 효율을 가른다(다운스트림 최대 +10.66점).</p>
-<h2 id="_3">한계·반론</h2>
-<p>첫째, 두 논문 모두 수학·논리 벤치마크 중심이다. 자유형식 코딩이나 에이전트처럼 정답 경로가 베이스 분포 밖에 있을 법한 영역까지 "선택"으로 설명될지는 확인 필요다. 둘째, pass@k 해석 자체에 반론이 있다 — 추론 과정과 답을 동시에 채점하는 CoT-Pass@K로 보면 RLVR이 모든 $k$에서 일반화를 끌어올린다는 결과도 있다 (<a href="https://arxiv.org/abs/2506.14245">CoT-Pass@K 반론</a>). 셋째, "1~3%만 바꾼다"가 곧 "RL이 불필요하다"는 아니다. 그 1%를 찾는 탐색 자체가 Paper B의 멱법칙 비용이고, 난도가 깊어지면 짚을 갈림길도 폭증한다.</p>
-<h2 id="_4">현직 엔지니어 관점</h2>
-<p>반도체·인프라 쪽에서 보면 이 두 편은 사후학습의 연산 예산을 다시 보게 만든다. RL 롤아웃 팜과 온라인 생성은 클러스터에서 가장 비싼 워크로드인데, 바뀌는 게 저차원 교정이라면 그 인프라는 "쉬운" 난도 구간에선 과투자다. 반대로 표현력이 높은 영역에선 $\gamma \approx 2.6$의 비용 곡선이 GPU 시간을 기하급수로 먹는다. 더 흥미로운 건 온디바이스 시사점이다. 교정이 저차원이고 엔트로피만으로 위치를 찾을 수 있다면, 추론 튜닝을 거대한 RL 파이프라인 없이 작은 어댑터 수준의 델타로 단말에 얹는 길이 열린다. 현장에서 영상 판정 모델을 손볼 때도 직관은 같다 — 전면 재학습보다 모델이 망설이는 경계 샘플만 골라 교정하는 쪽이 압도적으로 싸다. 이번 결과는 그 직관에 토큰 단위의 근거를 붙여준 셈이다.</p>
-<h2 id="_5">부록 — 더 읽을거리</h2>
+<p>비용 쪽은 Paper B가 채운다. 학습 연산량 $T$와 추론 깊이 $D$는 $T \propto D^{\gamma}$ ($R^2 &gt; 0.99$). if-then만 있을 땐 $\gamma \approx 1.04$로 거의 선형, and/or/not/전칭이 들어가면 $\gamma \approx 2.60$까지 가파르다.</p>
+<h2 id="_4">한계·반론</h2>
+<p>수학·논리 벤치마크 중심이라는 게 첫 한계다. 자유형식 코딩이나 에이전트처럼 정답 경로가 베이스 분포 밖에 있을 만한 영역까지 "선택"으로 설명될지는 확인이 필요하다.</p>
+<p>pass@k 해석에도 반론이 있다. 추론 과정과 답을 같이 채점하는 CoT-Pass@K로 보면 RLVR이 모든 $k$에서 일반화를 끌어올린다는 결과가 있다 (<a href="https://arxiv.org/abs/2506.14245">CoT-Pass@K</a>).</p>
+<p>"1~3%만 바꾼다"가 "RL이 불필요하다"는 아니다. 그 1%를 찾는 탐색 자체가 Paper B의 멱법칙 비용이고, 난도가 깊어질수록 짚을 갈림길이 폭증한다.</p>
+<h2 id="_5">현직 엔지니어 관점</h2>
+<p>반도체·인프라 쪽에서 보면 이 두 편은 사후학습 연산 예산을 다시 보게 만든다. RL 롤아웃 팜과 온라인 생성은 클러스터에서 가장 비싼 워크로드인데, 바뀌는 게 저차원 교정이라면 쉬운 난도 구간에선 과투자다. 반대로 표현력 높은 영역에선 $\gamma \approx 2.6$의 비용 곡선이 GPU 시간을 기하급수로 먹는다.</p>
+<p>온디바이스 함의가 더 흥미롭다. 교정이 저차원이고 엔트로피로 위치를 찾을 수 있다면, 추론 튜닝을 작은 어댑터 수준의 델타로 단말에 얹는 길이 열린다. 현장에서 영상 판정 모델을 손볼 때 직관은 같다. 전면 재학습보다 모델이 망설이는 경계 샘플만 골라 교정하는 쪽이 압도적으로 싸다. 이번 결과는 그 직관에 토큰 단위 근거를 붙여줬다.</p>
+<h2 id="_6">더 읽을거리</h2>
 <ul>
 <li>Nathan Lambert, "Does RL Really Incentivize Reasoning..." 해설 (<a href="https://natolambert.substack.com/p/does-reinforcement-learning-really">substack</a>)</li>
 <li>Nathan Lambert(@natolambert)의 X 코멘트 (<a href="https://x.com/natolambert/status/1914351774699512270">x.com</a>)</li>
@@ -208,7 +211,7 @@ for tok in rollout:
     
 <div class="post-share">
     <span class="share-label">공유하기</span>
-    <a href="https://twitter.com/intent/tweet?text=RL은 추론을 가르치지 않는다 — 토큰 1~3%만 건드리는 &#x27;선택&#x27;이라는 재해석&url=https://shonsubong.github.io/sonslab-blog/ai-tech/2026-05-23-am10.html"
+    <a href="https://twitter.com/intent/tweet?text=RL은 추론을 가르치는 게 아니다 — 토큰 1~3%만 건드린다는 재해석&url=https://shonsubong.github.io/sonslab-blog/ai-tech/2026-05-23-am10.html"
        class="share-btn" target="_blank" rel="noopener" aria-label="X(Twitter)에 공유">
         <span>X</span>
     </a>
@@ -232,13 +235,13 @@ for tok in rollout:
     </a>
     <a href="2026-05-24-am10.html" class="post-nav-link next">
         <span class="post-nav-label">다음 글 →</span>
-        <span class="post-nav-title">4비트로 10조 토큰을 학습한 길 — NVFP4가 FP8 정확도를 따라잡은 방식</span>
+        <span class="post-nav-title">4비트로 10조 토큰을 학습했다 — NVFP4가 FP8을 따라잡은 방식</span>
     </a>
 </nav>
     
 <section class="related-posts" aria-label="최근 다른 리포트">
     <div class="related-posts-label">최근 다른 리포트</div>
-    <ul class="related-list"><li><a href="2026-05-25-am10.html"><span class="related-title">어텐션마다 오차를 증명한다 — KV 캐시 양자화에 &#x27;인증서&#x27;를 붙이는 법</span><span class="related-date">2026-05-25 · AI 딥다이브 · 10:00</span></a></li><li><a href="2026-05-24-am10.html"><span class="related-title">4비트로 10조 토큰을 학습한 길 — NVFP4가 FP8 정확도를 따라잡은 방식</span><span class="related-date">2026-05-24 · AI 딥다이브 · 10:00</span></a></li><li><a href="2026-05-22-am10.html"><span class="related-title">검증을 별도 에이전트로 떼어낸 순간 — 루브릭 채점 루프가 추론 시점 품질을 끌어올린 방식</span><span class="related-date">2026-05-22 · AI 딥다이브 · 10:00</span></a></li><li><a href="2026-05-21-am10.html"><span class="related-title">메모리가 반쯤 커스텀 칩이 된 순간 — HBM4가 베이스 다이를 파운드리로 보낸 이유</span><span class="related-date">2026-05-21 · AI 딥다이브 · 10:00</span></a></li><li><a href="2026-05-20-am10.html"><span class="related-title">추론 가속의 옆문 — EAGLE-3와 MTP가 만나는 지점</span><span class="related-date">2026-05-20 · AI 딥다이브 · 10:00</span></a></li></ul>
+    <ul class="related-list"><li><a href="2026-05-31-am10.html"><span class="related-title">HBM4E 12단 샘플이 출하됐다 — 메모리 천장이 한 칸 더 올라간 사흘</span><span class="related-date">2026-05-31 · AI 딥다이브 · 10:00</span></a></li><li><a href="2026-05-29-am10.html"><span class="related-title">1M 컨텍스트 시대의 옆문 — TTT-E2E가 어텐션 위에 학습 루프를 얹은 방식</span><span class="related-date">2026-05-29 · AI 딥다이브 · 10:00</span></a></li><li><a href="2026-05-28-am10.html"><span class="related-title">광 모듈이 스위치 패키지 안으로 들어왔다 — CPO가 인터커넥트 전력 벽을 우회한 방식</span><span class="related-date">2026-05-28 · AI 딥다이브 · 10:00</span></a></li><li><a href="2026-05-27-am10.html"><span class="related-title">한 블록으로 N층을 흉내내는 길 — Mixture of Recursions와 토큰별 깊이</span><span class="related-date">2026-05-27 · AI 딥다이브 · 10:00</span></a></li><li><a href="2026-05-26-am10.html"><span class="related-title">자가회귀 독점이 흔들렸다 — 디퓨전 LLM이 추론을 1.7초로 끊은 방식</span><span class="related-date">2026-05-26 · AI 딥다이브 · 10:00</span></a></li></ul>
 </section>
 </article>
 
