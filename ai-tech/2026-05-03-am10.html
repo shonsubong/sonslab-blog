@@ -11,19 +11,19 @@
     <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/style.css">
-    <meta name="description" content="GTC 2026에서 NVIDIA는 Vera Rubin 플랫폼을 공개하면서 일곱 개의 새 칩을 양산 단계로 올렸다. 그 안에 Groq 3 LPU가 끼어 있다는 게 가장 의외였다. NVIDIA가 자체 GPU 라인업 옆에 외부 라이선스 IP를 박아 넣었다는 점, 그것도 HBM이 아니라 SRAM 기반 칩이라는 점에서다. 라이선스 액수 200억 달러는 NVIDIA 역사상 최대 규모다 (Tom&#x27;s Ha...">
+    <meta name="description" content="GTC 2026에서 NVIDIA는 Vera Rubin 플랫폼을 공개하면서 일곱 개의 새 칩을 양산 단계로 올렸다. 그 안에 Groq 3 LPU가 끼어 있다는 게 가장 의외였다. NVIDIA가 자체 GPU 라인업 옆에 외부 라이선스 IP를 끼워 넣었다는 점, 그것도 HBM이 아니라 SRAM 기반 칩이라는 점에서다. 라이선스 액수 200억 달러는 NVIDIA 역사상 최대 규모다 (Tom&#x27;s Ha...">
     <meta name="author" content="SONSLAB">
     <link rel="canonical" href="https://shonsubong.github.io/sonslab-blog/ai-tech/2026-05-03-am10.html">
     <meta property="og:site_name" content="SONSLAB">
     <meta property="og:type" content="article">
     <meta property="og:title" content="200억 달러짜리 SRAM 베팅 — Groq 3 LPU가 Vera Rubin에 들어간 이유">
-    <meta property="og:description" content="GTC 2026에서 NVIDIA는 Vera Rubin 플랫폼을 공개하면서 일곱 개의 새 칩을 양산 단계로 올렸다. 그 안에 Groq 3 LPU가 끼어 있다는 게 가장 의외였다. NVIDIA가 자체 GPU 라인업 옆에 외부 라이선스 IP를 박아 넣었다는 점, 그것도 HBM이 아니라 SRAM 기반 칩이라는 점에서다. 라이선스 액수 200억 달러는 NVIDIA 역사상 최대 규모다 (Tom&#x27;s Ha...">
+    <meta property="og:description" content="GTC 2026에서 NVIDIA는 Vera Rubin 플랫폼을 공개하면서 일곱 개의 새 칩을 양산 단계로 올렸다. 그 안에 Groq 3 LPU가 끼어 있다는 게 가장 의외였다. NVIDIA가 자체 GPU 라인업 옆에 외부 라이선스 IP를 끼워 넣었다는 점, 그것도 HBM이 아니라 SRAM 기반 칩이라는 점에서다. 라이선스 액수 200억 달러는 NVIDIA 역사상 최대 규모다 (Tom&#x27;s Ha...">
     <meta property="og:url" content="https://shonsubong.github.io/sonslab-blog/ai-tech/2026-05-03-am10.html">
     <meta property="og:image" content="https://shonsubong.github.io/sonslab-blog/assets/logo.jpg">
     <meta property="og:locale" content="ko_KR">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="200억 달러짜리 SRAM 베팅 — Groq 3 LPU가 Vera Rubin에 들어간 이유">
-    <meta name="twitter:description" content="GTC 2026에서 NVIDIA는 Vera Rubin 플랫폼을 공개하면서 일곱 개의 새 칩을 양산 단계로 올렸다. 그 안에 Groq 3 LPU가 끼어 있다는 게 가장 의외였다. NVIDIA가 자체 GPU 라인업 옆에 외부 라이선스 IP를 박아 넣었다는 점, 그것도 HBM이 아니라 SRAM 기반 칩이라는 점에서다. 라이선스 액수 200억 달러는 NVIDIA 역사상 최대 규모다 (Tom&#x27;s Ha...">
+    <meta name="twitter:description" content="GTC 2026에서 NVIDIA는 Vera Rubin 플랫폼을 공개하면서 일곱 개의 새 칩을 양산 단계로 올렸다. 그 안에 Groq 3 LPU가 끼어 있다는 게 가장 의외였다. NVIDIA가 자체 GPU 라인업 옆에 외부 라이선스 IP를 끼워 넣었다는 점, 그것도 HBM이 아니라 SRAM 기반 칩이라는 점에서다. 라이선스 액수 200억 달러는 NVIDIA 역사상 최대 규모다 (Tom&#x27;s Ha...">
     <meta name="twitter:image" content="https://shonsubong.github.io/sonslab-blog/assets/logo.jpg">
     <meta property="article:published_time" content="2026-05-03T10:00:00+09:00">
     <meta property="article:modified_time" content="2026-05-03T10:00:00+09:00">
@@ -56,7 +56,7 @@
     } catch (e) {}
 })();
 </script>
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "200억 달러짜리 SRAM 베팅 — Groq 3 LPU가 Vera Rubin에 들어간 이유", "description": "GTC 2026에서 NVIDIA는 Vera Rubin 플랫폼을 공개하면서 일곱 개의 새 칩을 양산 단계로 올렸다. 그 안에 Groq 3 LPU가 끼어 있다는 게 가장 의외였다. NVIDIA가 자체 GPU 라인업 옆에 외부 라이선스 IP를 박아 넣었다는 점, 그것도 HBM이 아니라 SRAM 기반 칩이라는 점에서다. 라이선스 액수 200억 달러는 NVIDIA 역사상 최대 규모다 (Tom's Ha...", "url": "https://shonsubong.github.io/sonslab-blog/ai-tech/2026-05-03-am10.html", "mainEntityOfPage": "https://shonsubong.github.io/sonslab-blog/ai-tech/2026-05-03-am10.html", "inLanguage": "ko", "image": "https://shonsubong.github.io/sonslab-blog/assets/logo.jpg", "author": {"@type": "Person", "name": "SONSLAB"}, "publisher": {"@type": "Organization", "name": "SONSLAB", "logo": {"@type": "ImageObject", "url": "https://shonsubong.github.io/sonslab-blog/assets/logo.jpg"}}, "datePublished": "2026-05-03T10:00:00+09:00", "dateModified": "2026-05-03T10:00:00+09:00"}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "200억 달러짜리 SRAM 베팅 — Groq 3 LPU가 Vera Rubin에 들어간 이유", "description": "GTC 2026에서 NVIDIA는 Vera Rubin 플랫폼을 공개하면서 일곱 개의 새 칩을 양산 단계로 올렸다. 그 안에 Groq 3 LPU가 끼어 있다는 게 가장 의외였다. NVIDIA가 자체 GPU 라인업 옆에 외부 라이선스 IP를 끼워 넣었다는 점, 그것도 HBM이 아니라 SRAM 기반 칩이라는 점에서다. 라이선스 액수 200억 달러는 NVIDIA 역사상 최대 규모다 (Tom's Ha...", "url": "https://shonsubong.github.io/sonslab-blog/ai-tech/2026-05-03-am10.html", "mainEntityOfPage": "https://shonsubong.github.io/sonslab-blog/ai-tech/2026-05-03-am10.html", "inLanguage": "ko", "image": "https://shonsubong.github.io/sonslab-blog/assets/logo.jpg", "author": {"@type": "Person", "name": "SONSLAB"}, "publisher": {"@type": "Organization", "name": "SONSLAB", "logo": {"@type": "ImageObject", "url": "https://shonsubong.github.io/sonslab-blog/assets/logo.jpg"}}, "datePublished": "2026-05-03T10:00:00+09:00", "dateModified": "2026-05-03T10:00:00+09:00"}</script>
     <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "SONSLAB", "item": "https://shonsubong.github.io/sonslab-blog/"}, {"@type": "ListItem", "position": 2, "name": "글", "item": "https://shonsubong.github.io/sonslab-blog/#posts"}, {"@type": "ListItem", "position": 3, "name": "200억 달러짜리 SRAM 베팅 — Groq 3 LPU가 Vera Rubin에 들어간 이유", "item": "https://shonsubong.github.io/sonslab-blog/ai-tech/2026-05-03-am10.html"}]}</script>
 </head>
 <body class="post-page" data-category="ai-tech">
@@ -70,10 +70,10 @@
     <div class="sidebar-section">
         <div class="sidebar-section-label">카테고리</div>
         <ul class="sidebar-cat-list">
-            <li><a href="../index.html" class="">홈 <span class="sidebar-cat-count">280</span></a></li>
-            <li><a href="../index.html#posts" class="">데일리 브리핑 <span class="sidebar-cat-count">202</span></a></li>
-            <li><a href="../ai-tech/index.html" class="active">AI 기술 딥다이브 <span class="sidebar-cat-count">32</span></a></li>
-            <li><a href="../claude-tips/index.html" class="">Claude Code 팁 <span class="sidebar-cat-count">46</span></a></li>
+            <li><a href="../index.html" class="">홈 <span class="sidebar-cat-count">319</span></a></li>
+            <li><a href="../index.html#posts" class="">데일리 브리핑 <span class="sidebar-cat-count">227</span></a></li>
+            <li><a href="../ai-tech/index.html" class="active">AI 기술 딥다이브 <span class="sidebar-cat-count">40</span></a></li>
+            <li><a href="../claude-tips/index.html" class="">Claude Code 팁 <span class="sidebar-cat-count">52</span></a></li>
             <li><a href="../manuals/claude-code.html" class="">Claude Code 가이드북 <span class="sidebar-cat-count">PDF</span></a></li>
             <li><a href="../about.html">About</a></li>
             <li><a href="../feed.xml">RSS</a></li>
@@ -81,15 +81,15 @@
     </div>
     <div class="sidebar-section">
         <div class="sidebar-section-label">데일리 최근 글</div>
-        <ul class="sidebar-recent"><li><a href="../posts/2026-05-31-pm22-ai-tech-news.html"><span class="r-title">Codex Pro 2배 혜택이 오늘 자정에 닫힌다 — 같은 주에 오픈웨이트는 또 한 칸 좁혔다</span><span class="r-meta">저녁 마감</span></a></li><li><a href="../posts/2026-05-31-pm17-ai-tech-news.html"><span class="r-title">Siri의 새 두뇌가 Gemini로 정해졌다 — Claude는 옵션 자리, WWDC가 8일 남았다</span><span class="r-meta">오후 브리핑</span></a></li><li><a href="../posts/2026-05-31-am06-ai-tech-news.html"><span class="r-title">NVIDIA N1X가 노트북 안으로 들어온다 — Vera Rubin·Physical AI까지 한 묶음으로</span><span class="r-meta">새벽 리포트</span></a></li><li><a href="../posts/2026-05-29-am06-ai-tech-news.html"><span class="r-title">Opus 4.8 떨어졌고, 같은 날 Anthropic 시총이 $965B로 OpenAI를 넘었다</span><span class="r-meta">새벽 리포트</span></a></li><li><a href="../posts/2026-05-28-pm17-ai-tech-news.html"><span class="r-title">Qwen 3.7 Max가 35시간 무중단으로 돌아간다 — Claude Code 하네스까지 받는다</span><span class="r-meta">오후 브리핑</span></a></li></ul>
+        <ul class="sidebar-recent"><li><a href="../posts/2026-06-14-am06-ai-tech-news.html"><span class="r-title">Microsoft가 OpenAI 없이 추론 모델을 만들었다 — 증류 안 한 MAI-Thinking-1의 의미</span><span class="r-meta">새벽 리포트</span></a></li><li><a href="../posts/2026-06-13-pm22-ai-tech-news.html"><span class="r-title">에이전트가 스스로 도구를 찾기 시작했다 — 테스트타임 추론이 2026년의 중심으로</span><span class="r-meta">저녁 마감</span></a></li><li><a href="../posts/2026-06-13-pm17-ai-tech-news.html"><span class="r-title">Claude Mythos가 삼성·SK까지 들어왔다 — 너무 잘 찾아서 공개를 안 한다는 모델</span><span class="r-meta">오후 브리핑</span></a></li><li><a href="../posts/2026-06-13-pm12-ai-tech-news.html"><span class="r-title">MiniMax M3, 약속한 오픈웨이트가 열흘째 안 나온다 — &#x27;오픈&#x27;은 아직 회사의 말일 뿐</span><span class="r-meta">오전 브리핑</span></a></li><li><a href="../posts/2026-06-13-am06-ai-tech-news.html"><span class="r-title">Altman·Hassabis·Amodei가 G7 같은 테이블에 앉는다 — 모델 복지 자기 보고는 의심받기 시작했다</span><span class="r-meta">새벽 리포트</span></a></li></ul>
     </div>
     <div class="sidebar-section">
         <div class="sidebar-section-label">AI 기술 최근 글</div>
-        <ul class="sidebar-recent"><li><a href="../ai-tech/2026-05-31-am10.html"><span class="r-title">HBM4E 12단 샘플이 출하됐다 — 메모리 천장이 한 칸 더 올라간 사흘</span><span class="r-meta">AI 딥다이브</span></a></li><li><a href="../ai-tech/2026-05-29-am10.html"><span class="r-title">1M 컨텍스트 시대의 옆문 — TTT-E2E가 어텐션 위에 학습 루프를 얹은 방식</span><span class="r-meta">AI 딥다이브</span></a></li><li><a href="../ai-tech/2026-05-28-am10.html"><span class="r-title">광 모듈이 스위치 패키지 안으로 들어왔다 — CPO가 인터커넥트 전력 벽을 우회한 방식</span><span class="r-meta">AI 딥다이브</span></a></li><li><a href="../ai-tech/2026-05-27-am10.html"><span class="r-title">한 블록으로 N층을 흉내내는 길 — Mixture of Recursions와 토큰별 깊이</span><span class="r-meta">AI 딥다이브</span></a></li><li><a href="../ai-tech/2026-05-26-am10.html"><span class="r-title">자가회귀 독점이 흔들렸다 — 디퓨전 LLM이 추론을 1.7초로 끊은 방식</span><span class="r-meta">AI 딥다이브</span></a></li></ul>
+        <ul class="sidebar-recent"><li><a href="../ai-tech/2026-06-13-am10.html"><span class="r-title">한 번 인코딩, 모든 쿼리가 떨어진다 — D4RT가 4D 파이프라인을 접은 방법</span><span class="r-meta">AI 딥다이브</span></a></li><li><a href="../ai-tech/2026-06-12-am10.html"><span class="r-title">129개 갈림길에서 사람보다 64% — Anthropic이 그린 자기개선 척도</span><span class="r-meta">AI 딥다이브</span></a></li><li><a href="../ai-tech/2026-06-11-am10.html"><span class="r-title">150M 비전 인코더를 매트릭스 한 줄로 — Gemma 4 12B가 인코더를 통째로 뺀 방법</span><span class="r-meta">AI 딥다이브</span></a></li><li><a href="../ai-tech/2026-06-10-am10.html"><span class="r-title">20B를 플래시에 눕히고 4B만 깨운다 — AFM 3 Core Advanced의 IFP 구조</span><span class="r-meta">AI 딥다이브</span></a></li><li><a href="../ai-tech/2026-06-09-am10.html"><span class="r-title">활성 55B로 RULER 1M 95% — Nemotron 3 Ultra가 어텐션을 거의 버린 이유</span><span class="r-meta">AI 딥다이브</span></a></li></ul>
     </div>
     <div class="sidebar-section">
         <div class="sidebar-section-label">Claude Code 팁 최근 글</div>
-        <ul class="sidebar-recent"><li><a href="../claude-tips/2026-05-31-pm23.html"><span class="r-title">흩어진 명령·hook·skill을 plugin 한 묶음으로 새 머신에 한 줄로 깐다</span><span class="r-meta">23:00</span></a></li><li><a href="../claude-tips/2026-05-29-pm23.html"><span class="r-title">git worktree로 Claude Code 세션을 분리해 충돌 없이 병렬로 굴린다</span><span class="r-meta">23:00</span></a></li><li><a href="../claude-tips/2026-05-27-pm23.html"><span class="r-title">위험한 Bash 명령은 PreToolUse hook 한 장으로 실행 전에 끊는다</span><span class="r-meta">23:00</span></a></li><li><a href="../claude-tips/2026-05-26-pm23.html"><span class="r-title">/init 한 줄로 새 저장소를 Claude Code에 통째로 소개한다</span><span class="r-meta">23:00</span></a></li><li><a href="../claude-tips/2026-05-25-pm23.html"><span class="r-title">claude agents — 여러 Claude Code 세션을 한 화면에서 굴린다</span><span class="r-meta">23:00</span></a></li></ul>
+        <ul class="sidebar-recent"><li><a href="../claude-tips/2026-06-13-pm23.html"><span class="r-title">--safe-mode 한 줄로 커스터마이즈를 전부 끄고 망가진 원인을 가른다</span><span class="r-meta">23:00</span></a></li><li><a href="../claude-tips/2026-06-12-pm23.html"><span class="r-title">CLAUDE.md에 다 적지 말고 @로 다른 파일을 끌어와 쪼갠다</span><span class="r-meta">23:00</span></a></li><li><a href="../claude-tips/2026-06-11-pm23.html"><span class="r-title">.claude/skills/에 SKILL.md 한 장 만들어두면 같은 절차를 Claude Code가 알아서 골라 쓴다</span><span class="r-meta">23:00</span></a></li><li><a href="../claude-tips/2026-06-10-pm23.html"><span class="r-title">/clear과 /compact — 둘 다 컨텍스트를 정리하지만 손에 잡는 순간이 다르다</span><span class="r-meta">23:00</span></a></li><li><a href="../claude-tips/2026-06-09-pm23.html"><span class="r-title">팀에 공유하기 애매한 개인 메모는 CLAUDE.local.md로 따로 뺀다</span><span class="r-meta">23:00</span></a></li></ul>
     </div>
 </aside>
 <div class="sidebar-backdrop" id="sidebar-backdrop" aria-hidden="true"></div>
@@ -177,34 +177,34 @@
 <li>LPX 랙 한 대에 256개 LPU가 들어가 SRAM 총합 128 GB. 결정론적 디코드 지연을 무기로 GPU의 배치 의존성을 정면 부정하는 추론 전용 베팅이다.</li>
 </ul>
 <h2 id="why-now">배경 — Why now</h2>
-<p>GTC 2026에서 NVIDIA는 Vera Rubin 플랫폼을 공개하면서 일곱 개의 새 칩을 양산 단계로 올렸다. 그 안에 Groq 3 LPU가 끼어 있다는 게 가장 의외였다. NVIDIA가 자체 GPU 라인업 옆에 외부 라이선스 IP를 박아 넣었다는 점, 그것도 HBM이 아니라 SRAM 기반 칩이라는 점에서다. 라이선스 액수 200억 달러는 NVIDIA 역사상 최대 규모다 (<a href="https://www.tomshardware.com/tech-industry/semiconductors/nvidias-20-billion-groq-deal-produces-its-first-chip">Tom's Hardware — Nvidia's $20 billion Groq deal</a>).</p>
+<p>GTC 2026에서 NVIDIA는 Vera Rubin 플랫폼을 공개하면서 일곱 개의 새 칩을 양산 단계로 올렸다. 그 안에 Groq 3 LPU가 끼어 있다는 게 가장 의외였다. NVIDIA가 자체 GPU 라인업 옆에 외부 라이선스 IP를 끼워 넣었다는 점, 그것도 HBM이 아니라 SRAM 기반 칩이라는 점에서다. 라이선스 액수 200억 달러는 NVIDIA 역사상 최대 규모다 (<a href="https://www.tomshardware.com/tech-industry/semiconductors/nvidias-20-billion-groq-deal-produces-its-first-chip">Tom's Hardware — Nvidia's $20 billion Groq deal</a>).</p>
 <p>직전 1주일에 굳어진 그림이 하나 더 있다. Google이 4월 22일 TPU 8t/8i 두 칩을 분리 발표했고 (<a href="https://www.cnbc.com/2026/04/22/google-launches-training-and-inference-tpus-in-latest-shot-at-nvidia.html">CNBC — Google TPU 8</a>), OpenAI는 Cerebras에서 200억 달러어치를 사기로 했다. 추론과 훈련을 같은 GPU로 묶는 시대가 끝났다는 신호가 한 주에 세 번 나온 셈이다.</p>
 <h2 id="sram-">핵심 메커니즘 — SRAM-온리 결정론</h2>
 <p>GPU는 HBM에 가중치를 두고 매 토큰마다 다시 페치해 온다. HBM3 SXM 기준 3.35 TB/s, 페치당 수백 ns. 캐시·프리페처·MMU 큐 어디서든 막히면 디코드 지연이 흔들린다.</p>
 <p>LPU는 이 메모리 계층 자체를 부정한다.</p>
-<div class="codehilite"><pre><span></span><code><span class="k">[GPU 추론 경로]              [LPU 추론 경로]</span><span class="w"></span>
-<span class="na">HBM 3.35 TB/s                SRAM 150 TB/s (×45)</span><span class="w"></span>
-<span class="w">  </span><span class="na">↓ (수백 ns, 가변)            ↓ (수 ns, 고정)</span><span class="w"></span>
-<span class="na">L2/L1 캐시·프리페처          없음</span><span class="w"></span>
-<span class="w">  </span><span class="na">↓                           ↓</span><span class="w"></span>
-<span class="na">SM 스케줄러·warp              결정론적 데이터플로</span><span class="w"></span>
-<span class="w">  </span><span class="na">↓ (배치 의존)                ↓ (사이클당 동일)</span><span class="w"></span>
-<span class="na">가변 디코드 지연             평탄한 디코드 지연</span><span class="w"></span>
-</code></pre></div>
+<pre class="codehilite"><code>[GPU 추론 경로]              [LPU 추론 경로]
+HBM 3.35 TB/s                SRAM 150 TB/s (×45)
+  ↓ (수백 ns, 가변)            ↓ (수 ns, 고정)
+L2/L1 캐시·프리페처          없음
+  ↓                           ↓
+SM 스케줄러·warp              결정론적 데이터플로
+  ↓ (배치 의존)                ↓ (사이클당 동일)
+가변 디코드 지연             평탄한 디코드 지연
+</code></pre>
 
 <p>500 MB SRAM이 가중치의 <em>주 저장소</em>다 — 캐시가 아니다. 모든 클록 사이클이 컴파일 타임에 정해진 데이터플로 그래프를 따라간다. 분기 예측도, 투기 실행도, 런타임 스케줄링도 없다 (<a href="https://developer.nvidia.com/blog/inside-nvidia-groq-3-lpx-the-low-latency-inference-accelerator-for-the-nvidia-vera-rubin-platform/">NVIDIA Developer — Inside Groq 3 LPX</a>).</p>
 <h2 id="8b-lpx">수치 계산 — 8B 모델을 LPX 랙에 올리면</h2>
 <p>Llama 3 8B를 BF16으로 올리면 가중치만 16 GB. LPU 칩당 SRAM 500 MB이므로 단순 분할로 32개 칩이 필요하다. 256-LPU 랙은 8B 모델을 약 8 인스턴스 동시에 올린다는 뜻이다.</p>
-<div class="codehilite"><pre><span></span><code><span class="n">model_params</span>   <span class="o">=</span> <span class="mf">8e9</span>          <span class="c1"># 8B</span>
-<span class="n">weight_bytes</span>   <span class="o">=</span> <span class="mi">2</span>            <span class="c1"># BF16</span>
-<span class="n">total_weights</span>  <span class="o">=</span> <span class="mf">16e9</span>         <span class="c1"># 16 GB</span>
-<span class="n">chip_sram</span>      <span class="o">=</span> <span class="mf">0.5e9</span>        <span class="c1"># 500 MB</span>
-<span class="n">chips_needed</span>   <span class="o">=</span> <span class="n">total_weights</span> <span class="o">/</span> <span class="n">chip_sram</span>   <span class="c1"># 32</span>
-<span class="n">rack_chips</span>     <span class="o">=</span> <span class="mi">256</span>
-<span class="n">instances</span>      <span class="o">=</span> <span class="n">rack_chips</span> <span class="o">//</span> <span class="n">chips_needed</span>  <span class="c1"># 8</span>
-</code></pre></div>
+<pre class="codehilite"><code class="language-python">model_params   = 8e9          # 8B
+weight_bytes   = 2            # BF16
+total_weights  = 16e9         # 16 GB
+chip_sram      = 0.5e9        # 500 MB
+chips_needed   = total_weights / chip_sram   # 32
+rack_chips     = 256
+instances      = rack_chips // chips_needed  # 8
+</code></pre>
 
-<p>70B 모델을 BF16으로 올리려 하면 140 GB → 280칩이 필요해 한 랙도 모자라다. 추론 전용임을 못 박는 숫자다. 인용된 벤치 기준 Llama 3 8B에서 1300 tok/s 이상이 나오고, 같은 모델 H100은 약 100 tok/s 수준이다 (<a href="https://groq.com/blog/inside-the-lpu-deconstructing-groq-speed">Groq Blog — Inside the LPU</a>).</p>
+<p>70B 모델을 BF16으로 올리려 하면 140 GB → 280칩이 필요해 한 랙도 모자라다. 추론 전용임을 분명히 하는 숫자다. 인용된 벤치 기준 Llama 3 8B에서 1300 tok/s 이상이 나오고, 같은 모델 H100은 약 100 tok/s 수준이다 (<a href="https://groq.com/blog/inside-the-lpu-deconstructing-groq-speed">Groq Blog — Inside the LPU</a>).</p>
 <h2 id="_1">한계·반론</h2>
 <p>첫째, 500 MB SRAM은 4nm Samsung 공정에서도 다이의 상당 부분을 잡아먹는다. 모델이 한 칩에 안 들어가면 모든 게 인터커넥트 문제로 바뀐다. 칩 간 스케일업은 2.5 TB/s — SRAM 150 TB/s의 60분의 1이다. 분할이 깊어질수록 결정론 우위가 깎인다.</p>
 <p>둘째, MoE처럼 전문가가 많은 모델은 활성화 파라미터가 적어도 전체가 SRAM에 있어야 한다. 직전에 다룬 DeepSeek V4류 라우팅에는 칩 수요가 산술적으로 불리하다.</p>
@@ -252,7 +252,7 @@
     
 <section class="related-posts" aria-label="최근 다른 리포트">
     <div class="related-posts-label">최근 다른 리포트</div>
-    <ul class="related-list"><li><a href="2026-05-31-am10.html"><span class="related-title">HBM4E 12단 샘플이 출하됐다 — 메모리 천장이 한 칸 더 올라간 사흘</span><span class="related-date">2026-05-31 · AI 딥다이브 · 10:00</span></a></li><li><a href="2026-05-29-am10.html"><span class="related-title">1M 컨텍스트 시대의 옆문 — TTT-E2E가 어텐션 위에 학습 루프를 얹은 방식</span><span class="related-date">2026-05-29 · AI 딥다이브 · 10:00</span></a></li><li><a href="2026-05-28-am10.html"><span class="related-title">광 모듈이 스위치 패키지 안으로 들어왔다 — CPO가 인터커넥트 전력 벽을 우회한 방식</span><span class="related-date">2026-05-28 · AI 딥다이브 · 10:00</span></a></li><li><a href="2026-05-27-am10.html"><span class="related-title">한 블록으로 N층을 흉내내는 길 — Mixture of Recursions와 토큰별 깊이</span><span class="related-date">2026-05-27 · AI 딥다이브 · 10:00</span></a></li><li><a href="2026-05-26-am10.html"><span class="related-title">자가회귀 독점이 흔들렸다 — 디퓨전 LLM이 추론을 1.7초로 끊은 방식</span><span class="related-date">2026-05-26 · AI 딥다이브 · 10:00</span></a></li></ul>
+    <ul class="related-list"><li><a href="2026-06-13-am10.html"><span class="related-title">한 번 인코딩, 모든 쿼리가 떨어진다 — D4RT가 4D 파이프라인을 접은 방법</span><span class="related-date">2026-06-13 · AI 딥다이브 · 10:00</span></a></li><li><a href="2026-06-12-am10.html"><span class="related-title">129개 갈림길에서 사람보다 64% — Anthropic이 그린 자기개선 척도</span><span class="related-date">2026-06-12 · AI 딥다이브 · 10:00</span></a></li><li><a href="2026-06-11-am10.html"><span class="related-title">150M 비전 인코더를 매트릭스 한 줄로 — Gemma 4 12B가 인코더를 통째로 뺀 방법</span><span class="related-date">2026-06-11 · AI 딥다이브 · 10:00</span></a></li><li><a href="2026-06-10-am10.html"><span class="related-title">20B를 플래시에 눕히고 4B만 깨운다 — AFM 3 Core Advanced의 IFP 구조</span><span class="related-date">2026-06-10 · AI 딥다이브 · 10:00</span></a></li><li><a href="2026-06-09-am10.html"><span class="related-title">활성 55B로 RULER 1M 95% — Nemotron 3 Ultra가 어텐션을 거의 버린 이유</span><span class="related-date">2026-06-09 · AI 딥다이브 · 10:00</span></a></li></ul>
 </section>
 </article>
 

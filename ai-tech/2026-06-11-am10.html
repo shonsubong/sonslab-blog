@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>150M 비전 인코더를 매트릭스 한 줄로 — Gemma 4 12B가 인코더를 통째로 뺀 방법 — SONSLAB</title>
+    <link rel="icon" href="../assets/logo.jpg">
+    <link rel="alternate" type="application/atom+xml" title="SONSLAB Feed" href="../feed.xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/style.css">
+    <meta name="description" content="이번 주 온디바이스 멀티모달이 다시 뜨거운 건 6/8 WWDC26 Apple AFM 3 Core Advanced(NAND offload MoE) 발표 직전인 6/3에 DeepMind이 Gemma 4 12B를 끼워 넣었기 때문이다. 두 회사가 같은 주에 &quot;노트북·폰에서 도는 멀티모달&quot;을 들고 나왔지만 줄이는 지점이 정반대다.">
+    <meta name="author" content="SONSLAB">
+    <link rel="canonical" href="https://shonsubong.github.io/sonslab-blog/ai-tech/2026-06-11-am10.html">
+    <meta property="og:site_name" content="SONSLAB">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="150M 비전 인코더를 매트릭스 한 줄로 — Gemma 4 12B가 인코더를 통째로 뺀 방법">
+    <meta property="og:description" content="이번 주 온디바이스 멀티모달이 다시 뜨거운 건 6/8 WWDC26 Apple AFM 3 Core Advanced(NAND offload MoE) 발표 직전인 6/3에 DeepMind이 Gemma 4 12B를 끼워 넣었기 때문이다. 두 회사가 같은 주에 &quot;노트북·폰에서 도는 멀티모달&quot;을 들고 나왔지만 줄이는 지점이 정반대다.">
+    <meta property="og:url" content="https://shonsubong.github.io/sonslab-blog/ai-tech/2026-06-11-am10.html">
+    <meta property="og:image" content="https://shonsubong.github.io/sonslab-blog/assets/logo.jpg">
+    <meta property="og:locale" content="ko_KR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="150M 비전 인코더를 매트릭스 한 줄로 — Gemma 4 12B가 인코더를 통째로 뺀 방법">
+    <meta name="twitter:description" content="이번 주 온디바이스 멀티모달이 다시 뜨거운 건 6/8 WWDC26 Apple AFM 3 Core Advanced(NAND offload MoE) 발표 직전인 6/3에 DeepMind이 Gemma 4 12B를 끼워 넣었기 때문이다. 두 회사가 같은 주에 &quot;노트북·폰에서 도는 멀티모달&quot;을 들고 나왔지만 줄이는 지점이 정반대다.">
+    <meta name="twitter:image" content="https://shonsubong.github.io/sonslab-blog/assets/logo.jpg">
+    <meta property="article:published_time" content="2026-06-11T10:00:00+09:00">
+    <meta property="article:modified_time" content="2026-06-11T10:00:00+09:00">
+    
+<script>
+(function() {
+    try {
+        var saved = localStorage.getItem('sonslab-theme');
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var theme = saved || (prefersDark ? 'dark' : 'light');
+        if (theme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+
+        // 디자인 pref: 'random' | 'current' | 'refined' | 'editorial' | 'broadsheet'
+        // 저장값이 없거나 'random'이면 매 페이지 로드마다 4개 중 하나를 무작위로 추출.
+        var pref = localStorage.getItem('sonslab-design') || 'random';
+        var allowed = ['current', 'refined', 'editorial', 'broadsheet'];
+        var resolved;
+        if (pref === 'random') {
+            resolved = allowed[Math.floor(Math.random() * allowed.length)];
+        } else if (allowed.indexOf(pref) === -1) {
+            pref = 'current';
+            resolved = 'current';
+        } else {
+            resolved = pref;
+        }
+        if (resolved !== 'current') document.documentElement.setAttribute('data-design', resolved);
+        // body script가 재추출 없이 라벨만 맞추도록 결과를 공유.
+        window.__sonslabDesignPref = pref;
+        window.__sonslabDesignResolved = resolved;
+    } catch (e) {}
+})();
+</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "150M 비전 인코더를 매트릭스 한 줄로 — Gemma 4 12B가 인코더를 통째로 뺀 방법", "description": "이번 주 온디바이스 멀티모달이 다시 뜨거운 건 6/8 WWDC26 Apple AFM 3 Core Advanced(NAND offload MoE) 발표 직전인 6/3에 DeepMind이 Gemma 4 12B를 끼워 넣었기 때문이다. 두 회사가 같은 주에 \"노트북·폰에서 도는 멀티모달\"을 들고 나왔지만 줄이는 지점이 정반대다.", "url": "https://shonsubong.github.io/sonslab-blog/ai-tech/2026-06-11-am10.html", "mainEntityOfPage": "https://shonsubong.github.io/sonslab-blog/ai-tech/2026-06-11-am10.html", "inLanguage": "ko", "image": "https://shonsubong.github.io/sonslab-blog/assets/logo.jpg", "author": {"@type": "Person", "name": "SONSLAB"}, "publisher": {"@type": "Organization", "name": "SONSLAB", "logo": {"@type": "ImageObject", "url": "https://shonsubong.github.io/sonslab-blog/assets/logo.jpg"}}, "datePublished": "2026-06-11T10:00:00+09:00", "dateModified": "2026-06-11T10:00:00+09:00"}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "SONSLAB", "item": "https://shonsubong.github.io/sonslab-blog/"}, {"@type": "ListItem", "position": 2, "name": "글", "item": "https://shonsubong.github.io/sonslab-blog/#posts"}, {"@type": "ListItem", "position": 3, "name": "150M 비전 인코더를 매트릭스 한 줄로 — Gemma 4 12B가 인코더를 통째로 뺀 방법", "item": "https://shonsubong.github.io/sonslab-blog/ai-tech/2026-06-11-am10.html"}]}</script>
+</head>
+<body class="post-page" data-category="ai-tech">
+    <div class="reading-progress" id="reading-progress" role="progressbar" aria-label="읽기 진행률"></div>
+
+<aside class="site-sidebar" id="site-sidebar" aria-label="사이트 메뉴">
+    <a href="../index.html" class="sidebar-brand">
+        <img src="../assets/logo.jpg" alt="SONSLAB" onerror="this.style.display='none'">
+        <span class="name">SONSLAB</span>
+    </a>
+    <div class="sidebar-section">
+        <div class="sidebar-section-label">카테고리</div>
+        <ul class="sidebar-cat-list">
+            <li><a href="../index.html" class="">홈 <span class="sidebar-cat-count">319</span></a></li>
+            <li><a href="../index.html#posts" class="">데일리 브리핑 <span class="sidebar-cat-count">227</span></a></li>
+            <li><a href="../ai-tech/index.html" class="active">AI 기술 딥다이브 <span class="sidebar-cat-count">40</span></a></li>
+            <li><a href="../claude-tips/index.html" class="">Claude Code 팁 <span class="sidebar-cat-count">52</span></a></li>
+            <li><a href="../manuals/claude-code.html" class="">Claude Code 가이드북 <span class="sidebar-cat-count">PDF</span></a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../feed.xml">RSS</a></li>
+        </ul>
+    </div>
+    <div class="sidebar-section">
+        <div class="sidebar-section-label">데일리 최근 글</div>
+        <ul class="sidebar-recent"><li><a href="../posts/2026-06-14-am06-ai-tech-news.html"><span class="r-title">Microsoft가 OpenAI 없이 추론 모델을 만들었다 — 증류 안 한 MAI-Thinking-1의 의미</span><span class="r-meta">새벽 리포트</span></a></li><li><a href="../posts/2026-06-13-pm22-ai-tech-news.html"><span class="r-title">에이전트가 스스로 도구를 찾기 시작했다 — 테스트타임 추론이 2026년의 중심으로</span><span class="r-meta">저녁 마감</span></a></li><li><a href="../posts/2026-06-13-pm17-ai-tech-news.html"><span class="r-title">Claude Mythos가 삼성·SK까지 들어왔다 — 너무 잘 찾아서 공개를 안 한다는 모델</span><span class="r-meta">오후 브리핑</span></a></li><li><a href="../posts/2026-06-13-pm12-ai-tech-news.html"><span class="r-title">MiniMax M3, 약속한 오픈웨이트가 열흘째 안 나온다 — &#x27;오픈&#x27;은 아직 회사의 말일 뿐</span><span class="r-meta">오전 브리핑</span></a></li><li><a href="../posts/2026-06-13-am06-ai-tech-news.html"><span class="r-title">Altman·Hassabis·Amodei가 G7 같은 테이블에 앉는다 — 모델 복지 자기 보고는 의심받기 시작했다</span><span class="r-meta">새벽 리포트</span></a></li></ul>
+    </div>
+    <div class="sidebar-section">
+        <div class="sidebar-section-label">AI 기술 최근 글</div>
+        <ul class="sidebar-recent"><li><a href="../ai-tech/2026-06-13-am10.html"><span class="r-title">한 번 인코딩, 모든 쿼리가 떨어진다 — D4RT가 4D 파이프라인을 접은 방법</span><span class="r-meta">AI 딥다이브</span></a></li><li><a href="../ai-tech/2026-06-12-am10.html"><span class="r-title">129개 갈림길에서 사람보다 64% — Anthropic이 그린 자기개선 척도</span><span class="r-meta">AI 딥다이브</span></a></li><li><a href="../ai-tech/2026-06-11-am10.html"><span class="r-title">150M 비전 인코더를 매트릭스 한 줄로 — Gemma 4 12B가 인코더를 통째로 뺀 방법</span><span class="r-meta">AI 딥다이브</span></a></li><li><a href="../ai-tech/2026-06-10-am10.html"><span class="r-title">20B를 플래시에 눕히고 4B만 깨운다 — AFM 3 Core Advanced의 IFP 구조</span><span class="r-meta">AI 딥다이브</span></a></li><li><a href="../ai-tech/2026-06-09-am10.html"><span class="r-title">활성 55B로 RULER 1M 95% — Nemotron 3 Ultra가 어텐션을 거의 버린 이유</span><span class="r-meta">AI 딥다이브</span></a></li></ul>
+    </div>
+    <div class="sidebar-section">
+        <div class="sidebar-section-label">Claude Code 팁 최근 글</div>
+        <ul class="sidebar-recent"><li><a href="../claude-tips/2026-06-13-pm23.html"><span class="r-title">--safe-mode 한 줄로 커스터마이즈를 전부 끄고 망가진 원인을 가른다</span><span class="r-meta">23:00</span></a></li><li><a href="../claude-tips/2026-06-12-pm23.html"><span class="r-title">CLAUDE.md에 다 적지 말고 @로 다른 파일을 끌어와 쪼갠다</span><span class="r-meta">23:00</span></a></li><li><a href="../claude-tips/2026-06-11-pm23.html"><span class="r-title">.claude/skills/에 SKILL.md 한 장 만들어두면 같은 절차를 Claude Code가 알아서 골라 쓴다</span><span class="r-meta">23:00</span></a></li><li><a href="../claude-tips/2026-06-10-pm23.html"><span class="r-title">/clear과 /compact — 둘 다 컨텍스트를 정리하지만 손에 잡는 순간이 다르다</span><span class="r-meta">23:00</span></a></li><li><a href="../claude-tips/2026-06-09-pm23.html"><span class="r-title">팀에 공유하기 애매한 개인 메모는 CLAUDE.local.md로 따로 뺀다</span><span class="r-meta">23:00</span></a></li></ul>
+    </div>
+</aside>
+<div class="sidebar-backdrop" id="sidebar-backdrop" aria-hidden="true"></div>
+
+
+<header class="top-nav">
+    <div class="top-nav-inner">
+        <button type="button" class="sidebar-toggle" id="sidebar-toggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="site-sidebar">
+            <span class="sidebar-toggle-bar"></span>
+            <span class="sidebar-toggle-bar"></span>
+            <span class="sidebar-toggle-bar"></span>
+        </button>
+        <a href="../index.html" class="brand">
+            <img src="../assets/logo.jpg" alt="SONSLAB" onerror="this.style.display='none'">
+            <span class="name">SONSLAB</span>
+        </a>
+        <nav>
+            <a href="../index.html#posts">데일리</a>
+            <a href="../ai-tech/index.html">AI 기술</a>
+            <a href="../claude-tips/index.html">Claude Code 팁</a>
+            <a href="../about.html">About</a>
+            <span class="nav-visits" title="오늘 · 누적 방문">
+                <img src="https://hits.sh/shonsubong.github.io/sonslab-blog.svg?view=today-total&style=flat-square&label=visits&color=1e3a5f&labelColor=1a2332" alt="오늘·누적 방문 수">
+            </span>
+            <div class="design-picker" title="디자인 전환">
+                <button type="button" class="design-picker-btn" id="design-picker-btn" aria-haspopup="listbox" aria-expanded="false" aria-label="디자인 전환">
+                    <span class="design-picker-icon" aria-hidden="true">◑</span>
+                    <span class="design-picker-current" id="design-picker-current">기본</span>
+                    <span class="design-picker-caret" aria-hidden="true">▾</span>
+                </button>
+                <ul class="design-picker-menu" id="design-picker-menu" role="listbox" aria-label="디자인 옵션">
+                    <li role="option" data-design="random"><strong>랜덤</strong><span>접속할 때마다 무작위 디자인</span></li>
+                    <li role="option" data-design="current"><strong>기본</strong><span>네이비+크림, 라운드 카드</span></li>
+                    <li role="option" data-design="refined"><strong>정제판 (A)</strong><span>신문·저널 톤, 헤어라인 구분선</span></li>
+                    <li role="option" data-design="editorial"><strong>에디토리얼 (B)</strong><span>이중선 마스트헤드, 세리프 강조</span></li>
+                    <li role="option" data-design="broadsheet"><strong>브로드시트 (C)</strong><span>웜 크림, 잉크블랙, 큰 세리프</span></li>
+                </ul>
+            </div>
+            <button type="button" class="theme-toggle" id="theme-toggle" aria-label="다크 모드 토글" title="다크/라이트 전환">
+                <span class="icon-moon" aria-hidden="true">🌙</span>
+                <span class="icon-sun" aria-hidden="true">☀</span>
+            </button>
+            <a href="../index.html#subscribe" class="nav-cta">이메일 구독</a>
+        </nav>
+    </div>
+</header>
+
+
+<article class="post-article">
+    <div class="post-header">
+        <a href="index.html" class="back-link">← AI 기술 목록</a>
+        <h1>150M 비전 인코더를 매트릭스 한 줄로 — Gemma 4 12B가 인코더를 통째로 뺀 방법</h1>
+        <div class="post-meta">
+            <span class="time-label">AI 딥다이브</span>
+            <span>2026년 06월 11일 (목) · 10:00</span>
+            <span>·</span>
+            <span>6분 읽기</span>
+        </div>
+    </div>
+    
+    <details class="post-toc" open><summary>목차</summary><div class="toc">
+<div class="toc">
+<ul>
+<li><a href="#tldr">TL;DR</a></li>
+<li><a href="#why-now">배경 (Why now)</a></li>
+<li><a href="#_1">핵심 메커니즘</a></li>
+<li><a href="#_2">코드 예시</a></li>
+<li><a href="#_3">한계·반론</a></li>
+<li><a href="#_4">현직 엔지니어 관점</a></li>
+</ul>
+</div>
+
+</div>
+</details>
+    <div class="post-content">
+<h2 id="tldr">TL;DR</h2>
+<ul>
+<li>6/3 Google DeepMind이 공개한 Gemma 4 12B Unified는 별도의 비전·오디오 인코더를 통째로 빼고, 입력을 LLM 본체 임베딩 공간에 바로 사영한다 (<a href="https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemma-4-12b/">Google Blog — Introducing Gemma 4 12B</a>).</li>
+<li>비전은 48×48 픽셀 패치를 매트릭스 한 번으로 hidden dim에 던지고, X·Y 좌표 임베딩 두 개를 더해 위치를 끼워 넣는다. 비전 모듈 전체가 35M 파라미터로, 같은 중형의 550M 인코더 대비 1/15 수준이다 (<a href="https://developers.googleblog.com/gemma-4-12b-the-developer-guide/">Google Developers — Gemma 4 12B Developer Guide</a>).</li>
+<li>16GB VRAM 노트북에서 256K 컨텍스트·이미지·오디오를 한 번에 다룬다. 인코더가 빠지면서 멀티모달 LoRA 한 번에 텍스트·이미지·오디오 가중치가 같이 움직인다.</li>
+</ul>
+<h2 id="why-now">배경 (Why now)</h2>
+<p>이번 주 온디바이스 멀티모달이 다시 뜨거운 건 6/8 WWDC26 Apple AFM 3 Core Advanced(NAND offload MoE) 발표 직전인 6/3에 DeepMind이 Gemma 4 12B를 끼워 넣었기 때문이다. 두 회사가 같은 주에 "노트북·폰에서 도는 멀티모달"을 들고 나왔지만 줄이는 지점이 정반대다.</p>
+<p>Apple은 가중치 자체를 NAND에 눕히고 DRAM 대역폭을 아낀다. Gemma는 모달리티 인코더를 제거한다. 기존 중형 Gemma 4는 비전에 550M, 오디오에 300M짜리 별도 인코더를 끼고 다녔다. 12B는 비전 35M + 오디오 wave projection 한 장으로 압축했고, 그 자리에 31B Dense와 같은 디코더 본체를 그대로 넣었다 (<a href="https://ai.google.dev/gemma/docs/core/model_card_4">Gemma 4 model card</a>).</p>
+<h2 id="_1">핵심 메커니즘</h2>
+<pre class="codehilite"><code>[이미지]
+  └─ 48×48 패치 ─┐
+                 ├─ [W_proj × 1] ──┐
+  └─ (x,y) 좌표 ─┘                 │
+       └─ X 행렬[x] + Y 행렬[y]    │
+                                   ├─→ [LLM hidden dim 토큰]
+[오디오 16kHz]                     │
+  └─ 40ms 프레임(640 float) ──────┘
+       └─ 선형 사영
+[텍스트] ──────────── 토크나이저 ──┘
+                                       ↓
+              [디코더 Transformer — 31B Dense 구조 재사용]
+              local sliding(1024) × N → global × M (final layer global)
+              global: K=V 공유, p-RoPE
+</code></pre>
+
+<p>비전 인코더가 27개 transformer 층이었다면 12B Unified는 한 번의 matmul로 끝낸다. 패치마다 어텐션 없이 독립 사영하고, 학습된 X·Y 행렬에서 좌표를 룩업해 더한다. "Factorized coordinate lookup"인데 2D 위치 임베딩을 두 개의 1D 룩업으로 쪼개 파라미터를 한 자리 수 줄였다.</p>
+<p>본체 어텐션은 sliding window 1024 토큰 로컬과 full global을 교차하고, <strong>마지막 층은 무조건 global</strong>이다. Global 층에서는 V 사영을 없애고 K 텐서를 그대로 V로 재사용한다. KV 헤드도 16에서 4로 줄였다. 마지막에 p-RoPE(Proportional RoPE) — dimension의 25%만 회전시키고 나머지는 위치 정보를 빼는 — 가 들어가는데, 옥스퍼드/DeepMind이 작년에 정리한 "저주파 채널은 의미 정보, 고주파는 위치"라는 관찰을 그대로 따랐다. 256K까지 끌고 가도 멀리 있는 토큰의 positional drift를 줄이려는 장치다.</p>
+<h2 id="_2">코드 예시</h2>
+<p>vLLM 0.10에서 prefill이 큰 입력을 받으면 interleaved attention + p-RoPE 구현이 충돌해 엔진이 멈춘다는 이슈가 6/5에 올라왔다 (<a href="https://github.com/vllm-project/vllm/issues/39914">vllm-project/vllm #39914</a>). 우회는 단순하다.</p>
+<pre class="codehilite"><code class="language-python"># llama.cpp + litert-lm 로컬 서버 (Apple Silicon · 16GB)
+# blog.google/.../bringing-gemma-4-12b-to-your-laptop 의 권장 방식
+from litert_lm import serve
+
+serve.run(
+    model=&quot;litert-community/gemma-4-12B-it-litert-lm&quot;,
+    backend=&quot;metal&quot;,          # Apple Silicon GPU
+    max_context=131072,        # 우선 128K로 잡고
+    sliding_window=1024,
+    kv_share_global=True,      # K=V 공유 — 메모리 ~18% 절약
+    prope_fraction=0.25,       # p-RoPE 회전 비율
+    prefix_cache=&quot;stateless&quot;,  # 멀티턴 prefill 우회
+)
+# OpenAI 호환: http://localhost:8080/v1/chat/completions
+</code></pre>
+
+<p><code>sliding_window=1024 · kv_share_global=True</code> 두 줄이 12B의 본질 — 멀티턴에서 KV 캐시가 GB 단위로 안 부풀고 노트북 unified memory 안에 머무는 이유다.</p>
+<h2 id="_3">한계·반론</h2>
+<p>벤치마크는 좁은 폭으로 갈린다. MMLU Pro 12B는 모델카드에 미공개지만, 26B A4B MoE가 82.6%, 31B Dense가 85.2%다. 발표 글에서 "26B에 근접"이라고 한 부분은 표 상으로 검증되지 않은 영역이다. 12B 구체 수치를 안 낸 점은 reviewer 사이에서 작은 논쟁거리다 (<a href="https://www.marktechpost.com/2026/06/03/google-deepmind-releases-gemma-4-12b-an-encoder-free-multimodal-model-with-native-audio-that-runs-on-a-16-gb-laptop/">MarkTechPost — Gemma 4 12B 분석</a>).</p>
+<p>인코더를 빼면서 멀티모달 사전학습 비용은 도리어 늘었다는 게 발표 글에서 인정한 트레이드오프다. 비전 토큰이 디코더 본체 어텐션을 다 쓰기 때문에, 같은 이미지 한 장에 들어가는 FLOPs가 인코더 분리형보다 약 1.4배라는 게 발표 후 X에서 도는 추정치다 (<a href="https://lilting.ch/en/articles/gemma-4-12b-unified-encoder-free">@lilting_ai — 35M vs 150M 분해</a>). prefill이 비싸진다는 뜻이다. p-RoPE 25% 회전도 회의적인 평이 있다. 0.25라는 비율 자체는 ablation이 한정적이고, 다른 비율과의 비교표가 빠져 있다.</p>
+<h2 id="_4">현직 엔지니어 관점</h2>
+<p>반도체 검사 라인에서 보면 "인코더 제거"는 메모리 계층보다 <strong>튜닝 흐름</strong>을 단순화한다는 의미가 크다. 우리 쪽에서 멀티모달 모델을 다룰 때 가장 귀찮은 게 frozen 비전 인코더와 LLM 본체의 학습률·옵티마이저가 따로 노는 부분이다. 인코더가 없어지면 LoRA 어댑터 한 장으로 텍스트·이미지·오디오 분기가 동시에 움직인다. 라인 도메인 적응이 한 단계 줄어드는 것이다.</p>
+<p>다만 prefill FLOPs가 1.4배라는 부분은 엣지 시나리오에서 그대로 발목을 잡는다. AFM 3가 NAND에서 가중치를 끌어와 DRAM 대역폭을 아끼는 방향이라면 Gemma 12B는 가중치는 작지만 활성화가 두꺼워진다. Apple Silicon unified memory에서 16GB가 마지노선이 되는 이유고, 같은 12B를 PC급 16GB DRAM + 외장 GPU 조합에 던지면 PCIe 왕복이 다시 보일 수 있다. 검증은 본인이 직접 돌려보고 다음 주 발행에 수치 정리 예정이다.</p>
+    </div>
+    
+<div class="post-share">
+    <span class="share-label">공유하기</span>
+    <a href="https://twitter.com/intent/tweet?text=150M 비전 인코더를 매트릭스 한 줄로 — Gemma 4 12B가 인코더를 통째로 뺀 방법&url=https://shonsubong.github.io/sonslab-blog/ai-tech/2026-06-11-am10.html"
+       class="share-btn" target="_blank" rel="noopener" aria-label="X(Twitter)에 공유">
+        <span>X</span>
+    </a>
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://shonsubong.github.io/sonslab-blog/ai-tech/2026-06-11-am10.html"
+       class="share-btn" target="_blank" rel="noopener" aria-label="LinkedIn에 공유">
+        <span>in</span>
+    </a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://shonsubong.github.io/sonslab-blog/ai-tech/2026-06-11-am10.html"
+       class="share-btn" target="_blank" rel="noopener" aria-label="Facebook에 공유">
+        <span>f</span>
+    </a>
+    <button type="button" class="share-btn share-copy" id="share-copy-btn" data-url="https://shonsubong.github.io/sonslab-blog/ai-tech/2026-06-11-am10.html" aria-label="링크 복사">
+        <span>🔗 링크 복사</span>
+    </button>
+</div>
+    
+<nav class="post-nav-bottom" aria-label="이전/다음 글">
+    <a href="2026-06-10-am10.html" class="post-nav-link prev">
+        <span class="post-nav-label">← 이전 글</span>
+        <span class="post-nav-title">20B를 플래시에 눕히고 4B만 깨운다 — AFM 3 Core Advanced의 IFP 구조</span>
+    </a>
+    <a href="2026-06-12-am10.html" class="post-nav-link next">
+        <span class="post-nav-label">다음 글 →</span>
+        <span class="post-nav-title">129개 갈림길에서 사람보다 64% — Anthropic이 그린 자기개선 척도</span>
+    </a>
+</nav>
+    
+<section class="related-posts" aria-label="최근 다른 리포트">
+    <div class="related-posts-label">최근 다른 리포트</div>
+    <ul class="related-list"><li><a href="2026-06-13-am10.html"><span class="related-title">한 번 인코딩, 모든 쿼리가 떨어진다 — D4RT가 4D 파이프라인을 접은 방법</span><span class="related-date">2026-06-13 · AI 딥다이브 · 10:00</span></a></li><li><a href="2026-06-12-am10.html"><span class="related-title">129개 갈림길에서 사람보다 64% — Anthropic이 그린 자기개선 척도</span><span class="related-date">2026-06-12 · AI 딥다이브 · 10:00</span></a></li><li><a href="2026-06-10-am10.html"><span class="related-title">20B를 플래시에 눕히고 4B만 깨운다 — AFM 3 Core Advanced의 IFP 구조</span><span class="related-date">2026-06-10 · AI 딥다이브 · 10:00</span></a></li><li><a href="2026-06-09-am10.html"><span class="related-title">활성 55B로 RULER 1M 95% — Nemotron 3 Ultra가 어텐션을 거의 버린 이유</span><span class="related-date">2026-06-09 · AI 딥다이브 · 10:00</span></a></li><li><a href="2026-06-05-am10.html"><span class="related-title">활성 5B로 SWE-Bench Pro 51%를 찍었다 — MAI-Code-1-Flash가 토큰을 깎은 방식</span><span class="related-date">2026-06-05 · AI 딥다이브 · 10:00</span></a></li></ul>
+</section>
+</article>
+
+
+<section class="subscribe-cta" id="subscribe">
+    <div class="sub-header">
+        <h3>매일 4번, 받은편지함으로</h3>
+        <p class="sub-desc">반도체·AI·시장 브리핑을 새벽·오전·오후·저녁 네 번 이메일로 받아보세요. 스팸 없음, 언제든 구독 취소.</p>
+    </div>
+    <form id="subscribe-form" class="subscribe-form" action="https://assets.mailerlite.com/jsonp/2275622/forms/185056263876380606/subscribe" method="post">
+        <input type="email" name="fields[email]" placeholder="your@email.com" required aria-label="이메일 주소">
+        <input type="hidden" name="ml-submit" value="1">
+        <button type="submit" class="btn btn-primary">구독하기</button>
+    </form>
+    <div id="subscribe-status" class="subscribe-status" role="status" aria-live="polite"></div>
+    <p class="subscribe-footnote">또는 RSS로 구독하기</p>
+    <div class="rss-copy-row">
+        <input id="rss-url" type="text" readonly value="https://shonsubong.github.io/sonslab-blog/feed.xml" aria-label="RSS 피드 URL">
+        <button id="rss-copy-btn" type="button" class="btn btn-secondary">URL 복사</button>
+    </div>
+    <p class="rss-hint">RSS 리더에 이 URL을 붙여넣으면 구독됩니다.</p>
+    <div class="rss-readers">
+        <span class="rss-readers-label">바로가기 (로그인 필요):</span>
+        <a href="https://www.inoreader.com/?add_feed=https%3A%2F%2Fshonsubong.github.io%2Fsonslab-blog%2Ffeed.xml" class="rss-reader-btn" target="_blank" rel="noopener">Inoreader</a>
+        <a href="https://theoldreader.com/feeds/subscribe?url=https%3A%2F%2Fshonsubong.github.io%2Fsonslab-blog%2Ffeed.xml" class="rss-reader-btn" target="_blank" rel="noopener">The Old Reader</a>
+        <a href="https://shonsubong.github.io/sonslab-blog/feed.xml" class="rss-reader-btn rss-raw" target="_blank" rel="noopener" title="Atom/XML 원본">Atom/XML</a>
+    </div>
+</section>
+
+
+<footer>
+    <div class="stats-row">
+        <img src="https://hits.sh/shonsubong.github.io/sonslab-blog.svg?view=today-total&style=flat-square&label=visits&color=1e3a5f&labelColor=1a2332" alt="Visit counter">
+        <span class="stat-inline">오늘 · 누적 방문</span>
+    </div>
+    <p style="margin-top: 1.2rem;">© 2026 SONSLAB — 현장 감각으로 읽는 AI와 테크</p>
+    <div style="margin-top: 0.5rem;">
+        <a href="../index.html#posts">글</a>·
+        <a href="../index.html#about">About</a>·
+        <a href="../feed.xml">RSS</a>·
+        <a href="mailto:sonslab1211@naver.com">Contact</a>
+    </div>
+</footer>
+
+<button type="button" class="scroll-top" id="scroll-top" aria-label="맨 위로" title="맨 위로">↑</button>
+
+<script>
+(function() {
+    var bar = document.getElementById('reading-progress');
+    if (!bar) return;
+    function update() {
+        var h = document.documentElement, b = document.body;
+        var st = h.scrollTop || b.scrollTop;
+        var sh = (h.scrollHeight || b.scrollHeight) - h.clientHeight;
+        bar.style.width = (sh > 0 ? (st / sh) * 100 : 0) + '%';
+    }
+    window.addEventListener('scroll', update, {passive: true});
+    update();
+})();
+</script>
+
+
+<script>
+(function() {
+    // 외부 링크에 target=_blank, rel=noopener 자동 부여
+    var origin = window.location.origin;
+    document.querySelectorAll('.post-content a[href^="http"]').forEach(function(a) {
+        try {
+            var u = new URL(a.href);
+            if (u.origin !== origin) {
+                a.target = '_blank';
+                a.rel = 'noopener noreferrer';
+            }
+        } catch (e) {}
+    });
+    // 모바일에서 TOC 기본 접힘 (세로 공간 절약)
+    if (window.matchMedia('(max-width: 767px)').matches) {
+        var toc = document.querySelector('.post-toc');
+        if (toc && toc.hasAttribute('open')) toc.removeAttribute('open');
+    }
+    // 공유: 링크 복사
+    var copyBtn = document.getElementById('share-copy-btn');
+    if (copyBtn) {
+        copyBtn.addEventListener('click', async function() {
+            var url = copyBtn.dataset.url || window.location.href;
+            try {
+                if (navigator.clipboard && window.isSecureContext) {
+                    await navigator.clipboard.writeText(url);
+                } else {
+                    var ta = document.createElement('textarea');
+                    ta.value = url; document.body.appendChild(ta);
+                    ta.select(); document.execCommand('copy');
+                    document.body.removeChild(ta);
+                }
+                var span = copyBtn.querySelector('span');
+                var original = span.textContent;
+                span.textContent = '✓ 복사됨';
+                copyBtn.classList.add('copied');
+                setTimeout(function() {
+                    span.textContent = original;
+                    copyBtn.classList.remove('copied');
+                }, 2000);
+            } catch (e) {}
+        });
+    }
+})();
+</script>
+
+
+<script>
+(function() {
+    var btn = document.getElementById('sidebar-toggle');
+    var sidebar = document.getElementById('site-sidebar');
+    var backdrop = document.getElementById('sidebar-backdrop');
+    if (!btn || !sidebar) return;
+    function open() {
+        sidebar.classList.add('open');
+        if (backdrop) backdrop.classList.add('show');
+        btn.setAttribute('aria-expanded', 'true');
+        btn.setAttribute('aria-label', '메뉴 닫기');
+    }
+    function close() {
+        sidebar.classList.remove('open');
+        if (backdrop) backdrop.classList.remove('show');
+        btn.setAttribute('aria-expanded', 'false');
+        btn.setAttribute('aria-label', '메뉴 열기');
+    }
+    btn.addEventListener('click', function() {
+        if (sidebar.classList.contains('open')) close(); else open();
+    });
+    if (backdrop) backdrop.addEventListener('click', close);
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && sidebar.classList.contains('open')) close();
+    });
+    // 사이드바 내부 링크를 누르면 모바일에선 닫는다
+    sidebar.querySelectorAll('a').forEach(function(a) {
+        a.addEventListener('click', function() {
+            if (window.matchMedia('(max-width: 1023px)').matches) close();
+        });
+    });
+})();
+</script>
+
+
+<script>
+(function() {
+    var form = document.getElementById('subscribe-form');
+    var status = document.getElementById('subscribe-status');
+    function setState(state, html) {
+        if (!status) return;
+        status.className = 'subscribe-status' + (state ? ' state-' + state : '');
+        status.innerHTML = html || '';
+    }
+    var rssInput = document.getElementById('rss-url');
+    var rssBtn = document.getElementById('rss-copy-btn');
+    if (rssInput && rssBtn) {
+        rssBtn.addEventListener('click', async function() {
+            var url = rssInput.value;
+            try {
+                if (navigator.clipboard && window.isSecureContext) {
+                    await navigator.clipboard.writeText(url);
+                } else {
+                    rssInput.select();
+                    rssInput.setSelectionRange(0, url.length);
+                    document.execCommand('copy');
+                }
+                var original = rssBtn.textContent;
+                rssBtn.textContent = '✓ 복사됨';
+                rssBtn.classList.add('copied');
+                setTimeout(function() {
+                    rssBtn.textContent = original;
+                    rssBtn.classList.remove('copied');
+                }, 2000);
+            } catch (err) {
+                rssInput.select();
+            }
+        });
+        rssInput.addEventListener('click', function() { rssInput.select(); });
+    }
+    // 공통 구독 submit 로직. 메인 폼 + 인라인 폼(B/C hero) 모두 처리.
+    function setFormState(statusEl, state, html, cls) {
+        if (!statusEl) return;
+        var base = cls || 'subscribe-status';
+        statusEl.className = base + (state ? ' state-' + state : '');
+        statusEl.innerHTML = html || '';
+    }
+    function attachSubscribe(f, statusEl, statusCls, successTemplate) {
+        if (!f) return;
+        f.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            var email = f.querySelector('input[type="email"]').value.trim();
+            if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                setFormState(statusEl, 'error', '올바른 이메일 주소를 입력해주세요.', statusCls);
+                return;
+            }
+            var btn = f.querySelector('button[type="submit"]');
+            var originalLabel = btn.textContent;
+            btn.disabled = true;
+            btn.classList.add('loading');
+            btn.textContent = '전송 중…';
+            setFormState(statusEl, 'loading', '', statusCls);
+            try {
+                var fd = new FormData(f);
+                var res = await fetch(f.action, { method: 'POST', body: fd });
+                var data = {};
+                try { data = await res.json(); } catch (e) {}
+                if (res.ok && data.success) {
+                    f.classList.add('hidden-post-success');
+                    var safe = email.replace(/[<>&"]/g, function(c) { return ({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'})[c]; });
+                    setFormState(statusEl, 'success', successTemplate(safe), statusCls);
+                } else {
+                    throw new Error((data && data.message) || '서버 응답 오류');
+                }
+            } catch (err) {
+                setFormState(statusEl, 'error', '일시적인 오류가 발생했습니다. 잠시 후 다시 시도해주세요.', statusCls);
+                btn.disabled = false;
+                btn.classList.remove('loading');
+                btn.textContent = originalLabel;
+            }
+        });
+    }
+    // 메인 구독 폼 (subscribe 섹션)
+    attachSubscribe(form, status, 'subscribe-status', function(safe) {
+        return '<strong>✓ 구독 신청을 받았습니다.</strong>' +
+            'SONSLAB이 <b>' + safe + '</b> 주소로 확인 이메일을 보냈습니다. ' +
+            '받은편지함(스팸함 포함)에서 확인 링크를 클릭하시면 구독이 완료됩니다.';
+    });
+    // 인라인 구독 폼 (B/C hero 내부)
+    document.querySelectorAll('form.inline-sub[data-subscribe]').forEach(function(f) {
+        var st = f.parentElement ? f.parentElement.querySelector('.inline-sub-status') : null;
+        attachSubscribe(f, st, 'inline-sub-status', function(safe) {
+            return '✓ <b>' + safe + '</b>로 확인 이메일을 보냈습니다.';
+        });
+    });
+})();
+</script>
+
+
+<script>
+(function() {
+    // 다크 모드 토글
+    var toggle = document.getElementById('theme-toggle');
+    if (toggle) {
+        toggle.addEventListener('click', function() {
+            var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+            if (isDark) {
+                document.documentElement.removeAttribute('data-theme');
+                try { localStorage.setItem('sonslab-theme', 'light'); } catch(e){}
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                try { localStorage.setItem('sonslab-theme', 'dark'); } catch(e){}
+            }
+        });
+    }
+    // 디자인 피커
+    var dpBtn = document.getElementById('design-picker-btn');
+    var dpMenu = document.getElementById('design-picker-menu');
+    var dpCurrent = document.getElementById('design-picker-current');
+    var dpLabels = { current: '기본', refined: '정제판', editorial: '에디토리얼', broadsheet: '브로드시트', random: '랜덤' };
+    var DP_ALLOWED = ['current', 'refined', 'editorial', 'broadsheet'];
+    function dpResolve(pref, avoid) {
+        if (pref === 'random') {
+            var pool = DP_ALLOWED;
+            if (avoid && DP_ALLOWED.indexOf(avoid) !== -1 && DP_ALLOWED.length > 1) {
+                pool = DP_ALLOWED.filter(function(x) { return x !== avoid; });
+            }
+            return pool[Math.floor(Math.random() * pool.length)];
+        }
+        if (DP_ALLOWED.indexOf(pref) === -1) return 'current';
+        return pref;
+    }
+    function dpSyncLabel(pref, resolved) {
+        if (dpCurrent) {
+            dpCurrent.textContent = (pref === 'random')
+                ? dpLabels.random + ' (' + dpLabels[resolved] + ')'
+                : dpLabels[pref];
+        }
+        if (dpMenu) dpMenu.querySelectorAll('li').forEach(function(li){
+            li.classList.toggle('active', li.getAttribute('data-design') === pref);
+        });
+    }
+    function applyDesign(pref) {
+        if (!dpLabels[pref]) pref = 'random';
+        // 랜덤 클릭 시 현재 디자인을 피해서 체감되는 변화를 보장.
+        var current = document.documentElement.getAttribute('data-design') || 'current';
+        var resolved = dpResolve(pref, current);
+        if (resolved === 'current') document.documentElement.removeAttribute('data-design');
+        else document.documentElement.setAttribute('data-design', resolved);
+        try { localStorage.setItem('sonslab-design', pref); } catch(e){}
+        dpSyncLabel(pref, resolved);
+    }
+    if (dpBtn && dpMenu) {
+        // 초기 동기화는 head 스크립트가 이미 resolved를 적용했으니 재추출 없이 라벨만 맞춤.
+        var initPref = (typeof window.__sonslabDesignPref !== 'undefined')
+            ? window.__sonslabDesignPref
+            : (localStorage.getItem('sonslab-design') || 'random');
+        var initResolved = (typeof window.__sonslabDesignResolved !== 'undefined')
+            ? window.__sonslabDesignResolved
+            : (document.documentElement.getAttribute('data-design') || 'current');
+        dpSyncLabel(initPref, initResolved);
+        dpBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            var expanded = dpBtn.getAttribute('aria-expanded') === 'true';
+            dpBtn.setAttribute('aria-expanded', String(!expanded));
+            dpMenu.classList.toggle('open', !expanded);
+        });
+        dpMenu.querySelectorAll('li').forEach(function(li){
+            li.addEventListener('click', function(){
+                applyDesign(li.getAttribute('data-design'));
+                dpMenu.classList.remove('open');
+                dpBtn.setAttribute('aria-expanded', 'false');
+            });
+        });
+        document.addEventListener('click', function(e){
+            if (!dpMenu.contains(e.target) && e.target !== dpBtn) {
+                dpMenu.classList.remove('open');
+                dpBtn.setAttribute('aria-expanded', 'false');
+            }
+        });
+    }
+    // 맨 위로 버튼
+    var btn = document.getElementById('scroll-top');
+    if (btn) {
+        var toggleBtn = function() {
+            if (window.scrollY > 300) btn.classList.add('visible');
+            else btn.classList.remove('visible');
+        };
+        window.addEventListener('scroll', toggleBtn, {passive:true});
+        btn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        toggleBtn();
+    }
+})();
+</script>
+</body>
+</html>

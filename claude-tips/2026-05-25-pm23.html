@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>claude agents — 여러 Claude Code 세션을 한 화면에서 굴린다 — SONSLAB</title>
+    <title>claude agents — 여러 Claude Code 세션을 한 화면에서 띄워둔다 — SONSLAB</title>
     <link rel="icon" href="../assets/logo.jpg">
     <link rel="alternate" type="application/atom+xml" title="SONSLAB Feed" href="../feed.xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,19 +11,19 @@
     <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/style.css">
-    <meta name="description" content="세션을 동시에 굴려본 사람은 안다. 터미널 탭 다섯 개를 띄워두면 그중 어느 창이 권한 승인을 기다리고 있고 어느 창이 이미 끝났는지를 일일이 눌러봐야 한다. 어제는 한 시간 가까이 멍 때리던 세션을 뒤늦게 발견했다. 5월 둘째 주 업데이트로 들어온 claude agents(통칭 agent view)는 정확히 이 문제를 노린다.">
+    <meta name="description" content="세션을 동시에 띄워본 사람은 안다. 터미널 탭 다섯 개를 띄워두면 그중 어느 창이 권한 승인을 기다리고 있고 어느 창이 이미 끝났는지를 일일이 눌러봐야 한다. 어제는 한 시간 가까이 멍 때리던 세션을 뒤늦게 발견했다. 5월 둘째 주 업데이트로 들어온 claude agents(통칭 agent view)는 정확히 이 문제를 노린다.">
     <meta name="author" content="SONSLAB">
     <link rel="canonical" href="https://shonsubong.github.io/sonslab-blog/claude-tips/2026-05-25-pm23.html">
     <meta property="og:site_name" content="SONSLAB">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="claude agents — 여러 Claude Code 세션을 한 화면에서 굴린다">
-    <meta property="og:description" content="세션을 동시에 굴려본 사람은 안다. 터미널 탭 다섯 개를 띄워두면 그중 어느 창이 권한 승인을 기다리고 있고 어느 창이 이미 끝났는지를 일일이 눌러봐야 한다. 어제는 한 시간 가까이 멍 때리던 세션을 뒤늦게 발견했다. 5월 둘째 주 업데이트로 들어온 claude agents(통칭 agent view)는 정확히 이 문제를 노린다.">
+    <meta property="og:title" content="claude agents — 여러 Claude Code 세션을 한 화면에서 띄워둔다">
+    <meta property="og:description" content="세션을 동시에 띄워본 사람은 안다. 터미널 탭 다섯 개를 띄워두면 그중 어느 창이 권한 승인을 기다리고 있고 어느 창이 이미 끝났는지를 일일이 눌러봐야 한다. 어제는 한 시간 가까이 멍 때리던 세션을 뒤늦게 발견했다. 5월 둘째 주 업데이트로 들어온 claude agents(통칭 agent view)는 정확히 이 문제를 노린다.">
     <meta property="og:url" content="https://shonsubong.github.io/sonslab-blog/claude-tips/2026-05-25-pm23.html">
     <meta property="og:image" content="https://shonsubong.github.io/sonslab-blog/assets/logo.jpg">
     <meta property="og:locale" content="ko_KR">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="claude agents — 여러 Claude Code 세션을 한 화면에서 굴린다">
-    <meta name="twitter:description" content="세션을 동시에 굴려본 사람은 안다. 터미널 탭 다섯 개를 띄워두면 그중 어느 창이 권한 승인을 기다리고 있고 어느 창이 이미 끝났는지를 일일이 눌러봐야 한다. 어제는 한 시간 가까이 멍 때리던 세션을 뒤늦게 발견했다. 5월 둘째 주 업데이트로 들어온 claude agents(통칭 agent view)는 정확히 이 문제를 노린다.">
+    <meta name="twitter:title" content="claude agents — 여러 Claude Code 세션을 한 화면에서 띄워둔다">
+    <meta name="twitter:description" content="세션을 동시에 띄워본 사람은 안다. 터미널 탭 다섯 개를 띄워두면 그중 어느 창이 권한 승인을 기다리고 있고 어느 창이 이미 끝났는지를 일일이 눌러봐야 한다. 어제는 한 시간 가까이 멍 때리던 세션을 뒤늦게 발견했다. 5월 둘째 주 업데이트로 들어온 claude agents(통칭 agent view)는 정확히 이 문제를 노린다.">
     <meta name="twitter:image" content="https://shonsubong.github.io/sonslab-blog/assets/logo.jpg">
     <meta property="article:published_time" content="2026-05-25T23:00:00+09:00">
     <meta property="article:modified_time" content="2026-05-25T23:00:00+09:00">
@@ -56,8 +56,8 @@
     } catch (e) {}
 })();
 </script>
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "claude agents — 여러 Claude Code 세션을 한 화면에서 굴린다", "description": "세션을 동시에 굴려본 사람은 안다. 터미널 탭 다섯 개를 띄워두면 그중 어느 창이 권한 승인을 기다리고 있고 어느 창이 이미 끝났는지를 일일이 눌러봐야 한다. 어제는 한 시간 가까이 멍 때리던 세션을 뒤늦게 발견했다. 5월 둘째 주 업데이트로 들어온 claude agents(통칭 agent view)는 정확히 이 문제를 노린다.", "url": "https://shonsubong.github.io/sonslab-blog/claude-tips/2026-05-25-pm23.html", "mainEntityOfPage": "https://shonsubong.github.io/sonslab-blog/claude-tips/2026-05-25-pm23.html", "inLanguage": "ko", "image": "https://shonsubong.github.io/sonslab-blog/assets/logo.jpg", "author": {"@type": "Person", "name": "SONSLAB"}, "publisher": {"@type": "Organization", "name": "SONSLAB", "logo": {"@type": "ImageObject", "url": "https://shonsubong.github.io/sonslab-blog/assets/logo.jpg"}}, "datePublished": "2026-05-25T23:00:00+09:00", "dateModified": "2026-05-25T23:00:00+09:00"}</script>
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "SONSLAB", "item": "https://shonsubong.github.io/sonslab-blog/"}, {"@type": "ListItem", "position": 2, "name": "글", "item": "https://shonsubong.github.io/sonslab-blog/#posts"}, {"@type": "ListItem", "position": 3, "name": "claude agents — 여러 Claude Code 세션을 한 화면에서 굴린다", "item": "https://shonsubong.github.io/sonslab-blog/claude-tips/2026-05-25-pm23.html"}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "claude agents — 여러 Claude Code 세션을 한 화면에서 띄워둔다", "description": "세션을 동시에 띄워본 사람은 안다. 터미널 탭 다섯 개를 띄워두면 그중 어느 창이 권한 승인을 기다리고 있고 어느 창이 이미 끝났는지를 일일이 눌러봐야 한다. 어제는 한 시간 가까이 멍 때리던 세션을 뒤늦게 발견했다. 5월 둘째 주 업데이트로 들어온 claude agents(통칭 agent view)는 정확히 이 문제를 노린다.", "url": "https://shonsubong.github.io/sonslab-blog/claude-tips/2026-05-25-pm23.html", "mainEntityOfPage": "https://shonsubong.github.io/sonslab-blog/claude-tips/2026-05-25-pm23.html", "inLanguage": "ko", "image": "https://shonsubong.github.io/sonslab-blog/assets/logo.jpg", "author": {"@type": "Person", "name": "SONSLAB"}, "publisher": {"@type": "Organization", "name": "SONSLAB", "logo": {"@type": "ImageObject", "url": "https://shonsubong.github.io/sonslab-blog/assets/logo.jpg"}}, "datePublished": "2026-05-25T23:00:00+09:00", "dateModified": "2026-05-25T23:00:00+09:00"}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "SONSLAB", "item": "https://shonsubong.github.io/sonslab-blog/"}, {"@type": "ListItem", "position": 2, "name": "글", "item": "https://shonsubong.github.io/sonslab-blog/#posts"}, {"@type": "ListItem", "position": 3, "name": "claude agents — 여러 Claude Code 세션을 한 화면에서 띄워둔다", "item": "https://shonsubong.github.io/sonslab-blog/claude-tips/2026-05-25-pm23.html"}]}</script>
 </head>
 <body class="post-page" data-category="claude-tips">
     <div class="reading-progress" id="reading-progress" role="progressbar" aria-label="읽기 진행률"></div>
@@ -70,10 +70,10 @@
     <div class="sidebar-section">
         <div class="sidebar-section-label">카테고리</div>
         <ul class="sidebar-cat-list">
-            <li><a href="../index.html" class="">홈 <span class="sidebar-cat-count">280</span></a></li>
-            <li><a href="../index.html#posts" class="">데일리 브리핑 <span class="sidebar-cat-count">202</span></a></li>
-            <li><a href="../ai-tech/index.html" class="">AI 기술 딥다이브 <span class="sidebar-cat-count">32</span></a></li>
-            <li><a href="../claude-tips/index.html" class="active">Claude Code 팁 <span class="sidebar-cat-count">46</span></a></li>
+            <li><a href="../index.html" class="">홈 <span class="sidebar-cat-count">319</span></a></li>
+            <li><a href="../index.html#posts" class="">데일리 브리핑 <span class="sidebar-cat-count">227</span></a></li>
+            <li><a href="../ai-tech/index.html" class="">AI 기술 딥다이브 <span class="sidebar-cat-count">40</span></a></li>
+            <li><a href="../claude-tips/index.html" class="active">Claude Code 팁 <span class="sidebar-cat-count">52</span></a></li>
             <li><a href="../manuals/claude-code.html" class="">Claude Code 가이드북 <span class="sidebar-cat-count">PDF</span></a></li>
             <li><a href="../about.html">About</a></li>
             <li><a href="../feed.xml">RSS</a></li>
@@ -81,15 +81,15 @@
     </div>
     <div class="sidebar-section">
         <div class="sidebar-section-label">데일리 최근 글</div>
-        <ul class="sidebar-recent"><li><a href="../posts/2026-05-31-pm22-ai-tech-news.html"><span class="r-title">Codex Pro 2배 혜택이 오늘 자정에 닫힌다 — 같은 주에 오픈웨이트는 또 한 칸 좁혔다</span><span class="r-meta">저녁 마감</span></a></li><li><a href="../posts/2026-05-31-pm17-ai-tech-news.html"><span class="r-title">Siri의 새 두뇌가 Gemini로 정해졌다 — Claude는 옵션 자리, WWDC가 8일 남았다</span><span class="r-meta">오후 브리핑</span></a></li><li><a href="../posts/2026-05-31-am06-ai-tech-news.html"><span class="r-title">NVIDIA N1X가 노트북 안으로 들어온다 — Vera Rubin·Physical AI까지 한 묶음으로</span><span class="r-meta">새벽 리포트</span></a></li><li><a href="../posts/2026-05-29-am06-ai-tech-news.html"><span class="r-title">Opus 4.8 떨어졌고, 같은 날 Anthropic 시총이 $965B로 OpenAI를 넘었다</span><span class="r-meta">새벽 리포트</span></a></li><li><a href="../posts/2026-05-28-pm17-ai-tech-news.html"><span class="r-title">Qwen 3.7 Max가 35시간 무중단으로 돌아간다 — Claude Code 하네스까지 받는다</span><span class="r-meta">오후 브리핑</span></a></li></ul>
+        <ul class="sidebar-recent"><li><a href="../posts/2026-06-14-am06-ai-tech-news.html"><span class="r-title">Microsoft가 OpenAI 없이 추론 모델을 만들었다 — 증류 안 한 MAI-Thinking-1의 의미</span><span class="r-meta">새벽 리포트</span></a></li><li><a href="../posts/2026-06-13-pm22-ai-tech-news.html"><span class="r-title">에이전트가 스스로 도구를 찾기 시작했다 — 테스트타임 추론이 2026년의 중심으로</span><span class="r-meta">저녁 마감</span></a></li><li><a href="../posts/2026-06-13-pm17-ai-tech-news.html"><span class="r-title">Claude Mythos가 삼성·SK까지 들어왔다 — 너무 잘 찾아서 공개를 안 한다는 모델</span><span class="r-meta">오후 브리핑</span></a></li><li><a href="../posts/2026-06-13-pm12-ai-tech-news.html"><span class="r-title">MiniMax M3, 약속한 오픈웨이트가 열흘째 안 나온다 — &#x27;오픈&#x27;은 아직 회사의 말일 뿐</span><span class="r-meta">오전 브리핑</span></a></li><li><a href="../posts/2026-06-13-am06-ai-tech-news.html"><span class="r-title">Altman·Hassabis·Amodei가 G7 같은 테이블에 앉는다 — 모델 복지 자기 보고는 의심받기 시작했다</span><span class="r-meta">새벽 리포트</span></a></li></ul>
     </div>
     <div class="sidebar-section">
         <div class="sidebar-section-label">AI 기술 최근 글</div>
-        <ul class="sidebar-recent"><li><a href="../ai-tech/2026-05-31-am10.html"><span class="r-title">HBM4E 12단 샘플이 출하됐다 — 메모리 천장이 한 칸 더 올라간 사흘</span><span class="r-meta">AI 딥다이브</span></a></li><li><a href="../ai-tech/2026-05-29-am10.html"><span class="r-title">1M 컨텍스트 시대의 옆문 — TTT-E2E가 어텐션 위에 학습 루프를 얹은 방식</span><span class="r-meta">AI 딥다이브</span></a></li><li><a href="../ai-tech/2026-05-28-am10.html"><span class="r-title">광 모듈이 스위치 패키지 안으로 들어왔다 — CPO가 인터커넥트 전력 벽을 우회한 방식</span><span class="r-meta">AI 딥다이브</span></a></li><li><a href="../ai-tech/2026-05-27-am10.html"><span class="r-title">한 블록으로 N층을 흉내내는 길 — Mixture of Recursions와 토큰별 깊이</span><span class="r-meta">AI 딥다이브</span></a></li><li><a href="../ai-tech/2026-05-26-am10.html"><span class="r-title">자가회귀 독점이 흔들렸다 — 디퓨전 LLM이 추론을 1.7초로 끊은 방식</span><span class="r-meta">AI 딥다이브</span></a></li></ul>
+        <ul class="sidebar-recent"><li><a href="../ai-tech/2026-06-13-am10.html"><span class="r-title">한 번 인코딩, 모든 쿼리가 떨어진다 — D4RT가 4D 파이프라인을 접은 방법</span><span class="r-meta">AI 딥다이브</span></a></li><li><a href="../ai-tech/2026-06-12-am10.html"><span class="r-title">129개 갈림길에서 사람보다 64% — Anthropic이 그린 자기개선 척도</span><span class="r-meta">AI 딥다이브</span></a></li><li><a href="../ai-tech/2026-06-11-am10.html"><span class="r-title">150M 비전 인코더를 매트릭스 한 줄로 — Gemma 4 12B가 인코더를 통째로 뺀 방법</span><span class="r-meta">AI 딥다이브</span></a></li><li><a href="../ai-tech/2026-06-10-am10.html"><span class="r-title">20B를 플래시에 눕히고 4B만 깨운다 — AFM 3 Core Advanced의 IFP 구조</span><span class="r-meta">AI 딥다이브</span></a></li><li><a href="../ai-tech/2026-06-09-am10.html"><span class="r-title">활성 55B로 RULER 1M 95% — Nemotron 3 Ultra가 어텐션을 거의 버린 이유</span><span class="r-meta">AI 딥다이브</span></a></li></ul>
     </div>
     <div class="sidebar-section">
         <div class="sidebar-section-label">Claude Code 팁 최근 글</div>
-        <ul class="sidebar-recent"><li><a href="../claude-tips/2026-05-31-pm23.html"><span class="r-title">흩어진 명령·hook·skill을 plugin 한 묶음으로 새 머신에 한 줄로 깐다</span><span class="r-meta">23:00</span></a></li><li><a href="../claude-tips/2026-05-29-pm23.html"><span class="r-title">git worktree로 Claude Code 세션을 분리해 충돌 없이 병렬로 굴린다</span><span class="r-meta">23:00</span></a></li><li><a href="../claude-tips/2026-05-27-pm23.html"><span class="r-title">위험한 Bash 명령은 PreToolUse hook 한 장으로 실행 전에 끊는다</span><span class="r-meta">23:00</span></a></li><li><a href="../claude-tips/2026-05-26-pm23.html"><span class="r-title">/init 한 줄로 새 저장소를 Claude Code에 통째로 소개한다</span><span class="r-meta">23:00</span></a></li><li><a href="../claude-tips/2026-05-25-pm23.html"><span class="r-title">claude agents — 여러 Claude Code 세션을 한 화면에서 굴린다</span><span class="r-meta">23:00</span></a></li></ul>
+        <ul class="sidebar-recent"><li><a href="../claude-tips/2026-06-13-pm23.html"><span class="r-title">--safe-mode 한 줄로 커스터마이즈를 전부 끄고 망가진 원인을 가른다</span><span class="r-meta">23:00</span></a></li><li><a href="../claude-tips/2026-06-12-pm23.html"><span class="r-title">CLAUDE.md에 다 적지 말고 @로 다른 파일을 끌어와 쪼갠다</span><span class="r-meta">23:00</span></a></li><li><a href="../claude-tips/2026-06-11-pm23.html"><span class="r-title">.claude/skills/에 SKILL.md 한 장 만들어두면 같은 절차를 Claude Code가 알아서 골라 쓴다</span><span class="r-meta">23:00</span></a></li><li><a href="../claude-tips/2026-06-10-pm23.html"><span class="r-title">/clear과 /compact — 둘 다 컨텍스트를 정리하지만 손에 잡는 순간이 다르다</span><span class="r-meta">23:00</span></a></li><li><a href="../claude-tips/2026-06-09-pm23.html"><span class="r-title">팀에 공유하기 애매한 개인 메모는 CLAUDE.local.md로 따로 뺀다</span><span class="r-meta">23:00</span></a></li></ul>
     </div>
 </aside>
 <div class="sidebar-backdrop" id="sidebar-backdrop" aria-hidden="true"></div>
@@ -141,7 +141,7 @@
 <article class="post-article">
     <div class="post-header">
         <a href="index.html" class="back-link">← Claude Code 팁 목록</a>
-        <h1>claude agents — 여러 Claude Code 세션을 한 화면에서 굴린다</h1>
+        <h1>claude agents — 여러 Claude Code 세션을 한 화면에서 띄워둔다</h1>
         <div class="post-meta">
             <span class="time-label">심야 팁</span>
             <span>2026년 05월 25일 (월) · 23:51</span>
@@ -152,7 +152,7 @@
     
     
     <div class="post-content">
-<p>세션을 동시에 굴려본 사람은 안다. 터미널 탭 다섯 개를 띄워두면 그중 어느 창이 권한 승인을 기다리고 있고 어느 창이 이미 끝났는지를 일일이 눌러봐야 한다. 어제는 한 시간 가까이 멍 때리던 세션을 뒤늦게 발견했다. 5월 둘째 주 업데이트로 들어온 <code>claude agents</code>(통칭 agent view)는 정확히 이 문제를 노린다.</p>
+<p>세션을 동시에 띄워본 사람은 안다. 터미널 탭 다섯 개를 띄워두면 그중 어느 창이 권한 승인을 기다리고 있고 어느 창이 이미 끝났는지를 일일이 눌러봐야 한다. 어제는 한 시간 가까이 멍 때리던 세션을 뒤늦게 발견했다. 5월 둘째 주 업데이트로 들어온 <code>claude agents</code>(통칭 agent view)는 정확히 이 문제를 노린다.</p>
 <p>내 입력이 필요한 세션 — 권한 요청에 막혔거나 객관식 질문이 떠 있는 것 — 이 표 맨 위로 자동으로 올라온다. 그 아래에 작업 중·완료·실패 순으로 줄을 세운다. 화면 맨 윗줄만 보면 '지금 손대야 할 것'이 바로 잡힌다. 탭 다섯 개를 클릭으로 한 바퀴 도는 시간이 사라진다.</p>
 <p>써보려면 먼저 백그라운드 세션을 띄운다. 작업할 폴더로 들어가 <code>claude --bg "&lt;할 일&gt;"</code>을 치면 터미널을 붙잡지 않고 도는 세션 하나가 생긴다. 이렇게 두세 개를 띄운 뒤 <code>claude agents</code>를 실행하면 터미널 전체를 덮으면서 세션 표가 뜨고, 표 아래에는 새 작업을 던지는 입력창이 붙는다. 표에서 한 줄을 골라 들어가면 그 세션의 마지막 턴이 미리보기로 펼쳐지고, 답을 적어 Enter만 누르면 해당 세션으로 곧장 전달된다. 창을 떠나도 세션은 계속 돈다.</p>
 <p>쓰다 보니 가장 달라진 건 운영 방식이었다. 리팩토링은 한 세션, 테스트는 다른 세션, 문서 작성은 또 다른 세션에 맡겨두고 막힌 것만 골라 응답하면 된다. 다만 아직 Research Preview 단계라 Pro·Max·Team·Enterprise·API 플랜에서 직접 켜야 하고, UI 동작은 바뀔 수 있다. 욕심에 한 번에 다섯 개를 띄우면 토큰이 빠르게 쌓이니, 처음엔 두세 개로 감을 잡는 게 안전하다.</p>
@@ -161,7 +161,7 @@
     
 <div class="post-share">
     <span class="share-label">공유하기</span>
-    <a href="https://twitter.com/intent/tweet?text=claude agents — 여러 Claude Code 세션을 한 화면에서 굴린다&url=https://shonsubong.github.io/sonslab-blog/claude-tips/2026-05-25-pm23.html"
+    <a href="https://twitter.com/intent/tweet?text=claude agents — 여러 Claude Code 세션을 한 화면에서 띄워둔다&url=https://shonsubong.github.io/sonslab-blog/claude-tips/2026-05-25-pm23.html"
        class="share-btn" target="_blank" rel="noopener" aria-label="X(Twitter)에 공유">
         <span>X</span>
     </a>
@@ -191,7 +191,7 @@
     
 <section class="related-posts" aria-label="최근 다른 리포트">
     <div class="related-posts-label">최근 다른 리포트</div>
-    <ul class="related-list"><li><a href="2026-05-31-pm23.html"><span class="related-title">흩어진 명령·hook·skill을 plugin 한 묶음으로 새 머신에 한 줄로 깐다</span><span class="related-date">2026-05-31 · 심야 팁 · 23:00</span></a></li><li><a href="2026-05-29-pm23.html"><span class="related-title">git worktree로 Claude Code 세션을 분리해 충돌 없이 병렬로 굴린다</span><span class="related-date">2026-05-29 · 심야 팁 · 23:00</span></a></li><li><a href="2026-05-27-pm23.html"><span class="related-title">위험한 Bash 명령은 PreToolUse hook 한 장으로 실행 전에 끊는다</span><span class="related-date">2026-05-27 · 심야 팁 · 23:00</span></a></li><li><a href="2026-05-26-pm23.html"><span class="related-title">/init 한 줄로 새 저장소를 Claude Code에 통째로 소개한다</span><span class="related-date">2026-05-26 · 심야 팁 · 23:00</span></a></li><li><a href="2026-05-24-pm23.html"><span class="related-title">claude -p — 대화창 없이 셸 스크립트 안에서 Claude Code를 돌린다</span><span class="related-date">2026-05-24 · 심야 팁 · 23:00</span></a></li></ul>
+    <ul class="related-list"><li><a href="2026-06-13-pm23.html"><span class="related-title">--safe-mode 한 줄로 커스터마이즈를 전부 끄고 망가진 원인을 가른다</span><span class="related-date">2026-06-13 · 심야 팁 · 23:00</span></a></li><li><a href="2026-06-12-pm23.html"><span class="related-title">CLAUDE.md에 다 적지 말고 @로 다른 파일을 끌어와 쪼갠다</span><span class="related-date">2026-06-12 · 심야 팁 · 23:00</span></a></li><li><a href="2026-06-11-pm23.html"><span class="related-title">.claude/skills/에 SKILL.md 한 장 만들어두면 같은 절차를 Claude Code가 알아서 골라 쓴다</span><span class="related-date">2026-06-11 · 심야 팁 · 23:00</span></a></li><li><a href="2026-06-10-pm23.html"><span class="related-title">/clear과 /compact — 둘 다 컨텍스트를 정리하지만 손에 잡는 순간이 다르다</span><span class="related-date">2026-06-10 · 심야 팁 · 23:00</span></a></li><li><a href="2026-06-09-pm23.html"><span class="related-title">팀에 공유하기 애매한 개인 메모는 CLAUDE.local.md로 따로 뺀다</span><span class="related-date">2026-06-09 · 심야 팁 · 23:00</span></a></li></ul>
 </section>
 </article>
 

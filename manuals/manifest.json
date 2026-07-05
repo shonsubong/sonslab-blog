@@ -1,10 +1,10 @@
 {
   "versions": [
     {
-      "issued_on": "2026-05-31",
-      "week_label": "v2026.22-guidebook",
+      "issued_on": "2026-06-09",
+      "week_label": "v2026.23-guidebook",
       "filename": "claude-code-manual-2026-04-26.pdf",
-      "page_count": 141,
+      "page_count": 139,
       "section_count": 123,
       "section_titles": [
         "Part 1 — 시작하기 (초급) / Claude Code 란 무엇인가",
@@ -78,7 +78,7 @@
         "부록 / 환경 변수 참조",
         "부록 / 에러 코드 사전",
         "부록 / 학습 리소스",
-        "부록 / 변경 이력 (2026-05 기준 주요)",
+        "부록 / 변경 이력 (2026-06 기준 주요)",
         "Part 8 — 실전 시나리오 모음 / 시나리오 1 — 신입의 첫 주 (초급)",
         "Part 8 — 실전 시나리오 모음 / 시나리오 2 — 한 주의 사이드 프로젝트 (초급→중급)",
         "Part 8 — 실전 시나리오 모음 / 시나리오 3 — 운영 인시던트 대응 (중급)",
@@ -129,7 +129,7 @@
         "Part 15 — 실전 꿀팁 모음 / 학습 꿀팁",
         "Part 15 — 실전 꿀팁 모음 / 협업 꿀팁",
         "Part 16 — MCP & Skills 활용 사례 심화 / 가장 인기 있는 MCP 톱 15 와 활용 패턴",
-        "Part 16 — MCP & Skills 활용 사례 심화 / 실전 Skills 활용 사례 10 가지"
+        "Part 16 — MCP & Skills 활용 사례 심화 / 실전 Sk"
       ],
       "format": "guidebook",
       "change": {
