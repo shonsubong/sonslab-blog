@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anthropic가 서울에 왔다 — 네이버·삼성·LG가 한날에 Claude를 깔고, Fable 5는 아직 꺼져 있다 — SONSLAB</title>
+    <link rel="icon" href="../assets/logo.jpg">
+    <link rel="alternate" type="application/atom+xml" title="SONSLAB Feed" href="../feed.xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/style.css">
+    <meta name="description" content="하루 마감하면서 타임라인 정리하는데, 오늘은 결국 한 덩어리 뉴스가 다 잡아먹었다. Anthropic이 서울에 사무소를 열었다. 근데 축하 자리가 아니라 거의 해명 자리가 됐다는 게 핵심이다. 한쪽에선 국내 대기업들이 한꺼번에 Claude로 넘어왔다는 발표가 쏟아졌고, 다른 쪽에선 일주일 전 미국발로 막힌 Fable 5가 여전히 꺼져 있다. 이 둘이 같은 주에 같은 도시에서 부딪혔다.">
+    <meta name="author" content="SONSLAB">
+    <link rel="canonical" href="https://shonsubong.github.io/sonslab-blog/posts/2026-06-19-pm22-ai-tech-news.html">
+    <meta property="og:site_name" content="SONSLAB">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Anthropic가 서울에 왔다 — 네이버·삼성·LG가 한날에 Claude를 깔고, Fable 5는 아직 꺼져 있다">
+    <meta property="og:description" content="하루 마감하면서 타임라인 정리하는데, 오늘은 결국 한 덩어리 뉴스가 다 잡아먹었다. Anthropic이 서울에 사무소를 열었다. 근데 축하 자리가 아니라 거의 해명 자리가 됐다는 게 핵심이다. 한쪽에선 국내 대기업들이 한꺼번에 Claude로 넘어왔다는 발표가 쏟아졌고, 다른 쪽에선 일주일 전 미국발로 막힌 Fable 5가 여전히 꺼져 있다. 이 둘이 같은 주에 같은 도시에서 부딪혔다.">
+    <meta property="og:url" content="https://shonsubong.github.io/sonslab-blog/posts/2026-06-19-pm22-ai-tech-news.html">
+    <meta property="og:image" content="https://shonsubong.github.io/sonslab-blog/assets/og/2026-06-19-pm22-ai-tech-news.png">
+    <meta property="og:locale" content="ko_KR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Anthropic가 서울에 왔다 — 네이버·삼성·LG가 한날에 Claude를 깔고, Fable 5는 아직 꺼져 있다">
+    <meta name="twitter:description" content="하루 마감하면서 타임라인 정리하는데, 오늘은 결국 한 덩어리 뉴스가 다 잡아먹었다. Anthropic이 서울에 사무소를 열었다. 근데 축하 자리가 아니라 거의 해명 자리가 됐다는 게 핵심이다. 한쪽에선 국내 대기업들이 한꺼번에 Claude로 넘어왔다는 발표가 쏟아졌고, 다른 쪽에선 일주일 전 미국발로 막힌 Fable 5가 여전히 꺼져 있다. 이 둘이 같은 주에 같은 도시에서 부딪혔다.">
+    <meta name="twitter:image" content="https://shonsubong.github.io/sonslab-blog/assets/og/2026-06-19-pm22-ai-tech-news.png">
+    <meta property="article:published_time" content="2026-06-19T22:14:00+09:00">
+    <meta property="article:modified_time" content="2026-06-19T22:14:00+09:00">
+    
+<script>
+(function() {
+    try {
+        var saved = localStorage.getItem('sonslab-theme');
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var theme = saved || (prefersDark ? 'dark' : 'light');
+        if (theme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+
+        // 디자인 pref: 'random' | 'current' | 'refined' | 'editorial' | 'broadsheet'
+        // 저장값이 없거나 'random'이면 매 페이지 로드마다 4개 중 하나를 무작위로 추출.
+        var pref = localStorage.getItem('sonslab-design') || 'random';
+        var allowed = ['current', 'refined', 'editorial', 'broadsheet'];
+        var resolved;
+        if (pref === 'random') {
+            resolved = allowed[Math.floor(Math.random() * allowed.length)];
+        } else if (allowed.indexOf(pref) === -1) {
+            pref = 'current';
+            resolved = 'current';
+        } else {
+            resolved = pref;
+        }
+        if (resolved !== 'current') document.documentElement.setAttribute('data-design', resolved);
+        // body script가 재추출 없이 라벨만 맞추도록 결과를 공유.
+        window.__sonslabDesignPref = pref;
+        window.__sonslabDesignResolved = resolved;
+    } catch (e) {}
+})();
+</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Anthropic가 서울에 왔다 — 네이버·삼성·LG가 한날에 Claude를 깔고, Fable 5는 아직 꺼져 있다", "description": "하루 마감하면서 타임라인 정리하는데, 오늘은 결국 한 덩어리 뉴스가 다 잡아먹었다. Anthropic이 서울에 사무소를 열었다. 근데 축하 자리가 아니라 거의 해명 자리가 됐다는 게 핵심이다. 한쪽에선 국내 대기업들이 한꺼번에 Claude로 넘어왔다는 발표가 쏟아졌고, 다른 쪽에선 일주일 전 미국발로 막힌 Fable 5가 여전히 꺼져 있다. 이 둘이 같은 주에 같은 도시에서 부딪혔다.", "url": "https://shonsubong.github.io/sonslab-blog/posts/2026-06-19-pm22-ai-tech-news.html", "mainEntityOfPage": "https://shonsubong.github.io/sonslab-blog/posts/2026-06-19-pm22-ai-tech-news.html", "inLanguage": "ko", "image": "https://shonsubong.github.io/sonslab-blog/assets/og/2026-06-19-pm22-ai-tech-news.png", "author": {"@type": "Person", "name": "SONSLAB"}, "publisher": {"@type": "Organization", "name": "SONSLAB", "logo": {"@type": "ImageObject", "url": "https://shonsubong.github.io/sonslab-blog/assets/logo.jpg"}}, "datePublished": "2026-06-19T22:14:00+09:00", "dateModified": "2026-06-19T22:14:00+09:00"}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "SONSLAB", "item": "https://shonsubong.github.io/sonslab-blog/"}, {"@type": "ListItem", "position": 2, "name": "글", "item": "https://shonsubong.github.io/sonslab-blog/#posts"}, {"@type": "ListItem", "position": 3, "name": "Anthropic가 서울에 왔다 — 네이버·삼성·LG가 한날에 Claude를 깔고, Fable 5는 아직 꺼져 있다", "item": "https://shonsubong.github.io/sonslab-blog/posts/2026-06-19-pm22-ai-tech-news.html"}]}</script>
+</head>
+<body class="post-page" data-category="daily">
+    <div class="reading-progress" id="reading-progress" role="progressbar" aria-label="읽기 진행률"></div>
+
+<aside class="site-sidebar" id="site-sidebar" aria-label="사이트 메뉴">
+    <a href="../index.html" class="sidebar-brand">
+        <img src="../assets/logo.jpg" alt="SONSLAB" onerror="this.style.display='none'">
+        <span class="name">SONSLAB</span>
+    </a>
+    <div class="sidebar-section">
+        <div class="sidebar-section-label">카테고리</div>
+        <ul class="sidebar-cat-list">
+            <li><a href="../index.html" class="">홈 <span class="sidebar-cat-count">357</span></a></li>
+            <li><a href="../index.html#posts" class="active">데일리 브리핑 <span class="sidebar-cat-count">234</span></a></li>
+            <li><a href="../ai-tech/index.html" class="">AI 기술 딥다이브 <span class="sidebar-cat-count">56</span></a></li>
+            <li><a href="../claude-tips/index.html" class="">Claude Code 팁 <span class="sidebar-cat-count">67</span></a></li>
+            <li><a href="../manuals/claude-code.html" class="">Claude Code 가이드북 <span class="sidebar-cat-count">PDF</span></a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../feed.xml">RSS</a></li>
+        </ul>
+    </div>
+    <div class="sidebar-section">
+        <div class="sidebar-section-label">데일리 최근 글</div>
+        <ul class="sidebar-recent"><li><a href="../posts/2026-06-20-pm17-ai-tech-news.html"><span class="r-title">Gemini CLI가 문을 닫았다 — 오픈소스 자리를 클로즈드 Antigravity가 차지했다</span><span class="r-meta">오후 브리핑</span></a></li><li><a href="../posts/2026-06-20-pm12-ai-tech-news.html"><span class="r-title">오픈웨이트 모델이 코딩 최전선까지 왔다 — MiniMax M3와 6월의 개방 물결</span><span class="r-meta">오전 브리핑</span></a></li><li><a href="../posts/2026-06-20-am06-ai-tech-news.html"><span class="r-title">내 노트북에서 도는 컴퓨터 조작 AI — Holo3.1이 연 로컬 에이전트 시대</span><span class="r-meta">새벽 리포트</span></a></li><li><a href="../posts/2026-06-19-pm22-ai-tech-news.html"><span class="r-title">Anthropic가 서울에 왔다 — 네이버·삼성·LG가 한날에 Claude를 깔고, Fable 5는 아직 꺼져 있다</span><span class="r-meta">저녁 마감</span></a></li><li><a href="../posts/2026-06-19-pm17-ai-tech-news.html"><span class="r-title">엔비디아가 로봇 AI를 통째로 오픈했다 — Cosmos 3와 sim-to-real 격차</span><span class="r-meta">오후 브리핑</span></a></li></ul>
+    </div>
+    <div class="sidebar-section">
+        <div class="sidebar-section-label">AI 기술 최근 글</div>
+        <ul class="sidebar-recent"><li><a href="../ai-tech/2026-07-17-am10.html"><span class="r-title">오픈 모델의 천장이 2.8조가 됐다 — Kimi K3와 KDA의 계산</span><span class="r-meta">AI 딥다이브</span></a></li><li><a href="../ai-tech/2026-07-15-am10.html"><span class="r-title">지우는 것도 능력이다 — 1M 컨텍스트를 스스로 관리하는 Muse Spark 1.1</span><span class="r-meta">AI 딥다이브</span></a></li><li><a href="../ai-tech/2026-07-14-am10.html"><span class="r-title">테스트가 못 잡는 버그를 증명이 잡는다 — Leanstral 1.5</span><span class="r-meta">AI 딥다이브</span></a></li><li><a href="../ai-tech/2026-07-13-am10.html"><span class="r-title">Wait&#x27;에서 시작되는 무한 반복 — 토큰 하나를 다시 가르쳐 멈춘다</span><span class="r-meta">AI 딥다이브</span></a></li><li><a href="../ai-tech/2026-07-12-am10.html"><span class="r-title">토큰을 4분의 1만 쓴다 — Grok 4.5가 내세운 효율의 이면</span><span class="r-meta">AI 딥다이브</span></a></li></ul>
+    </div>
+    <div class="sidebar-section">
+        <div class="sidebar-section-label">Claude Code 팁 최근 글</div>
+        <ul class="sidebar-recent"><li><a href="../claude-tips/2026-07-17-pm23.html"><span class="r-title">매번 &#x27;설명 빼고 코드만&#x27; 다시 적지 말고 output style로 말투를 고정한다</span><span class="r-meta">23:00</span></a></li><li><a href="../claude-tips/2026-07-15-pm23.html"><span class="r-title">스크린샷을 붙여넣는다 — 에러 화면을 말로 옮겨 적을 필요가 없다</span><span class="r-meta">23:00</span></a></li><li><a href="../claude-tips/2026-07-14-pm23.html"><span class="r-title">Jujutsu(jj) — 에이전트가 헤집어 놓은 작업 트리를 undo 한 번으로 되돌린다</span><span class="r-meta">23:00</span></a></li><li><a href="../claude-tips/2026-07-13-pm23.html"><span class="r-title">Esc 두 번 — 망친 편집을 git 없이 그 자리에서 되돌린다</span><span class="r-meta">23:00</span></a></li><li><a href="../claude-tips/2026-07-12-pm23.html"><span class="r-title">/doctor가 진단만 하던 시절은 끝났다 — 이제 고쳐주기까지 한다</span><span class="r-meta">23:00</span></a></li></ul>
+    </div>
+</aside>
+<div class="sidebar-backdrop" id="sidebar-backdrop" aria-hidden="true"></div>
+
+
+<header class="top-nav">
+    <div class="top-nav-inner">
+        <button type="button" class="sidebar-toggle" id="sidebar-toggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="site-sidebar">
+            <span class="sidebar-toggle-bar"></span>
+            <span class="sidebar-toggle-bar"></span>
+            <span class="sidebar-toggle-bar"></span>
+        </button>
+        <a href="../index.html" class="brand">
+            <img src="../assets/logo.jpg" alt="SONSLAB" onerror="this.style.display='none'">
+            <span class="name">SONSLAB</span>
+        </a>
+        <nav>
+            <a href="../index.html#posts">데일리</a>
+            <a href="../ai-tech/index.html">AI 기술</a>
+            <a href="../claude-tips/index.html">Claude Code 팁</a>
+            <a href="../about.html">About</a>
+            <span class="nav-visits" title="오늘 · 누적 방문">
+                <img src="https://hits.sh/shonsubong.github.io/sonslab-blog.svg?view=today-total&style=flat-square&label=visits&color=1e3a5f&labelColor=1a2332" alt="오늘·누적 방문 수">
+            </span>
+            <div class="design-picker" title="디자인 전환">
+                <button type="button" class="design-picker-btn" id="design-picker-btn" aria-haspopup="listbox" aria-expanded="false" aria-label="디자인 전환">
+                    <span class="design-picker-icon" aria-hidden="true">◑</span>
+                    <span class="design-picker-current" id="design-picker-current">기본</span>
+                    <span class="design-picker-caret" aria-hidden="true">▾</span>
+                </button>
+                <ul class="design-picker-menu" id="design-picker-menu" role="listbox" aria-label="디자인 옵션">
+                    <li role="option" data-design="random"><strong>랜덤</strong><span>접속할 때마다 무작위 디자인</span></li>
+                    <li role="option" data-design="current"><strong>기본</strong><span>네이비+크림, 라운드 카드</span></li>
+                    <li role="option" data-design="refined"><strong>정제판 (A)</strong><span>신문·저널 톤, 헤어라인 구분선</span></li>
+                    <li role="option" data-design="editorial"><strong>에디토리얼 (B)</strong><span>이중선 마스트헤드, 세리프 강조</span></li>
+                    <li role="option" data-design="broadsheet"><strong>브로드시트 (C)</strong><span>웜 크림, 잉크블랙, 큰 세리프</span></li>
+                </ul>
+            </div>
+            <button type="button" class="theme-toggle" id="theme-toggle" aria-label="다크 모드 토글" title="다크/라이트 전환">
+                <span class="icon-moon" aria-hidden="true">🌙</span>
+                <span class="icon-sun" aria-hidden="true">☀</span>
+            </button>
+            <a href="../index.html#subscribe" class="nav-cta">이메일 구독</a>
+        </nav>
+    </div>
+</header>
+
+
+<article class="post-article">
+    <div class="post-header">
+        <a href="../index.html" class="back-link">← 전체 글 목록</a>
+        <h1>Anthropic가 서울에 왔다 — 네이버·삼성·LG가 한날에 Claude를 깔고, Fable 5는 아직 꺼져 있다</h1>
+        <div class="post-meta">
+            <span class="time-label">저녁 마감</span>
+            <span>2026년 06월 19일 (금) · 22:14</span>
+            <span>·</span>
+            <span>8분 읽기</span>
+        </div>
+    </div>
+    
+<div class="day-series-wrap" aria-label="같은 날의 다른 브리핑">
+    <div class="day-series-label"><span class="dot"></span><span>2026년 06월 19일 (금)의 브리핑</span></div>
+    <div class="day-series"><a href="2026-06-19-am06-ai-tech-news.html" class="day-series-item"><span class="series-time">06:09</span><span class="series-label">새벽 리포트</span></a><a href="2026-06-19-pm12-ai-tech-news.html" class="day-series-item"><span class="series-time">12:17</span><span class="series-label">오전 브리핑</span></a><a href="2026-06-19-pm17-ai-tech-news.html" class="day-series-item"><span class="series-time">17:12</span><span class="series-label">오후 브리핑</span></a><a href="#" class="day-series-item active" aria-current="page"><span class="series-time">22:14</span><span class="series-label">저녁 마감</span></a></div>
+</div>
+    <details class="post-toc" open><summary>목차</summary><div class="toc">
+<div class="toc">
+<ul>
+<li><a href="#lg-claude">네이버·삼성·LG가 한날에 Claude로 넘어왔다</a></li>
+<li><a href="#fable-5">그런데 Fable 5는 아직 꺼져 있다</a></li>
+</ul>
+</div>
+
+</div>
+</details>
+    <div class="post-content">
+<p>하루 마감하면서 타임라인 정리하는데, 오늘은 결국 한 덩어리 뉴스가 다 잡아먹었다. Anthropic이 서울에 사무소를 열었다. 근데 축하 자리가 아니라 거의 해명 자리가 됐다는 게 핵심이다. 한쪽에선 국내 대기업들이 한꺼번에 Claude로 넘어왔다는 발표가 쏟아졌고, 다른 쪽에선 일주일 전 미국발로 막힌 Fable 5가 여전히 꺼져 있다. 이 둘이 같은 주에 같은 도시에서 부딪혔다.</p>
+<h2 id="lg-claude">네이버·삼성·LG가 한날에 Claude로 넘어왔다</h2>
+<p>6월 17~18일 여의도에서 열린 개소 행사에서 나온 기업 도입 명단이 좀 셌다. 네이버가 <strong>엔지니어링 조직 전체에 Claude Code를 깔았다.</strong> 수천 명 규모 개발자들이 코딩 도구를 다변화한다는 명분인데, 사실상 사내 표준 코딩 도구 후보로 들였다는 얘기다. 넥슨은 라이브 서비스 게임 개발에 Claude Code를 붙였고, 삼성SDS는 삼성전자 전반에 Claude Cowork·Claude Code를 깐다. LG CNS는 LG 그룹 전체로 확대 예정, 한화솔루션은 AWS Bedrock으로 인리전(데이터 국내 체류) 조건 맞춰서 글로벌 배포. 고객 AI 플랫폼 채널톡을 돌리는 채널코퍼레이션도 들어갔다.</p>
+<p>엔지니어 입장에서 이게 그냥 보도자료로 안 읽히는 이유가 있다. 한국에서 Claude Code 주간 사용자가 넉 달 만에 6배로 늘었다는 숫자가 같이 나왔다. 회사에서 보안 정책상 Claude Code를 못 쓰는 나로선 좀 묘한 기분인데 — 옆 동네 대기업들은 조직 단위로 깔고 있다는 거니까. 코딩 도구가 "개인이 몰래 쓰는 생산성 꼼수"에서 "회사가 공식으로 표준화하는 인프라"로 넘어가는 변곡점이 지금이라는 게, 이 명단에서 꽤 분명하게 보인다.</p>
+<p>과학기술정보통신부와 맺은 MOU도 메모해둘 만하다. <strong>한국어로 모델 안전성을 평가</strong>하는 작업을 한국 AI안전연구소와 같이 한다는 건데, 그동안 프런티어 모델 안전 연구가 대부분 영어 기준이었던 걸 생각하면 의미가 있다. 글자 체계도 문법도 다른 언어에서 모델이 어떻게 헛소리하는지는 영어로 본 것과 다르다. KAIST·고려대·연세대·POSTECH 연구자들한테 Claude 접근권도 푼다고 한다. 한국어 안전성 데이터가 쌓이는 건 국내 도입 기업한테도, Anthropic한테도 남는 장사다.</p>
+<h2 id="fable-5">그런데 Fable 5는 아직 꺼져 있다</h2>
+<p>축하 자리가 해명 자리가 된 이유가 이거다. Anthropic의 최상위 모델 Fable 5(와 한정 공개판 Mythos 5)는 6월 9일에 나왔다가 12일에 미국 정부 수출통제 지시로 막혔다. 외국 국적자의 접근을 끊으라는 건데, 실시간 국적 필터링이 기술적으로 안 되니까 Anthropic은 그냥 두 모델을 전 세계에서 통째로 내렸다. 나도 외국 국적이라, 개인 MAX로도 Fable 5는 애초에 못 건드린다. 남 일이 아니다.</p>
+<p>서울에서 나온 제일 구체적인 신호는 Anthropic 인터내셔널 총괄(Chris Ciauri)의 발언이었다. "며칠 안에 다시 쓸 수 있을 거라고 꽤 자신한다"고 했다. 그동안 "최대한 빨리" 같은 두루뭉술한 표현만 쓰다가 "며칠"이라고 못 박은 건 처음이라, 물밑 협상이 진행 중이라는 뜻으로 읽힌다. 다만 어디까지나 회사 측 전망이지 공식 복구일은 안 나왔다. 기대만 하긴 이르다.</p>
+<p>배경 스토리는 좀 민감하게 가려 읽어야 한다. WIRED·워싱턴포스트 보도를 국내 매체들이 받은 걸 종합하면, 백악관이 SK텔레콤을 "중국과의 연관이 의심된다"며 Mythos 접근 차단을 먼저 요청했고, 거기에 Amazon 연구진이 Fable 5 취약점을 따로 신고한 게 겹치면서 "전체 외국인 차단"으로 번졌다는 그림이다. <strong>다만 SK텔레콤은 "중국과의 연계는 전혀 사실이 아니다"라고 정면 부인했다.</strong> 핵심망에 화웨이·ZTE 장비를 안 쓴다는 게 회사 입장이다. 미확인·진행 중인 사안이라 어느 쪽도 확정해서 쓸 단계는 아니다. 국내 통신 3사가 다 긴장하며 보고 있다는 보도가 나오는 것 자체가, 이 "중국 연계" 잣대가 어디까지 넓어질지 아무도 모른다는 방증이다.</p>
+<p>내가 진짜 주목한 건 기술 쪽 쟁점이다. 백악관은 재출시 전에 <strong>모든 jailbreak를 제거하라</strong>고 요구한 걸로 전해진다. 보안 연구자들 반응은 거의 한목소리다 — 그건 현재 어떤 프런티어 모델로도 기술적으로 불가능하다. jailbreak는 풀린 문제 아니면 안 풀린 문제로 딱 갈리는 게 아니라, 새 기법이 막는 속도보다 빨리 나오는 적대적·연속적 영역이다. "전부 막아라"는 건 기술 기준이 아니라 충족 불가능한 정치적 잣대라는 거다. freefable.org에 CISO급 서명이 300명 넘게 붙었다는 얘기도 X에서 돈다. Dario가 "고치든지 내리든지" 양자택일(데이비드 색스가 전했다는)을 둘 다 거부했다는 보도까지 보면, 이건 단순 보안 이슈가 아니라 "정부가 모델을 강제로 내릴 수 있느냐"는 선례 싸움이다.</p>
+<p>여기서 한 발 물러서서 보면 결국 오픈웨이트 진영이 반사이익을 본다. MiniMax가 M3 오픈웨이트를 두고 "오픈 모델은 어느 정부도 회수 못 한다"고 대놓고 마케팅을 걸었다. 맞는 말이긴 하다. 미국에 호스팅된 클로즈드 모델은 몇 시간이면 전 세계에서 꺼지지만, 가중치가 이미 서울·도쿄·프랑크푸르트 서버에 깔린 모델은 못 끈다. 며칠 전 새벽에 "도구는 닫히고 모델은 열린다"고 썼는데, 이번 건은 그 명제에 "주권" 한 줄을 더 얹은 셈이다. 회수 불가능성이 오픈웨이트의 진짜 무기라는 게, 정책 한 방으로 이렇게 선명해질 줄은 몰랐다.</p>
+<p>당장 일정 두 개만 챙겨두자. 6월 20일이 Fable 5 크레딧 환불 마감, 6월 22일이 구독자 무료 체험 종료다. 복구가 22일 넘겨서 되면 무료 기간이랑 접근을 동시에 날리는 셈이라, API 쓰는 쪽은 <code>claude-fable-5</code>가 다시 살아날 때까지 Opus 4.8로 폴백 걸어두는 게 안전하다.</p>
+<p>오늘은 한국이 AI 지도에서 꽤 또렷하게 찍힌 하루였다. 도입은 폭발하는데 최상위 모델은 정치에 막혀 있다는 게, 지금 이 시장의 어색한 좌표 그대로다. 내일 아침 타임라인에 "Fable 5 복구" 한 줄이 떠 있으면 좋겠다. 일단 여기까지.</p>
+<hr />
+<p><strong>Sources</strong>
+- <a href="https://www.anthropic.com/news/seoul-office-partnerships-korean-ai-ecosystem">Anthropic — Seoul office and Korean AI ecosystem partnerships (Official, updated June 18, 2026)</a>
+- <a href="https://www.koreajoongangdaily.com/business/anthropic-confident-of-reenabling-mythos-fable-5-access-in-coming-days-executive/12727522">Korea JoongAng Daily — Anthropic 'very confident' Fable 5 returns within days (June 18, 2026)</a>
+- <a href="https://www.koreajoongangdaily.com/business/white-house-officials-pin-anthropic-ai-export-block-on-korean-telecom-report/12726842">Korea JoongAng Daily — White House officials pin Anthropic AI export block on Korean telecom (June 16–17, 2026)</a>
+- <a href="https://llmbase.ai/news/sk-telecom-china-ties-trigger-anthropic-claude-mythos-export-controls/">LLMBase — SK Telecom China ties trigger Anthropic Claude Mythos export controls (citing WIRED, June 17, 2026)</a>
+- <a href="https://llmbase.ai/news/white-house-demands-anthropic-block-all-claude-fable-5-jailbreaks/">LLMBase — White House demands Anthropic block all Claude Fable 5 jailbreaks (June 17, 2026)</a>
+- <a href="https://www.upi.com/Top_News/World-News/2026/06/18/korea-Anthropic-Seoul-office-Korea-partnerships-Washington-AI-export-controls/4641781769900/">UPI — Anthropic opens Seoul office amid US AI restrictions (June 18, 2026)</a>
+- <a href="https://letsdatascience.com/news/anthropic-opens-seoul-office-to-expand-korea-ties-54895648">Let's Data Science — Anthropic opens Seoul office to expand Korea ties (June 18, 2026)</a>
+- <a href="https://venturebeat.com/technology/anthropic-blocks-all-public-access-to-claude-fable-5-mythos-5-following-us-government-order-what-enterprises-should-do">VentureBeat — Anthropic blocks all public access to Fable 5; MiniMax highlights open weights (June 13, 2026)</a></p>
+    </div>
+    
+<div class="post-share">
+    <span class="share-label">공유하기</span>
+    <a href="https://twitter.com/intent/tweet?text=Anthropic가 서울에 왔다 — 네이버·삼성·LG가 한날에 Claude를 깔고, Fable 5는 아직 꺼져 있다&url=https://shonsubong.github.io/sonslab-blog/posts/2026-06-19-pm22-ai-tech-news.html"
+       class="share-btn" target="_blank" rel="noopener" aria-label="X(Twitter)에 공유">
+        <span>X</span>
+    </a>
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://shonsubong.github.io/sonslab-blog/posts/2026-06-19-pm22-ai-tech-news.html"
+       class="share-btn" target="_blank" rel="noopener" aria-label="LinkedIn에 공유">
+        <span>in</span>
+    </a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://shonsubong.github.io/sonslab-blog/posts/2026-06-19-pm22-ai-tech-news.html"
+       class="share-btn" target="_blank" rel="noopener" aria-label="Facebook에 공유">
+        <span>f</span>
+    </a>
+    <button type="button" class="share-btn share-copy" id="share-copy-btn" data-url="https://shonsubong.github.io/sonslab-blog/posts/2026-06-19-pm22-ai-tech-news.html" aria-label="링크 복사">
+        <span>🔗 링크 복사</span>
+    </button>
+</div>
+    
+<nav class="post-nav-bottom" aria-label="이전/다음 글">
+    <a href="2026-06-19-pm17-ai-tech-news.html" class="post-nav-link prev">
+        <span class="post-nav-label">← 이전 글</span>
+        <span class="post-nav-title">엔비디아가 로봇 AI를 통째로 오픈했다 — Cosmos 3와 sim-to-real 격차</span>
+    </a>
+    <a href="2026-06-20-am06-ai-tech-news.html" class="post-nav-link next">
+        <span class="post-nav-label">다음 글 →</span>
+        <span class="post-nav-title">내 노트북에서 도는 컴퓨터 조작 AI — Holo3.1이 연 로컬 에이전트 시대</span>
+    </a>
+</nav>
+    
+<section class="related-posts" aria-label="최근 다른 리포트">
+    <div class="related-posts-label">최근 다른 리포트</div>
+    <ul class="related-list"><li><a href="2026-06-20-pm17-ai-tech-news.html"><span class="related-title">Gemini CLI가 문을 닫았다 — 오픈소스 자리를 클로즈드 Antigravity가 차지했다</span><span class="related-date">2026-06-20 · 오후 브리핑 · 17:21</span></a></li><li><a href="2026-06-20-pm12-ai-tech-news.html"><span class="related-title">오픈웨이트 모델이 코딩 최전선까지 왔다 — MiniMax M3와 6월의 개방 물결</span><span class="related-date">2026-06-20 · 오전 브리핑 · 12:24</span></a></li><li><a href="2026-06-20-am06-ai-tech-news.html"><span class="related-title">내 노트북에서 도는 컴퓨터 조작 AI — Holo3.1이 연 로컬 에이전트 시대</span><span class="related-date">2026-06-20 · 새벽 리포트 · 06:08</span></a></li><li><a href="2026-06-18-pm22-ai-tech-news.html"><span class="related-title">Anthropic이 서울에 사무소를 열었다 — NAVER·삼성·LG가 한 번에 들어간 날</span><span class="related-date">2026-06-18 · 저녁 마감 · 22:14</span></a></li><li><a href="2026-06-18-pm17-ai-tech-news.html"><span class="related-title">오픈소스 코딩 에이전트가 Cursor를 제쳤다 — MCP가 표준이 되며 생긴 일</span><span class="related-date">2026-06-18 · 오후 브리핑 · 17:11</span></a></li></ul>
+</section>
+</article>
+
+
+<section class="subscribe-cta" id="subscribe">
+    <div class="sub-header">
+        <h3>매일 4번, 받은편지함으로</h3>
+        <p class="sub-desc">반도체·AI·시장 브리핑을 새벽·오전·오후·저녁 네 번 이메일로 받아보세요. 스팸 없음, 언제든 구독 취소.</p>
+    </div>
+    <form id="subscribe-form" class="subscribe-form" action="https://assets.mailerlite.com/jsonp/2275622/forms/185056263876380606/subscribe" method="post">
+        <input type="email" name="fields[email]" placeholder="your@email.com" required aria-label="이메일 주소">
+        <input type="hidden" name="ml-submit" value="1">
+        <button type="submit" class="btn btn-primary">구독하기</button>
+    </form>
+    <div id="subscribe-status" class="subscribe-status" role="status" aria-live="polite"></div>
+    <p class="subscribe-footnote">또는 RSS로 구독하기</p>
+    <div class="rss-copy-row">
+        <input id="rss-url" type="text" readonly value="https://shonsubong.github.io/sonslab-blog/feed.xml" aria-label="RSS 피드 URL">
+        <button id="rss-copy-btn" type="button" class="btn btn-secondary">URL 복사</button>
+    </div>
+    <p class="rss-hint">RSS 리더에 이 URL을 붙여넣으면 구독됩니다.</p>
+    <div class="rss-readers">
+        <span class="rss-readers-label">바로가기 (로그인 필요):</span>
+        <a href="https://www.inoreader.com/?add_feed=https%3A%2F%2Fshonsubong.github.io%2Fsonslab-blog%2Ffeed.xml" class="rss-reader-btn" target="_blank" rel="noopener">Inoreader</a>
+        <a href="https://theoldreader.com/feeds/subscribe?url=https%3A%2F%2Fshonsubong.github.io%2Fsonslab-blog%2Ffeed.xml" class="rss-reader-btn" target="_blank" rel="noopener">The Old Reader</a>
+        <a href="https://shonsubong.github.io/sonslab-blog/feed.xml" class="rss-reader-btn rss-raw" target="_blank" rel="noopener" title="Atom/XML 원본">Atom/XML</a>
+    </div>
+</section>
+
+
+<footer>
+    <div class="stats-row">
+        <img src="https://hits.sh/shonsubong.github.io/sonslab-blog.svg?view=today-total&style=flat-square&label=visits&color=1e3a5f&labelColor=1a2332" alt="Visit counter">
+        <span class="stat-inline">오늘 · 누적 방문</span>
+    </div>
+    <p style="margin-top: 1.2rem;">© 2026 SONSLAB — 현장 감각으로 읽는 AI와 테크</p>
+    <div style="margin-top: 0.5rem;">
+        <a href="../index.html#posts">글</a>·
+        <a href="../index.html#about">About</a>·
+        <a href="../feed.xml">RSS</a>·
+        <a href="mailto:sonslab1211@naver.com">Contact</a>
+    </div>
+</footer>
+
+<button type="button" class="scroll-top" id="scroll-top" aria-label="맨 위로" title="맨 위로">↑</button>
+
+<script>
+(function() {
+    var bar = document.getElementById('reading-progress');
+    if (!bar) return;
+    function update() {
+        var h = document.documentElement, b = document.body;
+        var st = h.scrollTop || b.scrollTop;
+        var sh = (h.scrollHeight || b.scrollHeight) - h.clientHeight;
+        bar.style.width = (sh > 0 ? (st / sh) * 100 : 0) + '%';
+    }
+    window.addEventListener('scroll', update, {passive: true});
+    update();
+})();
+</script>
+
+
+<script>
+(function() {
+    // 외부 링크에 target=_blank, rel=noopener 자동 부여
+    var origin = window.location.origin;
+    document.querySelectorAll('.post-content a[href^="http"]').forEach(function(a) {
+        try {
+            var u = new URL(a.href);
+            if (u.origin !== origin) {
+                a.target = '_blank';
+                a.rel = 'noopener noreferrer';
+            }
+        } catch (e) {}
+    });
+    // 모바일에서 TOC 기본 접힘 (세로 공간 절약)
+    if (window.matchMedia('(max-width: 767px)').matches) {
+        var toc = document.querySelector('.post-toc');
+        if (toc && toc.hasAttribute('open')) toc.removeAttribute('open');
+    }
+    // 공유: 링크 복사
+    var copyBtn = document.getElementById('share-copy-btn');
+    if (copyBtn) {
+        copyBtn.addEventListener('click', async function() {
+            var url = copyBtn.dataset.url || window.location.href;
+            try {
+                if (navigator.clipboard && window.isSecureContext) {
+                    await navigator.clipboard.writeText(url);
+                } else {
+                    var ta = document.createElement('textarea');
+                    ta.value = url; document.body.appendChild(ta);
+                    ta.select(); document.execCommand('copy');
+                    document.body.removeChild(ta);
+                }
+                var span = copyBtn.querySelector('span');
+                var original = span.textContent;
+                span.textContent = '✓ 복사됨';
+                copyBtn.classList.add('copied');
+                setTimeout(function() {
+                    span.textContent = original;
+                    copyBtn.classList.remove('copied');
+                }, 2000);
+            } catch (e) {}
+        });
+    }
+})();
+</script>
+
+
+<script>
+(function() {
+    var btn = document.getElementById('sidebar-toggle');
+    var sidebar = document.getElementById('site-sidebar');
+    var backdrop = document.getElementById('sidebar-backdrop');
+    if (!btn || !sidebar) return;
+    function open() {
+        sidebar.classList.add('open');
+        if (backdrop) backdrop.classList.add('show');
+        btn.setAttribute('aria-expanded', 'true');
+        btn.setAttribute('aria-label', '메뉴 닫기');
+    }
+    function close() {
+        sidebar.classList.remove('open');
+        if (backdrop) backdrop.classList.remove('show');
+        btn.setAttribute('aria-expanded', 'false');
+        btn.setAttribute('aria-label', '메뉴 열기');
+    }
+    btn.addEventListener('click', function() {
+        if (sidebar.classList.contains('open')) close(); else open();
+    });
+    if (backdrop) backdrop.addEventListener('click', close);
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && sidebar.classList.contains('open')) close();
+    });
+    // 사이드바 내부 링크를 누르면 모바일에선 닫는다
+    sidebar.querySelectorAll('a').forEach(function(a) {
+        a.addEventListener('click', function() {
+            if (window.matchMedia('(max-width: 1023px)').matches) close();
+        });
+    });
+})();
+</script>
+
+
+<script>
+(function() {
+    var form = document.getElementById('subscribe-form');
+    var status = document.getElementById('subscribe-status');
+    function setState(state, html) {
+        if (!status) return;
+        status.className = 'subscribe-status' + (state ? ' state-' + state : '');
+        status.innerHTML = html || '';
+    }
+    var rssInput = document.getElementById('rss-url');
+    var rssBtn = document.getElementById('rss-copy-btn');
+    if (rssInput && rssBtn) {
+        rssBtn.addEventListener('click', async function() {
+            var url = rssInput.value;
+            try {
+                if (navigator.clipboard && window.isSecureContext) {
+                    await navigator.clipboard.writeText(url);
+                } else {
+                    rssInput.select();
+                    rssInput.setSelectionRange(0, url.length);
+                    document.execCommand('copy');
+                }
+                var original = rssBtn.textContent;
+                rssBtn.textContent = '✓ 복사됨';
+                rssBtn.classList.add('copied');
+                setTimeout(function() {
+                    rssBtn.textContent = original;
+                    rssBtn.classList.remove('copied');
+                }, 2000);
+            } catch (err) {
+                rssInput.select();
+            }
+        });
+        rssInput.addEventListener('click', function() { rssInput.select(); });
+    }
+    // 공통 구독 submit 로직. 메인 폼 + 인라인 폼(B/C hero) 모두 처리.
+    function setFormState(statusEl, state, html, cls) {
+        if (!statusEl) return;
+        var base = cls || 'subscribe-status';
+        statusEl.className = base + (state ? ' state-' + state : '');
+        statusEl.innerHTML = html || '';
+    }
+    function attachSubscribe(f, statusEl, statusCls, successTemplate) {
+        if (!f) return;
+        f.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            var email = f.querySelector('input[type="email"]').value.trim();
+            if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                setFormState(statusEl, 'error', '올바른 이메일 주소를 입력해주세요.', statusCls);
+                return;
+            }
+            var btn = f.querySelector('button[type="submit"]');
+            var originalLabel = btn.textContent;
+            btn.disabled = true;
+            btn.classList.add('loading');
+            btn.textContent = '전송 중…';
+            setFormState(statusEl, 'loading', '', statusCls);
+            try {
+                var fd = new FormData(f);
+                var res = await fetch(f.action, { method: 'POST', body: fd });
+                var data = {};
+                try { data = await res.json(); } catch (e) {}
+                if (res.ok && data.success) {
+                    f.classList.add('hidden-post-success');
+                    var safe = email.replace(/[<>&"]/g, function(c) { return ({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'})[c]; });
+                    setFormState(statusEl, 'success', successTemplate(safe), statusCls);
+                } else {
+                    throw new Error((data && data.message) || '서버 응답 오류');
+                }
+            } catch (err) {
+                setFormState(statusEl, 'error', '일시적인 오류가 발생했습니다. 잠시 후 다시 시도해주세요.', statusCls);
+                btn.disabled = false;
+                btn.classList.remove('loading');
+                btn.textContent = originalLabel;
+            }
+        });
+    }
+    // 메인 구독 폼 (subscribe 섹션)
+    attachSubscribe(form, status, 'subscribe-status', function(safe) {
+        return '<strong>✓ 구독 신청을 받았습니다.</strong>' +
+            'SONSLAB이 <b>' + safe + '</b> 주소로 확인 이메일을 보냈습니다. ' +
+            '받은편지함(스팸함 포함)에서 확인 링크를 클릭하시면 구독이 완료됩니다.';
+    });
+    // 인라인 구독 폼 (B/C hero 내부)
+    document.querySelectorAll('form.inline-sub[data-subscribe]').forEach(function(f) {
+        var st = f.parentElement ? f.parentElement.querySelector('.inline-sub-status') : null;
+        attachSubscribe(f, st, 'inline-sub-status', function(safe) {
+            return '✓ <b>' + safe + '</b>로 확인 이메일을 보냈습니다.';
+        });
+    });
+})();
+</script>
+
+
+<script>
+(function() {
+    // 다크 모드 토글
+    var toggle = document.getElementById('theme-toggle');
+    if (toggle) {
+        toggle.addEventListener('click', function() {
+            var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+            if (isDark) {
+                document.documentElement.removeAttribute('data-theme');
+                try { localStorage.setItem('sonslab-theme', 'light'); } catch(e){}
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                try { localStorage.setItem('sonslab-theme', 'dark'); } catch(e){}
+            }
+        });
+    }
+    // 디자인 피커
+    var dpBtn = document.getElementById('design-picker-btn');
+    var dpMenu = document.getElementById('design-picker-menu');
+    var dpCurrent = document.getElementById('design-picker-current');
+    var dpLabels = { current: '기본', refined: '정제판', editorial: '에디토리얼', broadsheet: '브로드시트', random: '랜덤' };
+    var DP_ALLOWED = ['current', 'refined', 'editorial', 'broadsheet'];
+    function dpResolve(pref, avoid) {
+        if (pref === 'random') {
+            var pool = DP_ALLOWED;
+            if (avoid && DP_ALLOWED.indexOf(avoid) !== -1 && DP_ALLOWED.length > 1) {
+                pool = DP_ALLOWED.filter(function(x) { return x !== avoid; });
+            }
+            return pool[Math.floor(Math.random() * pool.length)];
+        }
+        if (DP_ALLOWED.indexOf(pref) === -1) return 'current';
+        return pref;
+    }
+    function dpSyncLabel(pref, resolved) {
+        if (dpCurrent) {
+            dpCurrent.textContent = (pref === 'random')
+                ? dpLabels.random + ' (' + dpLabels[resolved] + ')'
+                : dpLabels[pref];
+        }
+        if (dpMenu) dpMenu.querySelectorAll('li').forEach(function(li){
+            li.classList.toggle('active', li.getAttribute('data-design') === pref);
+        });
+    }
+    function applyDesign(pref) {
+        if (!dpLabels[pref]) pref = 'random';
+        // 랜덤 클릭 시 현재 디자인을 피해서 체감되는 변화를 보장.
+        var current = document.documentElement.getAttribute('data-design') || 'current';
+        var resolved = dpResolve(pref, current);
+        if (resolved === 'current') document.documentElement.removeAttribute('data-design');
+        else document.documentElement.setAttribute('data-design', resolved);
+        try { localStorage.setItem('sonslab-design', pref); } catch(e){}
+        dpSyncLabel(pref, resolved);
+    }
+    if (dpBtn && dpMenu) {
+        // 초기 동기화는 head 스크립트가 이미 resolved를 적용했으니 재추출 없이 라벨만 맞춤.
+        var initPref = (typeof window.__sonslabDesignPref !== 'undefined')
+            ? window.__sonslabDesignPref
+            : (localStorage.getItem('sonslab-design') || 'random');
+        var initResolved = (typeof window.__sonslabDesignResolved !== 'undefined')
+            ? window.__sonslabDesignResolved
+            : (document.documentElement.getAttribute('data-design') || 'current');
+        dpSyncLabel(initPref, initResolved);
+        dpBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            var expanded = dpBtn.getAttribute('aria-expanded') === 'true';
+            dpBtn.setAttribute('aria-expanded', String(!expanded));
+            dpMenu.classList.toggle('open', !expanded);
+        });
+        dpMenu.querySelectorAll('li').forEach(function(li){
+            li.addEventListener('click', function(){
+                applyDesign(li.getAttribute('data-design'));
+                dpMenu.classList.remove('open');
+                dpBtn.setAttribute('aria-expanded', 'false');
+            });
+        });
+        document.addEventListener('click', function(e){
+            if (!dpMenu.contains(e.target) && e.target !== dpBtn) {
+                dpMenu.classList.remove('open');
+                dpBtn.setAttribute('aria-expanded', 'false');
+            }
+        });
+    }
+    // 맨 위로 버튼
+    var btn = document.getElementById('scroll-top');
+    if (btn) {
+        var toggleBtn = function() {
+            if (window.scrollY > 300) btn.classList.add('visible');
+            else btn.classList.remove('visible');
+        };
+        window.addEventListener('scroll', toggleBtn, {passive:true});
+        btn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        toggleBtn();
+    }
+})();
+</script>
+</body>
+</html>
