@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Microsoft가 OpenAI 없이 추론 모델을 만들었다 — 증류 안 한 MAI-Thinking-1의 의미 — SONSLAB</title>
+    <title>/sandbox — 승인 대신 OS가 울타리를 친다, 프롬프트 피로 탈출 — SONSLAB</title>
     <link rel="icon" href="../assets/logo.jpg">
     <link rel="alternate" type="application/atom+xml" title="SONSLAB Feed" href="../feed.xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,22 +11,22 @@
     <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/style.css">
-    <meta name="description" content="새벽에 일어나 밤사이 쌓인 걸 훑는데, 제일 눈에 박힌 건 모델 출시 자체가 아니라 누가 누구 데이터로 학습했냐는 한 줄이었다.">
+    <meta name="description" content="Claude Code한테 빌드를 맡겨두고 자리를 비웠다 돌아오면, 화면은 여전히 승인 대기 중이다. 테스트 한 번, 패키지 설치 한 번마다 손을 내밀고, 어느 순간부터는 내용도 안 읽고 y를 누르는 나를 발견한다. 그렇다고 --dangerously-skip-permissions를 켜자니 이름부터가 경고문이다.">
     <meta name="author" content="SONSLAB">
-    <link rel="canonical" href="https://shonsubong.github.io/sonslab-blog/posts/2026-06-14-am06-ai-tech-news.html">
+    <link rel="canonical" href="https://shonsubong.github.io/sonslab-blog/claude-tips/2026-07-18-pm23.html">
     <meta property="og:site_name" content="SONSLAB">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Microsoft가 OpenAI 없이 추론 모델을 만들었다 — 증류 안 한 MAI-Thinking-1의 의미">
-    <meta property="og:description" content="새벽에 일어나 밤사이 쌓인 걸 훑는데, 제일 눈에 박힌 건 모델 출시 자체가 아니라 누가 누구 데이터로 학습했냐는 한 줄이었다.">
-    <meta property="og:url" content="https://shonsubong.github.io/sonslab-blog/posts/2026-06-14-am06-ai-tech-news.html">
-    <meta property="og:image" content="https://shonsubong.github.io/sonslab-blog/assets/og/2026-06-14-am06-ai-tech-news.png">
+    <meta property="og:title" content="/sandbox — 승인 대신 OS가 울타리를 친다, 프롬프트 피로 탈출">
+    <meta property="og:description" content="Claude Code한테 빌드를 맡겨두고 자리를 비웠다 돌아오면, 화면은 여전히 승인 대기 중이다. 테스트 한 번, 패키지 설치 한 번마다 손을 내밀고, 어느 순간부터는 내용도 안 읽고 y를 누르는 나를 발견한다. 그렇다고 --dangerously-skip-permissions를 켜자니 이름부터가 경고문이다.">
+    <meta property="og:url" content="https://shonsubong.github.io/sonslab-blog/claude-tips/2026-07-18-pm23.html">
+    <meta property="og:image" content="https://shonsubong.github.io/sonslab-blog/assets/logo.jpg">
     <meta property="og:locale" content="ko_KR">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Microsoft가 OpenAI 없이 추론 모델을 만들었다 — 증류 안 한 MAI-Thinking-1의 의미">
-    <meta name="twitter:description" content="새벽에 일어나 밤사이 쌓인 걸 훑는데, 제일 눈에 박힌 건 모델 출시 자체가 아니라 누가 누구 데이터로 학습했냐는 한 줄이었다.">
-    <meta name="twitter:image" content="https://shonsubong.github.io/sonslab-blog/assets/og/2026-06-14-am06-ai-tech-news.png">
-    <meta property="article:published_time" content="2026-06-14T06:08:00+09:00">
-    <meta property="article:modified_time" content="2026-06-14T06:08:00+09:00">
+    <meta name="twitter:title" content="/sandbox — 승인 대신 OS가 울타리를 친다, 프롬프트 피로 탈출">
+    <meta name="twitter:description" content="Claude Code한테 빌드를 맡겨두고 자리를 비웠다 돌아오면, 화면은 여전히 승인 대기 중이다. 테스트 한 번, 패키지 설치 한 번마다 손을 내밀고, 어느 순간부터는 내용도 안 읽고 y를 누르는 나를 발견한다. 그렇다고 --dangerously-skip-permissions를 켜자니 이름부터가 경고문이다.">
+    <meta name="twitter:image" content="https://shonsubong.github.io/sonslab-blog/assets/logo.jpg">
+    <meta property="article:published_time" content="2026-07-18T23:00:00+09:00">
+    <meta property="article:modified_time" content="2026-07-18T23:00:00+09:00">
     
 <script>
 (function() {
@@ -56,10 +56,10 @@
     } catch (e) {}
 })();
 </script>
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Microsoft가 OpenAI 없이 추론 모델을 만들었다 — 증류 안 한 MAI-Thinking-1의 의미", "description": "새벽에 일어나 밤사이 쌓인 걸 훑는데, 제일 눈에 박힌 건 모델 출시 자체가 아니라 누가 누구 데이터로 학습했냐는 한 줄이었다.", "url": "https://shonsubong.github.io/sonslab-blog/posts/2026-06-14-am06-ai-tech-news.html", "mainEntityOfPage": "https://shonsubong.github.io/sonslab-blog/posts/2026-06-14-am06-ai-tech-news.html", "inLanguage": "ko", "image": "https://shonsubong.github.io/sonslab-blog/assets/og/2026-06-14-am06-ai-tech-news.png", "author": {"@type": "Person", "name": "SONSLAB"}, "publisher": {"@type": "Organization", "name": "SONSLAB", "logo": {"@type": "ImageObject", "url": "https://shonsubong.github.io/sonslab-blog/assets/logo.jpg"}}, "datePublished": "2026-06-14T06:08:00+09:00", "dateModified": "2026-06-14T06:08:00+09:00"}</script>
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "SONSLAB", "item": "https://shonsubong.github.io/sonslab-blog/"}, {"@type": "ListItem", "position": 2, "name": "글", "item": "https://shonsubong.github.io/sonslab-blog/#posts"}, {"@type": "ListItem", "position": 3, "name": "Microsoft가 OpenAI 없이 추론 모델을 만들었다 — 증류 안 한 MAI-Thinking-1의 의미", "item": "https://shonsubong.github.io/sonslab-blog/posts/2026-06-14-am06-ai-tech-news.html"}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "/sandbox — 승인 대신 OS가 울타리를 친다, 프롬프트 피로 탈출", "description": "Claude Code한테 빌드를 맡겨두고 자리를 비웠다 돌아오면, 화면은 여전히 승인 대기 중이다. 테스트 한 번, 패키지 설치 한 번마다 손을 내밀고, 어느 순간부터는 내용도 안 읽고 y를 누르는 나를 발견한다. 그렇다고 --dangerously-skip-permissions를 켜자니 이름부터가 경고문이다.", "url": "https://shonsubong.github.io/sonslab-blog/claude-tips/2026-07-18-pm23.html", "mainEntityOfPage": "https://shonsubong.github.io/sonslab-blog/claude-tips/2026-07-18-pm23.html", "inLanguage": "ko", "image": "https://shonsubong.github.io/sonslab-blog/assets/logo.jpg", "author": {"@type": "Person", "name": "SONSLAB"}, "publisher": {"@type": "Organization", "name": "SONSLAB", "logo": {"@type": "ImageObject", "url": "https://shonsubong.github.io/sonslab-blog/assets/logo.jpg"}}, "datePublished": "2026-07-18T23:00:00+09:00", "dateModified": "2026-07-18T23:00:00+09:00"}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "SONSLAB", "item": "https://shonsubong.github.io/sonslab-blog/"}, {"@type": "ListItem", "position": 2, "name": "글", "item": "https://shonsubong.github.io/sonslab-blog/#posts"}, {"@type": "ListItem", "position": 3, "name": "/sandbox — 승인 대신 OS가 울타리를 친다, 프롬프트 피로 탈출", "item": "https://shonsubong.github.io/sonslab-blog/claude-tips/2026-07-18-pm23.html"}]}</script>
 </head>
-<body class="post-page" data-category="daily">
+<body class="post-page" data-category="claude-tips">
     <div class="reading-progress" id="reading-progress" role="progressbar" aria-label="읽기 진행률"></div>
 
 <aside class="site-sidebar" id="site-sidebar" aria-label="사이트 메뉴">
@@ -71,9 +71,9 @@
         <div class="sidebar-section-label">카테고리</div>
         <ul class="sidebar-cat-list">
             <li><a href="../index.html" class="">홈 <span class="sidebar-cat-count">359</span></a></li>
-            <li><a href="../index.html#posts" class="active">데일리 브리핑 <span class="sidebar-cat-count">234</span></a></li>
+            <li><a href="../index.html#posts" class="">데일리 브리핑 <span class="sidebar-cat-count">234</span></a></li>
             <li><a href="../ai-tech/index.html" class="">AI 기술 딥다이브 <span class="sidebar-cat-count">57</span></a></li>
-            <li><a href="../claude-tips/index.html" class="">Claude Code 팁 <span class="sidebar-cat-count">68</span></a></li>
+            <li><a href="../claude-tips/index.html" class="active">Claude Code 팁 <span class="sidebar-cat-count">68</span></a></li>
             <li><a href="../manuals/claude-code.html" class="">Claude Code 가이드북 <span class="sidebar-cat-count">PDF</span></a></li>
             <li><a href="../about.html">About</a></li>
             <li><a href="../feed.xml">RSS</a></li>
@@ -140,90 +140,84 @@
 
 <article class="post-article">
     <div class="post-header">
-        <a href="../index.html" class="back-link">← 전체 글 목록</a>
-        <h1>Microsoft가 OpenAI 없이 추론 모델을 만들었다 — 증류 안 한 MAI-Thinking-1의 의미</h1>
+        <a href="index.html" class="back-link">← Claude Code 팁 목록</a>
+        <h1>/sandbox — 승인 대신 OS가 울타리를 친다, 프롬프트 피로 탈출</h1>
         <div class="post-meta">
-            <span class="time-label">새벽 리포트</span>
-            <span>2026년 06월 14일 (일) · 06:08</span>
+            <span class="time-label">심야 팁</span>
+            <span>2026년 07월 18일 (토) · 23:11</span>
             <span>·</span>
-            <span>5분 읽기</span>
+            <span>2분 읽기</span>
         </div>
     </div>
     
-<div class="day-series-wrap" aria-label="같은 날의 다른 브리핑">
-    <div class="day-series-label"><span class="dot"></span><span>2026년 06월 14일 (일)의 브리핑</span></div>
-    <div class="day-series"><a href="#" class="day-series-item active" aria-current="page"><span class="series-time">06:08</span><span class="series-label">새벽 리포트</span></a><a href="2026-06-14-pm12-ai-tech-news.html" class="day-series-item"><span class="series-time">12:16</span><span class="series-label">오전 브리핑</span></a><a href="2026-06-14-pm17-ai-tech-news.html" class="day-series-item"><span class="series-time">17:12</span><span class="series-label">오후 브리핑</span></a></div>
-</div>
     <details class="post-toc" open><summary>목차</summary><div class="toc">
 <div class="toc">
 <ul>
-<li><a href="#microsoft">Microsoft가 처음부터 자기 손으로 만든 추론 모델</a></li>
-<li><a href="#alibaba-qwen-37-plus">Alibaba Qwen 3.7 Plus — 멀티모달을 하나로 합쳤다</a></li>
-<li><a href="#tesla-fsd-v15-10">Tesla FSD v15 — 모델을 10배로 키우는 재작성</a></li>
+<li><a href="#_1">막상 켜보면</a></li>
+<li><a href="#_2">진짜 함정은 읽기 권한</a></li>
 </ul>
 </div>
 
 </div>
 </details>
     <div class="post-content">
-<p>새벽에 일어나 밤사이 쌓인 걸 훑는데, 제일 눈에 박힌 건 모델 출시 자체가 아니라 <strong>누가 누구 데이터로 학습했냐</strong>는 한 줄이었다.</p>
-<h2 id="microsoft">Microsoft가 처음부터 자기 손으로 만든 추론 모델</h2>
-<p>Build 2026에서 풀린 MAI 모델 7종 중 핵심은 MAI-Thinking-1이다. 추론 전용 모델이고, 35B active / 약 1T total 규모의 sparse MoE, context는 256K. 숫자만 보면 요즘 흔한 중형 모델인데, 진짜 포인트는 따로 있다.</p>
-<p><strong>OpenAI 데이터로 증류(distillation)를 안 했다.</strong> 상업 라이선스가 확보된 엔터프라이즈 데이터로 처음부터 학습했다는 게 Microsoft 주장이다. 그동안 Microsoft AI는 사실상 OpenAI 위에 얹혀 있다는 시선을 받아왔는데, 자기 추론 모델을 바닥부터 올렸다는 건 그 줄을 끊겠다는 신호다.</p>
-<p>성능도 말로만 끝내지 않았다. 독립 평가자 선호도에서 Sonnet 4.6을 앞섰고, SWE-bench Pro 코딩에선 Opus 4.6급이라고 했다. 평가자 선호도라는 게 늘 애매하긴 하지만, "OpenAI 없이도 이 정도 나온다"를 보여주는 데는 충분한 그림이다.</p>
-<p>같이 나온 MAI-Code-1-Flash도 흥미롭다. 5B짜리 작은 코딩 모델인데 GitHub Copilot·VS Code에 깊게 박아 넣었고, Haiku급 성능을 더 싼 비용에 낸다고 주장한다. 거대 모델 경쟁이 한쪽에서 벌어지는 동안, 다른 한쪽에선 "충분히 좋으면서 추론 비용 싼" 작은 모델로 IDE를 점령하는 싸움이 동시에 진행 중이라는 거다. 개발 도구 쪽에서 일하는 입장에선 후자가 더 현실적인 변화로 다가온다.</p>
-<p>엔지니어 관점에서 이게 왜 중요하냐면 — 증류 의존을 끊는다는 건 결국 "어느 회사가 자기 학습 파이프라인을 통제하느냐"의 문제다. 남의 모델 출력으로 학습하면 빠르지만, 그 회사가 약관을 바꾸거나 API를 조이면 그대로 휘둘린다. Microsoft 정도 되는 곳이 굳이 처음부터 만든 건 그 리스크를 직접 본 거라고 읽는다.</p>
-<h2 id="alibaba-qwen-37-plus">Alibaba Qwen 3.7 Plus — 멀티모달을 하나로 합쳤다</h2>
-<p>같은 흐름에서 알리바바도 움직였다. Qwen 3.7 Plus가 나왔는데, 비전·언어·코딩을 따로 돌리던 걸 하나의 멀티모달 시스템으로 합친 게 핵심이다.</p>
-<p>요즘 트렌드가 딱 이거다. 모달리티별로 모델을 쪼개 두던 시대에서, 입력이 뭐가 됐든 한 모델이 받아내는 쪽으로 다들 수렴하고 있다. Google이 I/O에서 보여준 Gemini Omnia도 결국 같은 방향이고. 사용자 입장에선 "이건 비전 모델, 저건 코딩 모델" 하고 고를 일이 줄어드는 거라 편해지는데, 반대로 모델 하나하나가 점점 무거워진다는 뜻이기도 하다.</p>
-<h2 id="tesla-fsd-v15-10">Tesla FSD v15 — 모델을 10배로 키우는 재작성</h2>
-<p>AI 기술 관점에서 따로 적어둘 만한 건 Tesla 쪽이다. 어제 FSD v14.3.4가 롤아웃 시작됐는데(TeslaOracle 기준), 진짜 판은 그 뒤의 v15다.</p>
-<p>Musk가 로보택시 대규모 확장을 v15까지 미루고 있는 이유가 단순하다. <strong>주행 모델을 약 1B 파라미터에서 10B 수준으로 키우는 재작성</strong>이라는 것. 점진적 튜닝이 아니라 구조 자체를 갈아엎는 작업이라는 얘기다. 현재 오스틴 무인 운행 차량이 20대 안팎으로 오히려 줄어든 것도, 지금 굴리는 것보다 v15를 기다리는 게 낫다는 판단으로 보인다.</p>
-<p>여기서 흥미로운 건 자율주행이 결국 "더 큰 모델 = 더 나은 일반화"라는 LLM 쪽 교훈을 그대로 따라가고 있다는 점이다. 파라미터 10배가 도로 위 엣지 케이스를 얼마나 잡아주는지는 까봐야 알지만, 방향성 자체는 지금 AI 전체가 가는 길과 똑같다. 적극적 확장 시점을 2026년 말~2027년 초로 잡은 걸 보면, 올여름 7개 도시 확장 얘기는 어디까지나 v14 기반의 제한적 운행이라고 보는 게 맞겠다.</p>
-<hr />
-<p>참고로 GPT-5.6 "kindle-alpha"가 개발자 채널에 떴다는 얘기가 돌지만, OpenAI 공식 발표는 없다. 추론·코딩·비전이 강해졌다는 후기가 있긴 한데 아직은 <strong>미확인 루머</strong> 선에서 봐야 한다.</p>
-<p>오늘 새벽 정리하면서 든 생각은 하나다. 모델 경쟁의 축이 "누가 제일 똑똑하냐"에서 "누가 자기 파이프라인을 통제하느냐"로 슬슬 옮겨가고 있다는 것. Microsoft가 증류를 끊은 것도, Tesla가 모델을 직접 10배로 키우는 것도 결국 같은 얘기다.</p>
-<p><strong>Sources</strong>
-- <a href="https://microsoft.ai/news/building-a-hillclimbing-machine-launching-seven-new-mai-models/">Microsoft AI — Launching seven new MAI models</a>
-- <a href="https://www.techtimes.com/articles/317631/20260602/microsoft-build-2026-mai-thinking-1-first-house-reasoning-model-trained-without-openai-data.htm">TechTimes — MAI-Thinking-1, first in-house reasoning model trained without OpenAI data</a>
-- <a href="https://www.buildfastwithai.com/blogs/ai-news-today-june-13-2026">BuildFastWithAI — AI News Today, June 13, 2026</a>
-- <a href="https://www.teslaoracle.com/2026/06/13/tesla-starts-the-rollout-of-fsd-v14-3-4-2026-14-6-10-official-release-notes-rollout-status/">TeslaOracle — FSD v14.3.4 rollout</a>
-- <a href="https://www.automotiveworld.com/news/tesla-robotaxi-fleet-hits-25-as-musk-defers-scale-to-fsd-v15/">Automotive World — Tesla robotaxi fleet, Musk defers scale to FSD V15</a></p>
+<p>Claude Code한테 빌드를 맡겨두고 자리를 비웠다 돌아오면, 화면은 여전히 승인 대기 중이다. 테스트 한 번, 패키지 설치 한 번마다 손을 내밀고, 어느 순간부터는 내용도 안 읽고 y를 누르는 나를 발견한다. 그렇다고 <code>--dangerously-skip-permissions</code>를 켜자니 이름부터가 경고문이다.</p>
+<p><code>/sandbox</code>는 이 딜레마를 다른 각도에서 푼다. 명령을 하나하나 심사하는 대신, 명령이 건드릴 수 있는 범위 자체를 OS 수준에서 제한한다. 울타리 안이면 묻지 않고 통과시키고, 울타리를 넘으려는 순간에만 물어본다. Anthropic 내부 사용 기준으로 권한 프롬프트가 84% 줄었다고 한다 (<a href="https://www.anthropic.com/engineering/claude-code-sandboxing">Anthropic — Making Claude Code more secure and autonomous with sandboxing</a>).</p>
+<h2 id="_1">막상 켜보면</h2>
+<p>세션에서 <code>/sandbox</code>를 입력하면 설정 패널이 뜬다. auto-allow 모드를 고르면 그때부터 Bash 명령은 샌드박스 안에서 승인 없이 돈다. 쓰기는 작업 디렉터리와 세션 임시 디렉터리만 허용되고, 네트워크는 도메인별로 처음 접속할 때 한 번만 물어본다. macOS는 Seatbelt가 내장이라 설치할 게 없고, Linux와 WSL2는 <code>bubblewrap</code>과 <code>socat</code> 두 패키지가 필요하다. 네이티브 Windows는 미지원이라 나처럼 Windows에서 쓰는 사람은 WSL2 안에서 돌려야 한다.</p>
+<p>프로젝트 하나가 아니라 전부에 적용하려면 <code>~/.claude/settings.json</code>에 넣는다.</p>
+<pre class="codehilite"><code class="language-json">{
+  &quot;sandbox&quot;: { &quot;enabled&quot;: true }
+}
+</code></pre>
+
+<h2 id="_2">진짜 함정은 읽기 권한</h2>
+<p>쓰기는 잠기지만 읽기는 기본값이 컴퓨터 전체다. <code>~/.ssh</code>나 <code>~/.aws/credentials</code>도 샌드박스 안에서 읽힌다. 자격 증명은 <code>sandbox.credentials</code>로 직접 잠가야 한다.</p>
+<pre class="codehilite"><code class="language-json">{
+  &quot;sandbox&quot;: {
+    &quot;enabled&quot;: true,
+    &quot;credentials&quot;: {
+      &quot;files&quot;: [{ &quot;path&quot;: &quot;~/.ssh&quot;, &quot;mode&quot;: &quot;deny&quot; }],
+      &quot;envVars&quot;: [{ &quot;name&quot;: &quot;GITHUB_TOKEN&quot;, &quot;mode&quot;: &quot;deny&quot; }]
+    }
+  }
+}
+</code></pre>
+
+<p>하나 더. 샌드박스 안에서 실패한 명령은 Claude가 밖에서 다시 돌리자고 제안하는 탈출구가 있다. 이때는 일반 승인 흐름을 타긴 하지만, 무인 자동화 파이프라인이라면 <code>"allowUnsandboxedCommands": false</code>로 탈출구 자체를 닫아두는 편이 마음 편하다. <code>docker</code>나 watchman을 쓰는 <code>jest</code>처럼 샌드박스와 상성이 나쁜 도구는 <code>excludedCommands</code>에 등록해 밖으로 빼면 된다.</p>
+<p>세부 설정 항목은 공식 문서가 자세하다 (<a href="https://code.claude.com/docs/en/sandboxing">Claude Code Docs — Configure the sandboxed Bash tool</a>).</p>
     </div>
     
 <div class="post-share">
     <span class="share-label">공유하기</span>
-    <a href="https://twitter.com/intent/tweet?text=Microsoft가 OpenAI 없이 추론 모델을 만들었다 — 증류 안 한 MAI-Thinking-1의 의미&url=https://shonsubong.github.io/sonslab-blog/posts/2026-06-14-am06-ai-tech-news.html"
+    <a href="https://twitter.com/intent/tweet?text=/sandbox — 승인 대신 OS가 울타리를 친다, 프롬프트 피로 탈출&url=https://shonsubong.github.io/sonslab-blog/claude-tips/2026-07-18-pm23.html"
        class="share-btn" target="_blank" rel="noopener" aria-label="X(Twitter)에 공유">
         <span>X</span>
     </a>
-    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://shonsubong.github.io/sonslab-blog/posts/2026-06-14-am06-ai-tech-news.html"
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://shonsubong.github.io/sonslab-blog/claude-tips/2026-07-18-pm23.html"
        class="share-btn" target="_blank" rel="noopener" aria-label="LinkedIn에 공유">
         <span>in</span>
     </a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://shonsubong.github.io/sonslab-blog/posts/2026-06-14-am06-ai-tech-news.html"
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://shonsubong.github.io/sonslab-blog/claude-tips/2026-07-18-pm23.html"
        class="share-btn" target="_blank" rel="noopener" aria-label="Facebook에 공유">
         <span>f</span>
     </a>
-    <button type="button" class="share-btn share-copy" id="share-copy-btn" data-url="https://shonsubong.github.io/sonslab-blog/posts/2026-06-14-am06-ai-tech-news.html" aria-label="링크 복사">
+    <button type="button" class="share-btn share-copy" id="share-copy-btn" data-url="https://shonsubong.github.io/sonslab-blog/claude-tips/2026-07-18-pm23.html" aria-label="링크 복사">
         <span>🔗 링크 복사</span>
     </button>
 </div>
     
 <nav class="post-nav-bottom" aria-label="이전/다음 글">
-    <a href="2026-06-13-pm22-ai-tech-news.html" class="post-nav-link prev">
+    <a href="2026-07-17-pm23.html" class="post-nav-link prev">
         <span class="post-nav-label">← 이전 글</span>
-        <span class="post-nav-title">에이전트가 스스로 도구를 찾기 시작했다 — 테스트타임 추론이 2026년의 중심으로</span>
+        <span class="post-nav-title">매번 &#x27;설명 빼고 코드만&#x27; 다시 적지 말고 output style로 말투를 고정한다</span>
     </a>
-    <a href="2026-06-14-pm12-ai-tech-news.html" class="post-nav-link next">
-        <span class="post-nav-label">다음 글 →</span>
-        <span class="post-nav-title">코드 모델이 두 갈래로 갈라진다 — Kimi K2.7은 더 싸게, Meta는 코드를 &#x27;실행&#x27;으로 가르친다</span>
-    </a>
+    
 </nav>
     
 <section class="related-posts" aria-label="최근 다른 리포트">
     <div class="related-posts-label">최근 다른 리포트</div>
-    <ul class="related-list"><li><a href="2026-06-20-pm17-ai-tech-news.html"><span class="related-title">Gemini CLI가 문을 닫았다 — 오픈소스 자리를 클로즈드 Antigravity가 차지했다</span><span class="related-date">2026-06-20 · 오후 브리핑 · 17:21</span></a></li><li><a href="2026-06-20-pm12-ai-tech-news.html"><span class="related-title">오픈웨이트 모델이 코딩 최전선까지 왔다 — MiniMax M3와 6월의 개방 물결</span><span class="related-date">2026-06-20 · 오전 브리핑 · 12:24</span></a></li><li><a href="2026-06-20-am06-ai-tech-news.html"><span class="related-title">내 노트북에서 도는 컴퓨터 조작 AI — Holo3.1이 연 로컬 에이전트 시대</span><span class="related-date">2026-06-20 · 새벽 리포트 · 06:08</span></a></li><li><a href="2026-06-19-pm22-ai-tech-news.html"><span class="related-title">Anthropic가 서울에 왔다 — 네이버·삼성·LG가 한날에 Claude를 깔고, Fable 5는 아직 꺼져 있다</span><span class="related-date">2026-06-19 · 저녁 마감 · 22:14</span></a></li><li><a href="2026-06-19-pm17-ai-tech-news.html"><span class="related-title">엔비디아가 로봇 AI를 통째로 오픈했다 — Cosmos 3와 sim-to-real 격차</span><span class="related-date">2026-06-19 · 오후 브리핑 · 17:12</span></a></li></ul>
+    <ul class="related-list"><li><a href="2026-07-17-pm23.html"><span class="related-title">매번 &#x27;설명 빼고 코드만&#x27; 다시 적지 말고 output style로 말투를 고정한다</span><span class="related-date">2026-07-17 · 심야 팁 · 23:00</span></a></li><li><a href="2026-07-15-pm23.html"><span class="related-title">스크린샷을 붙여넣는다 — 에러 화면을 말로 옮겨 적을 필요가 없다</span><span class="related-date">2026-07-15 · 심야 팁 · 23:00</span></a></li><li><a href="2026-07-14-pm23.html"><span class="related-title">Jujutsu(jj) — 에이전트가 헤집어 놓은 작업 트리를 undo 한 번으로 되돌린다</span><span class="related-date">2026-07-14 · 심야 팁 · 23:00</span></a></li><li><a href="2026-07-13-pm23.html"><span class="related-title">Esc 두 번 — 망친 편집을 git 없이 그 자리에서 되돌린다</span><span class="related-date">2026-07-13 · 심야 팁 · 23:00</span></a></li><li><a href="2026-07-12-pm23.html"><span class="related-title">/doctor가 진단만 하던 시절은 끝났다 — 이제 고쳐주기까지 한다</span><span class="related-date">2026-07-12 · 심야 팁 · 23:00</span></a></li></ul>
 </section>
 </article>
 
