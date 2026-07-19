@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vera Rubin 6칩 플랫폼 공개 — Nvidia가 CES에서 Blackwell 다음을 보여줬다 — SONSLAB</title>
+    <title>1등을 포기하고 RoPE도 버렸다 — 첫 모델 Inkling의 설계 — SONSLAB</title>
     <link rel="icon" href="../assets/logo.jpg">
     <link rel="alternate" type="application/atom+xml" title="SONSLAB Feed" href="../feed.xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,20 +11,22 @@
     <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/style.css">
-    <meta name="description" content="화요일 밤, CES 2026 공식 개막 다음 날. 어제(1/5) Nvidia 키노트를 동시에 보면서 메모만 잔뜩 적어놨는데, 오늘 하루 종일 회사에서 동료들과 &quot;이게 진짜 의미하는 게 뭔가&quot; 토론하다 퇴근. 정리하면서 자야 할 것 같다.">
+    <meta name="description" content="7월은 모델이 쏟아진 달이다. Grok 4.5(7/8), GPT-5.6 순차 배포, 그리고 그저께 이 코너에서 다룬 Kimi K3(7/16)까지. 그 한복판인 15일에 Mira Murati의 Thinking Machines가 창사 첫 정식 모델을 냈다. John Schulman에 따르면 프리트레이닝은 지난겨울에 시작했고, 1월 중순부터는 소규모 팀이 코딩·추론·에이전트 훈련을 쌓아 올렸다고 ...">
     <meta name="author" content="SONSLAB">
-    <link rel="canonical" href="https://shonsubong.github.io/sonslab-blog/posts/2026-01-06-pm23-ai-tech-news.html">
+    <link rel="canonical" href="https://shonsubong.github.io/sonslab-blog/ai-tech/2026-07-19-am10.html">
     <meta property="og:site_name" content="SONSLAB">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Vera Rubin 6칩 플랫폼 공개 — Nvidia가 CES에서 Blackwell 다음을 보여줬다">
-    <meta property="og:description" content="화요일 밤, CES 2026 공식 개막 다음 날. 어제(1/5) Nvidia 키노트를 동시에 보면서 메모만 잔뜩 적어놨는데, 오늘 하루 종일 회사에서 동료들과 &quot;이게 진짜 의미하는 게 뭔가&quot; 토론하다 퇴근. 정리하면서 자야 할 것 같다.">
-    <meta property="og:url" content="https://shonsubong.github.io/sonslab-blog/posts/2026-01-06-pm23-ai-tech-news.html">
-    <meta property="og:image" content="https://shonsubong.github.io/sonslab-blog/assets/og/2026-01-06-pm23-ai-tech-news.png">
+    <meta property="og:title" content="1등을 포기하고 RoPE도 버렸다 — 첫 모델 Inkling의 설계">
+    <meta property="og:description" content="7월은 모델이 쏟아진 달이다. Grok 4.5(7/8), GPT-5.6 순차 배포, 그리고 그저께 이 코너에서 다룬 Kimi K3(7/16)까지. 그 한복판인 15일에 Mira Murati의 Thinking Machines가 창사 첫 정식 모델을 냈다. John Schulman에 따르면 프리트레이닝은 지난겨울에 시작했고, 1월 중순부터는 소규모 팀이 코딩·추론·에이전트 훈련을 쌓아 올렸다고 ...">
+    <meta property="og:url" content="https://shonsubong.github.io/sonslab-blog/ai-tech/2026-07-19-am10.html">
+    <meta property="og:image" content="https://shonsubong.github.io/sonslab-blog/assets/logo.jpg">
     <meta property="og:locale" content="ko_KR">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Vera Rubin 6칩 플랫폼 공개 — Nvidia가 CES에서 Blackwell 다음을 보여줬다">
-    <meta name="twitter:description" content="화요일 밤, CES 2026 공식 개막 다음 날. 어제(1/5) Nvidia 키노트를 동시에 보면서 메모만 잔뜩 적어놨는데, 오늘 하루 종일 회사에서 동료들과 &quot;이게 진짜 의미하는 게 뭔가&quot; 토론하다 퇴근. 정리하면서 자야 할 것 같다.">
-    <meta name="twitter:image" content="https://shonsubong.github.io/sonslab-blog/assets/og/2026-01-06-pm23-ai-tech-news.png">
+    <meta name="twitter:title" content="1등을 포기하고 RoPE도 버렸다 — 첫 모델 Inkling의 설계">
+    <meta name="twitter:description" content="7월은 모델이 쏟아진 달이다. Grok 4.5(7/8), GPT-5.6 순차 배포, 그리고 그저께 이 코너에서 다룬 Kimi K3(7/16)까지. 그 한복판인 15일에 Mira Murati의 Thinking Machines가 창사 첫 정식 모델을 냈다. John Schulman에 따르면 프리트레이닝은 지난겨울에 시작했고, 1월 중순부터는 소규모 팀이 코딩·추론·에이전트 훈련을 쌓아 올렸다고 ...">
+    <meta name="twitter:image" content="https://shonsubong.github.io/sonslab-blog/assets/logo.jpg">
+    <meta property="article:published_time" content="2026-07-19T10:00:00+09:00">
+    <meta property="article:modified_time" content="2026-07-19T10:00:00+09:00">
     
 <script>
 (function() {
@@ -54,10 +56,10 @@
     } catch (e) {}
 })();
 </script>
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Vera Rubin 6칩 플랫폼 공개 — Nvidia가 CES에서 Blackwell 다음을 보여줬다", "description": "화요일 밤, CES 2026 공식 개막 다음 날. 어제(1/5) Nvidia 키노트를 동시에 보면서 메모만 잔뜩 적어놨는데, 오늘 하루 종일 회사에서 동료들과 \"이게 진짜 의미하는 게 뭔가\" 토론하다 퇴근. 정리하면서 자야 할 것 같다.", "url": "https://shonsubong.github.io/sonslab-blog/posts/2026-01-06-pm23-ai-tech-news.html", "mainEntityOfPage": "https://shonsubong.github.io/sonslab-blog/posts/2026-01-06-pm23-ai-tech-news.html", "inLanguage": "ko", "image": "https://shonsubong.github.io/sonslab-blog/assets/og/2026-01-06-pm23-ai-tech-news.png", "author": {"@type": "Person", "name": "SONSLAB"}, "publisher": {"@type": "Organization", "name": "SONSLAB", "logo": {"@type": "ImageObject", "url": "https://shonsubong.github.io/sonslab-blog/assets/logo.jpg"}}, "datePublished": "", "dateModified": ""}</script>
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "SONSLAB", "item": "https://shonsubong.github.io/sonslab-blog/"}, {"@type": "ListItem", "position": 2, "name": "글", "item": "https://shonsubong.github.io/sonslab-blog/#posts"}, {"@type": "ListItem", "position": 3, "name": "Vera Rubin 6칩 플랫폼 공개 — Nvidia가 CES에서 Blackwell 다음을 보여줬다", "item": "https://shonsubong.github.io/sonslab-blog/posts/2026-01-06-pm23-ai-tech-news.html"}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "1등을 포기하고 RoPE도 버렸다 — 첫 모델 Inkling의 설계", "description": "7월은 모델이 쏟아진 달이다. Grok 4.5(7/8), GPT-5.6 순차 배포, 그리고 그저께 이 코너에서 다룬 Kimi K3(7/16)까지. 그 한복판인 15일에 Mira Murati의 Thinking Machines가 창사 첫 정식 모델을 냈다. John Schulman에 따르면 프리트레이닝은 지난겨울에 시작했고, 1월 중순부터는 소규모 팀이 코딩·추론·에이전트 훈련을 쌓아 올렸다고 ...", "url": "https://shonsubong.github.io/sonslab-blog/ai-tech/2026-07-19-am10.html", "mainEntityOfPage": "https://shonsubong.github.io/sonslab-blog/ai-tech/2026-07-19-am10.html", "inLanguage": "ko", "image": "https://shonsubong.github.io/sonslab-blog/assets/logo.jpg", "author": {"@type": "Person", "name": "SONSLAB"}, "publisher": {"@type": "Organization", "name": "SONSLAB", "logo": {"@type": "ImageObject", "url": "https://shonsubong.github.io/sonslab-blog/assets/logo.jpg"}}, "datePublished": "2026-07-19T10:00:00+09:00", "dateModified": "2026-07-19T10:00:00+09:00"}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "SONSLAB", "item": "https://shonsubong.github.io/sonslab-blog/"}, {"@type": "ListItem", "position": 2, "name": "글", "item": "https://shonsubong.github.io/sonslab-blog/#posts"}, {"@type": "ListItem", "position": 3, "name": "1등을 포기하고 RoPE도 버렸다 — 첫 모델 Inkling의 설계", "item": "https://shonsubong.github.io/sonslab-blog/ai-tech/2026-07-19-am10.html"}]}</script>
 </head>
-<body class="post-page" data-category="daily">
+<body class="post-page" data-category="ai-tech">
     <div class="reading-progress" id="reading-progress" role="progressbar" aria-label="읽기 진행률"></div>
 
 <aside class="site-sidebar" id="site-sidebar" aria-label="사이트 메뉴">
@@ -69,8 +71,8 @@
         <div class="sidebar-section-label">카테고리</div>
         <ul class="sidebar-cat-list">
             <li><a href="../index.html" class="">홈 <span class="sidebar-cat-count">361</span></a></li>
-            <li><a href="../index.html#posts" class="active">데일리 브리핑 <span class="sidebar-cat-count">235</span></a></li>
-            <li><a href="../ai-tech/index.html" class="">AI 기술 딥다이브 <span class="sidebar-cat-count">58</span></a></li>
+            <li><a href="../index.html#posts" class="">데일리 브리핑 <span class="sidebar-cat-count">235</span></a></li>
+            <li><a href="../ai-tech/index.html" class="active">AI 기술 딥다이브 <span class="sidebar-cat-count">58</span></a></li>
             <li><a href="../claude-tips/index.html" class="">Claude Code 팁 <span class="sidebar-cat-count">68</span></a></li>
             <li><a href="../manuals/claude-code.html" class="">Claude Code 가이드북 <span class="sidebar-cat-count">PDF</span></a></li>
             <li><a href="../about.html">About</a></li>
@@ -138,124 +140,120 @@
 
 <article class="post-article">
     <div class="post-header">
-        <a href="../index.html" class="back-link">← 전체 글 목록</a>
-        <h1>Vera Rubin 6칩 플랫폼 공개 — Nvidia가 CES에서 Blackwell 다음을 보여줬다</h1>
+        <a href="index.html" class="back-link">← AI 기술 목록</a>
+        <h1>1등을 포기하고 RoPE도 버렸다 — 첫 모델 Inkling의 설계</h1>
         <div class="post-meta">
-            <span class="time-label">심야 팁</span>
-            <span>2026-01-06 23:24</span>
+            <span class="time-label">AI 딥다이브</span>
+            <span>2026년 07월 19일 (일) · 10:00</span>
             <span>·</span>
-            <span>4분 읽기</span>
+            <span>7분 읽기</span>
         </div>
     </div>
     
     <details class="post-toc" open><summary>목차</summary><div class="toc">
 <div class="toc">
 <ul>
-<li><a href="#ces-2026-day-2">CES 2026, Day 2 — 어제 키노트의 무게가 오늘에야 와닿는다</a><ul>
-<li><a href="#vera-rubin-6">Vera Rubin — 6칩 플랫폼</a><ul>
-<li><a href="#_1">발표된 헤드라인 수치</a></li>
-<li><a href="#10">"10배"의 의미</a></li>
-</ul>
-</li>
-<li><a href="#_2">반도체 현직자가 풀어 보는 함의</a><ul>
-<li><a href="#1-hbm4">1) HBM4 시대가 공식 개막</a></li>
-<li><a href="#2-gpu-4">2) "GPU 4배 적게" — 데이터센터 모델이 바뀐다</a></li>
-<li><a href="#3-msawsgoogle">3) MS·AWS·Google이 같은 칩 사겠다는 의미</a></li>
-</ul>
-</li>
-<li><a href="#dlss-45">DLSS 4.5</a></li>
-<li><a href="#alpamayo">Alpamayo — 자율주행 오픈 모델</a></li>
-<li><a href="#_3">내일 체크</a></li>
-</ul>
-</li>
+<li><a href="#tldr">TL;DR</a></li>
+<li><a href="#why-now">배경 (Why now)</a></li>
+<li><a href="#_1">핵심 메커니즘</a></li>
+<li><a href="#_2">코드 예시</a></li>
+<li><a href="#_3">한계·반론</a></li>
+<li><a href="#_4">현직 엔지니어 관점</a></li>
+<li><a href="#_5">추가 읽을거리</a></li>
 </ul>
 </div>
 
 </div>
 </details>
     <div class="post-content">
-<h1 id="ces-2026-day-2">CES 2026, Day 2 — 어제 키노트의 무게가 오늘에야 와닿는다</h1>
-<p>화요일 밤, CES 2026 공식 개막 다음 날. 어제(1/5) Nvidia 키노트를 동시에 보면서 메모만 잔뜩 적어놨는데, 오늘 하루 종일 회사에서 동료들과 <strong>"이게 진짜 의미하는 게 뭔가"</strong> 토론하다 퇴근. 정리하면서 자야 할 것 같다.</p>
-<p>핵심은 하나. <strong>Vera Rubin</strong> 플랫폼이 정식 공개됐다.</p>
-<h2 id="vera-rubin-6">Vera Rubin — 6칩 플랫폼</h2>
-<p>Nvidia가 새 아키텍처 <strong>Vera Rubin</strong>을 정식 공개. <strong>6개 칩</strong>으로 구성된 풀 스택.</p>
-<h3 id="_1">발표된 헤드라인 수치</h3>
+<h2 id="tldr">TL;DR</h2>
 <ul>
-<li><strong>추론 토큰당 비용 10배 감소</strong> vs Blackwell</li>
-<li><strong>MoE 모델 학습 시 GPU 4배 적게 필요</strong> vs Blackwell</li>
-<li><strong>2H 2026부터 first products 출시</strong></li>
-<li><strong>MS, AWS, Google이 Rubin 기반 superfactory 배포 약속</strong> (2H 2026)</li>
-<li>클라이언트는 <strong>OpenAI, Anthropic, xAI</strong> 프런티어 모델 위주</li>
+<li>Thinking Machines가 7/15 첫 오픈웨이트 모델 Inkling을 공개했다. 975B MoE(활성 41B), 1M 컨텍스트, 텍스트·이미지·오디오를 본체가 직접 처리하고 가중치는 Hugging Face에 올라왔다 (<a href="https://thinkingmachines.ai/news/introducing-inkling/">Thinking Machines — Introducing Inkling</a>).</li>
+<li>처음부터 "오늘 가장 강한 모델이 아니다"라고 인정한다. 목표는 리더보드가 아니라 미세조정용 베이스. 그래도 Artificial Analysis 지능 지수 41로 미국 오픈웨이트 1위로 데뷔했다 (<a href="https://x.com/ArtificialAnlys/status/2077466590346444939">@ArtificialAnlys</a>).</li>
+<li>설계가 볼거리다. RoPE 대신 학습형 상대 위치 편향, 66층 중 55층이 512토큰 슬라이딩 윈도우, 어텐션 곳곳에 kernel-4 컨볼루션.</li>
 </ul>
-<h3 id="10">"10배"의 의미</h3>
-<p>먼저 10배라는 숫자에 대한 경계심부터. 마케팅 슬라이드의 10배는 거의 항상 가장 유리한 비교 기준에서 나온다. 그래도 이번엔 <strong>10배가 가능했던 메커니즘이 명시됐다</strong>는 점에서 무게가 다르다.</p>
+<h2 id="why-now">배경 (Why now)</h2>
+<p>7월은 모델이 쏟아진 달이다. Grok 4.5(7/8), GPT-5.6 순차 배포, 그리고 그저께 이 코너에서 다룬 Kimi K3(7/16)까지. 그 한복판인 15일에 Mira Murati의 Thinking Machines가 창사 첫 정식 모델을 냈다. John Schulman에 따르면 프리트레이닝은 지난겨울에 시작했고, 1월 중순부터는 소규모 팀이 코딩·추론·에이전트 훈련을 쌓아 올렸다고 한다 (<a href="https://x.com/johnschulman2/status/2077460227327467982">@johnschulman2</a>).</p>
+<p>반응은 나쁘지 않다. Deedy Das는 "중국 밖 최고의 오픈웨이트 모델"이라며 Nemotron 3 Ultra를 눌렀다고 평가했다 (<a href="https://x.com/deedydas/status/2077464728507707890">@deedydas</a>). 발표문 자체가 벤치마크 1등 대신 "커스터마이즈하기 좋은 베이스"를 파는 구성이라는 점이 요즘 릴리스 문법과 다르다. 자사 미세조정 플랫폼 Tinker에서 바로 튜닝할 수 있게 묶어서 내놨다.</p>
+<h2 id="_1">핵심 메커니즘</h2>
+<p>MoE 골격은 DeepSeek-V3 계열이다. 라우팅 전문가 256개 중 토큰당 6개 활성, 공유 전문가 2개. 여기까지는 요즘 대형 MoE의 표준 문법이고, 차별점은 어텐션 쪽에 몰려 있다.</p>
+<p>가장 눈에 띄는 건 RoPE가 없다는 점이다. 학습형 상대 위치 편향을 쓰는데, 공식 설명은 "긴 시퀀스로 더 잘 외삽된다"이다. 66층 중 55층이 512토큰 슬라이딩 윈도우이고 전역 어텐션은 11층뿐이라(5:1 비율), 좁은 창 안에서는 상대 편향만으로 위치 정보가 충분하다는 계산이다. 흥미로운 건 전역 층 쪽인데, 공개된 구현을 보면 직전 1,024토큰까지만 위치 편향을 주고 그 너머는 위치 정보 없이 내용 기반으로 어텐션한다. NoPE와 닿아 있는 발상이라는 게 Sebastian Raschka의 관찰이다 (<a href="https://sebastianraschka.com/blog/2026/inkling-architecture-benchmark-notes.html">Raschka — Inkling Architecture Notes</a>).</p>
+<p>어텐션 곳곳에 자리 잡은 짧은 컨볼루션도 특이하다. K/V 투영 직후, 그리고 어텐션·MLP 출력이 잔차 스트림에 합류하기 직전에 kernel-4 컨볼루션이 들어간다. 값싼 국소 토큰 혼합으로 어텐션이 놓치는 단거리 패턴을 보완하는 장치로 보인다.</p>
+<p>멀티모달 인코더가 없다는 점은 더 과감하다. 오디오는 dMel 스펙트로그램(<a href="https://arxiv.org/abs/2407.15835">arXiv 2407.15835</a>), 이미지는 40×40 픽셀 패치를 4층 hMLP(<a href="https://arxiv.org/abs/2203.09795">arXiv 2203.09795</a>)로 가볍게 임베딩해서 텍스트 토큰과 같은 스트림에서 처리한다. 별도 비전 타워를 붙이는 통상 구조와 반대 방향이다.</p>
+<pre class="codehilite"><code>[텍스트 토큰] ─────────────────────┐
+[이미지 40×40 패치 → hMLP 4층] ────┼→ [임베딩 (+RMSNorm)]
+[오디오 dMel 스펙트로그램] ─────────┘        ↓
+   [슬라이딩 윈도우 512 ×55층 : 전역 ×11층]   ← RoPE 없음, 학습형 상대 편향
+   [K/V 투영 뒤 conv4 · 잔차 합류 전 conv4]
+   [MoE 256 전문가 중 6 활성 + 공유 2]
+        ↓
+[출력]  — 사고 강도(effort) 0.2~0.99 조절 가능
+</code></pre>
+
+<h2 id="_2">코드 예시</h2>
+<p>위치 처리를 의사코드로 정리하면 이렇다.</p>
+<pre class="codehilite"><code class="language-python"># Inkling 어텐션의 위치 처리 (개념 의사코드)
+W = 512          # 로컬 층 윈도우 (66층 중 55층)
+B = 1024         # 전역 층에서 편향이 적용되는 최대 거리
+bias = RelPosBias(max_dist=B)      # RoPE 대신 학습형 상대 편향
+
+def attention(q, k, v, layer_type):
+    k = conv1d_k4(k)               # K/V 투영 직후 kernel-4 컨볼루션
+    v = conv1d_k4(v)
+    scores = q @ k.T / sqrt(d)
+    if layer_type == &quot;local&quot;:      # 55개 층
+        scores = mask_window(scores, W) + bias.clip(W)
+    else:                          # 11개 전역 층
+        scores = scores + bias.clip(B)   # 1,024토큰 밖은 편향 0
+    return softmax(scores) @ v     # = 위치와 무관한 내용 기반
+</code></pre>
+
+<p>전역 층에서 1,024토큰 밖의 어텐션이 순수 내용 기반이 된다는 점이 1M 컨텍스트 외삽의 열쇠다. 위치를 세는 대신 내용으로 찾게 만든 것이다.</p>
+<h2 id="_3">한계·반론</h2>
+<p>수치는 전부 자체 발표다. 독립 검증 전이고, 일부 행은 외부 보고값과 내부 하니스 결과가 섞여 있다. 그걸 감안해도 약점은 뚜렷하다. HLE 텍스트 29.7%로 GLM-5.2(40.1%)에 크게 밀리고, Terminal Bench 2.1도 63.8% 대 82.7%로 코딩 에이전트 쪽 격차가 크다. SimpleQA 43.9%는 닫힌 모델들(70%대)과 거리가 있다. Raschka는 GQA에 활성 41B라는 조합상 디코딩 속도가 강점이 되기도 어렵다고 본다.</p>
+<p>부트스트랩도 눈에 걸린다. 사후 훈련의 초기 SFT를 Kimi K2.5가 만든 합성 데이터로 시작했다고 발표문에 적어 뒀다. 오픈 모델들이 서로의 출력을 먹고 자라는 구조가 이제 공식 문서에 명시되는 단계까지 왔다. 그리고 여러 벤치마크에서 본체와 대등하다는 Inkling-Small은 아직 프리뷰라 가중치가 없다. "곧 공개"가 실제로 오는지는 지켜봐야 한다.</p>
+<h2 id="_4">현직 엔지니어 관점</h2>
+<p>975B 본체보다 눈이 가는 건 두 가지다. 하나는 활성 12B의 Inkling-Small이 GPQA·IFBench 등 여러 항목에서 본체를 넘는다는 표다. 작은 모델에 개선된 프리트레이닝 레시피가 먼저 들어갔다는 설명인데, 엣지 쪽 일을 하는 입장에서는 이쪽이 진짜 물건이다. 다른 하나는 인코더 없는 멀티모달 구조다. 별도 비전 인코더 없이 스펙트로그램과 픽셀 패치를 본체가 직접 받으면 NPU에 올릴 그래프가 하나로 줄어 엣지 배포가 단순해진다. 슬라이딩 윈도우 55층 덕에 KV 캐시 대부분이 512토큰에서 상한이 잡히는 것도 메모리가 빠듯한 장비에는 반가운 성질이다. 출시일에 NVFP4 체크포인트를 같이 올린 것까지 보면, 처음부터 저정밀 추론을 전제로 설계했다고 읽는 게 자연스럽다.</p>
+<h2 id="_5">추가 읽을거리</h2>
 <ul>
-<li><strong>6칩 코디자인</strong> — Vera CPU + Rubin GPU + 그 외 4개 (스위치/네트워크/메모리 컨트롤러로 추정)</li>
-<li><strong>Custom interconnect</strong> — 노드 내부 데이터 경로가 모놀리식 SoC급으로 설계됐을 가능성</li>
-<li><strong>HBM 차세대 (HBM4 가능성 높음)</strong> 스택 — 대역폭이 다음 단계로 점프</li>
+<li><a href="https://thinkingmachines.ai/news/introducing-inkling/">Inkling 공식 발표문</a></li>
+<li><a href="https://huggingface.co/thinkingmachines/inkling">Hugging Face — thinkingmachines/inkling</a></li>
+<li><a href="https://sebastianraschka.com/blog/2026/inkling-architecture-benchmark-notes.html">Raschka — Inkling 아키텍처 노트</a></li>
+<li><a href="https://arxiv.org/abs/2407.15835">dMel: Speech Tokenization made Simple (arXiv 2407.15835)</a></li>
+<li><a href="https://arxiv.org/abs/2203.09795">Three things everyone should know about ViT (arXiv 2203.09795)</a></li>
 </ul>
-<p>내가 읽은 그림. <strong>"GPU 한 개가 더 빨라지는 게 아니라, 시스템 전체가 더 빨리 토큰을 뱉도록 만든 것."</strong> Blackwell이 단일 GPU FLOPs 게임이었다면 Rubin은 <strong>시스템 처리량 게임</strong>이다.</p>
-<h2 id="_2">반도체 현직자가 풀어 보는 함의</h2>
-<p>이게 진짜 중요하다. 차분히 짚는다.</p>
-<h3 id="1-hbm4">1) HBM4 시대가 공식 개막</h3>
-<p>Vera Rubin이 HBM4를 채택했다고 명시적으로 못박지는 않았지만, <strong>2H 2026 양산 일정 + 대역폭 점프 + MoE 학습 효율 개선</strong> 조합은 HBM4 외에 답이 없다. SK하이닉스가 HBM4 양산 라인을 작년부터 깔고 있었던 이유가 여기서 풀린다. 2026 하반기 메모리 주가 흐름은 이 한 줄에 다 들어가 있다고 본다.</p>
-<h3 id="2-gpu-4">2) "GPU 4배 적게" — 데이터센터 모델이 바뀐다</h3>
-<p>MoE 모델을 4배 적은 GPU로 학습한다는 건, <strong>학습 비용이 1/4로 떨어진다</strong>는 단순 해석을 넘어선다.</p>
-<ul>
-<li>새 데이터센터 부지 면적이 줄어든다 (전력 밀도 상승)</li>
-<li>클러스터당 인터커넥트 토폴로지가 단순해진다</li>
-<li>결과적으로 <strong>CapEx 곡선이 완만</strong>해질 가능성</li>
-</ul>
-<p>이게 매크로한테 어떻게 보이는가. <strong>Nvidia 매출이 무한 증가</strong>한다는 시장의 가정이 잠시 꺾일 수 있다. 단가 곡선과 단위 효율이 동시에 좋아지면, 엔드포인트당 GPU 수요가 정체될 수 있기 때문. 단기엔 Rubin 공식 발표가 호재이지만, 중기엔 <strong>"단위 효율 = 수요 둔화 압력"</strong> 양면성이 있다.</p>
-<h3 id="3-msawsgoogle">3) MS·AWS·Google이 같은 칩 사겠다는 의미</h3>
-<p>이게 흥미로운 대목. MS는 Maia, AWS는 Trainium3, Google은 TPU v5+ 자체 칩을 가지고 있다. 그런데도 <strong>셋 다 Rubin superfactory를 배포하겠다고 명시</strong>했다.</p>
-<p>해석. <strong>자체 실리콘은 자체 워크로드(Copilot, Bedrock, Search)에 쓰고, 외부 프런티어 모델 클라이언트(OpenAI/Anthropic/xAI) 호스팅용은 Nvidia로 간다.</strong> 이중 트랙이 명시화된 셈.</p>
-<p>이건 Nvidia 입장에서는 단기 안도, 장기 우려. 자체 실리콘 비중이 시간이 갈수록 커진다는 건 12월 MS Dev Days에서 이미 확인된 추세고, Rubin은 그 추세를 잠시 늦출 뿐이다.</p>
-<h2 id="dlss-45">DLSS 4.5</h2>
-<p>게이밍 쪽 헤드라인. <strong>DLSS 4.5</strong>는 2세대 트랜스포머 기반 슈퍼 레졸루션 + 6X Dynamic Multi Frame Generation. 4K 패스 트레이싱 240+ FPS가 자동 트리거되도록 설계됐다.</p>
-<p>게이밍 GPU와 데이터센터 GPU의 R&amp;D 사이클이 점점 분리되는 모양새지만, <strong>트랜스포머 기반 업스케일링이 게이밍에 들어왔다</strong>는 건 그 자체로 흥미로운 수렴 신호.</p>
-<h2 id="alpamayo">Alpamayo — 자율주행 오픈 모델</h2>
-<p>조용히 흘려보내기 아까운 발표. <strong>Alpamayo</strong> — 자율주행을 위한 오픈소스 추론 모델 패밀리. <strong>Alpamayo 1</strong>은 100억 파라미터 chain-of-thought 시스템.</p>
-<p>오픈소스 + 자율주행 + reasoning. 이 조합은 일본·중국·한국 자동차 OEM에게 매우 매력적이다. 기존 폐쇄형 ADAS 스택 대비 <strong>"라이선스 비용 ↓ + 커스터마이제이션 ↑"</strong>이라는 가치 제안.</p>
-<h2 id="_3">내일 체크</h2>
-<p>CES 둘째 날은 자율주행 / Physical AI 발표가 몰림. 자동차사 + Nvidia DRIVE 라인업 업데이트가 핵심. 그리고 <strong>AMD 키노트</strong>가 같은 주에 있어 여기서 Rubin에 대한 직접 응답이 나올지 본다.</p>
-<p>오늘은 여기서 끊는다. 메모가 너무 많아 정리하다 자정 넘기면 내일 출근이 힘들다.</p>
-<p>화요일 밤. CES Day 2, 끝.</p>
     </div>
     
 <div class="post-share">
     <span class="share-label">공유하기</span>
-    <a href="https://twitter.com/intent/tweet?text=Vera Rubin 6칩 플랫폼 공개 — Nvidia가 CES에서 Blackwell 다음을 보여줬다&url=https://shonsubong.github.io/sonslab-blog/posts/2026-01-06-pm23-ai-tech-news.html"
+    <a href="https://twitter.com/intent/tweet?text=1등을 포기하고 RoPE도 버렸다 — 첫 모델 Inkling의 설계&url=https://shonsubong.github.io/sonslab-blog/ai-tech/2026-07-19-am10.html"
        class="share-btn" target="_blank" rel="noopener" aria-label="X(Twitter)에 공유">
         <span>X</span>
     </a>
-    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://shonsubong.github.io/sonslab-blog/posts/2026-01-06-pm23-ai-tech-news.html"
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://shonsubong.github.io/sonslab-blog/ai-tech/2026-07-19-am10.html"
        class="share-btn" target="_blank" rel="noopener" aria-label="LinkedIn에 공유">
         <span>in</span>
     </a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://shonsubong.github.io/sonslab-blog/posts/2026-01-06-pm23-ai-tech-news.html"
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://shonsubong.github.io/sonslab-blog/ai-tech/2026-07-19-am10.html"
        class="share-btn" target="_blank" rel="noopener" aria-label="Facebook에 공유">
         <span>f</span>
     </a>
-    <button type="button" class="share-btn share-copy" id="share-copy-btn" data-url="https://shonsubong.github.io/sonslab-blog/posts/2026-01-06-pm23-ai-tech-news.html" aria-label="링크 복사">
+    <button type="button" class="share-btn share-copy" id="share-copy-btn" data-url="https://shonsubong.github.io/sonslab-blog/ai-tech/2026-07-19-am10.html" aria-label="링크 복사">
         <span>🔗 링크 복사</span>
     </button>
 </div>
     
 <nav class="post-nav-bottom" aria-label="이전/다음 글">
-    <a href="2026-01-03-pm21-ai-tech-news.html" class="post-nav-link prev">
+    <a href="2026-07-18-am10.html" class="post-nav-link prev">
         <span class="post-nav-label">← 이전 글</span>
-        <span class="post-nav-title">2026 개막 — &#x27;Hype에서 Pragmatism으로&#x27;가 진짜일까</span>
+        <span class="post-nav-title">인터포저를 걷어낸 HBM — SPHBM4가 옮겨 놓은 병목의 위치</span>
     </a>
-    <a href="2026-01-10-pm23-ai-tech-news.html" class="post-nav-link next">
-        <span class="post-nav-label">다음 글 →</span>
-        <span class="post-nav-title">CES 2026 폐막 — Anthropic $350B 밸류 이야기, Rubin 이후 5일 정리</span>
-    </a>
+    
 </nav>
     
 <section class="related-posts" aria-label="최근 다른 리포트">
     <div class="related-posts-label">최근 다른 리포트</div>
-    <ul class="related-list"><li><a href="2026-07-19-am06-ai-tech-news.html"><span class="related-title">Fable 5 무료 개방, 오늘이 마지막 — 세 번 미룬 마감이 진짜 온다</span><span class="related-date">2026-07-19 · 새벽 리포트 · 06:19</span></a></li><li><a href="2026-06-20-pm17-ai-tech-news.html"><span class="related-title">Gemini CLI가 문을 닫았다 — 오픈소스 자리를 클로즈드 Antigravity가 차지했다</span><span class="related-date">2026-06-20 · 오후 브리핑 · 17:21</span></a></li><li><a href="2026-06-20-pm12-ai-tech-news.html"><span class="related-title">오픈웨이트 모델이 코딩 최전선까지 왔다 — MiniMax M3와 6월의 개방 물결</span><span class="related-date">2026-06-20 · 오전 브리핑 · 12:24</span></a></li><li><a href="2026-06-20-am06-ai-tech-news.html"><span class="related-title">내 노트북에서 도는 컴퓨터 조작 AI — Holo3.1이 연 로컬 에이전트 시대</span><span class="related-date">2026-06-20 · 새벽 리포트 · 06:08</span></a></li><li><a href="2026-06-19-pm22-ai-tech-news.html"><span class="related-title">Anthropic가 서울에 왔다 — 네이버·삼성·LG가 한날에 Claude를 깔고, Fable 5는 아직 꺼져 있다</span><span class="related-date">2026-06-19 · 저녁 마감 · 22:14</span></a></li></ul>
+    <ul class="related-list"><li><a href="2026-07-18-am10.html"><span class="related-title">인터포저를 걷어낸 HBM — SPHBM4가 옮겨 놓은 병목의 위치</span><span class="related-date">2026-07-18 · AI 딥다이브 · 10:00</span></a></li><li><a href="2026-07-17-am10.html"><span class="related-title">오픈 모델의 천장이 2.8조가 됐다 — Kimi K3와 KDA의 계산</span><span class="related-date">2026-07-17 · AI 딥다이브 · 10:00</span></a></li><li><a href="2026-07-15-am10.html"><span class="related-title">지우는 것도 능력이다 — 1M 컨텍스트를 스스로 관리하는 Muse Spark 1.1</span><span class="related-date">2026-07-15 · AI 딥다이브 · 10:00</span></a></li><li><a href="2026-07-14-am10.html"><span class="related-title">테스트가 못 잡는 버그를 증명이 잡는다 — Leanstral 1.5</span><span class="related-date">2026-07-14 · AI 딥다이브 · 10:00</span></a></li><li><a href="2026-07-13-am10.html"><span class="related-title">Wait&#x27;에서 시작되는 무한 반복 — 토큰 하나를 다시 가르쳐 멈춘다</span><span class="related-date">2026-07-13 · AI 딥다이브 · 10:00</span></a></li></ul>
 </section>
 </article>
 
